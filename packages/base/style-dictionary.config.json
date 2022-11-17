@@ -1,0 +1,258 @@
+{
+	"source": ["tokens/**/*.json", "tokens/**/*.jsonc"],
+	"platforms": {
+		"css": {
+			"transformGroup": "CSS",
+			"buildPath": "build/css/",
+			"prefix": "db",
+			"files": [
+				{
+					"destination": "variables.css",
+					"format": "css/variables"
+				}
+			]
+		},
+		"scss": {
+			"transformGroup": "SCSS",
+			"buildPath": "build/scss/",
+			"prefix": "db",
+			"files": [
+				{
+					"destination": "_variables.scss",
+					"format": "scss/variables"
+				}
+			]
+		},
+		"js": {
+			"transformGroup": "JSDotty",
+			"buildPath": "build/js/",
+			"prefix": "db",
+			"files": [
+				{
+					"destination": "tokens.js",
+					"format": "javascript/es6"
+				}
+			]
+		},
+		"flutter": {
+			"transformGroup": "Flutter",
+			"buildPath": "build/flutter/unique_file/",
+			"files": [
+				{
+					"destination": "style_dictionary.dart",
+					"format": "flutter/class.dart",
+					"className": "StyleDictionary"
+				}
+			]
+		},
+		"flutter-separate": {
+			"transformGroup": "flutter-separate",
+			"buildPath": "build/flutter/",
+			"files": [
+				{
+					"destination": "style_dictionary_color.dart",
+					"format": "flutter/class.dart",
+					"className": "StyleDictionaryColor",
+					"type": "color",
+					"filter": {
+						"attributes": {
+							"category": "colors"
+						}
+					}
+				},
+				{
+					"destination": "style_dictionary_font.dart",
+					"format": "flutter/class.dart",
+					"className": "StyleDictionaryFont",
+					"type": "text",
+					"filter": {
+						"attributes": {
+							"category": "font"
+						}
+					}
+				},
+				{
+					"destination": "style_dictionary_typography.dart",
+					"format": "flutter/class.dart",
+					"className": "StyleDictionaryTypography",
+					"type": "text",
+					"filter": {
+						"attributes": {
+							"category": "typography"
+						}
+					}
+				}
+			]
+		},
+		"tailwind": {
+			"transformGroup": "JS",
+			"buildPath": "build/tailwind/",
+			"files": [
+				{
+					"destination": "tailwind-tokens.json",
+					"format": "tailwind"
+				}
+			]
+		},
+		"db-core-typography-classes": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "typography-classes.scss",
+					"format": "db-core-typography-classes"
+				}
+			]
+		},
+		"db-core-typography-placeholder": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "_typography-placeholder.scss",
+					"format": "db-core-typography-placeholder"
+				}
+			]
+		},
+		"db-core-scaling-classes": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "scaling-classes.scss",
+					"format": "db-core-scaling-classes"
+				}
+			]
+		},
+		"db-core-scaling-placeholder": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "_scaling-placeholder.scss",
+					"format": "db-core-scaling-placeholder"
+				}
+			]
+		},
+		"db-core-color-placeholder": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "_color-placeholder.scss",
+					"format": "db-core-color-placeholder"
+				}
+			]
+		},
+		"db-core-color-classes": {
+			"transformGroup": "scss",
+			"buildPath": "build/scss/",
+			"files": [
+				{
+					"destination": "color-classes.scss",
+					"format": "db-core-color-classes"
+				}
+			]
+		},
+		"android": {
+			"transformGroup": "android",
+			"buildPath": "build/android/src/main/res/values/",
+			"files": [
+				{
+					"destination": "style_dictionary_colors.xml",
+					"format": "android/colors"
+				}
+			]
+		},
+		"android-asset": {
+			"transformGroup": "android",
+			"buildPath": "build/android/src/main/",
+			"files": [
+				{
+					"destination": "assets/data/properties.json",
+					"format": "json"
+				}
+			],
+			"actions": ["copy_assets"]
+		},
+		"ios": {
+			"transformGroup": "ios",
+			"buildPath": "build/ios/Classes/Generated/",
+			"prefix": "db",
+			"files": [
+				{
+					"destination": "StyleDictionaryColor.h",
+					"format": "ios/colors.h",
+					"className": "StyleDictionaryColor",
+					"type": "StyleDictionaryColorName",
+					"filter": {
+						"attributes": {
+							"category": "colors"
+						}
+					}
+				},
+				{
+					"destination": "StyleDictionaryColor.m",
+					"format": "ios/colors.m",
+					"className": "StyleDictionaryColor",
+					"type": "StyleDictionaryColorName",
+					"filter": {
+						"attributes": {
+							"category": "colors"
+						}
+					}
+				},
+				{
+					"destination": "StyleDictionaryProperties.h",
+					"format": "ios/singleton.h",
+					"className": "StyleDictionaryProperties"
+				}
+			]
+		},
+		"ios-swift": {
+			"transformGroup": "Swift",
+			"buildPath": "build/ios-swift/",
+			"files": [
+				{
+					"destination": "StyleDictionary+Class.swift",
+					"format": "ios-swift/class.swift",
+					"className": "StyleDictionaryClass",
+					"filter": {}
+				},
+				{
+					"destination": "StyleDictionary+Enum.swift",
+					"format": "ios-swift/enum.swift",
+					"className": "StyleDictionaryEnum",
+					"filter": {}
+				},
+				{
+					"destination": "StyleDictionary+Struct.swift",
+					"format": "ios-swift/any.swift",
+					"className": "StyleDictionaryStruct",
+					"filter": {},
+					"options": {
+						"imports": "SwiftUI",
+						"objectType": "struct",
+						"accessControl": "internal"
+					}
+				}
+			]
+		},
+		"ios-swift-separate-enums": {
+			"transformGroup": "ios-swift-separate",
+			"buildPath": "build/ios-swift/",
+			"files": [
+				{
+					"destination": "StyleDictionaryColor.swift",
+					"format": "ios-swift/enum.swift",
+					"className": "StyleDictionaryColor",
+					"filter": {
+						"attributes": {
+							"category": "colors"
+						}
+					}
+				}
+			]
+		}
+	}
+}

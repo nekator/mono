@@ -1,0 +1,4 @@
+assets/fonts/**/sources
+build/
+out/
+source/_patterns/**
