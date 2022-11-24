@@ -32,6 +32,7 @@ useMetadata({
 export default function DBButton(props: DBButtonProps) {
 	const state = useStore<DBButtonState>({
 		makeAlert() {
+			// TODO: remove this, it was just for testing
 			alert(`Button: ${props.text} works.`);
 		}
 	});
