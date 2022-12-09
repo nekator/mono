@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@angular/core": "~13.1.0",
-    "@builder.io/eslint-plugin-mitosis": "^0.0.10",
+    "@builder.io/eslint-plugin-mitosis": "^0.0.12",
     "cpr": "3.0.1",
     "eslint": "^8.29.0",
     "hygen": "^6.2.11",
