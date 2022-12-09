@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "@db-ui/foundations": "*",
-    "@builder.io/mitosis": "^0.0.80",
+    "@builder.io/mitosis": "^0.0.82",
     "@builder.io/mitosis-cli": "^0.0.38"
   },
   "devDependencies": {
