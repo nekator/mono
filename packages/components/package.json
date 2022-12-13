@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@db-ui/foundations": "0.0.0-0-4e25638",
+    "@db-ui/foundations": "*",
     "@builder.io/mitosis": "^0.0.82",
     "@builder.io/mitosis-cli": "^0.0.40"
   },
