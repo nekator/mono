@@ -36,7 +36,6 @@
   "main": "dist/fesm5.js",
   "types": "dist/core.d.ts",
   "dependencies": {
-    "@db-ui/foundations": "*",
     "@angular/animations": "~14.2.12",
     "@angular/common": "~14.2.12",
     "@angular/compiler": "~14.2.12",
@@ -44,6 +43,7 @@
     "@angular/forms": "~14.2.12",
     "@angular/platform-browser": "~14.2.12",
     "@angular/platform-browser-dynamic": "~14.2.12",
+    "@db-ui/foundations": "0.0.0-0-4e25638",
     "rxjs": "~7.4.0",
     "tslib": "^2.4.1",
     "zone.js": "~0.11.4"
