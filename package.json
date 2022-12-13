@@ -40,7 +40,7 @@
     "build-showcases": "npm-run-all -p build-showcases:*",
     "start:foundations": "npm run start --workspace=@db-ui/foundations",
     "start:components": "npm run start --workspace=@db-ui/components",
-    "start-showcase:angular": "npm run dev --workspace=angular-lts-showcase",
+    "start-showcase:angular-lts": "npm run dev --workspace=angular-lts-showcase",
     "start-showcase:next": "npm run dev --workspace=next-showcase",
     "start-showcase:react": "npm run dev --workspace=react-showcase",
     "start-showcase:svelte": "npm run dev --workspace=svelte-showcase",
