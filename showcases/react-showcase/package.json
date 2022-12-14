@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "start": "vite",
-    "build:tcc": "tsc",
+    "build:tsc": "tsc",
     "build:vite": "vite build",
     "build:copy": "cpr dist ../../build-showcases/react-showcase",
     "build": "npm-run-all build:*",
@@ -23,6 +23,6 @@
     "@vitejs/plugin-react": "^3.0.0",
     "sass": "^1.56.2",
     "typescript": "^4.6.4",
-    "vite": "^4.0.0"
+    "vite": "^4.0.1"
   }
 }
