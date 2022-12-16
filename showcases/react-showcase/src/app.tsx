@@ -1,5 +1,4 @@
 import { DBButton, DBIcon, DBCard, DBDivider, DBInput } from '../../../output/react/src';
-import { useRef } from 'react';
 
 const App = () => {
 	const onChangeEvent = (event: any) => {
