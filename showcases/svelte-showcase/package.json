@@ -13,6 +13,6 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "sass": "^1.56.2",
     "svelte": "^3.55.0",
-    "vite": "^4.0.1"
+    "vite": "^4.0.2"
   }
 }
