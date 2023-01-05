@@ -30,29 +30,33 @@ const App = () => (
 					label="Textlabel"
 					placeholder="irgendein Text"
 					iconBefore="edit"
+					variant="error"
 				/>
-			</section>
 
-			<section className="db-ui-expressive">
 				<DBInput
 					description="Das ist die Beschreibung"
 					label="Textlabel"
 					placeholder="irgendein Text"
 					iconBefore="edit"
 					iconAfter="heart"
-					variant="error"
+					variant="warning"
 				/>
 			</section>
 
 			<section className="db-ui-regular">
-				<DBInput label="Textlabel" placeholder="irgendein Text" />
+				<DBInput
+					label="Textlabel"
+					placeholder="irgendein Text"
+					iconAfter="heart"
+				/>
 			</section>
 
 			<section className="db-ui-functional">
-				<DBInput />
+				<DBInput label="Textlabel" placeholder="irgendein Text" />
+				<DBInput label="Textlabel" placeholder="irgendein Text" variant="information" />
 			</section>
-		</div>
+			</div>
 	</main>
-);
+	);
 
 export default App;
