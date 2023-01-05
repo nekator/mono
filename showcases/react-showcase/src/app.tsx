@@ -56,6 +56,15 @@ const App = () => {
 						onChange={onChangeEvent}
 						validityChange={onUpdateValidity}
 					/>
+
+					<DBInput
+						description="Das ist die Beschreibung"
+						label="Textlabel"
+						placeholder="irgendein Text"
+						iconBefore="edit"
+						iconAfter="heart"
+						variant="warning"
+					/>
 				</section>
 
 				<section className="db-ui-regular">
