@@ -28,17 +28,7 @@ const App = () => (
 			<section className="db-ui-expressive">
 				<DBInput
 					description="Das ist die Beschreibung"
-					label="Textlabel"
-					placeholder="irgendein Text"
-					iconBefore="edit"
-					id="input-expr"
-				/>
-			</section>
-
-			<section className="db-ui-expressive">
-				<DBInput
-					description="Das ist die Beschreibung"
-					label="Textlabel"
+					label="Startbahnhof eingeben"
 					placeholder="irgendein Text"
 					iconBefore="edit"
 					variant="error"
@@ -47,7 +37,7 @@ const App = () => (
 
 				<DBInput
 					description="Das ist die Beschreibung"
-					label="Input required"
+					label="Startbahnhof eingeben"
 					placeholder="irgendein Text"
 					iconBefore="edit"
 					iconAfter="heart"
@@ -59,7 +49,7 @@ const App = () => (
 
 			<section className="db-ui-regular">
 				<DBInput
-					label="Textlabel"
+					label="Startbahnhof eingeben"
 					placeholder="irgendein Text"
 					iconAfter="heart"
 					id="input-reg"
@@ -67,9 +57,12 @@ const App = () => (
 			</section>
 
 			<section className="db-ui-functional">
-				<DBInput label="Textlabel" placeholder="irgendein Text" />
 				<DBInput
-					label="Textinput disabled"
+					label="Startbahnhof eingeben"
+					placeholder="irgendein Text"
+				/>
+				<DBInput
+					label="Textinput eingeben disabled"
 					placeholder="irgendein Text"
 					variant="information"
 					id="input-func"
