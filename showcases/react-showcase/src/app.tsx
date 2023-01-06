@@ -59,11 +59,13 @@ const App = () => {
 
 					<DBInput
 						description="Das ist die Beschreibung"
-						label="Textlabel"
+						label="Input required"
 						placeholder="irgendein Text"
 						iconBefore="edit"
 						iconAfter="heart"
 						variant="warning"
+						id="input-expr-warning"
+						required="true"
 					/>
 				</section>
 
