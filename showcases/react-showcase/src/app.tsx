@@ -59,7 +59,7 @@ const App = () => {
 
 					<DBInput
 						description="Das ist die Beschreibung"
-						label="Input required"
+						label="Startbahnhof eingeben"
 						placeholder="irgendein Text"
 						iconBefore="edit"
 						iconAfter="heart"
