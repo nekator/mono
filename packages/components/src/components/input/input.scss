@@ -17,7 +17,8 @@ $icons-path: "../../../icons/" !default;
 	transition: opacity 0.08s, transform 0.15s;
 	opacity: var(--db-input-focus-opacity);
 
-	transform: translate($translationX, calc($db-sizing-md * $transformScale))
+	// add 0.1em to adjust label with input padding-inline-start
+	transform: translate(calc($translationX + 0.1em), calc($db-sizing-md * $transformScale))
 		scale(var(--db-input-label-scale));
 }
 
@@ -146,7 +147,8 @@ $icons-path: "../../../icons/" !default;
 					$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
 						$db-spacing-fixed-xs
 				);
-				padding-top: $db-spacing-fixed-xs;
+				// move filled text for expressive and regular to center with focused label
+				padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
 
 				+ label {
 					@include label-focus-animation();
@@ -355,6 +357,19 @@ $icons-path: "../../../icons/" !default;
 
 		& ~ .elm-state-icon {
 			@include icon(glyph(info), 20, "filled", "after", false);
+		}
+	}
+}
+
+// disable transform animation for functional input
+.db-ui-functional .db-input > label {
+	&:focus,
+	&:not(:placeholder-shown) {
+		&:not(:disabled) {
+			transform: translate(
+				var(--db-input-padding-inline-start),
+				calc(-1 * var(--db-sizing-md))
+			);
 		}
 	}
 }
