@@ -56,7 +56,7 @@ export default function DBInput(props: DBInputProps) {
 			<Show when={props.variant}>
 				<DBIcon
 					icon={props.variant && iconVariants[props.variant]}
-					className=" elm-state-icon"
+					className="elm-state-icon"
 				/>
 			</Show>
 			<Show when={props.iconAfter}>
