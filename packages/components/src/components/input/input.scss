@@ -108,7 +108,7 @@ $icons-path: "../../../icons/" !default;
 		);
 		transition: transform 0.2s $db-transition-functional-timing;
 		height: $db-sizing-md;
-		// TODO lets discuss this her: https://github.com/db-ui/core/issues/223
+		// TODO lets discuss this here: https://github.com/db-ui/core/issues/223
 		pointer-events: none;
 		// setting max-width to prevent users from too long labels by displaying text-overflow: ellipsis
 		max-width: var(--db-input-label-max-width, 80%);
