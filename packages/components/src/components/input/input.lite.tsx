@@ -33,7 +33,7 @@ export default function DBInput(props: DBInputProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			<Show when={props.iconBefore}>
-				<DBIcon icon={props.iconBefore} className=" icon-before" />
+				<DBIcon icon={props.iconBefore} className="icon-before" />
 			</Show>
 			<input
 				id={props.id}
@@ -60,7 +60,7 @@ export default function DBInput(props: DBInputProps) {
 				/>
 			</Show>
 			<Show when={props.iconAfter}>
-				<DBIcon icon={props.iconAfter} className=" icon-after" />
+				<DBIcon icon={props.iconAfter} className="icon-after" />
 			</Show>
 		</div>
   );
