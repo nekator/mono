@@ -1,4 +1,4 @@
-import { onMount, Show, useMetadata, useStore } from "@builder.io/mitosis";
+import { onMount, Show, useMetadata, useRef, useStore } from "@builder.io/mitosis";
 import { DBInputState, DBInputProps, iconVariants } from "./model";
 import { DBIcon } from '../icon';
 import "./input.scss";
@@ -12,7 +12,44 @@ useMetadata({
 });
 
 export default function DBInput(props: DBInputProps) {
-  const state = useStore<DBInputState>({});
+  const textInputRef = useRef(null);
+
+
+  const state = useStore<DBInputState>({
+		_isValid: undefined,
+		handleChange: (event) => {
+			if (props.onChange) {
+				props.onChange(event);
+			}
+			if (props.change) {
+				props.change(event);
+			}
+
+			if (textInputRef?.validity?.valid != state._isValid ) {
+				state._isValid = textInputRef?.validity?.valid;
+				if( props.validityChange ) {
+					props.validityChange(textInputRef?.validity?.valid);
+				}
+			}
+		},
+
+		handleBlur: (event) => {
+			if (props.onBlur) {
+				props.onBlur(event);
+			}
+			if (props.blur) {
+				props.blur(event);
+			}
+		},
+		handleFocus: (event) => {
+			if (props.onFocus) {
+				props.onFocus(event);
+			}
+			if (props.focus) {
+				props.focus(event);
+			}
+		}
+  });
 
   onMount(() => {
     if (props.stylePath) {
@@ -36,6 +73,7 @@ export default function DBInput(props: DBInputProps) {
 				<DBIcon icon={props.iconBefore} className="icon-before" />
 			</Show>
 			<input
+				ref={textInputRef}
 				id={props.id}
 				name={props.name}
 				type={props.type || 'text'}
@@ -43,6 +81,13 @@ export default function DBInput(props: DBInputProps) {
 				aria-labelledby={props.id + '-label'}
 				disabled={props.disabled}
 				required={props.required}
+				value={props.value}
+				maxLength={props.maxLength}
+				minLength={props.minLength}
+				pattern={props.pattern}
+				onChange={(event) => state.handleChange(event)}
+				onBlur={(event) => state.handleBlur(event)}
+				onFocus={(event) => state.handleFocus(event)}
 			/>
 			<label for={props.id} aria-hidden="true" id={props.id + '-label'}>
 				<span>{props.label}</span>
@@ -53,7 +98,7 @@ export default function DBInput(props: DBInputProps) {
 			<Show when={props.description}>
 				<p className="description">{props.description}</p>
 			</Show>
-			<Show when={props.variant}>
+			<Show when={props.variant || props.required || props.pattern}>
 				<DBIcon
 					icon={props.variant && iconVariants[props.variant]}
 					className="elm-state-icon"

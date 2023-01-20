@@ -1,13 +1,13 @@
-import { GlobalProps, GlobalState } from '../../shared/model';
+import { FocusEventProps, FocusEventState, GlobalTextProps, ValidEventProps, ValidEventState } from './../../shared/model';
+import { ChangeEventState, ChangeEventProps, GlobalProps, GlobalState } from '../../shared/model';
 
-export interface DBInputDefaultProps {
+export type DBInputDefaultProps = {
 	id: string;
 	label: string;
-	type?: 'text' | 'search' | 'date' | 'number'
+	type?: 'text' | 'search' | 'number' | 'tel' | 'url' | 'email' | 'password' | 'hidden' | 'date' | 'datetime-local' | 'week';
 	variant?: 'error' | 'success' | 'warning' | 'information';
 	iconBefore?: string;
 	iconAfter?: string;
-	placeholder?: string;
 	disabled?: boolean;
 	required?: boolean;
 	value?: any;
@@ -22,8 +22,10 @@ export const iconVariants:any = {
 	'information': 'info'
 }
 
-export type DBInputProps = DBInputDefaultProps  & GlobalProps;
+export type DBInputProps = DBInputDefaultProps & GlobalProps & GlobalTextProps & ChangeEventProps & FocusEventProps & ValidEventProps;
 
-export interface DBInputDefaultState {}
+export type DBInputDefaultState = {
+	_isValid: boolean | undefined;
+};
 
-export type DBInputState = DBInputDefaultState & GlobalState;
+export type DBInputState = DBInputDefaultState & GlobalState & ChangeEventState & FocusEventState;
