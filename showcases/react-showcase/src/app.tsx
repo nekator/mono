@@ -1,13 +1,9 @@
 import { DBButton, DBIcon, DBCard, DBDivider, DBInput } from '../../../output/react/src';
 
 const App = () => {
-	const onChangeEvent = (event: any) => {
-		console.log("On Change Input event", event, event.target.value);
-	}
+	const onChangeEvent = (event: any) => {}
 
-	const onUpdateValidity = (isValid: boolean) => {
-		console.log('input valid?', isValid);
-	}
+	const onUpdateValidity = (isValid: boolean) => {}
 
 	return (
 		<main>
@@ -55,17 +51,6 @@ const App = () => {
 						required={true}
 						onChange={onChangeEvent}
 						validityChange={onUpdateValidity}
-					/>
-
-					<DBInput
-						description="Das ist die Beschreibung"
-						label="Startbahnhof eingeben"
-						placeholder="irgendein Text"
-						iconBefore="edit"
-						iconAfter="heart"
-						variant="warning"
-						id="input-expr-warning"
-						required="true"
 					/>
 				</section>
 
