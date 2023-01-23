@@ -17,6 +17,7 @@ export type DBInputDefaultProps = {
 
 export const iconVariants:any = {
 	'error': 'error',
+	// TODO: 'error-triangle' will change to "warning" soon
 	'warning': 'error-triangle',
 	'success': 'check-circle',
 	'information': 'info'
