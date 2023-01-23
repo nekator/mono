@@ -91,9 +91,6 @@ export default function DBInput(props: DBInputProps) {
 			/>
 			<label for={props.id} aria-hidden="true" id={props.id + '-label'}>
 				<span>{props.label}</span>
-				<Show when={props.required}>
-					<span> *</span>
-				</Show>
 			</label>
 			<Show when={props.description}>
 				<p className="description">{props.description}</p>
