@@ -1,10 +1,12 @@
-import { DBButton, DBIcon, DBCard, DBDivider, DBInput } from '../../../output/react/src';
+import {
+	DBButton,
+	DBIcon,
+	DBCard,
+	DBDivider,
+	DBInput
+} from '../../../output/react/src';
 
 const App = () => {
-	const onChangeEvent = (event: any) => {}
-
-	const onUpdateValidity = (isValid: boolean) => {}
-
 	return (
 		<main>
 			<h1>React</h1>
@@ -36,7 +38,6 @@ const App = () => {
 						placeholder="irgendein Text"
 						iconBefore="edit"
 						variant="error"
-						id="input-expr-error"
 						value="hello"
 					/>
 
@@ -49,8 +50,6 @@ const App = () => {
 						variant="warning"
 						id="input-expr-warning"
 						required={true}
-						onChange={onChangeEvent}
-						validityChange={onUpdateValidity}
 					/>
 					<DBInput
 						label="Startdatum"
@@ -100,6 +99,7 @@ const App = () => {
 				</section>
 			</div>
 		</main>
-	);};
+	);
+};
 
 export default App;

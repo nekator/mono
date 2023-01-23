@@ -1,8 +1,31 @@
 module.exports = [
-  {
-    name: "input",
-    defaultStylePath: "components/input/input.css",
-  },
+	{
+		name: 'input',
+		defaultStylePath: 'components/input/input.css',
+		overwrites: {
+			global: [
+				{ from: 'handleChange(event)', to: 'handleChange(event:any)' },
+				{ from: 'handleBlur(event)', to: 'handleBlur(event:any)' },
+				{ from: 'handleFocus(event)', to: 'handleFocus(event:any)' }
+			],
+			angular: [
+				{
+					from: 'this.textInputRef.nativeElement',
+					to: 'this.textInputRef?.nativeElement'
+				}
+			],
+			vue: [
+				{
+					from: 'import { DBInputState, DBInputProps, iconVariants } from "./model";',
+					to: 'import { iconVariants } from "./model";'
+				},
+				{
+					from: '_isValid: undefined,',
+					to: ''
+				}
+			]
+		}
+	},
 
 	{
 		name: 'divider',

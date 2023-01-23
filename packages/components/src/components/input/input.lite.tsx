@@ -1,19 +1,26 @@
-import { onMount, Show, useMetadata, useRef, useStore } from "@builder.io/mitosis";
-import { DBInputState, DBInputProps, iconVariants } from "./model";
+import {
+	onMount,
+	Show,
+	useMetadata,
+	useRef,
+	useStore
+} from '@builder.io/mitosis';
+import { DBInputState, DBInputProps, iconVariants } from './model';
 import { DBIcon } from '../icon';
-import "./input.scss";
+import { DEFAULT_ID, uuid } from '../../utils';
 
 useMetadata({
-  isAttachedToShadowDom: false,
-  component: {
-    includeIcon: false,
-    properties: [],
-  },
+	isAttachedToShadowDom: false,
+	component: {
+		includeIcon: false,
+		properties: []
+	}
 });
 
 export default function DBInput(props: DBInputProps) {
-  const textInputRef = useRef(null);
-  const state = useStore<DBInputState>({
+	const textInputRef = useRef<HTMLInputElement>(null);
+	const state = useStore<DBInputState>({
+		mId: DEFAULT_ID,
 		_isValid: undefined,
 		handleChange: (event) => {
 			if (props.onChange) {
@@ -23,10 +30,10 @@ export default function DBInput(props: DBInputProps) {
 				props.change(event);
 			}
 
-			if (textInputRef?.validity?.valid != state._isValid ) {
+			if (textInputRef?.validity?.valid != state._isValid) {
 				state._isValid = textInputRef?.validity?.valid;
-				if( props.validityChange ) {
-					props.validityChange(textInputRef?.validity?.valid);
+				if (props.validityChange) {
+					props.validityChange(!!textInputRef?.validity?.valid);
 				}
 			}
 		},
@@ -46,16 +53,23 @@ export default function DBInput(props: DBInputProps) {
 				props.focus(event);
 			}
 		}
-  });
+	});
 
-  onMount(() => {
-    if (props.stylePath) {
-      state.stylePath = props.stylePath;
-    }
-  });
+	onMount(() => {
+		if (props.id) {
+			state.mId = props.id;
+		} else {
+			state.mId = 'input-' + uuid();
+		}
+		if (props.stylePath) {
+			state.stylePath = props.stylePath;
+		}
+	});
 
-  return (
-		<div class={ 'db-input ' + (props.className || '') } data-variant={props.variant}>
+	return (
+		<div
+			class={'db-input ' + (props.className || '')}
+			data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
@@ -64,11 +78,11 @@ export default function DBInput(props: DBInputProps) {
 			</Show>
 			<input
 				ref={textInputRef}
-				id={props.id}
+				id={state.mId}
 				name={props.name}
 				type={props.type || 'text'}
 				placeholder={props.placeholder}
-				aria-labelledby={props.id + '-label'}
+				aria-labelledby={state.mId + '-label'}
 				disabled={props.disabled}
 				required={props.required}
 				value={props.value}
@@ -79,7 +93,10 @@ export default function DBInput(props: DBInputProps) {
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
 			/>
-			<label for={props.id} aria-hidden="true" id={props.id + '-label'}>
+			<label
+				htmlFor={state.mId}
+				aria-hidden="true"
+				id={state.mId + '-label'}>
 				<span>{props.label}</span>
 			</label>
 			<Show when={props.description}>
@@ -95,5 +112,5 @@ export default function DBInput(props: DBInputProps) {
 				<DBIcon icon={props.iconAfter} className="icon-after" />
 			</Show>
 		</div>
-  );
+	);
 }
