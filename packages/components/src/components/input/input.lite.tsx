@@ -13,8 +13,6 @@ useMetadata({
 
 export default function DBInput(props: DBInputProps) {
   const textInputRef = useRef(null);
-
-
   const state = useStore<DBInputState>({
 		_isValid: undefined,
 		handleChange: (event) => {
@@ -32,7 +30,6 @@ export default function DBInput(props: DBInputProps) {
 				}
 			}
 		},
-
 		handleBlur: (event) => {
 			if (props.onBlur) {
 				props.onBlur(event);

@@ -52,6 +52,12 @@ const App = () => {
 						onChange={onChangeEvent}
 						validityChange={onUpdateValidity}
 					/>
+					<DBInput
+						label="Startdatum"
+						placeholder="irgendein Text"
+						type="datetime-local"
+						id="input-expr-date"
+					/>
 				</section>
 
 				<section className="db-ui-regular">
@@ -62,6 +68,12 @@ const App = () => {
 						id="input-reg"
 						required={true}
 						minLength={5}
+					/>
+					<DBInput
+						label="Startdatum"
+						placeholder="irgendein Text"
+						type="week"
+						id="input-reg-date"
 					/>
 				</section>
 
@@ -77,6 +89,13 @@ const App = () => {
 						placeholder="irgendein Text"
 						variant="information"
 						disabled={true}
+					/>
+
+					<DBInput
+						label="Startdatum"
+						placeholder="irgendein Text"
+						type="datetime-local"
+						id="input-func-date"
 					/>
 				</section>
 			</div>

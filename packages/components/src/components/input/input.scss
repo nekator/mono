@@ -380,3 +380,14 @@ $icons-path: "../../../icons/" !default;
 		}
 	}
 }
+
+.db-ui-regular,
+.db-ui-expressive {
+	.db-input > input[type="date"]::-webkit-calendar-picker-indicator,
+	.db-input > input[type="week"]::-webkit-calendar-picker-indicator,
+	.db-input > input[type="datetime-local"]::-webkit-calendar-picker-indicator  {
+		// TODO change icon and use db-icons to adopt color for data-variants
+		margin-top: -0.75em;
+		padding: 0
+	}
+}
