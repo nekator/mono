@@ -60,7 +60,7 @@ export default function DBInput(props: DBInputProps) {
   return (
 		<div
 			class={
-				'db-input' +
+				'db-input ' +
 				(props.className || '') +
 				(props.iconBefore ? ' icon-before' : '') +
 				(props.iconAfter ? ' icon-after' : '')
