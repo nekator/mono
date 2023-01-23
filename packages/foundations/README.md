@@ -35,11 +35,11 @@ import "@db-ui/foundations/build/color-classes.css";
 
 ### SCSS
 
-Based on your technology you need to change the paths of the assets folder:
+Based on your technology/setup you need to change the paths of the assets folder:
 
--   Default: points to ../assets
--   Webpack: points to ~@db-ui/foundations/assets
--   Rollup: points to @db-ui/foundations/assets
+-   Default: points to `../assets`
+-   Webpack: points to `~@db-ui/foundations/assets`
+-   Rollup: points to `@db-ui/foundations/assets`
 -
 
 ```scss
