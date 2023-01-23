@@ -31,7 +31,7 @@ $icons-path: "../../../icons/" !default;
 	position: relative;
 
 	// padding-inline-end according to current amount of icons
-	&.icon-before {
+	&:has(> .icon-before) {
 		--db-input-padding-inline-start: #{calc(
 				2 * $db-spacing-fixed-sm + 1.25rem - 0.375rem
 			)};
@@ -42,7 +42,7 @@ $icons-path: "../../../icons/" !default;
 		}
 	}
 
-	&.icon-after,
+	&:has(> .icon-after),
 	&[data-variant] {
 		--db-input-padding-inline-end: #{calc(
 				2 * #{$db-spacing-fixed-sm} + 0.425rem
@@ -53,7 +53,7 @@ $icons-path: "../../../icons/" !default;
 		}
 	}
 
-	&[data-variant].icon-after {
+	&[data-variant]:has(> .icon-after) {
 		--db-input-padding-inline-end: #{calc(
 				2 * #{$db-spacing-fixed-sm} + 0.425rem + 0.75rem + #{$db-spacing-fixed-sm}
 			)};
@@ -63,7 +63,7 @@ $icons-path: "../../../icons/" !default;
 			padding-inline-end: var(--db-input-padding-inline-end);
 		}
 
-		.elm-state-icon::before {
+		.icon-input-state::before {
 			margin-inline-end: calc(0.75rem + $db-spacing-fixed-sm);
 		}
 	}
@@ -82,14 +82,14 @@ $icons-path: "../../../icons/" !default;
 		padding: 0 $db-spacing-fixed-sm;
 	}
 
-	&.icon-after .db-icon.icon-after::before {
+	&:has(> .icon-after) .db-icon.icon-after::before {
 		right: 0;
 	}
 
 	// currently not supported by firefox
 	&:has(> input:disabled) {
 		.db-icon,
-		.elm-state-icon::before {
+		.icon-input-state::before {
 			opacity: 0.5;
 		}
 	}
@@ -166,6 +166,13 @@ $icons-path: "../../../icons/" !default;
 			}
 		}
 
+		&:required {
+			+ label::after {
+				content: ' *';
+				padding-left: 0.2rem;
+			}
+		}
+
 		&[type="color"],
 		&[type="date"],
 		&[type="datetime-local"],
@@ -216,7 +223,7 @@ $icons-path: "../../../icons/" !default;
 					)};
 			}
 
-			& ~ .elm-state-icon {
+			& ~ .icon-input-state {
 				@include icon(glyph(search), 20, "filled", "before", false);
 			}
 
@@ -258,7 +265,7 @@ $icons-path: "../../../icons/" !default;
 	}
 
 	// #variations
-	.elm-state-icon {
+	.icon-input-state {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
@@ -300,11 +307,11 @@ $icons-path: "../../../icons/" !default;
 		}
 
 		& ~ .description,
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			color: $db-colors-critical-enabled;
 		}
 
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			@include icon(glyph(error), 20, "filled", "after", false);
 		}
 	}
@@ -317,11 +324,11 @@ $icons-path: "../../../icons/" !default;
 		}
 
 		& ~ .description,
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			color: $db-colors-warning-enabled;
 		}
 
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			@include icon(glyph(error-triangle), 20, "filled", "after", false);
 		}
 	}
@@ -334,11 +341,11 @@ $icons-path: "../../../icons/" !default;
 		}
 
 		& ~ .description,
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			color: $db-colors-success-enabled;
 		}
 
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			@include icon(glyph(check-circle), 20, "filled", "after", false);
 		}
 	}
@@ -351,11 +358,11 @@ $icons-path: "../../../icons/" !default;
 		}
 
 		& ~ .description,
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			color: $db-colors-information-enabled;
 		}
 
-		& ~ .elm-state-icon {
+		& ~ .icon-input-state {
 			@include icon(glyph(info), 20, "filled", "after", false);
 		}
 	}

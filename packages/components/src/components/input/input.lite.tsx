@@ -58,14 +58,7 @@ export default function DBInput(props: DBInputProps) {
   });
 
   return (
-		<div
-			class={
-				'db-input ' +
-				(props.className || '') +
-				(props.iconBefore ? ' icon-before' : '') +
-				(props.iconAfter ? ' icon-after' : '')
-			}
-			data-variant={props.variant}>
+		<div class={ 'db-input ' + (props.className || '') } data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
@@ -98,7 +91,7 @@ export default function DBInput(props: DBInputProps) {
 			<Show when={props.variant || props.required || props.pattern}>
 				<DBIcon
 					icon={props.variant && iconVariants[props.variant]}
-					className="elm-state-icon"
+					className="icon-input-state"
 				/>
 			</Show>
 			<Show when={props.iconAfter}>
