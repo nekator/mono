@@ -19,7 +19,7 @@ We currently support:
 ```ts
 // main.ts / main.js
 import "@db-ui/foundations/build/db-ui-foundations.css";
-// optional: to use db-ui-bg-success
+// optional: to use classes like e.g. db-ui-bg-success
 import "@db-ui/foundations/build/color-classes.css";
 ```
 
