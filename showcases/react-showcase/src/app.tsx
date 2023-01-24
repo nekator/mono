@@ -7,10 +7,9 @@ import {
 } from '../../../output/react/src';
 
 const App = () => {
-
 	const onClick = (event: any) => {
-		console.log("test");
-	}
+		console.log('test');
+	};
 
 	return (
 		<main>
@@ -104,6 +103,7 @@ const App = () => {
 				</section>
 			</div>
 		</main>
-	);};
+	);
+};
 
 export default App;

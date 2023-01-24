@@ -18,6 +18,6 @@ export class AppComponent {
 	];
 
 	onClick() {
-		console.log("click button");
+		console.log('click button');
 	}
 }
