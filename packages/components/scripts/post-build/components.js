@@ -104,6 +104,6 @@ module.exports = [
 	},
 	{
 		name: 'icon',
-		defaultStylePath: 'base/css/icon/icons.css'
+		defaultStylePath: 'components/icon/icon.css'
 	}
 ];
