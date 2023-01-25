@@ -32,7 +32,7 @@ useMetadata({
 
 export default function DBButton(props: DBButtonProps) {
 	const state = useStore<DBButtonState>({
-		handleClick(event) {
+		handleClick: (event) => {
 			if (props.onClick) {
 				props.onClick(event);
 			}
