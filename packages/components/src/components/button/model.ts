@@ -19,7 +19,7 @@ export type DBButtonProps = DBButtonDefaultProps &
 	GlobalProps &
 	ClickEventProps;
 
-export type DBButtonDefaultState = Record<string, unknown>;
+export type DBButtonDefaultState = {};
 
 export type DBButtonState = DBButtonDefaultState &
 	GlobalState &
