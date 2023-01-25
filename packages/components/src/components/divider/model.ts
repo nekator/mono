@@ -7,6 +7,6 @@ export type DBDividerDefaultProps = {
 
 export type DBDividerProps = DBDividerDefaultProps & GlobalProps;
 
-export type DBDividerDefaultState = Record<string, unknown>;
+export type DBDividerDefaultState = {};
 
 export type DBDividerState = DBDividerDefaultState & GlobalState;
