@@ -17,6 +17,7 @@ const App = () => {
 
 	const onSubmit = (event: any) => {
 		event.preventDefault();
+		// eslint-disable-next-line no-console
 		console.log('Submit Form', event);
 	};
 
@@ -62,7 +63,7 @@ const App = () => {
 						gap: '1rem',
 						margin: '1rem 0'
 					}}>
-					<section className="db-ui-expressive">
+					<form className="db-ui-expressive" onSubmit={onSubmit}>
 						<DBInput
 							description="Das ist die Beschreibung"
 							label="Startbahnhof eingeben"
@@ -70,45 +71,29 @@ const App = () => {
 							iconBefore="edit"
 							variant="error"
 							value="hello"
+							name="testInput"
 						/>
 
-			<div
-				style={{
-					display: 'flex',
-					gap: '1rem',
-					margin: '1rem 0'
-				}}>
-				<form className="db-ui-expressive" onSubmit={onSubmit}>
-					<DBInput
-						description="Das ist die Beschreibung"
-						label="Startbahnhof eingeben"
-						placeholder="irgendein Text"
-						iconBefore="edit"
-						variant="error"
-						value="hello"
-						name="testInput"
-					/>
+						<DBInput
+							description="Valid test"
+							label="Mit Event"
+							placeholder="irgendein Text"
+							iconBefore="edit"
+							iconAfter="heart"
+							variant="warning"
+							id="input-expr-warning"
+							required={true}
+						/>
+						<DBInput
+							label="Startdatum"
+							placeholder="irgendein Text"
+							type="datetime-local"
+							id="input-expr-date"
+						/>
+						<DBButton variant="secondary">Test</DBButton>
+					</form>
 
-					<DBInput
-						description="Valid test"
-						label="Mit Event"
-						placeholder="irgendein Text"
-						iconBefore="edit"
-						iconAfter="heart"
-						variant="warning"
-						id="input-expr-warning"
-						required={true}
-					/>
-					<DBInput
-						label="Startdatum"
-						placeholder="irgendein Text"
-						type="datetime-local"
-						id="input-expr-date"
-					/>
-					<DBButton variant="secondary">Test</DBButton>
-				</form>
-        
-				<section className="db-ui-regular">
+					<section className="db-ui-regular">
 						<DBInput
 							label="Startbahnhof eingeben"
 							placeholder="irgendein Text"

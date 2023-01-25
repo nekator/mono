@@ -23,13 +23,13 @@ export class AppComponent {
 	};
 
 	onClick() {
-    // eslint-disable-next-line no-console
+		// eslint-disable-next-line no-console
 		console.log('click event');
 	}
 
 	onSubmitForm(event: any): void {
 		event.preventDefault();
-    // eslint-disable-next-line no-console
+		// eslint-disable-next-line no-console
 		console.log('on submit Form', this.formData);
 	}
 }
