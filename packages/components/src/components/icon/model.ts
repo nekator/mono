@@ -1,4 +1,4 @@
-import { GlobalProps, GlobalState } from '../../shared/model';
+import { type GlobalProps, type GlobalState } from '../../shared/model';
 
 export type DBIconDefaultProps = {
 	icon?: string;
@@ -7,6 +7,6 @@ export type DBIconDefaultProps = {
 
 export type DBIconProps = DBIconDefaultProps & GlobalProps;
 
-export type DBIconDefaultState = {};
+export type DBIconDefaultState = Record<string, unknown>;
 
 export type DBIconState = DBIconDefaultState & GlobalState;

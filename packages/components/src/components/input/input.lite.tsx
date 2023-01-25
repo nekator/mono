@@ -5,9 +5,9 @@ import {
 	useRef,
 	useStore
 } from '@builder.io/mitosis';
-import { DBInputState, DBInputProps, iconVariants } from './model';
 import { DBIcon } from '../icon';
 import { DEFAULT_ID, uuid } from '../../utils';
+import { type DBInputState, type DBInputProps, iconVariants } from './model';
 
 useMetadata({
 	isAttachedToShadowDom: false,
@@ -22,10 +22,11 @@ export default function DBInput(props: DBInputProps) {
 	const state = useStore<DBInputState>({
 		mId: DEFAULT_ID,
 		_isValid: undefined,
-		handleChange: (event) => {
+		handleChange(event) {
 			if (props.onChange) {
 				props.onChange(event);
 			}
+
 			if (props.change) {
 				props.change(event);
 			}
@@ -33,22 +34,26 @@ export default function DBInput(props: DBInputProps) {
 			if (textInputRef?.validity?.valid != state._isValid) {
 				state._isValid = textInputRef?.validity?.valid;
 				if (props.validityChange) {
-					props.validityChange(!!textInputRef?.validity?.valid);
+					props.validityChange(
+						Boolean(textInputRef?.validity?.valid)
+					);
 				}
 			}
 		},
-		handleBlur: (event) => {
+		handleBlur(event) {
 			if (props.onBlur) {
 				props.onBlur(event);
 			}
+
 			if (props.blur) {
 				props.blur(event);
 			}
 		},
-		handleFocus: (event) => {
+		handleFocus(event) {
 			if (props.onFocus) {
 				props.onFocus(event);
 			}
+
 			if (props.focus) {
 				props.focus(event);
 			}
@@ -56,11 +61,7 @@ export default function DBInput(props: DBInputProps) {
 	});
 
 	onMount(() => {
-		if (props.id) {
-			state.mId = props.id;
-		} else {
-			state.mId = 'input-' + uuid();
-		}
+		state.mId = props.id ? props.id : 'input-' + uuid();
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}

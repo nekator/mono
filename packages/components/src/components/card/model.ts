@@ -1,8 +1,8 @@
 import {
-	ClickEventProps,
-	ClickEventState,
-	GlobalProps,
-	GlobalState
+	type ClickEventProps,
+	type ClickEventState,
+	type GlobalProps,
+	type GlobalState
 } from '../../shared/model';
 
 export type DBCardDefaultProps = {
@@ -17,6 +17,6 @@ export type DBCardDefaultProps = {
 
 export type DBCardProps = DBCardDefaultProps & GlobalProps & ClickEventProps;
 
-export type DBCardDefaultState = {};
+export type DBCardDefaultState = Record<string, unknown>;
 
 export type DBCardState = DBCardDefaultState & GlobalState & ClickEventState;

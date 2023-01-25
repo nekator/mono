@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
-import type { DBButtonProps, DBButtonState } from './model';
 import { DBIcon } from '../icon';
+import type { DBButtonProps, DBButtonState } from './model';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -32,7 +32,7 @@ useMetadata({
 
 export default function DBButton(props: DBButtonProps) {
 	const state = useStore<DBButtonState>({
-		handleClick: (event) => {
+		handleClick(event) {
 			if (props.onClick) {
 				props.onClick(event);
 			}
