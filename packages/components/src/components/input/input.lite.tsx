@@ -22,7 +22,7 @@ export default function DBInput(props: DBInputProps) {
 	const state = useStore<DBInputState>({
 		mId: DEFAULT_ID,
 		_isValid: undefined,
-		handleChange(event) {
+		handleChange: (event) => {
 			if (props.onChange) {
 				props.onChange(event);
 			}
