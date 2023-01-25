@@ -15,6 +15,12 @@ const App = () => {
 		console.log('click event test');
 	};
 
+	const onSubmit = (event: any) => {
+		event.preventDefault();
+		// eslint-disable-next-line no-console
+		console.log('Submit Form', event);
+	};
+
 	return (
 		<DBPage
 			type="fixedHeaderFooter"
@@ -57,7 +63,7 @@ const App = () => {
 						gap: '1rem',
 						margin: '1rem 0'
 					}}>
-					<section className="db-ui-expressive">
+					<form className="db-ui-expressive" onSubmit={onSubmit}>
 						<DBInput
 							description="Das ist die Beschreibung"
 							label="Startbahnhof eingeben"
@@ -65,6 +71,7 @@ const App = () => {
 							iconBefore="edit"
 							variant="error"
 							value="hello"
+							name="testInput"
 						/>
 
 						<DBInput
@@ -83,7 +90,8 @@ const App = () => {
 							type="datetime-local"
 							id="input-expr-date"
 						/>
-					</section>
+						<DBButton variant="secondary">Test</DBButton>
+					</form>
 
 					<section className="db-ui-regular">
 						<DBInput
