@@ -11,6 +11,11 @@ const App = () => {
 		console.log('test');
 	};
 
+	const onSubmit = (event: any) => {
+		event.preventDefault();
+		console.log('Submit Form', event);
+	};
+
 	return (
 		<main>
 			<h1>React</h1>
@@ -35,7 +40,7 @@ const App = () => {
 					gap: '1rem',
 					margin: '1rem 0'
 				}}>
-				<section className="db-ui-expressive">
+				<form className="db-ui-expressive" onSubmit={onSubmit}>
 					<DBInput
 						description="Das ist die Beschreibung"
 						label="Startbahnhof eingeben"
@@ -43,6 +48,7 @@ const App = () => {
 						iconBefore="edit"
 						variant="error"
 						value="hello"
+						name="testInput"
 					/>
 
 					<DBInput
@@ -61,7 +67,10 @@ const App = () => {
 						type="datetime-local"
 						id="input-expr-date"
 					/>
-				</section>
+					<DBButton variant="secondary" type="submit">
+						Test
+					</DBButton>
+				</form>
 
 				<section className="db-ui-regular">
 					<DBInput

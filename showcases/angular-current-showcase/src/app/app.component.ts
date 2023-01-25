@@ -17,7 +17,18 @@ export class AppComponent {
 		{ name: 'tab-bar-2', label: '2-Tab2', content: 'Content 2-2' }
 	];
 
+	formData = {
+		username: 'Test',
+		password: '1234'
+	};
+
 	onClick() {
-		console.log('click button');
+		console.log('click event');
+	}
+
+	onSubmitForm(event: any): void {
+		event.preventDefault();
+
+		console.log('on submit Form', this.formData);
 	}
 }

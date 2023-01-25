@@ -54,6 +54,9 @@ export type DBInputProps = DBInputDefaultProps &
 export type DBInputDefaultState = {
 	mId?: string;
 	_isValid: boolean | undefined;
+	_value: any;
+	_placeholder: string;
+	_label: string;
 };
 
 export type DBInputState = DBInputDefaultState &
