@@ -28,7 +28,7 @@ useMetadata({
 
 export default function DBCard(props: DBCardProps) {
 	const state = useStore<DBCardState>({
-		handleClick(event: any) {
+		handleClick: (event: any) => {
 			if (props.onClick) {
 				props.onClick(event);
 			}
