@@ -7,6 +7,6 @@ export type DBIconDefaultProps = {
 
 export type DBIconProps = DBIconDefaultProps & GlobalProps;
 
-export type DBIconDefaultState = Record<string, unknown>;
+export type DBIconDefaultState = {};
 
 export type DBIconState = DBIconDefaultState & GlobalState;
