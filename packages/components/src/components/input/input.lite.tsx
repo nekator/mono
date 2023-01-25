@@ -40,7 +40,7 @@ export default function DBInput(props: DBInputProps) {
 				}
 			}
 		},
-		handleBlur(event) {
+		handleBlur: (event) => {
 			if (props.onBlur) {
 				props.onBlur(event);
 			}
@@ -49,7 +49,7 @@ export default function DBInput(props: DBInputProps) {
 				props.blur(event);
 			}
 		},
-		handleFocus(event) {
+		handleFocus: (event) => {
 			if (props.onFocus) {
 				props.onFocus(event);
 			}
