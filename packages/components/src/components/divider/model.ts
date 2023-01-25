@@ -1,9 +1,9 @@
-import { type GlobalProps, type GlobalState } from '../../shared/model';
+import { GlobalProps, GlobalState } from '../../shared/model';
 
-export type DBDividerDefaultProps = {
+export interface DBDividerDefaultProps {
 	margin?: 'none' | '_';
 	variant?: 'horizontal' | 'vertical';
-};
+}
 
 export type DBDividerProps = DBDividerDefaultProps & GlobalProps;
 
