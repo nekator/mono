@@ -70,7 +70,7 @@ export default function DBInput(props: DBInputProps) {
 		if (props.value) {
 			state._value = props.value;
 		}
-		
+
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
