@@ -34,9 +34,7 @@ export default function DBInput(props: DBInputProps) {
 			if (textInputRef?.validity?.valid != state._isValid) {
 				state._isValid = textInputRef?.validity?.valid;
 				if (props.validityChange) {
-					props.validityChange(
-						Boolean(textInputRef?.validity?.valid)
-					);
+					props.validityChange(!!textInputRef?.validity?.valid);
 				}
 			}
 		},
