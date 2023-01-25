@@ -18,6 +18,6 @@ export type DBCardProps = DBCardDefaultProps &
 	ClickEventProps &
 	ImageProps;
 
-export type DBCardDefaultState = Record<string, unknown>;
+export type DBCardDefaultState = {};
 
 export type DBCardState = DBCardDefaultState & GlobalState & ClickEventState;
