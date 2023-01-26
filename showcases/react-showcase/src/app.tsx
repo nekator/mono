@@ -135,13 +135,17 @@ const App = () => {
 				</div>
 
 				<section className="db-ui-functional">
-					<DBLink></DBLink>
+					<DBLink content="internal">Link Component</DBLink>
 				</section>
 				<section className="db-ui-regular">
-					<DBLink></DBLink>
+					<DBLink href="github.com" size="small"></DBLink>
 				</section>
 				<section className="db-ui-expressive">
-					<DBLink></DBLink>
+					<p>
+						Irgendein Text davor
+						<DBLink content="external">dieser Link</DBLink> und
+						danach
+					</p>
 				</section>
 			</div>
 		</DBPage>

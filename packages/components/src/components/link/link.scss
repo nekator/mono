@@ -8,7 +8,7 @@
 
 .db-link {
 	color: var(--db-current-color, $db-colors-neutral-on-bg-enabled);
-	display: inline-block;
+	display: flex;
 	border-radius: to-rem($pxValue: 6);
 
 	// Link underline
@@ -48,7 +48,8 @@
 
 	&[data-content="internal"],
 	&[data-content="external"] {
-		&::after {
+		&::after,
+		.db-icon::before {
 			--icon-margin-before: var(--db-spacing-fixed-2xs);
 			margin-top: -3px;
 		}
@@ -66,9 +67,14 @@
 	&[data-size="small"] {
 		&[data-content="internal"],
 		&[data-content="external"] {
-			&::after {
+			&::after,
+			.db-icon::before {
 				--icon-margin-before: var(--db-spacing-fixed-3xs);
 			}
 		}
+	}
+
+	.db-icon {
+		display: inline;
 	}
 }
