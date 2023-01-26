@@ -6,7 +6,8 @@ import {
 	DBHeader,
 	DBIcon,
 	DBPage,
-	DBInput
+	DBInput,
+	DBLink
 } from '../../../output/react/src';
 
 const App = () => {
@@ -132,6 +133,16 @@ const App = () => {
 						/>
 					</section>
 				</div>
+
+				<section className="db-ui-functional">
+					<DBLink></DBLink>
+				</section>
+				<section className="db-ui-regular">
+					<DBLink></DBLink>
+				</section>
+				<section className="db-ui-expressive">
+					<DBLink></DBLink>
+				</section>
 			</div>
 		</DBPage>
 	);
