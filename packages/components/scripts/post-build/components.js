@@ -1,5 +1,10 @@
 module.exports = [
 	{
+		name: 'link',
+		defaultStylePath: 'components/link/link.css'
+	},
+
+	{
 		name: 'page',
 		defaultStylePath: 'components/page/page.css'
 	},
