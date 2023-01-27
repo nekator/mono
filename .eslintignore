@@ -4,3 +4,4 @@
 **/helpers
 /packages/components/**
 !/packages/components/scripts
+packages/create-dbux/src/templates
