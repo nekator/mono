@@ -29,7 +29,7 @@ export default function DBLink(props: DBLinkProps) {
 			rel={props.rel}
 			role={props.role}
 			aria-disabled={props.disabled}
-			tabindex={props.disabled ? '-1' : '0'}
+			tabIndex={props.disabled ? -1 : 0}
 			aria-selected={props.selected}
 			aria-label={props.label}
 			hrefLang={props.hreflang}
