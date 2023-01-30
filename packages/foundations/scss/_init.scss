@@ -42,6 +42,15 @@ a {
 	}
 }
 
+div,
+button,
+input,
+select,
+textarea {
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
 // Media
 img,
 embed,

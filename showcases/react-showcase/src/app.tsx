@@ -91,7 +91,6 @@ const App = () => {
 							type="datetime-local"
 							id="input-expr-date"
 						/>
-						<DBButton variant="secondary">Test</DBButton>
 					</form>
 
 					<section className="db-ui-regular">
