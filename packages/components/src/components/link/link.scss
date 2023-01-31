@@ -40,21 +40,28 @@
 
 	&[data-content="internal"] {
 		@include icon(glyph(link), 24, "outline", "after");
+
+		&::after,
+		.db-icon::before {
+			--icon-margin-before: var(--db-spacing-fixed-2xs);
+			margin-inline-start: var(--icon-margin-before);
+			margin-top: -0.3em;
+		}
 	}
 
 	&[data-content="external"] {
 		@include icon(glyph(link-external), 24, "outline", "after");
+
+		&::after,
+		.db-icon::before {
+			--icon-margin-before: var(--db-spacing-fixed-2xs);
+			margin-inline-start: var(--icon-margin-before);
+			margin-top: -0.1em;
+		}
 	}
 
 	&[data-content="internal"],
 	&[data-content="external"] {
-		&::after,
-		.db-icon::before {
-			--icon-margin-before: var(--db-spacing-fixed-2xs);
-			margin-top: -0.1em;
-			margin-inline-start: var(--icon-margin-before);
-		}
-
 		&:focus-visible {
 			outline-offset: var(--db-focus-outline-offset, 1px);
 		}
@@ -71,6 +78,7 @@
 			&::after,
 			.db-icon::before {
 				--icon-margin-before: var(--db-spacing-fixed-3xs);
+				margin-inline-start: var(--icon-margin-before);
 			}
 		}
 	}

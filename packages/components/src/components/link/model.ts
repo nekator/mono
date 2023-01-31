@@ -1,4 +1,9 @@
-import { GlobalProps, GlobalState } from '../../shared/model';
+import {
+	ClickEventProps,
+	ClickEventState,
+	GlobalProps,
+	GlobalState
+} from '../../shared/model';
 
 export interface DBLinkDefaultProps {
 	id?: string;
@@ -18,8 +23,8 @@ export interface DBLinkDefaultProps {
 	content?: string;
 }
 
-export type DBLinkProps = DBLinkDefaultProps & GlobalProps;
+export type DBLinkProps = DBLinkDefaultProps & GlobalProps & ClickEventProps;
 
 export interface DBLinkDefaultState {}
 
-export type DBLinkState = DBLinkDefaultState & GlobalState;
+export type DBLinkState = DBLinkDefaultState & GlobalState & ClickEventState;

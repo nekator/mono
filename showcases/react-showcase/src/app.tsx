@@ -135,22 +135,22 @@ const App = () => {
 
 				<section className="db-ui-functional">
 					<DBLink content="internal">Link Component</DBLink>
-					<DBButton variant="secondary" icon="edit">
-						Test
-					</DBButton>
 				</section>
 				<section className="db-ui-regular">
 					<DBLink
-						href="github.com"
-						size="small"
+						href="http://www.deutschebahn.com"
 						variant="primary"></DBLink>
+					<DBLink
+						href="http://www.deutschebahn.com"
+						size="small"
+						variant="primary">
+						Link small
+					</DBLink>
 				</section>
 				<section className="db-ui-expressive">
-					<p>
-						Irgendein Text davor
-						<DBLink content="external">dieser Link</DBLink> und
-						danach
-					</p>
+					<DBLink content="external" href="#">
+						Link component expressive
+					</DBLink>
 				</section>
 			</div>
 		</DBPage>

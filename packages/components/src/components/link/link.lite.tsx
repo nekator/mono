@@ -11,7 +11,13 @@ useMetadata({
 });
 
 export default function DBLink(props: DBLinkProps) {
-	const state = useStore<DBLinkState>({});
+	const state = useStore<DBLinkState>({
+		handleClick: (event) => {
+			if (props.onClick) {
+				props.onClick(event);
+			}
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -36,7 +42,8 @@ export default function DBLink(props: DBLinkProps) {
 			aria-current={props.current}
 			data-size={props.size}
 			data-variant={props.variant}
-			data-content={props.content || 'internal'}>
+			data-content={props.content || 'internal'}
+			onClick={(event) => state.handleClick(event)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
