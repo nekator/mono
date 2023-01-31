@@ -1,7 +1,12 @@
 module.exports = [
 	{
 		name: 'link',
-		defaultStylePath: 'components/link/link.css'
+		defaultStylePath: 'components/link/link.css',
+		overwrites: {
+			global: [
+				{ from: 'handleClick(event)', to: 'handleClick(event:any)' }
+			]
+		}
 	},
 
 	{

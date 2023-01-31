@@ -25,6 +25,8 @@ export interface DBLinkDefaultProps {
 
 export type DBLinkProps = DBLinkDefaultProps & GlobalProps & ClickEventProps;
 
-export interface DBLinkDefaultState {}
+export interface DBLinkDefaultState {
+	_content: string;
+}
 
 export type DBLinkState = DBLinkDefaultState & GlobalState & ClickEventState;

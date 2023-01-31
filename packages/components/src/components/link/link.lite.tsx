@@ -12,6 +12,7 @@ useMetadata({
 
 export default function DBLink(props: DBLinkProps) {
 	const state = useStore<DBLinkState>({
+		_content: '',
 		handleClick: (event) => {
 			if (props.onClick) {
 				props.onClick(event);
@@ -47,10 +48,10 @@ export default function DBLink(props: DBLinkProps) {
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
-			{props.children || props.href}
+			{props.children}
 			<DBIcon
 				icon={props.content == 'external' ? 'link-external' : 'link'}
-				withText="true"></DBIcon>
+				withText={true}></DBIcon>
 		</a>
 	);
 }
