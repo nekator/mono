@@ -13,6 +13,9 @@ MIT
 @angular/router
 MIT
 
+@db-ui/components
+ISC
+
 @db-ui/mono
 Apache-2.0
 
