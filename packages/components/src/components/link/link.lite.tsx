@@ -3,7 +3,7 @@ import { DBIcon } from '../icon';
 import { DBLinkState, DBLinkProps } from './model';
 
 useMetadata({
-	isAttachedToShadowDom: true,
+	isAttachedToShadowDom: false,
 	component: {
 		includeIcon: false,
 		properties: []
