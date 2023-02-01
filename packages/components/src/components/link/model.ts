@@ -16,11 +16,20 @@ export interface DBLinkDefaultProps {
 	selected?: boolean;
 	label?: string;
 	hreflang?: string;
-	target?: string;
+	target?: '_self' | '_blank' | '_parent' | '_top';
 	current?: string;
 	size?: string;
 	variant?: string;
-	content?: string;
+	content?: 'external' | 'internal';
+	referrerpolicy?:
+		| 'no-referrer'
+		| 'no-referrer-when-downgrade'
+		| 'origin'
+		| 'origin-when-cross-origin'
+		| 'same-origin'
+		| 'strict-origin'
+		| 'strict-origin-when-cross-origin'
+		| 'unsafe-url';
 }
 
 export type DBLinkProps = DBLinkDefaultProps & GlobalProps & ClickEventProps;
