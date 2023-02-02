@@ -6,7 +6,8 @@ import {
 	DBHeader,
 	DBIcon,
 	DBPage,
-	DBInput
+	DBInput,
+	DBLink
 } from '../../../output/react/src';
 
 const App = () => {
@@ -90,7 +91,6 @@ const App = () => {
 							type="datetime-local"
 							id="input-expr-date"
 						/>
-						<DBButton variant="secondary">Test</DBButton>
 					</form>
 
 					<section className="db-ui-regular">
@@ -132,6 +132,26 @@ const App = () => {
 						/>
 					</section>
 				</div>
+
+				<section className="db-ui-functional">
+					<DBLink content="internal">Link Component</DBLink>
+				</section>
+				<section className="db-ui-regular">
+					<DBLink
+						href="http://www.deutschebahn.com"
+						variant="primary"></DBLink>
+					<DBLink
+						href="http://www.deutschebahn.com"
+						size="small"
+						variant="primary">
+						Link small
+					</DBLink>
+				</section>
+				<section className="db-ui-expressive">
+					<DBLink content="external" href="#">
+						Link component expressive
+					</DBLink>
+				</section>
 			</div>
 		</DBPage>
 	);
