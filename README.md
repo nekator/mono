@@ -35,7 +35,7 @@ designers, and content authors build, maintain, and scale best of class digital 
 
 Install your preferred package via npm or yarn e.g. `npm i @db-ui/react-components`.
 
-Afterwards you need to add the specific css or scss files to provide the styles of DB UX System.
+Afterwards you need to add the specific css or scss files to provide the styles of DB UX Design System.
 For a detailed overview look at our [examples](examples).
 
 ## Components
