@@ -7,7 +7,16 @@ import {
 
 export interface DBLinkDefaultProps {
 	content?: 'external' | 'internal';
-	current?: string;
+	current?:
+		| boolean
+		| 'time'
+		| 'true'
+		| 'false'
+		| 'date'
+		| 'page'
+		| 'step'
+		| 'location'
+		| undefined;
 	disabled?: boolean;
 	href?: string;
 	hreflang?: string;
