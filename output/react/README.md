@@ -19,7 +19,7 @@ Import the styles in scss or css. Based on your technology the file names could 
 
 ```scss
 // index.scss
-@use "@db-ui/components/src/styles/db-ui-42-rollup" as *;
+@use "@db-ui/components/build/styles/db-ui-42-rollup" as *;
 ```
 
 </details>
@@ -28,7 +28,7 @@ Import the styles in scss or css. Based on your technology the file names could 
 
 ```tsx
 // main.tsx
-import "@db-ui/components/src/styles/db-ui-42-rollup.css";
+import "@db-ui/components/build/styles/db-ui-42-rollup.css";
 ```
 
 </details>
