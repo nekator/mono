@@ -30,7 +30,6 @@ export default function DBLink(props: DBLinkProps) {
 		<a
 			class={'db-link' + (props.className ? ' ' + props.className : '')}
 			href={props.href}
-			anchorlink={props.anchorLink}
 			title={props.title}
 			target={props.target}
 			rel={props.rel}
