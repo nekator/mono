@@ -18,9 +18,9 @@ We currently support:
 
 ```ts
 // main.ts / main.js
-import "@db-ui/foundations/build/db-ui-foundations.css";
+import "@db-ui/foundations/build/css/db-ui-foundations.css";
 // optional: to use classes like e.g. db-ui-bg-success
-import "@db-ui/foundations/build/color-classes.css";
+import "@db-ui/foundations/build/css/color-classes.css";
 ```
 
 ```css
@@ -46,9 +46,9 @@ Based on your technology/setup you need to change the paths of the assets folder
 // index.scss
 @use "@db-ui/foundations/build/scss/rollup.assets-paths" as *;
 @use "@db-ui/foundations/build/scss/icon/icons" as *;
-@use "@db-ui/foundations/build/db-ui-foundations" as *;
+@use "@db-ui/foundations/build/scss/db-ui-foundations" as *;
 // optional: to use db-ui-bg-success
-@import "@db-ui/foundations/build/color-classes" as *;
+@import "@db-ui/foundations/build/scss/color-classes" as *;
 // optional: to use use $db-spacing-fixed-md
 @use "@db-ui/foundations/build/scss/variables.global" as *;
 
