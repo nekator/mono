@@ -73,9 +73,3 @@ jobs:
           name: playwright-videos
           path: ./output/react/test-results
           retention-days: 30
-
-      - name: 💀 Killing me softly
-        uses: ./.github/actions/cancel-workflow
-        if: failure()
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
