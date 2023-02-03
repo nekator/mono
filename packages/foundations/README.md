@@ -1,6 +1,6 @@
 # @db-ui/foundations
 
-A library containing all tokens of [DB UX System](https://github.com/db-ui/mono).
+A library containing all tokens of [DB UX Design System (technical components)](https://github.com/db-ui/mono).
 
 We currently support:
 

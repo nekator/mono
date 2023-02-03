@@ -1,6 +1,6 @@
 # @db-ui/react-components
 
-A React library containing all styles & components of [DB UX System](https://github.com/db-ui/mono).
+A React library containing all styles & components of [DB UX Design System (technical components)](https://github.com/db-ui/mono).
 
 ## Install
 
