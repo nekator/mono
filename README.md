@@ -234,9 +234,9 @@ Playwright is used to create and compare screenshots of each individual componen
 To update screenshots, the following steps are needed for running tests on Linux in CI (Github Actions):
 
 ```shell
-# unix
 npm run build
 
+# unix
 docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.30.0-focal /bin/bash
 
 #windows - allow file sharing (windows pop up)
