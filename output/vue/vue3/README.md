@@ -50,7 +50,7 @@ import "@db-ui/v-components/dist/style.css";
 
 ```tsx
 // main.tsx
-import "@db-ui/foundations/build/scss/icon/icons.css";
+import "@db-ui/foundations/build/css/icon/icons.css";
 ```
 
 </details>
