@@ -42,6 +42,7 @@ import "@db-ui/v-components/dist/style.css";
 ```scss
 @use "@db-ui/foundations/build/scss/rollup.assets-paths" as *;
 @use "@db-ui/foundations/build/scss/icon/icons" as *;
+@use "@db-ui/foundations/build/scss/db-ui-foundations" as *;
 ```
 
 </details>
@@ -51,6 +52,7 @@ import "@db-ui/v-components/dist/style.css";
 ```tsx
 // main.tsx
 import "@db-ui/foundations/build/css/icon/icons.css";
+import "@db-ui/foundations/build/css/db-ui-foundations.css";
 ```
 
 </details>
