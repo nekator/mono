@@ -27,21 +27,21 @@ jobs:
 
   build-showcases:
     uses: ./.github/workflows/01-build-showcases.yml
-    needs: [build-packages]
+    needs: [build-packages, get-publish-version]
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
 
-  #  cypress:
-  #    uses: ./.github/workflows/02-cypress.yml
-  #    needs: [install-cypress,build-showcases]
+  test-packages:
+    uses: ./.github/workflows/02-e2e.yml
+    needs: [build-packages]
 
   checks-done:
     runs-on: ubuntu-latest
     steps:
       - name: 🎉 Checks done
         run: echo "🎉 All builds were successful."
-        # TODO: integrate the cypress builds and use the following two lines afterwards
-        # run: echo "🎉 All tests were successful."
-    #    needs: [cypress]
-    needs: [build-outputs, build-showcases]
+    needs: [test-packages, build-outputs, build-showcases]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
