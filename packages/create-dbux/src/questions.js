@@ -51,6 +51,7 @@ const questions = [
 		error: 'You must choose if you want to use typescript.',
 		choices: [
 			/* {
+			// TODO: Do we want to support js?
 				name: 'javascript'
 			}, */
 			{
