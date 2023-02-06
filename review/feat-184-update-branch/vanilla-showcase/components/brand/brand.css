@@ -1,0 +1,19 @@
+.db-brand a, .db-brand {
+  display: flex;
+  gap: var(--db-spacing-fixed-md);
+  align-items: center;
+}
+
+.db-brand .db-logo {
+  height: auto;
+  width: auto;
+}
+.db-brand a {
+  color: inherit;
+  text-decoration: none;
+}
+@media screen and (min-width: 1024px) {
+  .db-header .db-brand .db-logo {
+    height: var(--db-sizing-md);
+  }
+}
