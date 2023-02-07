@@ -1,0 +1,1200 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "DB Screen Head";
+  font-style: normal;
+  font-weight: 300;
+  src: local("DB Screen Head Light"), url("../assets/fonts/dbscreenhead-light.woff2") format("woff2"), url("../assets/fonts/dbscreenhead-light.woff") format("woff");
+}
+@font-face {
+  font-family: "DB Screen Head";
+  font-style: normal;
+  font-weight: 900;
+  src: local("DB Screen Head Black"), url("../assets/fonts/dbscreenhead-black.woff2") format("woff2"), url("../assets/fonts/dbscreenhead-black.woff") format("woff");
+}
+@font-face {
+  font-family: "DB Screen Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("DB Screen Sans Regular"), url("../assets/fonts/dbscreensans-regular.woff2") format("woff2"), url("../assets/fonts/dbscreensans-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "DB Screen Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("DB Screen Sans Bold"), url("../assets/fonts/dbscreensans-bold.woff2") format("woff2"), url("../assets/fonts/dbscreensans-bold.woff") format("woff");
+}
+.db-ui-regular,
+[data-tonality=regular] {
+  --db-type-headline-font-size-3xl: 2rem;
+  --db-type-headline-line-height-3xl: 1.25;
+  --db-type-headline-font-size-2xl: 2rem;
+  --db-type-headline-line-height-2xl: 1.25;
+  --db-type-headline-font-size-xl: 2rem;
+  --db-type-headline-line-height-xl: 1.25;
+  --db-type-headline-font-size-lg: 1.75rem;
+  --db-type-headline-line-height-lg: 1.1428571429;
+  --db-type-headline-font-size-md: 1.5rem;
+  --db-type-headline-line-height-md: 1.1666666667;
+  --db-type-headline-font-size-sm: 1.25rem;
+  --db-type-headline-line-height-sm: 1.2;
+  --db-type-headline-font-size-2xs: 0.875rem;
+  --db-type-headline-line-height-2xs: 1.1428571429;
+  --db-type-headline-font-size-3xs: 0.875rem;
+  --db-type-headline-line-height-3xs: 1.1428571429;
+  --db-type-headline-font-size-xs: 1rem;
+  --db-type-headline-line-height-xs: 1.25;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-type-headline-font-size-3xl: 3rem;
+    --db-type-headline-line-height-3xl: 1.3333333333;
+    --db-type-headline-font-size-2xl: 3rem;
+    --db-type-headline-line-height-2xl: 1.3333333333;
+    --db-type-headline-font-size-xl: 2.5rem;
+    --db-type-headline-line-height-xl: 1.2;
+    --db-type-headline-font-size-lg: 2rem;
+    --db-type-headline-line-height-lg: 1.25;
+    --db-type-headline-font-size-md: 1.75rem;
+    --db-type-headline-line-height-md: 1.1428571429;
+    --db-type-headline-font-size-sm: 1.5rem;
+    --db-type-headline-line-height-sm: 1.1666666667;
+    --db-type-headline-font-size-2xs: 1rem;
+    --db-type-headline-line-height-2xs: 1.25;
+    --db-type-headline-font-size-3xs: 1rem;
+    --db-type-headline-line-height-3xs: 1.25;
+    --db-type-headline-font-size-xs: 1.25rem;
+    --db-type-headline-line-height-xs: 1.2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-type-headline-font-size-3xl: 5rem;
+    --db-type-headline-line-height-3xl: 1.2;
+    --db-type-headline-font-size-2xl: 4rem;
+    --db-type-headline-line-height-2xl: 1.25;
+    --db-type-headline-font-size-xl: 3rem;
+    --db-type-headline-line-height-xl: 1.3333333333;
+    --db-type-headline-font-size-lg: 2.5rem;
+    --db-type-headline-line-height-lg: 1.2;
+    --db-type-headline-font-size-md: 2rem;
+    --db-type-headline-line-height-md: 1.25;
+    --db-type-headline-font-size-sm: 1.75rem;
+    --db-type-headline-line-height-sm: 1.1428571429;
+    --db-type-headline-font-size-2xs: 1.25rem;
+    --db-type-headline-line-height-2xs: 1.2;
+    --db-type-headline-font-size-3xs: 1rem;
+    --db-type-headline-line-height-3xs: 1.25;
+    --db-type-headline-font-size-xs: 1.5rem;
+    --db-type-headline-line-height-xs: 1.1666666667;
+  }
+}
+
+.db-ui-regular,
+[data-tonality=regular] {
+  --db-type-body-font-size-lg: 1.25rem;
+  --db-type-body-line-height-lg: 1.4;
+  --db-base-icon-font-size-lg: 1.75rem;
+  --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xl: 1.25rem;
+  --db-type-body-line-height-xl: 1.4;
+  --db-base-icon-font-size-xl: 1.75rem;
+  --db-base-icon-font-family-xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xl: 1.25rem;
+  --db-type-body-line-height-2xl: 1.4;
+  --db-base-icon-font-size-2xl: 1.75rem;
+  --db-base-icon-font-family-2xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-md: 1rem;
+  --db-type-body-line-height-md: 1.5;
+  --db-base-icon-font-size-md: 1.5rem;
+  --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-sm: 0.875rem;
+  --db-type-body-line-height-sm: 1.4285714286;
+  --db-base-icon-font-size-sm: 1.25rem;
+  --db-base-icon-font-family-sm: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-sm: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xs: 0.625rem;
+  --db-type-body-line-height-2xs: 1.4;
+  --db-base-icon-font-size-2xs: 0.875rem;
+  --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xs: 0.75rem;
+  --db-type-body-line-height-xs: 1.3333333333;
+  --db-base-icon-font-size-xs: 1rem;
+  --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-type-body-font-size-lg: 1.25rem;
+    --db-type-body-line-height-lg: 1.4;
+    --db-base-icon-font-size-lg: 1.75rem;
+    --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.5rem;
+    --db-type-body-line-height-xl: 1.3333333333;
+    --db-base-icon-font-size-xl: 2rem;
+    --db-base-icon-font-family-xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 1.75rem;
+    --db-type-body-line-height-2xl: 1.4285714286;
+    --db-base-icon-font-size-2xl: 2.5rem;
+    --db-base-icon-font-family-2xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 1rem;
+    --db-type-body-line-height-md: 1.5;
+    --db-base-icon-font-size-md: 1.5rem;
+    --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 0.875rem;
+    --db-type-body-line-height-sm: 1.4285714286;
+    --db-base-icon-font-size-sm: 1.25rem;
+    --db-base-icon-font-family-sm: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.625rem;
+    --db-type-body-line-height-2xs: 1.4;
+    --db-base-icon-font-size-2xs: 0.875rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.75rem;
+    --db-type-body-line-height-xs: 1.3333333333;
+    --db-base-icon-font-size-xs: 1rem;
+    --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-type-body-font-size-lg: 1.25rem;
+    --db-type-body-line-height-lg: 1.4;
+    --db-base-icon-font-size-lg: 1.75rem;
+    --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.5rem;
+    --db-type-body-line-height-xl: 1.3333333333;
+    --db-base-icon-font-size-xl: 2rem;
+    --db-base-icon-font-family-xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 1.75rem;
+    --db-type-body-line-height-2xl: 1.4285714286;
+    --db-base-icon-font-size-2xl: 2.5rem;
+    --db-base-icon-font-family-2xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 1rem;
+    --db-type-body-line-height-md: 1.5;
+    --db-base-icon-font-size-md: 1.5rem;
+    --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 0.875rem;
+    --db-type-body-line-height-sm: 1.4285714286;
+    --db-base-icon-font-size-sm: 1.25rem;
+    --db-base-icon-font-family-sm: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.625rem;
+    --db-type-body-line-height-2xs: 1.4;
+    --db-base-icon-font-size-2xs: 0.875rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.75rem;
+    --db-type-body-line-height-xs: 1.3333333333;
+    --db-base-icon-font-size-xs: 1rem;
+    --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+
+.db-ui-functional,
+[data-tonality=functional] {
+  --db-type-body-font-size-lg: 1rem;
+  --db-type-body-line-height-lg: 1.5;
+  --db-base-icon-font-size-lg: 1.5rem;
+  --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-md: 0.875rem;
+  --db-type-body-line-height-md: 1.4285714286;
+  --db-base-icon-font-size-md: 1.25rem;
+  --db-base-icon-font-family-md: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-md: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-sm: 0.75rem;
+  --db-type-body-line-height-sm: 1.3333333333;
+  --db-base-icon-font-size-sm: 1rem;
+  --db-base-icon-font-family-sm: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-sm: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xl: 1rem;
+  --db-type-body-line-height-xl: 1.5;
+  --db-base-icon-font-size-xl: 1.5rem;
+  --db-base-icon-font-family-xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xs: 0.625rem;
+  --db-type-body-line-height-xs: 1.4;
+  --db-base-icon-font-size-xs: 0.875rem;
+  --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xl: 1rem;
+  --db-type-body-line-height-2xl: 1.5;
+  --db-base-icon-font-size-2xl: 1.5rem;
+  --db-base-icon-font-family-2xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xs: 0.5rem;
+  --db-type-body-line-height-2xs: 1.5;
+  --db-base-icon-font-size-2xs: 0.75rem;
+  --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-type-body-font-size-lg: 1rem;
+    --db-type-body-line-height-lg: 1.5;
+    --db-base-icon-font-size-lg: 1.5rem;
+    --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 0.875rem;
+    --db-type-body-line-height-md: 1.4285714286;
+    --db-base-icon-font-size-md: 1.25rem;
+    --db-base-icon-font-family-md: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 0.75rem;
+    --db-type-body-line-height-sm: 1.3333333333;
+    --db-base-icon-font-size-sm: 1rem;
+    --db-base-icon-font-family-sm: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.25rem;
+    --db-type-body-line-height-xl: 1.4;
+    --db-base-icon-font-size-xl: 1.75rem;
+    --db-base-icon-font-family-xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.625rem;
+    --db-type-body-line-height-xs: 1.4;
+    --db-base-icon-font-size-xs: 0.875rem;
+    --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 1.5rem;
+    --db-type-body-line-height-2xl: 1.3333333333;
+    --db-base-icon-font-size-2xl: 2rem;
+    --db-base-icon-font-family-2xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.5rem;
+    --db-type-body-line-height-2xs: 1.5;
+    --db-base-icon-font-size-2xs: 0.75rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-type-body-font-size-lg: 1rem;
+    --db-type-body-line-height-lg: 1.5;
+    --db-base-icon-font-size-lg: 1.5rem;
+    --db-base-icon-font-family-lg: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 0.875rem;
+    --db-type-body-line-height-md: 1.4285714286;
+    --db-base-icon-font-size-md: 1.25rem;
+    --db-base-icon-font-family-md: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 0.75rem;
+    --db-type-body-line-height-sm: 1.3333333333;
+    --db-base-icon-font-size-sm: 1rem;
+    --db-base-icon-font-family-sm: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.25rem;
+    --db-type-body-line-height-xl: 1.4;
+    --db-base-icon-font-size-xl: 1.75rem;
+    --db-base-icon-font-family-xl: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.625rem;
+    --db-type-body-line-height-xs: 1.4;
+    --db-base-icon-font-size-xs: 0.875rem;
+    --db-base-icon-font-family-xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 1.5rem;
+    --db-type-body-line-height-2xl: 1.3333333333;
+    --db-base-icon-font-size-2xl: 2rem;
+    --db-base-icon-font-family-2xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.5rem;
+    --db-type-body-line-height-2xs: 1.5;
+    --db-base-icon-font-size-2xs: 0.75rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+
+.db-ui-functional,
+[data-tonality=functional] {
+  --db-type-headline-font-size-lg: 1.5rem;
+  --db-type-headline-line-height-lg: 1.1666666667;
+  --db-type-headline-font-size-md: 1.25rem;
+  --db-type-headline-line-height-md: 1.2;
+  --db-type-headline-font-size-sm: 1rem;
+  --db-type-headline-line-height-sm: 1.25;
+  --db-type-headline-font-size-xl: 1.75rem;
+  --db-type-headline-line-height-xl: 1.1428571429;
+  --db-type-headline-font-size-xs: 0.875rem;
+  --db-type-headline-line-height-xs: 1.1428571429;
+  --db-type-headline-font-size-2xl: 1.75rem;
+  --db-type-headline-line-height-2xl: 1.1428571429;
+  --db-type-headline-font-size-2xs: 0.875rem;
+  --db-type-headline-line-height-2xs: 1.1428571429;
+  --db-type-headline-font-size-3xl: 1.75rem;
+  --db-type-headline-line-height-3xl: 1.1428571429;
+  --db-type-headline-font-size-3xs: 0.875rem;
+  --db-type-headline-line-height-3xs: 1.1428571429;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-type-headline-font-size-lg: 1.75rem;
+    --db-type-headline-line-height-lg: 1.1428571429;
+    --db-type-headline-font-size-md: 1.5rem;
+    --db-type-headline-line-height-md: 1.1666666667;
+    --db-type-headline-font-size-sm: 1.25rem;
+    --db-type-headline-line-height-sm: 1.2;
+    --db-type-headline-font-size-xl: 2rem;
+    --db-type-headline-line-height-xl: 1.25;
+    --db-type-headline-font-size-xs: 1rem;
+    --db-type-headline-line-height-xs: 1.25;
+    --db-type-headline-font-size-2xl: 2rem;
+    --db-type-headline-line-height-2xl: 1.25;
+    --db-type-headline-font-size-2xs: 0.875rem;
+    --db-type-headline-line-height-2xs: 1.1428571429;
+    --db-type-headline-font-size-3xl: 2rem;
+    --db-type-headline-line-height-3xl: 1.25;
+    --db-type-headline-font-size-3xs: 0.875rem;
+    --db-type-headline-line-height-3xs: 1.1428571429;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-type-headline-font-size-lg: 1.75rem;
+    --db-type-headline-line-height-lg: 1.1428571429;
+    --db-type-headline-font-size-md: 1.5rem;
+    --db-type-headline-line-height-md: 1.1666666667;
+    --db-type-headline-font-size-sm: 1.25rem;
+    --db-type-headline-line-height-sm: 1.2;
+    --db-type-headline-font-size-xl: 2rem;
+    --db-type-headline-line-height-xl: 1.25;
+    --db-type-headline-font-size-xs: 1rem;
+    --db-type-headline-line-height-xs: 1.25;
+    --db-type-headline-font-size-2xl: 2.5rem;
+    --db-type-headline-line-height-2xl: 1.2;
+    --db-type-headline-font-size-2xs: 0.875rem;
+    --db-type-headline-line-height-2xs: 1.1428571429;
+    --db-type-headline-font-size-3xl: 2.5rem;
+    --db-type-headline-line-height-3xl: 1.2;
+    --db-type-headline-font-size-3xs: 0.875rem;
+    --db-type-headline-line-height-3xs: 1.1428571429;
+  }
+}
+
+.db-ui-expressive,
+[data-tonality=expressive] {
+  --db-type-body-font-size-lg: 1.5rem;
+  --db-type-body-line-height-lg: 1.3333333333;
+  --db-base-icon-font-size-lg: 2rem;
+  --db-base-icon-font-family-lg: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-lg: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-md: 1.25rem;
+  --db-type-body-line-height-md: 1.4;
+  --db-base-icon-font-size-md: 1.75rem;
+  --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-sm: 1rem;
+  --db-type-body-line-height-sm: 1.5;
+  --db-base-icon-font-size-sm: 1.5rem;
+  --db-base-icon-font-family-sm: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-sm: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xl: 1.5rem;
+  --db-type-body-line-height-xl: 1.3333333333;
+  --db-base-icon-font-size-xl: 2rem;
+  --db-base-icon-font-family-xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-xs: 0.875rem;
+  --db-type-body-line-height-xs: 1.4285714286;
+  --db-base-icon-font-size-xs: 1.25rem;
+  --db-base-icon-font-family-xs: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-xs: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xl: 1.5rem;
+  --db-type-body-line-height-2xl: 1.3333333333;
+  --db-base-icon-font-size-2xl: 2rem;
+  --db-base-icon-font-family-2xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  --db-type-body-font-size-2xs: 0.75rem;
+  --db-type-body-line-height-2xs: 1.3333333333;
+  --db-base-icon-font-size-2xs: 1rem;
+  --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+  --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-type-body-font-size-lg: 1.5rem;
+    --db-type-body-line-height-lg: 1.3333333333;
+    --db-base-icon-font-size-lg: 2rem;
+    --db-base-icon-font-family-lg: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 1.25rem;
+    --db-type-body-line-height-md: 1.4;
+    --db-base-icon-font-size-md: 1.75rem;
+    --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 1rem;
+    --db-type-body-line-height-sm: 1.5;
+    --db-base-icon-font-size-sm: 1.5rem;
+    --db-base-icon-font-family-sm: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.75rem;
+    --db-type-body-line-height-xl: 1.4285714286;
+    --db-base-icon-font-size-xl: 2.5rem;
+    --db-base-icon-font-family-xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.875rem;
+    --db-type-body-line-height-xs: 1.4285714286;
+    --db-base-icon-font-size-xs: 1.25rem;
+    --db-base-icon-font-family-xs: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 2rem;
+    --db-type-body-line-height-2xl: 1.5;
+    --db-base-icon-font-size-2xl: 3rem;
+    --db-base-icon-font-family-2xl: "icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.75rem;
+    --db-type-body-line-height-2xs: 1.3333333333;
+    --db-base-icon-font-size-2xs: 1rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-type-body-font-size-lg: 1.5rem;
+    --db-type-body-line-height-lg: 1.3333333333;
+    --db-base-icon-font-size-lg: 2rem;
+    --db-base-icon-font-family-lg: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-lg: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-md: 1.25rem;
+    --db-type-body-line-height-md: 1.4;
+    --db-base-icon-font-size-md: 1.75rem;
+    --db-base-icon-font-family-md: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-md: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-sm: 1rem;
+    --db-type-body-line-height-sm: 1.5;
+    --db-base-icon-font-size-sm: 1.5rem;
+    --db-base-icon-font-family-sm: "icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-sm: "icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xl: 1.75rem;
+    --db-type-body-line-height-xl: 1.4285714286;
+    --db-base-icon-font-size-xl: 2.5rem;
+    --db-base-icon-font-family-xl: "icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xl: "icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-xs: 0.875rem;
+    --db-type-body-line-height-xs: 1.4285714286;
+    --db-base-icon-font-size-xs: 1.25rem;
+    --db-base-icon-font-family-xs: "icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-xs: "icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xl: 2rem;
+    --db-type-body-line-height-2xl: 1.5;
+    --db-base-icon-font-size-2xl: 3rem;
+    --db-base-icon-font-family-2xl: "icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xl: "icons-48-filled","icons-64-filled","missing-icons";
+    --db-type-body-font-size-2xs: 0.75rem;
+    --db-type-body-line-height-2xs: 1.3333333333;
+    --db-base-icon-font-size-2xs: 1rem;
+    --db-base-icon-font-family-2xs: "icons-16-outline","icons-20-outline","icons-24-outline","icons-32-outline","icons-48-outline","icons-64-outline","missing-icons";
+    --db-base-icon-font-family-filled-2xs: "icons-16-filled","icons-20-filled","icons-24-filled","icons-32-filled","icons-48-filled","icons-64-filled","missing-icons";
+  }
+}
+
+.db-ui-expressive,
+[data-tonality=expressive] {
+  --db-type-headline-font-size-lg: 2rem;
+  --db-type-headline-line-height-lg: 1.25;
+  --db-type-headline-font-size-md: 1.75rem;
+  --db-type-headline-line-height-md: 1.1428571429;
+  --db-type-headline-font-size-sm: 1.5rem;
+  --db-type-headline-line-height-sm: 1.1666666667;
+  --db-type-headline-font-size-xl: 2.5rem;
+  --db-type-headline-line-height-xl: 1.2;
+  --db-type-headline-font-size-xs: 1.25rem;
+  --db-type-headline-line-height-xs: 1.2;
+  --db-type-headline-font-size-2xl: 2.5rem;
+  --db-type-headline-line-height-2xl: 1.2;
+  --db-type-headline-font-size-2xs: 1rem;
+  --db-type-headline-line-height-2xs: 1.25;
+  --db-type-headline-font-size-3xl: 2.5rem;
+  --db-type-headline-line-height-3xl: 1.2;
+  --db-type-headline-font-size-3xs: 1rem;
+  --db-type-headline-line-height-3xs: 1.25;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-type-headline-font-size-lg: 2.5rem;
+    --db-type-headline-line-height-lg: 1.2;
+    --db-type-headline-font-size-md: 2rem;
+    --db-type-headline-line-height-md: 1.25;
+    --db-type-headline-font-size-sm: 1.75rem;
+    --db-type-headline-line-height-sm: 1.1428571429;
+    --db-type-headline-font-size-xl: 3rem;
+    --db-type-headline-line-height-xl: 1.3333333333;
+    --db-type-headline-font-size-xs: 1.5rem;
+    --db-type-headline-line-height-xs: 1.1666666667;
+    --db-type-headline-font-size-2xl: 4rem;
+    --db-type-headline-line-height-2xl: 1.25;
+    --db-type-headline-font-size-2xs: 1.25rem;
+    --db-type-headline-line-height-2xs: 1.2;
+    --db-type-headline-font-size-3xl: 5rem;
+    --db-type-headline-line-height-3xl: 1.2;
+    --db-type-headline-font-size-3xs: 1.25rem;
+    --db-type-headline-line-height-3xs: 1.2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-type-headline-font-size-lg: 3rem;
+    --db-type-headline-line-height-lg: 1.3333333333;
+    --db-type-headline-font-size-md: 2.5rem;
+    --db-type-headline-line-height-md: 1.2;
+    --db-type-headline-font-size-sm: 2rem;
+    --db-type-headline-line-height-sm: 1.25;
+    --db-type-headline-font-size-xl: 4rem;
+    --db-type-headline-line-height-xl: 1.25;
+    --db-type-headline-font-size-xs: 1.75rem;
+    --db-type-headline-line-height-xs: 1.1428571429;
+    --db-type-headline-font-size-2xl: 5rem;
+    --db-type-headline-line-height-2xl: 1.2;
+    --db-type-headline-font-size-2xs: 1.5rem;
+    --db-type-headline-line-height-2xs: 1.1666666667;
+    --db-type-headline-font-size-3xl: 6rem;
+    --db-type-headline-line-height-3xl: 1.25;
+    --db-type-headline-font-size-3xs: 1.25rem;
+    --db-type-headline-line-height-3xs: 1.2;
+  }
+}
+
+.db-ui-regular,
+[data-tonality=regular] {
+  --db-sizing-xs: 1rem;
+  --db-sizing-sm: 1.5rem;
+  --db-sizing-md: 2.5rem;
+  --db-sizing-lg: 4rem;
+  --db-spacing-fixed-3xs: 0.125rem;
+  --db-spacing-fixed-2xs: 0.25rem;
+  --db-spacing-fixed-xs: 0.5rem;
+  --db-spacing-fixed-sm: 0.75rem;
+  --db-spacing-fixed-md: 1rem;
+  --db-spacing-fixed-lg: 1.5rem;
+  --db-spacing-fixed-xl: 2rem;
+  --db-spacing-responsive-xs: 1.5rem;
+  --db-spacing-responsive-sm: 2rem;
+  --db-spacing-responsive-md: 3rem;
+  --db-spacing-responsive-lg: 5rem;
+  --db-spacing-responsive-xl: 7.5rem;
+  --db-input-label-scale: 0.65;
+  --db-input-focus-opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-spacing-responsive-xs: 1.75rem;
+    --db-spacing-responsive-sm: 2.5rem;
+    --db-spacing-responsive-md: 4rem;
+    --db-spacing-responsive-lg: 6rem;
+    --db-spacing-responsive-xl: 10rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-regular,
+  [data-tonality=regular] {
+    --db-spacing-responsive-xs: 2rem;
+    --db-spacing-responsive-sm: 3rem;
+    --db-spacing-responsive-md: 5rem;
+    --db-spacing-responsive-lg: 7.5rem;
+    --db-spacing-responsive-xl: 15rem;
+  }
+}
+
+.db-ui-functional,
+[data-tonality=functional] {
+  --db-sizing-xs: 0.875rem;
+  --db-sizing-sm: 1.25rem;
+  --db-sizing-md: 2rem;
+  --db-sizing-lg: 3rem;
+  --db-spacing-fixed-3xs: 0.125rem;
+  --db-spacing-fixed-2xs: 0.25rem;
+  --db-spacing-fixed-xs: 0.375rem;
+  --db-spacing-fixed-sm: 0.5rem;
+  --db-spacing-fixed-md: 0.75rem;
+  --db-spacing-fixed-lg: 1rem;
+  --db-spacing-fixed-xl: 1.5rem;
+  --db-spacing-responsive-xs: 1.25rem;
+  --db-spacing-responsive-sm: 1.75rem;
+  --db-spacing-responsive-md: 2.5rem;
+  --db-spacing-responsive-lg: 4rem;
+  --db-spacing-responsive-xl: 6rem;
+  --db-input-label-scale: 1;
+  --db-input-focus-opacity: 0;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-spacing-responsive-xs: 1.5rem;
+    --db-spacing-responsive-sm: 2rem;
+    --db-spacing-responsive-md: 3rem;
+    --db-spacing-responsive-lg: 5rem;
+    --db-spacing-responsive-xl: 7.5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-functional,
+  [data-tonality=functional] {
+    --db-spacing-responsive-xs: 1.75rem;
+    --db-spacing-responsive-sm: 2.5rem;
+    --db-spacing-responsive-md: 4rem;
+    --db-spacing-responsive-lg: 6rem;
+    --db-spacing-responsive-xl: 10rem;
+  }
+}
+
+.db-ui-expressive,
+[data-tonality=expressive] {
+  --db-sizing-xs: 1.25rem;
+  --db-sizing-sm: 1.75rem;
+  --db-sizing-md: 3rem;
+  --db-sizing-lg: 5rem;
+  --db-spacing-fixed-3xs: 0.25rem;
+  --db-spacing-fixed-2xs: 0.5rem;
+  --db-spacing-fixed-xs: 0.75rem;
+  --db-spacing-fixed-sm: 1rem;
+  --db-spacing-fixed-md: 1.5rem;
+  --db-spacing-fixed-lg: 2rem;
+  --db-spacing-fixed-xl: 3rem;
+  --db-spacing-responsive-xs: 2rem;
+  --db-spacing-responsive-sm: 3rem;
+  --db-spacing-responsive-md: 5rem;
+  --db-spacing-responsive-lg: 7.5rem;
+  --db-spacing-responsive-xl: 10rem;
+  --db-input-label-scale: 0.55;
+  --db-input-focus-opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-spacing-responsive-xs: 2.5rem;
+    --db-spacing-responsive-sm: 4rem;
+    --db-spacing-responsive-md: 6rem;
+    --db-spacing-responsive-lg: 10rem;
+    --db-spacing-responsive-xl: 15rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .db-ui-expressive,
+  [data-tonality=expressive] {
+    --db-spacing-responsive-xs: 3rem;
+    --db-spacing-responsive-sm: 5rem;
+    --db-spacing-responsive-md: 7.5rem;
+    --db-spacing-responsive-lg: 15rem;
+    --db-spacing-responsive-xl: 30rem;
+  }
+}
+
+:root {
+  font-family: "DB Screen Sans", Helvetica, Arial, sans-serif;
+}
+:root *,
+:root [data-size=medium] {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-md);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-md);
+  --db-base-icon-font-family-filled: var(
+  	--db-base-icon-font-family-filled-md
+  );
+  --db-base-line-height: var(--db-type-body-line-height-md);
+  --db-base-font-size: var(--db-type-body-font-size-md);
+  line-height: var(--db-type-body-line-height-md);
+  font-size: var(--db-type-body-font-size-md);
+}
+:root small,
+:root [data-size=small],
+:root .db-input .db-icon::before,
+:root .db-input input[type=color],
+:root .db-input input[type=date],
+:root .db-input input[type=datetime-local],
+:root .db-input input[type=email],
+:root .db-input input[type=month],
+:root .db-input input[type=number],
+:root .db-input input[type=password],
+:root .db-input input[type=search],
+:root .db-input input[type=tel],
+:root .db-input input[type=text],
+:root .db-input input[type=time],
+:root .db-input input[type=url],
+:root .db-input input[type=week] {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  --db-base-icon-font-family-filled: var(
+  	--db-base-icon-font-family-filled-sm
+  );
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
+}
+:root .db-input .description {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
+  --db-base-icon-font-family-filled: var(
+  	--db-base-icon-font-family-filled-xs
+  );
+  --db-base-line-height: var(--db-type-body-line-height-xs);
+  --db-base-font-size: var(--db-type-body-font-size-xs);
+  line-height: var(--db-type-body-line-height-xs);
+  font-size: var(--db-type-body-font-size-xs);
+}
+:root h1,
+:root h2,
+:root h3,
+:root h4,
+:root h5,
+:root h6 {
+  font-family: "DB Screen Head", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+:root h1[data-variant=light],
+:root h2[data-variant=light],
+:root h3[data-variant=light],
+:root h4[data-variant=light],
+:root h5[data-variant=light],
+:root h6[data-variant=light] {
+  font-weight: 300;
+}
+:root h1 {
+  line-height: var(--db-type-headline-line-height-xl);
+  font-size: var(--db-type-headline-font-size-xl);
+}
+:root h2 {
+  line-height: var(--db-type-headline-line-height-lg);
+  font-size: var(--db-type-headline-font-size-lg);
+}
+:root h3 {
+  line-height: var(--db-type-headline-line-height-md);
+  font-size: var(--db-type-headline-font-size-md);
+}
+:root h4 {
+  line-height: var(--db-type-headline-line-height-sm);
+  font-size: var(--db-type-headline-font-size-sm);
+}
+:root h5 {
+  line-height: var(--db-type-headline-line-height-xs);
+  font-size: var(--db-type-headline-font-size-xs);
+}
+:root h6 {
+  line-height: var(--db-type-headline-line-height-2xs);
+  font-size: var(--db-type-headline-font-size-2xs);
+}
+
+/**
+* NEUTRAL - Placeholder Utilities
+**/
+.db-input input button:not(:disabled):hover, .db-input input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(0, 0, 0, 0.12);
+  --db-current-background-color: rgba(0, 0, 0, 0.12);
+}
+.db-input input button:not(:disabled):active, .db-input input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(0, 0, 0, 0.24);
+  --db-current-background-color: rgba(0, 0, 0, 0.24);
+}
+
+.db-input input, .db-input input[data-variant=ia] {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #282d37;
+  --db-current-background-color: rgba(0, 0, 0, 0.04);
+  --db-current-color: #282d37;
+}
+.db-input input a:not(:disabled):hover {
+  color: rgba(40, 45, 55, 0.75);
+  --db-current-color: rgba(40, 45, 55, 0.75);
+}
+.db-input input a:not(:disabled):active {
+  color: rgba(40, 45, 55, 0.5);
+  --db-current-color: rgba(40, 45, 55, 0.5);
+}
+/**
+* PRIMARY - Placeholder Utilities
+**/
+/**
+* CRITICAL - Placeholder Utilities
+**/
+.db-input[data-variant=error] input button:not(:disabled):hover,
+.db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
+.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):hover,
+.db-input input[data-variant=ia]:not(:disabled):hover:required:invalid:not(:placeholder-shown),
+.db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):hover {
+  background-color: rgba(236, 0, 22, 0.12);
+  --db-current-background-color: rgba(236, 0, 22, 0.12);
+}
+.db-input[data-variant=error] input button:not(:disabled):active,
+.db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):active,
+.db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
+.db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
+  background-color: rgba(236, 0, 22, 0.24);
+  --db-current-background-color: rgba(236, 0, 22, 0.24);
+}
+
+.db-input[data-variant=error] input,
+.db-input input:required:invalid:not(:placeholder-shown),
+.db-input input[aria-invalid=true] {
+  background-color: rgba(236, 0, 22, 0.04);
+  color: #550007;
+  --db-current-background-color: rgba(236, 0, 22, 0.04);
+  --db-current-color: #550007;
+}
+.db-input[data-variant=error] input a:not(:disabled):hover,
+.db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
+.db-input input[aria-invalid=true] a:not(:disabled):hover {
+  color: rgba(85, 0, 7, 0.75);
+  --db-current-color: rgba(85, 0, 7, 0.75);
+}
+.db-input[data-variant=error] input a:not(:disabled):active,
+.db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
+.db-input input[aria-invalid=true] a:not(:disabled):active {
+  color: rgba(85, 0, 7, 0.5);
+  --db-current-color: rgba(85, 0, 7, 0.5);
+}
+/**
+* SECONDARY - Placeholder Utilities
+**/
+/**
+* SUCCESS - Placeholder Utilities
+**/
+.db-input[data-variant=success] input button:not(:disabled):hover, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(67, 122, 18, 0.12);
+  --db-current-background-color: rgba(67, 122, 18, 0.12);
+}
+.db-input[data-variant=success] input button:not(:disabled):active, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(67, 122, 18, 0.24);
+  --db-current-background-color: rgba(67, 122, 18, 0.24);
+}
+
+.db-input[data-variant=success] input {
+  background-color: rgba(67, 122, 18, 0.04);
+  color: #1c3209;
+  --db-current-background-color: rgba(67, 122, 18, 0.04);
+  --db-current-color: #1c3209;
+}
+.db-input[data-variant=success] input a:not(:disabled):hover {
+  color: rgba(28, 50, 9, 0.75);
+  --db-current-color: rgba(28, 50, 9, 0.75);
+}
+.db-input[data-variant=success] input a:not(:disabled):active {
+  color: rgba(28, 50, 9, 0.5);
+  --db-current-color: rgba(28, 50, 9, 0.5);
+}
+/**
+* WARNING - Placeholder Utilities
+**/
+.db-input[data-variant=warning] input button:not(:disabled):hover, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(216, 59, 1, 0.12);
+  --db-current-background-color: rgba(216, 59, 1, 0.12);
+}
+.db-input[data-variant=warning] input button:not(:disabled):active, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(216, 59, 1, 0.24);
+  --db-current-background-color: rgba(216, 59, 1, 0.24);
+}
+
+.db-input[data-variant=warning] input {
+  background-color: rgba(216, 59, 1, 0.04);
+  color: #4d1500;
+  --db-current-background-color: rgba(216, 59, 1, 0.04);
+  --db-current-color: #4d1500;
+}
+.db-input[data-variant=warning] input a:not(:disabled):hover {
+  color: rgba(77, 21, 0, 0.75);
+  --db-current-color: rgba(77, 21, 0, 0.75);
+}
+.db-input[data-variant=warning] input a:not(:disabled):active {
+  color: rgba(77, 21, 0, 0.5);
+  --db-current-color: rgba(77, 21, 0, 0.5);
+}
+/**
+* INFORMATION - Placeholder Utilities
+**/
+.db-input[data-variant=information] input button:not(:disabled):hover, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(0, 127, 174, 0.12);
+  --db-current-background-color: rgba(0, 127, 174, 0.12);
+}
+.db-input[data-variant=information] input button:not(:disabled):active, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(0, 127, 174, 0.24);
+  --db-current-background-color: rgba(0, 127, 174, 0.24);
+}
+
+.db-input[data-variant=information] input {
+  background-color: rgba(0, 127, 174, 0.04);
+  color: #002d3e;
+  --db-current-background-color: rgba(0, 127, 174, 0.04);
+  --db-current-color: #002d3e;
+}
+.db-input[data-variant=information] input a:not(:disabled):hover {
+  color: rgba(0, 45, 62, 0.75);
+  --db-current-color: rgba(0, 45, 62, 0.75);
+}
+.db-input[data-variant=information] input a:not(:disabled):active {
+  color: rgba(0, 45, 62, 0.5);
+  --db-current-color: rgba(0, 45, 62, 0.5);
+}
+.db-input {
+  line-height: var(--db-base-line-height);
+  font-size: var(--db-base-font-size);
+}
+
+.db-input {
+  --db-input-padding-inline-start: var(--db-spacing-fixed-sm);
+  --db-input-padding-inline-end: var(--db-spacing-fixed-sm);
+  --icon-margin-after: 0;
+  --db-input-label-max-width: 80%;
+  position: relative;
+}
+.db-input:has(> .icon-before) {
+  --db-input-padding-inline-start: calc(2 * var(--db-spacing-fixed-sm) + 1.25rem - 0.375rem);
+  --db-input-label-max-width: 70%;
+}
+.db-input:has(> .icon-before) input {
+  padding-inline-start: var(--db-input-padding-inline-start);
+}
+.db-input:has(> .icon-after), .db-input[data-variant] {
+  --db-input-padding-inline-end: calc(
+  		2 * var(--db-spacing-fixed-sm) + 0.425rem
+  	);
+}
+.db-input:has(> .icon-after) input, .db-input[data-variant] input {
+  padding-inline-end: var(--db-input-padding-inline-end);
+}
+.db-input[data-variant]:has(> .icon-after) {
+  --db-input-padding-inline-end: calc(
+  		2 * var(--db-spacing-fixed-sm) + 0.425rem + 0.75rem + var(--db-spacing-fixed-sm)
+  	);
+  --db-input-label-max-width: 61%;
+}
+.db-input[data-variant]:has(> .icon-after) input {
+  padding-inline-end: var(--db-input-padding-inline-end);
+}
+.db-input[data-variant]:has(> .icon-after) .icon-input-state::before,
+.db-input[data-variant]:has(> .icon-after) .icon-input-state .db-icon::before {
+  margin-inline-end: calc(0.75rem + var(--db-spacing-fixed-sm));
+}
+.db-input .db-icon::before {
+  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-size: var(--db-base-icon-font-size);
+  height: var(--db-sizing-md);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  padding: 0 var(--db-spacing-fixed-sm);
+}
+.db-input:has(> .icon-after) .db-icon.icon-after::before, .db-input:has(> .icon-after) .icon-after .db-icon::before {
+  right: 0;
+}
+.db-input:has(> input:disabled) .db-icon,
+.db-input:has(> input:disabled) .icon-input-state::before,
+.db-input:has(> input:disabled) .icon-input-state .db-icon::before {
+  opacity: 0.5;
+}
+.db-input label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: var(--db-type-body-font-size-md);
+  color: #282d37;
+  transform-origin: left;
+  transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
+  transition: transform 0.2s cubic-bezier(0.15, 0, 0.45, 1);
+  height: var(--db-sizing-md);
+  pointer-events: none;
+  max-width: var(--db-input-label-max-width, 80%);
+}
+.db-input label span:first-child {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.db-input .description {
+  margin: var(--db-spacing-fixed-2xs) var(--db-spacing-fixed-sm) 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.db-input input {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: var(--db-sizing-md);
+  max-width: 100%;
+  width: 100%;
+  padding: var(--db-spacing-fixed-xs) var(--db-input-padding-inline-end) var(--db-spacing-fixed-xs) var(--db-input-padding-inline-start);
+}
+.db-input input:focus:not(:disabled), .db-input input:not(:placeholder-shown):not(:disabled) {
+  padding-bottom: calc(var(--db-spacing-fixed-xs) - var(--db-input-focus-opacity) * var(--db-spacing-fixed-xs));
+  padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
+}
+.db-input input:focus:not(:disabled) + label, .db-input input:not(:placeholder-shown):not(:disabled) + label {
+  transition: opacity 0.08s, transform 0.15s;
+  opacity: var(--db-input-focus-opacity);
+  transform: translate(calc(var(--db-input-padding-inline-start) + 0.1em), calc(var(--db-sizing-md) * -1.25)) scale(var(--db-input-label-scale));
+}
+.db-input input:disabled, .db-input input:disabled + label, fieldset:disabled .db-input input, fieldset:disabled .db-input input + label {
+  opacity: 0.25;
+}
+.db-input input:required + label::after {
+  content: " *";
+  padding-left: 0.2rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-input input[type=color]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=date]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=datetime-local]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=email]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=month]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=number]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=password]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=search]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=tel]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=text]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=time]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=url]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=week]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label {
+    transition-duration: 0.01s !important;
+  }
+}
+.db-input input[type=color]::placeholder, .db-input input[type=date]::placeholder, .db-input input[type=datetime-local]::placeholder, .db-input input[type=email]::placeholder, .db-input input[type=month]::placeholder, .db-input input[type=number]::placeholder, .db-input input[type=password]::placeholder, .db-input input[type=search]::placeholder, .db-input input[type=tel]::placeholder, .db-input input[type=text]::placeholder, .db-input input[type=time]::placeholder, .db-input input[type=url]::placeholder, .db-input input[type=week]::placeholder {
+  opacity: 0;
+}
+.db-input input[type=color]:focus::placeholder, .db-input input[type=date]:focus::placeholder, .db-input input[type=datetime-local]:focus::placeholder, .db-input input[type=email]:focus::placeholder, .db-input input[type=month]:focus::placeholder, .db-input input[type=number]:focus::placeholder, .db-input input[type=password]:focus::placeholder, .db-input input[type=search]:focus::placeholder, .db-input input[type=tel]:focus::placeholder, .db-input input[type=text]:focus::placeholder, .db-input input[type=time]:focus::placeholder, .db-input input[type=url]:focus::placeholder, .db-input input[type=week]:focus::placeholder {
+  opacity: 0.5;
+}
+.db-input input[type=search] {
+  padding-inline-start: var(--db-input-padding-inline-start);
+}
+.db-input input[type=search], .db-input input[type=search] + label {
+  --db-input-padding-inline-start: calc(var(--db-spacing-fixed-sm) * 2 + 0.625rem);
+}
+.db-input input[type=search] ~ .icon-input-state::before {
+  margin-inline-end: var(--icon-margin-after, 0.375rem);
+  --icon-glyph: "🔍";
+}
+.db-input input[type=search] + label {
+  transform: translate(calc(var(--db-spacing-fixed-sm) * 2 + 0.625rem), calc(-1 * var(--db-sizing-md)));
+}
+.db-input input[type=search] ~ .description {
+  padding-inline-start: calc(var(--db-spacing-fixed-sm) * 2 + 0.625rem);
+}
+.db-input input[type=search]:focus:not(:disabled) + label, .db-input input[type=search]:not(:placeholder-shown):not(:disabled) + label {
+  padding-inline-start: 0;
+}
+.db-input input[type=search]::-webkit-search-cancel-button {
+  appearance: none;
+  position: absolute;
+  right: var(--db-spacing-fixed-sm);
+  top: 0;
+  height: var(--db-sizing-md);
+  width: 1em;
+  background: url(../assets/icons/functional/images/navigation/db_ic_cancel_24.svg) no-repeat 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  transition: opacity 0.12s;
+}
+.db-input .icon-input-state.db-icon,
+.db-input .icon-input-state .db-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  padding: 0 var(--db-spacing-fixed-xs);
+  height: var(--db-sizing-md);
+  width: 100%;
+  pointer-events: none;
+}
+.db-input .icon-input-state.db-icon::after, .db-input .icon-input-state.db-icon::before,
+.db-input .icon-input-state .db-icon::after,
+.db-input .icon-input-state .db-icon::before {
+  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-size: var(--db-base-icon-font-size);
+  right: 0;
+}
+.db-input .icon-input-state.db-icon::before,
+.db-input .icon-input-state .db-icon::before {
+  --icon-margin-after: auto;
+}
+.db-input .icon-input-state.db-icon::after,
+.db-input .icon-input-state .db-icon::after {
+  --icon-margin-before: auto;
+}
+.db-input[data-variant=error] {
+  color: #550007;
+}
+.db-input[data-variant=error] input + label,
+.db-input input:required:invalid:not(:placeholder-shown) + label,
+.db-input input[aria-invalid=true] + label {
+  color: #550007;
+}
+.db-input[data-variant=error] input ~ .description, .db-input[data-variant=error] input ~ .icon-input-state, .db-input[data-variant=error] input ~ .icon-input-state .db-icon,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .description,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
+.db-input input[aria-invalid=true] ~ .description,
+.db-input input[aria-invalid=true] ~ .icon-input-state,
+.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
+  color: #ec0016;
+}
+.db-input[data-variant=error] input ~ .icon-input-state::after, .db-input[data-variant=error] input ~ .icon-input-state .db-icon::after,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
+.db-input input[aria-invalid=true] ~ .icon-input-state::after,
+.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "󡄣";
+}
+.db-input[data-variant=warning] input + label {
+  color: #4d1500;
+}
+.db-input[data-variant=warning] input ~ .description, .db-input[data-variant=warning] input ~ .icon-input-state, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon {
+  color: #d83b01;
+}
+.db-input[data-variant=warning] input ~ .icon-input-state::after, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "⚠";
+}
+.db-input[data-variant=success] input + label {
+  color: #1c3209;
+}
+.db-input[data-variant=success] input ~ .description, .db-input[data-variant=success] input ~ .icon-input-state, .db-input[data-variant=success] input ~ .icon-input-state .db-icon {
+  color: #437a12;
+}
+.db-input[data-variant=success] input ~ .icon-input-state::after, .db-input[data-variant=success] input ~ .icon-input-state .db-icon::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "✅";
+}
+.db-input[data-variant=information] input + label {
+  color: #002d3e;
+}
+.db-input[data-variant=information] input ~ .description, .db-input[data-variant=information] input ~ .icon-input-state, .db-input[data-variant=information] input ~ .icon-input-state .db-icon {
+  color: #007fae;
+}
+.db-input[data-variant=information] input ~ .icon-input-state::after, .db-input[data-variant=information] input ~ .icon-input-state .db-icon::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "🛈";
+}
+
+.db-ui-functional .db-input > label:focus:not(:disabled), .db-ui-functional .db-input > label:not(:placeholder-shown):not(:disabled) {
+  transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
+}
+
+.db-ui-regular .db-input > input[type=date]::-webkit-calendar-picker-indicator,
+.db-ui-regular .db-input > input[type=week]::-webkit-calendar-picker-indicator,
+.db-ui-regular .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator,
+.db-ui-expressive .db-input > input[type=date]::-webkit-calendar-picker-indicator,
+.db-ui-expressive .db-input > input[type=week]::-webkit-calendar-picker-indicator,
+.db-ui-expressive .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator {
+  margin-top: -0.75em;
+  padding: 0;
+}

@@ -1,0 +1,8 @@
+.db-icon {
+  line-height: var(--db-base-line-height);
+  font-size: var(--db-base-font-size);
+}
+
+.db-icon {
+  display: flex;
+}
