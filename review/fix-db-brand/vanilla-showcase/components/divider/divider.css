@@ -1,0 +1,16 @@
+.db-divider {
+  height: 0.0625rem;
+  width: 100%;
+  opacity: 0.1;
+  background: var(--db-current-color, #282d37);
+}
+.db-divider:not([data-margin=none]) {
+  margin: var(--db-spacing-fixed-sm) 0;
+}
+.db-divider[data-variant=vertical] {
+  height: auto;
+  width: 0.0625rem;
+}
+.db-divider[data-variant=vertical]:not([data-margin=none]) {
+  margin: 0 var(--db-spacing-fixed-sm);
+}
