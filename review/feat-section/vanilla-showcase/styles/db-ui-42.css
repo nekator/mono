@@ -4700,38 +4700,30 @@ fieldset {
 
 .db-section {
   width: 100%;
-  padding-left: var(--db-spacing-fixed-md);
-  padding-right: var(--db-spacing-fixed-md);
+  padding-inline: var(--db-spacing-fixed-md);
 }
 @media screen and (min-width: 1024px) {
   .db-section {
-    padding-left: var(--db-spacing-fixed-lg);
-    padding-right: var(--db-spacing-fixed-lg);
+    padding-inline: var(--db-spacing-fixed-md);
   }
 }
 .db-section[data-variant=full] {
-  padding-left: 0;
-  padding-right: 0;
+  padding-inline: 0;
 }
 .db-section[data-size=none] {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-block: 0;
 }
 .db-section[data-size=small] {
-  padding-top: var(--db-spacing-responsive-sm);
-  padding-bottom: var(--db-spacing-responsive-sm);
+  padding-block: var(--db-spacing-responsive-sm);
 }
 .db-section[data-size=medium] {
-  padding-top: var(--db-spacing-responsive-md);
-  padding-bottom: var(--db-spacing-responsive-md);
+  padding-block: var(--db-spacing-responsive-md);
 }
 .db-section[data-size=large] {
-  padding-top: var(--db-spacing-responsive-lg);
-  padding-bottom: var(--db-spacing-responsive-lg);
+  padding-block: var(--db-spacing-responsive-lg);
 }
 .db-section > div {
   margin: 0 auto;
-  width: 100%;
 }
 .db-section > div[data-variant=full] {
   max-width: none;
