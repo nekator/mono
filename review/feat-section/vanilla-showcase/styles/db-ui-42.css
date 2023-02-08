@@ -4699,7 +4699,6 @@ fieldset {
 }
 
 .db-section {
-  width: 100%;
   padding-inline: var(--db-spacing-fixed-md);
 }
 @media screen and (min-width: 1024px) {
