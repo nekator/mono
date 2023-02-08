@@ -4709,6 +4709,10 @@ fieldset {
     padding-right: var(--db-spacing-fixed-lg);
   }
 }
+.db-section[data-variant=full] {
+  padding-left: 0;
+  padding-right: 0;
+}
 .db-section[data-size=none] {
   padding-top: 0;
   padding-bottom: 0;
@@ -4729,16 +4733,13 @@ fieldset {
   margin: 0 auto;
   width: 100%;
 }
-.db-section > div[data-max-width=none] {
+.db-section > div[data-variant=full] {
   max-width: none;
 }
-.db-section > div[data-max-width=small] {
+.db-section > div[data-variant=medium] {
   max-width: 1024px;
 }
-.db-section > div[data-max-width=medium] {
-  max-width: 1280px;
-}
-.db-section > div[data-max-width=large] {
+.db-section > div[data-variant=large] {
   max-width: 1440px;
 }
 
