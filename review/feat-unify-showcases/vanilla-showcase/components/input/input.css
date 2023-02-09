@@ -955,8 +955,9 @@
   --db-current-color: rgba(0, 45, 62, 0.5);
 }
 .db-input {
-  line-height: var(--db-base-line-height);
-  font-size: var(--db-base-font-size);
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
 }
 
 .db-input {

@@ -44,8 +44,9 @@
 * INFORMATION - Placeholder Utilities
 **/
 .db-button {
-  line-height: var(--db-base-line-height);
-  font-size: var(--db-base-font-size);
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
 }
 
 .db-button {
