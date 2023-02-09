@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/**
+* NEUTRAL - Placeholder Utilities
+**/
+/**
+* PRIMARY - Placeholder Utilities
+**/
+.db-link[data-variant=primary] {
+  color: #ec0016;
+}
+.db-link[data-variant=primary]:not(:disabled):hover {
+  color: #d90014;
+  --db-current-color: #d90014;
+}
+.db-link[data-variant=primary]:not(:disabled):active {
+  color: #c70012;
+  --db-current-color: #c70012;
+}
+
+/**
+* SECONDARY - Placeholder Utilities
+**/
+/**
+* WARNING - Placeholder Utilities
+**/
+/**
+* SUCCESS - Placeholder Utilities
+**/
+/**
+* CRITICAL - Placeholder Utilities
+**/
+/**
+* INFORMATION - Placeholder Utilities
+**/
+.db-link {
+  color: var(--db-current-color, #282d37);
+  display: flex;
+  border-radius: 0.375rem;
+  text-underline-position: from-font;
+  text-decoration-thickness: 0.0625rem;
+  transition: outline 0.06s, color 0.3s cubic-bezier(0.15, 0, 0.45, 1);
+}
+.db-link:hover {
+  color: inherit;
+}
+.db-link[aria-disabled=true] {
+  opacity: var(--db-disabled-text-opacity, 0.5);
+  pointer-events: none;
+}
+.db-link[data-content] {
+  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-link[data-content=internal]::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "🡢";
+}
+.db-link[data-content=internal]::after,
+.db-link[data-content=internal] .db-icon::before {
+  margin-top: -0.3em;
+}
+.db-link[data-content=external]::after {
+  margin-inline-start: var(--icon-margin-before, 0.375rem);
+  --icon-glyph: "🡥";
+}
+.db-link[data-content=external]::after,
+.db-link[data-content=external] .db-icon::before {
+  margin-top: -0.1em;
+}
+.db-link[data-content=internal]:focus-visible, .db-link[data-content=external]:focus-visible {
+  outline-offset: var(--db-focus-outline-offset, 1px);
+}
+.db-link[data-content=internal]::after,
+.db-link[data-content=internal] .db-icon::before, .db-link[data-content=external]::after,
+.db-link[data-content=external] .db-icon::before {
+  --icon-margin-before: var(--db-spacing-fixed-2xs);
+  margin-inline-start: var(--icon-margin-before);
+}
+.db-link[data-size=small][data-content=internal]::after,
+.db-link[data-size=small][data-content=internal] .db-icon::before, .db-link[data-size=small][data-content=external]::after,
+.db-link[data-size=small][data-content=external] .db-icon::before {
+  --icon-margin-before: var(--db-spacing-fixed-3xs);
+}
+.db-link .db-icon {
+  display: inline;
+}
