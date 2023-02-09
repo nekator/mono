@@ -7,13 +7,6 @@
 	align-items: center;
 }
 
-%logo-height {
-	height: $db-sizing-sm;
-	@media screen and (min-width: $db-screens-lg) {
-		height: $db-sizing-md;
-	}
-}
-
 .db-brand {
 	@extend %brand-display;
 
@@ -26,5 +19,8 @@
 }
 
 .db-logo {
-	@extend %logo-height;
+	height: $db-sizing-sm;
+	@media screen and (min-width: $db-screens-m) {
+		height: $db-sizing-md;
+	}
 }

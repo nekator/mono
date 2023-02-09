@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.db-brand a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .db-logo {
   height: var(--db-sizing-sm);
 }
@@ -11,9 +16,4 @@
   .db-logo {
     height: var(--db-sizing-md);
   }
-}
-
-.db-brand a {
-  color: inherit;
-  text-decoration: none;
 }
