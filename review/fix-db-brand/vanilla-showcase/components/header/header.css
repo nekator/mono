@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--db-spacing-fixed-md);
   position: relative;
   /* Mobile header should always be 56px */
   min-height: 3.5rem;
