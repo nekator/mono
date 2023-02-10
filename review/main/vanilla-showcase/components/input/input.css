@@ -720,6 +720,8 @@
   --db-base-icon-font-family-filled: var(
   	--db-base-icon-font-family-filled-md
   );
+  --db-base-line-height: var(--db-type-body-line-height-md);
+  --db-base-font-size: var(--db-type-body-font-size-md);
   line-height: var(--db-type-body-line-height-md);
   font-size: var(--db-type-body-font-size-md);
 }
@@ -744,6 +746,8 @@
   --db-base-icon-font-family-filled: var(
   	--db-base-icon-font-family-filled-sm
   );
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
   line-height: var(--db-type-body-line-height-sm);
   font-size: var(--db-type-body-font-size-sm);
 }
@@ -753,6 +757,8 @@
   --db-base-icon-font-family-filled: var(
   	--db-base-icon-font-family-filled-xs
   );
+  --db-base-line-height: var(--db-type-body-line-height-xs);
+  --db-base-font-size: var(--db-type-body-font-size-xs);
   line-height: var(--db-type-body-line-height-xs);
   font-size: var(--db-type-body-font-size-xs);
 }
@@ -948,6 +954,12 @@
   color: rgba(0, 49, 67, 0.5);
   --db-current-color: rgba(0, 49, 67, 0.5);
 }
+.db-input {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
 .db-input {
   --db-input-padding-inline-start: var(--db-spacing-fixed-sm);
   --db-input-padding-inline-end: var(--db-spacing-fixed-sm);
