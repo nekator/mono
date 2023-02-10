@@ -1,3 +1,12 @@
+.db-button[data-size=small] {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
+}
+
 /**
 * NEUTRAL - Placeholder Utilities
 **/

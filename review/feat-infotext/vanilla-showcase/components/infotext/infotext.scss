@@ -1,8 +1,25 @@
-@use "@db-ui/foundations/build/scss/tonality" as *;
+@use "@db-ui/foundations/build/scss/body-styles" as *;
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
 
-$variants: "critical", "information", "warning", "success";
+$variants: (
+	"critical": (
+		$db-colors-critical-enabled,
+		$db-colors-critical-element-enabled
+	),
+	"information": (
+		$db-colors-information-enabled,
+		$db-colors-information-element-enabled
+	),
+	"warning": (
+		$db-colors-warning-enabled,
+		$db-colors-warning-element-enabled
+	),
+	"success": (
+		$db-colors-success-enabled,
+		$db-colors-success-element-enabled
+	)
+);
 
 .db-infotext {
 	@extend %db-body-sm;
@@ -27,16 +44,12 @@ $variants: "critical", "information", "warning", "success";
 		}
 	}
 
-	@each $variant in $variants {
-		&[data-variant="#{$variant}"] {
-			@if ($variant == "critical") {
-				color: $db-colors-critical-enabled;
-			} @else if($variant == "information") {
-				color: $db-colors-information-enabled;
-			} @else if($variant == "warning") {
-				color: $db-colors-warning-enabled;
-			} @else if($variant == "success") {
-				color: $db-colors-success-enabled;
+	@each $name, $colors in $variants {
+		&[data-variant="#{$name}"] {
+			color: nth($colors, 1);
+
+			.db-icon {
+				color: nth($colors, 2);
 			}
 		}
 	}
