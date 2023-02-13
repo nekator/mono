@@ -57,6 +57,7 @@
 			/* stylelint-enable */
 			alt: "";
 			speak: none;
+			speak: never;
 			@media aural {
 				content: none;
 			}

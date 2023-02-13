@@ -24,6 +24,7 @@
 	font-weight: var(--icon-font-weight, normal);
 	line-height: 1;
 	speak: none; // Hiding icon from screenreaders
+	speak: never; // Hiding icon from screenreaders
 	text-transform: none;
 
 	vertical-align: middle;
