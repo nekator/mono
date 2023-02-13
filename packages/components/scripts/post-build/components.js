@@ -1,10 +1,46 @@
-module.exports = [
+/**
+ * @returns {[{
+ * name:string,
+ * defaultStylePath:string,
+ * overwrites?:{
+ * 	global?:{from:string,to:string}[],
+ * 	angular?:{from:string,to:string}[],
+ * 	react?:{from:string,to:string}[],
+ * 	vue?:{from:string,to:string}[]
+ * },
+ * config?:{
+ *     vue?:{
+ *         vModel?: {modelValue:string, binding:string}[]
+ *     }
+ * }
+ * }]}
+ */
+const getComponents = () => [
 	{
 		name: 'link',
 		defaultStylePath: 'components/link/link.css',
 		overwrites: {
 			global: [
 				{ from: 'handleClick(event)', to: 'handleClick(event:any)' }
+			],
+			vue: [
+				{
+					from: 'import { DBLinkState, DBLinkProps } from "./model";',
+					to: ''
+				}
+			]
+		}
+	},
+
+	{
+		name: 'section',
+		defaultStylePath: 'components/section/section.css',
+		overwrites: {
+			vue: [
+				{
+					from: 'import { DBSectionState, DBSectionProps } from "./model";',
+					to: ''
+				}
 			]
 		}
 	},
@@ -70,6 +106,11 @@ module.exports = [
 					to: ''
 				}
 			]
+		},
+		config: {
+			vue: {
+				vModel: [{ modelValue: 'value', binding: ':value' }]
+			}
 		}
 	},
 	{
@@ -145,6 +186,8 @@ module.exports = [
 	},
 	{
 		name: 'icon',
-		defaultStylePath: 'components/icon/icon.css'
+		defaultStylePath: 'components/icon/icon-web-component.css'
 	}
 ];
+
+module.exports = getComponents();

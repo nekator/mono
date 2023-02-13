@@ -1,4 +1,4 @@
-import { DBButton, DBDivider } from '../../../../../output/react/src';
+import { DBButton, DBDivider, DBBrand } from '../../../../../output/react/src';
 
 const links = ['Startseite', 'Hilfe & Kontakt', 'Verkehrsmeldungen'];
 const menu = ['Tickets & Angebote', 'Info & Services', 'Meine Reisen'];
@@ -16,23 +16,23 @@ const Header = () => (
 		</div>
 
 		<div className="navigation flex flex-wrap db-bg-neutral-0 p-fix-md gap-fix-xl md:rounded-b-lg">
-			<img src="db_logo.svg" width="66" height="46" alt="" />
+			<DBBrand imgSrc="db_logo.svg"></DBBrand>
 			<div className="hidden md:flex gap-fix-xl items-center">
 				{menu.map((mItem, index) => (
 					<strong key={`nav-item-${index}`}>{mItem}</strong>
 				))}
 			</div>
 			<div className="ml-auto flex">
-				<DBButton icon="search" onlyIcon variant="ghost" />
+				<DBButton icon="search" variant="ghost" />
 				<DBDivider variant="vertical" />
 				<DBButton
+					icntxt
 					className="hidden md:flex"
 					icon="account"
 					variant="ghost">
 					Login
 				</DBButton>
 				<DBButton
-					onlyIcon
 					className="flex md:hidden"
 					icon="menu"
 					variant="ghost"
