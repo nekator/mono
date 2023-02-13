@@ -1,3 +1,14 @@
+.db-button[data-size=small] {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
+}
+
 /**
 * NEUTRAL - Placeholder Utilities
 **/
@@ -29,20 +40,26 @@
 }
 
 /**
-* CRITICAL - Placeholder Utilities
-**/
-/**
 * SECONDARY - Placeholder Utilities
-**/
-/**
-* SUCCESS - Placeholder Utilities
 **/
 /**
 * WARNING - Placeholder Utilities
 **/
 /**
+* SUCCESS - Placeholder Utilities
+**/
+/**
+* CRITICAL - Placeholder Utilities
+**/
+/**
 * INFORMATION - Placeholder Utilities
 **/
+.db-button {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
 .db-button {
   --loadingIndicator---color: currentColor;
   align-items: center;
@@ -51,7 +68,7 @@
   display: inline-flex;
   font-weight: 700;
   justify-content: center;
-  min-height: var(--db-sizing-md);
+  height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
   text-align: center;
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
@@ -71,6 +88,7 @@
   --icon-font-size: var(--db-base-icon-font-size);
 }
 .db-button.is-icon-text-replace {
+  font-size: 0;
   padding: 0;
   width: var(--db-sizing-md);
 }
