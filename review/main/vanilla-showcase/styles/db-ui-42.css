@@ -3147,24 +3147,24 @@
   --db-current-color: rgba(255, 255, 255, 0.5);
 }
 
-.db-input[data-variant=error] input button:not(:disabled):hover,
+.db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
-.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):hover,
+.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):hover,
 .db-input input[data-variant=ia]:not(:disabled):hover:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):hover {
   background-color: rgba(236, 0, 22, 0.12);
   --db-current-background-color: rgba(236, 0, 22, 0.12);
 }
-.db-input[data-variant=error] input button:not(:disabled):active,
+.db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
-.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
   background-color: rgba(236, 0, 22, 0.24);
   --db-current-background-color: rgba(236, 0, 22, 0.24);
 }
 
-.db-input[data-variant=error] input,
+.db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
   background-color: rgba(236, 0, 22, 0.04);
@@ -3172,13 +3172,13 @@
   --db-current-background-color: rgba(236, 0, 22, 0.04);
   --db-current-color: #550007;
 }
-.db-input[data-variant=error] input a:not(:disabled):hover,
+.db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
   color: rgba(85, 0, 7, 0.75);
   --db-current-color: rgba(85, 0, 7, 0.75);
 }
-.db-input[data-variant=error] input a:not(:disabled):active,
+.db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
   color: rgba(85, 0, 7, 0.5);
@@ -4234,7 +4234,7 @@ fieldset {
   background-color: rgba(0, 0, 0, 0.24);
 }
 .db-button[data-size=small] {
-  min-height: var(--db-sizing-sm);
+  height: var(--db-sizing-sm);
   padding: var(--db-spacing-fixed-3xs) var(--db-spacing-fixed-sm);
 }
 .db-button.is-icon-text-replace[data-size=small] {
@@ -4485,15 +4485,15 @@ fieldset {
 .db-input .icon-input-state .db-icon::after {
   --icon-margin-before: auto;
 }
-.db-input[data-variant=error] {
+.db-input[data-variant=critical] {
   color: #550007;
 }
-.db-input[data-variant=error] input + label,
+.db-input[data-variant=critical] input + label,
 .db-input input:required:invalid:not(:placeholder-shown) + label,
 .db-input input[aria-invalid=true] + label {
   color: #550007;
 }
-.db-input[data-variant=error] input ~ .description, .db-input[data-variant=error] input ~ .icon-input-state, .db-input[data-variant=error] input ~ .icon-input-state .db-icon,
+.db-input[data-variant=critical] input ~ .description, .db-input[data-variant=critical] input ~ .icon-input-state, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .description,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
@@ -4502,7 +4502,7 @@ fieldset {
 .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
   color: #ec0016;
 }
-.db-input[data-variant=error] input ~ .icon-input-state::after, .db-input[data-variant=error] input ~ .icon-input-state .db-icon::after,
+.db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
 .db-input input[aria-invalid=true] ~ .icon-input-state::after,
