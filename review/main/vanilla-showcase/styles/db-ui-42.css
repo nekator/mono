@@ -4002,7 +4002,7 @@ body {
   font-size: var(--db-type-body-font-size-md);
 }
 
-.db-link[data-size=small], .db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
+.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
 code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
   --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
@@ -4014,7 +4014,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-input .description {
+.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -4748,6 +4748,41 @@ code {
 }
 .db-section > div[data-variant=large] {
   max-width: 1440px;
+}
+
+.db-infotext {
+  display: flex;
+}
+.db-infotext .db-icon {
+  margin-inline-end: var(--db-spacing-fixed-2xs);
+}
+.db-infotext .db-icon::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-infotext[data-variant=critical] {
+  color: #ec0016;
+}
+.db-infotext[data-variant=critical] .db-icon {
+  color: #ec0016;
+}
+.db-infotext[data-variant=information] {
+  color: #0087b9;
+}
+.db-infotext[data-variant=information] .db-icon {
+  color: #309fd1;
+}
+.db-infotext[data-variant=warning] {
+  color: #ac6600;
+}
+.db-infotext[data-variant=warning] .db-icon {
+  color: #d68000;
+}
+.db-infotext[data-variant=success] {
+  color: #4c8500;
+}
+.db-infotext[data-variant=success] .db-icon {
+  color: #63a615;
 }
 
 /* This is a predefined beginner friendly bundle with default asset-paths (../assets) */
