@@ -79,7 +79,7 @@
 					</dl>
 			</div>
 		</div>
-	`);const T=()=>(window.addEventListener("load",()=>{const s=document.querySelector("#select-variant"),t=Array.from(document.querySelectorAll("db-button"));s&&s.addEventListener("change",e=>{for(const o of t)o.setAttribute("variant",e.target.value)})}),`
+	`),T=()=>(window.addEventListener("load",()=>{const s=document.querySelector("#select-variant"),t=Array.from(document.querySelectorAll("db-button"));s&&s.addEventListener("change",e=>{for(const o of t)o.setAttribute("variant",e.target.value)})}),`
 	<div>
 		<h1>Button</h1>
 		<div class="button-container">
