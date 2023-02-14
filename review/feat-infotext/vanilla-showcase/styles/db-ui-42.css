@@ -2927,26 +2927,26 @@
 /**
 * SECONDARY - Placeholder Utilities
 **/
-[data-color-variant=secondary].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover {
+[data-color-variant=secondary].db-card button:not(:disabled):hover, pre:has(code) button:not(:disabled):hover, code button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover, pre[data-variant=ia]:not(:disabled):hover:has(code), code[data-variant=ia]:not(:disabled):hover {
   background-color: #42464f;
   --db-current-background-color: #42464f;
 }
-[data-color-variant=secondary].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active {
+[data-color-variant=secondary].db-card button:not(:disabled):active, pre:has(code) button:not(:disabled):active, code button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active, pre[data-variant=ia]:not(:disabled):active:has(code), code[data-variant=ia]:not(:disabled):active {
   background-color: #5b5f66;
   --db-current-background-color: #5b5f66;
 }
 
-[data-color-variant=secondary].db-card {
+[data-color-variant=secondary].db-card, pre:has(code), code, pre[data-variant=ia]:has(code), code[data-variant=ia] {
   background-color: #282d37;
   color: #ffffff;
   --db-current-background-color: #282d37;
   --db-current-color: #ffffff;
 }
-[data-color-variant=secondary].db-card a:not(:disabled):hover {
+[data-color-variant=secondary].db-card a:not(:disabled):hover, pre:has(code) a:not(:disabled):hover, code a:not(:disabled):hover {
   color: rgba(255, 255, 255, 0.75);
   --db-current-color: rgba(255, 255, 255, 0.75);
 }
-[data-color-variant=secondary].db-card a:not(:disabled):active {
+[data-color-variant=secondary].db-card a:not(:disabled):active, pre:has(code) a:not(:disabled):active, code a:not(:disabled):active {
   color: rgba(255, 255, 255, 0.25);
   --db-current-color: rgba(255, 255, 255, 0.25);
 }
@@ -4002,7 +4002,8 @@ body {
   font-size: var(--db-type-body-font-size-md);
 }
 
-.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small {
+.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
+code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
   --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
   /* prettier-ignore */
@@ -4164,6 +4165,15 @@ fieldset {
   border: none;
 }
 
+pre:has(code) {
+  padding: var(--db-spacing-fixed-xs);
+}
+
+code {
+  padding-block: var(--db-spacing-fixed-2xs);
+  padding-inline: var(--db-spacing-fixed-xs);
+}
+
 .db-input, .db-icon, .db-button {
   font-family: inherit;
   line-height: inherit;
@@ -4234,7 +4244,7 @@ fieldset {
   background-color: rgba(0, 0, 0, 0.24);
 }
 .db-button[data-size=small] {
-  min-height: var(--db-sizing-sm);
+  height: var(--db-sizing-sm);
   padding: var(--db-spacing-fixed-3xs) var(--db-spacing-fixed-sm);
 }
 .db-button.is-icon-text-replace[data-size=small] {
@@ -4286,9 +4296,6 @@ fieldset {
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   flex-direction: column;
-}
-.db-card > .db-card-image {
-  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .db-card[data-direction=row] {

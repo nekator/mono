@@ -124,7 +124,7 @@
   background-color: rgba(0, 0, 0, 0.24);
 }
 .db-button[data-size=small] {
-  min-height: var(--db-sizing-sm);
+  height: var(--db-sizing-sm);
   padding: var(--db-spacing-fixed-3xs) var(--db-spacing-fixed-sm);
 }
 .db-button.is-icon-text-replace[data-size=small] {
