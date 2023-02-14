@@ -4,16 +4,16 @@
   align-items: center;
 }
 
+.db-brand .db-logo {
+  height: auto;
+  width: auto;
+}
 .db-brand a {
   color: inherit;
   text-decoration: none;
 }
-
-.db-logo {
-  height: var(--db-sizing-sm);
-}
 @media screen and (min-width: 1024px) {
-  .db-logo {
+  .db-header .db-brand .db-logo {
     height: var(--db-sizing-md);
   }
 }

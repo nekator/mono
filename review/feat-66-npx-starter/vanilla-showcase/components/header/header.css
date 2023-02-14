@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: var(--db-spacing-fixed-md);
   position: relative;
   /* Mobile header should always be 56px */
   min-height: 3.5rem;
@@ -31,8 +32,7 @@
   .db-header .desktop-navigation {
     display: inherit;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
   }
 }
