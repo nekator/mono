@@ -2925,6 +2925,202 @@
   --db-current-color: rgba(85, 0, 7, 0.5);
 }
 /**
+* SECONDARY - Placeholder Utilities
+**/
+[data-color-variant=secondary].db-card button:not(:disabled):hover, pre:has(code) button:not(:disabled):hover, code button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover, pre[data-variant=ia]:not(:disabled):hover:has(code), code[data-variant=ia]:not(:disabled):hover {
+  background-color: #42464f;
+  --db-current-background-color: #42464f;
+}
+[data-color-variant=secondary].db-card button:not(:disabled):active, pre:has(code) button:not(:disabled):active, code button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active, pre[data-variant=ia]:not(:disabled):active:has(code), code[data-variant=ia]:not(:disabled):active {
+  background-color: #5b5f66;
+  --db-current-background-color: #5b5f66;
+}
+
+[data-color-variant=secondary].db-card, pre:has(code), code, pre[data-variant=ia]:has(code), code[data-variant=ia] {
+  background-color: #282d37;
+  color: #ffffff;
+  --db-current-background-color: #282d37;
+  --db-current-color: #ffffff;
+}
+[data-color-variant=secondary].db-card a:not(:disabled):hover, pre:has(code) a:not(:disabled):hover, code a:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.75);
+  --db-current-color: rgba(255, 255, 255, 0.75);
+}
+[data-color-variant=secondary].db-card a:not(:disabled):active, pre:has(code) a:not(:disabled):active, code a:not(:disabled):active {
+  color: rgba(255, 255, 255, 0.25);
+  --db-current-color: rgba(255, 255, 255, 0.25);
+}
+
+[data-color-variant=secondary-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary-light].db-card:not(:disabled):hover {
+  background-color: #cdced1;
+  --db-current-background-color: #cdced1;
+}
+[data-color-variant=secondary-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary-light].db-card:not(:disabled):active {
+  background-color: #b7b9bb;
+  --db-current-background-color: #b7b9bb;
+}
+
+[data-color-variant=secondary-light].db-card {
+  background-color: #e4e5e6;
+  color: #0e1013;
+  --db-current-background-color: #e4e5e6;
+  --db-current-color: #0e1013;
+}
+[data-color-variant=secondary-light].db-card a:not(:disabled):hover {
+  color: rgba(14, 16, 19, 0.75);
+  --db-current-color: rgba(14, 16, 19, 0.75);
+}
+[data-color-variant=secondary-light].db-card a:not(:disabled):active {
+  color: rgba(14, 16, 19, 0.5);
+  --db-current-color: rgba(14, 16, 19, 0.5);
+}
+/**
+* WARNING - Placeholder Utilities
+**/
+[data-color-variant=warning].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=warning].db-card:not(:disabled):hover {
+  background-color: #9e5e00;
+  --db-current-background-color: #9e5e00;
+}
+[data-color-variant=warning].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=warning].db-card:not(:disabled):active {
+  background-color: #925700;
+  --db-current-background-color: #925700;
+}
+
+[data-color-variant=warning].db-card {
+  background-color: #ac6600;
+  color: #ffffff;
+  --db-current-background-color: #ac6600;
+  --db-current-color: #ffffff;
+}
+[data-color-variant=warning].db-card a:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.75);
+  --db-current-color: rgba(255, 255, 255, 0.75);
+}
+[data-color-variant=warning].db-card a:not(:disabled):active {
+  color: rgba(255, 255, 255, 0.5);
+  --db-current-color: rgba(255, 255, 255, 0.5);
+}
+
+.db-input[data-variant=warning] input button:not(:disabled):hover, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(172, 102, 0, 0.12);
+  --db-current-background-color: rgba(172, 102, 0, 0.12);
+}
+.db-input[data-variant=warning] input button:not(:disabled):active, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(172, 102, 0, 0.24);
+  --db-current-background-color: rgba(172, 102, 0, 0.24);
+}
+
+.db-input[data-variant=warning] input {
+  background-color: rgba(172, 102, 0, 0.04);
+  color: #3e2500;
+  --db-current-background-color: rgba(172, 102, 0, 0.04);
+  --db-current-color: #3e2500;
+}
+.db-input[data-variant=warning] input a:not(:disabled):hover {
+  color: rgba(62, 37, 0, 0.75);
+  --db-current-color: rgba(62, 37, 0, 0.75);
+}
+.db-input[data-variant=warning] input a:not(:disabled):active {
+  color: rgba(62, 37, 0, 0.5);
+  --db-current-color: rgba(62, 37, 0, 0.5);
+}
+[data-color-variant=warning-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=warning-light].db-card:not(:disabled):hover {
+  background-color: #ecdbc5;
+  --db-current-background-color: #ecdbc5;
+}
+[data-color-variant=warning-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=warning-light].db-card:not(:disabled):active {
+  background-color: #e3ccaa;
+  --db-current-background-color: #e3ccaa;
+}
+
+[data-color-variant=warning-light].db-card {
+  background-color: #f5ece0;
+  color: #3e2500;
+  --db-current-background-color: #f5ece0;
+  --db-current-color: #3e2500;
+}
+[data-color-variant=warning-light].db-card a:not(:disabled):hover {
+  color: rgba(62, 37, 0, 0.75);
+  --db-current-color: rgba(62, 37, 0, 0.75);
+}
+[data-color-variant=warning-light].db-card a:not(:disabled):active {
+  color: rgba(62, 37, 0, 0.5);
+  --db-current-color: rgba(62, 37, 0, 0.5);
+}
+/**
+* SUCCESS - Placeholder Utilities
+**/
+[data-color-variant=success].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=success].db-card:not(:disabled):hover {
+  background-color: #477c01;
+  --db-current-background-color: #477c01;
+}
+[data-color-variant=success].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=success].db-card:not(:disabled):active {
+  background-color: #437302;
+  --db-current-background-color: #437302;
+}
+
+[data-color-variant=success].db-card {
+  background-color: #4c8500;
+  color: #ffffff;
+  --db-current-background-color: #4c8500;
+  --db-current-color: #ffffff;
+}
+[data-color-variant=success].db-card a:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.75);
+  --db-current-color: rgba(255, 255, 255, 0.75);
+}
+[data-color-variant=success].db-card a:not(:disabled):active {
+  color: rgba(255, 255, 255, 0.5);
+  --db-current-color: rgba(255, 255, 255, 0.5);
+}
+
+.db-input[data-variant=success] input button:not(:disabled):hover, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):hover {
+  background-color: rgba(76, 133, 0, 0.12);
+  --db-current-background-color: rgba(76, 133, 0, 0.12);
+}
+.db-input[data-variant=success] input button:not(:disabled):active, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):active {
+  background-color: rgba(76, 133, 0, 0.24);
+  --db-current-background-color: rgba(76, 133, 0, 0.24);
+}
+
+.db-input[data-variant=success] input {
+  background-color: rgba(76, 133, 0, 0.04);
+  color: #243c08;
+  --db-current-background-color: rgba(76, 133, 0, 0.04);
+  --db-current-color: #243c08;
+}
+.db-input[data-variant=success] input a:not(:disabled):hover {
+  color: rgba(36, 60, 8, 0.75);
+  --db-current-color: rgba(36, 60, 8, 0.75);
+}
+.db-input[data-variant=success] input a:not(:disabled):active {
+  color: rgba(36, 60, 8, 0.5);
+  --db-current-color: rgba(36, 60, 8, 0.5);
+}
+[data-color-variant=success-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=success-light].db-card:not(:disabled):hover {
+  background-color: #d6e3c5;
+  --db-current-background-color: #d6e3c5;
+}
+[data-color-variant=success-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=success-light].db-card:not(:disabled):active {
+  background-color: #c3d7aa;
+  --db-current-background-color: #c3d7aa;
+}
+
+[data-color-variant=success-light].db-card {
+  background-color: #e9f0e0;
+  color: #243c08;
+  --db-current-background-color: #e9f0e0;
+  --db-current-color: #243c08;
+}
+[data-color-variant=success-light].db-card a:not(:disabled):hover {
+  color: rgba(36, 60, 8, 0.75);
+  --db-current-color: rgba(36, 60, 8, 0.75);
+}
+[data-color-variant=success-light].db-card a:not(:disabled):active {
+  color: rgba(36, 60, 8, 0.5);
+  --db-current-color: rgba(36, 60, 8, 0.5);
+}
+/**
 * CRITICAL - Placeholder Utilities
 **/
 [data-color-variant=critical].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=critical].db-card:not(:disabled):hover {
@@ -2951,24 +3147,24 @@
   --db-current-color: rgba(255, 255, 255, 0.5);
 }
 
-.db-input[data-variant=error] input button:not(:disabled):hover,
+.db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
-.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):hover,
+.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):hover,
 .db-input input[data-variant=ia]:not(:disabled):hover:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):hover {
   background-color: rgba(236, 0, 22, 0.12);
   --db-current-background-color: rgba(236, 0, 22, 0.12);
 }
-.db-input[data-variant=error] input button:not(:disabled):active,
+.db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
-.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=error] input[data-variant=ia]:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
   background-color: rgba(236, 0, 22, 0.24);
   --db-current-background-color: rgba(236, 0, 22, 0.24);
 }
 
-.db-input[data-variant=error] input,
+.db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
   background-color: rgba(236, 0, 22, 0.04);
@@ -2976,13 +3172,13 @@
   --db-current-background-color: rgba(236, 0, 22, 0.04);
   --db-current-color: #550007;
 }
-.db-input[data-variant=error] input a:not(:disabled):hover,
+.db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
   color: rgba(85, 0, 7, 0.75);
   --db-current-color: rgba(85, 0, 7, 0.75);
 }
-.db-input[data-variant=error] input a:not(:disabled):active,
+.db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
   color: rgba(85, 0, 7, 0.5);
@@ -3012,217 +3208,21 @@
   --db-current-color: rgba(85, 0, 7, 0.5);
 }
 /**
-* SECONDARY - Placeholder Utilities
-**/
-[data-color-variant=secondary].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover {
-  background-color: #42464f;
-  --db-current-background-color: #42464f;
-}
-[data-color-variant=secondary].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active {
-  background-color: #5b5f66;
-  --db-current-background-color: #5b5f66;
-}
-
-[data-color-variant=secondary].db-card {
-  background-color: #282d37;
-  color: #ffffff;
-  --db-current-background-color: #282d37;
-  --db-current-color: #ffffff;
-}
-[data-color-variant=secondary].db-card a:not(:disabled):hover {
-  color: rgba(255, 255, 255, 0.75);
-  --db-current-color: rgba(255, 255, 255, 0.75);
-}
-[data-color-variant=secondary].db-card a:not(:disabled):active {
-  color: rgba(255, 255, 255, 0.25);
-  --db-current-color: rgba(255, 255, 255, 0.25);
-}
-
-[data-color-variant=secondary-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary-light].db-card:not(:disabled):hover {
-  background-color: #cdced1;
-  --db-current-background-color: #cdced1;
-}
-[data-color-variant=secondary-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary-light].db-card:not(:disabled):active {
-  background-color: #b7b9bb;
-  --db-current-background-color: #b7b9bb;
-}
-
-[data-color-variant=secondary-light].db-card {
-  background-color: #e4e5e6;
-  color: #0e1013;
-  --db-current-background-color: #e4e5e6;
-  --db-current-color: #0e1013;
-}
-[data-color-variant=secondary-light].db-card a:not(:disabled):hover {
-  color: rgba(14, 16, 19, 0.75);
-  --db-current-color: rgba(14, 16, 19, 0.75);
-}
-[data-color-variant=secondary-light].db-card a:not(:disabled):active {
-  color: rgba(14, 16, 19, 0.5);
-  --db-current-color: rgba(14, 16, 19, 0.5);
-}
-/**
-* SUCCESS - Placeholder Utilities
-**/
-[data-color-variant=success].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=success].db-card:not(:disabled):hover {
-  background-color: #3d7110;
-  --db-current-background-color: #3d7110;
-}
-[data-color-variant=success].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=success].db-card:not(:disabled):active {
-  background-color: #39680f;
-  --db-current-background-color: #39680f;
-}
-
-[data-color-variant=success].db-card {
-  background-color: #437a12;
-  color: #ffffff;
-  --db-current-background-color: #437a12;
-  --db-current-color: #ffffff;
-}
-[data-color-variant=success].db-card a:not(:disabled):hover {
-  color: rgba(255, 255, 255, 0.75);
-  --db-current-color: rgba(255, 255, 255, 0.75);
-}
-[data-color-variant=success].db-card a:not(:disabled):active {
-  color: rgba(255, 255, 255, 0.5);
-  --db-current-color: rgba(255, 255, 255, 0.5);
-}
-
-[data-color-variant=success-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=success-light].db-card:not(:disabled):hover {
-  background-color: #d5e2c9;
-  --db-current-background-color: #d5e2c9;
-}
-[data-color-variant=success-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=success-light].db-card:not(:disabled):active {
-  background-color: #afc997;
-  --db-current-background-color: #afc997;
-}
-
-[data-color-variant=success-light].db-card {
-  background-color: #e8eee2;
-  color: #1c3209;
-  --db-current-background-color: #e8eee2;
-  --db-current-color: #1c3209;
-}
-[data-color-variant=success-light].db-card a:not(:disabled):hover {
-  color: rgba(28, 50, 9, 0.75);
-  --db-current-color: rgba(28, 50, 9, 0.75);
-}
-[data-color-variant=success-light].db-card a:not(:disabled):active {
-  color: rgba(28, 50, 9, 0.5);
-  --db-current-color: rgba(28, 50, 9, 0.5);
-}
-.db-input[data-variant=success] input button:not(:disabled):hover, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(67, 122, 18, 0.12);
-  --db-current-background-color: rgba(67, 122, 18, 0.12);
-}
-.db-input[data-variant=success] input button:not(:disabled):active, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(67, 122, 18, 0.24);
-  --db-current-background-color: rgba(67, 122, 18, 0.24);
-}
-
-.db-input[data-variant=success] input {
-  background-color: rgba(67, 122, 18, 0.04);
-  color: #1c3209;
-  --db-current-background-color: rgba(67, 122, 18, 0.04);
-  --db-current-color: #1c3209;
-}
-.db-input[data-variant=success] input a:not(:disabled):hover {
-  color: rgba(28, 50, 9, 0.75);
-  --db-current-color: rgba(28, 50, 9, 0.75);
-}
-.db-input[data-variant=success] input a:not(:disabled):active {
-  color: rgba(28, 50, 9, 0.5);
-  --db-current-color: rgba(28, 50, 9, 0.5);
-}
-/**
-* WARNING - Placeholder Utilities
-**/
-[data-color-variant=warning].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=warning].db-card:not(:disabled):hover {
-  background-color: #c73600;
-  --db-current-background-color: #c73600;
-}
-[data-color-variant=warning].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=warning].db-card:not(:disabled):active {
-  background-color: #b93300;
-  --db-current-background-color: #b93300;
-}
-
-[data-color-variant=warning].db-card {
-  background-color: #d83b01;
-  color: #ffffff;
-  --db-current-background-color: #d83b01;
-  --db-current-color: #ffffff;
-}
-[data-color-variant=warning].db-card a:not(:disabled):hover {
-  color: rgba(255, 255, 255, 0.75);
-  --db-current-color: rgba(255, 255, 255, 0.75);
-}
-[data-color-variant=warning].db-card a:not(:disabled):active {
-  color: rgba(255, 255, 255, 0.5);
-  --db-current-color: rgba(255, 255, 255, 0.5);
-}
-
-.db-input[data-variant=warning] input button:not(:disabled):hover, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(216, 59, 1, 0.12);
-  --db-current-background-color: rgba(216, 59, 1, 0.12);
-}
-.db-input[data-variant=warning] input button:not(:disabled):active, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(216, 59, 1, 0.24);
-  --db-current-background-color: rgba(216, 59, 1, 0.24);
-}
-
-.db-input[data-variant=warning] input {
-  background-color: rgba(216, 59, 1, 0.04);
-  color: #4d1500;
-  --db-current-background-color: rgba(216, 59, 1, 0.04);
-  --db-current-color: #4d1500;
-}
-.db-input[data-variant=warning] input a:not(:disabled):hover {
-  color: rgba(77, 21, 0, 0.75);
-  --db-current-color: rgba(77, 21, 0, 0.75);
-}
-.db-input[data-variant=warning] input a:not(:disabled):active {
-  color: rgba(77, 21, 0, 0.5);
-  --db-current-color: rgba(77, 21, 0, 0.5);
-}
-[data-color-variant=warning-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=warning-light].db-card:not(:disabled):hover {
-  background-color: #f8d4c4;
-  --db-current-background-color: #f8d4c4;
-}
-[data-color-variant=warning-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=warning-light].db-card:not(:disabled):active {
-  background-color: #f8c2aa;
-  --db-current-background-color: #f8c2aa;
-}
-
-[data-color-variant=warning-light].db-card {
-  background-color: #fae7e0;
-  color: #4d1500;
-  --db-current-background-color: #fae7e0;
-  --db-current-color: #4d1500;
-}
-[data-color-variant=warning-light].db-card a:not(:disabled):hover {
-  color: rgba(77, 21, 0, 0.75);
-  --db-current-color: rgba(77, 21, 0, 0.75);
-}
-[data-color-variant=warning-light].db-card a:not(:disabled):active {
-  color: rgba(77, 21, 0, 0.5);
-  --db-current-color: rgba(77, 21, 0, 0.5);
-}
-/**
 * INFORMATION - Placeholder Utilities
 **/
 [data-color-variant=information].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=information].db-card:not(:disabled):hover {
-  background-color: #0075a0;
-  --db-current-background-color: #0075a0;
+  background-color: #007dab;
+  --db-current-background-color: #007dab;
 }
 [data-color-variant=information].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=information].db-card:not(:disabled):active {
-  background-color: #006c94;
-  --db-current-background-color: #006c94;
+  background-color: #00739d;
+  --db-current-background-color: #00739d;
 }
 
 [data-color-variant=information].db-card {
-  background-color: #007fae;
+  background-color: #0087b9;
   color: #ffffff;
-  --db-current-background-color: #007fae;
+  --db-current-background-color: #0087b9;
   --db-current-color: #ffffff;
 }
 [data-color-variant=information].db-card a:not(:disabled):hover {
@@ -3234,51 +3234,51 @@
   --db-current-color: rgba(255, 255, 255, 0.5);
 }
 
-[data-color-variant=information-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=information-light].db-card:not(:disabled):hover {
-  background-color: #c4e2ee;
-  --db-current-background-color: #c4e2ee;
-}
-[data-color-variant=information-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=information-light].db-card:not(:disabled):active {
-  background-color: #aad6e7;
-  --db-current-background-color: #aad6e7;
-}
-
-[data-color-variant=information-light].db-card {
-  background-color: #e0eff5;
-  color: #002d3e;
-  --db-current-background-color: #e0eff5;
-  --db-current-color: #002d3e;
-}
-[data-color-variant=information-light].db-card a:not(:disabled):hover {
-  color: rgba(0, 45, 62, 0.75);
-  --db-current-color: rgba(0, 45, 62, 0.75);
-}
-[data-color-variant=information-light].db-card a:not(:disabled):active {
-  color: rgba(0, 45, 62, 0.5);
-  --db-current-color: rgba(0, 45, 62, 0.5);
-}
 .db-input[data-variant=information] input button:not(:disabled):hover, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(0, 127, 174, 0.12);
-  --db-current-background-color: rgba(0, 127, 174, 0.12);
+  background-color: rgba(0, 135, 185, 0.12);
+  --db-current-background-color: rgba(0, 135, 185, 0.12);
 }
 .db-input[data-variant=information] input button:not(:disabled):active, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(0, 127, 174, 0.24);
-  --db-current-background-color: rgba(0, 127, 174, 0.24);
+  background-color: rgba(0, 135, 185, 0.24);
+  --db-current-background-color: rgba(0, 135, 185, 0.24);
 }
 
 .db-input[data-variant=information] input {
-  background-color: rgba(0, 127, 174, 0.04);
-  color: #002d3e;
-  --db-current-background-color: rgba(0, 127, 174, 0.04);
-  --db-current-color: #002d3e;
+  background-color: rgba(0, 135, 185, 0.04);
+  color: #003143;
+  --db-current-background-color: rgba(0, 135, 185, 0.04);
+  --db-current-color: #003143;
 }
 .db-input[data-variant=information] input a:not(:disabled):hover {
-  color: rgba(0, 45, 62, 0.75);
-  --db-current-color: rgba(0, 45, 62, 0.75);
+  color: rgba(0, 49, 67, 0.75);
+  --db-current-color: rgba(0, 49, 67, 0.75);
 }
 .db-input[data-variant=information] input a:not(:disabled):active {
-  color: rgba(0, 45, 62, 0.5);
-  --db-current-color: rgba(0, 45, 62, 0.5);
+  color: rgba(0, 49, 67, 0.5);
+  --db-current-color: rgba(0, 49, 67, 0.5);
+}
+[data-color-variant=information-light].db-card button:not(:disabled):hover, [data-variant=ia][data-color-variant=information-light].db-card:not(:disabled):hover {
+  background-color: #c5e3ee;
+  --db-current-background-color: #c5e3ee;
+}
+[data-color-variant=information-light].db-card button:not(:disabled):active, [data-variant=ia][data-color-variant=information-light].db-card:not(:disabled):active {
+  background-color: #aad7e7;
+  --db-current-background-color: #aad7e7;
+}
+
+[data-color-variant=information-light].db-card {
+  background-color: #e0f0f6;
+  color: #003143;
+  --db-current-background-color: #e0f0f6;
+  --db-current-color: #003143;
+}
+[data-color-variant=information-light].db-card a:not(:disabled):hover {
+  color: rgba(0, 49, 67, 0.75);
+  --db-current-color: rgba(0, 49, 67, 0.75);
+}
+[data-color-variant=information-light].db-card a:not(:disabled):active {
+  color: rgba(0, 49, 67, 0.5);
+  --db-current-color: rgba(0, 49, 67, 0.5);
 }
 @font-face {
   font-family: "DB Screen Head";
@@ -3991,97 +3991,95 @@
   }
 }
 
-:root {
-  font-family: "DB Screen Sans", Helvetica, Arial, sans-serif;
-}
-:root *,
-:root [data-size=medium] {
+body {
   --db-base-icon-font-size: var(--db-base-icon-font-size-md);
   --db-base-icon-font-family: var(--db-base-icon-font-family-md);
-  --db-base-icon-font-family-filled: var(
-  	--db-base-icon-font-family-filled-md
-  );
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-md);
+  --db-base-line-height: var(--db-type-body-line-height-md);
+  --db-base-font-size: var(--db-type-body-font-size-md);
   line-height: var(--db-type-body-line-height-md);
   font-size: var(--db-type-body-font-size-md);
 }
-:root small,
-:root [data-size=small],
-:root .db-input .db-icon::before,
-:root .db-input input[type=color],
-:root .db-input input[type=date],
-:root .db-input input[type=datetime-local],
-:root .db-input input[type=email],
-:root .db-input input[type=month],
-:root .db-input input[type=number],
-:root .db-input input[type=password],
-:root .db-input input[type=search],
-:root .db-input input[type=tel],
-:root .db-input input[type=text],
-:root .db-input input[type=time],
-:root .db-input input[type=url],
-:root .db-input input[type=week] {
+
+.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
+code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
   --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
-  --db-base-icon-font-family-filled: var(
-  	--db-base-icon-font-family-filled-sm
-  );
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
   line-height: var(--db-type-body-line-height-sm);
   font-size: var(--db-type-body-font-size-sm);
 }
-:root .db-input .description {
+
+.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
-  --db-base-icon-font-family-filled: var(
-  	--db-base-icon-font-family-filled-xs
-  );
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-xs);
+  --db-base-line-height: var(--db-type-body-line-height-xs);
+  --db-base-font-size: var(--db-type-body-font-size-xs);
   line-height: var(--db-type-body-line-height-xs);
   font-size: var(--db-type-body-font-size-xs);
 }
-:root h1,
-:root h2,
-:root h3,
-:root h4,
-:root h5,
-:root h6 {
+
+body {
+  font-family: "DB Screen Sans", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "DB Screen Head", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
-:root h1[data-variant=light],
-:root h2[data-variant=light],
-:root h3[data-variant=light],
-:root h4[data-variant=light],
-:root h5[data-variant=light],
-:root h6[data-variant=light] {
+h1[data-variant=light],
+h2[data-variant=light],
+h3[data-variant=light],
+h4[data-variant=light],
+h5[data-variant=light],
+h6[data-variant=light] {
   font-weight: 300;
 }
-:root h1 {
+
+h1 {
   line-height: var(--db-type-headline-line-height-xl);
   font-size: var(--db-type-headline-font-size-xl);
 }
-:root h2 {
+
+h2 {
   line-height: var(--db-type-headline-line-height-lg);
   font-size: var(--db-type-headline-font-size-lg);
 }
-:root h3 {
+
+h3 {
   line-height: var(--db-type-headline-line-height-md);
   font-size: var(--db-type-headline-font-size-md);
 }
-:root h4 {
+
+h4 {
   line-height: var(--db-type-headline-line-height-sm);
   font-size: var(--db-type-headline-font-size-sm);
 }
-:root h5 {
+
+h5 {
   line-height: var(--db-type-headline-line-height-xs);
   font-size: var(--db-type-headline-font-size-xs);
 }
-:root h6 {
+
+h6 {
   line-height: var(--db-type-headline-line-height-2xs);
   font-size: var(--db-type-headline-font-size-2xs);
 }
 
 :root {
   --db-focus-outline-offset: 1px;
-  --db-focus-outline-color: #007fae;
+  --db-focus-outline-color: #0087b9;
   --db-focus-outline-transition-duration: 0.06s;
   --db-focus-outline-size: max(2px, 0.08em);
   --db-disabled-text-opacity: 0.5;
@@ -4115,13 +4113,13 @@ a strong {
   color: currentColor;
 }
 
-div,
 button,
 input,
 select,
 textarea {
   font-family: inherit;
   font-size: inherit;
+  line-height: inherit;
 }
 
 img,
@@ -4167,6 +4165,21 @@ fieldset {
   border: none;
 }
 
+pre:has(code) {
+  padding: var(--db-spacing-fixed-xs);
+}
+
+code {
+  padding-block: var(--db-spacing-fixed-2xs);
+  padding-inline: var(--db-spacing-fixed-xs);
+}
+
+.db-input, .db-icon, .db-button {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
 .db-button {
   --loadingIndicator---color: currentColor;
   align-items: center;
@@ -4175,7 +4188,7 @@ fieldset {
   display: inline-flex;
   font-weight: 700;
   justify-content: center;
-  min-height: var(--db-sizing-md);
+  height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
   text-align: center;
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
@@ -4195,6 +4208,7 @@ fieldset {
   --icon-font-size: var(--db-base-icon-font-size);
 }
 .db-button.is-icon-text-replace {
+  font-size: 0;
   padding: 0;
   width: var(--db-sizing-md);
 }
@@ -4230,7 +4244,7 @@ fieldset {
   background-color: rgba(0, 0, 0, 0.24);
 }
 .db-button[data-size=small] {
-  min-height: var(--db-sizing-sm);
+  height: var(--db-sizing-sm);
   padding: var(--db-spacing-fixed-3xs) var(--db-spacing-fixed-sm);
 }
 .db-button.is-icon-text-replace[data-size=small] {
@@ -4282,9 +4296,6 @@ fieldset {
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   flex-direction: column;
-}
-.db-card > .db-card-image {
-  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .db-card[data-direction=row] {
@@ -4481,15 +4492,15 @@ fieldset {
 .db-input .icon-input-state .db-icon::after {
   --icon-margin-before: auto;
 }
-.db-input[data-variant=error] {
+.db-input[data-variant=critical] {
   color: #550007;
 }
-.db-input[data-variant=error] input + label,
+.db-input[data-variant=critical] input + label,
 .db-input input:required:invalid:not(:placeholder-shown) + label,
 .db-input input[aria-invalid=true] + label {
   color: #550007;
 }
-.db-input[data-variant=error] input ~ .description, .db-input[data-variant=error] input ~ .icon-input-state, .db-input[data-variant=error] input ~ .icon-input-state .db-icon,
+.db-input[data-variant=critical] input ~ .description, .db-input[data-variant=critical] input ~ .icon-input-state, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .description,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
@@ -4498,7 +4509,7 @@ fieldset {
 .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
   color: #ec0016;
 }
-.db-input[data-variant=error] input ~ .icon-input-state::after, .db-input[data-variant=error] input ~ .icon-input-state .db-icon::after,
+.db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
 .db-input input[aria-invalid=true] ~ .icon-input-state::after,
@@ -4507,30 +4518,30 @@ fieldset {
   --icon-glyph: "󡄣";
 }
 .db-input[data-variant=warning] input + label {
-  color: #4d1500;
+  color: #3e2500;
 }
 .db-input[data-variant=warning] input ~ .description, .db-input[data-variant=warning] input ~ .icon-input-state, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon {
-  color: #d83b01;
+  color: #ac6600;
 }
 .db-input[data-variant=warning] input ~ .icon-input-state::after, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "⚠";
 }
 .db-input[data-variant=success] input + label {
-  color: #1c3209;
+  color: #243c08;
 }
 .db-input[data-variant=success] input ~ .description, .db-input[data-variant=success] input ~ .icon-input-state, .db-input[data-variant=success] input ~ .icon-input-state .db-icon {
-  color: #437a12;
+  color: #4c8500;
 }
 .db-input[data-variant=success] input ~ .icon-input-state::after, .db-input[data-variant=success] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "✅";
 }
 .db-input[data-variant=information] input + label {
-  color: #002d3e;
+  color: #003143;
 }
 .db-input[data-variant=information] input ~ .description, .db-input[data-variant=information] input ~ .icon-input-state, .db-input[data-variant=information] input ~ .icon-input-state .db-icon {
-  color: #007fae;
+  color: #0087b9;
 }
 .db-input[data-variant=information] input ~ .icon-input-state::after, .db-input[data-variant=information] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
@@ -4557,16 +4568,16 @@ fieldset {
   align-items: center;
 }
 
-.db-brand .db-logo {
-  height: auto;
-  width: auto;
-}
 .db-brand a {
   color: inherit;
   text-decoration: none;
 }
+
+.db-logo {
+  height: var(--db-sizing-sm);
+}
 @media screen and (min-width: 1024px) {
-  .db-header .db-brand .db-logo {
+  .db-logo {
     height: var(--db-sizing-md);
   }
 }
@@ -4577,7 +4588,6 @@ fieldset {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--db-spacing-fixed-md);
   position: relative;
   /* Mobile header should always be 56px */
   min-height: 3.5rem;
@@ -4605,8 +4615,9 @@ fieldset {
   .db-header .desktop-navigation {
     display: inherit;
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -4614,29 +4625,20 @@ fieldset {
   margin: 0;
 }
 
-:root:has(.fixed-header-footer) {
+:root:has(.fixed-header-footer),
+:root:has(db-page[type=fixedHeaderFooter]) {
   height: 100%;
   overflow: hidden;
 }
 :root:has(.fixed-header-footer) body,
 :root:has(.fixed-header-footer) #root,
-:root:has(.fixed-header-footer) #app {
+:root:has(.fixed-header-footer) #app,
+:root:has(db-page[type=fixedHeaderFooter]) body,
+:root:has(db-page[type=fixedHeaderFooter]) #root,
+:root:has(db-page[type=fixedHeaderFooter]) #app {
   height: 100%;
 }
 
-.db-page main {
-  margin: 0 auto;
-}
-@media screen and (min-width: 1024px) {
-  .db-page main {
-    max-width: 960px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .db-page main {
-    max-width: 1200px;
-  }
-}
 .db-page.fixed-header-footer {
   height: 100%;
   min-height: 100%;
@@ -4654,13 +4656,9 @@ fieldset {
 .db-page.fixed-header-footer main {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
   flex: 1 1 auto;
   width: 100%;
-}
-.db-page.fixed-header-footer main > * {
-  overflow: auto;
-  height: 100%;
 }
 
 .db-link {
@@ -4714,6 +4712,77 @@ fieldset {
 }
 .db-link .db-icon {
   display: inline;
+}
+
+.db-section {
+  padding-inline: var(--db-spacing-fixed-md);
+}
+@media screen and (min-width: 1024px) {
+  .db-section {
+    padding-inline: var(--db-spacing-fixed-md);
+  }
+}
+.db-section[data-variant=full] {
+  padding-inline: 0;
+}
+.db-section[data-size=none] {
+  padding-block: 0;
+}
+.db-section[data-size=small] {
+  padding-block: var(--db-spacing-responsive-sm);
+}
+.db-section[data-size=medium] {
+  padding-block: var(--db-spacing-responsive-md);
+}
+.db-section[data-size=large] {
+  padding-block: var(--db-spacing-responsive-lg);
+}
+.db-section > div {
+  margin: 0 auto;
+}
+.db-section > div[data-variant=full] {
+  max-width: none;
+}
+.db-section > div[data-variant=medium] {
+  max-width: 1024px;
+}
+.db-section > div[data-variant=large] {
+  max-width: 1440px;
+}
+
+.db-infotext {
+  display: flex;
+}
+.db-infotext .db-icon {
+  margin-inline-end: var(--db-spacing-fixed-2xs);
+}
+.db-infotext .db-icon::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-infotext[data-variant=critical] {
+  color: #ec0016;
+}
+.db-infotext[data-variant=critical] .db-icon {
+  color: #ec0016;
+}
+.db-infotext[data-variant=information] {
+  color: #0087b9;
+}
+.db-infotext[data-variant=information] .db-icon {
+  color: #309fd1;
+}
+.db-infotext[data-variant=warning] {
+  color: #ac6600;
+}
+.db-infotext[data-variant=warning] .db-icon {
+  color: #d68000;
+}
+.db-infotext[data-variant=success] {
+  color: #4c8500;
+}
+.db-infotext[data-variant=success] .db-icon {
+  color: #63a615;
 }
 
 /* This is a predefined beginner friendly bundle with default asset-paths (../assets) */
