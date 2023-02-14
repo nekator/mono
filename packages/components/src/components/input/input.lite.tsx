@@ -6,11 +6,13 @@ import {
 	useStore
 } from '@builder.io/mitosis';
 import { DBIcon } from '../icon';
-import { DEFAULT_ID, uuid } from '../../utils';
-import { DBInputState, DBInputProps, iconVariants } from './model';
+import { uuid } from '../../utils';
+import { DBInputState, DBInputProps } from './model';
+import { DEFAULT_ID } from '../../shared/constants';
+import { DefaultVariantsIcon } from '../../shared/model';
 
 useMetadata({
-	isAttachedToShadowDom: false,
+	isAttachedToShadowDom: true,
 	component: {
 		includeIcon: false,
 		properties: []
@@ -25,6 +27,13 @@ export default function DBInput(props: DBInputProps) {
 		_value: '',
 		_placeholder: ' ', // placeholder can't be empty
 		_label: 'LABEL SHOULD BE SET',
+		getIcon: (variant) => {
+			if (variant) {
+				return DefaultVariantsIcon[variant];
+			}
+
+			return '';
+		},
 		handleChange: (event) => {
 			if (props.onChange) {
 				props.onChange(event);
@@ -92,7 +101,7 @@ export default function DBInput(props: DBInputProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			<Show when={props.iconBefore}>
-				<DBIcon icon={props.iconBefore} className="icon-before" />
+				<DBIcon icon={props.iconBefore} class="icon-before" />
 			</Show>
 			<input
 				ref={textInputRef}
@@ -118,16 +127,16 @@ export default function DBInput(props: DBInputProps) {
 				<span>{state._label}</span>
 			</label>
 			<Show when={props.description}>
-				<p className="description">{props.description}</p>
+				<p class="description">{props.description}</p>
 			</Show>
 			<Show when={props.variant || props.required || props.pattern}>
 				<DBIcon
-					icon={props.variant && iconVariants[props.variant]}
-					className="icon-input-state"
+					icon={state.getIcon(props.variant)}
+					class="icon-input-state"
 				/>
 			</Show>
 			<Show when={props.iconAfter}>
-				<DBIcon icon={props.iconAfter} className="icon-after" />
+				<DBIcon icon={props.iconAfter} class="icon-after" />
 			</Show>
 		</div>
 	);
