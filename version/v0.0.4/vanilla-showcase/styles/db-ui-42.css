@@ -4480,7 +4480,7 @@ code {
 .db-input .icon-input-state.db-icon::after, .db-input .icon-input-state.db-icon::before,
 .db-input .icon-input-state .db-icon::after,
 .db-input .icon-input-state .db-icon::before {
-  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-family: var(--db-base-icon-font-family-filled);
   --icon-font-size: var(--db-base-icon-font-size);
   right: 0;
 }
@@ -4509,6 +4509,13 @@ code {
 .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
   color: #ec0016;
 }
+.db-input[data-variant=critical] input ~ .icon-input-state, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
+.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
+.db-input input[aria-invalid=true] ~ .icon-input-state,
+.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
+  --icon-glyph: "󡄣";
+}
 .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
@@ -4516,6 +4523,53 @@ code {
 .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "󡄣";
+  content: var(--icon-glyph);
+  display: inline-block;
+  /*** icon - partial ***/
+  font-family: var(--icon-font-family, "icons-24-outline, missing-icons") !important;
+  font-size: var(--icon-font-size, 1.5rem);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: var(--icon-font-weight, normal);
+  line-height: 1;
+  text-transform: none;
+  vertical-align: middle;
+  /* stylelint-disable */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* stylelint-enable */
+  /* stylelint-disable */
+  -webkit-alt: "";
+  /* stylelint-enable */
+  alt: "";
+  speak: none;
+}
+@supports (content: ""/"") {
+  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
+    content: var(--icon-glyph)/"";
+  }
+}
+@media aural {
+  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
+    content: none;
+  }
+}
+@media speech {
+  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
+  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
+  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
+    content: none;
+  }
 }
 .db-input[data-variant=warning] input + label {
   color: #3e2500;
