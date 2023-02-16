@@ -4876,16 +4876,16 @@ code {
 .db-alert[data-type=inline] .db-alert-content-link {
   display: inherit;
 }
-.db-alert[data-variant=critical] .db-alert-icon-container {
+.db-alert[data-variant=critical] .db-alert-icon {
   color: #ec0016;
 }
-.db-alert[data-variant=information] .db-alert-icon-container {
+.db-alert[data-variant=information] .db-alert-icon {
   color: #309fd1;
 }
-.db-alert[data-variant=warning] .db-alert-icon-container {
+.db-alert[data-variant=warning] .db-alert-icon {
   color: #d68000;
 }
-.db-alert[data-variant=success] .db-alert-icon-container {
+.db-alert[data-variant=success] .db-alert-icon {
   color: #63a615;
 }
 
