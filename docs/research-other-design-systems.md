@@ -12,7 +12,12 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   [SNCF Design System](https://designmetier-bootstrap.sncf.fr/), Tech Stack (among others):
     -   [Web Components / StencilJS](https://gitlab.com/SNCF/wcs)
     -   Storybook
+-   [IBM / Carbon Design System](https://github.com/carbon-design-system/carbon)
 -   [NS.nl / Platform](https://www.ns.nl/platform/components/index.html)
 -   [Netherlands government](https://nldesignsystem.nl/), Tech Stack (among others):
     -   Web Components / StencilJS
     -   Storybook
+
+## Design System "registries" / overviews
+- <https://adele.uxpin.com/>
+- <https://storybook.js.org/showcase>
