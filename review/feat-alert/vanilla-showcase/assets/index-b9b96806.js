@@ -102,7 +102,7 @@
 			>Test</db-button>
 			<db-button state="loading">Test</db-button>
 		</div>
-	</div>`);const m=()=>document.location.search.slice(1).split("&").filter(o=>(o==null?void 0:o.length)>0).reduce((o,t)=>{const e=t.split("=");return{...o,[e[0]]:e[1]}},{}),w=()=>(window.addEventListener("load",()=>{const o=m();["primary","secondary","success","critical","warning","information"].some(t=>t.includes(o.color??""))?document.querySelector("#backgroundWarning").style.display="block":document.querySelector("#backgroundWarning").style.display="none"}),`
+	</div>`),m=()=>document.location.search.slice(1).split("&").filter(o=>(o==null?void 0:o.length)>0).reduce((o,t)=>{const e=t.split("=");return{...o,[e[0]]:e[1]}},{}),w=()=>(window.addEventListener("load",()=>{const o=m();["primary","secondary","success","critical","warning","information"].some(t=>t.includes(o.color??""))?document.querySelector("#backgroundWarning").style.display="block":document.querySelector("#backgroundWarning").style.display="none"}),`
 	<div>
 		<h1>Input</h1>
 
