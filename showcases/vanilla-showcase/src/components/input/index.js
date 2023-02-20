@@ -1,4 +1,3 @@
-import './index.css';
 import '../../../../../output/webcomponent/src/components/input/input.js';
 import '../../../../../output/webcomponent/src/components/button/button.js';
 import getQueryParams from '../../utils/get-query-params.js';
@@ -38,7 +37,7 @@ const getContent = () => {
 			 label="Start train station"
 			 placeholder="some text"
 			 iconBefore="edit"
-			 variant="error"
+			 variant="critical"
 			 value="hello"
 			 name="testInput"
 			></db-input>
