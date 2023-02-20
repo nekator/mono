@@ -1,0 +1,144 @@
+.db-button[data-size=small] {
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
+}
+
+/**
+* SECONDARY - Placeholder Utilities
+**/
+/**
+* WARNING - Placeholder Utilities
+**/
+/**
+* INFORMATION - Placeholder Utilities
+**/
+/**
+* PRIMARY - Placeholder Utilities
+**/
+.db-button:not([data-variant]) button:not(:disabled):hover, .db-button[data-variant=primary] button:not(:disabled):hover, .db-button:not(:disabled):hover:not([data-variant]), .db-button[data-variant=primary]:not(:disabled):hover {
+  background-color: #d90014;
+  --db-current-background-color: #d90014;
+  --db-current-background-color-red: 217;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 20;
+}
+.db-button:not([data-variant]) button:not(:disabled):active, .db-button[data-variant=primary] button:not(:disabled):active, .db-button:not(:disabled):active:not([data-variant]), .db-button[data-variant=primary]:not(:disabled):active {
+  background-color: #c70012;
+  --db-current-background-color: #c70012;
+  --db-current-background-color-red: 199;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 18;
+}
+
+.db-button:not([data-variant]), .db-button[data-variant=primary] {
+  background-color: #ec0016;
+  color: #ffffff;
+  --db-current-background-color-red: 236;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 22;
+  --db-current-background-color-alpha: 1;
+  --db-current-color: #ffffff;
+}
+.db-button:not([data-variant]) a:not(:disabled):hover, .db-button[data-variant=primary] a:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.75);
+  --db-current-color: rgba(255, 255, 255, 0.75);
+}
+.db-button:not([data-variant]) a:not(:disabled):active, .db-button[data-variant=primary] a:not(:disabled):active {
+  color: rgba(255, 255, 255, 0.25);
+  --db-current-color: rgba(255, 255, 255, 0.25);
+}
+
+/**
+* SUCCESS - Placeholder Utilities
+**/
+/**
+* NEUTRAL - Placeholder Utilities
+**/
+/**
+* CRITICAL - Placeholder Utilities
+**/
+.db-button {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.db-button {
+  --loadingIndicator---color: currentColor;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  height: var(--db-sizing-md);
+  padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  text-align: center;
+  transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
+}
+.db-button[data-icon], .db-button[data-icon-before] {
+  padding-left: var(--db-spacing-fixed-xs);
+}
+.db-button[data-icon]::before, .db-button[data-icon-before]::before {
+  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-button[data-icon-after] {
+  padding-right: var(--db-spacing-fixed-xs);
+}
+.db-button[data-icon-after]::after {
+  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-button.is-icon-text-replace {
+  font-size: 0;
+  padding: 0;
+  width: var(--db-sizing-md);
+}
+.db-button[data-variant=ghost], .db-button[data-variant=tertiary], .db-button[data-variant=secondary] {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
+  color: var(--db-current-color, #242629);
+}
+.db-button[data-variant=ghost]:not(:disabled):hover, .db-button[data-variant=tertiary]:not(:disabled):hover, .db-button[data-variant=secondary]:not(:disabled):hover {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
+}
+.db-button[data-variant=ghost]:not(:disabled):active, .db-button[data-variant=tertiary]:not(:disabled):active, .db-button[data-variant=secondary]:not(:disabled):active {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.24));
+}
+.db-button[data-size=small] {
+  height: var(--db-sizing-sm);
+  padding: var(--db-spacing-fixed-3xs) var(--db-spacing-fixed-sm);
+}
+.db-button.is-icon-text-replace[data-size=small] {
+  width: var(--db-sizing-sm);
+}
+.db-button[data-width=full] {
+  width: 100%;
+}
+.db-button[data-variant=secondary] {
+  border: solid 1px var(--db-current-color, #242629);
+}
+.db-button[data-variant=tertiary] {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.08));
+}
+.db-button:disabled {
+  opacity: 0.25;
+}
+.db-button[data-state=loading] {
+  font-size: 0 !important;
+}
+.db-button[data-state=loading]::before {
+  --icon-margin-after: 0;
+}
+.db-button[data-state=loading]::before {
+  content: "";
+}
+.db-button[data-state=loading] {
+  font-size: 0;
+}
