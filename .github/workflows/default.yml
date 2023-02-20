@@ -48,11 +48,11 @@ jobs:
     steps:
       - name: 🎉 Checks done
         run: |
-          result-build-showcases="${{ needs.build-showcases.result }}"
-          result-build-outputs="${{ needs.build-outputs.result }}"
-          result-test-packages="${{ needs.test-packages.result }}"
-          result-build-power-apps="${{ needs.build-power-apps.result }}"
-          if [[ $result-build-showcases == "success" && $result-build-outputs == "success" && $result-test-packages == "success" && $result-build-power-apps == "success" ]]; then
+          resultBuildShowcases="${{ needs.build-showcases.result }}"
+          resultBuildOutputs="${{ needs.build-outputs.result }}"
+          resultTestPackages="${{ needs.test-packages.result }}"
+          resultBuildPowerApps="${{ needs.build-power-apps.result }}"
+          if [[ $resultBuildShowcases == "success" && $resultBuildOutputs == "success" && $resultTestPackages == "success" && $resultBuildPowerApps == "success" ]]; then
              echo "🎉 All tests were successful."
             exit 0
           else
