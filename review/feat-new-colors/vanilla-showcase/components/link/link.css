@@ -26,12 +26,12 @@
   color: #ec0016;
 }
 .db-link[data-variant=primary]:not(:disabled):hover {
-  color: #d90014;
-  --db-current-color: #d90014;
+  --db-current-color: var(--db-colors-primary-hover, #d90014);
+  color: var(--db-current-color, #d90014);
 }
 .db-link[data-variant=primary]:not(:disabled):active {
-  color: #c70012;
-  --db-current-color: #c70012;
+  --db-current-color: var(--db-colors-primary-pressed, #c70012);
+  color: var(--db-current-color, #c70012);
 }
 
 /**
