@@ -4357,7 +4357,6 @@ code {
   border: 1px solid transparent;
   border-radius: 4px;
   color: var(--db-current-color, #242629);
-  cursor: pointer;
   display: inline-flex;
   font-weight: 700;
   justify-content: center;
