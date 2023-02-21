@@ -398,6 +398,7 @@
   /* stylelint-enable */
   alt: "";
   speak: none;
+  speak: never;
 }
 @supports (content: ""/"") {
   .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
