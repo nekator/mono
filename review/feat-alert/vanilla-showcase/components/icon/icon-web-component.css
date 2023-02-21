@@ -15,6 +15,7 @@
   font-weight: var(--icon-font-weight, normal);
   line-height: 1;
   speak: none;
+  speak: never;
   text-transform: none;
   vertical-align: middle;
 }
