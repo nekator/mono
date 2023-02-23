@@ -13,8 +13,6 @@
 
 	$checkbox-size: 24;
 
-	@extend %shadow-dom-extend;
-
 	@extend %db-bg-neutral-0;
 	@extend %db-bg-neutral-0-ia-states;
 
@@ -75,6 +73,8 @@
 	}
 
 	& + label {
+		@extend %shadow-dom-extend;
+
 		font-size: $db-typography-regular-desktop-body-medium-font-size;
 		line-height: $db-typography-regular-desktop-body-medium-line-height;
 
