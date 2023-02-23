@@ -263,17 +263,18 @@
   width: 100%;
   padding: var(--db-spacing-fixed-xs) var(--db-input-padding-inline-end) var(--db-spacing-fixed-xs) var(--db-input-padding-inline-start);
 }
-.db-input input:focus:not(:disabled), .db-input input:not(:placeholder-shown):not(:disabled) {
+.db-input input:focus-visible, .db-input input:not(:placeholder-shown) {
   padding-bottom: calc(var(--db-spacing-fixed-xs) - var(--db-input-focus-opacity) * var(--db-spacing-fixed-xs));
   padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
 }
-.db-input input:focus:not(:disabled) + label, .db-input input:not(:placeholder-shown):not(:disabled) + label {
+.db-input input:focus-visible + label, .db-input input:not(:placeholder-shown) + label {
   transition: opacity 0.08s, transform 0.15s;
   opacity: var(--db-input-focus-opacity);
   transform: translate(calc(var(--db-input-padding-inline-start) + 0.1em), calc(var(--db-sizing-md) * -1.25)) scale(var(--db-input-label-scale));
 }
 .db-input input:disabled, .db-input input:disabled + label, fieldset:disabled .db-input input, fieldset:disabled .db-input input + label {
   opacity: 0.25;
+  pointer-events: none;
 }
 .db-input input:required + label::after {
   content: " *";
@@ -322,7 +323,7 @@
   transition: opacity 0.12s;
 }
 .db-input .icon-input-state {
-  --icon-font-family: var(--db-base-icon-font-family);
+  --icon-font-family: var(--db-base-icon-font-family-filled);
   --icon-font-size: var(--db-base-icon-font-size);
   display: flex;
   align-items: center;
@@ -333,6 +334,10 @@
   height: var(--db-sizing-md);
   pointer-events: none;
   right: 0;
+}
+.db-input .icon-input-state::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
 }
 .db-input[data-variant=critical] {
   color: #550007;
@@ -359,48 +364,6 @@
 .db-input input[aria-invalid=true] ~ .icon-input-state::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "󡄣";
-  content: var(--icon-glyph);
-  display: inline-block;
-  /*** icon - partial ***/
-  font-family: var(--icon-font-family, "icons-24-outline, missing-icons") !important;
-  font-size: var(--icon-font-size, 1.5rem);
-  font-style: normal;
-  font-variant: normal;
-  font-weight: var(--icon-font-weight, normal);
-  line-height: 1;
-  text-transform: none;
-  vertical-align: middle;
-  /* stylelint-disable */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* stylelint-enable */
-  /* stylelint-disable */
-  -webkit-alt: "";
-  /* stylelint-enable */
-  alt: "";
-  speak: none;
-  speak: never;
-}
-@supports (content: ""/"") {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after {
-    content: var(--icon-glyph)/"";
-  }
-}
-@media aural {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after {
-    content: none;
-  }
-}
-@media speech {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after {
-    content: none;
-  }
 }
 .db-input[data-variant=warning] input + label {
   color: #3e2500;
@@ -445,4 +408,8 @@
 .db-ui-expressive .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator {
   margin-top: -0.75em;
   padding: 0;
+}
+
+.db-ui-functional .db-input > input:disabled:not(:placeholder-shown) + label {
+  opacity: 0;
 }
