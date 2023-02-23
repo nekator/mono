@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 import { DBCheckbox } from './index';
 
-const comp = <DBCheckbox>Test</DBCheckbox>;
+const comp = <DBCheckbox></DBCheckbox>;
 
 const testComponent = () => {
 	test('DBCheckbox should contain text', async ({ mount }) => {
