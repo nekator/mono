@@ -12,7 +12,7 @@ useMetadata({
 });
 
 export default function DBCheckbox(props: DBCheckboxProps) {
-	const checkboxInputRef = useRef<HTMLCheckboxElement>(null);
+	const checkboxInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBCheckboxState>({
 		mId: DEFAULT_ID,
 		_isValid: undefined,
