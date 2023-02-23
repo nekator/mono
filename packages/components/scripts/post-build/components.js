@@ -27,8 +27,8 @@ const getComponents = () => [
 			],
 			angular: [
 				{
-					from: 'this.textCheckboxRef.nativeElement',
-					to: 'this.textCheckboxRef?.nativeElement'
+					from: 'this.checkboxInputRef.nativeElement',
+					to: 'this.checkboxInputRef?.nativeElement'
 				}
 			],
 			vue: [
