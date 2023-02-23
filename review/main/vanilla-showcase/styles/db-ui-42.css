@@ -3305,6 +3305,12 @@
   font-weight: 700;
   src: local("DB Screen Sans Bold"), url("../assets/fonts/dbscreensans-bold.woff2") format("woff2"), url("../assets/fonts/dbscreensans-bold.woff") format("woff");
 }
+@font-face {
+  font-family: "DB Screen Sans Digital Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: local("DB Screen Sans Digital Regular"), url("../assets/fonts/dbscreensans-digitalregular.woff2") format("woff2"), url("../assets/fonts/dbscreensans-digitalregular.woff") format("woff");
+}
 .db-ui-regular,
 [data-tonality=regular], :root {
   --db-type-headline-font-size-3xl: 2rem;
