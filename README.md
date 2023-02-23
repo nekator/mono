@@ -83,7 +83,7 @@ Here is an overview of all components you can use:
 | Pagination                                            | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Popover                                               | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ❌        |
 | Progress                                              | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
-| Radio                                                 | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Radio](packages/components/src/components/radio)     | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
 | Rating                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
 | Section                                               | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
 | Select                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
