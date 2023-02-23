@@ -27,8 +27,8 @@ const getComponents = () => [
 			],
 			angular: [
 				{
-					from: 'this.textRadioRef.nativeElement',
-					to: 'this.textRadioRef?.nativeElement'
+					from: 'this.radioInputRef.nativeElement',
+					to: 'this.radioInputRef?.nativeElement'
 				}
 			],
 			vue: [
