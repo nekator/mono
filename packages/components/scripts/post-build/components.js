@@ -17,6 +17,19 @@
  */
 const getComponents = () => [
 	{
+		name: 'radio',
+		defaultStylePath: 'components/radio/radio.css',
+		overwrites: {
+			vue: [
+				{
+					from: 'import { DBRadioState, DBRadioProps } from "./model";',
+					to: ''
+				}
+			]
+		}
+	},
+
+	{
 		name: 'alert',
 		defaultStylePath: 'components/alert/alert.css',
 		overwrites: {
