@@ -11,10 +11,6 @@
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component";
 
-:root {
-	--db-input-label-transition-duration: 0.2s;
-}
-
 @mixin label-focus-animation(
 	$translationX: var(--db-input-padding-inline-start)
 ) {
