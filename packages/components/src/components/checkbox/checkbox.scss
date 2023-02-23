@@ -16,11 +16,16 @@
 	@extend %db-bg-neutral-0;
 	@extend %db-bg-neutral-0-ia-states;
 
+	// Check icon
 	@include icon("\00A0", $checkbox-size, "outline");
-	// TODO: we need to wait for https://github.com/db-ui/mono/pull/518 to get merged to reintegrate this again
-	// @include icon-meta($font-size: $checkbox-size - 2);
+	// Icons font size
+	&::before {
+		--icon-font-size: calc(var(--checkbox-size) - 2px);
+	}
 
+	/* stylelint-disable order/order */
 	align-content: center;
+	/* stylelint-enable order/order */
 
 	appearance: none;
 
@@ -36,11 +41,6 @@
 
 	&[type="checkbox"] {
 		vertical-align: bottom;
-	}
-
-	// Icons font size
-	&::before {
-		--icon-font-size: calc(var(--checkbox-size) - 2px);
 	}
 
 	&:checked {
