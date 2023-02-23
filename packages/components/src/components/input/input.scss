@@ -11,6 +11,10 @@
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component";
 
+:root {
+	--db-input-label-transition-duration: 0.2s;
+}
+
 @mixin label-focus-animation(
 	$translationX: var(--db-input-padding-inline-start)
 ) {
@@ -149,22 +153,20 @@
 			$db-spacing-fixed-xs var(--db-input-padding-inline-start);
 
 		// TODO: Evaluate whether those could get moved to ../_form-elements.scss
-		&:focus,
+		&:focus-visible,
 		&:not(:placeholder-shown) {
-			&:not(:disabled) {
-				padding-bottom: calc(
-					$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
-						$db-spacing-fixed-xs
-				);
-				// move filled text for expressive and regular to center with focused label
-				padding-top: calc(
-					var(--db-spacing-fixed-xs) + 0.25em *
-						var(--db-input-focus-opacity)
-				);
+			padding-bottom: calc(
+				$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
+					$db-spacing-fixed-xs
+			);
+			// move filled text for expressive and regular to center with focused label
+			padding-top: calc(
+				var(--db-spacing-fixed-xs) + 0.25em *
+					var(--db-input-focus-opacity)
+			);
 
-				+ label {
-					@include label-focus-animation();
-				}
+			+ label {
+				@include label-focus-animation();
 			}
 		}
 
@@ -175,6 +177,7 @@
 			& + label {
 				// Decided against cursor: not-allowed, compare to e.g. https://phabricator.wikimedia.org/T121960
 				opacity: 0.25;
+				pointer-events: none;
 			}
 		}
 
@@ -278,7 +281,7 @@
 
 	// #variations
 	.icon-input-state {
-		--icon-font-family: var(--db-base-icon-font-family);
+		--icon-font-family: var(--db-base-icon-font-family-filled);
 		--icon-font-size: var(--db-base-icon-font-size);
 		display: flex;
 		align-items: center;
@@ -290,6 +293,11 @@
 
 		pointer-events: none;
 		right: 0;
+
+		&::before {
+			--icon-font-family: var(--db-base-icon-font-family-filled);
+			--icon-font-size: var(--db-base-icon-font-size);
+		}
 	}
 
 	&[data-variant="critical"] {
@@ -320,7 +328,7 @@
 		& ~ .icon-input-state {
 			// TODO fix this workaround after new icon implementation
 			--icon-glyph: "\e1123";
-			@include icon(glyph(error), 24, "outline", "after", true);
+			@include icon(glyph(error), 24, "filled", "after", false);
 		}
 	}
 
@@ -422,5 +430,17 @@
 		// TODO change icon and use db-icons to adopt color for data-variants
 		margin-top: -0.75em;
 		padding: 0;
+	}
+}
+
+.db-ui-functional {
+	.db-input > input {
+		&:disabled {
+			&:not(:placeholder-shown) {
+				+ label {
+					opacity: 0;
+				}
+			}
+		}
 	}
 }

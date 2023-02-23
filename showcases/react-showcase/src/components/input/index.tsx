@@ -89,6 +89,10 @@ const variants: DefaultComponentVariants[] = [
 			},
 			{
 				name: 'Disabled',
+				example: <DBInput label={defaultLabelText} disabled />
+			},
+			{
+				name: 'Disabled with value',
 				example: (
 					<DBInput
 						label={defaultLabelText}
@@ -103,7 +107,6 @@ const variants: DefaultComponentVariants[] = [
 					<DBInput
 						label={defaultLabelText}
 						value="Input Text"
-						disabled
 						required
 					/>
 				)
