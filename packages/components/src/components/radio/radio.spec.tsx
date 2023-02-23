@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 import { DBRadio } from './index';
 
-const comp = <DBRadio>Test</DBRadio>;
+const comp = <DBRadio label="Test"></DBRadio>;
 
 const testComponent = () => {
 	test('DBRadio should contain text', async ({ mount }) => {

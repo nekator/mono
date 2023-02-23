@@ -20,12 +20,32 @@ const getComponents = () => [
 		name: 'radio',
 		defaultStylePath: 'components/radio/radio.css',
 		overwrites: {
+			global: [
+				{ from: 'handleChange(event)', to: 'handleChange(event:any)' },
+				{ from: 'handleBlur(event)', to: 'handleBlur(event:any)' },
+				{ from: 'handleFocus(event)', to: 'handleFocus(event:any)' }
+			],
+			angular: [
+				{
+					from: 'this.textRadioRef.nativeElement',
+					to: 'this.textRadioRef?.nativeElement'
+				}
+			],
 			vue: [
 				{
 					from: 'import { DBRadioState, DBRadioProps } from "./model";',
 					to: ''
+				},
+				{
+					from: '_isValid: undefined,',
+					to: ''
 				}
 			]
+		},
+		config: {
+			vue: {
+				vModel: [{ modelValue: 'value', binding: ':value' }]
+			}
 		}
 	},
 
