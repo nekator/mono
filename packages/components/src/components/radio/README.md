@@ -22,7 +22,6 @@ To get DBRadio work with `v-model` you have to use v-model argument syntax:
 ```ts
 <DBRadio
 	label="Textlabel"
-	placeholder="Start"
 	v-model:value="vModelTest"
 ></DBRadio>
 ```
