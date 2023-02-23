@@ -12,7 +12,7 @@ useMetadata({
 });
 
 export default function DBRadio(props: DBRadioProps) {
-	const radioInputRef = useRef<HTMLRadioElement>(null);
+	const radioInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBRadioState>({
 		mId: DEFAULT_ID,
 		_isValid: undefined,
