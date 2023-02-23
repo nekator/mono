@@ -2,6 +2,21 @@ import type { DbMainnavigationDataType } from '@db-ui/elements/dist/types/compon
 
 const componentChildren = [
 	{
+		label: 'TODO: Add to specific category; DBCheckbox',
+		link: '/components/checkbox',
+		children: [
+			{
+				label: 'Examples',
+				link: '/components/checkbox/examples'
+			},
+			{
+				label: 'How to use',
+				link: '/components/checkbox/how-to-use'
+			}
+		]
+	},
+
+	{
 		label: '01 Layout',
 		link: '/components/01-layout',
 		children: [

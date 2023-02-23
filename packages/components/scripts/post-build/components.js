@@ -17,6 +17,19 @@
  */
 const getComponents = () => [
 	{
+		name: 'checkbox',
+		defaultStylePath: 'components/checkbox/checkbox.css',
+		overwrites: {
+			vue: [
+				{
+					from: 'import { DBCheckboxState, DBCheckboxProps } from "./model";',
+					to: ''
+				}
+			]
+		}
+	},
+
+	{
 		name: 'alert',
 		defaultStylePath: 'components/alert/alert.css',
 		overwrites: {
