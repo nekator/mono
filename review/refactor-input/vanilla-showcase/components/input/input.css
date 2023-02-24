@@ -263,6 +263,9 @@
   width: 100%;
   padding: var(--db-spacing-fixed-xs) var(--db-input-padding-inline-end) var(--db-spacing-fixed-xs) var(--db-input-padding-inline-start);
 }
+.db-input input:focus:not(:focus-visible) {
+  outline: none;
+}
 .db-input input:focus-visible, .db-input input:not(:placeholder-shown) {
   padding-bottom: calc(var(--db-spacing-fixed-xs) - var(--db-input-focus-opacity) * var(--db-spacing-fixed-xs));
   padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
