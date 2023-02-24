@@ -54,17 +54,17 @@
 			top: 0;
 			right: 0;
 			left: 0;
-		} @else if $direction == "bottom" {
+		} @else if $position == "bottom" {
 			height: 1px;
 			bottom: 0;
 			right: 0;
 			left: 0;
-		} @else if $direction == "left" {
+		} @else if $position == "left" {
 			width: 1px;
 			left: 0;
 			bottom: 0;
 			top: 0;
-		} @else if $direction == "right" {
+		} @else if $position == "right" {
 			width: 1px;
 			right: 0;
 			bottom: 0;
