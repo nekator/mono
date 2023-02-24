@@ -263,14 +263,11 @@
   width: 100%;
   padding: var(--db-spacing-fixed-xs) var(--db-input-padding-inline-end) var(--db-spacing-fixed-xs) var(--db-input-padding-inline-start);
 }
-.db-input input:focus:not(:focus-visible) {
-  outline: none;
-}
-.db-input input:focus-visible, .db-input input:not(:placeholder-shown) {
+.db-input input:focus, .db-input input:not(:placeholder-shown) {
   padding-bottom: calc(var(--db-spacing-fixed-xs) - var(--db-input-focus-opacity) * var(--db-spacing-fixed-xs));
   padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
 }
-.db-input input:focus-visible + label, .db-input input:not(:placeholder-shown) + label {
+.db-input input:focus + label, .db-input input:not(:placeholder-shown) + label {
   transition: opacity 0.08s, transform 0.15s;
   opacity: var(--db-input-focus-opacity);
   transform: translate(calc(var(--db-input-padding-inline-start) + 0.1em), calc(var(--db-sizing-md) * -1.25)) scale(var(--db-input-label-scale));
