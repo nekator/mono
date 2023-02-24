@@ -41,6 +41,8 @@
 // https://bugs.chromium.org/p/chromium/issues/detail?id=1274133
 // https://github.com/WebKit/WebKit/commit/1890bfb551da24735804cb1a3d5f14b210f7c7b8
 @mixin divider($position: "top", $slot: "before") {
+	position:relative;
+	
 	&::#{$slot} {
 		content: "";
 		background-color: currentColor;
