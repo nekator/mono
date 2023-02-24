@@ -50,22 +50,22 @@
 
 		position: absolute;
 		@if $position == "top" {
-			height: to-rem(1);
+			height: 1px;
 			top: 0;
 			right: 0;
 			left: 0;
 		} @else if $position == "bottom" {
-			height: to-rem(1);
+			height: 1px;
 			bottom: 0;
 			right: 0;
 			left: 0;
 		} @else if $position == "left" {
-			width: to-rem(1);
+			width: 1px;
 			left: 0;
 			bottom: 0;
 			top: 0;
 		} @else if $position == "right" {
-			width: to-rem(1);
+			width: 1px;
 			right: 0;
 			bottom: 0;
 			top: 0;
