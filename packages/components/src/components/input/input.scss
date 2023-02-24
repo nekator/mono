@@ -148,12 +148,8 @@
 		padding: $db-spacing-fixed-xs var(--db-input-padding-inline-end)
 			$db-spacing-fixed-xs var(--db-input-padding-inline-start);
 
-		&:focus:not(:focus-visible) {
-			outline: none;
-		}
-
 		// TODO: Evaluate whether those could get moved to ../_form-elements.scss
-		&:focus-visible,
+		&:focus,
 		&:not(:placeholder-shown) {
 			padding-bottom: calc(
 				$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
