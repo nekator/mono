@@ -61,14 +61,14 @@
 			left: 0;
 		} @else if $direction == "left" {
 			width: 1px;
-			bottom: 0;
-			top: 0;
 			left: 0;
-		} @else if $direction == "left" {
-			width: 1px;
 			bottom: 0;
 			top: 0;
+		} @else if $direction == "right" {
+			width: 1px;
 			right: 0;
+			bottom: 0;
+			top: 0;
 		}
 	}
 }
