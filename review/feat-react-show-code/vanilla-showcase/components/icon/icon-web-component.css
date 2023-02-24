@@ -1751,133 +1751,155 @@
 [data-icon-variant="16-outline"][data-icon]::before, [data-icon-variant="16-outline"][data-icon-before]::before,
 [data-icon-variant-before="16-outline"][data-icon]::before,
 [data-icon-variant-before="16-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-16-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="16-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-16-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="20-outline"][data-icon]::before, [data-icon-variant="20-outline"][data-icon-before]::before,
 [data-icon-variant-before="20-outline"][data-icon]::before,
 [data-icon-variant-before="20-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="20-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="24-outline"][data-icon]::before, [data-icon-variant="24-outline"][data-icon-before]::before,
 [data-icon-variant-before="24-outline"][data-icon]::before,
 [data-icon-variant-before="24-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="24-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="32-outline"][data-icon]::before, [data-icon-variant="32-outline"][data-icon-before]::before,
 [data-icon-variant-before="32-outline"][data-icon]::before,
 [data-icon-variant-before="32-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="32-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="48-outline"][data-icon]::before, [data-icon-variant="48-outline"][data-icon-before]::before,
 [data-icon-variant-before="48-outline"][data-icon]::before,
 [data-icon-variant-before="48-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="48-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="64-outline"][data-icon]::before, [data-icon-variant="64-outline"][data-icon-before]::before,
 [data-icon-variant-before="64-outline"][data-icon]::before,
 [data-icon-variant-before="64-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="64-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="20-filled"][data-icon]::before, [data-icon-variant="20-filled"][data-icon-before]::before,
 [data-icon-variant-before="20-filled"][data-icon]::before,
 [data-icon-variant-before="20-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="20-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="24-filled"][data-icon]::before, [data-icon-variant="24-filled"][data-icon-before]::before,
 [data-icon-variant-before="24-filled"][data-icon]::before,
 [data-icon-variant-before="24-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="24-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="32-filled"][data-icon]::before, [data-icon-variant="32-filled"][data-icon-before]::before,
 [data-icon-variant-before="32-filled"][data-icon]::before,
 [data-icon-variant-before="32-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="32-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="48-filled"][data-icon]::before, [data-icon-variant="48-filled"][data-icon-before]::before,
 [data-icon-variant-before="48-filled"][data-icon]::before,
 [data-icon-variant-before="48-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="48-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="64-filled"][data-icon]::before, [data-icon-variant="64-filled"][data-icon-before]::before,
 [data-icon-variant-before="64-filled"][data-icon]::before,
 [data-icon-variant-before="64-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="64-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 @font-face {

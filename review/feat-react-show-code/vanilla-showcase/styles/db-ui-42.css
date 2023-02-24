@@ -1751,133 +1751,155 @@
 [data-icon-variant="16-outline"][data-icon]::before, [data-icon-variant="16-outline"][data-icon-before]::before,
 [data-icon-variant-before="16-outline"][data-icon]::before,
 [data-icon-variant-before="16-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-16-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="16-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-16-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="20-outline"][data-icon]::before, [data-icon-variant="20-outline"][data-icon-before]::before,
 [data-icon-variant-before="20-outline"][data-icon]::before,
 [data-icon-variant-before="20-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="20-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="24-outline"][data-icon]::before, [data-icon-variant="24-outline"][data-icon-before]::before,
 [data-icon-variant-before="24-outline"][data-icon]::before,
 [data-icon-variant-before="24-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="24-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="32-outline"][data-icon]::before, [data-icon-variant="32-outline"][data-icon-before]::before,
 [data-icon-variant-before="32-outline"][data-icon]::before,
 [data-icon-variant-before="32-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="32-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="48-outline"][data-icon]::before, [data-icon-variant="48-outline"][data-icon-before]::before,
 [data-icon-variant-before="48-outline"][data-icon]::before,
 [data-icon-variant-before="48-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="48-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="64-outline"][data-icon]::before, [data-icon-variant="64-outline"][data-icon-before]::before,
 [data-icon-variant-before="64-outline"][data-icon]::before,
 [data-icon-variant-before="64-outline"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="64-outline"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-outline",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="20-filled"][data-icon]::before, [data-icon-variant="20-filled"][data-icon-before]::before,
 [data-icon-variant-before="20-filled"][data-icon]::before,
 [data-icon-variant-before="20-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="20-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-20-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="24-filled"][data-icon]::before, [data-icon-variant="24-filled"][data-icon-before]::before,
 [data-icon-variant-before="24-filled"][data-icon]::before,
 [data-icon-variant-before="24-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="24-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-24-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="32-filled"][data-icon]::before, [data-icon-variant="32-filled"][data-icon-before]::before,
 [data-icon-variant-before="32-filled"][data-icon]::before,
 [data-icon-variant-before="32-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="32-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-32-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="48-filled"][data-icon]::before, [data-icon-variant="48-filled"][data-icon-before]::before,
 [data-icon-variant-before="48-filled"][data-icon]::before,
 [data-icon-variant-before="48-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="48-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-48-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant="64-filled"][data-icon]::before, [data-icon-variant="64-filled"][data-icon-before]::before,
 [data-icon-variant-before="64-filled"][data-icon]::before,
 [data-icon-variant-before="64-filled"][data-icon-before]::before {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 [data-icon-variant-after="64-filled"][data-icon-after]::after {
-  --icon-font-family: var(--db-base-icon-font-family);
-  --icon-font-size: var(--db-base-icon-font-size);
+  --icon-font-family: "icons-64-filled",
+  	"missing-icons";
+  --icon-font-size: 1.5rem;
 }
 
 @font-face {
@@ -2928,26 +2950,26 @@
 /**
 * SECONDARY - Placeholder Utilities
 **/
-[data-color-variant=secondary].db-card button:not(:disabled):hover, pre:has(code) button:not(:disabled):hover, code button:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover, pre[data-variant=ia]:not(:disabled):hover:has(code), code[data-variant=ia]:not(:disabled):hover {
+.db-code-docs .code button:not(:disabled):hover, [data-color-variant=secondary].db-card button:not(:disabled):hover, pre:has(code) button:not(:disabled):hover, code button:not(:disabled):hover, .db-code-docs [data-variant=ia].code:not(:disabled):hover, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):hover, pre[data-variant=ia]:not(:disabled):hover:has(code), code[data-variant=ia]:not(:disabled):hover {
   background-color: #42464f;
   --db-current-background-color: #42464f;
 }
-[data-color-variant=secondary].db-card button:not(:disabled):active, pre:has(code) button:not(:disabled):active, code button:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active, pre[data-variant=ia]:not(:disabled):active:has(code), code[data-variant=ia]:not(:disabled):active {
+.db-code-docs .code button:not(:disabled):active, [data-color-variant=secondary].db-card button:not(:disabled):active, pre:has(code) button:not(:disabled):active, code button:not(:disabled):active, .db-code-docs [data-variant=ia].code:not(:disabled):active, [data-variant=ia][data-color-variant=secondary].db-card:not(:disabled):active, pre[data-variant=ia]:not(:disabled):active:has(code), code[data-variant=ia]:not(:disabled):active {
   background-color: #5b5f66;
   --db-current-background-color: #5b5f66;
 }
 
-[data-color-variant=secondary].db-card, pre:has(code), code, pre[data-variant=ia]:has(code), code[data-variant=ia] {
+.db-code-docs .code, [data-color-variant=secondary].db-card, pre:has(code), code, pre[data-variant=ia]:has(code), code[data-variant=ia] {
   background-color: #282d37;
   color: #ffffff;
   --db-current-background-color: #282d37;
   --db-current-color: #ffffff;
 }
-[data-color-variant=secondary].db-card a:not(:disabled):hover, pre:has(code) a:not(:disabled):hover, code a:not(:disabled):hover {
+.db-code-docs .code a:not(:disabled):hover, [data-color-variant=secondary].db-card a:not(:disabled):hover, pre:has(code) a:not(:disabled):hover, code a:not(:disabled):hover {
   color: rgba(255, 255, 255, 0.75);
   --db-current-color: rgba(255, 255, 255, 0.75);
 }
-[data-color-variant=secondary].db-card a:not(:disabled):active, pre:has(code) a:not(:disabled):active, code a:not(:disabled):active {
+.db-code-docs .code a:not(:disabled):active, [data-color-variant=secondary].db-card a:not(:disabled):active, pre:has(code) a:not(:disabled):active, code a:not(:disabled):active {
   color: rgba(255, 255, 255, 0.25);
   --db-current-color: rgba(255, 255, 255, 0.25);
 }
@@ -3304,6 +3326,12 @@
   font-style: normal;
   font-weight: 700;
   src: local("DB Screen Sans Bold"), url("../assets/fonts/dbscreensans-bold.woff2") format("woff2"), url("../assets/fonts/dbscreensans-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "DB Screen Sans Digital Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: local("DB Screen Sans Digital Regular"), url("../assets/fonts/dbscreensans-digitalregular.woff2") format("woff2"), url("../assets/fonts/dbscreensans-digitalregular.woff") format("woff");
 }
 .db-ui-regular,
 [data-tonality=regular], :root {
@@ -4016,7 +4044,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description {
+.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description, .db-code-docs .code pre code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -4176,7 +4204,7 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
-.db-alert, .db-input, .db-icon, .db-button {
+.db-code-docs, .db-alert, .db-input, .db-icon, .db-button {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
@@ -4908,6 +4936,49 @@ code {
 .db-alert-close-container {
   display: flex;
   gap: var(--db-spacing-fixed-md);
+}
+
+/* Add styles for component here */
+.db-code-docs {
+  padding: var(--db-spacing-fixed-md);
+  padding-block-end: calc(var(--db-spacing-fixed-md) + var(--db-sizing-sm));
+  position: relative;
+}
+.db-code-docs .code-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.db-code-docs .no-code {
+  margin: auto;
+}
+.db-code-docs .code {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  padding-block-end: var(--db-sizing-sm);
+}
+@media screen and (min-width: 768px) {
+  .db-code-docs .code {
+    left: 50%;
+  }
+}
+.db-code-docs .code pre {
+  margin: 0;
+  display: flex;
+  gap: var(--db-spacing-fixed-sm);
+  align-items: center;
+}
+.db-code-docs .code pre code {
+  white-space: pre-wrap;
+  width: 100%;
 }
 
 /* This is a predefined beginner friendly bundle with default asset-paths (../assets) */
