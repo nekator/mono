@@ -1,7 +1,7 @@
 .db-divider {
   height: 0.0625rem;
   width: 100%;
-  opacity: 0.1;
+  opacity: 0.16;
   background: var(--db-current-color, #282d37);
 }
 .db-divider:not([data-margin=none]) {
