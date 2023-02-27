@@ -4,10 +4,10 @@
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/shadow-dom" as *;
 
-.elm-radio {
+.db-radio {
 	// Using another CSS variable for the size to differentiate for the small variant later
 	--radio-size: #{$db-sizing-sm};
-	
+
 	@extend %db-bg-neutral-0-ia;
 
 	appearance: none;
@@ -65,7 +65,7 @@
 
 	& + label {
 		@extend %shadow-dom-extend;
-		
+
 		font-size: $db-typography-regular-desktop-body-medium-font-size;
 		line-height: $db-typography-regular-desktop-body-medium-line-height;
 

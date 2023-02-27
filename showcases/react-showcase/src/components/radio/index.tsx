@@ -1,31 +1,42 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { DBRadio } from '../../../../../output/react/src';
-import { COLOR_CONST } from '../../../../../packages/components/src/shared/constants';
 import DefaultComponent, { type DefaultComponentVariants } from '../index';
-
-const defaultLabelText = 'Label';
 
 const variants: DefaultComponentVariants[] = [
 	{
-		name: 'States',
+		name: 'Variants',
 		examples: [
-			{ name: 'Default', example: <DBRadio label={defaultLabelText} /> },
-			{
-				name: 'checked',
-				example: <DBRadio label={defaultLabelText} checked={true} />
-			},
-			{
-				name: 'Invalid',
-				example: <DBRadio label={defaultLabelText} invalid={true} />
-			},
+			{ name: 'Default', example: <DBRadio label="Label" /> },
 			{
 				name: 'Disabled',
-				example: <DBRadio label={defaultLabelText} disabled />
+				example: <DBRadio label="Label" disabled={true} />
 			},
 			{
 				name: 'Required',
-				example: <DBRadio label={defaultLabelText} required />
+				example: <DBRadio label="Label" required={true} />
+			}
+		]
+	},
+	{
+		name: 'States',
+		examples: [
+			{ name: 'Default', example: <DBRadio label="Label" /> },
+			{
+				name: 'Checked',
+				example: <DBRadio label="Label" checked={true} />
+			},
+			{
+				name: 'Invalid',
+				example: <DBRadio label="Label" invalid={true} />
+			}
+		]
+	},
+	{
+		name: 'Size',
+		examples: [
+			{ name: 'Default', example: <DBRadio label="Label" /> },
+			{
+				name: 'Small',
+				example: <DBRadio label="Label" size="small" />
 			}
 		]
 	}

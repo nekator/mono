@@ -95,13 +95,14 @@ export default function DBRadio(props: DBRadioProps) {
 				ref={radioInputRef}
 				type="radio"
 				class={
-					'elm-radio' + (props.className ? ' ' + props.className : '')
+					'db-radio' + (props.className ? ' ' + props.className : '')
 				}
 				id={state.mId}
 				name={props.name}
 				checked={state._checked}
 				disabled={props.disabled}
 				value={state._value}
+				aria-labelledby={state.mId + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}

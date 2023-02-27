@@ -19,7 +19,7 @@ export interface DBRadioDefaultProps {
 	required?: boolean;
 	describedbyid?: string;
 	invalid?: boolean;
-	size?: string;
+	size?: 'small';
 }
 
 export type DBRadioProps = DBRadioDefaultProps &
