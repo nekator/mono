@@ -218,6 +218,10 @@
 					opacity: 0.5;
 				}
 			}
+
+			&:focus-visible {
+				border-radius: var(--db-focus-outline-radius, 6px);
+			}
 		}
 
 		&[type="search"] {
