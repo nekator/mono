@@ -31,26 +31,26 @@
   --icon-font-size: var(--db-base-icon-font-size);
 }
 .db-infotext[data-variant=critical] {
-  color: #ec0016;
+  color: var(--db-colors-critical-enabled, #ec0016);
 }
 .db-infotext[data-variant=critical] .db-icon {
-  color: #ec0016;
+  color: var(--db-colors-critical-element-enabled, #ec0016);
 }
 .db-infotext[data-variant=information] {
-  color: #0087b9;
+  color: var(--db-colors-information-enabled, #0087b9);
 }
 .db-infotext[data-variant=information] .db-icon {
-  color: #309fd1;
+  color: var(--db-colors-information-element-enabled, #309fd1);
 }
 .db-infotext[data-variant=warning] {
-  color: #ac6600;
+  color: var(--db-colors-warning-enabled, #ac6600);
 }
 .db-infotext[data-variant=warning] .db-icon {
-  color: #d68000;
+  color: var(--db-colors-warning-element-enabled, #d68000);
 }
 .db-infotext[data-variant=success] {
-  color: #4c8500;
+  color: var(--db-colors-success-enabled, #4c8500);
 }
 .db-infotext[data-variant=success] .db-icon {
-  color: #63a615;
+  color: var(--db-colors-success-element-enabled, #63a615);
 }
