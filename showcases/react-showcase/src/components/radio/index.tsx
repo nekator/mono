@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { DBRadio } from '../../../../../output/react/src';
-import {
-	COLOR_CONST,
-	INVALID_INPUT_BACKGROUNDS
-} from '../../../../../packages/components/src/shared/constants';
+import { COLOR_CONST } from '../../../../../packages/components/src/shared/constants';
 import DefaultComponent, { type DefaultComponentVariants } from '../index';
 
 const defaultLabelText = 'Label';
@@ -35,35 +32,10 @@ const variants: DefaultComponentVariants[] = [
 ];
 
 const RadioComponent = () => {
-	const [searchParameters] = useSearchParams();
-	const [backgroundWarning, setBackgroundWarning] = useState<boolean>(false);
-
-	useEffect(() => {
-		setBackgroundWarning(
-			(searchParameters.has(COLOR_CONST) &&
-				Boolean(
-					INVALID_INPUT_BACKGROUNDS.some((iBg) =>
-						iBg.includes(searchParameters.get(COLOR_CONST) ?? '')
-					)
-				)) ||
-				false
-		);
-	}, [searchParameters]);
-
 	return (
 		<DefaultComponent
 			title={'DBRadio'}
-			variants={variants}
-			description={
-				<>
-					{backgroundWarning && (
-						<strong>
-							This background is not working with inputs! Please
-							use light colors as background.
-						</strong>
-					)}
-				</>
-			}></DefaultComponent>
+			variants={variants}></DefaultComponent>
 	);
 };
 

@@ -1,4 +1,10 @@
-import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import {
+	onMount,
+	Show,
+	useMetadata,
+	useStore,
+	useRef
+} from '@builder.io/mitosis';
 import { DBRadioState, DBRadioProps } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
@@ -86,6 +92,7 @@ export default function DBRadio(props: DBRadioProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			<input
+				ref={radioInputRef}
 				type="radio"
 				class={
 					'elm-radio' + (props.className ? ' ' + props.className : '')
