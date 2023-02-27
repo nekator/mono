@@ -139,12 +139,15 @@
 	input {
 		@extend %db-bg-neutral-transparent-semi;
 		border: 1px solid transparent;
-		border-radius: 4px;
 		height: $db-sizing-md;
 		max-width: 100%;
 		width: 100%;
 		padding: $db-spacing-fixed-xs var(--db-input-padding-inline-end)
 			$db-spacing-fixed-xs var(--db-input-padding-inline-start);
+
+		:where(&) {
+			border-radius: 4px;
+		}
 
 		// TODO: Evaluate whether those could get moved to ../_form-elements.scss
 		&:focus,
@@ -217,10 +220,6 @@
 				&::placeholder {
 					opacity: 0.5;
 				}
-			}
-
-			&:focus-visible {
-				border-radius: var(--db-focus-outline-radius, 6px);
 			}
 		}
 
