@@ -1,5 +1,6 @@
 @charset "UTF-8";
-.db-input .db-icon::before, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week] {
+.db-input .db-icon,
+.db-input db-icon, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week] {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
   --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
   /* prettier-ignore */
@@ -248,11 +249,11 @@
 .db-input[data-variant]:has(> .icon-after) input {
   padding-inline-end: var(--db-input-padding-inline-end);
 }
-.db-input[data-variant]:has(> .icon-after) .icon-input-state::before,
-.db-input[data-variant]:has(> .icon-after) .icon-input-state .db-icon::before {
-  margin-inline-end: calc(0.75rem + var(--db-spacing-fixed-sm));
+.db-input[data-variant]:has(> .icon-after) .icon-input-state {
+  margin-inline-end: calc(0.75rem + 2 * var(--db-spacing-fixed-sm));
 }
-.db-input .db-icon::before {
+.db-input .db-icon,
+.db-input db-icon {
   --icon-font-family: var(--db-base-icon-font-family);
   --icon-font-size: var(--db-base-icon-font-size);
   height: var(--db-sizing-md);
@@ -262,12 +263,11 @@
   top: 0;
   padding: 0 var(--db-spacing-fixed-sm);
 }
-.db-input:has(> .icon-after) .db-icon.icon-after::before, .db-input:has(> .icon-after) .icon-after .db-icon::before {
+.db-input:has(> .icon-after) .icon-after {
   right: 0;
 }
 .db-input:has(> input:disabled) .db-icon,
-.db-input:has(> input:disabled) .icon-input-state::before,
-.db-input:has(> input:disabled) .icon-input-state .db-icon::before {
+.db-input:has(> input:disabled) .icon-input-state {
   opacity: 0.5;
 }
 .db-input label {
@@ -278,8 +278,9 @@
   transform-origin: left;
   transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
   transition: transform 0.2s cubic-bezier(0.15, 0, 0.45, 1);
+  will-change: transform;
   height: var(--db-sizing-md);
-  pointer-events: none;
+  cursor: text;
   max-width: var(--db-input-label-max-width, 80%);
 }
 .db-input label span:first-child {
@@ -300,17 +301,18 @@
   width: 100%;
   padding: var(--db-spacing-fixed-xs) var(--db-input-padding-inline-end) var(--db-spacing-fixed-xs) var(--db-input-padding-inline-start);
 }
-.db-input input:focus:not(:disabled), .db-input input:not(:placeholder-shown):not(:disabled) {
+.db-input input:focus, .db-input input:not(:placeholder-shown) {
   padding-bottom: calc(var(--db-spacing-fixed-xs) - var(--db-input-focus-opacity) * var(--db-spacing-fixed-xs));
   padding-top: calc(var(--db-spacing-fixed-xs) + 0.25em * var(--db-input-focus-opacity));
 }
-.db-input input:focus:not(:disabled) + label, .db-input input:not(:placeholder-shown):not(:disabled) + label {
+.db-input input:focus + label, .db-input input:not(:placeholder-shown) + label {
   transition: opacity 0.08s, transform 0.15s;
   opacity: var(--db-input-focus-opacity);
   transform: translate(calc(var(--db-input-padding-inline-start) + 0.1em), calc(var(--db-sizing-md) * -1.25)) scale(var(--db-input-label-scale));
 }
 .db-input input:disabled, .db-input input:disabled + label, fieldset:disabled .db-input input, fieldset:disabled .db-input input + label {
   opacity: 0.25;
+  pointer-events: none;
 }
 .db-input input:required + label::after {
   content: " *";
@@ -358,8 +360,9 @@
   cursor: pointer;
   transition: opacity 0.12s;
 }
-.db-input .icon-input-state.db-icon,
-.db-input .icon-input-state .db-icon {
+.db-input .icon-input-state {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -367,23 +370,12 @@
   top: 0;
   padding: 0 var(--db-spacing-fixed-xs);
   height: var(--db-sizing-md);
-  width: 100%;
   pointer-events: none;
-}
-.db-input .icon-input-state.db-icon::after, .db-input .icon-input-state.db-icon::before,
-.db-input .icon-input-state .db-icon::after,
-.db-input .icon-input-state .db-icon::before {
-  --icon-font-family: var(--db-base-icon-font-family-filled);
-  --icon-font-size: var(--db-base-icon-font-size);
   right: 0;
 }
-.db-input .icon-input-state.db-icon::before,
-.db-input .icon-input-state .db-icon::before {
-  --icon-margin-after: auto;
-}
-.db-input .icon-input-state.db-icon::after,
-.db-input .icon-input-state .db-icon::after {
-  --icon-margin-before: auto;
+.db-input .icon-input-state::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
 }
 .db-input[data-variant=critical] {
   color: #550007;
@@ -398,77 +390,23 @@
 .db-input input[aria-invalid=true] + label {
   color: #550007;
 }
-.db-input[data-variant=critical] input ~ .description, .db-input[data-variant=critical] input ~ .icon-input-state, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon,
+.db-input[data-variant=critical] input ~ .description, .db-input[data-variant=critical] input ~ .icon-input-state,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .description,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
-.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
 .db-input input[aria-invalid=true] ~ .description,
-.db-input input[aria-invalid=true] ~ .icon-input-state,
-.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
+.db-input input[aria-invalid=true] ~ .icon-input-state {
   color: #ec0016;
 }
-.db-input[data-variant=critical] input ~ .icon-input-state, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon,
+.db-input[data-variant=critical] input ~ .icon-input-state,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state,
-.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon,
-.db-input input[aria-invalid=true] ~ .icon-input-state,
-.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon {
+.db-input input[aria-invalid=true] ~ .icon-input-state {
   --icon-glyph: "󡄣";
 }
-.db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
+.db-input[data-variant=critical] input ~ .icon-input-state::after,
 .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-.db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
-.db-input input[aria-invalid=true] ~ .icon-input-state::after,
-.db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
+.db-input input[aria-invalid=true] ~ .icon-input-state::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "󡄣";
-  content: var(--icon-glyph);
-  display: inline-block;
-  /*** icon - partial ***/
-  font-family: var(--icon-font-family, "icons-24-outline, missing-icons") !important;
-  font-size: var(--icon-font-size, 1.5rem);
-  font-style: normal;
-  font-variant: normal;
-  font-weight: var(--icon-font-weight, normal);
-  line-height: 1;
-  text-transform: none;
-  vertical-align: middle;
-  /* stylelint-disable */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* stylelint-enable */
-  /* stylelint-disable */
-  -webkit-alt: "";
-  /* stylelint-enable */
-  alt: "";
-  speak: none;
-  speak: never;
-}
-@supports (content: ""/"") {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
-    content: var(--icon-glyph)/"";
-  }
-}
-@media aural {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
-    content: none;
-  }
-}
-@media speech {
-  .db-input[data-variant=critical] input ~ .icon-input-state::after, .db-input[data-variant=critical] input ~ .icon-input-state .db-icon::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state::after,
-  .db-input input:required:invalid:not(:placeholder-shown) ~ .icon-input-state .db-icon::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state::after,
-  .db-input input[aria-invalid=true] ~ .icon-input-state .db-icon::after {
-    content: none;
-  }
 }
 .db-input[data-variant=warning] input {
   border: solid 1px var(--db-colors-warning-element-enabled, #d68000);
@@ -522,4 +460,8 @@
 .db-ui-expressive .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator {
   margin-top: -0.75em;
   padding: 0;
+}
+
+.db-ui-functional .db-input > input:disabled:not(:placeholder-shown) + label {
+  opacity: 0;
 }
