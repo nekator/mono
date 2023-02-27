@@ -23,159 +23,199 @@
 }
 
 /**
-* NEUTRAL - Placeholder Utilities
-**/
-.db-input input button:not(:disabled):hover, .db-input input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(0, 0, 0, 0.12);
-  --db-current-background-color: rgba(0, 0, 0, 0.12);
-}
-.db-input input button:not(:disabled):active, .db-input input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(0, 0, 0, 0.24);
-  --db-current-background-color: rgba(0, 0, 0, 0.24);
-}
-
-.db-input input, .db-input input[data-variant=ia] {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #282d37;
-  --db-current-background-color: rgba(0, 0, 0, 0.04);
-  --db-current-color: #282d37;
-}
-.db-input input a:not(:disabled):hover {
-  color: rgba(40, 45, 55, 0.75);
-  --db-current-color: rgba(40, 45, 55, 0.75);
-}
-.db-input input a:not(:disabled):active {
-  color: rgba(40, 45, 55, 0.5);
-  --db-current-color: rgba(40, 45, 55, 0.5);
-}
-/**
-* PRIMARY - Placeholder Utilities
-**/
-/**
 * SECONDARY - Placeholder Utilities
 **/
 /**
 * WARNING - Placeholder Utilities
 **/
-.db-input[data-variant=warning] input button:not(:disabled):hover, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(172, 102, 0, 0.12);
-  --db-current-background-color: rgba(172, 102, 0, 0.12);
+.db-input[data-variant=warning] input:not(:disabled):hover, .db-input[data-variant=warning] input button:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-warning-bg-transparent-semi-hover, rgba(172, 102, 0, 0.16));
+  background-color: var(--db-current-background-color, rgba(172, 102, 0, 0.16));
+  --db-current-background-color-red: 158;
+  --db-current-background-color-green: 94;
+  --db-current-background-color-blue: 0;
 }
+
 .db-input[data-variant=warning] input button:not(:disabled):active, .db-input[data-variant=warning] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(172, 102, 0, 0.24);
-  --db-current-background-color: rgba(172, 102, 0, 0.24);
+  --db-current-background-color: var(--db-colors-warning-bg-transparent-semi-pressed, rgba(172, 102, 0, 0.24));
+  background-color: var(--db-current-background-color, rgba(172, 102, 0, 0.24));
+  --db-current-background-color-red: 146;
+  --db-current-background-color-green: 87;
+  --db-current-background-color-blue: 0;
 }
 
 .db-input[data-variant=warning] input {
-  background-color: rgba(172, 102, 0, 0.04);
-  color: #3e2500;
-  --db-current-background-color: rgba(172, 102, 0, 0.04);
-  --db-current-color: #3e2500;
+  --db-current-background-color: var(--db-colors-warning-bg-transparent-semi-enabled, rgba(172, 102, 0, 0.08));
+  --db-current-color: var(--db-colors-warning-on-bg-enabled, #3e2500);
+  --db-current-element-color: var(--db-colors-warning-element-enabled, #d68000);
+  background-color: var(--db-current-background-color, rgba(172, 102, 0, 0.08));
+  color: var(--db-current-color, #3e2500);
+  --db-current-background-color-red: 172;
+  --db-current-background-color-green: 102;
+  --db-current-background-color-blue: 0;
 }
 .db-input[data-variant=warning] input a:not(:disabled):hover {
-  color: rgba(62, 37, 0, 0.75);
-  --db-current-color: rgba(62, 37, 0, 0.75);
+  --db-current-color: var(--db-colors-warning-on-bg-hover, rgba(62, 37, 0, 0.75));
+  color: var(--db-current-color, rgba(62, 37, 0, 0.75));
 }
 .db-input[data-variant=warning] input a:not(:disabled):active {
-  color: rgba(62, 37, 0, 0.5);
-  --db-current-color: rgba(62, 37, 0, 0.5);
+  --db-current-color: var(--db-colors-warning-on-bg-pressed, rgba(62, 37, 0, 0.5));
+  color: var(--db-current-color, rgba(62, 37, 0, 0.5));
 }
+/**
+* INFORMATION - Placeholder Utilities
+**/
+.db-input[data-variant=information] input:not(:disabled):hover, .db-input[data-variant=information] input button:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-information-bg-transparent-semi-hover, rgba(0, 135, 185, 0.16));
+  background-color: var(--db-current-background-color, rgba(0, 135, 185, 0.16));
+  --db-current-background-color-red: 0;
+  --db-current-background-color-green: 125;
+  --db-current-background-color-blue: 171;
+}
+
+.db-input[data-variant=information] input button:not(:disabled):active, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):active {
+  --db-current-background-color: var(--db-colors-information-bg-transparent-semi-pressed, rgba(0, 135, 185, 0.24));
+  background-color: var(--db-current-background-color, rgba(0, 135, 185, 0.24));
+  --db-current-background-color-red: 0;
+  --db-current-background-color-green: 115;
+  --db-current-background-color-blue: 157;
+}
+
+.db-input[data-variant=information] input {
+  --db-current-background-color: var(--db-colors-information-bg-transparent-semi-enabled, rgba(0, 135, 185, 0.08));
+  --db-current-color: var(--db-colors-information-on-bg-enabled, #003143);
+  --db-current-element-color: var(--db-colors-information-element-enabled, #309fd1);
+  background-color: var(--db-current-background-color, rgba(0, 135, 185, 0.08));
+  color: var(--db-current-color, #003143);
+  --db-current-background-color-red: 0;
+  --db-current-background-color-green: 135;
+  --db-current-background-color-blue: 185;
+}
+.db-input[data-variant=information] input a:not(:disabled):hover {
+  --db-current-color: var(--db-colors-information-on-bg-hover, rgba(0, 49, 67, 0.75));
+  color: var(--db-current-color, rgba(0, 49, 67, 0.75));
+}
+.db-input[data-variant=information] input a:not(:disabled):active {
+  --db-current-color: var(--db-colors-information-on-bg-pressed, rgba(0, 49, 67, 0.5));
+  color: var(--db-current-color, rgba(0, 49, 67, 0.5));
+}
+/**
+* PRIMARY - Placeholder Utilities
+**/
 /**
 * SUCCESS - Placeholder Utilities
 **/
-.db-input[data-variant=success] input button:not(:disabled):hover, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(76, 133, 0, 0.12);
-  --db-current-background-color: rgba(76, 133, 0, 0.12);
+.db-input[data-variant=success] input:not(:disabled):hover, .db-input[data-variant=success] input button:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-success-bg-transparent-semi-hover, rgba(76, 133, 0, 0.16));
+  background-color: var(--db-current-background-color, rgba(76, 133, 0, 0.16));
+  --db-current-background-color-red: 71;
+  --db-current-background-color-green: 124;
+  --db-current-background-color-blue: 1;
 }
+
 .db-input[data-variant=success] input button:not(:disabled):active, .db-input[data-variant=success] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(76, 133, 0, 0.24);
-  --db-current-background-color: rgba(76, 133, 0, 0.24);
+  --db-current-background-color: var(--db-colors-success-bg-transparent-semi-pressed, rgba(76, 133, 0, 0.24));
+  background-color: var(--db-current-background-color, rgba(76, 133, 0, 0.24));
+  --db-current-background-color-red: 67;
+  --db-current-background-color-green: 115;
+  --db-current-background-color-blue: 2;
 }
 
 .db-input[data-variant=success] input {
-  background-color: rgba(76, 133, 0, 0.04);
-  color: #243c08;
-  --db-current-background-color: rgba(76, 133, 0, 0.04);
-  --db-current-color: #243c08;
+  --db-current-background-color: var(--db-colors-success-bg-transparent-semi-enabled, rgba(76, 133, 0, 0.08));
+  --db-current-color: var(--db-colors-success-on-bg-enabled, #243c08);
+  --db-current-element-color: var(--db-colors-success-element-enabled, #63a615);
+  background-color: var(--db-current-background-color, rgba(76, 133, 0, 0.08));
+  color: var(--db-current-color, #243c08);
+  --db-current-background-color-red: 76;
+  --db-current-background-color-green: 133;
+  --db-current-background-color-blue: 0;
 }
 .db-input[data-variant=success] input a:not(:disabled):hover {
-  color: rgba(36, 60, 8, 0.75);
-  --db-current-color: rgba(36, 60, 8, 0.75);
+  --db-current-color: var(--db-colors-success-on-bg-hover, rgba(36, 60, 8, 0.75));
+  color: var(--db-current-color, rgba(36, 60, 8, 0.75));
 }
 .db-input[data-variant=success] input a:not(:disabled):active {
-  color: rgba(36, 60, 8, 0.5);
-  --db-current-color: rgba(36, 60, 8, 0.5);
+  --db-current-color: var(--db-colors-success-on-bg-pressed, rgba(36, 60, 8, 0.5));
+  color: var(--db-current-color, rgba(36, 60, 8, 0.5));
 }
+/**
+* NEUTRAL - Placeholder Utilities
+**/
 /**
 * CRITICAL - Placeholder Utilities
 **/
-.db-input[data-variant=critical] input button:not(:disabled):hover,
+.db-input[data-variant=critical] input:not(:disabled):hover,
+.db-input input:not(:disabled):hover:required:invalid:not(:placeholder-shown),
+.db-input input[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
-.db-input input[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):hover,
-.db-input input[data-variant=ia]:not(:disabled):hover:required:invalid:not(:placeholder-shown),
-.db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):hover {
-  background-color: rgba(236, 0, 22, 0.12);
-  --db-current-background-color: rgba(236, 0, 22, 0.12);
+.db-input input[aria-invalid=true] button:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-hover, rgba(236, 0, 22, 0.16));
+  background-color: var(--db-current-background-color, rgba(236, 0, 22, 0.16));
+  --db-current-background-color-red: 217;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 20;
 }
+
 .db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
 .db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
-  background-color: rgba(236, 0, 22, 0.24);
-  --db-current-background-color: rgba(236, 0, 22, 0.24);
+  --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-pressed, rgba(236, 0, 22, 0.24));
+  background-color: var(--db-current-background-color, rgba(236, 0, 22, 0.24));
+  --db-current-background-color-red: 198;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 18;
 }
 
 .db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
-  background-color: rgba(236, 0, 22, 0.04);
-  color: #550007;
-  --db-current-background-color: rgba(236, 0, 22, 0.04);
-  --db-current-color: #550007;
+  --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-enabled, rgba(236, 0, 22, 0.08));
+  --db-current-color: var(--db-colors-critical-on-bg-enabled, #550007);
+  --db-current-element-color: var(--db-colors-critical-element-enabled, #ec0016);
+  background-color: var(--db-current-background-color, rgba(236, 0, 22, 0.08));
+  color: var(--db-current-color, #550007);
+  --db-current-background-color-red: 236;
+  --db-current-background-color-green: 0;
+  --db-current-background-color-blue: 22;
 }
 .db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
-  color: rgba(85, 0, 7, 0.75);
-  --db-current-color: rgba(85, 0, 7, 0.75);
+  --db-current-color: var(--db-colors-critical-on-bg-hover, rgba(85, 0, 7, 0.75));
+  color: var(--db-current-color, rgba(85, 0, 7, 0.75));
 }
 .db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
-  color: rgba(85, 0, 7, 0.5);
-  --db-current-color: rgba(85, 0, 7, 0.5);
-}
-/**
-* INFORMATION - Placeholder Utilities
-**/
-.db-input[data-variant=information] input button:not(:disabled):hover, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):hover {
-  background-color: rgba(0, 135, 185, 0.12);
-  --db-current-background-color: rgba(0, 135, 185, 0.12);
-}
-.db-input[data-variant=information] input button:not(:disabled):active, .db-input[data-variant=information] input[data-variant=ia]:not(:disabled):active {
-  background-color: rgba(0, 135, 185, 0.24);
-  --db-current-background-color: rgba(0, 135, 185, 0.24);
-}
-
-.db-input[data-variant=information] input {
-  background-color: rgba(0, 135, 185, 0.04);
-  color: #003143;
-  --db-current-background-color: rgba(0, 135, 185, 0.04);
-  --db-current-color: #003143;
-}
-.db-input[data-variant=information] input a:not(:disabled):hover {
-  color: rgba(0, 49, 67, 0.75);
-  --db-current-color: rgba(0, 49, 67, 0.75);
-}
-.db-input[data-variant=information] input a:not(:disabled):active {
-  color: rgba(0, 49, 67, 0.5);
-  --db-current-color: rgba(0, 49, 67, 0.5);
+  --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
+  color: var(--db-current-color, rgba(85, 0, 7, 0.5));
 }
 .db-input {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
+}
+
+.db-input input {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
+}
+.db-input input:not(:disabled):hover {
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
+}
+
+.db-input input {
+  border: solid 1px var(--db-current-color, #242629);
+}
+
+.db-input input {
+  border-radius: 0.25rem;
+}
+
+.db-input label, .db-input input {
+  color: var(--db-current-color, #242629);
 }
 
 .db-input {
@@ -235,7 +275,6 @@
   display: flex;
   align-items: center;
   font-size: var(--db-type-body-font-size-md);
-  color: #282d37;
   transform-origin: left;
   transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
   transition: transform 0.2s cubic-bezier(0.15, 0, 0.45, 1);
@@ -256,8 +295,7 @@
   justify-content: space-between;
 }
 .db-input input {
-  border: 1px solid transparent;
-  border-radius: 4px;
+  background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.08));
   height: var(--db-sizing-md);
   max-width: 100%;
   width: 100%;
@@ -342,6 +380,11 @@
 .db-input[data-variant=critical] {
   color: #550007;
 }
+.db-input[data-variant=critical] input,
+.db-input input:required:invalid:not(:placeholder-shown),
+.db-input input[aria-invalid=true] {
+  border: solid 1px var(--db-colors-critical-element-enabled, #ec0016);
+}
 .db-input[data-variant=critical] input + label,
 .db-input input:required:invalid:not(:placeholder-shown) + label,
 .db-input input[aria-invalid=true] + label {
@@ -365,31 +408,40 @@
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "󡄣";
 }
+.db-input[data-variant=warning] input {
+  border: solid 1px var(--db-colors-warning-element-enabled, #d68000);
+}
 .db-input[data-variant=warning] input + label {
   color: #3e2500;
 }
 .db-input[data-variant=warning] input ~ .description, .db-input[data-variant=warning] input ~ .icon-input-state, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon {
-  color: #ac6600;
+  color: #d68000;
 }
 .db-input[data-variant=warning] input ~ .icon-input-state::after, .db-input[data-variant=warning] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "⚠";
 }
+.db-input[data-variant=success] input {
+  border: solid 1px var(--db-colors-success-element-enabled, #63a615);
+}
 .db-input[data-variant=success] input + label {
   color: #243c08;
 }
 .db-input[data-variant=success] input ~ .description, .db-input[data-variant=success] input ~ .icon-input-state, .db-input[data-variant=success] input ~ .icon-input-state .db-icon {
-  color: #4c8500;
+  color: #63a615;
 }
 .db-input[data-variant=success] input ~ .icon-input-state::after, .db-input[data-variant=success] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
   --icon-glyph: "✅";
 }
+.db-input[data-variant=information] input {
+  border: solid 1px var(--db-colors-information-element-enabled, #309fd1);
+}
 .db-input[data-variant=information] input + label {
   color: #003143;
 }
 .db-input[data-variant=information] input ~ .description, .db-input[data-variant=information] input ~ .icon-input-state, .db-input[data-variant=information] input ~ .icon-input-state .db-icon {
-  color: #0087b9;
+  color: #309fd1;
 }
 .db-input[data-variant=information] input ~ .icon-input-state::after, .db-input[data-variant=information] input ~ .icon-input-state .db-icon::after {
   margin-inline-start: var(--icon-margin-before, 0.375rem);
