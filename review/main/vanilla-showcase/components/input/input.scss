@@ -8,6 +8,8 @@
 @use "@db-ui/foundations/build/scss/body-styles" as *;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/shadow-dom" as *;
+@use "@db-ui/foundations/build/scss/color/color-variants" as *;
+@use "@db-ui/foundations/build/scss/helpers/component";
 
 @mixin label-focus-animation(
 	$translationX: var(--db-input-padding-inline-start)
@@ -102,11 +104,11 @@
 	}
 
 	label {
+		@extend %default-color;
 		position: absolute;
 		display: flex;
 		align-items: center;
 		font-size: var(--db-type-body-font-size-md);
-		color: $db-colors-secondary-enabled;
 
 		transform-origin: left;
 		transform: translate(
@@ -137,9 +139,10 @@
 	}
 
 	input {
-		@extend %db-bg-neutral-transparent-semi;
-		border: 1px solid transparent;
-		border-radius: 4px;
+		@extend %bg-transparent-hover;
+		@extend %default-interactive-component;
+		@include get-variant-bg-color(0.08);
+
 		height: $db-sizing-md;
 		max-width: 100%;
 		width: 100%;
@@ -312,6 +315,12 @@
 	input:required:invalid:not(:placeholder-shown),
 	input[aria-invalid="true"] {
 		@extend %db-bg-critical-transparent-semi;
+		@extend %db-bg-critical-transparent-semi-hover-state;
+		border: solid 1px
+			var(
+				--db-colors-critical-element-enabled,
+				$db-colors-critical-element-enabled
+			);
 
 		& + label {
 			color: $db-colors-critical-on-bg-enabled;
@@ -320,7 +329,7 @@
 		& ~ .description,
 		& ~ .icon-input-state,
 		& ~ .icon-input-state .db-icon {
-			color: $db-colors-critical-enabled;
+			color: $db-colors-critical-element-enabled;
 		}
 
 		& ~ .icon-input-state,
@@ -333,6 +342,12 @@
 
 	&[data-variant="warning"] input {
 		@extend %db-bg-warning-transparent-semi;
+		@extend %db-bg-warning-transparent-semi-hover-state;
+		border: solid 1px
+			var(
+				--db-colors-warning-element-enabled,
+				$db-colors-warning-element-enabled
+			);
 
 		& + label {
 			color: $db-colors-warning-on-bg-enabled;
@@ -341,7 +356,7 @@
 		& ~ .description,
 		& ~ .icon-input-state,
 		& ~ .icon-input-state .db-icon {
-			color: $db-colors-warning-enabled;
+			color: $db-colors-warning-element-enabled;
 		}
 
 		& ~ .icon-input-state,
@@ -352,6 +367,12 @@
 
 	&[data-variant="success"] input {
 		@extend %db-bg-success-transparent-semi;
+		@extend %db-bg-success-transparent-semi-hover-state;
+		border: solid 1px
+			var(
+				--db-colors-success-element-enabled,
+				$db-colors-success-element-enabled
+			);
 
 		& + label {
 			color: $db-colors-success-on-bg-enabled;
@@ -360,7 +381,7 @@
 		& ~ .description,
 		& ~ .icon-input-state,
 		& ~ .icon-input-state .db-icon {
-			color: $db-colors-success-enabled;
+			color: $db-colors-success-element-enabled;
 		}
 
 		& ~ .icon-input-state,
@@ -371,6 +392,12 @@
 
 	&[data-variant="information"] input {
 		@extend %db-bg-information-transparent-semi;
+		@extend %db-bg-information-transparent-semi-hover-state;
+		border: solid 1px
+			var(
+				--db-colors-information-element-enabled,
+				$db-colors-information-element-enabled
+			);
 
 		& + label {
 			color: $db-colors-information-on-bg-enabled;
@@ -379,7 +406,7 @@
 		& ~ .description,
 		& ~ .icon-input-state,
 		& ~ .icon-input-state .db-icon {
-			color: $db-colors-information-enabled;
+			color: $db-colors-information-element-enabled;
 		}
 
 		& ~ .icon-input-state,
