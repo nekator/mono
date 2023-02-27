@@ -2,10 +2,10 @@ import {
 	onMount,
 	Show,
 	useMetadata,
-	useStore,
-	useRef
+	useRef,
+	useStore
 } from '@builder.io/mitosis';
-import { DBRadioState, DBRadioProps } from './model';
+import { DBRadioProps, DBRadioState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
 
@@ -20,11 +20,8 @@ useMetadata({
 export default function DBRadio(props: DBRadioProps) {
 	const radioInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBRadioState>({
-		mId: DEFAULT_ID,
-		_isValid: undefined,
-		_value: '',
+		_id: DEFAULT_ID,
 		_checked: false,
-		_label: 'LABEL SHOULD BE SET',
 
 		handleChange: (event) => {
 			if (props.onChange) {
@@ -67,14 +64,14 @@ export default function DBRadio(props: DBRadioProps) {
 	});
 
 	onMount(() => {
-		state.mId = props.id ? props.id : 'radio-' + uuid();
+		state._id = props.id ? props.id : 'radio-' + uuid();
 
 		if (props.value) {
 			state._value = props.value;
 		}
 
 		if (props.checked) {
-			state._checked = props.checked;
+			radioInputRef?.click();
 		}
 
 		if (props.stylePath) {
@@ -97,12 +94,11 @@ export default function DBRadio(props: DBRadioProps) {
 				class={
 					'db-radio' + (props.className ? ' ' + props.className : '')
 				}
-				id={state.mId}
+				id={state._id}
 				name={props.name}
-				checked={state._checked}
 				disabled={props.disabled}
 				value={state._value}
-				aria-labelledby={state.mId + '-label'}
+				aria-labelledby={state._id + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
@@ -112,10 +108,11 @@ export default function DBRadio(props: DBRadioProps) {
 				onFocus={(event) => state.handleFocus(event)}
 			/>
 			<label
-				htmlFor={state.mId}
+				htmlFor={state._id}
 				aria-hidden="true"
-				id={state.mId + '-label'}>
+				id={state._id + '-label'}>
 				{state._label}
+				{props.children}
 			</label>
 		</>
 	);

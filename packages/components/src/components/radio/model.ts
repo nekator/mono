@@ -6,17 +6,13 @@ import {
 	ChangeEventState,
 	ChangeEventProps,
 	GlobalProps,
-	GlobalState
+	GlobalState,
+	FormProps,
+	FormState
 } from '../../shared/model';
 
 export interface DBRadioDefaultProps {
-	id?: string;
-	name?: string;
-	label?: string;
 	checked?: boolean;
-	disabled?: boolean;
-	value?: any;
-	required?: boolean;
 	describedbyid?: string;
 	invalid?: boolean;
 	size?: 'small';
@@ -27,17 +23,15 @@ export type DBRadioProps = DBRadioDefaultProps &
 	GlobalTextProps &
 	ChangeEventProps &
 	FocusEventProps &
-	ValidEventProps;
+	ValidEventProps &
+	FormProps;
 
 export type DBRadioDefaultState = {
-	mId?: string;
-	_isValid: boolean | undefined;
-	_value: any;
 	_checked: boolean;
-	_label: string;
 };
 
 export type DBRadioState = DBRadioDefaultState &
 	GlobalState &
 	ChangeEventState &
-	FocusEventState;
+	FocusEventState &
+	FormState;

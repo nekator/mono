@@ -5,38 +5,44 @@ const variants: DefaultComponentVariants[] = [
 	{
 		name: 'Variants',
 		examples: [
-			{ name: 'Default', example: <DBRadio label="Label" /> },
+			{
+				name: 'Default',
+				example: <DBRadio name="Variants">Label</DBRadio>
+			},
 			{
 				name: 'Disabled',
-				example: <DBRadio label="Label" disabled={true} />
+				example: <DBRadio label="Label" disabled name="Variants" />
 			},
 			{
 				name: 'Required',
-				example: <DBRadio label="Label" required={true} />
+				example: <DBRadio label="Label" required name="Variants" />
 			}
 		]
 	},
 	{
 		name: 'States',
 		examples: [
-			{ name: 'Default', example: <DBRadio label="Label" /> },
+			{
+				name: 'Default',
+				example: <DBRadio label="Label" name="States" />
+			},
 			{
 				name: 'Checked',
-				example: <DBRadio label="Label" checked={true} />
+				example: <DBRadio label="Label" checked name="States" />
 			},
 			{
 				name: 'Invalid',
-				example: <DBRadio label="Label" invalid={true} />
+				example: <DBRadio label="Label" invalid name="States" />
 			}
 		]
 	},
 	{
 		name: 'Size',
 		examples: [
-			{ name: 'Default', example: <DBRadio label="Label" /> },
+			{ name: 'Default', example: <DBRadio label="Label" name="Size" /> },
 			{
 				name: 'Small',
-				example: <DBRadio label="Label" size="small" />
+				example: <DBRadio label="Label" size="small" name="Size" />
 			}
 		]
 	}
