@@ -231,16 +231,16 @@
   display: inherit;
 }
 .db-alert[data-variant=critical] .db-alert-icon {
-  color: #ec0016;
+  color: var(--db-colors-critical-element-enabled, #ec0016);
 }
 .db-alert[data-variant=information] .db-alert-icon {
-  color: #309fd1;
+  color: var(--db-colors-information-element-enabled, #309fd1);
 }
 .db-alert[data-variant=warning] .db-alert-icon {
-  color: #d68000;
+  color: var(--db-colors-warning-element-enabled, #d68000);
 }
 .db-alert[data-variant=success] .db-alert-icon {
-  color: #63a615;
+  color: var(--db-colors-success-element-enabled, #63a615);
 }
 
 .db-alert-content-container {

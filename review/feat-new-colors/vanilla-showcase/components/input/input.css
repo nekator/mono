@@ -205,6 +205,18 @@
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
+.db-input input {
+  border: solid 1px var(--db-current-color, #242629);
+}
+
+.db-input input {
+  border-radius: 0.25rem;
+}
+
+.db-input label, .db-input input {
+  color: var(--db-current-color, #242629);
+}
+
 .db-input {
   --db-input-padding-inline-start: var(--db-spacing-fixed-sm);
   --db-input-padding-inline-end: var(--db-spacing-fixed-sm);
@@ -263,7 +275,6 @@
   display: flex;
   align-items: center;
   font-size: var(--db-type-body-font-size-md);
-  color: var(--db-current-color, #242629);
   transform-origin: left;
   transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
   transition: transform 0.2s cubic-bezier(0.15, 0, 0.45, 1);
@@ -284,9 +295,6 @@
 }
 .db-input input {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.08));
-  border: solid 1px var(--db-current-color, #646973);
-  border-radius: 4px;
-  color: var(--db-current-color, #242629);
   height: var(--db-sizing-md);
   max-width: 100%;
   width: 100%;

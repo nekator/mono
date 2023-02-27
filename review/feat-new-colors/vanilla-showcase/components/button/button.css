@@ -72,30 +72,42 @@
   font-size: inherit;
 }
 
-.db-button:not([data-variant]), .db-button[data-variant=outline], .db-button[data-variant=semi-transparent], .db-button[data-variant=transparent] {
+.db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
-.db-button:not(:disabled):hover:not([data-variant]), .db-button[data-variant=outline]:not(:disabled):hover, .db-button[data-variant=semi-transparent]:not(:disabled):hover, .db-button[data-variant=transparent]:not(:disabled):hover {
+.db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
-.db-button:not(:disabled):active:not([data-variant]), .db-button[data-variant=outline]:not(:disabled):active, .db-button[data-variant=semi-transparent]:not(:disabled):active, .db-button[data-variant=transparent]:not(:disabled):active {
+.db-button:not(:disabled):active {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.24));
+}
+
+.db-button {
+  border: solid 1px var(--db-current-color, #242629);
+}
+
+.db-button {
+  border-radius: 0.25rem;
+}
+
+.db-button {
+  color: var(--db-current-color, #242629);
+}
+
+.db-button {
+  transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
 }
 
 .db-button {
   --loadingIndicator---color: currentColor;
   align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: var(--db-current-color, #242629);
   display: inline-flex;
   font-weight: 700;
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
   text-align: center;
-  transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
 }
 .db-button[data-icon], .db-button[data-icon-before] {
   padding-left: var(--db-spacing-fixed-xs);
@@ -126,11 +138,12 @@
 .db-button[data-width=full] {
   width: 100%;
 }
-.db-button:not([data-variant]), .db-button[data-variant=outline] {
-  border: solid 1px var(--db-current-color, #242629);
-}
 .db-button[data-variant=semi-transparent] {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.08));
+  border: solid 1px transparent;
+}
+.db-button[data-variant=transparent] {
+  border: solid 1px transparent;
 }
 .db-button:disabled {
   opacity: 0.25;

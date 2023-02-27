@@ -6,6 +6,7 @@
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
 @use "@db-ui/foundations/build/scss/helpers/shadow-dom" as *;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
+@use "@db-ui/foundations/build/scss/helpers/component";
 
 .db-button {
 	// Including a loading indicator
@@ -14,12 +15,12 @@
 	$icon-size: var(--db-icon-size, 20);
 
 	@extend %shadow-dom-extend;
+	@extend %default-interactive-component;
+	@extend %default-background-transition;
+	@extend %bg-transparent-interactive;
 
 	align-items: center; // Centering the content vertically and horizontally
 
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: var(--db-current-color, $db-colors-neutral-on-bg-enabled);
 	display: inline-flex;
 
 	font-weight: 700;
@@ -28,10 +29,6 @@
 	padding: $db-spacing-fixed-xs $db-spacing-fixed-md;
 
 	text-align: center;
-
-	// Changing background-color on hover should be animated by a transition
-	transition: background-color
-		var(--db-transition-color, #{$db-transition-color});
 
 	&[data-icon],
 	&[data-icon-before] {
@@ -73,24 +70,17 @@
 		width: 100%;
 	}
 
-	&:not([data-variant]),
-	&[data-variant="outline"] {
-		@extend %bg-transparent-interactive;
-		border: solid 1px
-			var(--db-current-color, $db-colors-neutral-on-bg-enabled);
-	}
-
 	&[data-variant="primary"] {
 		@extend %db-bg-primary-ia;
 	}
 
 	&[data-variant="semi-transparent"] {
-		@extend %bg-transparent-interactive;
 		@include get-variant-bg-color(0.08);
+		border: solid 1px transparent;
 	}
 
 	&[data-variant="transparent"] {
-		@extend %bg-transparent-interactive;
+		border: solid 1px transparent;
 	}
 
 	&:disabled {
