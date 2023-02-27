@@ -1,0 +1,25 @@
+@use "@db-ui/foundations/build/scss/variables" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as *;
+
+.db-divider {
+	&:not([data-margin="none"]) {
+		margin: $db-spacing-fixed-sm 0;
+	}
+
+	&:not([data-variant="vertical"]) {
+		@include divider();
+		height: 1px;
+		width: 100%;
+	}
+
+	&[data-variant="vertical"] {
+		@include divider("left");
+		height: auto;
+		width: 1px;
+
+		&:not([data-margin="none"]) {
+			margin: 0 $db-spacing-fixed-sm;
+		}
+	}
+}
