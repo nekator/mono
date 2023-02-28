@@ -148,10 +148,6 @@
 		padding: $db-spacing-fixed-xs var(--db-input-padding-inline-end)
 			$db-spacing-fixed-xs var(--db-input-padding-inline-start);
 
-		:where(&) {
-			border-radius: 4px;
-		}
-
 		// TODO: Evaluate whether those could get moved to ../_form-elements.scss
 		&:focus,
 		&:not(:placeholder-shown) {
