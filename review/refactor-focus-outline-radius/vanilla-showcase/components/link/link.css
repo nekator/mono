@@ -11,7 +11,13 @@
 }
 
 /**
-* NEUTRAL - Placeholder Utilities
+* SECONDARY - Placeholder Utilities
+**/
+/**
+* WARNING - Placeholder Utilities
+**/
+/**
+* INFORMATION - Placeholder Utilities
 **/
 /**
 * PRIMARY - Placeholder Utilities
@@ -20,31 +26,28 @@
   color: #ec0016;
 }
 .db-link[data-variant=primary]:not(:disabled):hover {
-  color: #d90014;
-  --db-current-color: #d90014;
+  --db-current-color: var(--db-colors-primary-hover, #d90014);
+  color: var(--db-current-color, #d90014);
 }
 .db-link[data-variant=primary]:not(:disabled):active {
-  color: #c70012;
-  --db-current-color: #c70012;
+  --db-current-color: var(--db-colors-primary-pressed, #c70012);
+  color: var(--db-current-color, #c70012);
 }
 
-/**
-* SECONDARY - Placeholder Utilities
-**/
-/**
-* WARNING - Placeholder Utilities
-**/
 /**
 * SUCCESS - Placeholder Utilities
 **/
 /**
-* CRITICAL - Placeholder Utilities
+* NEUTRAL - Placeholder Utilities
 **/
 /**
-* INFORMATION - Placeholder Utilities
+* CRITICAL - Placeholder Utilities
 **/
 .db-link {
-  color: var(--db-current-color, #282d37);
+  color: var(--db-current-color, #242629);
+}
+
+.db-link {
   display: flex;
   border-radius: 0.375rem;
   text-underline-position: from-font;
