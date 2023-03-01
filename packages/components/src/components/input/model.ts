@@ -29,6 +29,7 @@ export type DBInputDefaultProps = {
 	iconBefore?: string;
 	iconAfter?: string;
 	description?: string;
+	value?: any;
 };
 
 export type DBInputProps = DBInputDefaultProps &
@@ -40,6 +41,7 @@ export type DBInputProps = DBInputDefaultProps &
 	FormProps;
 
 export type DBInputDefaultState = {
+	_value?: any;
 	_placeholder: string;
 	getIcon: (variant: DefaultVariantProps) => string;
 };

@@ -21,7 +21,9 @@ export default function DBRadio(props: DBRadioProps) {
 	const radioInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBRadioState>({
 		_id: DEFAULT_ID,
+		_label: '',
 		_checked: false,
+		_isValid: undefined,
 
 		handleChange: (event) => {
 			if (props.onChange) {
@@ -32,8 +34,6 @@ export default function DBRadio(props: DBRadioProps) {
 				props.change(event);
 			}
 
-			// using controlled components for react forces us to using state for value
-			state._value = event.target.value;
 			state._checked = event.target.checked;
 
 			if (radioInputRef?.validity?.valid != state._isValid) {
@@ -66,12 +66,8 @@ export default function DBRadio(props: DBRadioProps) {
 	onMount(() => {
 		state._id = props.id ? props.id : 'radio-' + uuid();
 
-		if (props.value) {
-			state._value = props.value;
-		}
-
-		if (props.checked) {
-			radioInputRef?.click();
+		if (props.checked && radioInputRef) {
+			radioInputRef.click();
 		}
 
 		if (props.stylePath) {
@@ -97,7 +93,6 @@ export default function DBRadio(props: DBRadioProps) {
 				id={state._id}
 				name={props.name}
 				disabled={props.disabled}
-				value={state._value}
 				aria-labelledby={state._id + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}

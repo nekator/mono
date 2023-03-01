@@ -29,11 +29,15 @@ const getComponents = () => [
 				{
 					from: 'this.radioInputRef.nativeElement',
 					to: 'this.radioInputRef?.nativeElement'
+				},
+				{
+					from: 'this.checked && this.radioInputRef.nativeElement',
+					to: 'this.checked && this.radioInputRef?.nativeElement'
 				}
 			],
 			vue: [
 				{
-					from: 'import { DBRadioState, DBRadioProps } from "./model";',
+					from: 'import { DBRadioProps, DBRadioState } from "./model";',
 					to: ''
 				},
 				{
@@ -174,7 +178,7 @@ const getComponents = () => [
 			],
 			vue: [
 				{
-					from: 'import { DBInputState, DBInputProps } from "./model";',
+					from: 'import { DBInputProps, DBInputState } from "./model";',
 					to: ''
 				},
 				{
