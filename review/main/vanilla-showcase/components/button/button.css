@@ -95,10 +95,6 @@
   color: var(--db-current-color, #242629);
 }
 
-.db-button:focus {
-  border-radius: var(--db-focus-outline-radius, 0.375rem);
-}
-
 .db-button {
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
 }

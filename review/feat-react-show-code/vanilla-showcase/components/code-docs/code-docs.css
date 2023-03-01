@@ -7,7 +7,7 @@
 /**
 * SECONDARY - Placeholder Utilities
 **/
-.db-code-docs .code button:not(:disabled):hover, .db-code-docs [data-variant=ia].code:not(:disabled):hover {
+.db-code-docs .code-details .code button:not(:disabled):hover, .db-code-docs .code-details [data-variant=ia].code:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-secondary-hover, #42464f);
   background-color: var(--db-current-background-color, #42464f);
   --db-current-background-color-red: 66;
@@ -15,7 +15,7 @@
   --db-current-background-color-blue: 79;
 }
 
-.db-code-docs .code button:not(:disabled):active, .db-code-docs [data-variant=ia].code:not(:disabled):active {
+.db-code-docs .code-details .code button:not(:disabled):active, .db-code-docs .code-details [data-variant=ia].code:not(:disabled):active {
   --db-current-background-color: var(--db-colors-secondary-pressed, #5b5f66);
   background-color: var(--db-current-background-color, #5b5f66);
   --db-current-background-color-red: 91;
@@ -23,7 +23,7 @@
   --db-current-background-color-blue: 102;
 }
 
-.db-code-docs .code {
+.db-code-docs .code-details .code {
   --db-current-background-color: var(--db-colors-secondary-enabled, #282d37);
   --db-current-color: var(--db-colors-secondary-on-enabled, #ffffff);
   --db-current-element-color: var(--db-colors-secondary-element-enabled, #282d37);
@@ -34,11 +34,11 @@
   --db-current-background-color-blue: 55;
   --db-current-background-color-alpha: 1;
 }
-.db-code-docs .code a:not(:disabled):hover {
+.db-code-docs .code-details .code a:not(:disabled):hover {
   --db-current-color: var(--db-colors-secondary-on-hover, rgba(255, 255, 255, 0.75));
   color: var(--db-current-color, rgba(255, 255, 255, 0.75));
 }
-.db-code-docs .code a:not(:disabled):active {
+.db-code-docs .code-details .code a:not(:disabled):active {
   --db-current-color: var(--db-colors-secondary-on-pressed, rgba(255, 255, 255, 0.25));
   color: var(--db-current-color, rgba(255, 255, 255, 0.25));
 }
@@ -802,7 +802,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-code-docs .code pre code {
+.db-code-docs .code-details .code pre code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -872,40 +872,48 @@ h6 {
   padding-block-end: calc(var(--db-spacing-fixed-md) + var(--db-sizing-sm));
   position: relative;
 }
-.db-code-docs .code-button {
+.db-code-docs .code-details {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 100%;
 }
-.db-code-docs .no-code {
-  margin: auto;
-}
-.db-code-docs .code {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.db-code-docs .code-details[open] {
   left: 0;
   top: 0;
+}
+.db-code-docs .code-details .code-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.db-code-docs .code-details .no-code {
+  margin: auto;
+}
+.db-code-docs .code-details .code {
   border-radius: 8px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   overflow: auto;
+  box-sizing: border-box;
   padding-block-end: var(--db-sizing-sm);
 }
 @media screen and (min-width: 768px) {
-  .db-code-docs .code {
-    left: 50%;
+  .db-code-docs .code-details .code {
+    width: 50%;
+    margin-inline-start: auto;
   }
 }
-.db-code-docs .code pre {
+.db-code-docs .code-details .code pre {
   margin: 0;
   display: flex;
   gap: var(--db-spacing-fixed-sm);
   align-items: center;
 }
-.db-code-docs .code pre code {
+.db-code-docs .code-details .code pre code {
   white-space: pre-wrap;
   width: 100%;
 }

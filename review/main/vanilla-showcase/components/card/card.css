@@ -578,7 +578,6 @@
 }
 :root {
   --db-focus-outline-offset: 1px;
-  --db-focus-outline-radius: to-rem(6);
   --db-focus-outline-color: #0087b9;
   --db-focus-outline-transition-duration: 0.06s;
   --db-focus-outline-size: max(2px, 0.08em);
@@ -643,7 +642,6 @@ iframe {
 :is(a, button, input, textarea, summary):focus-visible {
   outline: var(--db-focus-outline-size) var(--db-focus-outline-style, solid) var(--db-focus-outline-color, currentColor);
   outline-offset: var(--db-focus-outline-offset, var(--db-focus-outline-size));
-  border-radius: var(--db-focus-outline-radius, to-rem(6));
 }
 
 :where(ul) {
