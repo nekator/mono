@@ -3203,7 +3203,7 @@
 /**
 * NEUTRAL - Placeholder Utilities
 **/
-.db-alert button:not(:disabled):hover, [data-color-variant=neutral-0].db-card button:not(:disabled):hover, .db-radio button:not(:disabled):hover, .db-radio:not(:disabled):hover, [data-variant=ia].db-alert:not(:disabled):hover, [data-variant=ia][data-color-variant=neutral-0].db-card:not(:disabled):hover {
+.db-alert button:not(:disabled):hover, [data-color-variant=neutral-0].db-card button:not(:disabled):hover, [data-variant=ia].db-alert:not(:disabled):hover, [data-variant=ia][data-color-variant=neutral-0].db-card:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-neutral-bg-0-hover, #e4e5e5);
   background-color: var(--db-current-background-color, #e4e5e5);
   --db-current-background-color-red: 119;
@@ -3211,7 +3211,7 @@
   --db-current-background-color-blue: 132;
 }
 
-.db-alert button:not(:disabled):active, [data-color-variant=neutral-0].db-card button:not(:disabled):active, .db-radio button:not(:disabled):active, .db-radio:not(:disabled):active, [data-variant=ia].db-alert:not(:disabled):active, [data-variant=ia][data-color-variant=neutral-0].db-card:not(:disabled):active {
+.db-alert button:not(:disabled):active, [data-color-variant=neutral-0].db-card button:not(:disabled):active, [data-variant=ia].db-alert:not(:disabled):active, [data-variant=ia][data-color-variant=neutral-0].db-card:not(:disabled):active {
   --db-current-background-color: var(--db-colors-neutral-bg-0-pressed, #cbcbcc);
   background-color: var(--db-current-background-color, #cbcbcc);
   --db-current-background-color-red: 137;
@@ -3219,7 +3219,7 @@
   --db-current-background-color-blue: 148;
 }
 
-.db-radio:checked, .db-alert, [data-color-variant=neutral-0].db-card, .db-radio, [data-variant=ia].db-alert {
+.db-alert, [data-color-variant=neutral-0].db-card, [data-variant=ia].db-alert {
   --db-current-background-color: var(--db-colors-neutral-bg-0-enabled, #ffffff);
   --db-current-color: var(--db-colors-neutral-on-bg-enabled, #242629);
   --db-current-element-color: var(--db-colors-neutral-element-enabled, #646973);
@@ -3229,11 +3229,11 @@
   --db-current-background-color-green: 105;
   --db-current-background-color-blue: 115;
 }
-.db-alert a:not(:disabled):hover, [data-color-variant=neutral-0].db-card a:not(:disabled):hover, .db-radio a:not(:disabled):hover {
+.db-alert a:not(:disabled):hover, [data-color-variant=neutral-0].db-card a:not(:disabled):hover {
   --db-current-color: var(--db-colors-neutral-on-bg-hover, rgba(36, 38, 41, 0.75));
   color: var(--db-current-color, rgba(36, 38, 41, 0.75));
 }
-.db-alert a:not(:disabled):active, [data-color-variant=neutral-0].db-card a:not(:disabled):active, .db-radio a:not(:disabled):active {
+.db-alert a:not(:disabled):active, [data-color-variant=neutral-0].db-card a:not(:disabled):active {
   --db-current-color: var(--db-colors-neutral-on-bg-pressed, rgba(36, 38, 41, 0.5));
   color: var(--db-current-color, rgba(36, 38, 41, 0.5));
 }
@@ -3378,9 +3378,9 @@
   color: var(--db-current-color, rgba(255, 255, 255, 0.5));
 }
 
-.db-input[data-variant=critical] input:not(:disabled):hover,
+.db-radio[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input:not(:disabled):hover,
 .db-input input:not(:disabled):hover:required:invalid:not(:placeholder-shown),
-.db-input input[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
+.db-input input[aria-invalid=true]:not(:disabled):hover, .db-radio[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
 .db-input input[aria-invalid=true] button:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-hover, rgba(236, 0, 22, 0.16));
@@ -3390,9 +3390,9 @@
   --db-current-background-color-blue: 20;
 }
 
-.db-input[data-variant=critical] input button:not(:disabled):active,
+.db-radio[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
-.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, [data-variant=ia].db-radio[aria-invalid=true]:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-pressed, rgba(236, 0, 22, 0.24));
@@ -3402,7 +3402,7 @@
   --db-current-background-color-blue: 18;
 }
 
-.db-input[data-variant=critical] input,
+.db-radio[aria-invalid=true], .db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-enabled, rgba(236, 0, 22, 0.08));
@@ -3414,13 +3414,13 @@
   --db-current-background-color-green: 0;
   --db-current-background-color-blue: 22;
 }
-.db-input[data-variant=critical] input a:not(:disabled):hover,
+.db-radio[aria-invalid=true] a:not(:disabled):hover, .db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
   --db-current-color: var(--db-colors-critical-on-bg-hover, rgba(85, 0, 7, 0.75));
   color: var(--db-current-color, rgba(85, 0, 7, 0.75));
 }
-.db-input[data-variant=critical] input a:not(:disabled):active,
+.db-radio[aria-invalid=true] a:not(:disabled):active, .db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
@@ -4268,6 +4268,7 @@ h6 {
 
 :root {
   --db-focus-outline-offset: 1px;
+  --db-focus-outline-radius: to-rem(6);
   --db-focus-outline-color: #0087b9;
   --db-focus-outline-transition-duration: 0.06s;
   --db-focus-outline-size: max(2px, 0.08em);
@@ -4332,6 +4333,7 @@ iframe {
 :is(a, button, input, textarea, summary):focus-visible {
   outline: var(--db-focus-outline-size) var(--db-focus-outline-style, solid) var(--db-focus-outline-color, currentColor);
   outline-offset: var(--db-focus-outline-offset, var(--db-focus-outline-size));
+  border-radius: var(--db-focus-outline-radius, to-rem(6));
 }
 
 :where(ul) {
@@ -4369,14 +4371,14 @@ code {
   font-size: inherit;
 }
 
-.db-input input, .db-button {
+.db-input input, .db-radio, .db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
-.db-input input:not(:disabled):hover, .db-button:not(:disabled):hover {
+.db-input input:not(:disabled):hover, .db-radio:not(:disabled):hover, .db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
-.db-button:not(:disabled):active {
+.db-radio:not(:disabled):active, .db-button:not(:disabled):active {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.24));
 }
 
@@ -4388,8 +4390,12 @@ code {
   border-radius: 0.25rem;
 }
 
-.db-link, .db-input label, .db-input input, .db-button {
+.db-radio, .db-link, .db-input label, .db-input input, .db-button {
   color: var(--db-current-color, #242629);
+}
+
+.db-input input:focus, .db-button:focus {
+  border-radius: var(--db-focus-outline-radius, 0.375rem);
 }
 
 .db-button {
@@ -5068,36 +5074,27 @@ code {
 }
 
 .db-radio {
-  --radio-size: var(--db-sizing-sm);
   appearance: none;
   aspect-ratio: 1;
-  border: max(var(--radio-size, var(--db-sizing-sm)) / 16 + 0.5px, 2px) solid currentColor;
-  border-radius: 1em;
+  border: max(var(--db-base-font-size) * var(--db-base-line-height) / 16 + 0.5px, 2px) solid currentColor;
+  border-radius: 100px;
   display: inline-block;
-  height: var(--radio-size);
-  transition: border-width 0.5s ease;
+  height: calc(var(--db-base-font-size) * var(--db-base-line-height));
+  transition: border-width var(--db-transition-emotional-straight, 0.3s cubic-bezier(0.27, 0.05, 0.4, 0.95));
 }
 .db-radio[type=radio] {
   vertical-align: bottom;
 }
 .db-radio:checked {
-  border-width: calc(var(--db-sizing-sm) * 0.3);
+  border-width: calc(calc(var(--db-base-font-size) * var(--db-base-line-height)) * 0.3);
 }
-.db-radio:checked:not(:disabled):hover {
-  --db-current-color: rgba(36, 38, 41, 0.75);
-  color: rgba(36, 38, 41, 0.75);
-  background-color: initial;
+.db-radio[aria-invalid=true] {
+  border-color: var(--db-colors-critical-element-enabled, #ec0016);
 }
-.db-radio:checked:not(:disabled):active {
-  --db-current-color: rgba(36, 38, 41, 0.5);
-  color: rgba(36, 38, 41, 0.5);
-}
-.db-radio:invalid, .db-radio[aria-invalid=true] {
-  border-color: #c13e34;
+.db-radio[aria-invalid=true] + label {
+  color: var(--db-colors-critical-enabled, #ec0016);
 }
 .db-radio + label {
-  font-size: 1rem;
-  line-height: 1.5;
   margin-inline-start: 0.5rem;
 }
 .db-radio:disabled, .db-radio:disabled + label {
@@ -5107,14 +5104,24 @@ code {
   content: "*";
 }
 .db-radio[data-size=small] {
-  --radio-size: calc(var(--db-sizing-sm) * 0.83333333);
-}
-.db-radio[data-size=small]:checked {
-  border-width: calc(var(--db-sizing-sm) * 0.83333333 * 0.3);
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
 }
 .db-radio[data-size=small] + label {
-  font-size: 0.875rem;
-  line-height: 1.4285714286;
+  --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
+  --db-base-icon-font-family: var(--db-base-icon-font-family-sm);
+  /* prettier-ignore */
+  --db-base-icon-font-family-filled: var(--db-base-icon-font-family-filled-sm);
+  --db-base-line-height: var(--db-type-body-line-height-sm);
+  --db-base-font-size: var(--db-type-body-font-size-sm);
+  line-height: var(--db-type-body-line-height-sm);
+  font-size: var(--db-type-body-font-size-sm);
   margin-inline-start: 0.25rem;
 }
 @media (prefers-reduced-motion: reduce) {
