@@ -34,7 +34,6 @@ export type FormProps = {
 export type FormState = {
 	_id?: string;
 	_isValid?: boolean | undefined;
-
 	_label?: string;
 };
 
