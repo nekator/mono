@@ -28,12 +28,14 @@ export type FormProps = {
 	label?: string;
 	disabled?: boolean;
 	required?: boolean;
+	value?: any;
 	name?: string;
 };
 
 export type FormState = {
 	_id?: string;
 	_isValid?: boolean | undefined;
+	_value?: any;
 	_label?: string;
 };
 
