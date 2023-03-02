@@ -5073,4 +5073,22 @@ code {
   gap: var(--db-spacing-fixed-md);
 }
 
+dbalert,
+dbbrand,
+dbbutton,
+dbcard,
+dbdivider,
+dbdrawer,
+dbheader,
+dbicon,
+dbinfotext,
+dbinput,
+dblink,
+dbpage,
+dbsection,
+dbtab,
+dbtabbar {
+  display: contents;
+}
+
 /* This is a predefined beginner friendly bundle with default asset-paths (../assets) */
