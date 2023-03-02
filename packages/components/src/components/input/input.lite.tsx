@@ -7,7 +7,7 @@ import {
 } from '@builder.io/mitosis';
 import { DBIcon } from '../icon';
 import { uuid } from '../../utils';
-import { DBInputState, DBInputProps } from './model';
+import { DBInputProps, DBInputState } from './model';
 import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
 import { DefaultVariantsIcon } from '../../shared/model';
 

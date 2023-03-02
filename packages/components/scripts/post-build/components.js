@@ -141,7 +141,7 @@ const getComponents = () => [
 			],
 			vue: [
 				{
-					from: 'import { DBInputState, DBInputProps } from "./model";',
+					from: 'import { DBInputProps, DBInputState } from "./model";',
 					to: ''
 				},
 				{
