@@ -23,6 +23,8 @@ export default function DBInput(props: DBInputProps) {
 	const textInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBInputState>({
 		_id: DEFAULT_ID,
+		_isValid: undefined,
+		_value: '',
 		_placeholder: ' ', // placeholder can't be empty
 		_label: DEFAULT_LABEL,
 		getIcon: (variant) => {
