@@ -28,7 +28,9 @@ const FormComponent = () => {
 								<li key={radioName}>
 									<DBRadio
 										name="radio-group"
-										onChange={() => setRadio(radioName)}>
+										onChange={() => {
+											setRadio(radioName);
+										}}>
 										Radio {radioName}
 									</DBRadio>
 								</li>
