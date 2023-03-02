@@ -47,6 +47,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		border-width: calc(#{$font-size-height} * 0.3);
 	}
 
+	&:user-invalid,
 	&[aria-invalid="true"] {
 		@extend %db-bg-critical-transparent-semi;
 		@extend %db-bg-critical-transparent-semi-hover-state;
