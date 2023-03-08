@@ -368,7 +368,6 @@ html {
 
 body {
   color: var(--db-current-color, #242629);
-  min-height: 100vh;
 }
 
 a {
