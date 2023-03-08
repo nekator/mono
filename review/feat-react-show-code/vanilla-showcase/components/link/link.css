@@ -10,18 +10,6 @@
   font-size: var(--db-type-body-font-size-sm);
 }
 
-/**
-* SECONDARY - Placeholder Utilities
-**/
-/**
-* WARNING - Placeholder Utilities
-**/
-/**
-* INFORMATION - Placeholder Utilities
-**/
-/**
-* PRIMARY - Placeholder Utilities
-**/
 .db-link[data-variant=primary] {
   color: #ec0016;
 }
@@ -34,15 +22,6 @@
   color: var(--db-current-color, #c70012);
 }
 
-/**
-* SUCCESS - Placeholder Utilities
-**/
-/**
-* NEUTRAL - Placeholder Utilities
-**/
-/**
-* CRITICAL - Placeholder Utilities
-**/
 .db-link {
   color: var(--db-current-color, #242629);
 }

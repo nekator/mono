@@ -4,63 +4,41 @@
   font-size: inherit;
 }
 
-/**
-* SECONDARY - Placeholder Utilities
-**/
 .db-code-docs .code-details .code button:not(:disabled):hover, .db-code-docs .code-details [data-variant=ia].code:not(:disabled):hover {
-  --db-current-background-color: var(--db-colors-secondary-hover, #42464f);
-  background-color: var(--db-current-background-color, #42464f);
+  --db-current-background-color: var(--db-colors-secondary-bg-hover, #cdced1);
+  background-color: var(--db-current-background-color, #cdced1);
   --db-current-background-color-red: 66;
   --db-current-background-color-green: 70;
   --db-current-background-color-blue: 79;
 }
 
 .db-code-docs .code-details .code button:not(:disabled):active, .db-code-docs .code-details [data-variant=ia].code:not(:disabled):active {
-  --db-current-background-color: var(--db-colors-secondary-pressed, #5b5f66);
-  background-color: var(--db-current-background-color, #5b5f66);
+  --db-current-background-color: var(--db-colors-secondary-bg-pressed, #b7b9bb);
+  background-color: var(--db-current-background-color, #b7b9bb);
   --db-current-background-color-red: 91;
   --db-current-background-color-green: 95;
   --db-current-background-color-blue: 102;
 }
 
 .db-code-docs .code-details .code {
-  --db-current-background-color: var(--db-colors-secondary-enabled, #282d37);
-  --db-current-color: var(--db-colors-secondary-on-enabled, #ffffff);
+  --db-current-background-color: var(--db-colors-secondary-bg-enabled, #e4e5e6);
+  --db-current-color: var(--db-colors-secondary-on-bg-enabled, #0e1013);
   --db-current-element-color: var(--db-colors-secondary-element-enabled, #282d37);
-  background-color: var(--db-current-background-color, #282d37);
-  color: var(--db-current-color, #ffffff);
+  --db-current-border-color: var(--db-colors-secondary-border-enabled, rgba(40, 45, 55, 0.32));
+  background-color: var(--db-current-background-color, #e4e5e6);
+  color: var(--db-current-color, #0e1013);
   --db-current-background-color-red: 40;
   --db-current-background-color-green: 45;
   --db-current-background-color-blue: 55;
-  --db-current-background-color-alpha: 1;
 }
 .db-code-docs .code-details .code a:not(:disabled):hover {
-  --db-current-color: var(--db-colors-secondary-on-hover, rgba(255, 255, 255, 0.75));
-  color: var(--db-current-color, rgba(255, 255, 255, 0.75));
+  --db-current-color: var(--db-colors-secondary-on-bg-hover, rgba(14, 16, 19, 0.75));
+  color: var(--db-current-color, rgba(14, 16, 19, 0.75));
 }
 .db-code-docs .code-details .code a:not(:disabled):active {
-  --db-current-color: var(--db-colors-secondary-on-pressed, rgba(255, 255, 255, 0.25));
-  color: var(--db-current-color, rgba(255, 255, 255, 0.25));
+  --db-current-color: var(--db-colors-secondary-on-bg-pressed, rgba(14, 16, 19, 0.5));
+  color: var(--db-current-color, rgba(14, 16, 19, 0.5));
 }
-
-/**
-* WARNING - Placeholder Utilities
-**/
-/**
-* INFORMATION - Placeholder Utilities
-**/
-/**
-* PRIMARY - Placeholder Utilities
-**/
-/**
-* SUCCESS - Placeholder Utilities
-**/
-/**
-* NEUTRAL - Placeholder Utilities
-**/
-/**
-* CRITICAL - Placeholder Utilities
-**/
 @font-face {
   font-family: "DB Screen Head";
   font-style: normal;
