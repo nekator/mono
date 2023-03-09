@@ -17,6 +17,7 @@
 @use "../components/code-docs/code-docs" as *;
 
 // angular-workaround
+dbtag,
 dbalert,
 dbbrand,
 dbbutton,
@@ -34,3 +35,4 @@ dbtab,
 dbtabbar {
 	display: contents;
 }
+@use "../components/tag/tag" as *;

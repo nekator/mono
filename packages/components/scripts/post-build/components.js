@@ -17,6 +17,18 @@
  */
 const getComponents = () => [
 	{
+		name: 'tag',
+		overwrites: {
+			vue: [
+				{
+					from: 'import { DBTagState, DBTagProps } from "./model";',
+					to: ''
+				}
+			]
+		}
+	},
+
+	{
 		name: 'code-docs',
 		defaultStylePath: 'components/code-docs/code-docs.css',
 		overwrites: {
