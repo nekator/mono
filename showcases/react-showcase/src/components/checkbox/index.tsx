@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { DBCheckbox } from '../../../../../output/react/src';
-import { COLOR_CONST } from '../../../../../packages/components/src/shared/constants';
-import DefaultComponent, { type DefaultComponentVariants } from '../index';
+import DefaultComponent from '../index';
+import type { DefaultComponentVariants } from '../data';
 
 const defaultLabelText = 'Label';
 
@@ -29,6 +27,16 @@ const variants: DefaultComponentVariants[] = [
 			{
 				name: 'Required',
 				example: <DBCheckbox label={defaultLabelText} required />
+			}
+		]
+	},
+	{
+		name: 'Size',
+		examples: [
+			{ name: 'Default', example: <DBCheckbox label="Label" /> },
+			{
+				name: 'Small',
+				example: <DBCheckbox label="Label" size="small" />
 			}
 		]
 	}

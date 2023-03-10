@@ -5,7 +5,7 @@
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/shadow-dom" as *;
 
-.elm-checkbox {
+.db-checkbox {
 	// We need to reset the general icons margin, as we want to use it in a tiny space
 	--icon-margin-after: 0;
 	// Using another CSS variable for the size to differentiate for the small variant later

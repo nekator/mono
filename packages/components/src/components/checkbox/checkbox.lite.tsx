@@ -95,7 +95,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				ref={checkboxInputRef}
 				type="checkbox"
 				class={
-					'elm-checkbox' +
+					'db-checkbox' +
 					(props.className ? ' ' + props.className : '')
 				}
 				id={state.mId}
@@ -103,6 +103,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				checked={state._checked}
 				disabled={props.disabled}
 				value={state._value}
+				aria-labelledby={state.mId + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
