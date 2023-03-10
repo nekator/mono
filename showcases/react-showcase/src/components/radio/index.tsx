@@ -3,7 +3,7 @@ import DefaultComponent, { type DefaultComponentVariants } from '../index';
 
 const variants: DefaultComponentVariants[] = [
 	{
-		name: 'Variants',
+		name: 'States',
 		examples: [
 			{
 				name: 'Default',
@@ -16,15 +16,6 @@ const variants: DefaultComponentVariants[] = [
 			{
 				name: 'Required',
 				example: <DBRadio label="Label" required name="Variants" />
-			}
-		]
-	},
-	{
-		name: 'States',
-		examples: [
-			{
-				name: 'Default',
-				example: <DBRadio label="Label" name="States" />
 			},
 			{
 				name: 'Checked',
