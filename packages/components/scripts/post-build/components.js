@@ -17,6 +17,34 @@
  */
 const getComponents = () => [
 	{
+		name: 'code-docs',
+		defaultStylePath: 'components/code-docs/code-docs.css',
+		overwrites: {
+			global: [
+				{
+					from: '(event) => copyCode(snippet)',
+					to: '() => copyCode(snippet)'
+				},
+				{
+					from: 'copyCode(code)',
+					to: 'copyCode(code:any)'
+				},
+				{
+					from: '(event) => toggleCode()',
+					to: '() => toggleCode()'
+				}
+			],
+			vue: [
+				{
+					from: 'import { DBCodeDocsProps, DBCodeDocsState } from "./model";',
+					to: ''
+				},
+				{ from: '(snippet, index)', to: '(snippet)' }
+			]
+		}
+	},
+
+	{
 		name: 'radio',
 		defaultStylePath: 'components/radio/radio.css',
 		overwrites: {
@@ -75,7 +103,6 @@ const getComponents = () => [
 
 	{
 		name: 'infotext',
-		defaultStylePath: 'components/infotext/infotext.css',
 		overwrites: {
 			global: [
 				{
@@ -94,7 +121,6 @@ const getComponents = () => [
 
 	{
 		name: 'link',
-		defaultStylePath: 'components/link/link.css',
 		overwrites: {
 			global: [
 				{ from: 'handleClick(event)', to: 'handleClick(event:any)' }
@@ -110,7 +136,6 @@ const getComponents = () => [
 
 	{
 		name: 'section',
-		defaultStylePath: 'components/section/section.css',
 		overwrites: {
 			vue: [
 				{
@@ -123,7 +148,6 @@ const getComponents = () => [
 
 	{
 		name: 'page',
-		defaultStylePath: 'components/page/page.css',
 		overwrites: {
 			vue: [
 				{
@@ -135,7 +159,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'header',
-		defaultStylePath: 'components/header/header.css',
 		overwrites: {
 			vue: [
 				{
@@ -147,7 +170,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'brand',
-		defaultStylePath: 'components/brand/brand.css',
 		overwrites: {
 			vue: [
 				{
@@ -159,7 +181,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'input',
-		defaultStylePath: 'components/input/input.css',
 		overwrites: {
 			global: [
 				{ from: 'handleChange(event)', to: 'handleChange(event:any)' },
@@ -195,7 +216,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'divider',
-		defaultStylePath: 'components/divider/divider.css',
 		overwrites: {
 			vue: [
 				{
@@ -207,7 +227,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'card',
-		defaultStylePath: 'components/card/card.css',
 		overwrites: {
 			global: [
 				{ from: 'handleClick(event)', to: 'handleClick(event:any)' }
@@ -216,7 +235,6 @@ const getComponents = () => [
 	},
 	{
 		name: 'tab-bar',
-		defaultStylePath: 'components/tab-bar/tab-bar.css',
 		overwrites: {
 			angular: [
 				{
@@ -252,12 +270,10 @@ const getComponents = () => [
 		}
 	},
 	{
-		name: 'tab',
-		defaultStylePath: 'components/tab/tab.css'
+		name: 'tab'
 	},
 	{
 		name: 'button',
-		defaultStylePath: 'components/button/button.css',
 		overwrites: {
 			global: [
 				{ from: 'handleClick(event)', to: 'handleClick(event:any)' }
@@ -265,8 +281,7 @@ const getComponents = () => [
 		}
 	},
 	{
-		name: 'icon',
-		defaultStylePath: 'components/icon/icon-web-component.css'
+		name: 'icon'
 	}
 ];
 
