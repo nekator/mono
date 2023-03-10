@@ -15,6 +15,7 @@
 @use "../components/infotext/infotext" as *;
 @use "../components/alert/alert" as *;
 @use "../components/code-docs/code-docs" as *;
+@use "../components/tag/tag" as *;
 
 // angular-workaround
 dbtag,
@@ -35,4 +36,3 @@ dbtab,
 dbtabbar {
 	display: contents;
 }
-@use "../components/tag/tag" as *;
