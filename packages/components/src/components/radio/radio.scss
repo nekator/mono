@@ -17,14 +17,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 
 	aspect-ratio: 1;
 
-	border: max(
-			calc(
-				calc(var(--db-base-font-size) * var(--db-base-line-height)) / 16 +
-					0.5px
-			),
-			2px
-		)
-		solid currentColor;
+	border: max(calc(#{$font-size-height} / 16 + 0.5px), 2px) solid currentColor;
 	// Full rounded
 	border-radius: 100px;
 
@@ -47,6 +40,8 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		border-width: calc(#{$font-size-height} * 0.3);
 	}
 
+	// * The invalid style using the :user-invalid pseudo class (and [aria-invalid="true"] equivalent)
+	// TODO: We need to set the correct styling / color here after alignment
 	&:user-invalid,
 	&[aria-invalid="true"] {
 		@extend %db-bg-critical-transparent-semi;
@@ -85,11 +80,12 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		}
 	}
 
+	// Sizes
 	&[data-size="small"] {
-		@include body-style("sm");
+		@extend %db-body-sm;
 
 		& + label {
-			@include body-style("sm");
+			@extend %db-body-sm;
 			margin-inline-start: $db-spacing-fixed-regular-2xs;
 		}
 	}
