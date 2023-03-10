@@ -2,21 +2,6 @@ import type { DbMainnavigationDataType } from '@db-ui/elements/dist/types/compon
 
 const componentChildren = [
 	{
-		label: 'TODO: Add to specific category; DBRadio',
-		link: '/components/radio',
-		children: [
-			{
-				label: 'Examples',
-				link: '/components/radio/examples'
-			},
-			{
-				label: 'How to use',
-				link: '/components/radio/how-to-use'
-			}
-		]
-	},
-
-	{
 		label: '01 Layout',
 		link: '/components/01-layout',
 		children: [
@@ -141,6 +126,20 @@ const componentChildren = [
 					{
 						label: 'How to use',
 						link: '/components/input/how-to-use'
+					}
+				]
+			},
+			{
+				label: 'DBRadio',
+				link: '/components/radio',
+				children: [
+					{
+						label: 'Examples',
+						link: '/components/radio/examples'
+					},
+					{
+						label: 'How to use',
+						link: '/components/radio/how-to-use'
 					}
 				]
 			}
