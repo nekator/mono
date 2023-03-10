@@ -95,7 +95,7 @@ Here is an overview of all components you can use:
 | Switch                                                | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Table                                                 | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
 | [Tabs](packages/components/src/components/tabs)       | 04 - Data-Display |     ✅      |   v2    |    ❌    |        ❌        |
-| Tag                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Tag](packages/components/src/components/tag)         | 04 - Data-Display |     ✅      |   v3    |    ❌    |        ✅        |
 | Text                                                  | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
 | Textarea                                              | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
 | Timeline                                              | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
