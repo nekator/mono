@@ -12,11 +12,11 @@ const variants: DefaultComponentVariants[] = [
 			},
 			{
 				name: 'Disabled',
-				example: <DBRadio label="Label" disabled name="Variants" />
+				example: <DBRadio label="Label" disabled name="States" />
 			},
 			{
 				name: 'Required',
-				example: <DBRadio label="Label" required name="Variants" />
+				example: <DBRadio label="Label" required name="States" />
 			},
 			{
 				name: 'Checked',
