@@ -29,6 +29,7 @@
 }
 
 .db-link {
+  width: fit-content;
   display: flex;
   border-radius: 0.375rem;
   text-underline-position: from-font;
