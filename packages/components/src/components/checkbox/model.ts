@@ -33,6 +33,7 @@ export type DBCheckboxDefaultState = {
 	mId?: string;
 	_isValid: boolean | undefined;
 	_value: any;
+	initialized: boolean;
 	_checked: boolean;
 	_label: string;
 };

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 export class FormComponent {
 	input = '';
+	checkboxConsumerType = '';
 	showValues(): void {
 		// eslint-disable-next-line no-alert
 		alert(

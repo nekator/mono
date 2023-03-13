@@ -1,5 +1,7 @@
 import {
+	onInit,
 	onMount,
+	onUpdate,
 	Show,
 	useMetadata,
 	useStore,
@@ -20,6 +22,7 @@ useMetadata({
 export default function DBCheckbox(props: DBCheckboxProps) {
 	const checkboxInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBCheckboxState>({
+		initialized: false,
 		mId: DEFAULT_ID,
 		_isValid: undefined,
 		_value: '',
@@ -67,14 +70,11 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	});
 
 	onMount(() => {
+		state.initialized = true;
 		state.mId = props.id ? props.id : 'checkbox-' + uuid();
 
 		if (props.value) {
 			state._value = props.value;
-		}
-
-		if (props.checked) {
-			state._checked = props.checked;
 		}
 
 		if (props.stylePath) {
@@ -85,6 +85,16 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			state._label = props.label;
 		}
 	});
+
+	onUpdate(() => {
+		if (props.checked && state.initialized && document && state.mId) {
+			const radioElement = document?.getElementById(state.mId);
+			if (radioElement) {
+				radioElement.click();
+				state.initialized = false;
+			}
+		}
+	}, [state.initialized]);
 
 	return (
 		<>

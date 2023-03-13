@@ -11,7 +11,8 @@ import {
 	DBPageModule,
 	DBHeaderModule,
 	DBBrandModule,
-	DBLinkModule
+	DBLinkModule,
+	DBCheckboxModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -38,7 +39,8 @@ import { InputComponent } from './components/input/input.component';
 		DBHeaderModule,
 		DBBrandModule,
 		DBLinkModule,
-		FormsModule
+		FormsModule,
+		DBCheckboxModule
 	],
 	providers: [],
 	schemas: [NO_ERRORS_SCHEMA],

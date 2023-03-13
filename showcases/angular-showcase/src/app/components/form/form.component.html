@@ -12,6 +12,19 @@
 					iconBefore="edit"
 					ngDefaultControl
 				></DBInput>
+				<p>DbCheckbox:</p>
+				<DbCheckbox
+					[(ngModel)]="input"
+					name="consumer-type"
+					label="Consumer account"
+					ngDefaultControl
+				></DbCheckbox>
+				<DbCheckbox
+					[(ngModel)]="input"
+					name="business-type"
+					label="Business account"
+					ngDefaultControl
+				></DbCheckbox>
 				<p>DbButton:</p>
 				<DBButton
 					type="button"
