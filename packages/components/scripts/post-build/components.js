@@ -43,33 +43,22 @@ const getComponents = () => [
 
 	{
 		name: 'checkbox',
-		defaultStylePath: 'components/checkbox/checkbox.css',
 		overwrites: {
-			global: [
-				{ from: 'handleChange(event)', to: 'handleChange(event:any)' },
-				{ from: 'handleBlur(event)', to: 'handleBlur(event:any)' },
-				{ from: 'handleFocus(event)', to: 'handleFocus(event:any)' }
-			],
-			angular: [
-				{
-					from: 'this.checkboxInputRef.nativeElement',
-					to: 'this.checkboxInputRef?.nativeElement'
-				}
-			],
 			vue: [
 				{
-					from: 'import { DBCheckboxState, DBCheckboxProps } from "./model";',
-					to: ''
-				},
-				{
-					from: '_isValid: undefined,',
-					to: ''
+					from: 'immediate: true,',
+					to: 'immediate: true,\nflush: "post"'
 				}
 			]
 		},
 		config: {
 			vue: {
-				vModel: [{ modelValue: 'value', binding: ':value' }]
+				isFormComponent: true,
+				isClickComponent: true,
+				vue: {
+					vModel: [{ modelValue: 'checked', binding: ':checked' }],
+					vModel: [{ modelValue: 'value', binding: ':value' }]
+				}
 			}
 		}
 	},

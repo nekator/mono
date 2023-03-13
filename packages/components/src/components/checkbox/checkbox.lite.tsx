@@ -20,7 +20,8 @@ useMetadata({
 });
 
 export default function DBCheckbox(props: DBCheckboxProps) {
-	const checkboxInputRef = useRef<HTMLInputElement>(null);
+	// This is used as forwardRef
+	let component: any;
 	const state = useStore<DBCheckboxState>({
 		initialized: false,
 		_id: DEFAULT_ID,
@@ -37,14 +38,12 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.change(event);
 			}
 
-			// using controlled components for react forces us to using state for value
-			state._value = event.target.value;
 			state._checked = event.target.checked;
 
-			if (checkboxInputRef?.validity?.valid != state._isValid) {
-				state._isValid = checkboxInputRef?.validity?.valid;
+			if (event.target?.validity?.valid != state._isValid) {
+				state._isValid = event.target?.validity?.valid;
 				if (props.validityChange) {
-					props.validityChange(!!checkboxInputRef?.validity?.valid);
+					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
 		},
@@ -70,7 +69,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 
 	onMount(() => {
 		state.initialized = true;
-		state.mId = props.id ? props.id : 'checkbox-' + uuid();
+		state._id = props.id ? props.id : 'checkbox-' + uuid();
 
 		if (props.value) {
 			state._value = props.value;
@@ -82,8 +81,8 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	});
 
 	onUpdate(() => {
-		if (props.checked && state.initialized && document && state.mId) {
-			const checkboxElement = document?.getElementById(state.mId);
+		if (props.checked && state.initialized && document && state._id) {
+			const checkboxElement = document?.getElementById(state._id);
 			if (checkboxElement) {
 				checkboxElement.click();
 				state.initialized = false;
@@ -97,7 +96,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			<input
-				ref={checkboxInputRef}
+				ref={component}
 				type="checkbox"
 				class={
 					'db-checkbox' +
@@ -120,7 +119,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				htmlFor={state._id}
 				aria-hidden="true"
 				id={state._id + '-label'}>
-				{state._label}
+				{props.label}
 				{props.children}
 			</label>
 		</>
