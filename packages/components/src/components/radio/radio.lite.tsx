@@ -1,5 +1,7 @@
 import {
+	onInit,
 	onMount,
+	onUpdate,
 	Show,
 	useMetadata,
 	useRef,
@@ -21,6 +23,7 @@ export default function DBRadio(props: DBRadioProps) {
 	// This is used as forwardRef
 	let component: any;
 	const state = useStore<DBRadioState>({
+		initialized: false,
 		_id: DEFAULT_ID,
 		_label: '',
 		_checked: false,
@@ -65,11 +68,8 @@ export default function DBRadio(props: DBRadioProps) {
 	});
 
 	onMount(() => {
+		state.initialized = true;
 		state._id = props.id ? props.id : 'radio-' + uuid();
-
-		if (props.checked) {
-			component.click();
-		}
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
@@ -79,6 +79,16 @@ export default function DBRadio(props: DBRadioProps) {
 			state._label = props.label;
 		}
 	});
+
+	onUpdate(() => {
+		if (props.checked && state.initialized && document && state._id) {
+			const radioElement = document?.getElementById(state._id);
+			if (radioElement) {
+				radioElement.click();
+				state.initialized = false;
+			}
+		}
+	}, [state.initialized]);
 
 	return (
 		<>

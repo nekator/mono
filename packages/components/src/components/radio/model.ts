@@ -27,6 +27,7 @@ export type DBRadioProps = DBRadioDefaultProps &
 	FormProps;
 
 export type DBRadioDefaultState = {
+	initialized: boolean;
 	_checked: boolean;
 };
 

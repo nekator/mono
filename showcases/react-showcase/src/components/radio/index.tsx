@@ -8,7 +8,7 @@ const variants: DefaultComponentVariants[] = [
 		examples: [
 			{
 				name: 'Default',
-				example: <DBRadio name="Variants">Label</DBRadio>
+				example: <DBRadio name="States">Label</DBRadio>
 			},
 			{
 				name: 'Disabled',

@@ -51,35 +51,17 @@ const getComponents = () => [
 		name: 'radio',
 		defaultStylePath: 'components/radio/radio.css',
 		overwrites: {
-			global: [
-				{ from: 'handleChange(event)', to: 'handleChange(event:any)' },
-				{ from: 'handleBlur(event)', to: 'handleBlur(event:any)' },
-				{ from: 'handleFocus(event)', to: 'handleFocus(event:any)' }
-			],
-			angular: [
-				{
-					from: 'this.radioInputRef.nativeElement',
-					to: 'this.radioInputRef?.nativeElement'
-				},
-				{
-					from: 'this.checked && this.radioInputRef.nativeElement',
-					to: 'this.checked && this.radioInputRef?.nativeElement'
-				}
-			],
 			vue: [
 				{
-					from: 'import { DBRadioProps, DBRadioState } from "./model";',
-					to: ''
-				},
-				{
-					from: '_isValid: undefined,',
-					to: ''
+					from: 'immediate: true,',
+					to: 'immediate: true,\nflush: "post"'
 				}
 			]
 		},
 		config: {
+			isFormComponent: true,
 			vue: {
-				vModel: [{ modelValue: 'value', binding: ':value' }]
+				vModel: [{ modelValue: 'checked', binding: ':checked' }]
 			}
 		}
 	},
