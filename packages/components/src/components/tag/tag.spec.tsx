@@ -5,7 +5,10 @@ import { DBTag } from './index';
 
 const comp = <DBTag>Test</DBTag>;
 
-const testComponent = () => {
+// TODO: Get variants from https://github.com/db-ui/mono/blob/feat-unify-showcases/packages/components/src/shared/constants.ts when feat-unify branch is merged
+const colorVariants = ['critical', 'success', 'warning', 'information'];
+
+const testDefaultTag = () => {
 	test('DBTag should contain text', async ({ mount }) => {
 		const component = await mount(comp);
 		await expect(component).toContainText('Test');
@@ -17,16 +20,29 @@ const testComponent = () => {
 	});
 };
 
+const testTagColorVariants = () => {
+	for (const colorVariant of colorVariants) {
+		test(`DBCard should match screenshot for color variant ${colorVariant}`, async ({
+			mount
+		}) => {
+			const component = await mount(
+				<DBCard colorVariant={colorVariant}>Test</DBCard>
+			);
+			await expect(component).toHaveScreenshot();
+		});
+	}
+};
+
 test.describe('DBTag component on desktop', () => {
 	// Old-school CRT monitor screensize
 	test.use({ viewport: { width: 1024, height: 768 } });
-	testComponent();
+	testDefaultTag();
 });
 
 test.describe('DBTag component on mobile', () => {
 	// iPhone 13 / portrait screen size
 	test.use({ viewport: { width: 390, height: 884 } });
-	testComponent();
+	testDefaultTag();
 });
 
 test.describe('DBTag component A11y', () => {
