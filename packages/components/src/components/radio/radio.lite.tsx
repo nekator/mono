@@ -18,7 +18,8 @@ useMetadata({
 });
 
 export default function DBRadio(props: DBRadioProps) {
-	const radioInputRef = useRef<HTMLInputElement>(null);
+	// This is used as forwardRef
+	let component: any;
 	const state = useStore<DBRadioState>({
 		_id: DEFAULT_ID,
 		_label: '',
@@ -36,10 +37,10 @@ export default function DBRadio(props: DBRadioProps) {
 
 			state._checked = event.target.checked;
 
-			if (radioInputRef?.validity?.valid != state._isValid) {
-				state._isValid = radioInputRef?.validity?.valid;
+			if (event.target?.validity?.valid != state._isValid) {
+				state._isValid = event.target?.validity?.valid;
 				if (props.validityChange) {
-					props.validityChange(!!radioInputRef?.validity?.valid);
+					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
 		},
@@ -66,8 +67,8 @@ export default function DBRadio(props: DBRadioProps) {
 	onMount(() => {
 		state._id = props.id ? props.id : 'radio-' + uuid();
 
-		if (props.checked && radioInputRef) {
-			radioInputRef.click();
+		if (props.checked) {
+			component.click();
 		}
 
 		if (props.stylePath) {
@@ -85,7 +86,7 @@ export default function DBRadio(props: DBRadioProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			<input
-				ref={radioInputRef}
+				ref={component}
 				type="radio"
 				class={
 					'db-radio' + (props.className ? ' ' + props.className : '')
