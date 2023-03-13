@@ -18,14 +18,7 @@
 const getComponents = () => [
 	{
 		name: 'tag',
-		overwrites: {
-			vue: [
-				{
-					from: 'import { DBTagState, DBTagProps } from "./model";',
-					to: ''
-				}
-			]
-		}
+		overwrites: {}
 	},
 
 	{
