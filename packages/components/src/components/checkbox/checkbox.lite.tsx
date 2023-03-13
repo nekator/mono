@@ -4,10 +4,10 @@ import {
 	onUpdate,
 	Show,
 	useMetadata,
-	useStore,
-	useRef
+	useRef,
+	useStore
 } from '@builder.io/mitosis';
-import { DBCheckboxState, DBCheckboxProps } from './model';
+import { DBCheckboxProps, DBCheckboxState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
 
@@ -23,11 +23,10 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	const checkboxInputRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBCheckboxState>({
 		initialized: false,
-		mId: DEFAULT_ID,
+		_id: DEFAULT_ID,
 		_isValid: undefined,
 		_value: '',
 		_checked: false,
-		_label: 'LABEL SHOULD BE SET',
 
 		handleChange: (event) => {
 			if (props.onChange) {
@@ -80,17 +79,13 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
-
-		if (props.label) {
-			state._label = props.label;
-		}
 	});
 
 	onUpdate(() => {
 		if (props.checked && state.initialized && document && state.mId) {
-			const radioElement = document?.getElementById(state.mId);
-			if (radioElement) {
-				radioElement.click();
+			const checkboxElement = document?.getElementById(state.mId);
+			if (checkboxElement) {
+				checkboxElement.click();
 				state.initialized = false;
 			}
 		}
@@ -108,12 +103,11 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 					'db-checkbox' +
 					(props.className ? ' ' + props.className : '')
 				}
-				id={state.mId}
+				id={state._id}
 				name={props.name}
-				checked={state._checked}
 				disabled={props.disabled}
 				value={state._value}
-				aria-labelledby={state.mId + '-label'}
+				aria-labelledby={state._id + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
@@ -123,10 +117,11 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				onFocus={(event) => state.handleFocus(event)}
 			/>
 			<label
-				htmlFor={state.mId}
+				htmlFor={state._id}
 				aria-hidden="true"
-				id={state.mId + '-label'}>
+				id={state._id + '-label'}>
 				{state._label}
+				{props.children}
 			</label>
 		</>
 	);

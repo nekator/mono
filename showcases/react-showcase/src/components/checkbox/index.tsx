@@ -10,15 +10,15 @@ const variants: DefaultComponentVariants[] = [
 		examples: [
 			{
 				name: 'Default',
-				example: <DBCheckbox label={defaultLabelText} />
+				example: <DBCheckbox>{defaultLabelText}</DBCheckbox>
 			},
 			{
 				name: 'checked',
-				example: <DBCheckbox label={defaultLabelText} checked={true} />
+				example: <DBCheckbox label={defaultLabelText} checked />
 			},
 			{
 				name: 'Invalid',
-				example: <DBCheckbox label={defaultLabelText} invalid={true} />
+				example: <DBCheckbox label={defaultLabelText} invalid />
 			},
 			{
 				name: 'Disabled',

@@ -6,17 +6,13 @@ import {
 	ChangeEventState,
 	ChangeEventProps,
 	GlobalProps,
-	GlobalState
+	GlobalState,
+	FormProps,
+	FormState
 } from '../../shared/model';
 
 export interface DBCheckboxDefaultProps {
-	id?: string;
-	name?: string;
-	label?: string;
 	checked?: boolean;
-	disabled?: boolean;
-	value?: any;
-	required?: boolean;
 	describedbyid?: string;
 	invalid?: boolean;
 	size?: 'small';
@@ -27,18 +23,19 @@ export type DBCheckboxProps = DBCheckboxDefaultProps &
 	GlobalTextProps &
 	ChangeEventProps &
 	FocusEventProps &
-	ValidEventProps;
+	ValidEventProps &
+	FormProps;
 
 export type DBCheckboxDefaultState = {
-	mId?: string;
+	_id?: string;
 	_isValid: boolean | undefined;
 	_value: any;
 	initialized: boolean;
 	_checked: boolean;
-	_label: string;
 };
 
 export type DBCheckboxState = DBCheckboxDefaultState &
 	GlobalState &
 	ChangeEventState &
-	FocusEventState;
+	FocusEventState &
+	FormState;
