@@ -188,6 +188,7 @@
   display: flex;
   gap: var(--db-spacing-fixed-md);
   width: 100%;
+  text-align: start;
 }
 .db-alert .db-alert-headline-link {
   display: inherit;
