@@ -7,7 +7,7 @@ COPY output/ output/
 COPY packages/ packages/
 
 # Install dependencies
-RUN npm install
+RUN npm install --ignore-scripts
 # Install browsers
 RUN npx playwright install
 # Build foundations and components
