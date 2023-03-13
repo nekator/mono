@@ -25,7 +25,6 @@ export default function DBRadio(props: DBRadioProps) {
 	const state = useStore<DBRadioState>({
 		initialized: false,
 		_id: DEFAULT_ID,
-		_label: '',
 		_checked: false,
 		_isValid: undefined,
 
@@ -74,10 +73,6 @@ export default function DBRadio(props: DBRadioProps) {
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
-
-		if (props.label) {
-			state._label = props.label;
-		}
 	});
 
 	onUpdate(() => {
@@ -117,7 +112,7 @@ export default function DBRadio(props: DBRadioProps) {
 				htmlFor={state._id}
 				aria-hidden="true"
 				id={state._id + '-label'}>
-				{state._label}
+				{props.label}
 				{props.children}
 			</label>
 		</>
