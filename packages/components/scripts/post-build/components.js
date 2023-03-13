@@ -43,7 +43,6 @@ const getComponents = () => [
 
 	{
 		name: 'radio',
-		defaultStylePath: 'components/radio/radio.css',
 		overwrites: {
 			vue: [
 				{
@@ -54,6 +53,7 @@ const getComponents = () => [
 		},
 		config: {
 			isFormComponent: true,
+			isClickComponent: true,
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
 			}
