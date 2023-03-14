@@ -433,11 +433,6 @@ fieldset {
   border: none;
 }
 
-button,
-summary {
-  cursor: pointer;
-}
-
 pre:has(code) {
   padding: var(--db-spacing-fixed-xs);
 }
