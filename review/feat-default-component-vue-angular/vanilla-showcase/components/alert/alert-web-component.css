@@ -4,14 +4,8 @@
   font-size: inherit;
 }
 
-/**
-* SECONDARY - Placeholder Utilities
-**/
-/**
-* WARNING - Placeholder Utilities
-**/
 .db-alert[data-variant=warning] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=warning]:not(:disabled):hover {
-  --db-current-background-color: var(--db-colors-warning-bg-light-hover, #ecdbc5);
+  --db-current-background-color: var(--db-colors-warning-bg-hover, #ecdbc5);
   background-color: var(--db-current-background-color, #ecdbc5);
   --db-current-background-color-red: 158;
   --db-current-background-color-green: 94;
@@ -19,7 +13,7 @@
 }
 
 .db-alert[data-variant=warning] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=warning]:not(:disabled):active {
-  --db-current-background-color: var(--db-colors-warning-bg-light-pressed, #e3ccaa);
+  --db-current-background-color: var(--db-colors-warning-bg-pressed, #e3ccaa);
   background-color: var(--db-current-background-color, #e3ccaa);
   --db-current-background-color-red: 146;
   --db-current-background-color-green: 87;
@@ -27,9 +21,10 @@
 }
 
 .db-alert[data-variant=warning] {
-  --db-current-background-color: var(--db-colors-warning-bg-light-enabled, #f5ece0);
+  --db-current-background-color: var(--db-colors-warning-bg-enabled, #f5ece0);
   --db-current-color: var(--db-colors-warning-on-bg-enabled, #3e2500);
   --db-current-element-color: var(--db-colors-warning-element-enabled, #d68000);
+  --db-current-border-color: var(--db-colors-warning-border-enabled, rgba(172, 102, 0, 0.32));
   background-color: var(--db-current-background-color, #f5ece0);
   color: var(--db-current-color, #3e2500);
   --db-current-background-color-red: 172;
@@ -47,29 +42,27 @@
   color: var(--db-current-color, rgba(62, 37, 0, 0.5));
 }
 
-/**
-* INFORMATION - Placeholder Utilities
-**/
-.db-alert[data-variant=information] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=information]:not(:disabled):hover {
-  --db-current-background-color: var(--db-colors-information-bg-light-hover, #c5e3ee);
+.db-alert[data-variant=informational] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=informational]:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-informational-bg-hover, #c5e3ee);
   background-color: var(--db-current-background-color, #c5e3ee);
   --db-current-background-color-red: 0;
   --db-current-background-color-green: 125;
   --db-current-background-color-blue: 171;
 }
 
-.db-alert[data-variant=information] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=information]:not(:disabled):active {
-  --db-current-background-color: var(--db-colors-information-bg-light-pressed, #aad7e7);
+.db-alert[data-variant=informational] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=informational]:not(:disabled):active {
+  --db-current-background-color: var(--db-colors-informational-bg-pressed, #aad7e7);
   background-color: var(--db-current-background-color, #aad7e7);
   --db-current-background-color-red: 0;
   --db-current-background-color-green: 115;
   --db-current-background-color-blue: 157;
 }
 
-.db-alert[data-variant=information] {
-  --db-current-background-color: var(--db-colors-information-bg-light-enabled, #e0f0f6);
-  --db-current-color: var(--db-colors-information-on-bg-enabled, #003143);
-  --db-current-element-color: var(--db-colors-information-element-enabled, #309fd1);
+.db-alert[data-variant=informational] {
+  --db-current-background-color: var(--db-colors-informational-bg-enabled, #e0f0f6);
+  --db-current-color: var(--db-colors-informational-on-bg-enabled, #003143);
+  --db-current-element-color: var(--db-colors-informational-element-enabled, #309fd1);
+  --db-current-border-color: var(--db-colors-informational-border-enabled, rgba(0, 135, 185, 0.32));
   background-color: var(--db-current-background-color, #e0f0f6);
   color: var(--db-current-color, #003143);
   --db-current-background-color-red: 0;
@@ -77,42 +70,37 @@
   --db-current-background-color-blue: 185;
 }
 
-.db-alert[data-variant=information] a:not(:disabled):hover {
-  --db-current-color: var(--db-colors-information-on-bg-hover, rgba(0, 49, 67, 0.75));
+.db-alert[data-variant=informational] a:not(:disabled):hover {
+  --db-current-color: var(--db-colors-informational-on-bg-hover, rgba(0, 49, 67, 0.75));
   color: var(--db-current-color, rgba(0, 49, 67, 0.75));
 }
 
-.db-alert[data-variant=information] a:not(:disabled):active {
-  --db-current-color: var(--db-colors-information-on-bg-pressed, rgba(0, 49, 67, 0.5));
+.db-alert[data-variant=informational] a:not(:disabled):active {
+  --db-current-color: var(--db-colors-informational-on-bg-pressed, rgba(0, 49, 67, 0.5));
   color: var(--db-current-color, rgba(0, 49, 67, 0.5));
 }
 
-/**
-* PRIMARY - Placeholder Utilities
-**/
-/**
-* SUCCESS - Placeholder Utilities
-**/
-.db-alert[data-variant=success] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=success]:not(:disabled):hover {
-  --db-current-background-color: var(--db-colors-success-bg-light-hover, #d6e3c5);
+.db-alert[data-variant=successful] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=successful]:not(:disabled):hover {
+  --db-current-background-color: var(--db-colors-successful-bg-hover, #d6e3c5);
   background-color: var(--db-current-background-color, #d6e3c5);
   --db-current-background-color-red: 71;
   --db-current-background-color-green: 124;
   --db-current-background-color-blue: 1;
 }
 
-.db-alert[data-variant=success] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=success]:not(:disabled):active {
-  --db-current-background-color: var(--db-colors-success-bg-light-pressed, #c3d7aa);
+.db-alert[data-variant=successful] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=successful]:not(:disabled):active {
+  --db-current-background-color: var(--db-colors-successful-bg-pressed, #c3d7aa);
   background-color: var(--db-current-background-color, #c3d7aa);
   --db-current-background-color-red: 67;
   --db-current-background-color-green: 115;
   --db-current-background-color-blue: 2;
 }
 
-.db-alert[data-variant=success] {
-  --db-current-background-color: var(--db-colors-success-bg-light-enabled, #e9f0e0);
-  --db-current-color: var(--db-colors-success-on-bg-enabled, #243c08);
-  --db-current-element-color: var(--db-colors-success-element-enabled, #63a615);
+.db-alert[data-variant=successful] {
+  --db-current-background-color: var(--db-colors-successful-bg-enabled, #e9f0e0);
+  --db-current-color: var(--db-colors-successful-on-bg-enabled, #243c08);
+  --db-current-element-color: var(--db-colors-successful-element-enabled, #63a615);
+  --db-current-border-color: var(--db-colors-successful-border-enabled, rgba(76, 133, 0, 0.32));
   background-color: var(--db-current-background-color, #e9f0e0);
   color: var(--db-current-color, #243c08);
   --db-current-background-color-red: 76;
@@ -120,19 +108,16 @@
   --db-current-background-color-blue: 0;
 }
 
-.db-alert[data-variant=success] a:not(:disabled):hover {
-  --db-current-color: var(--db-colors-success-on-bg-hover, rgba(36, 60, 8, 0.75));
+.db-alert[data-variant=successful] a:not(:disabled):hover {
+  --db-current-color: var(--db-colors-successful-on-bg-hover, rgba(36, 60, 8, 0.75));
   color: var(--db-current-color, rgba(36, 60, 8, 0.75));
 }
 
-.db-alert[data-variant=success] a:not(:disabled):active {
-  --db-current-color: var(--db-colors-success-on-bg-pressed, rgba(36, 60, 8, 0.5));
+.db-alert[data-variant=successful] a:not(:disabled):active {
+  --db-current-color: var(--db-colors-successful-on-bg-pressed, rgba(36, 60, 8, 0.5));
   color: var(--db-current-color, rgba(36, 60, 8, 0.5));
 }
 
-/**
-* NEUTRAL - Placeholder Utilities
-**/
 .db-alert button:not(:disabled):hover, [data-variant=ia].db-alert:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-neutral-bg-0-hover, #e4e5e5);
   background-color: var(--db-current-background-color, #e4e5e5);
@@ -153,6 +138,7 @@
   --db-current-background-color: var(--db-colors-neutral-bg-0-enabled, #ffffff);
   --db-current-color: var(--db-colors-neutral-on-bg-enabled, #242629);
   --db-current-element-color: var(--db-colors-neutral-element-enabled, #646973);
+  --db-current-border-color: var(--db-colors-neutral-border-enabled, rgba(100, 105, 115, 0.32));
   background-color: var(--db-current-background-color, #ffffff);
   color: var(--db-current-color, #242629);
   --db-current-background-color-red: 100;
@@ -170,11 +156,8 @@
   color: var(--db-current-color, rgba(36, 38, 41, 0.5));
 }
 
-/**
-* CRITICAL - Placeholder Utilities
-**/
 .db-alert[data-variant=critical] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=critical]:not(:disabled):hover {
-  --db-current-background-color: var(--db-colors-critical-bg-light-hover, #f9c4c9);
+  --db-current-background-color: var(--db-colors-critical-bg-hover, #f9c4c9);
   background-color: var(--db-current-background-color, #f9c4c9);
   --db-current-background-color-red: 217;
   --db-current-background-color-green: 0;
@@ -182,7 +165,7 @@
 }
 
 .db-alert[data-variant=critical] button:not(:disabled):active, [data-variant=ia].db-alert[data-variant=critical]:not(:disabled):active {
-  --db-current-background-color: var(--db-colors-critical-bg-light-pressed, #f8aab0);
+  --db-current-background-color: var(--db-colors-critical-bg-pressed, #f8aab0);
   background-color: var(--db-current-background-color, #f8aab0);
   --db-current-background-color-red: 198;
   --db-current-background-color-green: 0;
@@ -190,9 +173,10 @@
 }
 
 .db-alert[data-variant=critical] {
-  --db-current-background-color: var(--db-colors-critical-bg-light-enabled, #fce0e2);
+  --db-current-background-color: var(--db-colors-critical-bg-enabled, #fce0e2);
   --db-current-color: var(--db-colors-critical-on-bg-enabled, #550007);
   --db-current-element-color: var(--db-colors-critical-element-enabled, #ec0016);
+  --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));
   background-color: var(--db-current-background-color, #fce0e2);
   color: var(--db-current-color, #550007);
   --db-current-background-color-red: 236;
@@ -211,10 +195,15 @@
 }
 
 .db-alert {
+  border: solid 1px var(--db-current-border-color, rgba(100, 105, 115, 0.32));
+}
+
+.db-alert {
   padding: var(--db-spacing-fixed-md);
   display: flex;
   gap: var(--db-spacing-fixed-md);
   width: 100%;
+  text-align: start;
 }
 .db-alert .db-alert-headline-link {
   display: inherit;
@@ -245,17 +234,29 @@
 .db-alert[data-type=inline] .db-alert-content-link {
   display: inherit;
 }
+.db-alert[data-variant=critical] {
+  --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));
+}
 .db-alert[data-variant=critical] .db-alert-icon {
   color: var(--db-colors-critical-element-enabled, #ec0016);
 }
-.db-alert[data-variant=information] .db-alert-icon {
-  color: var(--db-colors-information-element-enabled, #309fd1);
+.db-alert[data-variant=informational] {
+  --db-current-border-color: var(--db-colors-informational-border-enabled, rgba(0, 135, 185, 0.32));
+}
+.db-alert[data-variant=informational] .db-alert-icon {
+  color: var(--db-colors-informational-element-enabled, #309fd1);
+}
+.db-alert[data-variant=warning] {
+  --db-current-border-color: var(--db-colors-warning-border-enabled, rgba(172, 102, 0, 0.32));
 }
 .db-alert[data-variant=warning] .db-alert-icon {
   color: var(--db-colors-warning-element-enabled, #d68000);
 }
-.db-alert[data-variant=success] .db-alert-icon {
-  color: var(--db-colors-success-element-enabled, #63a615);
+.db-alert[data-variant=successful] {
+  --db-current-border-color: var(--db-colors-successful-border-enabled, rgba(76, 133, 0, 0.32));
+}
+.db-alert[data-variant=successful] .db-alert-icon {
+  color: var(--db-colors-successful-element-enabled, #63a615);
 }
 
 .db-alert-content-container {
