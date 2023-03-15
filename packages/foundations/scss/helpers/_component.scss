@@ -28,7 +28,7 @@
 	@extend %default-color;
 	@extend %default-border-radius;
 
-	&:focus {
+	&:focus-visible {
 		border-radius: var(--db-focus-outline-radius, 6px);
 	}
 }
