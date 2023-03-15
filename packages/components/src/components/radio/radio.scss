@@ -75,7 +75,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	&:required {
 		& + label {
 			&::after {
-				content: "*";
+				content: " *";
 			}
 		}
 	}
