@@ -774,7 +774,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-code-docs .code-details .code pre code {
+.db-code-docs .code-details .code div code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -859,31 +859,31 @@ h6 {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 1;
 }
 .db-code-docs .code-details .no-code {
   margin: auto;
 }
 .db-code-docs .code-details .code {
-  border-radius: 8px;
-  height: 100%;
-  width: 100%;
   overflow: auto;
-  box-sizing: border-box;
-  padding-block-end: var(--db-sizing-sm);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-block: var(--db-sizing-sm);
 }
 @media screen and (min-width: 768px) {
   .db-code-docs .code-details .code {
     width: 50%;
-    margin-inline-start: auto;
   }
 }
-.db-code-docs :where(.db-card) .code-details .code pre, .db-code-docs .code-details .code pre {
+.db-code-docs :where(.db-card) .code-details .code div, .db-code-docs .code-details .code div {
   margin: 0;
   display: flex;
   gap: var(--db-spacing-fixed-sm);
   align-items: center;
 }
-.db-code-docs .code-details .code pre code {
+.db-code-docs .code-details .code div code {
   white-space: pre-wrap;
   width: 100%;
 }
