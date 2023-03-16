@@ -72,10 +72,7 @@
   border-radius: 100px;
   display: inline-block;
   height: calc(var(--db-base-font-size) * var(--db-base-line-height));
-  transition: border-width var(--db-transition-emotional-straight, 0.3s cubic-bezier(0.27, 0.05, 0.4, 0.95));
-}
-.db-radio[type=radio] {
-  vertical-align: bottom;
+  transition: border-width 0.15s cubic-bezier(0.15, 0, 0.45, 1);
 }
 .db-radio:checked {
   border-width: calc(calc(var(--db-base-font-size) * var(--db-base-line-height)) * 0.3);
@@ -88,12 +85,13 @@
 }
 .db-radio + label {
   margin-inline-start: 0.5rem;
+  vertical-align: top;
 }
 .db-radio:disabled, .db-radio:disabled + label {
   opacity: 0.25;
 }
 .db-radio:required + label::after {
-  content: "*";
+  content: " *";
 }
 .db-radio[data-size=small] + label {
   margin-inline-start: 0.25rem;
