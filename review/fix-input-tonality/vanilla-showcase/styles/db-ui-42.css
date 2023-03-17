@@ -3201,9 +3201,9 @@
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
   color: var(--db-current-color, rgba(85, 0, 7, 0.5));
 }
-.db-input[data-variant=critical] input:not(:disabled):hover,
+.db-radio:not(:disabled):hover:user-invalid, .db-radio[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input:not(:disabled):hover,
 .db-input input:not(:disabled):hover:required:invalid:not(:placeholder-shown),
-.db-input input[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
+.db-input input[aria-invalid=true]:not(:disabled):hover, .db-radio:user-invalid button:not(:disabled):hover, .db-radio[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
 .db-input input[aria-invalid=true] button:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-hover, rgba(236, 0, 22, 0.16));
@@ -3213,9 +3213,9 @@
   --db-current-background-color-blue: 20;
 }
 
-.db-input[data-variant=critical] input button:not(:disabled):active,
+.db-radio:user-invalid button:not(:disabled):active, .db-radio[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
-.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, [data-variant=ia].db-radio:not(:disabled):active:user-invalid, [data-variant=ia].db-radio[aria-invalid=true]:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-pressed, rgba(236, 0, 22, 0.24));
@@ -3225,7 +3225,7 @@
   --db-current-background-color-blue: 18;
 }
 
-.db-input[data-variant=critical] input,
+.db-radio:user-invalid, .db-radio[aria-invalid=true], .db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-enabled, rgba(236, 0, 22, 0.08));
@@ -3238,13 +3238,13 @@
   --db-current-background-color-green: 0;
   --db-current-background-color-blue: 22;
 }
-.db-input[data-variant=critical] input a:not(:disabled):hover,
+.db-radio:user-invalid a:not(:disabled):hover, .db-radio[aria-invalid=true] a:not(:disabled):hover, .db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
   --db-current-color: var(--db-colors-critical-on-bg-hover, rgba(85, 0, 7, 0.75));
   color: var(--db-current-color, rgba(85, 0, 7, 0.75));
 }
-.db-input[data-variant=critical] input a:not(:disabled):active,
+.db-radio:user-invalid a:not(:disabled):active, .db-radio[aria-invalid=true] a:not(:disabled):active, .db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
@@ -3979,7 +3979,7 @@ body,
   font-size: var(--db-type-body-font-size-md);
 }
 
-.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon,
+.db-radio[data-size=small], .db-radio[data-size=small] + label, .db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon,
 .db-input db-icon, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
 code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
@@ -4154,20 +4154,21 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
-.db-code-docs, .db-alert, .db-input, .db-icon, .db-button {
+.db-code-docs, .db-radio + label, .db-alert, .db-input, .db-icon, .db-button {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
 }
 
-.db-input input, .db-button {
+.db-radio:checked:not(:disabled):hover, .db-input input, .db-radio, .db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
-.db-input input:not(:disabled):hover, .db-button:not(:disabled):hover {
+
+.db-input input:not(:disabled):hover, .db-radio:not(:disabled):hover, .db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
-.db-button:not(:disabled):active {
+.db-radio:not(:disabled):active, .db-button:not(:disabled):active {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.24));
 }
 
@@ -4188,7 +4189,7 @@ code {
   border-radius: 0.25rem;
 }
 
-.db-link, .db-input label, .db-input input, .db-button {
+.db-radio, .db-link, .db-input label, .db-input input, .db-button {
   color: var(--db-current-color, #242629);
 }
 
@@ -4198,6 +4199,11 @@ code {
 
 .db-button {
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
+}
+
+.db-alert[data-type=inline], .db-card {
+  border-radius: 8px;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
 }
 
 .db-button {
@@ -4303,8 +4309,6 @@ code {
 
 .db-card {
   background-color: var(--db-current-background-color, #ffffff);
-  border-radius: 8px;
-  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   flex-direction: column;
 }
@@ -4850,16 +4854,6 @@ code {
   --icon-font-family: var(--db-base-icon-font-family);
   --icon-font-size: var(--db-base-icon-font-size);
 }
-.db-alert[data-type=inline] {
-  width: fit-content;
-  min-width: calc(360px - var(--db-spacing-fixed-md));
-}
-.db-alert[data-type=inline] .db-alert-headline-link {
-  display: none;
-}
-.db-alert[data-type=inline] .db-alert-content-link {
-  display: inherit;
-}
 .db-alert[data-variant=critical] {
   --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));
 }
@@ -4901,6 +4895,43 @@ code {
 .db-alert-close-container {
   display: flex;
   gap: var(--db-spacing-fixed-md);
+}
+
+.db-radio {
+  appearance: none;
+  aspect-ratio: 1;
+  border: max(calc(var(--db-base-font-size) * var(--db-base-line-height)) / 16 + 0.5px, 2px) solid currentColor;
+  border-radius: 100px;
+  display: inline-block;
+  height: calc(var(--db-base-font-size) * var(--db-base-line-height));
+  transition: border-width 0.15s cubic-bezier(0.15, 0, 0.45, 1);
+}
+.db-radio:checked {
+  border-width: calc(calc(var(--db-base-font-size) * var(--db-base-line-height)) * 0.3);
+}
+.db-radio:user-invalid, .db-radio[aria-invalid=true] {
+  border-color: var(--db-colors-critical-element-enabled, #ec0016);
+}
+.db-radio:user-invalid + label, .db-radio[aria-invalid=true] + label {
+  color: var(--db-colors-critical-enabled, #ec0016);
+}
+.db-radio + label {
+  margin-inline-start: var(--db-spacing-fixed-xs);
+  vertical-align: top;
+}
+.db-radio:disabled, .db-radio:disabled + label {
+  opacity: 0.25;
+}
+.db-radio:required + label::after {
+  content: " *";
+}
+.db-radio[data-size=small] + label {
+  margin-inline-start: var(--db-spacing-fixed-2xs);
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-radio {
+    transition-duration: 0.01s !important;
+  }
 }
 
 /* Add styles for component here */
