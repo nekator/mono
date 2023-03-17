@@ -1,4 +1,4 @@
-.db-radio:not(:disabled):hover:user-invalid, .db-radio[aria-invalid=true]:not(:disabled):hover, .db-radio:user-invalid button:not(:disabled):hover, .db-radio[aria-invalid=true] button:not(:disabled):hover {
+.db-radio:not(:disabled):hover:is(:user-invalid), .db-radio[aria-invalid=true]:not(:disabled):hover, .db-radio:is(:user-invalid) button:not(:disabled):hover, .db-radio[aria-invalid=true] button:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-hover, rgba(236, 0, 22, 0.16));
   background-color: var(--db-current-background-color, rgba(236, 0, 22, 0.16));
   --db-current-background-color-red: 217;
@@ -6,7 +6,7 @@
   --db-current-background-color-blue: 20;
 }
 
-.db-radio:user-invalid button:not(:disabled):active, .db-radio[aria-invalid=true] button:not(:disabled):active, [data-variant=ia].db-radio:not(:disabled):active:user-invalid, [data-variant=ia].db-radio[aria-invalid=true]:not(:disabled):active {
+.db-radio:is(:user-invalid) button:not(:disabled):active, .db-radio[aria-invalid=true] button:not(:disabled):active, [data-variant=ia].db-radio:not(:disabled):active:is(:user-invalid), [data-variant=ia].db-radio[aria-invalid=true]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-pressed, rgba(236, 0, 22, 0.24));
   background-color: var(--db-current-background-color, rgba(236, 0, 22, 0.24));
   --db-current-background-color-red: 198;
@@ -14,7 +14,7 @@
   --db-current-background-color-blue: 18;
 }
 
-.db-radio:user-invalid, .db-radio[aria-invalid=true] {
+.db-radio:is(:user-invalid), .db-radio[aria-invalid=true] {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-enabled, rgba(236, 0, 22, 0.08));
   --db-current-color: var(--db-colors-critical-on-bg-enabled, #550007);
   --db-current-element-color: var(--db-colors-critical-element-enabled, #ec0016);
@@ -25,11 +25,11 @@
   --db-current-background-color-green: 0;
   --db-current-background-color-blue: 22;
 }
-.db-radio:user-invalid a:not(:disabled):hover, .db-radio[aria-invalid=true] a:not(:disabled):hover {
+.db-radio:is(:user-invalid) a:not(:disabled):hover, .db-radio[aria-invalid=true] a:not(:disabled):hover {
   --db-current-color: var(--db-colors-critical-on-bg-hover, rgba(85, 0, 7, 0.75));
   color: var(--db-current-color, rgba(85, 0, 7, 0.75));
 }
-.db-radio:user-invalid a:not(:disabled):active, .db-radio[aria-invalid=true] a:not(:disabled):active {
+.db-radio:is(:user-invalid) a:not(:disabled):active, .db-radio[aria-invalid=true] a:not(:disabled):active {
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
   color: var(--db-current-color, rgba(85, 0, 7, 0.5));
 }
@@ -78,10 +78,10 @@
 .db-radio:checked {
   border-width: calc(calc(var(--db-base-font-size) * var(--db-base-line-height)) * 0.3);
 }
-.db-radio:user-invalid, .db-radio[aria-invalid=true] {
+.db-radio:is(:user-invalid), .db-radio[aria-invalid=true] {
   border-color: var(--db-colors-critical-element-enabled, #ec0016);
 }
-.db-radio:user-invalid + label, .db-radio[aria-invalid=true] + label {
+.db-radio:is(:user-invalid) + label, .db-radio[aria-invalid=true] + label {
   color: var(--db-colors-critical-enabled, #ec0016);
 }
 .db-radio + label {
