@@ -55,7 +55,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	& + label {
 		@extend %shadow-dom-extend;
 
-		margin-inline-start: $db-spacing-fixed-regular-xs;
+		margin-inline-start: var(--db-spacing-fixed-xs);
 
 		vertical-align: top;
 	}
@@ -81,7 +81,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 
 		& + label {
 			@extend %db-body-sm;
-			margin-inline-start: $db-spacing-fixed-regular-2xs;
+			margin-inline-start: var(--db-spacing-fixed-regular-2xs);
 		}
 	}
 
