@@ -54,9 +54,10 @@
   color: var(--db-current-color, #242629);
 }
 
-.db-radio {
+.db-radio:checked:not(:disabled):hover, .db-radio {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
+
 .db-radio:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
@@ -94,7 +95,7 @@
   content: " *";
 }
 .db-radio[data-size=small] + label {
-  margin-inline-start: var(--db-spacing-fixed-regular-2xs);
+  margin-inline-start: var(--db-spacing-fixed-2xs);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-radio {

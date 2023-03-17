@@ -185,6 +185,7 @@
 .db-input input {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
+
 .db-input input:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }

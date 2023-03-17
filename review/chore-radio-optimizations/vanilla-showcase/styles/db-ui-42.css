@@ -4160,9 +4160,10 @@ code {
   font-size: inherit;
 }
 
-.db-input input, .db-radio, .db-button {
+.db-radio:checked:not(:disabled):hover, .db-input input, .db-radio, .db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
+
 .db-input input:not(:disabled):hover, .db-radio:not(:disabled):hover, .db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
@@ -4924,7 +4925,7 @@ code {
   content: " *";
 }
 .db-radio[data-size=small] + label {
-  margin-inline-start: var(--db-spacing-fixed-regular-2xs);
+  margin-inline-start: var(--db-spacing-fixed-2xs);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-radio {
