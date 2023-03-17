@@ -1,4 +1,5 @@
 import CheckboxComponent from '../components/checkbox';
+import RadioComponent from '../components/radio';
 
 import AlertComponent from '../components/alert';
 import ButtonComponent from '../components/button';
@@ -16,6 +17,7 @@ export type NavigationItem = {
 };
 export const NAVIGATION_ITEMS: NavigationItem[] = [
 	{ path: 'checkbox', label: 'Checkbox', component: <CheckboxComponent /> },
+	{ path: 'radio', label: 'Radio', component: <RadioComponent /> },
 
 	{ path: 'alert', label: 'Alert', component: <AlertComponent /> },
 	{ path: 'infotext', label: 'Infotext', component: <InfotextComponent /> },

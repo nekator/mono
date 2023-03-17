@@ -13,6 +13,7 @@ import {
 	DBBrandModule,
 	DBLinkModule,
 	DBCheckboxModule
+	DBRadioModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -41,6 +42,7 @@ import { InputComponent } from './components/input/input.component';
 		DBLinkModule,
 		FormsModule,
 		DBCheckboxModule
+		DBRadioModule
 	],
 	providers: [],
 	schemas: [NO_ERRORS_SCHEMA],
