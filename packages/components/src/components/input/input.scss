@@ -11,7 +11,9 @@
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component";
 
-:root {
+:root,
+.db-ui-regular,
+.db-ui-expressive {
 	--db-input-disabled-label-opacity: 0.25;
 }
 
