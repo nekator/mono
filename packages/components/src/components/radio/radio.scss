@@ -81,7 +81,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 
 		& + label {
 			@extend %db-body-sm;
-			margin-inline-start: var(--db-spacing-fixed-regular-2xs);
+			margin-inline-start: var(--db-spacing-fixed-2xs);
 		}
 	}
 
