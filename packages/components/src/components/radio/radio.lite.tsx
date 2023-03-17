@@ -1,10 +1,8 @@
 import {
-	onInit,
 	onMount,
 	onUpdate,
 	Show,
 	useMetadata,
-	useRef,
 	useStore
 } from '@builder.io/mitosis';
 import { DBRadioProps, DBRadioState } from './model';
