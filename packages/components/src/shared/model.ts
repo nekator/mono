@@ -105,7 +105,7 @@ export type ChangeEventProps = {
 };
 
 export type ChangeEventState = {
-	handleChange: (event: Event) => void;
+	handleChange: (event: any) => void;
 };
 
 export type FocusEventProps = {
@@ -116,8 +116,8 @@ export type FocusEventProps = {
 };
 
 export type FocusEventState = {
-	handleBlur: (event: Event) => void;
-	handleFocus: (event: Event) => void;
+	handleBlur: (event: any) => void;
+	handleFocus: (event: any) => void;
 };
 
 export type ValidEventProps = {
