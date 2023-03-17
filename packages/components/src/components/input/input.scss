@@ -21,11 +21,6 @@
 	--db-input-disabled-label-opacity: 0;
 }
 
-.db-ui-regular,
-.db-ui-expressive {
-	--db-input-disabled-label-opacity: 0.25;
-}
-
 @mixin label-focus-animation(
 	$translationX: var(--db-input-padding-inline-start)
 ) {
