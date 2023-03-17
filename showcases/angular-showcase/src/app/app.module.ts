@@ -12,7 +12,7 @@ import {
 	DBHeaderModule,
 	DBBrandModule,
 	DBLinkModule,
-	DBCheckboxModule
+	DBCheckboxModule,
 	DBRadioModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
@@ -41,7 +41,7 @@ import { InputComponent } from './components/input/input.component';
 		DBBrandModule,
 		DBLinkModule,
 		FormsModule,
-		DBCheckboxModule
+		DBCheckboxModule,
 		DBRadioModule
 	],
 	providers: [],
