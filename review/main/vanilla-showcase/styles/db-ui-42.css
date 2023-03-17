@@ -4201,6 +4201,11 @@ code {
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
 }
 
+.db-alert[data-type=inline], .db-card {
+  border-radius: 8px;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+}
+
 .db-button {
   --loadingIndicator---color: currentColor;
   align-items: center;
@@ -4304,8 +4309,6 @@ code {
 
 .db-card {
   background-color: var(--db-current-background-color, #ffffff);
-  border-radius: 8px;
-  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   flex-direction: column;
 }
@@ -4842,16 +4845,6 @@ code {
   /* TODO: Take filled icons if they are ready */
   --icon-font-family: var(--db-base-icon-font-family);
   --icon-font-size: var(--db-base-icon-font-size);
-}
-.db-alert[data-type=inline] {
-  width: fit-content;
-  min-width: calc(360px - var(--db-spacing-fixed-md));
-}
-.db-alert[data-type=inline] .db-alert-headline-link {
-  display: none;
-}
-.db-alert[data-type=inline] .db-alert-content-link {
-  display: inherit;
 }
 .db-alert[data-variant=critical] {
   --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));
