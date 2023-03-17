@@ -3992,7 +3992,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description, .db-code-docs .code-details .code pre code {
+.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description, .db-code-docs .code-details .code div code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -4154,7 +4154,7 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
-.db-code-docs, .db-radio + label, .db-alert, .db-input, .db-icon, .db-button {
+.db-radio + label, .db-alert, .db-input, .db-icon, .db-button {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
@@ -4214,6 +4214,7 @@ code {
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  white-space: nowrap;
   text-align: center;
 }
 .db-button[data-icon], .db-button[data-icon-before] {
@@ -4337,17 +4338,14 @@ code {
   box-shadow: 0 0 1px -1px rgba(0, 0, 0, 0.2), 0 0 4px 1px rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14);
 }
 
-:root {
+:root,
+.db-ui-regular,
+.db-ui-expressive {
   --db-input-disabled-label-opacity: 0.25;
 }
 
 .db-ui-functional {
   --db-input-disabled-label-opacity: 0;
-}
-
-.db-ui-regular,
-.db-ui-expressive {
-  --db-input-disabled-label-opacity: 0.25;
 }
 
 .db-input {
@@ -4935,16 +4933,17 @@ code {
 }
 
 /* Add styles for component here */
-.db-code-docs {
+.db-code-docs :where(.db-card), .db-code-docs {
   padding: var(--db-spacing-fixed-md);
   padding-block-end: calc(var(--db-spacing-fixed-md) + var(--db-sizing-sm));
   position: relative;
 }
-.db-code-docs .code-details {
+.db-code-docs :where(.db-card) .code-details, .db-code-docs .code-details {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
+  display: flex;
 }
 .db-code-docs .code-details[open] {
   left: 0;
@@ -4954,38 +4953,38 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 1;
 }
 .db-code-docs .code-details .no-code {
   margin: auto;
 }
 .db-code-docs .code-details .code {
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
   overflow: auto;
-  box-sizing: border-box;
-  padding-block-end: var(--db-sizing-sm);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: var(--db-sizing-sm) var(--db-spacing-fixed-md);
 }
 @media screen and (min-width: 768px) {
   .db-code-docs .code-details .code {
     width: 50%;
-    margin-inline-start: auto;
   }
 }
-.db-code-docs .code-details .code pre {
+.db-code-docs :where(.db-card) .code-details .code div, .db-code-docs .code-details .code div {
   margin: 0;
   display: flex;
   gap: var(--db-spacing-fixed-sm);
   align-items: center;
 }
-.db-code-docs .code-details .code pre code {
+.db-code-docs .code-details .code div code {
   white-space: pre-wrap;
   width: 100%;
 }
 
+.db-code-docs {
+  /* Workaround for angular db-XYZ as root tag is not working */
+}
 dbalert,
 dbbrand,
 dbbutton,

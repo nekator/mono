@@ -11,17 +11,14 @@
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component";
 
-:root {
+:root,
+.db-ui-regular,
+.db-ui-expressive {
 	--db-input-disabled-label-opacity: 0.25;
 }
 
 .db-ui-functional {
 	--db-input-disabled-label-opacity: 0;
-}
-
-.db-ui-regular,
-.db-ui-expressive {
-	--db-input-disabled-label-opacity: 0.25;
 }
 
 @mixin label-focus-animation(

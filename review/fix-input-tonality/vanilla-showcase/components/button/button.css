@@ -73,6 +73,7 @@
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  white-space: nowrap;
   text-align: center;
 }
 .db-button[data-icon], .db-button[data-icon-before] {
