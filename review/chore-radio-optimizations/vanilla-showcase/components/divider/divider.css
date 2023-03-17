@@ -1,0 +1,36 @@
+.db-divider:not([data-margin=none]) {
+  margin: var(--db-spacing-fixed-sm) 0;
+}
+.db-divider:not([data-variant=vertical]) {
+  position: relative;
+  height: 1px;
+  width: 100%;
+}
+.db-divider:not([data-variant=vertical])::before {
+  content: "";
+  background-color: currentColor;
+  opacity: 0.16;
+  position: absolute;
+  height: 1px;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.db-divider[data-variant=vertical] {
+  position: relative;
+  height: auto;
+  width: 1px;
+}
+.db-divider[data-variant=vertical]::before {
+  content: "";
+  background-color: currentColor;
+  opacity: 0.16;
+  position: absolute;
+  width: 1px;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+.db-divider[data-variant=vertical]:not([data-margin=none]) {
+  margin: 0 var(--db-spacing-fixed-sm);
+}
