@@ -4914,7 +4914,7 @@ code {
   color: var(--db-colors-critical-enabled, #ec0016);
 }
 .db-radio + label {
-  margin-inline-start: 0.5rem;
+  margin-inline-start: var(--db-spacing-fixed-xs);
   vertical-align: top;
 }
 .db-radio:disabled, .db-radio:disabled + label {
@@ -4924,7 +4924,7 @@ code {
   content: " *";
 }
 .db-radio[data-size=small] + label {
-  margin-inline-start: 0.25rem;
+  margin-inline-start: var(--db-spacing-fixed-regular-2xs);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-radio {
