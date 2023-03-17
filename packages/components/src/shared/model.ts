@@ -92,32 +92,32 @@ export type LinkProps = {
 };
 
 export type ClickEventProps = {
-	onClick?: (event: any) => void;
+	onClick?: (event: Event) => void;
 };
 
 export type ClickEventState = {
-	handleClick: (event: any) => void;
+	handleClick: (event: Event) => void;
 };
 
 export type ChangeEventProps = {
-	change?: (event: any) => void;
-	onChange?: (event: any) => void;
+	change?: (event: Event) => void;
+	onChange?: (event: Event) => void;
 };
 
 export type ChangeEventState = {
-	handleChange: (event: any) => void;
+	handleChange: (event: Event) => void;
 };
 
 export type FocusEventProps = {
-	blur?: (event: any) => void;
-	onBlur?: (event: any) => void;
-	focus?: (event: any) => void;
-	onFocus?: (event: any) => void;
+	blur?: (event: Event) => void;
+	onBlur?: (event: Event) => void;
+	focus?: (event: Event) => void;
+	onFocus?: (event: Event) => void;
 };
 
 export type FocusEventState = {
-	handleBlur: (event: any) => void;
-	handleFocus: (event: any) => void;
+	handleBlur: (event: Event) => void;
+	handleFocus: (event: Event) => void;
 };
 
 export type ValidEventProps = {
