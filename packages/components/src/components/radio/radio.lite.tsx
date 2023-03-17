@@ -36,6 +36,7 @@ export default function DBRadio(props: DBRadioProps) {
 			}
 
 			state._checked = event.target?.checked;
+			state._value = event.target?.value;
 
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;
