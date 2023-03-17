@@ -36,7 +36,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.change(event);
 			}
 
-			state._checked = event.target.checked;
+			state._checked = event.target?.checked;
 
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;
