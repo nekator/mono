@@ -54,7 +54,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	}
 
 	// TODO: We need to set the correct styling / color for invalid
-	// &:user-invalid,
+	// &:is(:user-invalid),
 	// &[aria-invalid="true"] {
 
 	// }
