@@ -30,10 +30,6 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	height: $font-size-height;
 	justify-content: center;
 
-	&[type="checkbox"] {
-		vertical-align: bottom;
-	}
-
 	&:checked {
 		// We need to reset the general icons margin, as we want to use it in a tiny space
 		--icon-margin-after: 0;
@@ -76,6 +72,8 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		@extend %shadow-dom-extend;
 
 		margin-inline-start: $db-spacing-fixed-xs;
+
+		vertical-align: top;
 	}
 
 	// Sizes
@@ -84,6 +82,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 
 		// TODO: we still need to scale this
 		& + label {
+			@extend %db-body-sm;
 			margin-inline-start: $db-spacing-fixed-2xs;
 		}
 	}
