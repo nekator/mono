@@ -13,12 +13,10 @@
   background-color: #ec0016;
   color: #ffffff;
 }
-
 .db-button[data-variant=primary]:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-primary-hover, #d90014);
   background-color: var(--db-current-background-color, #d90014);
 }
-
 .db-button[data-variant=primary]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-primary-pressed, #c70012);
   background-color: var(--db-current-background-color, #c70012);
