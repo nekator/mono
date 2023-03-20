@@ -1,0 +1,213 @@
+dialog[data-backdrop=true]::backdrop, dialog[data-backdrop=false] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9995;
+}
+
+dialog {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 9996;
+  color: inherit;
+}
+
+dialog[data-backdrop=true]::backdrop {
+  background-color: #242629;
+  opacity: 0.5;
+}
+
+/* hide timing is used in JS if you change it you need to change it there as well */
+@keyframes show-right-to-left {
+  from {
+    transform: translateX(110%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes hide-right-to-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(110%);
+  }
+}
+@keyframes show-left-to-right {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes hide-left-to-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-110%);
+  }
+}
+@keyframes show-bottom-to-top {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes hide-bottom-to-top {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(110%);
+  }
+}
+@keyframes show-top-to-bottom {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes hide-top-to-bottom {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-110%);
+  }
+}
+.db-drawer .db-drawer-container {
+  left: auto;
+  right: 0;
+}
+.db-drawer [data-rounded=true].db-drawer-container {
+  border-top-left-radius: var(--default-card-border-radius, 8px);
+  border-bottom-left-radius: var(--default-card-border-radius, 8px);
+}
+
+.db-drawer .db-drawer-container[data-direction=left] {
+  right: auto;
+  left: 0;
+}
+.db-drawer [data-rounded=true].db-drawer-container[data-direction=left] {
+  border-top-right-radius: var(--default-card-border-radius, 8px);
+  border-bottom-right-radius: var(--default-card-border-radius, 8px);
+}
+
+.db-drawer .db-drawer-container[data-direction=down]:not([data-width=full]), .db-drawer .db-drawer-container[data-direction=up]:not([data-width=full]) {
+  max-height: var(--db-drawer-max-height, calc(100% - var(--db-spacing-fixed-xl)));
+  max-width: none;
+}
+
+.db-drawer .db-drawer-container[data-direction=up] {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.db-drawer [data-rounded=true].db-drawer-container[data-direction=up] {
+  border-top-right-radius: var(--default-card-border-radius, 8px);
+  border-top-left-radius: var(--default-card-border-radius, 8px);
+}
+
+.db-drawer .db-drawer-container[data-direction=down] {
+  bottom: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.db-drawer [data-rounded=true].db-drawer-container[data-direction=down] {
+  border-bottom-right-radius: var(--default-card-border-radius, 8px);
+  border-bottom-left-radius: var(--default-card-border-radius, 8px);
+}
+
+.db-drawer .db-drawer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding-block: var(--db-spacing-fixed-sm);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.db-drawer .db-drawer-container:not([data-width=full]) {
+  max-width: var(--db-drawer-max-width, calc(100% - var(--db-spacing-fixed-xl)));
+}
+.db-drawer .db-drawer-container[data-size=small] {
+  padding-block: var(--db-spacing-fixed-xs);
+}
+.db-drawer .db-drawer-container[data-size=small] .db-drawer-header {
+  padding-block-end: var(--db-spacing-fixed-xs);
+  padding-inline: var(--db-spacing-fixed-md);
+}
+.db-drawer .db-drawer-container[data-size=small] .db-drawer-content {
+  padding-inline: var(--db-spacing-fixed-md);
+}
+.db-drawer .db-drawer-container[data-rounded=true] {
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+}
+.db-drawer .db-drawer-container .db-drawer-header {
+  position: relative;
+  display: flex;
+  gap: var(--db-spacing-fixed-lg);
+  justify-content: space-between;
+  padding-block-end: var(--db-spacing-fixed-sm);
+  padding-inline: var(--db-spacing-fixed-lg);
+}
+.db-drawer .db-drawer-container .db-drawer-header::before {
+  content: "";
+  background-color: currentColor;
+  opacity: 0.16;
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.db-drawer .db-drawer-container .db-drawer-header:not(:has(> :nth-child(2))) {
+  display: none;
+}
+.db-drawer .db-drawer-container .db-drawer-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding-inline: var(--db-spacing-fixed-lg);
+}
+.db-drawer[open] .db-drawer-container:not([data-direction]), .db-drawer[open] .db-drawer-container[data-direction=right] {
+  animation: show-right-to-left 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container[data-direction=left] {
+  animation: show-left-to-right 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container[data-direction=up] {
+  animation: show-bottom-to-top 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container[data-direction=down] {
+  animation: show-top-to-bottom 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container.hide:not([data-direction]), .db-drawer[open] .db-drawer-container.hide[data-direction=right] {
+  animation: hide-right-to-left 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container.hide[data-direction=left] {
+  animation: hide-left-to-right 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container.hide[data-direction=up] {
+  animation: hide-bottom-to-top 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+.db-drawer[open] .db-drawer-container.hide[data-direction=down] {
+  animation: hide-top-to-bottom 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+}
+
+.db-drawer .db-drawer-container .db-drawer-header {
+  height: 2rem;
+}
