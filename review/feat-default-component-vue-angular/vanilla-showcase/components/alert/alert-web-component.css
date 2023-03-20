@@ -198,6 +198,11 @@
   border: solid 1px var(--db-current-border-color, rgba(100, 105, 115, 0.32));
 }
 
+.db-alert[data-type=inline] {
+  border-radius: 8px;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+}
+
 .db-alert {
   padding: var(--db-spacing-fixed-md);
   display: flex;
@@ -223,16 +228,6 @@
   /* TODO: Take filled icons if they are ready */
   --icon-font-family: var(--db-base-icon-font-family);
   --icon-font-size: var(--db-base-icon-font-size);
-}
-.db-alert[data-type=inline] {
-  width: fit-content;
-  min-width: calc(360px - var(--db-spacing-fixed-md));
-}
-.db-alert[data-type=inline] .db-alert-headline-link {
-  display: none;
-}
-.db-alert[data-type=inline] .db-alert-content-link {
-  display: inherit;
 }
 .db-alert[data-variant=critical] {
   --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));

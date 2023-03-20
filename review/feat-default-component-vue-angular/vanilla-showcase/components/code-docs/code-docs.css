@@ -870,7 +870,7 @@ h6 {
   right: 0;
   top: 0;
   bottom: 0;
-  padding-block: var(--db-sizing-sm);
+  padding: var(--db-sizing-sm) var(--db-spacing-fixed-md);
 }
 @media screen and (min-width: 768px) {
   .db-code-docs .code-details .code {

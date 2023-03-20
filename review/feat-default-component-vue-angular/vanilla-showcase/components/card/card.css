@@ -448,9 +448,12 @@ code {
 }
 
 .db-card {
-  background-color: var(--db-current-background-color, #ffffff);
   border-radius: 8px;
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.db-card {
+  background-color: var(--db-current-background-color, #ffffff);
   display: flex;
   flex-direction: column;
 }
