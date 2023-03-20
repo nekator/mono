@@ -44,12 +44,6 @@
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-radio + label {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
 .db-radio {
   color: var(--db-current-color, #242629);
 }

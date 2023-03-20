@@ -4154,12 +4154,6 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
-.db-radio + label, .db-alert, .db-input, .db-icon, .db-button {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
 .db-radio:checked:not(:disabled):hover, .db-input input, .db-radio, .db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
