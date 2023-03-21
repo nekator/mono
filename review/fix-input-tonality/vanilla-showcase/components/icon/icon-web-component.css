@@ -19,7 +19,6 @@
   text-transform: none;
   vertical-align: middle;
 }
-
 @supports (content: ""/"") {
   [data-icon]::before,
   [data-icon-before]::before, [data-icon-after]::after {
@@ -38,6 +37,7 @@
     content: none;
   }
 }
+
 [data-icon]:not([data-icon-variant])::before,
 [data-icon-before]:not([data-icon-variant-before])::before, [data-icon-after]:not([data-icon-variant-after])::after {
   --icon-font-family: var(--db-base-icon-font-family, icons-24-outline, "missing-icons");
