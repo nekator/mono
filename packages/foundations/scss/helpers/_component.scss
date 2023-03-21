@@ -27,10 +27,6 @@
 	@extend %default-adaptive-border;
 	@extend %default-color;
 	@extend %default-border-radius;
-
-	&:focus-visible {
-		border-radius: var(--db-focus-outline-radius, 6px);
-	}
 }
 
 %default-background-transition {
