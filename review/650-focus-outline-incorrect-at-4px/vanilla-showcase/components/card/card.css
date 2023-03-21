@@ -414,7 +414,6 @@ iframe {
 :is(a, button, input, textarea, summary):focus-visible {
   outline: var(--db-focus-outline-size) var(--db-focus-outline-style, solid) var(--db-focus-outline-color, currentColor);
   outline-offset: var(--db-focus-outline-offset, var(--db-focus-outline-size));
-  border-radius: var(--db-focus-outline-radius, 6px);
 }
 
 :where(ul) {
@@ -447,10 +446,12 @@ code {
 }
 
 .db-card {
-  background-color: var(--db-current-background-color, #ffffff);
   border-radius: 8px;
-  --db-focus-outline-radius: 11px;
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.db-card {
+  background-color: var(--db-current-background-color, #ffffff);
   display: flex;
   flex-direction: column;
 }

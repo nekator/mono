@@ -3201,9 +3201,9 @@
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
   color: var(--db-current-color, rgba(85, 0, 7, 0.5));
 }
-.db-input[data-variant=critical] input:not(:disabled):hover,
+.db-radio:not(:disabled):hover:is(:user-invalid), .db-radio[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input:not(:disabled):hover,
 .db-input input:not(:disabled):hover:required:invalid:not(:placeholder-shown),
-.db-input input[aria-invalid=true]:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
+.db-input input[aria-invalid=true]:not(:disabled):hover, .db-radio:is(:user-invalid) button:not(:disabled):hover, .db-radio[aria-invalid=true] button:not(:disabled):hover, .db-input[data-variant=critical] input button:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):hover,
 .db-input input[aria-invalid=true] button:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-hover, rgba(236, 0, 22, 0.16));
@@ -3213,9 +3213,9 @@
   --db-current-background-color-blue: 20;
 }
 
-.db-input[data-variant=critical] input button:not(:disabled):active,
+.db-radio:is(:user-invalid) button:not(:disabled):active, .db-radio[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input button:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) button:not(:disabled):active,
-.db-input input[aria-invalid=true] button:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
+.db-input input[aria-invalid=true] button:not(:disabled):active, [data-variant=ia].db-radio:not(:disabled):active:is(:user-invalid), [data-variant=ia].db-radio[aria-invalid=true]:not(:disabled):active, .db-input[data-variant=critical] input[data-variant=ia]:not(:disabled):active,
 .db-input input[data-variant=ia]:not(:disabled):active:required:invalid:not(:placeholder-shown),
 .db-input input[data-variant=ia][aria-invalid=true]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-pressed, rgba(236, 0, 22, 0.24));
@@ -3225,7 +3225,7 @@
   --db-current-background-color-blue: 18;
 }
 
-.db-input[data-variant=critical] input,
+.db-radio:is(:user-invalid), .db-radio[aria-invalid=true], .db-input[data-variant=critical] input,
 .db-input input:required:invalid:not(:placeholder-shown),
 .db-input input[aria-invalid=true] {
   --db-current-background-color: var(--db-colors-critical-bg-transparent-semi-enabled, rgba(236, 0, 22, 0.08));
@@ -3238,13 +3238,13 @@
   --db-current-background-color-green: 0;
   --db-current-background-color-blue: 22;
 }
-.db-input[data-variant=critical] input a:not(:disabled):hover,
+.db-radio:is(:user-invalid) a:not(:disabled):hover, .db-radio[aria-invalid=true] a:not(:disabled):hover, .db-input[data-variant=critical] input a:not(:disabled):hover,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):hover,
 .db-input input[aria-invalid=true] a:not(:disabled):hover {
   --db-current-color: var(--db-colors-critical-on-bg-hover, rgba(85, 0, 7, 0.75));
   color: var(--db-current-color, rgba(85, 0, 7, 0.75));
 }
-.db-input[data-variant=critical] input a:not(:disabled):active,
+.db-radio:is(:user-invalid) a:not(:disabled):active, .db-radio[aria-invalid=true] a:not(:disabled):active, .db-input[data-variant=critical] input a:not(:disabled):active,
 .db-input input:required:invalid:not(:placeholder-shown) a:not(:disabled):active,
 .db-input input[aria-invalid=true] a:not(:disabled):active {
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
@@ -3979,7 +3979,7 @@ body,
   font-size: var(--db-type-body-font-size-md);
 }
 
-.db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon,
+.db-radio[data-size=small], .db-radio[data-size=small] + label, .db-infotext, .db-infotext .db-icon, .db-link[data-size=small], .db-input .db-icon,
 .db-input db-icon, .db-input input[type=color], .db-input input[type=date], .db-input input[type=datetime-local], .db-input input[type=email], .db-input input[type=month], .db-input input[type=number], .db-input input[type=password], .db-input input[type=search], .db-input input[type=tel], .db-input input[type=text], .db-input input[type=time], .db-input input[type=url], .db-input input[type=week], .db-button[data-size=small], small,
 code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-sm);
@@ -3992,7 +3992,7 @@ code {
   font-size: var(--db-type-body-font-size-sm);
 }
 
-.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description, .db-code-docs .code-details .code pre code {
+.db-infotext[data-size=small], .db-infotext[data-size=small] .db-icon, .db-input .description, .db-code-docs .code-details .code div code {
   --db-base-icon-font-size: var(--db-base-icon-font-size-xs);
   --db-base-icon-font-family: var(--db-base-icon-font-family-xs);
   /* prettier-ignore */
@@ -4121,7 +4121,6 @@ iframe {
 :is(a, button, input, textarea, summary):focus-visible {
   outline: var(--db-focus-outline-size) var(--db-focus-outline-style, solid) var(--db-focus-outline-color, currentColor);
   outline-offset: var(--db-focus-outline-offset, var(--db-focus-outline-size));
-  border-radius: var(--db-focus-outline-radius, 6px);
 }
 
 :where(ul) {
@@ -4153,20 +4152,15 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
-.db-code-docs, .db-alert, .db-input, .db-icon, .db-button {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
-.db-input input, .db-button {
+.db-radio:checked:not(:disabled):hover, .db-input input, .db-radio, .db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
-.db-input input:not(:disabled):hover, .db-button:not(:disabled):hover {
+
+.db-input input:not(:disabled):hover, .db-radio:not(:disabled):hover, .db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
-.db-button:not(:disabled):active {
+.db-radio:not(:disabled):active, .db-button:not(:disabled):active {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.24));
 }
 
@@ -4186,16 +4180,17 @@ code {
   border-radius: 0.25rem;
 }
 
-.db-link, .db-input label, .db-input input, .db-button {
+.db-radio, .db-link, .db-input label, .db-input input, .db-button {
   color: var(--db-current-color, #242629);
-}
-
-.db-input input:focus-visible, .db-button:focus-visible {
-  border-radius: var(--db-focus-outline-radius, 6px);
 }
 
 .db-button {
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
+}
+
+.db-alert[data-type=inline], .db-card {
+  border-radius: 8px;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
 }
 
 .db-button {
@@ -4206,6 +4201,7 @@ code {
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  white-space: nowrap;
   text-align: center;
 }
 .db-button[data-icon], .db-button[data-icon-before] {
@@ -4301,9 +4297,6 @@ code {
 
 .db-card {
   background-color: var(--db-current-background-color, #ffffff);
-  border-radius: 8px;
-  --db-focus-outline-radius: 11px;
-  box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   flex-direction: column;
 }
@@ -4330,6 +4323,16 @@ code {
 }
 .db-card[data-variant=interactive]:active {
   box-shadow: 0 0 1px -1px rgba(0, 0, 0, 0.2), 0 0 4px 1px rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14);
+}
+
+:root,
+.db-ui-regular,
+.db-ui-expressive {
+  --db-input-disabled-label-opacity: 0.25;
+}
+
+.db-ui-functional {
+  --db-input-disabled-label-opacity: 0;
 }
 
 .db-input {
@@ -4377,7 +4380,8 @@ code {
   top: 0;
   padding: 0 var(--db-spacing-fixed-sm);
 }
-.db-input:has(> .icon-after) .icon-after {
+.db-input .icon-after,
+.db-input dbicon.icon-after > .db-icon {
   right: 0;
 }
 .db-input:has(> input:disabled) .db-icon,
@@ -4431,6 +4435,9 @@ code {
 .db-input input:required + label::after {
   content: " *";
   padding-left: 0.2rem;
+}
+.db-input input:disabled:not(:placeholder-shown) + label {
+  opacity: var(--db-input-disabled-label-opacity);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-input input[type=color]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=date]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=datetime-local]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=email]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=month]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=number]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=password]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=search]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=tel]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=text]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=time]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=url]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=week]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label {
@@ -4488,6 +4495,14 @@ code {
   right: 0;
 }
 .db-input .icon-input-state::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-input .icon-input-state > .db-icon {
+  position: static;
+  padding: 0;
+}
+.db-input .icon-input-state > .db-icon::before {
   --icon-font-family: var(--db-base-icon-font-family-filled);
   --icon-font-size: var(--db-base-icon-font-size);
 }
@@ -4574,10 +4589,6 @@ code {
   --icon-glyph: "🛈";
 }
 
-.db-ui-functional .db-input > label:focus:not(:disabled), .db-ui-functional .db-input > label:not(:placeholder-shown):not(:disabled) {
-  transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
-}
-
 .db-ui-regular .db-input > input[type=date]::-webkit-calendar-picker-indicator,
 .db-ui-regular .db-input > input[type=week]::-webkit-calendar-picker-indicator,
 .db-ui-regular .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator,
@@ -4586,10 +4597,6 @@ code {
 .db-ui-expressive .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator {
   margin-top: -0.75em;
   padding: 0;
-}
-
-.db-ui-functional .db-input > input:disabled:not(:placeholder-shown) + label {
-  opacity: 0;
 }
 
 .db-brand a, .db-brand {
@@ -4726,6 +4733,9 @@ code {
 .db-link[data-content=external] .db-icon::before {
   margin-top: -0.1em;
 }
+.db-link:focus-visible {
+  border-radius: 4px;
+}
 .db-link[data-content=internal]:focus-visible, .db-link[data-content=external]:focus-visible {
   outline-offset: var(--db-focus-outline-offset, 1px);
 }
@@ -4841,16 +4851,6 @@ code {
   --icon-font-family: var(--db-base-icon-font-family);
   --icon-font-size: var(--db-base-icon-font-size);
 }
-.db-alert[data-type=inline] {
-  width: fit-content;
-  min-width: calc(360px - var(--db-spacing-fixed-md));
-}
-.db-alert[data-type=inline] .db-alert-headline-link {
-  display: none;
-}
-.db-alert[data-type=inline] .db-alert-content-link {
-  display: inherit;
-}
 .db-alert[data-variant=critical] {
   --db-current-border-color: var(--db-colors-critical-border-enabled, rgba(236, 0, 22, 0.32));
 }
@@ -4894,17 +4894,55 @@ code {
   gap: var(--db-spacing-fixed-md);
 }
 
+.db-radio {
+  appearance: none;
+  aspect-ratio: 1;
+  border: max(calc(var(--db-base-font-size) * var(--db-base-line-height)) / 16 + 0.5px, 2px) solid currentColor;
+  border-radius: 100px;
+  display: inline-block;
+  height: calc(var(--db-base-font-size) * var(--db-base-line-height));
+  transition: border-width 0.15s cubic-bezier(0.15, 0, 0.45, 1);
+}
+.db-radio:checked {
+  border-width: calc(calc(var(--db-base-font-size) * var(--db-base-line-height)) * 0.3);
+}
+.db-radio:is(:user-invalid), .db-radio[aria-invalid=true] {
+  border-color: var(--db-colors-critical-element-enabled, #ec0016);
+}
+.db-radio:is(:user-invalid) + label, .db-radio[aria-invalid=true] + label {
+  color: var(--db-colors-critical-enabled, #ec0016);
+}
+.db-radio + label {
+  margin-inline-start: var(--db-spacing-fixed-xs);
+  vertical-align: top;
+}
+.db-radio:disabled, .db-radio:disabled + label {
+  opacity: 0.25;
+}
+.db-radio:required + label::after {
+  content: " *";
+}
+.db-radio[data-size=small] + label {
+  margin-inline-start: var(--db-spacing-fixed-2xs);
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-radio {
+    transition-duration: 0.01s !important;
+  }
+}
+
 /* Add styles for component here */
-.db-code-docs {
+.db-code-docs :where(.db-card), .db-code-docs {
   padding: var(--db-spacing-fixed-md);
   padding-block-end: calc(var(--db-spacing-fixed-md) + var(--db-sizing-sm));
   position: relative;
 }
-.db-code-docs .code-details {
+.db-code-docs :where(.db-card) .code-details, .db-code-docs .code-details {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
+  display: flex;
 }
 .db-code-docs .code-details[open] {
   left: 0;
@@ -4914,39 +4952,40 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 1;
 }
 .db-code-docs .code-details .no-code {
   margin: auto;
 }
 .db-code-docs .code-details .code {
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
   overflow: auto;
-  box-sizing: border-box;
-  padding-block-end: var(--db-sizing-sm);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: var(--db-sizing-sm) var(--db-spacing-fixed-md);
 }
 @media screen and (min-width: 768px) {
   .db-code-docs .code-details .code {
     width: 50%;
-    margin-inline-start: auto;
   }
 }
-.db-code-docs .code-details .code pre {
+.db-code-docs :where(.db-card) .code-details .code div, .db-code-docs .code-details .code div {
   margin: 0;
   display: flex;
   gap: var(--db-spacing-fixed-sm);
   align-items: center;
 }
-.db-code-docs .code-details .code pre code {
+.db-code-docs .code-details .code div code {
   white-space: pre-wrap;
   width: 100%;
 }
 
+.db-code-docs {
+  /* Workaround for angular db-XYZ as root tag is not working */
+}
 dbalert,
+dbcodedocs,
 dbbrand,
 dbbutton,
 dbcard,

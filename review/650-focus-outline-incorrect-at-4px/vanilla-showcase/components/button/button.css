@@ -23,14 +23,9 @@
 }
 
 .db-button {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
-.db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
+
 .db-button:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
@@ -55,10 +50,6 @@
   color: var(--db-current-color, #242629);
 }
 
-.db-button:focus-visible {
-  border-radius: var(--db-focus-outline-radius, 6px);
-}
-
 .db-button {
   transition: background-color var(--db-transition-color, 0.3s cubic-bezier(0.15, 0, 0.45, 1));
 }
@@ -71,6 +62,7 @@
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  white-space: nowrap;
   text-align: center;
 }
 .db-button[data-icon], .db-button[data-icon-before] {
