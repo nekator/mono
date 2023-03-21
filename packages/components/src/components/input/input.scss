@@ -320,6 +320,7 @@
 			position: static;
 			padding: 0;
 
+			// TODO: Check whether we could find a more general solution for this
 			&::before {
 				--icon-font-family: var(--db-base-icon-font-family-filled);
 				--icon-font-size: var(--db-base-icon-font-size);
