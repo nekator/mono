@@ -23,12 +23,6 @@
 }
 
 .db-button {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
-.db-button {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
 
