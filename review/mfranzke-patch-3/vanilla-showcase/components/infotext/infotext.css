@@ -36,11 +36,11 @@
 .db-infotext[data-variant=critical] .db-icon {
   color: var(--db-colors-critical-element-enabled, #ec0016);
 }
-.db-infotext[data-variant=information] {
-  color: var(--db-colors-information-enabled, #0087b9);
+.db-infotext[data-variant=informational] {
+  color: var(--db-colors-informational-enabled, #0087b9);
 }
-.db-infotext[data-variant=information] .db-icon {
-  color: var(--db-colors-information-element-enabled, #309fd1);
+.db-infotext[data-variant=informational] .db-icon {
+  color: var(--db-colors-informational-element-enabled, #309fd1);
 }
 .db-infotext[data-variant=warning] {
   color: var(--db-colors-warning-enabled, #ac6600);
@@ -48,9 +48,9 @@
 .db-infotext[data-variant=warning] .db-icon {
   color: var(--db-colors-warning-element-enabled, #d68000);
 }
-.db-infotext[data-variant=success] {
-  color: var(--db-colors-success-enabled, #4c8500);
+.db-infotext[data-variant=successful] {
+  color: var(--db-colors-successful-enabled, #4c8500);
 }
-.db-infotext[data-variant=success] .db-icon {
-  color: var(--db-colors-success-element-enabled, #63a615);
+.db-infotext[data-variant=successful] .db-icon {
+  color: var(--db-colors-successful-element-enabled, #63a615);
 }
