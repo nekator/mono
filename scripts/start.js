@@ -9,14 +9,6 @@ inquirer
 			message: 'Select frameworks to start;',
 			name: 'frameworks',
 			choices: [
-				// eslint-disable-next-line no-warning-comments
-				/*	TODO: Fix the issue that components are deleted at mitosis build
-				{
-					name: 'angular'
-				}, */
-				{
-					name: 'next'
-				},
 				{
 					name: 'patternhub'
 				},
@@ -26,9 +18,6 @@ inquirer
 				},
 				{
 					name: 'reactwind'
-				},
-				{
-					name: 'svelte'
 				},
 				{
 					name: 'vanilla'
