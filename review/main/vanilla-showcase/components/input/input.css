@@ -266,7 +266,8 @@
   top: 0;
   padding: 0 var(--db-spacing-fixed-sm);
 }
-.db-input:has(> .icon-after) .icon-after {
+.db-input .icon-after,
+.db-input dbicon.icon-after > .db-icon {
   right: 0;
 }
 .db-input:has(> input:disabled) .db-icon,
@@ -380,6 +381,14 @@
   right: 0;
 }
 .db-input .icon-input-state::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-input .icon-input-state > .db-icon {
+  position: static;
+  padding: 0;
+}
+.db-input .icon-input-state > .db-icon::before {
   --icon-font-family: var(--db-base-icon-font-family-filled);
   --icon-font-size: var(--db-base-icon-font-size);
 }
