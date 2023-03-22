@@ -157,9 +157,7 @@ dialog[data-backdrop=true]::backdrop {
 }
 .db-drawer .db-drawer-container .db-drawer-header {
   position: relative;
-  display: flex;
-  gap: var(--db-spacing-fixed-lg);
-  justify-content: space-between;
+  display: block;
   padding-block-end: var(--db-spacing-fixed-sm);
   padding-inline: var(--db-spacing-fixed-lg);
 }
@@ -173,14 +171,14 @@ dialog[data-backdrop=true]::backdrop {
   right: 0;
   left: 0;
 }
-.db-drawer .db-drawer-container .db-drawer-header:not(:has(> :nth-child(2))) {
+.db-drawer .db-drawer-container .db-drawer-header .button-close-drawer {
+  margin-inline-start: var(--db-spacing-fixed-lg);
+  float: right;
+}
+.db-drawer .db-drawer-container .db-drawer-header:not(:has(> :nth-child(1))) {
   display: none;
 }
 .db-drawer .db-drawer-container .db-drawer-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
   padding-inline: var(--db-spacing-fixed-lg);
 }
 .db-drawer[open] .db-drawer-container:not([data-direction]), .db-drawer[open] .db-drawer-container[data-direction=right] {
@@ -195,15 +193,15 @@ dialog[data-backdrop=true]::backdrop {
 .db-drawer[open] .db-drawer-container[data-direction=down] {
   animation: show-top-to-bottom 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
 }
-.db-drawer[open] .db-drawer-container.hide:not([data-direction]), .db-drawer[open] .db-drawer-container.hide[data-direction=right] {
+.db-drawer[open] .db-drawer-container[hidden]:not([data-direction]), .db-drawer[open] .db-drawer-container[hidden][data-direction=right] {
   animation: hide-right-to-left 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
 }
-.db-drawer[open] .db-drawer-container.hide[data-direction=left] {
+.db-drawer[open] .db-drawer-container[hidden][data-direction=left] {
   animation: hide-left-to-right 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
 }
-.db-drawer[open] .db-drawer-container.hide[data-direction=up] {
+.db-drawer[open] .db-drawer-container[hidden][data-direction=up] {
   animation: hide-bottom-to-top 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
 }
-.db-drawer[open] .db-drawer-container.hide[data-direction=down] {
+.db-drawer[open] .db-drawer-container[hidden][data-direction=down] {
   animation: hide-top-to-bottom 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
 }

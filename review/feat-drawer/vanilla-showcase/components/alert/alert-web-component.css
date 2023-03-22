@@ -1,9 +1,3 @@
-.db-alert {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
 .db-alert[data-variant=warning] button:not(:disabled):hover, [data-variant=ia].db-alert[data-variant=warning]:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-warning-bg-hover, #ecdbc5);
   background-color: var(--db-current-background-color, #ecdbc5);
