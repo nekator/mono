@@ -86,10 +86,12 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			document &&
 			state._id
 		) {
-			const checkboxElement = document?.getElementById(state._id);
+			const checkboxElement = document?.getElementById(
+				state._id
+			) as HTMLInputElement;
 			if (checkboxElement) {
 				if (props.checked) {
-					checkboxElement.setAttribute('checked', '');
+					checkboxElement.checked = true;
 				}
 				if (props.indeterminate) {
 					checkboxElement.indeterminate = props.indeterminate;
