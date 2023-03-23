@@ -77,7 +77,7 @@ export default function DBRadio(props: DBRadioProps) {
 		if (props.checked && state.initialized && document && state._id) {
 			const radioElement = document?.getElementById(state._id);
 			if (radioElement) {
-				radioElement.click();
+				radioElement.setAttribute('checked', 'checked');
 				state.initialized = false;
 			}
 		}
