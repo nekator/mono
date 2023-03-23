@@ -99,6 +99,7 @@ export default function DBRadio(props: DBRadioProps) {
 				}
 				id={state._id}
 				name={props.name}
+				checked={props.checked}
 				disabled={props.disabled}
 				aria-labelledby={state._id + '-label'}
 				aria-describedby={props.describedbyid}
