@@ -1,0 +1,134 @@
+@use "@db-ui/foundations/build/scss/variables" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as *;
+
+$variants: (
+	"critical": (
+		var(
+			--db-colors-critical-border-enabled,
+			$db-colors-critical-border-enabled
+		),
+		var(
+			--db-colors-critical-element-enabled,
+			$db-colors-critical-element-enabled
+		)
+	),
+	"informational": (
+		var(
+			--db-colors-informational-border-enabled,
+			$db-colors-informational-border-enabled
+		),
+		var(
+			--db-colors-informational-element-enabled,
+			$db-colors-informational-element-enabled
+		)
+	),
+	"warning": (
+		var(
+			--db-colors-warning-border-enabled,
+			$db-colors-warning-border-enabled
+		),
+		var(
+			--db-colors-warning-element-enabled,
+			$db-colors-warning-element-enabled
+		)
+	),
+	"successful": (
+		var(
+			--db-colors-successful-border-enabled,
+			$db-colors-successful-border-enabled
+		),
+		var(
+			--db-colors-successful-element-enabled,
+			$db-colors-successful-element-enabled
+		)
+	)
+);
+
+@mixin handle-links($show-headline) {
+	.db-alert-headline-link {
+		@if ($show-headline) {
+			display: inherit;
+		} @else {
+			display: none;
+		}
+	}
+
+	.db-alert-content-link {
+		@if ($show-headline) {
+			display: none;
+		} @else {
+			display: inherit;
+		}
+	}
+}
+
+.db-alert {
+	@extend %db-bg-neutral-0;
+	@extend %component-border;
+
+	@include handle-links(true);
+
+	@media screen and (max-width: $db-screens-s) {
+		@include handle-links(false);
+	}
+
+	padding: $db-spacing-fixed-md;
+	display: flex;
+	gap: $db-spacing-fixed-md;
+	width: 100%;
+
+	// TODO: probably extract this to an overwrite or external file
+	text-align: start; // workaround for power apps
+
+	.db-icon {
+		&::before {
+			/* TODO: Take filled icons if they are ready */
+			--icon-font-family: var(--db-base-icon-font-family);
+			--icon-font-size: var(--db-base-icon-font-size);
+		}
+	}
+
+	&[data-type="inline"] {
+		@extend %default-card;
+	}
+
+	@each $name, $colors in $variants {
+		&[data-variant="#{$name}"] {
+			@if ($name == "critical") {
+				@extend %db-bg-critical;
+			} @else if ($name == "informational") {
+				@extend %db-bg-informational;
+			} @else if ($name == "warning") {
+				@extend %db-bg-warning;
+			} @else if ($name == "successful") {
+				@extend %db-bg-successful;
+			}
+
+			--db-current-border-color: #{nth($colors, 1)};
+
+			.db-alert-icon {
+				color: nth($colors, 2);
+			}
+		}
+	}
+}
+
+.db-alert-content-container {
+	display: flex;
+	flex-direction: column;
+	gap: $db-spacing-fixed-xs;
+	width: 100%;
+}
+
+.db-alert-headline-container {
+	display: flex;
+	gap: $db-spacing-fixed-lg;
+	justify-content: space-between;
+}
+
+.db-alert-close-container {
+	display: flex;
+	gap: $db-spacing-fixed-md;
+}
