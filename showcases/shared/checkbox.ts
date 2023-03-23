@@ -11,16 +11,19 @@ const defaultComponentVariants: DefaultComponentVariants[] = [
 				name: 'Disabled'
 			},
 			{
+				name: 'Disabled checked'
+			},
+			{
 				name: 'Required'
 			},
 			{
 				name: 'Checked'
 			},
 			{
-				name: 'Invalid'
+				name: 'Indeterminate'
 			},
 			{
-				name: 'Indeterminate'
+				name: 'Invalid'
 			}
 		]
 	},

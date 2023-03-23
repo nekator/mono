@@ -13,6 +13,7 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		includeIcon: false,
+		hasDisabledProp: true,
 		properties: []
 	}
 });
@@ -79,10 +80,20 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	});
 
 	onUpdate(() => {
-		if (props.checked && state.initialized && document && state._id) {
+		if (
+			(props.checked || props.indeterminate) &&
+			state.initialized &&
+			document &&
+			state._id
+		) {
 			const checkboxElement = document?.getElementById(state._id);
 			if (checkboxElement) {
+				if (props.checked) {
 					checkboxElement.setAttribute('checked', 'checked');
+				}
+				if (props.indeterminate) {
+					checkboxElement.indeterminate = props.indeterminate;
+				}
 				state.initialized = false;
 			}
 		}

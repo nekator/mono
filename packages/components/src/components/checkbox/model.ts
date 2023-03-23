@@ -17,6 +17,7 @@ export interface DBCheckboxDefaultProps {
 	invalid?: boolean;
 	size?: 'small';
 	value?: any;
+	indeterminate?: boolean;
 }
 
 export type DBCheckboxProps = DBCheckboxDefaultProps &

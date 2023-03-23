@@ -14,7 +14,9 @@ const getCheckbox = ({
 	checked,
 	invalid,
 	required,
-	children
+	children,
+	disabled,
+	indeterminate
 }: DBCheckboxProps) => (
 	<DBCheckbox
 		label={label}
@@ -22,7 +24,9 @@ const getCheckbox = ({
 		name={name}
 		checked={checked}
 		invalid={invalid}
-		required={required}>
+		required={required}
+		disabled={disabled}
+		indeterminate={indeterminate}>
 		{children}
 	</DBCheckbox>
 );
@@ -44,6 +48,15 @@ const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
 		{
 			example: getCheckbox({
 				children: exampleName,
+				disabled: true,
+				checked: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox disabled checked name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
 				required: true,
 				name: 'States'
 			}),
@@ -56,6 +69,14 @@ const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
 				name: 'States'
 			}),
 			code: '<DBCheckbox checked name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				indeterminate: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox indeterminate name="States">Label</DBCheckbox>'
 		},
 		{
 			example: getCheckbox({
