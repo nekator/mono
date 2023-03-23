@@ -13,6 +13,7 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		includeIcon: false,
+		hasDisabledProp: true,
 		properties: []
 	}
 });
@@ -75,9 +76,11 @@ export default function DBRadio(props: DBRadioProps) {
 
 	onUpdate(() => {
 		if (props.checked && state.initialized && document && state._id) {
-			const radioElement = document?.getElementById(state._id);
+			const radioElement = document?.getElementById(
+				state._id
+			) as HTMLInputElement;
 			if (radioElement) {
-				radioElement.click();
+				radioElement.checked = true;
 				state.initialized = false;
 			}
 		}
