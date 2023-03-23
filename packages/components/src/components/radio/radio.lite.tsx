@@ -101,7 +101,6 @@ export default function DBRadio(props: DBRadioProps) {
 				name={props.name}
 				checked={props.checked}
 				disabled={props.disabled}
-				aria-labelledby={state._id + '-label'}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
@@ -110,10 +109,7 @@ export default function DBRadio(props: DBRadioProps) {
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
 			/>
-			<label
-				htmlFor={state._id}
-				aria-hidden="true"
-				id={state._id + '-label'}>
+			<label htmlFor={state._id}>
 				{props.label}
 				{props.children}
 			</label>
