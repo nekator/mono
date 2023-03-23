@@ -13,6 +13,7 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		includeIcon: false,
+		hasDisabledProp: true,
 		properties: []
 	}
 });
