@@ -76,12 +76,11 @@ export default function DBRadio(props: DBRadioProps) {
 
 	onUpdate(() => {
 		if (props.checked && state.initialized && document && state._id) {
-			// TODO: We currently use the state workaround and might be able to remove it after the states wont get removed any more by babel
-			state._radioElement = document?.getElementById(
+			const radioElement = document?.getElementById(
 				state._id
 			) as HTMLInputElement;
-			if (state._radioElement) {
-				state._radioElement.checked = true;
+			if (radioElement) {
+				radioElement.checked = true;
 				state.initialized = false;
 			}
 		}
@@ -99,7 +98,6 @@ export default function DBRadio(props: DBRadioProps) {
 					'db-radio' + (props.className ? ' ' + props.className : '')
 				}
 				id={state._id}
-				checked={props.checked}
 				name={props.name}
 				disabled={props.disabled}
 				aria-labelledby={state._id + '-label'}
