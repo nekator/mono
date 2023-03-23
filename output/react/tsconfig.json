@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"strict": true,
+		"strict": false,
 		"allowUnreachableCode": false,
 		"allowSyntheticDefaultImports": true,
 		"declaration": true,
