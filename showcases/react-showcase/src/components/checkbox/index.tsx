@@ -1,52 +1,95 @@
 import { DBCheckbox } from '../../../../../output/react/src';
 import DefaultComponent from '../index';
-import type { DefaultComponentVariants } from '../data';
+import { getVariants } from '../../utils';
+import defaultComponentVariants from '../../../../shared/checkbox';
+import { type DBCheckboxProps } from '../../../../../output/react/src/components/checkbox/model';
+import type { DefaultComponentExample } from '../../../../shared/default-component-data';
 
 const defaultLabelText = 'Label';
 
-const variants: DefaultComponentVariants[] = [
-	{
-		name: 'States',
-		examples: [
-			{
-				name: 'Default',
-				example: <DBCheckbox>{defaultLabelText}</DBCheckbox>
-			},
-			{
-				name: 'checked',
-				example: <DBCheckbox label={defaultLabelText} checked />
-			},
-			{
-				name: 'Invalid',
-				example: <DBCheckbox label={defaultLabelText} invalid />
-			},
-			{
-				name: 'Disabled',
-				example: <DBCheckbox label={defaultLabelText} disabled />
-			},
-			{
-				name: 'Required',
-				example: <DBCheckbox label={defaultLabelText} required />
-			}
-		]
-	},
-	{
-		name: 'Size',
-		examples: [
-			{ name: 'Default', example: <DBCheckbox label="Label" /> },
-			{
-				name: 'Small',
-				example: <DBCheckbox label="Label" size="small" />
-			}
-		]
-	}
+const getCheckbox = ({
+	label,
+	size,
+	name,
+	checked,
+	invalid,
+	required,
+	children
+}: DBCheckboxProps) => (
+	<DBCheckbox
+		label={label}
+		size={size}
+		name={name}
+		checked={checked}
+		invalid={invalid}
+		required={required}>
+		{children}
+	</DBCheckbox>
+);
+
+const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
+	[
+		{
+			example: getCheckbox({ children: exampleName, name: 'States' }),
+			code: '<DBCheckbox name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				disabled: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox disabled name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				required: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox required name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				checked: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox checked name="States">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				invalid: true,
+				name: 'States'
+			}),
+			code: '<DBCheckbox invalid name="States">Label</DBCheckbox>'
+		}
+	],
+	[
+		{
+			example: getCheckbox({ children: exampleName, name: 'Size' }),
+			code: '<DBCheckbox name="Size">Label</DBCheckbox>'
+		},
+		{
+			example: getCheckbox({
+				children: exampleName,
+				name: 'Size',
+				size: 'small'
+			}),
+			code: '<DBCheckbox size="small" name="Size">Label</DBCheckbox>'
+		}
+	]
 ];
 
 const CheckboxComponent = () => {
 	return (
 		<DefaultComponent
 			title={'DBCheckbox'}
-			variants={variants}></DefaultComponent>
+			variants={getVariants(
+				defaultComponentVariants,
+				getExampleMatrix
+			)}></DefaultComponent>
 	);
 };
 
