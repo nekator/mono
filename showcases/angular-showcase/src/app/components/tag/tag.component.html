@@ -1,0 +1,14 @@
+<app-default-component
+	title="Tag"
+	[variants]="variants"
+	[exampleTemplate]="exampleTemplate"
+>
+	<ng-template
+		#exampleTemplate
+		let-exampleName="exampleName"
+		let-exampleIndex="exampleIndex"
+		let-variantIndex="variantIndex"
+	>
+		<DBTag *ngIf="exampleIndex === 0">{{ exampleName }}</DBTag>
+	</ng-template>
+</app-default-component>

@@ -2,13 +2,12 @@ import { test, expect } from '@playwright/experimental-ct-react';
 import AxeBuilder from '@axe-core/playwright';
 
 import { DBTag } from './index';
+// @ts-ignore - vue can only find it with .ts as file ending
+import { TESTING_VIEWPORTS, VARIANTS } from '../../shared/constants.ts';
 
 const comp = <DBTag>Test</DBTag>;
 
-// TODO: Get variants from https://github.com/db-ui/mono/blob/feat-unify-showcases/packages/components/src/shared/constants.ts when feat-unify branch is merged
-const colorVariants = ['critical', 'success', 'warning', 'information'];
-
-const testDefaultTag = () => {
+const testComponent = (viewport) => {
 	test('DBTag should contain text', async ({ mount }) => {
 		const component = await mount(comp);
 		await expect(component).toContainText('Test');
@@ -20,29 +19,25 @@ const testDefaultTag = () => {
 	});
 };
 
-const testTagColorVariants = () => {
-	for (const colorVariant of colorVariants) {
-		test(`DBCard should match screenshot for color variant ${colorVariant}`, async ({
+const testVariants = (viewport) => {
+	for (const variant of VARIANTS) {
+		test(`should match screenshot for variant ${variant} and device ${viewport.name}`, async ({
 			mount
 		}) => {
 			const component = await mount(
-				<DBCard colorVariant={colorVariant}>Test</DBCard>
+				<DBTag variant={variant}>Test</DBTag>
 			);
 			await expect(component).toHaveScreenshot();
 		});
 	}
 };
 
-test.describe('DBTag component on desktop', () => {
-	// Old-school CRT monitor screensize
-	test.use({ viewport: { width: 1024, height: 768 } });
-	testDefaultTag();
-});
-
-test.describe('DBTag component on mobile', () => {
-	// iPhone 13 / portrait screen size
-	test.use({ viewport: { width: 390, height: 884 } });
-	testDefaultTag();
+test.describe('DBTag component', () => {
+	TESTING_VIEWPORTS.forEach((viewport) => {
+		test.use({ viewport });
+		testComponent(viewport);
+		testVariants(viewport);
+	});
 });
 
 test.describe('DBTag component A11y', () => {

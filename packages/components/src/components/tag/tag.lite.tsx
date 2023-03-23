@@ -19,7 +19,8 @@ useMetadata({
 });
 
 export default function DBTag(props: DBTagProps) {
-	const tagInputRef = useRef<HTMLInputElement>(null);
+	// This is used as forwardRef
+	let component: any;
 	const state = useStore<DBTagState>({
 		_id: DEFAULT_ID,
 		_editlabel: 'Edit label',
@@ -67,7 +68,7 @@ export default function DBTag(props: DBTagProps) {
 					<DBIcon icon={props.iconBefore} class="icon-before" />
 				</Show>
 				<input
-					ref={tagInputRef}
+					ref={component}
 					class={
 						'db-tag' +
 						(props.className ? ' ' + props.className : '')
@@ -75,18 +76,8 @@ export default function DBTag(props: DBTagProps) {
 					type={this.behavior === 'check' ? 'checkbox' : 'radio'}
 					data-variant={props.variant}
 					data-size={props.size}
-					// id={this.input_id}
-					// data-type={this.datatype}
-					// disabled={this.disabled}
-					// // name={this.name}
-					// checked={this.selected}
-					// value={props.children}
 				/>
-				<label
-				// htmlFor={this.input_id}
-				>
-					{props.editlabel}
-				</label>
+				<label>{props.editlabel}</label>
 			</Show>
 			<Show
 				when={

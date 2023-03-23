@@ -13,7 +13,8 @@ import {
 	DBBrandModule,
 	DBLinkModule,
 	DBRadioModule,
-	DBCodeDocsModule
+	DBCodeDocsModule,
+	DBTagModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -21,9 +22,11 @@ import { FormComponent } from './components/form/form.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
 import { DefaultComponent } from './components/default.component';
+import { TagComponent } from './components/tag/tag.component';
 
 @NgModule({
 	declarations: [
+		TagComponent,
 		AppComponent,
 		DefaultComponent,
 		FormComponent,
@@ -31,6 +34,7 @@ import { DefaultComponent } from './components/default.component';
 		InputComponent
 	],
 	imports: [
+		DBTagModule,
 		AppRoutingModule,
 		BrowserModule,
 		DBButtonModule,

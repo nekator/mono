@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import {
 	DBInfotext,
 	DBButton,
@@ -12,6 +13,7 @@ import {
 	DBSection,
 	DBHeader
 } from '../src';
+import DBTag from '../src/components/tag/tag';
 import { ComponentParserType, ComponentType } from './data';
 
 const validHosts = ['marketingportal.extranet.deutschebahn.com'];
@@ -159,6 +161,14 @@ const ComponentSwitch = ({
 			<DBSection className={className} {...props}>
 				{resolvedContent}
 			</DBSection>
+		);
+	}
+
+	if (type === 'tag') {
+		return (
+			<DBTag className={className} {...props}>
+				{resolvedContent}
+			</DBTag>
 		);
 	}
 
