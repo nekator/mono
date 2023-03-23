@@ -1,0 +1,98 @@
+@use "@db-ui/foundations/build/scss/variables" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as *;
+@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
+@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/tonality" as *;
+@use "@db-ui/foundations/build/scss/helpers/component";
+@use "@db-ui/foundations/build/scss/color/color-variants" as *;
+
+$font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
+
+.db-checkbox {
+	@extend %default-color;
+	@extend %bg-transparent-interactive;
+
+	/* stylelint-disable order/order */
+	align-content: center;
+	/* stylelint-enable order/order */
+
+	appearance: none;
+
+	aspect-ratio: 1;
+
+	border: calc(var(--checkbox-size, #{$db-sizing-sm}) / 16 + 0.5px) solid
+		currentColor;
+	border-radius: 3px;
+
+	display: inline-flex;
+	height: $font-size-height;
+	justify-content: center;
+
+	&:checked {
+		// We need to reset the general icons margin, as we want to use it in a tiny space
+		--icon-margin-after: 0;
+
+		@extend %db-secondary-component-ia;
+
+		// Check icon
+		@include icon(glyph(done), 24, "outline");
+		/* stylelint-disable order/order */
+		&::before {
+			content: glyph(done);
+		}
+
+		// The icon within the checkbox has the same dimensions as the checkbox itself and that for there can't be any border
+		border-width: 0;
+		padding: 1px;
+		/* stylelint-enable order/order */
+	}
+
+	// TODO: We need to set the correct styling / color for invalid
+	// &:is(:user-invalid),
+	// &[aria-invalid="true"] {
+
+	// }
+
+	&:indeterminate {
+		&::before {
+			content: glyph(minus);
+		}
+	}
+
+	&:disabled {
+		&,
+		& + label {
+			opacity: 0.25;
+		}
+	}
+
+	& + label {
+		margin-inline-start: $db-spacing-fixed-xs;
+
+		vertical-align: top;
+	}
+
+	// Sizes
+	&%size-Small {
+		@extend %db-body-sm;
+
+		// TODO: we still need to scale this
+		& + label {
+			@extend %db-body-sm;
+			margin-inline-start: $db-spacing-fixed-2xs;
+		}
+	}
+
+	&[data-size="small"] {
+		@extend %size-Small;
+	}
+
+	&:required {
+		& + label {
+			&::after {
+				content: " *";
+			}
+		}
+	}
+}
