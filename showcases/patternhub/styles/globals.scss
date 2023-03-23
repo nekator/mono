@@ -36,7 +36,6 @@ iframe {
 .iframe-component-container {
 	display: flex;
 	flex-direction: column;
-	padding: $db-spacing-fixed-md;
 
 	.flex {
 		display: flex;
@@ -55,5 +54,11 @@ iframe {
 
 	span {
 		word-break: break-all;
+	}
+}
+
+.noh1 {
+	h1 {
+		display: none;
 	}
 }

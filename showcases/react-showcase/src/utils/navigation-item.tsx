@@ -1,4 +1,5 @@
 import TagComponent from '../components/tag';
+import RadioComponent from '../components/radio';
 
 import AlertComponent from '../components/alert';
 import ButtonComponent from '../components/button';
@@ -16,7 +17,7 @@ export type NavigationItem = {
 };
 export const NAVIGATION_ITEMS: NavigationItem[] = [
 	{ path: 'tag', label: 'Tag', component: <TagComponent /> },
-
+	{ path: 'radio', label: 'Radio', component: <RadioComponent /> },
 	{ path: 'alert', label: 'Alert', component: <AlertComponent /> },
 	{ path: 'infotext', label: 'Infotext', component: <InfotextComponent /> },
 	{ path: 'section', label: 'Section', component: <SectionComponent /> },
