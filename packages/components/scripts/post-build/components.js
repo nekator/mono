@@ -49,6 +49,18 @@ const getComponents = () => [
 					from: 'immediate: true,',
 					to: 'immediate: true,\nflush: "post"'
 				}
+			],
+			react: [
+				{
+					from: `checkboxElement = document?.getElementById(_id)`,
+					to: 'checkboxElement = document?.getElementById(_id) as HTMLInputElement'
+				}
+			],
+			global: [
+				{
+					from: `checkboxElement = document?.getElementById(this._id)`,
+					to: 'checkboxElement = document?.getElementById(this._id) as HTMLInputElement'
+				}
 			]
 		},
 		config: {
