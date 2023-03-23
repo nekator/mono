@@ -115,6 +115,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				}
 				id={state._id}
 				name={props.name}
+				checked={props.checked}
 				disabled={props.disabled}
 				value={state._value}
 				aria-labelledby={state._id + '-label'}
