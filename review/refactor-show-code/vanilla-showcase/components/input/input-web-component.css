@@ -194,16 +194,11 @@
 }
 
 .db-input input {
-  --db-focus-outline-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 
 .db-input label, .db-input input {
   color: var(--db-current-color, #242629);
-}
-
-.db-input input:focus {
-  border-radius: var(--db-focus-outline-radius, 0.375rem);
 }
 
 :root,
