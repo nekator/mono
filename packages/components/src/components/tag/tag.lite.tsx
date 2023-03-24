@@ -14,6 +14,7 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		includeIcon: false,
+		isFormComponent: true,
 		properties: []
 	}
 });
