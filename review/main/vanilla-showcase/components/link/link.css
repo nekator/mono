@@ -61,6 +61,9 @@
 .db-link[data-content=external] .db-icon::before {
   margin-top: -0.1em;
 }
+.db-link:focus-visible {
+  border-radius: 4px;
+}
 .db-link[data-content=internal]:focus-visible, .db-link[data-content=external]:focus-visible {
   outline-offset: var(--db-focus-outline-offset, 1px);
 }
