@@ -14,6 +14,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   Storybook
 -   [IBM / Carbon Design System](https://github.com/carbon-design-system/carbon)
 -   [NS.nl / Platform](https://www.ns.nl/platform/components/index.html)
+-   [Liquid Oxygen, UI component library for the Liquid Design System of Merck KGaA, Darmstadt, Germany](https://liquid.merck.design/liquid/)
+    -   Web Components / StencilJS
 -   [Barmer Puls Design System](https://barmer-puls.entw.bconnect.barmer.de/)
     -   React Native
     -   [Storybook](https://barmer-puls-react.entw.bconnect.barmer.de/?path=/story/surfaces-accordion--base)
