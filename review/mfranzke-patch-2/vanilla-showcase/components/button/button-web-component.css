@@ -13,21 +13,13 @@
   background-color: #ec0016;
   color: #ffffff;
 }
-
 .db-button[data-variant=primary]:not(:disabled):hover {
   --db-current-background-color: var(--db-colors-primary-hover, #d90014);
   background-color: var(--db-current-background-color, #d90014);
 }
-
 .db-button[data-variant=primary]:not(:disabled):active {
   --db-current-background-color: var(--db-colors-primary-pressed, #c70012);
   background-color: var(--db-current-background-color, #c70012);
-}
-
-.db-button {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
 }
 
 .db-button {
@@ -51,16 +43,11 @@
 }
 
 .db-button {
-  --db-focus-outline-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 
 .db-button {
   color: var(--db-current-color, #242629);
-}
-
-.db-button:focus {
-  border-radius: var(--db-focus-outline-radius, 0.375rem);
 }
 
 .db-button {
@@ -75,6 +62,7 @@
   justify-content: center;
   height: var(--db-sizing-md);
   padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-md);
+  white-space: nowrap;
   text-align: center;
 }
 .db-button[data-icon], .db-button[data-icon-before] {

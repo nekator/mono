@@ -176,15 +176,10 @@
   --db-current-color: var(--db-colors-critical-on-bg-pressed, rgba(85, 0, 7, 0.5));
   color: var(--db-current-color, rgba(85, 0, 7, 0.5));
 }
-.db-input {
-  font-family: inherit;
-  line-height: inherit;
-  font-size: inherit;
-}
-
 .db-input input {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0));
 }
+
 .db-input input:not(:disabled):hover {
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
@@ -198,7 +193,6 @@
 }
 
 .db-input input {
-  --db-focus-outline-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 
@@ -206,8 +200,14 @@
   color: var(--db-current-color, #242629);
 }
 
-.db-input input:focus {
-  border-radius: var(--db-focus-outline-radius, 0.375rem);
+:root,
+.db-ui-regular,
+.db-ui-expressive {
+  --db-input-disabled-label-opacity: 0.25;
+}
+
+.db-ui-functional {
+  --db-input-disabled-label-opacity: 0;
 }
 
 .db-input {
@@ -255,7 +255,8 @@
   top: 0;
   padding: 0 var(--db-spacing-fixed-sm);
 }
-.db-input:has(> .icon-after) .icon-after {
+.db-input .icon-after,
+.db-input dbicon.icon-after > .db-icon {
   right: 0;
 }
 .db-input:has(> input:disabled) .db-icon,
@@ -309,6 +310,9 @@
 .db-input input:required + label::after {
   content: " *";
   padding-left: 0.2rem;
+}
+.db-input input:disabled:not(:placeholder-shown) + label {
+  opacity: var(--db-input-disabled-label-opacity);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-input input[type=color]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=date]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=datetime-local]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=email]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=month]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=number]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=password]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=search]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=tel]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=text]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=time]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=url]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label, .db-input input[type=week]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=time]):not([type=week]) + label {
@@ -366,6 +370,14 @@
   right: 0;
 }
 .db-input .icon-input-state::before {
+  --icon-font-family: var(--db-base-icon-font-family-filled);
+  --icon-font-size: var(--db-base-icon-font-size);
+}
+.db-input .icon-input-state > .db-icon {
+  position: static;
+  padding: 0;
+}
+.db-input .icon-input-state > .db-icon::before {
   --icon-font-family: var(--db-base-icon-font-family-filled);
   --icon-font-size: var(--db-base-icon-font-size);
 }
@@ -452,10 +464,6 @@
   --icon-glyph: "🛈";
 }
 
-.db-ui-functional .db-input > label:focus:not(:disabled), .db-ui-functional .db-input > label:not(:placeholder-shown):not(:disabled) {
-  transform: translate(var(--db-input-padding-inline-start), calc(-1 * var(--db-sizing-md)));
-}
-
 .db-ui-regular .db-input > input[type=date]::-webkit-calendar-picker-indicator,
 .db-ui-regular .db-input > input[type=week]::-webkit-calendar-picker-indicator,
 .db-ui-regular .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator,
@@ -464,8 +472,4 @@
 .db-ui-expressive .db-input > input[type=datetime-local]::-webkit-calendar-picker-indicator {
   margin-top: -0.75em;
   padding: 0;
-}
-
-.db-ui-functional .db-input > input:disabled:not(:placeholder-shown) + label {
-  opacity: 0;
 }

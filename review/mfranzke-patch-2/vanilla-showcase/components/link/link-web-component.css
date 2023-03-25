@@ -13,12 +13,10 @@
 .db-link[data-variant=primary] {
   color: #ec0016;
 }
-
 .db-link[data-variant=primary]:not(:disabled):hover {
   --db-current-color: var(--db-colors-primary-hover, #d90014);
   color: var(--db-current-color, #d90014);
 }
-
 .db-link[data-variant=primary]:not(:disabled):active {
   --db-current-color: var(--db-colors-primary-pressed, #c70012);
   color: var(--db-current-color, #c70012);
@@ -62,6 +60,9 @@
 .db-link[data-content=external]::after,
 .db-link[data-content=external] .db-icon::before {
   margin-top: -0.1em;
+}
+.db-link:focus-visible {
+  border-radius: 4px;
 }
 .db-link[data-content=internal]:focus-visible, .db-link[data-content=external]:focus-visible {
   outline-offset: var(--db-focus-outline-offset, 1px);
