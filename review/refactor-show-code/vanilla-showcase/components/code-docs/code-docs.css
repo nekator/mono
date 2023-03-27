@@ -665,6 +665,9 @@
   --db-sizing-sm: 1.5rem;
   --db-sizing-md: 2.5rem;
   --db-sizing-lg: 4rem;
+  --db-sizing-xl: 6rem;
+  --db-sizing-2xl: 10rem;
+  --db-sizing-3xl: 15rem;
   --db-spacing-fixed-3xs: 0.125rem;
   --db-spacing-fixed-2xs: 0.25rem;
   --db-spacing-fixed-xs: 0.5rem;
@@ -707,6 +710,9 @@
   --db-sizing-sm: 1.25rem;
   --db-sizing-md: 2rem;
   --db-sizing-lg: 3rem;
+  --db-sizing-xl: 5rem;
+  --db-sizing-2xl: 7.5rem;
+  --db-sizing-3xl: 10rem;
   --db-spacing-fixed-3xs: 0.125rem;
   --db-spacing-fixed-2xs: 0.25rem;
   --db-spacing-fixed-xs: 0.375rem;
@@ -749,6 +755,9 @@
   --db-sizing-sm: 1.75rem;
   --db-sizing-md: 3rem;
   --db-sizing-lg: 5rem;
+  --db-sizing-xl: 7.5rem;
+  --db-sizing-2xl: 15rem;
+  --db-sizing-3xl: 30rem;
   --db-spacing-fixed-3xs: 0.25rem;
   --db-spacing-fixed-2xs: 0.5rem;
   --db-spacing-fixed-xs: 0.75rem;
