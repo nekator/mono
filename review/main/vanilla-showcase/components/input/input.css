@@ -184,6 +184,7 @@
   background-color: rgba(var(--db-current-background-color-red), var(--db-current-background-color-green), var(--db-current-background-color-blue), var(--db-current-background-color-alpha, 0.16));
 }
 
+/* TODO: We should get the variables from UX */
 .db-input input {
   border: solid 1px var(--db-current-color, #242629);
 }

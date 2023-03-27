@@ -33,6 +33,41 @@
   --db-current-color: var(--db-colors-secondary-on-bg-pressed, rgba(14, 16, 19, 0.5));
   color: var(--db-current-color, rgba(14, 16, 19, 0.5));
 }
+.db-code-docs button:not(:disabled):hover, [data-variant=ia].db-code-docs:not(:disabled):hover, .db-code-docs [data-variant=ia]:not(:disabled):hover:where(.db-card) {
+  --db-current-background-color: var(--db-colors-neutral-bg-1-hover, #dadcdd);
+  background-color: var(--db-current-background-color, #dadcdd);
+  --db-current-background-color-red: 119;
+  --db-current-background-color-green: 123;
+  --db-current-background-color-blue: 132;
+}
+
+.db-code-docs button:not(:disabled):active, [data-variant=ia].db-code-docs:not(:disabled):active, .db-code-docs [data-variant=ia]:not(:disabled):active:where(.db-card) {
+  --db-current-background-color: var(--db-colors-neutral-bg-1-pressed, #c3c3c5);
+  background-color: var(--db-current-background-color, #c3c3c5);
+  --db-current-background-color-red: 137;
+  --db-current-background-color-green: 141;
+  --db-current-background-color-blue: 148;
+}
+
+.db-code-docs, .db-code-docs :where(.db-card), [data-variant=ia].db-code-docs, .db-code-docs [data-variant=ia]:where(.db-card) {
+  --db-current-background-color: var(--db-colors-neutral-bg-1-enabled, #f4f5f6);
+  --db-current-color: var(--db-colors-neutral-on-bg-enabled, #242629);
+  --db-current-element-color: var(--db-colors-neutral-element-enabled, #646973);
+  --db-current-border-color: var(--db-colors-neutral-border-enabled, rgba(100, 105, 115, 0.32));
+  background-color: var(--db-current-background-color, #f4f5f6);
+  color: var(--db-current-color, #242629);
+  --db-current-background-color-red: 100;
+  --db-current-background-color-green: 105;
+  --db-current-background-color-blue: 115;
+}
+.db-code-docs a:not(:disabled):hover {
+  --db-current-color: var(--db-colors-neutral-on-bg-hover, rgba(36, 38, 41, 0.75));
+  color: var(--db-current-color, rgba(36, 38, 41, 0.75));
+}
+.db-code-docs a:not(:disabled):active {
+  --db-current-color: var(--db-colors-neutral-on-bg-pressed, rgba(36, 38, 41, 0.5));
+  color: var(--db-current-color, rgba(36, 38, 41, 0.5));
+}
 @font-face {
   font-family: "DB Screen Head";
   font-style: normal;
@@ -630,6 +665,9 @@
   --db-sizing-sm: 1.5rem;
   --db-sizing-md: 2.5rem;
   --db-sizing-lg: 4rem;
+  --db-sizing-xl: 6rem;
+  --db-sizing-2xl: 10rem;
+  --db-sizing-3xl: 15rem;
   --db-spacing-fixed-3xs: 0.125rem;
   --db-spacing-fixed-2xs: 0.25rem;
   --db-spacing-fixed-xs: 0.5rem;
@@ -672,6 +710,9 @@
   --db-sizing-sm: 1.25rem;
   --db-sizing-md: 2rem;
   --db-sizing-lg: 3rem;
+  --db-sizing-xl: 5rem;
+  --db-sizing-2xl: 7.5rem;
+  --db-sizing-3xl: 10rem;
   --db-spacing-fixed-3xs: 0.125rem;
   --db-spacing-fixed-2xs: 0.25rem;
   --db-spacing-fixed-xs: 0.375rem;
@@ -714,6 +755,9 @@
   --db-sizing-sm: 1.75rem;
   --db-sizing-md: 3rem;
   --db-sizing-lg: 5rem;
+  --db-sizing-xl: 7.5rem;
+  --db-sizing-2xl: 15rem;
+  --db-sizing-3xl: 30rem;
   --db-spacing-fixed-3xs: 0.25rem;
   --db-spacing-fixed-2xs: 0.5rem;
   --db-spacing-fixed-xs: 0.75rem;
@@ -840,8 +884,11 @@ h6 {
 
 /* Add styles for component here */
 .db-code-docs :where(.db-card), .db-code-docs {
-  padding: var(--db-spacing-fixed-md);
-  padding-block-end: calc(var(--db-spacing-fixed-md) + var(--db-sizing-sm));
+  min-height: var(--db-sizing-3xl);
+  align-items: center;
+  justify-content: center;
+  padding: var(--db-spacing-fixed-xl);
+  padding-block-end: calc(var(--db-spacing-fixed-xl) + var(--db-sizing-sm));
   position: relative;
 }
 .db-code-docs :where(.db-card) .code-details, .db-code-docs .code-details {

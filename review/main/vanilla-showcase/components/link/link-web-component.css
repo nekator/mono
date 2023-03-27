@@ -22,6 +22,7 @@
   color: var(--db-current-color, #c70012);
 }
 
+/* TODO: We should get the variables from UX */
 .db-link {
   color: var(--db-current-color, #242629);
 }

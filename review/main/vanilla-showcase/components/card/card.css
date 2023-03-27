@@ -469,6 +469,7 @@ code {
   padding-inline: var(--db-spacing-fixed-xs);
 }
 
+/* TODO: We should get the variables from UX */
 .db-card {
   border-radius: 8px;
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
@@ -496,10 +497,13 @@ code {
   width: 100vw;
   border-radius: 0;
 }
-.db-card[data-variant=interactive]:hover {
+.db-card[data-variant=interactive]:hover:not([data-elevation=none]) {
   cursor: pointer;
   box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.2), 0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
 }
-.db-card[data-variant=interactive]:active {
+.db-card[data-variant=interactive]:active:not([data-elevation=none]) {
   box-shadow: 0 0 1px -1px rgba(0, 0, 0, 0.2), 0 0 4px 1px rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14);
+}
+.db-card[data-elevation=none] {
+  box-shadow: none;
 }
