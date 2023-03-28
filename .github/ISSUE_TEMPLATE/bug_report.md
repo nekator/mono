@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+<!-- Thanks a lot for taking your time to fill out this bug report! Feedback by the community has a very high value for us, to improve our work and to have every other user benefit from it as well. //-->
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
