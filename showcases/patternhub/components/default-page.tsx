@@ -10,6 +10,7 @@ import {
 import StaticContent from './static-content';
 import { getRouteWithBasePath, ROUTES } from '../data/routes';
 import '@db-ui/core/dist/css/db-ui-core.vars.css';
+import 'iframe-resizer/js/iframeResizer.contentWindow.min.js';
 import { useRouter } from 'next/router';
 import { DbMainnavigationDataType } from '@db-ui/elements/dist/types/components/db-mainnavigation/db-mainnavigation-type';
 import { useEffect, useState } from 'react';
