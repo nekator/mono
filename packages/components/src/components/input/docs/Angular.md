@@ -1,11 +1,9 @@
 ## Angular
 
-Load SCSS globally somewhere in your app:
+Load SCSS globally in your styles.css/scss:
 
 ```
-@use "@db-ui/foundations/build/scss/variables.global" as *;
 @use "@db-ui/components/build/styles/db-ui-42-webpack" as *;
-@use "@db-ui/foundations/build/scss/color-classes" as *;
 
 ```
 
@@ -25,7 +23,7 @@ import { DBInputModule } from '@db-ui/ngx-components';
 Use component in template:
 
 ```
-<DBInput label="Label" [description]="Description"></DBInput>
+<DBInput label="Label" placeholder="placeholder" description="Description" (change)="onInputChange()"></DBInput>
 ```
 
 ## How to use with Template Driven Forms

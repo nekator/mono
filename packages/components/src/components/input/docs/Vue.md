@@ -18,7 +18,7 @@ import { DBInput } from '@db-ui/v-components';
 </script>
 
 <template>
-  <DBInput label="Label" placeholder="Placeholder"></DBInput>
+  <DBInput label="Label" placeholder="Placeholder" @change="onChange($event)"></DBInput>
 </template>
 
 ```
@@ -36,6 +36,6 @@ To get DBInput work with `v-model` you have to use v-model argument syntax:
 or using on-change listener:
 
 ```ts
-<DBInput label="Textlabel" placeholder="Start" :value="modelAndChange" :on-change="($event) => { modelAndChange = $event.target.value;
+<DBInput label="Textlabel" placeholder="Start" :value="modelAndChange" @change="($event) => { modelAndChange = $event.target.value;
 }"/> {{ modelAndChange }}
 ```
