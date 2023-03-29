@@ -1,6 +1,6 @@
 ## Angular
 
-Load SCSS globally in your styles.css/scss:
+Load SCSS globally within `styles.scss` in your app:
 
 ```scss
 @use "@db-ui/components/build/styles/db-ui-42-webpack" as *;
