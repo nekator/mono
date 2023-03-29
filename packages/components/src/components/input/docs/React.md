@@ -2,14 +2,14 @@
 
 Load SCSS globally somewhere in your app:
 
-```
+```scss
 @use "@db-ui/components/build/styles/db-ui-42-rollup" as *;
 
 ```
 
 Import component:
 
-```ts
+```typescript
 import { DBInput } from "@db-ui/react-components";
 
 <DBInput
