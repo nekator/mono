@@ -2,15 +2,14 @@
 
 Load SCSS globally somewhere in your app:
 
-```
+```scss
 @use "@db-ui/components/build/styles/db-ui-42-rollup" as *;
 
 ```
 
 Use component:
 
-```
-
+```vue
 <script>
 import { DBInput } from '@db-ui/v-components';
 </script>
@@ -18,12 +17,11 @@ import { DBInput } from '@db-ui/v-components';
 <template>
   <DBInput label="Label" placeholder="Placeholder" @change="onChange($event)"></DBInput>
 </template>
-
 ```
 
 To get DBInput work with `v-model` you have to use v-model argument syntax:
 
-```ts
+```typescript
 <DBInput
 	label="Textlabel"
 	placeholder="Start typing"
@@ -33,7 +31,7 @@ To get DBInput work with `v-model` you have to use v-model argument syntax:
 
 or using on-change listener:
 
-```ts
+```typescript
 <DBInput label="Textlabel" placeholder="Start" :value="modelAndChange" @change="($event) => { modelAndChange = $event.target.value;
 }"/> {{ modelAndChange }}
 ```
