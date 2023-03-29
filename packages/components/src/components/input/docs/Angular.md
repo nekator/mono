@@ -2,14 +2,14 @@
 
 Load SCSS globally in your styles.css/scss:
 
-```
+```scss
 @use "@db-ui/components/build/styles/db-ui-42-webpack" as *;
 
 ```
 
 Load component:
 
-```
+```typescript
 import { DBInputModule } from '@db-ui/ngx-components';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { DBInputModule } from '@db-ui/ngx-components';
 
 Use component in template:
 
-```
+```html
 <DBInput label="Label" placeholder="placeholder" description="Description" (change)="onInputChange()"></DBInput>
 ```
 
@@ -31,7 +31,7 @@ Use component in template:
 Third party controls require a ControlValueAccessor to function with angular forms. Adding an `ngDefaultControl` attribute will allow them to use that directive.
 [Further information](https://stackoverflow.com/a/46465959)
 
-```ts
+```typescript
 // app.module.ts
 @NgModule({
   …
@@ -61,7 +61,7 @@ Third party controls require a ControlValueAccessor to function with angular for
 </dl>
 ```
 
-```ts
+```typescript
 // form.component.ts
 export class FormComponent {
 	input = "";
