@@ -7,7 +7,7 @@ Load SCSS globally in your styles.css/scss:
 
 ```
 
-Load component:
+Load component within `app.module.ts`:
 
 ```typescript
 import { DBInputModule } from '@db-ui/ngx-components';
