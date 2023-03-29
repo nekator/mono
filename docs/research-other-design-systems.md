@@ -19,8 +19,8 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   [Barmer Puls Design System](https://barmer-puls.entw.bconnect.barmer.de/)
     -   React Native
     -   [Storybook](https://barmer-puls-react.entw.bconnect.barmer.de/?path=/story/surfaces-accordion--base)
--	[SAP UI5 Web Components](https://github.com/SAP/ui5-webcomponents)
-    -   Web Components
+-	[SAP UI5 Web Components](https://sap.github.io/ui5-webcomponents/)
+    -   [Web Components](https://github.com/SAP/ui5-webcomponents)
 -   [Netherlands government](https://nldesignsystem.nl/), Tech Stack (among others):
     -   Web Components / StencilJS
     -   Storybook
