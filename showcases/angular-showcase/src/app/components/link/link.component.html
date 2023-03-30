@@ -1,0 +1,26 @@
+<app-default-component
+	title="Link"
+	[variants]="variants"
+	[exampleTemplate]="exampleTemplate"
+>
+	<ng-template
+		#exampleTemplate
+		let-exampleName="exampleName"
+		let-exampleIndex="exampleIndex"
+		let-variantIndex="variantIndex"
+	>
+		<DBLink *ngIf="exampleIndex === 0" href="#">{{ exampleName }}</DBLink>
+		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 0">
+			<DBLink variant="primary" href="#">{{ exampleName }}</DBLink>
+		</ng-container>
+		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 1">
+			<DBLink [disabled]="true">{{ exampleName }}</DBLink>
+		</ng-container>
+		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 2">
+			<DBLink size="small">{{ exampleName }}</DBLink>
+		</ng-container>
+		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 3">
+			<DBLink content="external">{{ exampleName }}</DBLink>
+		</ng-container>
+	</ng-template>
+</app-default-component>
