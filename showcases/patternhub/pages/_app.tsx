@@ -7,7 +7,7 @@ import type { AppProps } from 'next/app';
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
-			<Script src="/iframeResizer.contentWindow.min.js" />
+			<Script src="https://davidjbradshaw.github.io/iframe-resizer/js/iframeResizer.min.js" />
 			<Component {...pageProps} />
 		</>
 	);
