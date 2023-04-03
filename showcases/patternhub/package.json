@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm-run-all copy build:*",
     "build:app": "next build && next export",
-    "build:copy": "cpr ../../node_modules/iframe-resizer/js/ public/iframe-resizer -o && cpr out ../../build-showcases/patternhub -o",
+    "build:copy": "cpr out ../../build-showcases/patternhub -o",
     "copy": "npm-run-all copy:*",
     "copy:components": "cpr ../../output/react/src ./components/src -o",
     "copy:docs": "node scripts/generate-docs-mdx.js",
@@ -14,6 +14,7 @@
     "lint": "next lint",
     "next:dev": "next dev",
     "next:start": "next start",
+    "prebuild:app": "cpr ../../node_modules/iframe-resizer/js/ public/iframe-resizer -o",
     "start": "npm-run-all copy next:start"
   },
   "dependencies": {
