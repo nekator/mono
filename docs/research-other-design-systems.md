@@ -9,6 +9,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   Web Components / StencilJS
     -   Storybook
 -   [SBB / Websites](https://digital.sbb.ch/de/websites) & [SBB / Webapps](https://digital.sbb.ch/de/webapps)
+  -   [SBB Angular](https://angular.app.sbb.ch/angular/introduction/getting-started)
+  -   [SBB Angular GitHub]https://github.com/sbb-design-systems/sbb-angular
 -   [SNCF Design System](https://designmetier-bootstrap.sncf.fr/), Tech Stack (among others):
     -   [Web Components / StencilJS](https://gitlab.com/SNCF/wcs)
     -   Storybook
