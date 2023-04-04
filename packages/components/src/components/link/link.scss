@@ -34,11 +34,6 @@
 		pointer-events: none;
 	}
 
-	&[data-content] {
-		--icon-font-family: var(--db-base-icon-font-family);
-		--icon-font-size: var(--db-base-icon-font-size);
-	}
-
 	&[data-content="internal"] {
 		@include icon(glyph(arrow-forward), 24, "outline", "after");
 	}
