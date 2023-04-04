@@ -31,10 +31,12 @@
 			// * use !important to prevent issues with browser extensions that change fonts
 			font-family: var(
 				--icon-font-family,
-				"#{"icons-" + $size + "-" + $style}, missing-icons"
+				#{"icons-" + $size + "-" + $style},
+				missing-icons,
+				var(--db-base-icon-font-family)
 			) !important;
 
-			font-size: var(--icon-font-size, #{to-rem($pxValue: $size)});
+			font-size: var(--icon-font-size, var(--db-base-icon-font-size));
 			font-style: normal;
 			font-variant: normal;
 
