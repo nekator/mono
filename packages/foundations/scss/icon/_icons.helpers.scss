@@ -1,5 +1,6 @@
 @use "../helpers/functions" as *;
 @use "icons.variables" as *;
+@use "icons.placeholder" as *;
 
 // Icon SCSS mixin
 @mixin icon(
@@ -63,7 +64,7 @@
 				content: none;
 			}
 		} @else {
-			@extend %icon !optional;
+			@extend %icon;
 		}
 	}
 }
