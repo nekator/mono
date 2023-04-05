@@ -33,12 +33,14 @@
 		pointer-events: none;
 	}
 
-	&[data-content="internal"] {
-		@include icon(glyph(arrow-forward), 24, "outline", "after");
-	}
+	&:not([data-variant="inline"]) {
+		&[data-content="internal"] {
+			@include icon(glyph(arrow-forward), 24, "outline", "after");
+		}
 
-	&[data-content="external"] {
-		@include icon(glyph(link-external), 24, "outline", "after");
+		&[data-content="external"] {
+			@include icon(glyph(link-external), 24, "outline", "after");
+		}
 	}
 
 	&:focus-visible {
