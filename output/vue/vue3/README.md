@@ -11,8 +11,13 @@ A Vue library containing all styles & components of [DB UX Design System (techni
 
 `npm i @db-ui/v-components`
 
-## Dependencies (simple)
+## Styling Dependencies
+Import the styles in scss or css. Based on your technology the file names could be different.
 
+-   Default (db-ui-42): points to `../assets`
+-   Webpack (db-ui-42-webpack): points to `~@db-ui/foundations/assets`
+-   Rollup (db-ui-42-rollup): points to `@db-ui/foundations/assets`
+-
 <details>
   <summary><strong>SCSS</strong></summary>
 
@@ -39,29 +44,6 @@ import "@db-ui/v-components/dist/style.css";
 
 </details>
 
-## Dependencies (advanced)
-
-<details>
-  <summary><strong>SCSS</strong></summary>
-
-```scss
-@use "@db-ui/foundations/build/scss/rollup.assets-paths" as *;
-@use "@db-ui/foundations/build/scss/icon/icons" as *;
-@use "@db-ui/foundations/build/scss/db-ui-foundations" as *;
-```
-
-</details>
-<details>
-  <summary><strong>CSS</strong></summary>
-
-```tsx
-// main.tsx
-import "@db-ui/foundations/build/css/icon/icons.css";
-import "@db-ui/foundations/build/css/db-ui-foundations.css";
-```
-
-</details>
-
 ## Usage
 
 ```ts
@@ -72,6 +54,33 @@ import "@db-ui/foundations/build/css/db-ui-foundations.css";
 ...
 <DBButton icon="account">Test</DBButton>
 ...
+```
+
+## Custom Events
+
+We do not provide every event on every component. If you are missing an event please [add an issue](https://github.com/db-ui/mono/issues).
+
+As a workaround you can use refs:
+
+### Ref on component
+
+```vue
+<script setup lang="ts">
+import { DBButton } from "@db-ui/v-components";
+
+import { ref, onMounted } from "vue";
+const buttonRef: any = ref(null);
+
+onMounted(() => {
+	buttonRef.value.$refs.component.addEventListener("mouseenter", (ev) => {
+		console.log(ev);
+	});
+});
+</script>
+
+<template>
+	<DBButton ref="buttonRef">Test</DBButton>
+</template>
 ```
 
 ## Deutsche Bahn brand

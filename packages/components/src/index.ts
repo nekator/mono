@@ -13,3 +13,6 @@ export * from './components/page';
 export * from './components/section';
 export * from './components/link';
 export * from './components/infotext';
+export * from './components/alert';
+export * from './components/radio';
+export * from './components/code-docs';

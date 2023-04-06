@@ -1,192 +1,130 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { DBInput } from '../../../../../output/react/src';
-import {
-	COLOR_CONST,
-	INVALID_INPUT_BACKGROUNDS
-} from '../../../../../packages/components/src/shared/constants';
-import DefaultComponent, { type DefaultComponentVariants } from '../index';
+import DefaultComponent from '../index';
+import { type DefaultComponentExample } from '../../../../shared/default-component-data';
+import defaultComponentVariants from '../../../../shared/input.json';
+import { type DBInputProps } from '../../../../../output/react/src/components/input/model';
+import { getVariants } from '../data';
 
-const defaultLabelText = 'Label';
+const getInput = ({
+	variant,
+	value,
+	type,
+	minLength,
+	required,
+	disabled,
+	iconAfter,
+	icon,
+	children
+}: DBInputProps) => (
+	<DBInput
+		label="Label"
+		description={children}
+		variant={variant}
+		value={value}
+		type={type}
+		minLength={minLength}
+		required={required}
+		disabled={disabled}
+		iconAfter={iconAfter}
+		icon={icon}
+	/>
+);
 
-const variants: DefaultComponentVariants[] = [
-	{
-		name: 'Variant',
-		examples: [
-			{
-				name: '(Default) Basic',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						description="Description"
-					/>
-				)
-			},
-			{
-				name: 'Information',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						description="Description"
-						variant="information"
-					/>
-				)
-			},
-			{
-				name: 'Warning',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						description="Description"
-						variant="warning"
-					/>
-				)
-			},
-			{
-				name: 'Critical',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						description="Description"
-						variant="critical"
-					/>
-				)
-			},
-			{
-				name: 'Success',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						description="Description"
-						variant="success"
-					/>
-				)
-			}
-		]
-	},
-	{
-		name: 'States',
-		examples: [
-			{ name: 'Default', example: <DBInput label={defaultLabelText} /> },
-			{
-				name: 'Filled',
-				example: <DBInput label={defaultLabelText} value="Input Text" />
-			},
-			{
-				name: 'Filled Number',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						value="123456"
-						type="number"
-					/>
-				)
-			},
-			{
-				name: 'Invalid',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						minLength={5}
-						required={true}
-						description="minLength=5"
-					/>
-				)
-			},
-			{
-				name: 'Disabled',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						value="Input Text"
-						disabled
-					/>
-				)
-			},
-			{
-				name: 'Required',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						value="Input Text"
-						disabled
-						required
-					/>
-				)
-			}
-		]
-	},
-	{
-		name: 'Content',
-		examples: [
-			{
-				name: '(Default) Text',
-				example: <DBInput label={defaultLabelText} />
-			},
-			{
-				name: 'Leading Icon + Text',
-				example: (
-					<DBInput iconBefore="account" label={defaultLabelText} />
-				)
-			},
-			{
-				name: 'Leading Icon + Text + Trailing Icon',
-				example: (
-					<DBInput
-						iconBefore="account"
-						label={defaultLabelText}
-						iconAfter="edit"
-					/>
-				)
-			},
-			{
-				name: 'Text + Trailing Icon',
-				example: <DBInput label={defaultLabelText} iconAfter="edit" />
-			},
-			{
-				name: 'Text + Trailing Icon + Variant:Success',
-				example: (
-					<DBInput
-						label={defaultLabelText}
-						iconAfter="edit"
-						variant="success"
-					/>
-				)
-			}
-		]
-	}
+const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
+	[
+		{
+			example: getInput({ children: exampleName })
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				variant: 'informational'
+			})
+		},
+		{
+			example: getInput({ children: exampleName, variant: 'warning' })
+		},
+		{
+			example: getInput({ children: exampleName, variant: 'critical' })
+		},
+		{
+			example: getInput({ children: exampleName, variant: 'successful' })
+		}
+	],
+	[
+		{
+			example: getInput({ children: exampleName })
+		},
+		{
+			example: getInput({ children: exampleName, value: 'Input Text' })
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				value: '123456',
+				type: 'number'
+			})
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				minLength: 5,
+				required: true
+			})
+		},
+		{
+			example: getInput({ children: exampleName, disabled: true })
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				disabled: true,
+				value: 'Input Text'
+			})
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				required: true,
+				value: 'Input Text'
+			})
+		}
+	],
+	[
+		{
+			example: getInput({ children: exampleName })
+		},
+		{
+			example: getInput({ children: exampleName, icon: 'account' })
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				icon: 'account',
+				iconAfter: 'edit'
+			})
+		},
+		{
+			example: getInput({ children: exampleName, iconAfter: 'edit' })
+		},
+		{
+			example: getInput({
+				children: exampleName,
+				iconAfter: 'edit',
+				variant: 'successful'
+			})
+		}
+	]
 ];
 
 const InputComponent = () => {
-	const [searchParameters] = useSearchParams();
-	const [backgroundWarning, setBackgroundWarning] = useState<boolean>(false);
-
-	useEffect(() => {
-		setBackgroundWarning(
-			(searchParameters.has(COLOR_CONST) &&
-				Boolean(
-					INVALID_INPUT_BACKGROUNDS.some((iBg) =>
-						iBg.includes(searchParameters.get(COLOR_CONST) ?? '')
-					)
-				)) ||
-				false
-		);
-	}, [searchParameters]);
-
 	return (
 		<DefaultComponent
 			title={'DBInput'}
-			description={
-				<>
-					{backgroundWarning && (
-						<strong>
-							This background is not working with inputs! Please
-							use light colors as background.
-						</strong>
-					)}
-				</>
-			}
-			variants={variants}></DefaultComponent>
+			variants={getVariants(
+				defaultComponentVariants,
+				getExampleMatrix
+			)}></DefaultComponent>
 	);
 };
 

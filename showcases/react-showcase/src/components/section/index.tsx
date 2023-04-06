@@ -1,79 +1,49 @@
 import { DBSection } from '../../../../../output/react/src';
-import DefaultComponent, { type DefaultComponentVariants } from '../index';
+import DefaultComponent from '../index';
+import { type DefaultComponentExample } from '../../../../shared/default-component-data';
+import defaultComponentVariants from '../../../../shared/section.json';
+import { type DBSectionProps } from '../../../../../output/react/src/components/section/model';
+import { getVariants } from '../data';
 
-const variants: DefaultComponentVariants[] = [
-	{
-		name: 'Variant',
-		examples: [
-			{
-				name: '(Default) Full',
-				style: { width: '100%' },
-				example: (
-					<DBSection className="db-bg-information-light">
-						Content
-					</DBSection>
-				)
-			},
-			{
-				name: 'Medium',
-				style: { width: '100%' },
-				example: (
-					<DBSection
-						className="db-bg-information-light"
-						variant="medium">
-						Content
-					</DBSection>
-				)
-			},
-			{
-				name: 'Large',
-				style: { width: '100%' },
-				example: (
-					<DBSection
-						className="db-bg-information-light"
-						variant="large">
-						Content
-					</DBSection>
-				)
-			}
-		]
-	},
-	{
-		name: 'Size',
-		examples: [
-			{
-				name: '(Default) Medium',
-				example: (
-					<DBSection className="db-bg-information-light">
-						Content
-					</DBSection>
-				)
-			},
-			{
-				name: 'Large',
-				example: (
-					<DBSection className="db-bg-information-light" size="large">
-						Content
-					</DBSection>
-				)
-			},
-			{
-				name: 'Small',
-				example: (
-					<DBSection className="db-bg-information-light" size="small">
-						Content
-					</DBSection>
-				)
-			}
-		]
-	}
+const getSection = ({ variant, size, children }: DBSectionProps) => (
+	<DBSection className="db-bg-informational" size={size} variant={variant}>
+		{children}
+	</DBSection>
+);
+
+const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
+	[
+		{
+			example: getSection({ children: exampleName, variant: 'full' })
+		},
+		{
+			example: getSection({ children: exampleName, variant: 'medium' })
+		},
+		{
+			example: getSection({ children: exampleName, variant: 'large' })
+		}
+	],
+	[
+		{
+			example: getSection({ children: exampleName })
+		},
+		{
+			example: getSection({ children: exampleName, size: 'large' })
+		},
+		{
+			example: getSection({ children: exampleName, size: 'small' })
+		}
+	]
 ];
 
 const SectionComponent = () => {
 	return (
 		<DefaultComponent
 			title={'DBSection'}
-			variants={variants}></DefaultComponent>
+			variants={getVariants(
+				defaultComponentVariants,
+				getExampleMatrix
+			)}></DefaultComponent>
 	);
 };
 

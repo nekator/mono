@@ -1,106 +1,97 @@
 import { DBButton } from '../../../../../output/react/src';
-import DefaultComponent, { type DefaultComponentVariants } from '../index';
+import DefaultComponent from '../index';
+import defaultComponentVariants from '../../../../shared/button.json';
+import { type DefaultComponentExample } from '../../../../shared/default-component-data';
+import { type DBButtonProps } from '../../../../../output/react/src/components/button/model';
+import { getVariants } from '../data';
 
-const defaultButtonText = 'Button';
+const getButton = ({
+	variant,
+	state,
+	size,
+	icntxt,
+	icon,
+	width,
+	text
+}: DBButtonProps) => (
+	<DBButton
+		variant={variant}
+		state={state}
+		size={size}
+		icntxt={icntxt}
+		icon={icon}
+		width={width}>
+		{text}
+	</DBButton>
+);
 
-const variants: DefaultComponentVariants[] = [
-	{
-		name: 'Variant',
-		examples: [
-			{
-				name: '(Default) Primary',
-				example: <DBButton>{defaultButtonText}</DBButton>
-			},
-			{
-				name: 'Secondary',
-				example: (
-					<DBButton variant="secondary">{defaultButtonText}</DBButton>
-				)
-			},
-			{
-				name: 'Ghost',
-				example: (
-					<DBButton variant="ghost">{defaultButtonText}</DBButton>
-				)
-			},
-			{
-				name: 'Tertiary',
-				example: (
-					<DBButton variant="tertiary">{defaultButtonText}</DBButton>
-				)
-			}
-		]
-	},
-	{
-		name: 'State',
-		examples: [
-			{
-				name: 'Default: (Enabled, Hover, Pressed)',
-				example: <DBButton>{defaultButtonText}</DBButton>
-			},
-			{
-				name: 'Loading',
-				example: (
-					<DBButton state="loading">{defaultButtonText}</DBButton>
-				)
-			}
-		]
-	},
-	{
-		name: 'Size',
-		examples: [
-			{
-				name: 'Default: Medium',
-				example: <DBButton>{defaultButtonText}</DBButton>
-			},
-			{
-				name: 'Small',
-				example: <DBButton size="small">{defaultButtonText}</DBButton>
-			}
-		]
-	},
-	{
-		name: 'Content',
-		examples: [
-			{
-				name: 'Default: Text',
-				example: <DBButton>{defaultButtonText}</DBButton>
-			},
-			{
-				name: 'Icon & Text',
-				example: (
-					<DBButton icon="account" icntxt>
-						{defaultButtonText}
-					</DBButton>
-				)
-			},
-			{
-				name: 'Icon',
-				example: <DBButton icon="account">{defaultButtonText}</DBButton>
-			}
-		]
-	},
-	{
-		name: 'Behaviour',
-		examples: [
-			{
-				name: 'Default: Auto Width',
-				example: <DBButton>{defaultButtonText}</DBButton>
-			},
-			{
-				name: 'Width full',
-				example: <DBButton width="full">{defaultButtonText}</DBButton>,
-				style: { width: '500px' }
-			}
-		]
-	}
+const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
+	[
+		{
+			example: getButton({ text: exampleName })
+		},
+		{
+			example: getButton({ text: exampleName, variant: 'primary' })
+		},
+		{
+			example: getButton({ text: exampleName, variant: 'transparent' })
+		},
+		{
+			example: getButton({
+				text: exampleName,
+				variant: 'semi-transparent'
+			})
+		}
+	],
+	[
+		{
+			example: getButton({ text: exampleName })
+		},
+		{
+			example: getButton({ text: exampleName, state: 'loading' })
+		}
+	],
+	[
+		{
+			example: getButton({ text: exampleName })
+		},
+		{
+			example: getButton({ text: exampleName, size: 'small' })
+		}
+	],
+	[
+		{
+			example: getButton({ text: exampleName })
+		},
+		{
+			example: getButton({
+				text: exampleName,
+				icon: 'account',
+				icntxt: true
+			})
+		},
+		{
+			example: getButton({ text: exampleName, icon: 'account' })
+		}
+	],
+	[
+		{
+			example: getButton({ text: exampleName })
+		},
+		{
+			example: getButton({ text: exampleName, width: 'full' })
+		}
+	]
 ];
 
 const ButtonComponent = () => {
 	return (
 		<DefaultComponent
-			title={'DBButton'}
-			variants={variants}></DefaultComponent>
+			title="DBButton"
+			variants={getVariants(
+				defaultComponentVariants,
+				getExampleMatrix
+			)}></DefaultComponent>
 	);
 };
 

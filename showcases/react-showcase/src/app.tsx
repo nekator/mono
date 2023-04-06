@@ -1,50 +1,36 @@
-import { Link, Outlet, useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import { DBBrand, DBHeader, DBPage } from '../../../output/react/src';
 
 import {
-	COLOR,
 	COLORS,
-	TONALITIES,
-	TONALITY,
-	COLOR_CONST,
-	TONALITY_CONST
+	TONALITIES
 } from '../../../packages/components/src/shared/constants';
 import { NAVIGATION_ITEMS } from './utils/navigation-item';
+import useQuery from './hooks/use-query';
 
 const App = () => {
-	const [searchParameters, setSearchParameters] = useSearchParams();
-	const [tonality, setTonality] = useState<string>(
-		searchParameters.get(TONALITY_CONST) ?? TONALITY.REGULAR
-	);
-	const [color, setColor] = useState<string>(
-		searchParameters.get(COLOR_CONST) ?? COLOR.NEUTRAL_0
-	);
+	const [tonality, setTonality, color, setColor, pageName, fullscreen] =
+		useQuery();
 
-	useEffect(() => {
-		for (const [key, value] of searchParameters.entries()) {
-			if (value) {
-				if (key === TONALITY_CONST && tonality !== value) {
-					setTonality(value);
-				}
-
-				if (key === COLOR_CONST && color !== value) {
-					setColor(value);
-				}
-			}
-		}
-	}, [searchParameters]);
-
-	useEffect(() => {
-		setSearchParameters({ tonality, color });
-	}, [color, tonality]);
+	if (pageName || fullscreen) {
+		return (
+			<div className={`db-ui-${tonality} db-bg-${color}`}>
+				<Outlet />
+			</div>
+		);
+	}
 
 	return (
 		<DBPage
 			type="fixedHeaderFooter"
 			slotHeader={
 				<DBHeader
-					slotBrand={<DBBrand anchorChildren>React Showcase</DBBrand>}
+					slotBrand={
+						<DBBrand title="React Showcase" anchorChildren>
+							Showcase
+						</DBBrand>
+					}
 					slotDesktopNavigation={
 						<nav className="desktop-navigation">
 							<ul>
@@ -64,7 +50,9 @@ const App = () => {
 						<div>
 							<select
 								value={tonality}
-								onChange={(event) => {
+								onChange={(
+									event: ChangeEvent<HTMLSelectElement>
+								) => {
 									setTonality(event?.target?.value);
 								}}>
 								{TONALITIES.map((ton) => (
@@ -77,7 +65,9 @@ const App = () => {
 							</select>
 							<select
 								value={color}
-								onChange={(event) => {
+								onChange={(
+									event: ChangeEvent<HTMLSelectElement>
+								) => {
 									setColor(event?.target?.value);
 								}}>
 								{COLORS.map((col) => (
@@ -91,8 +81,7 @@ const App = () => {
 						</div>
 					}
 				/>
-			}
-			slotFooter={<div>FOOTER</div>}>
+			}>
 			<div className={`db-ui-${tonality} db-bg-${color}`}>
 				<Outlet />
 			</div>

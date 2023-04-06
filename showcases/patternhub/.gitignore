@@ -37,11 +37,15 @@ public/*-showcase
 
 styles/db-ui-components.scss
 components
+!components/component-parser
 !components/default-page.tsx
+!components/index.tsx
+!components/data.ts
 !components/iframe.tsx
 !components/static-content.tsx
 !components/01-layout.mdx
 !components/02-action.mdx
 !components/03-data-input.mdx
 !components/04-data-display.mdx
+!components/06-feedback.mdx
 !.env

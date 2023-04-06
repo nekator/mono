@@ -1,5 +1,4 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
-import { DBIcon } from '../icon';
 import { DBLinkState, DBLinkProps } from './model';
 
 useMetadata({
@@ -11,8 +10,10 @@ useMetadata({
 });
 
 export default function DBLink(props: DBLinkProps) {
+	// This is used as forwardRef
+	let component: any;
 	const state = useStore<DBLinkState>({
-		handleClick: (event) => {
+		handleClick: (event: any) => {
 			if (props.onClick) {
 				props.onClick(event);
 			}
@@ -27,6 +28,7 @@ export default function DBLink(props: DBLinkProps) {
 
 	return (
 		<a
+			ref={component}
 			class={'db-link' + (props.className ? ' ' + props.className : '')}
 			href={props.href}
 			title={props.title}
@@ -47,9 +49,6 @@ export default function DBLink(props: DBLinkProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 			{props.children}
-			<DBIcon
-				icon={props.content == 'external' ? 'link-external' : 'link'}
-				icntxt={true}></DBIcon>
 		</a>
 	);
 }

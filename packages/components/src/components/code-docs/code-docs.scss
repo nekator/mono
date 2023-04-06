@@ -1,0 +1,63 @@
+/* Add styles for component here */
+
+@use "@db-ui/foundations/build/scss/variables" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/tonality" as *;
+
+%code-docs {
+	@extend %db-bg-neutral-1;
+	min-height: $db-sizing-3xl;
+	align-items: center;
+	justify-content: center;
+	padding: $db-spacing-fixed-xl;
+	padding-block-end: calc($db-spacing-fixed-xl + $db-sizing-sm);
+	position: relative;
+
+	.code-details {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		display: flex;
+
+		&[open] {
+			left: 0;
+			top: 0;
+		}
+
+		.code-button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 1;
+		}
+
+		.no-code {
+			margin: auto;
+		}
+
+		.code {
+			@extend %db-bg-secondary;
+			overflow: auto;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			padding-block-end: $db-spacing-fixed-md;
+
+			@media screen and (min-width: $db-screens-s) {
+				width: 50%;
+			}
+		}
+	}
+}
+
+.db-code-docs {
+	@extend %code-docs;
+	/* Workaround for angular db-XYZ as root tag is not working */
+	&.db-card,
+	& > .db-card {
+		@extend %code-docs;
+	}
+}
