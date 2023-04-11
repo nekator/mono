@@ -9,7 +9,7 @@
 		let-exampleIndex="exampleIndex"
 		let-variantIndex="variantIndex"
 	>
-		<DBLink *ngIf="exampleIndex === 0" href="#">{{ exampleName }}</DBLink>
+		<db-link *ngIf="exampleIndex === 0" href="#">{{ exampleName }}</db-link>
 		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 0">
 			<DBLink variant="primary" href="#">{{ exampleName }}</DBLink>
 		</ng-container>
