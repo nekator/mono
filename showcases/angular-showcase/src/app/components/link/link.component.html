@@ -11,16 +11,16 @@
 	>
 		<db-link *ngIf="exampleIndex === 0" href="#">{{ exampleName }}</db-link>
 		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 0">
-			<DBLink variant="primary" href="#">{{ exampleName }}</DBLink>
+			<db-link variant="primary" href="#">{{ exampleName }}</db-link>
 		</ng-container>
 		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 1">
-			<DBLink [disabled]="true">{{ exampleName }}</DBLink>
+			<db-link [disabled]="true">{{ exampleName }}</db-link>
 		</ng-container>
 		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 2">
-			<DBLink size="small">{{ exampleName }}</DBLink>
+			<db-link size="small">{{ exampleName }}</db-link>
 		</ng-container>
 		<ng-container *ngIf="exampleIndex === 1 && variantIndex === 3">
-			<DBLink content="external">{{ exampleName }}</DBLink>
+			<db-link content="external">{{ exampleName }}</db-link>
 		</ng-container>
 	</ng-template>
 </app-default-component>
