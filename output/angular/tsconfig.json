@@ -22,8 +22,7 @@
 		"target": "es2017",
 		"module": "es2020",
 		"lib": ["es2020", "dom"],
-		"declarationMap": false,
-		"allowSyntheticDefaultImports": true
+		"declarationMap": false
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,
