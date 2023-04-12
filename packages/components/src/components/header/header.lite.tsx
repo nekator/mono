@@ -19,7 +19,11 @@ useMetadata({
 export default function DBHeader(props: DBHeaderProps) {
 	// This is used as forwardRef
 	let component: any;
-	const state = useStore<DBHeaderState>({});
+	const state = useStore<DBHeaderState>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -30,7 +34,7 @@ export default function DBHeader(props: DBHeaderProps) {
 	return (
 		<header
 			ref={component}
-			class={classNames('db-header', props.className)}
+			class={state.getClassNames('db-header', props.className)}
 			role="banner">
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

@@ -34,7 +34,10 @@ export default function DBTab(props: DBTabProps) {
 	let component: any;
 	const formRef = useRef<HTMLInputElement>(null);
 	const state = useStore<DBTabState>({
-		mId: DEFAULT_ID
+		mId: DEFAULT_ID,
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
 	});
 
 	onMount(() => {
@@ -49,7 +52,9 @@ export default function DBTab(props: DBTabProps) {
 	});
 
 	return (
-		<div ref={component} class={classNames('db-tab', props.className)}>
+		<div
+			ref={component}
+			class={state.getClassNames('db-tab', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

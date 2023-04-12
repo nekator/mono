@@ -56,7 +56,10 @@ export default function DBButton(props: DBButtonProps) {
 			}
 		},
 		iconVisible: (icon?: string) => {
-			return icon && icon !== '_' && icon !== 'none';
+			return Boolean(icon && icon !== '_' && icon !== 'none');
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -72,7 +75,7 @@ export default function DBButton(props: DBButtonProps) {
 			type={props.type}
 			disabled={props.disabled}
 			aria-label={props.label}
-			class={classNames('db-button', props.className, {
+			class={state.getClassNames('db-button', props.className, {
 				'is-icon-text-replace':
 					state.iconVisible(props.icon) && !props.icntxt
 			})}

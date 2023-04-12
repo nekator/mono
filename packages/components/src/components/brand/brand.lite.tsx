@@ -18,7 +18,11 @@ const DEFAULT_VALUES = {
 export default function DBBrand(props: DBBrandProps) {
 	// This is used as forwardRef
 	let component: any;
-	const state = useStore<DBBrandState>({});
+	const state = useStore<DBBrandState>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -27,7 +31,9 @@ export default function DBBrand(props: DBBrandProps) {
 	});
 
 	return (
-		<div ref={component} class={classNames('db-brand', props.className)}>
+		<div
+			ref={component}
+			class={state.getClassNames('db-brand', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

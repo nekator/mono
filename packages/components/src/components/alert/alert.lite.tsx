@@ -53,7 +53,10 @@ export default function DBAlert(props: DBAlertProps) {
 			return (variant && DefaultVariantsIcon[variant]) || 'info';
 		},
 		iconVisible: (icon?: string) => {
-			return icon && icon !== '_' && icon !== 'none';
+			return Boolean(icon && icon !== '_' && icon !== 'none');
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -66,7 +69,7 @@ export default function DBAlert(props: DBAlertProps) {
 	return (
 		<div
 			ref={component}
-			class={classNames('db-alert', props.className)}
+			class={state.getClassNames('db-alert', props.className)}
 			data-variant={props.variant}
 			data-type={props.type}
 			data-elevation={props.elevation}>

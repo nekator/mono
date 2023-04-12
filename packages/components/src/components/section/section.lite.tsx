@@ -13,7 +13,11 @@ useMetadata({
 export default function DBSection(props: DBSectionProps) {
 	// This is used as forwardRef
 	let component: any;
-	const state = useStore<DBSectionState>({});
+	const state = useStore<DBSectionState>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -24,7 +28,7 @@ export default function DBSection(props: DBSectionProps) {
 	return (
 		<section
 			ref={component}
-			className={classNames('db-section', props.className)}
+			className={state.getClassNames('db-section', props.className)}
 			data-size={props.size || 'medium'}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

@@ -18,6 +18,9 @@ export default function DBInfotext(props: DBInfotextProps) {
 	const state = useStore<DBInfotextState>({
 		getIcon: (icon?: string, variant?: string) => {
 			return icon || (variant && DefaultVariantsIcon[variant]) || 'info';
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -31,7 +34,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 	return (
 		<span
 			ref={component}
-			class={classNames('db-infotext', props.className)}
+			class={state.getClassNames('db-infotext', props.className)}
 			title={props.title}
 			data-variant={props.variant}
 			data-size={props.size}>

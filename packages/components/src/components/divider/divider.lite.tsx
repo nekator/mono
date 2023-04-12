@@ -34,7 +34,11 @@ useMetadata({
 export default function DBDivider(props: DBDividerProps) {
 	// This is used as forwardRef
 	let component: any;
-	const state = useStore<DBDividerState>({});
+	const state = useStore<DBDividerState>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -47,7 +51,7 @@ export default function DBDivider(props: DBDividerProps) {
 			ref={component}
 			data-margin={props.margin}
 			data-variant={props.variant}
-			class={classNames('db-divider', props.className)}>
+			class={state.getClassNames('db-divider', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

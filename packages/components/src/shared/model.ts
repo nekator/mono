@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 export type GlobalProps = {
 	key?: string;
 	id?: string;
@@ -9,6 +11,7 @@ export type GlobalProps = {
 
 export type GlobalState = {
 	stylePath?: string;
+	getClassNames: (...args: classNames.ArgumentArray) => string;
 };
 
 export type DefaultVariantProps =

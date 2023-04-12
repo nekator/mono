@@ -16,7 +16,11 @@ useMetadata({
 export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.changeCase.pascal(name) %>Props) {
   // This is used as forwardRef
   let component: any;
-  const state = useStore<DB<%= h.changeCase.pascal(name) %>State>({});
+  const state = useStore<DB<%= h.changeCase.pascal(name) %>State>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+  });
 
   onMount(() => {
     if (props.stylePath) {
@@ -25,7 +29,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
   });
 
   return (
-    <div ref={component} class={classNames('db-<%= name %>', props.className)}>
+    <div ref={component} class={state.getClassNames('db-<%= name %>', props.className)}>
       <Show when={state.stylePath}>
         <link rel="stylesheet" href={state.stylePath} />
       </Show>

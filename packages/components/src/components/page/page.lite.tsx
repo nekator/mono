@@ -19,7 +19,11 @@ useMetadata({
 export default function DBPage(props: DBPageProps) {
 	// This is used as forwardRef
 	let component: any;
-	const state = useStore<DBPageState>({});
+	const state = useStore<DBPageState>({
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -30,7 +34,7 @@ export default function DBPage(props: DBPageProps) {
 	return (
 		<div
 			ref={component}
-			class={classNames('db-page', props.className, {
+			class={state.getClassNames('db-page', props.className, {
 				'fixed-header-footer': props.type === 'fixedHeaderFooter'
 			})}>
 			<Show when={state.stylePath}>

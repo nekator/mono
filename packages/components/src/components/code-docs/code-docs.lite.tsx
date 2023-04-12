@@ -35,6 +35,9 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 			return state.open
 				? props.hideCodeLabel ?? DEFAULT_VALUES.hideCodeLabel
 				: props.showCodeLabel ?? DEFAULT_VALUES.showCodeLabel;
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -47,7 +50,7 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 	return (
 		<DBCard
 			ref={component}
-			className={classNames('db-code-docs', props.className)}
+			className={state.getClassNames('db-code-docs', props.className)}
 			elevation="none">
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

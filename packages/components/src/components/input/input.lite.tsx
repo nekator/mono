@@ -44,7 +44,7 @@ export default function DBInput(props: DBInputProps) {
 		_isValid: undefined,
 		_value: '',
 		iconVisible: (icon?: string) => {
-			return icon && icon !== '_' && icon !== 'none';
+			return Boolean(icon && icon !== '_' && icon !== 'none');
 		},
 		getIcon: (variant?: DefaultVariantProps) => {
 			if (variant) {
@@ -89,6 +89,9 @@ export default function DBInput(props: DBInputProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -106,7 +109,7 @@ export default function DBInput(props: DBInputProps) {
 
 	return (
 		<div
-			class={classNames('db-input', props.className)}
+			class={state.getClassNames('db-input', props.className)}
 			data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

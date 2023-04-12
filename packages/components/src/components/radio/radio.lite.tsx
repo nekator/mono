@@ -63,6 +63,9 @@ export default function DBRadio(props: DBRadioProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -95,7 +98,7 @@ export default function DBRadio(props: DBRadioProps) {
 			<input
 				ref={component}
 				type="radio"
-				class={classNames('db-radio', props.className)}
+				class={state.getClassNames('db-radio', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}
