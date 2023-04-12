@@ -4,6 +4,7 @@ import { uuid } from '../../utils';
 import { DBInputProps, DBInputState } from './model';
 import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
 import { DefaultVariantProps, DefaultVariantsIcon } from '../../shared/model';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -105,7 +106,7 @@ export default function DBInput(props: DBInputProps) {
 
 	return (
 		<div
-			class={'db-input ' + (props.className || '')}
+			class={classNames('db-input', props.className)}
 			data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

@@ -10,6 +10,7 @@ import { DBIcon } from '../icon';
 import { DefaultVariantsIcon } from '../../shared/model';
 import { DBButton } from '../button';
 import { DBLink } from '../link';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -65,7 +66,7 @@ export default function DBAlert(props: DBAlertProps) {
 	return (
 		<div
 			ref={component}
-			class={'db-alert' + (props.className ? ' ' + props.className : '')}
+			class={classNames('db-alert', props.className)}
 			data-variant={props.variant}
 			data-type={props.type}
 			data-elevation={props.elevation}>

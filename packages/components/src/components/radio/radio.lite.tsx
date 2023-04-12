@@ -8,6 +8,7 @@ import {
 import { DBRadioProps, DBRadioState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -94,9 +95,7 @@ export default function DBRadio(props: DBRadioProps) {
 			<input
 				ref={component}
 				type="radio"
-				class={
-					'db-radio' + (props.className ? ' ' + props.className : '')
-				}
+				class={classNames('db-radio', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}

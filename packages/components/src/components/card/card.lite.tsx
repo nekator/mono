@@ -1,5 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import type { DBCardState, DBCardProps } from './model';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -41,7 +42,7 @@ export default function DBCard(props: DBCardProps) {
 	return (
 		<div
 			ref={component}
-			class={'db-card' + (props.className ? ' ' + props.className : '')}
+			class={classNames('db-card', props.className)}
 			data-variant={props.variant}
 			data-color-variant={props.colorVariant}
 			data-elevation={props.elevation}

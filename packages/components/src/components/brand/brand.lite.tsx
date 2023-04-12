@@ -1,5 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBBrandState, DBBrandProps } from './model';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -26,9 +27,7 @@ export default function DBBrand(props: DBBrandProps) {
 	});
 
 	return (
-		<div
-			ref={component}
-			class={'db-brand' + (props.className ? ' ' + props.className : '')}>
+		<div ref={component} class={classNames('db-brand', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
