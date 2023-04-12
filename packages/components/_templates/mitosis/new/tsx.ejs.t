@@ -16,6 +16,7 @@ useMetadata({
 export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.changeCase.pascal(name) %>Props) {
   // This is used as forwardRef
   let component: any;
+  // jscpd:ignore-start
   const state = useStore<DB<%= h.changeCase.pascal(name) %>State>({
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
@@ -27,6 +28,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
       state.stylePath = props.stylePath;
     }
   });
+  // jscpd:ignore-end
 
   return (
     <div ref={component} class={state.getClassNames('db-<%= name %>', props.className)}>

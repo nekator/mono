@@ -39,6 +39,7 @@ const DEFAULT_VALUES = {
 export default function DBInput(props: DBInputProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBInputState>({
 		_id: DEFAULT_ID,
 		_isValid: undefined,
@@ -106,6 +107,7 @@ export default function DBInput(props: DBInputProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

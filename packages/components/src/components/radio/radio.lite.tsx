@@ -22,6 +22,7 @@ useMetadata({
 export default function DBRadio(props: DBRadioProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBRadioState>({
 		initialized: false,
 		_id: DEFAULT_ID,
@@ -77,6 +78,7 @@ export default function DBRadio(props: DBRadioProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	onUpdate(() => {
 		if (props.checked && state.initialized && document && state._id) {

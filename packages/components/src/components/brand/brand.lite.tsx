@@ -18,6 +18,7 @@ const DEFAULT_VALUES = {
 export default function DBBrand(props: DBBrandProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBBrandState>({
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
@@ -29,6 +30,7 @@ export default function DBBrand(props: DBBrandProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

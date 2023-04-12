@@ -13,6 +13,7 @@ useMetadata({
 export default function DBLink(props: DBLinkProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBLinkState>({
 		handleClick: (event: any) => {
 			if (props.onClick) {
@@ -29,6 +30,7 @@ export default function DBLink(props: DBLinkProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<a

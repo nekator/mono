@@ -39,6 +39,7 @@ const DEFAULT_VALUES = {
 export default function DBAlert(props: DBAlertProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBAlertState>({
 		handleClick: (event: any) => {
 			if (props.onClick) {
@@ -65,6 +66,7 @@ export default function DBAlert(props: DBAlertProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

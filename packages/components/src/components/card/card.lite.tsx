@@ -25,6 +25,7 @@ useMetadata({
 export default function DBCard(props: DBCardProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBCardState>({
 		handleClick: (event: any) => {
 			if (props.onClick) {
@@ -41,6 +42,7 @@ export default function DBCard(props: DBCardProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

@@ -33,6 +33,7 @@ export default function DBTab(props: DBTabProps) {
 	// This is used as forwardRef
 	let component: any;
 	const formRef = useRef<HTMLInputElement>(null);
+	// jscpd:ignore-start
 	const state = useStore<DBTabState>({
 		mId: DEFAULT_ID,
 		getClassNames: (...args: classNames.ArgumentArray) => {
@@ -50,6 +51,7 @@ export default function DBTab(props: DBTabProps) {
 			formRef?.click();
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

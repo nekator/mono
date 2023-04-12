@@ -19,6 +19,7 @@ useMetadata({
 export default function DBPage(props: DBPageProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBPageState>({
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
@@ -30,6 +31,7 @@ export default function DBPage(props: DBPageProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

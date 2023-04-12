@@ -34,6 +34,7 @@ useMetadata({
 export default function DBDivider(props: DBDividerProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBDividerState>({
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
@@ -45,6 +46,7 @@ export default function DBDivider(props: DBDividerProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

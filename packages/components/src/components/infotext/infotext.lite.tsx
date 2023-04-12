@@ -15,6 +15,7 @@ useMetadata({
 export default function DBInfotext(props: DBInfotextProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBInfotextState>({
 		getIcon: (icon?: string, variant?: string) => {
 			return icon || (variant && DefaultVariantsIcon[variant]) || 'info';
@@ -23,6 +24,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 			return classNames(args);
 		}
 	});
+	// jscpd:ignore-end
 
 	onMount(() => {
 		if (props.stylePath) {

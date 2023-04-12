@@ -19,6 +19,7 @@ useMetadata({
 export default function DBHeader(props: DBHeaderProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBHeaderState>({
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
@@ -30,6 +31,7 @@ export default function DBHeader(props: DBHeaderProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<header

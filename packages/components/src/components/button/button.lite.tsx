@@ -49,6 +49,7 @@ useMetadata({
 export default function DBButton(props: DBButtonProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBButtonState>({
 		handleClick: (event: any) => {
 			if (props.onClick) {
@@ -68,6 +69,7 @@ export default function DBButton(props: DBButtonProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<button

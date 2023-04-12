@@ -22,6 +22,7 @@ useMetadata({
 export default function DBTabBar(props: DBTabBarProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBTabBarState>({
 		convertTabs(tabs: any[] | string | undefined) {
 			try {
@@ -46,6 +47,7 @@ export default function DBTabBar(props: DBTabBarProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<div

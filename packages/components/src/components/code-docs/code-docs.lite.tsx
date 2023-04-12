@@ -26,6 +26,7 @@ const DEFAULT_VALUES = {
 export default function DBCodeDocs(props: DBCodeDocsProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBCodeDocsState>({
 		open: false,
 		toggleCode: () => {
@@ -46,6 +47,7 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<DBCard
