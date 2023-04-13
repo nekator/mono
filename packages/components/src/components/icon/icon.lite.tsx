@@ -11,7 +11,7 @@ useMetadata({
 				name: 'icon',
 				type: 'Icon'
 			},
-			{ name: 'icntxt', type: 'TwoOptions' }
+			{ name: 'withText', type: 'TwoOptions' }
 		]
 	}
 });
@@ -37,7 +37,7 @@ export default function DBIcon(props: DBIconProps) {
 		<span
 			ref={component}
 			class={state.getClassNames('db-icon', props.className, {
-				'is-icon-text-replace': !props.icntxt
+				'is-icon-text-replace': props.withText
 			})}
 			data-icon={props.icon}
 			aria-hidden="true">

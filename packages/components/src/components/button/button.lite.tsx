@@ -10,22 +10,22 @@ useMetadata({
 		hasDisabledProp: true,
 		hasOnClick: true,
 		properties: [
-			{ name: 'text', type: 'SingleLine.Text' },
+			{ name: 'children', type: 'SingleLine.Text' },
 			{
 				name: 'variant',
 				type: 'Enum',
 				values: [
 					{ key: 'Primary', name: 'Primary', value: 'primary' },
-					{ key: 'Outline', name: 'Outline', value: 'outline' },
+					{ key: 'Outlined', name: 'Outlined', value: 'outlined' },
 					{
-						key: 'Transparent',
-						name: 'Transparent',
-						value: 'transparent'
+						key: 'Text',
+						name: 'Text',
+						value: 'text'
 					},
 					{
-						key: 'Semi-Transparent',
-						name: 'Semi-Transparent',
-						value: 'semi-transparent'
+						key: 'Solid',
+						name: 'Solid',
+						value: 'solid'
 					}
 				]
 			},
@@ -33,7 +33,7 @@ useMetadata({
 				name: 'icon',
 				type: 'Icon'
 			},
-			{ name: 'icntxt', type: 'TwoOptions' },
+			{ name: 'noText', type: 'TwoOptions' },
 			{
 				name: 'width',
 				type: 'Enum',
@@ -74,26 +74,27 @@ export default function DBButton(props: DBButtonProps) {
 	return (
 		<button
 			ref={component}
+			class={state.getClassNames('db-button', props.className, {
+				'is-icon-text-replace':
+					state.iconVisible(props.icon) && props.noText
+			})}
 			type={props.type}
 			disabled={props.disabled}
 			aria-label={props.label}
-			class={state.getClassNames('db-button', props.className, {
-				'is-icon-text-replace':
-					state.iconVisible(props.icon) && !props.icntxt
-			})}
+			data-icon={state.iconVisible(props.icon) ? props.icon : undefined}
 			data-size={props.size}
 			data-state={props.state}
 			data-width={props.width}
 			data-variant={props.variant}
+			name={props.name}
+			value={props.value}
+			aria-expanded={props.ariaexpanded}
+			aria-pressed={props.ariapressed}
 			onClick={(event) => state.handleClick(event)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
-			<Show when={state.iconVisible(props.icon)}>
-				<DBIcon icon={props.icon} icntxt={props.icntxt}></DBIcon>
-			</Show>
 			{props.children}
-			{props.text}
 		</button>
 	);
 }
