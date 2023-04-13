@@ -57,7 +57,7 @@ export default function DBButton(props: DBButtonProps) {
 			}
 		},
 		iconVisible: (icon?: string) => {
-			return Boolean(icon && icon !== '_' && icon !== 'none');
+			return icon && icon !== '_' && icon !== 'none';
 		},
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
