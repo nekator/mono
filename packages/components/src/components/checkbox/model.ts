@@ -29,7 +29,6 @@ export type DBCheckboxProps = DBCheckboxDefaultProps &
 	FormProps;
 
 export type DBCheckboxDefaultState = {
-	_value?: any;
 	initialized: boolean;
 	_checked: boolean;
 	_indeterminate: boolean;
