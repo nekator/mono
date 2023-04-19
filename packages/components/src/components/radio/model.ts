@@ -9,7 +9,8 @@ import {
 	GlobalState,
 	FormProps,
 	FormState,
-	FormCheckProps
+	FormCheckProps,
+	FormCheckState
 } from '../../shared/model';
 
 export interface DBRadioDefaultProps {
@@ -29,11 +30,11 @@ export type DBRadioProps = DBRadioDefaultProps &
 
 export type DBRadioDefaultState = {
 	initialized: boolean;
-	_checked: boolean;
 };
 
 export type DBRadioState = DBRadioDefaultState &
 	GlobalState &
 	ChangeEventState &
 	FocusEventState &
-	FormState;
+	FormState &
+	FormCheckState;

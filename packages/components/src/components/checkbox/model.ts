@@ -31,7 +31,6 @@ export type DBCheckboxProps = DBCheckboxDefaultProps &
 
 export type DBCheckboxDefaultState = {
 	initialized: boolean;
-	_checked: boolean;
 	_indeterminate: boolean;
 };
 

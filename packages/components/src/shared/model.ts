@@ -88,6 +88,10 @@ export type FormState = {
 	_value?: any;
 };
 
+export type FormCheckState = {
+	_checked: boolean;
+};
+
 export type GlobalTextProps = {
 	placeholder?: string;
 	maxLength?: number;
