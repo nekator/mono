@@ -78,6 +78,10 @@ export type FormProps = {
 	name?: string;
 };
 
+export type FormCheckProps = {
+	checked?: boolean;
+};
+
 export type FormState = {
 	_id?: string;
 	_isValid?: boolean | undefined;
