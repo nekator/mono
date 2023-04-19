@@ -1,0 +1,67 @@
+[
+	{
+		"name": "States",
+		"examples": [
+			{
+				"name": "Default",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Disabled",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Disabled checked",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Required",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Checked",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Indeterminate",
+				"props": {
+					"name": "States"
+				}
+			},
+			{
+				"name": "Invalid",
+				"props": {
+					"name": "States"
+				}
+			}
+		]
+	},
+	{
+		"name": "Size",
+		"examples": [
+			{
+				"name": "Default",
+				"props": {
+					"name": "Size"
+				}
+			},
+			{
+				"name": "Small",
+				"props": {
+					"name": "Size",
+					"size": "small"
+				}
+			}
+		]
+	}
+]
