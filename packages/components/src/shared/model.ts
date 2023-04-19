@@ -81,6 +81,7 @@ export type FormProps = {
 	required?: boolean;
 	value?: any;
 	name?: string;
+	invalid?: boolean;
 };
 
 export type FormState = {
