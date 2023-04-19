@@ -31,7 +31,9 @@
 		"packages/components/src/components/checkbox/checkbox.lite.tsx",
 		"showcases/react-showcase/src/components/checkbox/index.tsx",
 		"packages/components/src/components/radio/radio.lite.tsx",
-		"showcases/react-showcase/src/components/radio/index.tsx"
+		"showcases/react-showcase/src/components/radio/index.tsx",
+		"showcases/shared/radio.json",
+		"showcases/shared/checkbox.json"
 	],
 	"absolute": true
 }
