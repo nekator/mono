@@ -31,8 +31,6 @@ const getComponents = () => [
 			]
 		},
 		config: {
-			isFormComponent: true,
-			isClickComponent: true,
 			vue: {
 				vModel: [
 					{ modelValue: 'checked', binding: ':checked' },
