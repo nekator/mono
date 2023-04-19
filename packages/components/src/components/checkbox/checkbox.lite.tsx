@@ -27,6 +27,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 		_isValid: undefined,
 		_value: '',
 		_checked: false,
+		_indeterminate: false,
 
 		handleChange: (event) => {
 			if (props.onChange) {
@@ -38,6 +39,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			}
 
 			state._checked = event.target?.checked;
+			state._indeterminate = event.target?.indeterminate;
 
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;

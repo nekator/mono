@@ -32,6 +32,7 @@ export type DBCheckboxDefaultState = {
 	_value?: any;
 	initialized: boolean;
 	_checked: boolean;
+	_indeterminate: boolean;
 };
 
 export type DBCheckboxState = DBCheckboxDefaultState &
