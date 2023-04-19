@@ -11,37 +11,44 @@
 			{
 				"name": "Disabled",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"disabled": true
 				}
 			},
 			{
 				"name": "Disabled checked",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"disabled": true,
+					"checked": true
 				}
 			},
 			{
 				"name": "Required",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"required": true
 				}
 			},
 			{
 				"name": "Checked",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"checked": true
 				}
 			},
 			{
 				"name": "Indeterminate",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"indeterminate": true
 				}
 			},
 			{
 				"name": "Invalid",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"invalid": true
 				}
 			}
 		]
