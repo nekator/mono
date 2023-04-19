@@ -1,7 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {
 	DBButtonModule,
 	DBCardModule,
@@ -14,13 +13,22 @@ import {
 	DBLinkModule,
 	DBRadioModule,
 	DBCodeDocsModule,
-	DBTagModule
+	DBAlertModule,
+	DBSectionModule,
+	DBInfotextModule,
+  DBTagModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { FormComponent } from './components/form/form.component';
 import { ButtonComponent } from './components/button/button.component';
+import { LinkComponent } from './components/link/link.component';
 import { InputComponent } from './components/input/input.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { InfotextComponent } from './components/infotext/infotext.component';
+import { SectionComponent } from './components/section/section.component';
+import { CardComponent } from './components/card/card.component';
 import { DefaultComponent } from './components/default.component';
 import { TagComponent } from './components/tag/tag.component';
 
@@ -31,7 +39,13 @@ import { TagComponent } from './components/tag/tag.component';
 		DefaultComponent,
 		FormComponent,
 		ButtonComponent,
-		InputComponent
+		InputComponent,
+		LinkComponent,
+		AlertComponent,
+		RadioComponent,
+		InfotextComponent,
+		SectionComponent,
+		CardComponent
 	],
 	imports: [
 		DBTagModule,
@@ -47,6 +61,9 @@ import { TagComponent } from './components/tag/tag.component';
 		DBBrandModule,
 		DBLinkModule,
 		DBCodeDocsModule,
+		DBAlertModule,
+		DBSectionModule,
+		DBInfotextModule,
 		FormsModule,
 		DBRadioModule
 	],

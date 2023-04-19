@@ -2,6 +2,10 @@
 @use "../color-placeholder" as *;
 @use "../helpers/functions" as *;
 
+/* TODO: We should get the variables from UX */
+$default-border-radius: 4px;
+$card-border-radius: 8px;
+
 %default-adaptive-border {
 	border: solid 1px var(--db-current-color, $db-colors-neutral-on-bg-enabled);
 }
@@ -16,7 +20,7 @@
 }
 
 %default-border-radius {
-	--db-focus-outline-radius: #{to-rem(4)};
+	// TODO: Get a general token from Zeplin
 	border-radius: to-rem(4);
 }
 
@@ -28,10 +32,6 @@
 	@extend %default-adaptive-border;
 	@extend %default-color;
 	@extend %default-border-radius;
-
-	&:focus {
-		border-radius: var(--db-focus-outline-radius, #{to-rem(6)});
-	}
 }
 
 %default-background-transition {
@@ -41,6 +41,6 @@
 }
 
 %default-card {
-	border-radius: 8px;
+	border-radius: $card-border-radius;
 	box-shadow: $db-elevation-4;
 }
