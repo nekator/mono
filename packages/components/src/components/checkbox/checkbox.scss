@@ -13,9 +13,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	@extend %default-color;
 	@extend %bg-transparent-interactive;
 
-	/* stylelint-disable order/order */
 	align-content: center;
-	/* stylelint-enable order/order */
 
 	appearance: none;
 
