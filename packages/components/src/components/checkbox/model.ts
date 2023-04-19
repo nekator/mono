@@ -14,7 +14,6 @@ import {
 export interface DBCheckboxDefaultProps {
 	checked?: boolean;
 	describedbyid?: string;
-	invalid?: boolean;
 	size?: 'small';
 	value?: any;
 	indeterminate?: boolean;
