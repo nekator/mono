@@ -1,6 +1,6 @@
 import { DBCheckbox } from '../../../../../output/react/src';
 import DefaultComponent from '../index';
-import { getVariants } from '../../utils';
+import { getVariants } from '../data';
 import defaultComponentVariants from '../../../../shared/checkbox';
 import { type DBCheckboxProps } from '../../../../../output/react/src/components/checkbox/model';
 import type { DefaultComponentExample } from '../../../../shared/default-component-data';
