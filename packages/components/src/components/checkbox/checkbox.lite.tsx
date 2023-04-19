@@ -31,7 +31,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 		_checked: false,
 		_indeterminate: false,
 
-		handleChange: (event) => {
+		handleChange: (event: any) => {
 			if (props.onChange) {
 				props.onChange(event);
 			}
@@ -50,7 +50,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				}
 			}
 		},
-		handleBlur: (event) => {
+		handleBlur: (event: any) => {
 			if (props.onBlur) {
 				props.onBlur(event);
 			}
@@ -59,7 +59,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.blur(event);
 			}
 		},
-		handleFocus: (event) => {
+		handleFocus: (event: any) => {
 			if (props.onFocus) {
 				props.onFocus(event);
 			}
