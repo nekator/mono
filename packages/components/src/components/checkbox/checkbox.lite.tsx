@@ -22,6 +22,7 @@ useMetadata({
 export default function DBCheckbox(props: DBCheckboxProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBCheckboxState>({
 		initialized: false,
 		_id: DEFAULT_ID,
@@ -84,6 +85,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	onUpdate(() => {
 		if (
