@@ -8,7 +8,7 @@
     "build:01_tsc": "tsc",
     "build:02_vite": "vite build",
     "build:03_copy": "cpr dist ../../build-showcases/react-showcase -o",
-    "dev": "vite",
+    "dev": "vite --open",
     "start": "vite"
   },
   "dependencies": {
