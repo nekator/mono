@@ -105,6 +105,9 @@ export type FormProps = {
 };
 
 export type FormCheckProps = {
+	/**
+	 * Define the radio or checkbox elements checked state
+	 */
 	checked?: boolean;
 };
 
