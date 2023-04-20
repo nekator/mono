@@ -14,8 +14,14 @@ import {
 } from '../../shared/model';
 
 export interface DBCheckboxDefaultProps {
+	/**
+	 * Decide for a size (either regular, which is the default, or small)
+	 */
 	size?: 'small';
-	value?: any;
+
+	/**
+	 * Define an [indeterminate](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#indeterminate) state of a checkbox
+	 */
 	indeterminate?: boolean;
 }
 
