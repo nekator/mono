@@ -7,7 +7,7 @@ import {
 } from '@builder.io/mitosis';
 import { DBCheckboxProps, DBCheckboxState } from './model';
 import { uuid } from '../../utils';
-import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
+import { DEFAULT_ID } from '../../shared/constants';
 import classNames from 'classnames';
 
 useMetadata({
@@ -18,10 +18,6 @@ useMetadata({
 		properties: []
 	}
 });
-
-const DEFAULT_VALUES = {
-	label: DEFAULT_LABEL
-};
 
 export default function DBCheckbox(props: DBCheckboxProps) {
 	// This is used as forwardRef
