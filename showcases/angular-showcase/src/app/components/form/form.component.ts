@@ -10,12 +10,15 @@ export class FormComponent {
 	radioNames = ['X', 'Y', 'Z'];
 	radio = '';
 
+	checkbox = '';
+
 	showValues(): void {
 		// eslint-disable-next-line no-alert
 		alert(
 			JSON.stringify({
 				input: this.input,
-				radio: this.radio
+				radio: this.radio,
+				checkbox: this.checkbox
 			})
 		);
 	}

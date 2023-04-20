@@ -24,19 +24,12 @@
 						></db-radio>
 					</li>
 				</ul>
-				<p>DbCheckbox:</p>
-				<DbCheckbox
-					[(ngModel)]="input"
-					name="consumer-type"
-					label="Consumer account"
-					ngDefaultControl
-				></DbCheckbox>
-				<DbCheckbox
-					[(ngModel)]="input"
-					name="business-type"
-					label="Business account"
-					ngDefaultControl
-				></DbCheckbox>
+				<p>db-checkbox:</p>
+				<db-checkbox
+					(change)="checkbox = $event.target.checked"
+					name="checkbox"
+					label="Checkbox"
+				></db-checkbox>
 				<p>DbButton:</p>
 				<db-button
 					type="button"
@@ -57,6 +50,8 @@
 		<dl>
 			<dt>radio's value</dt>
 			<dd>{{ radio ? radio : "No radio set" }}</dd>
+			<dt>checkbox's value</dt>
+			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
 		</dl>
 	</div>
 </div>
