@@ -26,6 +26,7 @@ import { LinkComponent } from './components/link/link.component';
 import { InputComponent } from './components/input/input.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { RadioComponent } from './components/radio/radio.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { InfotextComponent } from './components/infotext/infotext.component';
 import { SectionComponent } from './components/section/section.component';
 import { CardComponent } from './components/card/card.component';
@@ -42,6 +43,7 @@ import { DefaultComponent } from './components/default.component';
 		LinkComponent,
 		AlertComponent,
 		RadioComponent,
+		CheckboxComponent,
 		InfotextComponent,
 		SectionComponent,
 		CardComponent,
