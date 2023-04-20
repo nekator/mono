@@ -6,6 +6,7 @@ import {
 	DBLink,
 	DBAlert,
 	DBInput,
+	DBCheckbox,
 	DBDivider,
 	DBCard,
 	DBBrand,
@@ -141,6 +142,13 @@ const ComponentSwitch = ({
 		);
 	}
 	if (type === 'input') {
+		return (
+			<DBInput className={className} {...props}>
+				{resolvedContent}
+			</DBInput>
+		);
+	}
+	if (type === 'checkbox') {
 		return (
 			<DBInput className={className} {...props}>
 				{resolvedContent}
