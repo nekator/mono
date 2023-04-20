@@ -129,6 +129,7 @@ export default function DBInput(props: DBInputProps) {
 				disabled={props.disabled}
 				required={props.required}
 				value={state._value}
+				aria-invalid={props.invalid}
 				maxLength={props.maxLength}
 				minLength={props.minLength}
 				pattern={props.pattern}
@@ -148,7 +149,7 @@ export default function DBInput(props: DBInputProps) {
 			<Show when={props.variant || props.required || props.pattern}>
 				<DBIcon
 					icon={state.getIcon(props.variant)}
-					class="icon-input-state"
+					class="icon-state"
 				/>
 			</Show>
 			<Show when={state.iconVisible(props.iconAfter)}>

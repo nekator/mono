@@ -15,7 +15,6 @@ import {
 
 export interface DBRadioDefaultProps {
 	describedbyid?: string;
-	invalid?: boolean;
 	size?: 'small';
 }
 

@@ -23,6 +23,11 @@ export type GlobalProps = {
 	id?: string;
 
 	/**
+	 * [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used to link to the elements that describe the element with the set attribute.
+	 */
+	describedbyid?: string;
+
+	/**
 	 * Web Component specific: Adds a link tag with the path to show css inside Shadow DOM.
 	 */
 	stylePath?: string;
@@ -71,11 +76,32 @@ export type IconState = {
 };
 
 export type FormProps = {
-	label?: string;
+	/**
+	 * The disabled attribute can be set to keep a user from clicking on the form element.
+	 */
 	disabled?: boolean;
-	required?: boolean;
-	value?: any;
+
+	/**
+	 * The label attribute specifies the caption of the form element.
+	 */
+	label?: string;
+	/**
+	 * The name attribute gives the name of the form control, as used in form submission and in the form element's elements object.
+	 */
 	name?: string;
+	/**
+	 * When the required attribute specified, the user will be required to fill the form element before submitting the form.
+	 */
+	required?: boolean;
+	/**
+	 * The value property is to receive results from the native form element.
+	 */
+	value?: any;
+  
+  /**
+	 * Marks an input element as invalid.
+	 */
+	invalid?: boolean;
 };
 
 export type FormCheckProps = {
