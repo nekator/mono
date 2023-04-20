@@ -30,6 +30,10 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	&:checked,
 	&:indeterminate {
 		--icon-margin-after: 0;
+
+		&::before {
+			position: absolute;
+		}
 	}
 
 	&:checked {
@@ -52,7 +56,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		@include icon(glyph(minus), 24, "outline");
 
 		&::before {
-			--icon-font-size: 20px;
+			line-height: 20px;
 		}
 	}
 
