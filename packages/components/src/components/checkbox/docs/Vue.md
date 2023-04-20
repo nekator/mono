@@ -10,17 +10,11 @@ For general installation and configuration look at the [v-components](https://ww
 import { DBCheckbox } from "@db-ui/v-components";
 import { ref } from "vue";
 const checkbox = ref("");
-
-const checkboxNames = ["X", "Y", "Z"];
 </script>
 
 <template>
-	<ul>
-		<li v-for="checkboxName in checkboxNames">
-			<DBCheckbox @change="checkbox = checkboxName" name="checkbox-group">
-				Checkbox {{ checkboxName }}
-			</DBCheckbox>
-		</li>
-	</ul>
+	<DBCheckbox @change="checkbox = $event.target.checked" name="checkbox">
+		Checkbox
+	</DBCheckbox>
 </template>
 ```
