@@ -126,9 +126,21 @@ export type GlobalTextProps = {
 };
 
 export type ImageProps = {
+	/**
+	 * [Alternative text](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt) for an image.
+	 */
 	imgAlt?: string;
-	imgSrc?: string;
+	/**
+	 * The [height attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/height) for the image.
+	 */
 	imgHeight?: number;
+	/**
+	 * The [source](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/src) of an image.
+	 */
+	imgSrc?: string;
+	/**
+	 * The [width attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/width) for the image.
+	 */
 	imgWidth?: number;
 };
 
@@ -163,6 +175,9 @@ export type LinkProps = {
 };
 
 export type CardProps = {
+	/**
+	 * The elevation attribute changes the style of the card (box-shadow).
+	 */
 	elevation?: 'default' | 'none';
 };
 
