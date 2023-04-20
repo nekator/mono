@@ -9,17 +9,21 @@ For general installation and configuration look at the [react-components](https:
 import { useState } from "react";
 import { DBCheckbox } from "@db-ui/react-components";
 
-const App = () => (
-	<DBCheckbox
-		name="checkbox"
-		value="Checkbox checked"
-		onChange={(event) => {
-			setCheckbox(event.target.checked);
-		}}
-	>
-		Checkbox
-	</DBCheckbox>
-);
+const App = () => {
+	const [checkbox, setCheckbox] = useState("");
+
+	return (
+		<DBCheckbox
+			name="checkbox"
+			value="Checkbox checked"
+			onChange={(event) => {
+				setCheckbox(event.target.checked);
+			}}
+		>
+			Checkbox
+		</DBCheckbox>
+	);
+};
 
 export default App;
 ```
