@@ -136,7 +136,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				onFocus={(event) => state.handleFocus(event)}
 			/>
 			<label htmlFor={state._id}>
-				{props.label ?? DEFAULT_VALUES.label}
+				{props.label}
 				{props.children}
 			</label>
 		</>

@@ -1,9 +1,15 @@
 import { useState } from 'react';
-import { DBButton, DBInput, DBRadio } from '../../../../../output/react/src';
+import {
+	DBButton,
+	DBInput,
+	DBRadio,
+	DBCheckbox
+} from '../../../../../output/react/src';
 
 const FormComponent = () => {
 	const [input, setInput] = useState('');
 	const [radio, setRadio] = useState('');
+	const [checkbox, setCheckbox] = useState('');
 
 	return (
 		<div className="form-container">
@@ -36,6 +42,15 @@ const FormComponent = () => {
 								</li>
 							))}
 						</ul>
+						<p>DBCheckbox:</p>
+						<DBCheckbox
+							name="checkbox"
+							value="Checkbox checked"
+							onChange={(event) => {
+								setCheckbox(event.target.checked);
+							}}>
+							Checkbox
+						</DBCheckbox>
 						<p>DbButton:</p>
 						<DBButton
 							type="button"
@@ -45,7 +60,8 @@ const FormComponent = () => {
 								alert(
 									JSON.stringify({
 										input,
-										radio
+										radio,
+										checkbox
 									})
 								);
 							}}>
@@ -61,6 +77,8 @@ const FormComponent = () => {
 					<dd>{input || 'No Input set'}</dd>
 					<dt>radio value</dt>
 					<dd>{radio || 'No radio set'}</dd>
+					<dt>checkboxes values</dt>
+					<dd>{`Checkbox ${checkbox ? '' : 'un'}checked`}</dd>
 				</dl>
 			</div>
 		</div>

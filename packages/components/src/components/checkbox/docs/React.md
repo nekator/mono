@@ -10,20 +10,15 @@ import { useState } from "react";
 import { DBCheckbox } from "@db-ui/react-components";
 
 const App = () => (
-	<ul>
-		{["X", "Y", "Z"].map((checkboxName) => (
-			<li key={checkboxName}>
-				<DBCheckbox
-					name="checkbox-group"
-					onChange={() => {
-						setCheckbox(checkboxName);
-					}}
-				>
-					Checkbox {checkboxName}
-				</DBCheckbox>
-			</li>
-		))}
-	</ul>
+	<DBCheckbox
+		name="checkbox"
+		value="Checkbox checked"
+		onChange={(event) => {
+			setCheckbox(event.target.checked);
+		}}
+	>
+		Checkbox
+	</DBCheckbox>
 );
 
 export default App;
