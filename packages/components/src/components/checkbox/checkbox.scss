@@ -26,10 +26,13 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	height: $font-size-height;
 	justify-content: center;
 
-	&:checked {
-		// We need to reset the general icons margin, as we want to use it in a tiny space
+	// We need to reset the general icons margin, as we want to use it in a tiny space
+	&:checked,
+	&:indeterminate {
 		--icon-margin-after: 0;
+	}
 
+	&:checked {
 		@extend %db-secondary-component-ia;
 
 		// Check icon
@@ -46,8 +49,10 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	// }
 
 	&:indeterminate {
+		@include icon(glyph(minus), 24, "outline");
+
 		&::before {
-			content: glyph(minus);
+			--icon-font-size: 20px;
 		}
 	}
 
