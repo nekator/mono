@@ -62,16 +62,20 @@ Third party controls require a `ControlValueAccessor` to function with angular f
 ```html form.component.html
 <!-- form.component.html -->
 <form>
-	<DBCheckbox ngDefaultControl [(ngModel)]="checkbox">Label</DBCheckbox>
-	<DBButton type="button" variant="primary" (click)="showValues()"
-		>Get checkbox value</DBButton
+	<db-checkbox
+		(change)="checkbox = $event.target.checked"
+		name="checkbox"
+		label="Checkbox"
+	></db-checkbox>
+	<db-button type="button" variant="primary" (click)="showValues()"
+		>Get checkbox value</db-button
 	>
 </form>
 
 <h2>Output</h2>
 <dl>
 	<dt>checkbox's value</dt>
-	<dd>{{ checkbox ? checkbox : "No checkbox set" }}</dd>
+	<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
 </dl>
 ```
 
