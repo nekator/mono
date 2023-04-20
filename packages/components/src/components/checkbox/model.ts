@@ -14,7 +14,6 @@ import {
 } from '../../shared/model';
 
 export interface DBCheckboxDefaultProps {
-	describedbyid?: string;
 	size?: 'small';
 	value?: any;
 	indeterminate?: boolean;
