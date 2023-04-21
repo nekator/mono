@@ -43,13 +43,6 @@
 					"name": "States",
 					"indeterminate": true
 				}
-			},
-			{
-				"name": "Invalid",
-				"props": {
-					"name": "States",
-					"invalid": true
-				}
 			}
 		]
 	},
