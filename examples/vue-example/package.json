@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@db-ui/v-components": "0.0.7",
-    "sass": "^1.62.0",
+    "sass": "^1.62.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {
