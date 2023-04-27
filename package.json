@@ -59,16 +59,21 @@
     "start-showcase:vanilla": "npm run dev --workspace=vanilla-showcase",
     "start-showcase:vue": "npm run dev --workspace=vue-showcase",
     "start:components": "npm run start --workspace=@db-ui/components",
-    "start:foundations": "npm run start --workspace=@db-ui/foundations"
+    "start:foundations": "npm run start --workspace=@db-ui/foundations",
+    "test:angular-showcase": "npm run test:e2e --workspace=angular-showcase",
+    "test:react-showcase": "npm run test:e2e --workspace=react-showcase",
+    "test:vue-showcase": "npm run test:e2e --workspace=vue-showcase"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
+    "@playwright/test": "1.32.3",
     "classnames": "^2.3.2",
     "cpr": "3.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "fs-extra": "^11.1.1",
+    "http-server": "14.1.1",
     "husky": "8.0.3",
     "inquirer": "^9.2.0",
     "jscpd": "^3.5.4",
