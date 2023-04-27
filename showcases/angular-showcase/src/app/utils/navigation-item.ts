@@ -9,16 +9,22 @@ import { RadioComponent } from '../components/radio/radio.component';
 import { InfotextComponent } from '../components/infotext/infotext.component';
 import { SectionComponent } from '../components/section/section.component';
 import { CardComponent } from '../components/card/card.component';
+import { DividerComponent } from '../components/divider/divider.component';
 
-export const NAVIGATION_ITEMS = [
+export const NAVIGATION_ITEMS: any[] = [
+	{ path: 'divider', label: 'Divider', component: DividerComponent },
 	{ path: 'radio', label: 'Radio', component: RadioComponent },
 	{ path: 'alert', label: 'Alert', component: AlertComponent },
 	{ path: 'infotext', label: 'Infotext', component: InfotextComponent },
 	{ path: 'section', label: 'Section', component: SectionComponent },
 	{ path: 'link', label: 'Link', component: LinkComponent },
-  { path: 'tag', label: 'Tag', component: TagComponent },
+	{ path: 'tag', label: 'Tag', component: TagComponent },
 	{ path: 'button', label: 'Button', component: ButtonComponent },
 	{ path: 'input', label: 'Input', component: InputComponent },
 	{ path: 'card', label: 'Card', component: CardComponent },
 	{ path: '', label: 'Home', component: FormComponent, pathMatch: 'full' }
 ];
+
+export const getSortedNavigationItems = (): any[] =>
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+	NAVIGATION_ITEMS.sort((a, b) => a.path.localeCompare(b.path));

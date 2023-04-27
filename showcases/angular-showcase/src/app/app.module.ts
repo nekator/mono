@@ -16,7 +16,7 @@ import {
 	DBAlertModule,
 	DBSectionModule,
 	DBInfotextModule,
-  DBTagModule
+	DBTagModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -29,6 +29,7 @@ import { RadioComponent } from './components/radio/radio.component';
 import { InfotextComponent } from './components/infotext/infotext.component';
 import { SectionComponent } from './components/section/section.component';
 import { CardComponent } from './components/card/card.component';
+import { DividerComponent } from './components/divider/divider.component';
 import { DefaultComponent } from './components/default.component';
 import { TagComponent } from './components/tag/tag.component';
 
@@ -45,7 +46,8 @@ import { TagComponent } from './components/tag/tag.component';
 		RadioComponent,
 		InfotextComponent,
 		SectionComponent,
-		CardComponent
+		CardComponent,
+		DividerComponent
 	],
 	imports: [
 		DBTagModule,
