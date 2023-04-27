@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9181],{38082:function(n,_,c){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/icon/docs/React",function(){return c(79753)}])}},function(n){n.O(0,[4996,9753,9774,2888,179],function(){return n(n.s=38082)}),_N_E=n.O()}]);
