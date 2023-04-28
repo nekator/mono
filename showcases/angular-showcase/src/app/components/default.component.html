@@ -8,7 +8,6 @@
 		<div
 			*ngFor="let example of variantRef.examples; index as exampleIndex"
 			[style]="example.style"
-			[class]="example.className"
 		>
 			<ng-container
 				*ngTemplateOutlet="
@@ -50,7 +49,6 @@
 						index as exampleIndex
 					"
 					[style]="example.style"
-					[class]="example.className"
 				>
 					<ng-container
 						*ngTemplateOutlet="

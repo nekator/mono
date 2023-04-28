@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { DBButton, DBInput, DBRadio } from '../../../../../output/react/src';
+import {
+	DBButton,
+	DBInput,
+	DBRadio,
+	DBTag
+} from '../../../../../output/react/src';
 import type { KeyValueType } from '../../../../../output/react/src/shared/model';
 
 const FormComponent = () => {
 	const [input, setInput] = useState('');
 	const [radio, setRadio] = useState('');
+	const [tags, setTags] = useState<string[]>([]);
 
 	const dataList: KeyValueType[] = [
 		{ key: 'test', value: 'Test' },
@@ -26,13 +32,12 @@ const FormComponent = () => {
 							onChange={(event) => {
 								setInput(event.target.value);
 							}}
-							className="fullWidth"
 							dataList={dataList}
 						/>
 						<p>Radio:</p>
 						<ul>
 							{['X', 'Y', 'Z'].map((radioName) => (
-								<li key={radioName}>
+								<li key={`radio-${radioName}`}>
 									<DBRadio
 										name="radio-group"
 										onChange={() => {
@@ -40,6 +45,34 @@ const FormComponent = () => {
 										}}>
 										Radio {radioName}
 									</DBRadio>
+								</li>
+							))}
+						</ul>
+						<p>Tags:</p>
+						<ul>
+							{['X', 'Y', 'Z'].map((tag, index) => (
+								<li key={`tag-${tag}`}>
+									<DBTag
+										variant={
+											index === 0
+												? undefined
+												: 'successful'
+										}
+										strong={index === 2}
+										interactive
+										onChange={() => {
+											if (tags.includes(tag)) {
+												setTags(
+													tags.filter(
+														(t) => t !== tag
+													)
+												);
+											} else {
+												setTags([...tags, tag]);
+											}
+										}}>
+										Tag {tag}
+									</DBTag>
 								</li>
 							))}
 						</ul>
@@ -52,7 +85,8 @@ const FormComponent = () => {
 								alert(
 									JSON.stringify({
 										input,
-										radio
+										radio,
+										tags
 									})
 								);
 							}}>
@@ -70,6 +104,10 @@ const FormComponent = () => {
 				<dl>
 					<dt>radio value</dt>
 					<dd>{radio || 'No radio set'}</dd>
+				</dl>
+				<dl>
+					<dt>tags value</dt>
+					<dd>{JSON.stringify(tags)}</dd>
 				</dl>
 			</div>
 		</div>

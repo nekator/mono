@@ -1,122 +1,167 @@
-/* Add styles for component here */
+@use "sass:map";
+@use "@db-ui/foundations/build/scss/init" as *;
+@use "@db-ui/foundations/build/scss/variables" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/color/color-variants" as *;
+@use "@db-ui/foundations/build/scss/body-styles" as *;
+@use "../../styles/button-components";
 
-@use "@db-ui/foundations/build/scss/helpers/shadow-dom" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
+@mixin get-border-and-icon($colors) {
+	&:not(&[data-strong="true"]) {
+		--db-current-border-color: #{map.get($colors, "border")};
+
+		.tag-label {
+			::before {
+				color: map.get($colors, "element");
+			}
+		}
+	}
+}
+
+%tag-colors {
+	@extend %db-bg-neutral-4;
+
+	&[data-strong="true"] {
+		@extend %db-neutral-component;
+	}
+
+	@each $name, $colors in $component-variants {
+		&[data-variant="#{$name}"] {
+			@if ($name == "critical") {
+				@extend %db-bg-critical;
+
+				&[data-strong="true"] {
+					@extend %db-critical-component;
+				}
+			} @else if ($name == "informational") {
+				@extend %db-bg-informational;
+
+				&[data-strong="true"] {
+					@extend %db-informational-component;
+				}
+			} @else if ($name == "warning") {
+				@extend %db-bg-warning;
+
+				&[data-strong="true"] {
+					@extend %db-warning-component;
+				}
+			} @else if ($name == "successful") {
+				@extend %db-bg-successful;
+
+				&[data-strong="true"] {
+					@extend %db-successful-component;
+				}
+			}
+
+			@include get-border-and-icon($colors);
+		}
+	}
+}
+
+%interactive-colors {
+	&:has(input:not(:checked)) {
+		@extend %db-bg-neutral-0-ia;
+	}
+
+	&:has(input:checked) {
+		@extend %db-bg-neutral-4-ia;
+
+		&[data-strong="true"] {
+			@extend %db-neutral-component-ia;
+		}
+
+		@each $name, $colors in $component-variants {
+			&[data-variant="#{$name}"] {
+				@if ($name == "critical") {
+					@extend %db-bg-critical-ia;
+
+					&[data-strong="true"] {
+						@extend %db-critical-component-ia;
+					}
+				} @else if ($name == "informational") {
+					@extend %db-bg-informational-ia;
+
+					&[data-strong="true"] {
+						@extend %db-informational-component-ia;
+					}
+				} @else if ($name == "warning") {
+					@extend %db-bg-warning-ia;
+
+					&[data-strong="true"] {
+						@extend %db-warning-component-ia;
+					}
+				} @else if ($name == "successful") {
+					@extend %db-bg-successful-ia;
+
+					&[data-strong="true"] {
+						@extend %db-successful-component-ia;
+					}
+				}
+
+				@include get-border-and-icon($colors);
+			}
+		}
+	}
+}
 
 .db-tag {
-	@extend %shadow-dom-extend;
+	@extend %focus-placeholder;
+	@extend %default-interactive-component;
+	@extend %component-border;
+	@extend %db-body-sm;
+	@extend %default-button;
 
-	& + label {
-		align-items: center;
-		// border: solid 1px $db-color-cool-gray-400;
-		// border-radius: $chip---radius;
-		display: inline-flex;
+	height: $db-sizing-sm;
+	min-width: $db-sizing-sm;
+	width: fit-content;
+	transition: background-color $db-transition-color,
+		color $db-transition-color;
 
-		// Link related styles
-		font-size: to-rem($pxValue: 14);
-		height: to-rem($pxValue: 28);
-		justify-content: center;
-		padding-left: to-rem($pxValue: 7);
-		padding-right: to-rem($pxValue: 7);
-		text-decoration: none;
-		text-transform: capitalize;
-		white-space: nowrap;
-
-		// Icons
-		&[data-icon],
-		&[data-icon-before] {
-			@include icon-meta(20);
-		}
-
-		&[data-icon-after] {
-			@include icon-meta($size: 20, $position: "after");
-		}
+	&:not(&[data-interactive="true"]) {
+		@extend %tag-colors;
 	}
 
-	&:not(:disabled, :checked) {
-		// States
-		& + label:hover {
-			// background-color: $chip-hover--backgroundColor;
-		}
+	&[data-interactive="true"] {
+		@extend %interactive-colors;
 	}
 
-	&:checked {
-		& + label {
-			// background-color: $chip-selected--backgroundColor;
-			border-color: transparent;
-			// color: $chip-checked--color;
-
-			//*** Variants ***
-			// &[data-variant="warning"] {
-			// 	background-color: $db-color-warning;
-			// }
-
-			// &[data-variant="error"] {
-			// 	background-color: $db-color-error;
-			// }
-
-			// &[data-variant="informative"] {
-			// 	background-color: $db-color-informative;
-			// }
-
-			// &[data-variant="success"] {
-			// 	background-color: $db-color-success;
-			// }
-
-			// POIs
-			// &[data-variant="poi-essen-trinken"] {
-			// 	background-color: $db-color-food-drink;
-			// 	color: $db-color-cool-gray-700;
-			// }
-
-			// &[data-variant="poi-einkaufen"] {
-			// 	background-color: $db-color-shopping;
-			// }
-
-			// &[data-variant="poi-gesundheit"] {
-			// 	background-color: $db-color-health;
-			// }
-
-			// &[data-variant="poi-kunst-kultur"] {
-			// 	background-color: $db-color-arts-culture;
-			// }
-
-			// &[data-variant="poi-wissenswertes"] {
-			// 	background-color: $db-color-things-to-know;
-			// }
-
-			// &[data-variant="poi-freizeit"] {
-			// 	background-color: $db-color-leisure;
-			// }
-
-			// &[data-variant="poi-zivile-rel-einrichtungen"] {
-			// 	background-color: $db-color-community-facilities;
-			// }
-
-			// &[data-variant="poi-dienstleistungen"] {
-			// 	background-color: $db-color-services;
-			// 	color: $db-color-cool-gray-700;
-			// }
-
-			// &[data-variant="poi-db-services-einrichtung"] {
-			// 	background-color: $db-color-db-services-facilities;
-			// }
-
-			// &[data-variant="poi-wegeleitung"] {
-			// 	background-color: $db-color-guidance;
-			// }
-		}
-	}
-
-	&:disabled {
-		& + label {
-			opacity: 0.5;
-		}
-	}
-
-	&[type="checkbox"],
-	&[type="radio"] {
+	input {
 		display: none;
+	}
+
+	.tag-label {
+		display: inherit;
+
+		span {
+			@extend %db-body-sm;
+		}
+
+		&:not(.is-icon-text-replace) {
+			margin-inline: $db-spacing-fixed-2xs;
+
+			::before {
+				margin-inline-end: $db-spacing-fixed-2xs;
+			}
+		}
+
+		&[data-overflow="true"] {
+			max-width: $db-sizing-2xl;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		&::before {
+			&[data-icon] {
+				--icon-font-family: var(--db-base-icon-font-family);
+				--icon-font-size: var(--db-base-icon-font-size);
+			}
+		}
+	}
+
+	&[data-disabled="true"] {
+		opacity: $default-opacity;
+		pointer-events: none;
 	}
 }

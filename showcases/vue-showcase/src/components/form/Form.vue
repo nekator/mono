@@ -1,20 +1,35 @@
 <script setup lang="ts">
-import { DBButton, DBInput, DBRadio } from "../../../../../output/vue/vue3/src";
+import {
+	DBButton,
+	DBInput,
+	DBRadio,
+	DBTag
+} from "../../../../../output/vue/vue3/src";
 
 import { ref } from "vue";
 const input = ref("");
 const radio = ref("");
+const tags = ref<string[]>([]);
 
-const radioNames = ["X", "Y", "Z"];
+const array = ["X", "Y", "Z"];
 
 const dataList = [{ key: "test", value: "Test" }, { key: "test2" }];
+
+const changeTags = (tag: string) => {
+	if (tags.value.includes(tag)) {
+		tags.value = tags.value.filter((t) => t !== tag);
+	} else {
+		tags.value = [...tags.value, tag];
+	}
+};
 
 // eslint-disable-next-line no-alert
 const logAll = () => {
 	alert(
 		JSON.stringify({
 			input: input.value,
-			radio: radio.value
+			radio: radio.value,
+			tags: tags.value
 		})
 	);
 };
@@ -38,12 +53,26 @@ const logAll = () => {
 					/>
 					<p>Radio:</p>
 					<ul>
-						<li v-for="radioName in radioNames">
+						<li v-for="radioName in array">
 							<DBRadio
 								@change="radio = radioName"
 								name="radio-group"
 								>Radio {{ radioName }}</DBRadio
 							>
+						</li>
+					</ul>
+					<p>Tags:</p>
+					<ul>
+						<li v-for="(tag, index) in array">
+							<DBTag
+								:variant="
+									index === 0 ? undefined : 'successful'
+								"
+								@Change="changeTags(tag)"
+								:label="`Tag ${tag}`"
+								:strong="index === 2"
+								:interactive="true"
+							></DBTag>
 						</li>
 					</ul>
 					<p>Button:</p>
@@ -62,6 +91,10 @@ const logAll = () => {
 			<dl>
 				<dt>radio value</dt>
 				<dd>{{ radio ? radio : "No radio set" }}</dd>
+			</dl>
+			<dl>
+				<dt>tags value</dt>
+				<dd>{{ JSON.stringify(tags) }}</dd>
 			</dl>
 		</div>
 	</div>

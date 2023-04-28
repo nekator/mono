@@ -6,30 +6,46 @@ import {
 	GlobalState,
 	DefaultVariantProps,
 	FormProps,
-	FormState
+	FormState,
+	IconProps,
+	IconState,
+	FormCheckProps,
+	FormCheckState
 } from '../../shared/model';
 
 export interface DBTagDefaultProps {
-	variant?: DefaultVariantProps;
-	iconBefore?: string;
+	interactive?: boolean;
+	label?: string;
+	/**
+	 * Define the text next to the icon specified via the icon Property to get hidden.
+	 */
+	noText?: boolean;
+	onRemove?: () => void;
+	overflow?: boolean;
+	strong?: boolean;
+	tabIndex?: number;
 	value?: string;
-	type?: string;
-	behavior?: string;
+	removeButton?: boolean | string;
 }
 
 export type DBTagProps = DBTagDefaultProps &
 	GlobalProps &
 	GlobalTextProps &
 	ChangeEventProps &
-	FormProps;
+	FormProps &
+	FormCheckProps &
+	IconProps &
+	DefaultVariantProps;
 
 export interface DBTagDefaultState {
-	_id?: string;
-	_editlabel?: string;
-	_value?: any;
+	getTabIndex?: () => number | null;
+	handleRemove?: () => void;
+	getRemoveButtonText?: () => string;
 }
 
 export type DBTagState = DBTagDefaultState &
 	GlobalState &
 	ChangeEventState &
-	FormState;
+	FormState &
+	FormCheckState &
+	IconState;

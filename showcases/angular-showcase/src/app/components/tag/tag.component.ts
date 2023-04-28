@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import defaultComponentVariants from '../../../../../shared/tag';
+import defaultComponentVariants from '../../../../../shared/tag.json';
 
 @Component({
 	selector: 'app-tag',
 	templateUrl: './tag.component.html'
 })
-export class TagComponent implements OnInit {
+export class TagComponent {
 	variants = defaultComponentVariants;
-
-	ngOnInit() {
-		for (const variant of defaultComponentVariants) {
-			variant.examples[0].code = '<DBTag>Button</DBTag>';
-		}
-	}
+	showAlert = (exampleName: string) => {
+		// eslint-disable-next-line no-alert
+		alert(exampleName);
+	};
 }

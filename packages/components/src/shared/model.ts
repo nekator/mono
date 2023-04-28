@@ -108,10 +108,22 @@ export type FormProps = {
 	invalid?: boolean;
 };
 
+export type FormCheckProps = {
+	/**
+	 * Define the radio/checkbox/tag elements checked state
+	 */
+	checked?: boolean;
+};
+
 export type FormState = {
 	_id?: string;
 	_isValid?: boolean | undefined;
 	_value?: any;
+};
+
+export type FormCheckState = {
+	initialized: boolean;
+	_checked: boolean;
 };
 
 export type GlobalTextProps = {

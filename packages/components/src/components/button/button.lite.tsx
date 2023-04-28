@@ -79,6 +79,7 @@ export default function DBButton(props: DBButtonProps) {
 					state.iconVisible(props.icon) && props.noText
 			})}
 			type={props.type}
+			title={props.title}
 			disabled={props.disabled}
 			aria-label={props.label}
 			data-icon={state.iconVisible(props.icon) ? props.icon : undefined}

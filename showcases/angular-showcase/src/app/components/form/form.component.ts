@@ -6,17 +6,31 @@ import { Component } from '@angular/core';
 })
 export class FormComponent {
 	input = '';
-	radioNames = ['X', 'Y', 'Z'];
+	array = ['X', 'Y', 'Z'];
 	radio = '';
+	tags: string[] = [];
 
 	dataList = [{ key: 'test', value: 'Test' }, { key: 'test2' }];
+
 	getRadioName = (radioName: string): string => `Radio ${radioName}`;
+
+	getTagName = (tag: string): string => `Tag ${tag}`;
+
+	getTags = (): string => JSON.stringify(this.tags);
+
+	changeTags = (tag: string) => {
+		this.tags = this.tags.includes(tag)
+			? this.tags.filter((t) => t !== tag)
+			: [...this.tags, tag];
+	};
+
 	showValues(): void {
 		// eslint-disable-next-line no-alert
 		alert(
 			JSON.stringify({
 				input: this.input,
-				radio: this.radio
+				radio: this.radio,
+				tags: this.tags
 			})
 		);
 	}

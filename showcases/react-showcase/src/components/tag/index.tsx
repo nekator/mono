@@ -1,15 +1,40 @@
 import { DBTag } from '../../../../../output/react/src';
 import DefaultComponent from '../index';
-import defaultComponentVariants from '../../../../shared/tag';
-import { type DefaultComponentExample } from '../../../../shared/default-component-data';
+import defaultComponentVariants from '../../../../shared/tag.json';
 import { type DBTagProps } from '../../../../../output/react/src/components/tag/model';
-import { getVariants } from '../../utils';
+import { getVariants } from '../data';
 
-const getTag = ({ children }: DBTagProps) => <DBTag>{children}</DBTag>;
-
-const getExampleMatrix = (exampleName: string): DefaultComponentExample[][] => [
-	[{ example: getTag({ children: exampleName }) }]
-];
+const getTag = ({
+	variant,
+	disabled,
+	children,
+	icon,
+	overflow,
+	checked,
+	noText,
+	interactive,
+	strong,
+	label,
+	removeButton
+}: DBTagProps) => (
+	<DBTag
+		variant={variant}
+		disabled={disabled}
+		icon={icon}
+		noText={noText}
+		interactive={interactive}
+		strong={strong}
+		checked={checked}
+		label={label}
+		overflow={overflow}
+		removeButton={removeButton}
+		onRemove={() => {
+			// eslint-disable-next-line no-alert
+			alert(children.toString());
+		}}>
+		{children}
+	</DBTag>
+);
 
 const TagComponent = () => {
 	return (
@@ -17,7 +42,7 @@ const TagComponent = () => {
 			title="DBTag"
 			variants={getVariants(
 				defaultComponentVariants,
-				getExampleMatrix
+				getTag
 			)}></DefaultComponent>
 	);
 };
