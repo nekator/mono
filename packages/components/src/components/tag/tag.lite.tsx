@@ -52,7 +52,7 @@ export default function DBTag(props: DBTagProps) {
 		},
 		getTabIndex: () => {
 			if (props.disabled) {
-				return null;
+				return undefined;
 			}
 
 			return props.tabIndex ?? 0;
