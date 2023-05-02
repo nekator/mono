@@ -123,7 +123,7 @@ export default function DBTag(props: DBTagProps) {
 					'is-icon-text-replace':
 						state.iconVisible(props.icon) && props.noText
 				})}
-				htmlFor={props.interactive ? state._id : null}
+				htmlFor={props.interactive ? state._id : undefined}
 				data-icon={props.icon}
 				data-overflow={props.overflow}>
 				<Show when={props.label}>
