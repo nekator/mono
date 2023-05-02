@@ -9,6 +9,7 @@ import Divider from '../components/divider/Divider.vue';
 import Infotext from '../components/infotext/Infotext.vue';
 import Section from '../components/section/Section.vue';
 import Card from '../components/card/Card.vue';
+import Drawer from '../components/drawer/Drawer.vue';
 
 export const navigationItems: any[] = [
 	{ path: '/tag', label: 'Tag', component: Tag },
@@ -16,6 +17,7 @@ export const navigationItems: any[] = [
 	{ path: '/divider', label: 'Divider', component: Divider },
 	{ path: '/radio', label: 'Radio', component: Radio },
 	{ path: '/alert', label: 'Alert', component: Alert },
+	{ path: '/drawer', label: 'Drawer', component: Drawer },
 	{ path: '/infotext', label: 'Infotext', component: Infotext },
 	{ path: '/section', label: 'Section', component: Section },
 	{ path: '/link', label: 'Link', component: Link },

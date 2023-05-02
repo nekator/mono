@@ -16,6 +16,7 @@ import {
 	DBAlertModule,
 	DBSectionModule,
 	DBInfotextModule,
+	DBDrawerModule,
 	DBTagModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { CardComponent } from './components/card/card.component';
 import { DividerComponent } from './components/divider/divider.component';
 import { DefaultComponent } from './components/default.component';
 import { TagComponent } from './components/tag/tag.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 @NgModule({
 	declarations: [
@@ -47,7 +49,8 @@ import { TagComponent } from './components/tag/tag.component';
 		InfotextComponent,
 		SectionComponent,
 		CardComponent,
-		DividerComponent
+		DividerComponent,
+		DrawerComponent
 	],
 	imports: [
 		DBTagModule,
@@ -67,7 +70,8 @@ import { TagComponent } from './components/tag/tag.component';
 		DBSectionModule,
 		DBInfotextModule,
 		FormsModule,
-		DBRadioModule
+		DBRadioModule,
+		DBDrawerModule
 	],
 	providers: [],
 	schemas: [NO_ERRORS_SCHEMA],
