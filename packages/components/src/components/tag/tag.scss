@@ -132,6 +132,8 @@
 	}
 
 	.tag-label {
+		@extend %db-body-sm;
+
 		display: inherit;
 
 		span {
