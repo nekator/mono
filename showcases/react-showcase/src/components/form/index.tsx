@@ -5,30 +5,37 @@ import {
 	DBRadio,
 	DBCheckbox
 } from '../../../../../output/react/src';
+import type { KeyValueType } from '../../../../../output/react/src/shared/model';
 
 const FormComponent = () => {
 	const [input, setInput] = useState('');
 	const [radio, setRadio] = useState('');
 	const [checkbox, setCheckbox] = useState('');
 
+	const dataList: KeyValueType[] = [
+		{ key: 'test', value: 'Test' },
+		{ key: 'test2' }
+	];
+
 	return (
 		<div className="form-container">
 			<div>
 				<form>
 					<fieldset>
-						<p>DbInput:</p>
+						<p>Input:</p>
 						<DBInput
 							label="Textinput"
 							placeholder="Placeholder"
 							description="Description"
-							icon="edit"
+							icon="account"
 							name="input-name"
 							onChange={(event) => {
 								setInput(event.target.value);
 							}}
 							className="fullWidth"
+							dataList={dataList}
 						/>
-						<p>DbRadio:</p>
+						<p>Radio:</p>
 						<ul>
 							{['X', 'Y', 'Z'].map((radioName) => (
 								<li key={radioName}>
@@ -51,7 +58,7 @@ const FormComponent = () => {
 							}}>
 							Checkbox
 						</DBCheckbox>
-						<p>DbButton:</p>
+						<p>Button:</p>
 						<DBButton
 							type="button"
 							variant="primary"
@@ -75,6 +82,8 @@ const FormComponent = () => {
 				<dl>
 					<dt>inputs value</dt>
 					<dd>{input || 'No Input set'}</dd>
+				</dl>
+				<dl>
 					<dt>radio value</dt>
 					<dd>{radio || 'No radio set'}</dd>
 					<dt>checkboxes values</dt>

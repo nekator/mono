@@ -17,6 +17,25 @@
  */
 const getComponents = () => [
 	{
+		name: 'drawer',
+		overwrites: {
+			react: [
+				{
+					from: 'const dialogRef = useRef<HTMLDialogElement>(null);',
+					to: 'const dialogRef = useRef<HTMLDialogElement>(component);'
+				}
+			],
+			vue: [
+				{
+					from: 'immediate: true,',
+					to: 'immediate: true,\nflush: "post"'
+				}
+			],
+			webComponents: [{ from: '__prev.find', to: '!!__prev.find' }]
+		}
+	},
+
+	{
 		name: 'code-docs'
 	},
 
@@ -84,6 +103,10 @@ const getComponents = () => [
 	},
 	{
 		name: 'input',
+		overwrites: {
+			global: [{ from: ', KeyValueType', to: '' }],
+			vue: [{ from: ', index', to: '' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'value', binding: ':value' }]

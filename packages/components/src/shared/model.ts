@@ -39,6 +39,7 @@ export type GlobalProps = {
 };
 
 export type GlobalState = {
+	_id?: string;
 	stylePath?: string;
 	getClassNames: (...args: classNames.ArgumentArray) => string;
 };
@@ -77,6 +78,10 @@ export type IconState = {
 
 export type FormProps = {
 	/**
+	 * React specific attribute to set default value.
+	 */
+	defaultValue?: any;
+	/**
 	 * The disabled attribute can be set to keep a user from clicking on the form element.
 	 */
 	disabled?: boolean;
@@ -112,7 +117,6 @@ export type FormCheckProps = {
 };
 
 export type FormState = {
-	_id?: string;
 	_isValid?: boolean | undefined;
 	_value?: any;
 };
@@ -195,6 +199,25 @@ export type ClickEventState = {
 	handleClick: (event: any) => void;
 };
 
+export type ToggleEventProps = {
+	onToggle?: (open: boolean) => void;
+};
+
+export type ToggleEventState = {
+	toggle?: () => void;
+};
+
+export type CloseEventProps = {
+	/**
+	 * Function to handle button click (close).
+	 */
+	onClose?: () => void;
+};
+
+export type CloseEventState = {
+	handleClose?: (event: any) => void;
+};
+
 export type ChangeEventProps = {
 	change?: (event: any) => void;
 	onChange?: (event: any) => void;
@@ -221,3 +244,19 @@ export type ValidEventProps = {
 };
 
 export type NestedRefComponentType = { getFormRef?: () => { current?: any } };
+
+export type InnerCloseButtonProps = {
+	/**
+	 * The closeButtonId attribute changes the id inside the close button.
+	 */
+	closeButtonId?: string;
+	/**
+	 * The closeButtonText attribute changes the text inside the close button.
+	 */
+	closeButtonText?: string;
+};
+
+export type KeyValueType = {
+	key: string;
+	value?: string;
+};

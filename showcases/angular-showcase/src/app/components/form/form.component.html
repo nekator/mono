@@ -2,23 +2,24 @@
 	<div>
 		<form>
 			<fieldset>
-				<p>DbInput:</p>
+				<p>Input:</p>
 				<db-input
 					[(ngModel)]="input"
 					name="username"
 					label="Textinput"
 					placeholder="Placeholder"
 					description="Description"
-					icon="edit"
+					[dataList]="dataList"
+					icon="account"
 					ngDefaultControl
 				>
 				</db-input>
-				<p>DbRadio:</p>
+				<p>Radio:</p>
 				<ul>
 					<li *ngFor="let radioName of radioNames">
 						<db-radio
 							(change)="radio = radioName"
-							[label]="'Radio ' + radioName"
+							[label]="getRadioName(radioName)"
 							[value]="radioName"
 							name="RadioGroup"
 						></db-radio>
@@ -30,7 +31,7 @@
 					name="checkbox"
 					label="Checkbox"
 				></db-checkbox>
-				<p>DbButton:</p>
+				<p>Button:</p>
 				<db-button
 					type="button"
 					variant="primary"
@@ -46,7 +47,7 @@
 		<dl>
 			<dt>inputs value</dt>
 			<dd>{{ input ? input : "No Input set" }}</dd>
-			<dt>radio's value</dt>
+			<dt>radio value</dt>
 			<dd>{{ radio ? radio : "No radio set" }}</dd>
 			<dt>checkbox's value</dt>
 			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>

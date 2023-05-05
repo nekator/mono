@@ -2,30 +2,25 @@ import { test, expect } from '@playwright/experimental-ct-react';
 import AxeBuilder from '@axe-core/playwright';
 
 import { DBCheckbox } from './index';
+// @ts-ignore - vue can only find it with .ts as file ending
+import { DEFAULT_VIEWPORT } from '../../shared/constants.ts';
 
 const comp = <DBCheckbox label="Test"></DBCheckbox>;
 
 const testComponent = () => {
-	test('DBCheckbox should contain text', async ({ mount }) => {
+	test('should contain text', async ({ mount }) => {
 		const component = await mount(comp);
 		await expect(component).toContainText('Test');
 	});
 
-	test('DBCheckbox should match screenshot', async ({ mount }) => {
+	test('should match screenshot', async ({ mount }) => {
 		const component = await mount(comp);
 		await expect(component).toHaveScreenshot();
 	});
 };
 
-test.describe('DBCheckbox component on desktop', () => {
-	// Old-school CRT monitor screensize
-	test.use({ viewport: { width: 1024, height: 768 } });
-	testComponent();
-});
-
-test.describe('DBCheckbox component on mobile', () => {
-	// iPhone 13 / portrait screen size
-	test.use({ viewport: { width: 390, height: 884 } });
+test.describe('DBCheckbox component', () => {
+	test.use({ viewport: DEFAULT_VIEWPORT });
 	testComponent();
 });
 
