@@ -77,7 +77,7 @@ const componentChildren = [
 			},
 			{
 				label: 'DBTag',
-				link: 'tag'
+				name: 'tag'
 			}
 		]
 	},

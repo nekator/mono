@@ -69,10 +69,10 @@ const logAll = () => {
 									index === 0 ? undefined : 'successful'
 								"
 								@Change="changeTags(tag)"
-								:label="`Tag ${tag}`"
 								:strong="index === 2"
 								:interactive="true"
-							></DBTag>
+								>Tag {{ tag }}</DBTag
+							>
 						</li>
 					</ul>
 					<p>Button:</p>

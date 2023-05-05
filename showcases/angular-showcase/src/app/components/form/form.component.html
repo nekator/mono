@@ -31,10 +31,10 @@
 						<db-tag
 							[variant]="i === 0 ? undefined : 'successful'"
 							(onChange)="changeTags(tag)"
-							[label]="getTagName(tag)"
 							[strong]="i === 2"
 							[interactive]="true"
-						></db-tag>
+							>{{ getTagName(tag) }}</db-tag
+						>
 					</li>
 				</ul>
 				<p>Button:</p>

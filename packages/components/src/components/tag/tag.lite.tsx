@@ -126,9 +126,6 @@ export default function DBTag(props: DBTagProps) {
 				htmlFor={props.interactive ? state._id : undefined}
 				data-icon={props.icon}
 				data-overflow={props.overflow}>
-				<Show when={props.label}>
-					<span>{props.label}</span>
-				</Show>
 				{props.children}
 			</label>
 
