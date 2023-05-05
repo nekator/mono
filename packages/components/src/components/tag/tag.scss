@@ -133,12 +133,7 @@
 
 	.tag-label {
 		@extend %db-body-sm;
-
-		display: inherit;
-
-		span {
-			@extend %db-body-sm;
-		}
+		display: block;
 
 		&:not(.is-icon-text-replace) {
 			margin-inline: $db-spacing-fixed-2xs;
