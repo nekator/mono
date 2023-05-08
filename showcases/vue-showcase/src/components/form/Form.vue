@@ -47,7 +47,6 @@ const logAll = () => {
 						description="Description"
 						icon="account"
 						name="input-name"
-						class="fullWidth"
 						:dataList="dataList"
 						v-model:value="input"
 					/>
