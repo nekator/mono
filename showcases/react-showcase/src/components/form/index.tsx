@@ -49,7 +49,7 @@ const FormComponent = () => {
 								</li>
 							))}
 						</ul>
-						<p>DBCheckbox:</p>
+						<p>Checkbox:</p>
 						<DBCheckbox
 							name="checkbox"
 							value="Checkbox checked"
@@ -82,12 +82,10 @@ const FormComponent = () => {
 				<dl>
 					<dt>inputs value</dt>
 					<dd>{input || 'No Input set'}</dd>
-				</dl>
-				<dl>
 					<dt>radio value</dt>
 					<dd>{radio || 'No radio set'}</dd>
-					<dt>checkboxes values</dt>
-					<dd>{`Checkbox ${checkbox ? '' : 'un'}checked`}</dd>
+					<dt>checkbox value</dt>
+					<dd>{`checkbox ${checkbox ? '' : 'un'}checked`}</dd>
 				</dl>
 			</div>
 		</div>

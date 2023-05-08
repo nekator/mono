@@ -53,13 +53,12 @@ const logAll = () => {
 							>
 						</li>
 					</ul>
-					<p>DbCheckbox:</p>
+					<p>Checkbox:</p>
 					<DBCheckbox
 						@change="checkbox = $event.target.checked"
 						name="checkbox"
+						>Checkbox</DBCheckbox
 					>
-						Checkbox
-					</DBCheckbox>
 					<p>Button:</p>
 					<DBButton type="button" variant="primary" @click="logAll()">
 						Hi from Showcase!
@@ -75,7 +74,7 @@ const logAll = () => {
 				<dt>radio value</dt>
 				<dd>{{ radio ? radio : "No radio set" }}</dd>
 				<dt>checkbox value</dt>
-				<dd>{{ `Checkbox ${checkbox ? "" : "un"}checked` }}</dd>
+				<dd>{{ `checkbox ${checkbox ? "" : "un"}checked` }}</dd>
 			</dl>
 		</div>
 	</div>
