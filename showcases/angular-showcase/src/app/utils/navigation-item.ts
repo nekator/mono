@@ -4,6 +4,7 @@ import { FormComponent } from '../components/form/form.component';
 import { LinkComponent } from '../components/link/link.component';
 import { AlertComponent } from '../components/alert/alert.component';
 import { RadioComponent } from '../components/radio/radio.component';
+import { CheckboxComponent } from '../components/checkbox/checkbox.component';
 import { InfotextComponent } from '../components/infotext/infotext.component';
 import { SectionComponent } from '../components/section/section.component';
 import { CardComponent } from '../components/card/card.component';
@@ -13,6 +14,7 @@ import { DrawerComponent } from '../components/drawer/drawer.component';
 export const NAVIGATION_ITEMS: any[] = [
 	{ path: 'divider', label: 'Divider', component: DividerComponent },
 	{ path: 'radio', label: 'Radio', component: RadioComponent },
+	{ path: 'checkbox', label: 'Checkbox', component: CheckboxComponent },
 	{ path: 'alert', label: 'Alert', component: AlertComponent },
 	{ path: 'drawer', label: 'Drawer', component: DrawerComponent },
 	{ path: 'infotext', label: 'Infotext', component: InfotextComponent },

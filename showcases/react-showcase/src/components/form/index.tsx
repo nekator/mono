@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { DBButton, DBInput, DBRadio } from '../../../../../output/react/src';
+import {
+	DBButton,
+	DBInput,
+	DBRadio,
+	DBCheckbox
+} from '../../../../../output/react/src';
 import type { KeyValueType } from '../../../../../output/react/src/shared/model';
 
 const FormComponent = () => {
 	const [input, setInput] = useState('');
 	const [radio, setRadio] = useState('');
+	const [checkbox, setCheckbox] = useState('');
 
 	const dataList: KeyValueType[] = [
 		{ key: 'test', value: 'Test' },
@@ -43,6 +49,15 @@ const FormComponent = () => {
 								</li>
 							))}
 						</ul>
+						<p>Checkbox:</p>
+						<DBCheckbox
+							name="checkbox"
+							value="Checkbox checked"
+							onChange={(event) => {
+								setCheckbox(event.target.checked);
+							}}>
+							Checkbox
+						</DBCheckbox>
 						<p>Button:</p>
 						<DBButton
 							type="button"
@@ -52,7 +67,8 @@ const FormComponent = () => {
 								alert(
 									JSON.stringify({
 										input,
-										radio
+										radio,
+										checkbox
 									})
 								);
 							}}>
@@ -66,10 +82,10 @@ const FormComponent = () => {
 				<dl>
 					<dt>inputs value</dt>
 					<dd>{input || 'No Input set'}</dd>
-				</dl>
-				<dl>
 					<dt>radio value</dt>
 					<dd>{radio || 'No radio set'}</dd>
+					<dt>checkbox value</dt>
+					<dd>{`checkbox ${checkbox ? '' : 'un'}checked`}</dd>
 				</dl>
 			</div>
 		</div>

@@ -15,6 +15,7 @@ export type ComponentType = {
 		| 'alert'
 		| 'brand'
 		| 'button'
+		| 'checkbox'
 		| 'card'
 		| 'divider'
 		| 'header'
