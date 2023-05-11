@@ -51,10 +51,7 @@ const getComponents = () => [
 		},
 		config: {
 			vue: {
-				vModel: [
-					{ modelValue: 'checked', binding: ':checked' },
-					{ modelValue: 'indeterminate', binding: ':indeterminate' }
-				]
+				vModel: [{ modelValue: 'checked', binding: ':checked' }]
 			}
 		}
 	},

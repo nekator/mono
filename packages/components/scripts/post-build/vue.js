@@ -32,14 +32,6 @@ const updateNestedComponents = (input, rootComponentName) => {
 const updateVModelBindings = (input, bindings) => {
 	let fileContent = input;
 
-	// Replace internal underscore value
-	bindings.forEach((bin) => {
-		fileContent = fileContent.replace(
-			`${bin.binding}="_${bin.modelValue}"`,
-			`${bin.binding}="${bin.modelValue}"`
-		);
-	});
-
 	// Add emits to component config
 
 	fileContent = fileContent.replace(
@@ -52,19 +44,8 @@ const updateVModelBindings = (input, bindings) => {
 	return fileContent
 		.split('\n')
 		.map((line) => {
-			const foundBinding = bindings.find(
-				(bin) =>
-					line.includes(`this._${bin.modelValue} =`) &&
-					!line.includes(
-						`this._${bin.modelValue} = this.${bin.modelValue}`
-					)
-			);
-			if (foundBinding) {
-				const emitFunction = `this.$emit("update:${foundBinding.modelValue}", this._${foundBinding.modelValue});`;
-				return `${line}\n${emitFunction}`;
-			}
 
-			return line;
+			return line.replace('// VUE:', '');
 		})
 		.join('\n');
 };

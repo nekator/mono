@@ -48,7 +48,6 @@ export default function DBInput(props: DBInputProps) {
 		_id: DEFAULT_ID,
 		_isValid: undefined,
 		_dataListId: DEFAULT_ID,
-		_value: '',
 		iconVisible: (icon?: string) => {
 			return Boolean(icon && icon !== '_' && icon !== 'none');
 		},
@@ -68,15 +67,15 @@ export default function DBInput(props: DBInputProps) {
 				props.change(event);
 			}
 
-			// using controlled components for react forces us to using state for value
-			state._value = event.target.value;
-
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;
 				if (props.validityChange) {
 					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
+
+			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
+			// VUE:this.$emit("update:value", event.target.value);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -107,10 +106,6 @@ export default function DBInput(props: DBInputProps) {
 			? props.dataListId
 			: `datalist-${state._id}`;
 
-		if (props.value) {
-			state._value = props.value;
-		}
-
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
@@ -137,7 +132,7 @@ export default function DBInput(props: DBInputProps) {
 				disabled={props.disabled}
 				required={props.required}
 				defaultValue={props.defaultValue}
-				value={state._value}
+				value={props.value}
 				aria-invalid={props.invalid}
 				maxLength={props.maxLength}
 				minLength={props.minLength}

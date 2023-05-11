@@ -27,9 +27,6 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 		initialized: false,
 		_id: DEFAULT_ID,
 		_isValid: undefined,
-		_value: '',
-		_checked: false,
-		_indeterminate: false,
 
 		handleChange: (event: any) => {
 			if (props.onChange) {
@@ -40,15 +37,15 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.change(event);
 			}
 
-			state._checked = event.target?.checked;
-			state._indeterminate = event.target?.indeterminate;
-
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;
 				if (props.validityChange) {
 					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
+
+			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
+			// VUE:this.$emit("update:checked", event.target.checked);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -76,10 +73,6 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	onMount(() => {
 		state.initialized = true;
 		state._id = props.id ? props.id : 'checkbox-' + uuid();
-
-		if (props.value) {
-			state._value = props.value;
-		}
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
@@ -122,7 +115,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				name={props.name}
 				checked={props.checked}
 				disabled={props.disabled}
-				value={state._value}
+				value={props.value}
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
