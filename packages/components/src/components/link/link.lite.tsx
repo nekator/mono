@@ -29,8 +29,8 @@ useMetadata({
 					}
 				]
 			}
+			// jscpd:ignore-end
 		]
-		// jscpd:ignore-end
 	}
 });
 
