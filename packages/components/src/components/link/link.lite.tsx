@@ -6,7 +6,31 @@ useMetadata({
 	isAttachedToShadowDom: false,
 	component: {
 		includeIcon: false,
-		properties: []
+		properties: [
+			// jscpd:ignore-start
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'href', type: 'SingleLine.URL' },
+			{ name: 'title', type: 'SingleLine.Text' },
+			{
+				name: 'variant',
+				type: 'Enum',
+				values: [
+					{ key: 'Primary', name: 'Primary', value: 'primary' },
+					{ key: 'Outlined', name: 'Outlined', value: 'outlined' },
+					{
+						key: 'Text',
+						name: 'Text',
+						value: 'text'
+					},
+					{
+						key: 'Solid',
+						name: 'Solid',
+						value: 'solid'
+					}
+				]
+			}
+		]
+		// jscpd:ignore-end
 	}
 });
 
