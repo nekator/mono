@@ -64,14 +64,13 @@ export default function DBTag(props: DBTagProps) {
 		},
 		getRemoveButtonText: () => {
 			if (props.removeButton) {
-				if (typeof props.removeButton === 'string') {
-					return props.removeButton;
-				}
-
-				return DEFAULT_VALUES.removeButtonText;
+				return props.removeButton;
 			}
 
-			return '';
+			return DEFAULT_VALUES.removeButtonText;
+		},
+		isInteractive: () => {
+			return props.behaviour.includes('interactive');
 		}
 	});
 
@@ -100,7 +99,7 @@ export default function DBTag(props: DBTagProps) {
 			ref={component}
 			class={state.getClassNames('db-tag', props.className)}
 			tabIndex={state.getTabIndex()}
-			data-interactive={props.interactive}
+			data-interactive={state.isInteractive()}
 			data-disabled={props.disabled}
 			data-variant={props.variant}
 			data-strong={props.strong}>
@@ -108,13 +107,20 @@ export default function DBTag(props: DBTagProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 
-			<Show when={props.interactive}>
+			<Show when={state.isInteractive()}>
 				<input
 					id={state._id}
-					type="checkbox"
+					type={
+						props.behaviour === 'interactive-unique'
+							? 'radio'
+							: 'checkbox'
+					}
 					checked={props.checked}
+					name={props.name}
 					value={props.value}
 					disabled={props.disabled}
+					required={props.required}
+					aria-invalid={props.invalid}
 					onChange={(event) => state.handleChange(event)}
 				/>
 			</Show>
@@ -123,13 +129,13 @@ export default function DBTag(props: DBTagProps) {
 					'is-icon-text-replace':
 						state.iconVisible(props.icon) && props.noText
 				})}
-				htmlFor={props.interactive ? state._id : undefined}
+				htmlFor={state.isInteractive() ? state._id : undefined}
 				data-icon={props.icon}
 				data-overflow={props.overflow}>
 				{props.children}
 			</label>
 
-			<Show when={props.removeButton}>
+			<Show when={props.behaviour === 'removable'}>
 				<DBButton
 					onClick={() => state.handleRemove()}
 					icon="close"

@@ -20,20 +20,20 @@
 			{
 				"name": "Inactive (Default)",
 				"props": {
-					"interactive": true
+					"behaviour": "interactive"
 				}
 			},
 			{
 				"name": "Checked",
 				"props": {
-					"interactive": true,
+					"behaviour": "interactive",
 					"checked": true
 				}
 			},
 			{
 				"name": "Inactive Disabled",
 				"props": {
-					"interactive": true,
+					"behaviour": "interactive",
 					"checked": true,
 					"disabled": true
 				}
@@ -41,7 +41,7 @@
 			{
 				"name": "Checked Disabled",
 				"props": {
-					"interactive": true,
+					"behaviour": "interactive",
 					"checked": true,
 					"disabled": true
 				}
@@ -153,14 +153,14 @@
 			{
 				"name": "Text & Removeable",
 				"props": {
-					"removeButton": true
+					"behaviour": "removable"
 				}
 			},
 			{
 				"name": "Icon & Text & Removeable",
 				"props": {
 					"icon": "account",
-					"removeButton": true
+					"behaviour": "removable"
 				}
 			}
 		]

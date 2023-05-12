@@ -15,9 +15,14 @@ import {
 
 export interface DBTagDefaultProps {
 	/**
-	 * The interactive attribute changes the tag from a span to a checkbox.
+	 *	Defines the behaviour of the component:
+	 *	- static: default behaviour only label
+	 *  - interactive: use the tag like a checkbox
+	 *  - interactive-unique: use the tag like a radio
+	 *  - removable: add a remove button at the end of the tag
 	 */
-	interactive?: boolean;
+	behaviour?: 'static' | 'interactive-unique' | 'interactive' | 'removable';
+
 	/**
 	 * Define the text next to the icon specified via the icon Property to get hidden.
 	 */
@@ -33,7 +38,7 @@ export interface DBTagDefaultProps {
 	/**
 	 * The removeButton attribute shows the cancel button.
 	 */
-	removeButton?: boolean | string;
+	removeButton?: string;
 	/**
 	 * The strong attribute changes the font-size of the label to bold.
 	 */
@@ -56,6 +61,7 @@ export interface DBTagDefaultState {
 	getRemoveButtonText?: () => string;
 	getTabIndex?: () => number | null;
 	handleRemove?: () => void;
+	isInteractive?: () => boolean;
 }
 
 export type DBTagState = DBTagDefaultState &
