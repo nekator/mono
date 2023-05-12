@@ -69,7 +69,7 @@ const logAll = () => {
 								"
 								@Change="changeTags(tag)"
 								:strong="index === 2"
-								:interactive="true"
+								behaviour="interactive"
 								>Tag {{ tag }}</DBTag
 							>
 						</li>

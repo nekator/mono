@@ -59,7 +59,7 @@ const FormComponent = () => {
 												: 'successful'
 										}
 										strong={index === 2}
-										interactive
+										behaviour="interactive"
 										onChange={() => {
 											if (tags.includes(tag)) {
 												setTags(

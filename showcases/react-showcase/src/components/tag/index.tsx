@@ -12,7 +12,7 @@ const getTag = ({
 	overflow,
 	checked,
 	noText,
-	interactive,
+	behaviour,
 	strong,
 	label,
 	removeButton
@@ -22,7 +22,7 @@ const getTag = ({
 		disabled={disabled}
 		icon={icon}
 		noText={noText}
-		interactive={interactive}
+		behaviour={behaviour}
 		strong={strong}
 		checked={checked}
 		label={label}

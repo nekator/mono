@@ -70,7 +70,11 @@ export default function DBTag(props: DBTagProps) {
 			return DEFAULT_VALUES.removeButtonText;
 		},
 		isInteractive: () => {
-			return props.behaviour.includes('interactive');
+			if (props.behaviour) {
+				return props.behaviour.includes('interactive');
+			}
+
+			return false;
 		}
 	});
 

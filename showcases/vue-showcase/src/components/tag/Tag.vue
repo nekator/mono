@@ -19,7 +19,7 @@ const showAlert = (exampleName: string) => {
 				:disabled="exampleProps.disabled"
 				:icon="exampleProps.icon"
 				:noText="exampleProps.noText"
-				:interactive="exampleProps.interactive"
+				:behaviour="exampleProps.behaviour"
 				:strong="exampleProps.strong"
 				:checked="exampleProps.checked"
 				:label="exampleProps.label"

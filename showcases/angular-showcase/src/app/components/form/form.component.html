@@ -32,7 +32,7 @@
 							[variant]="i === 0 ? undefined : 'successful'"
 							(onChange)="changeTags(tag)"
 							[strong]="i === 2"
-							[interactive]="true"
+							behaviour="interactive"
 							>{{ getTagName(tag) }}</db-tag
 						>
 					</li>
