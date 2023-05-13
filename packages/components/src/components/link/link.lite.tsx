@@ -15,17 +15,12 @@ useMetadata({
 				name: 'variant',
 				type: 'Enum',
 				values: [
-					{ key: 'Primary', name: 'Primary', value: 'primary' },
-					{ key: 'Outlined', name: 'Outlined', value: 'outlined' },
+					{ key: 'Adaptive', name: 'Adaptive', value: 'adaptive' },
+					{ key: 'Primary', name: 'primary', value: 'primary' },
 					{
-						key: 'Text',
-						name: 'Text',
-						value: 'text'
-					},
-					{
-						key: 'Solid',
-						name: 'Solid',
-						value: 'solid'
+						key: 'Inline',
+						name: 'Inline',
+						value: 'inline'
 					}
 				]
 			}
