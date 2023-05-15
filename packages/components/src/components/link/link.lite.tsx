@@ -5,7 +5,8 @@ import classNames from 'classnames';
 useMetadata({
 	isAttachedToShadowDom: false,
 	component: {
-		includeIcon: false,
+		// MS Power Apps
+		includeIcon: true,
 		properties: [
 			// jscpd:ignore-start
 			{ name: 'children', type: 'SingleLine.Text' },
