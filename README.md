@@ -86,7 +86,7 @@ Here is an overview of all components you can use:
 | [Radio](packages/components/src/components/radio)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
 | Rating                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
 | Section                                                 | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| [Select](packages/components/src/components/select)     | 03 - Data-Input   |     ✅      |   ✅    |    ❌    |        ✅        |
+| [Select](packages/components/src/components/select)     | 03 - Data-Input   |     ✅      |   ✅    |    ✅    |        ✅        |
 | Skeleton                                                | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
 | Slider                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
 | Spinner                                                 | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
