@@ -1,3 +1,5 @@
+import Select from '../components/select/Select.vue';
+
 import Form from '../components/form/Form.vue';
 import Button from '../components/button/Button.vue';
 import Input from '../components/input/Input.vue';
@@ -14,6 +16,7 @@ import Drawer from '../components/drawer/Drawer.vue';
 export const navigationItems: any[] = [
 	{ path: '/', label: 'Home', component: Form },
 	{ path: '/divider', label: 'Divider', component: Divider },
+	{ path: '/select', label: 'Select', component: Select },
 	{ path: '/radio', label: 'Radio', component: Radio },
 	{ path: '/checkbox', label: 'Checkbox', component: Checkbox },
 	{ path: '/alert', label: 'Alert', component: Alert },

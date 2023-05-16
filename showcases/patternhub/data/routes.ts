@@ -60,6 +60,10 @@ const componentChildren = [
 			{
 				label: 'DBCheckbox',
 				name: 'checkbox'
+			},
+			{
+				label: 'DBSelect',
+				name: 'select'
 			}
 		]
 	},

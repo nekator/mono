@@ -16,3 +16,4 @@ export * from './components/checkbox';
 export * from './components/drawer';
 export * from './components/radio';
 export * from './components/code-docs';
+export * from './components/select';
