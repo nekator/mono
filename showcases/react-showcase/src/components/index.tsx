@@ -11,7 +11,8 @@ const VariantList = ({ examples }: DefaultComponentVariants) => (
 			{examples.map((example, exampleIndex) => (
 				<div
 					key={`${example.name}-${exampleIndex}`}
-					style={example.style}>
+					style={example.style}
+					className={example.className}>
 					{example.example}
 				</div>
 			))}

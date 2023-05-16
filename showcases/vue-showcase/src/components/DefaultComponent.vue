@@ -89,6 +89,7 @@ const getCodeSnippets = (examples: DefaultExample[]) => {
 			<div
 				v-for="(example, exampleIndex) in variantRef.examples"
 				:style="example.style"
+				:class="example.className"
 			>
 				<slot
 					name="example"
@@ -120,6 +121,7 @@ const getCodeSnippets = (examples: DefaultExample[]) => {
 					<div
 						v-for="(example, exampleIndex) in variant.examples"
 						:style="example.style"
+						:class="example.className"
 					>
 						<slot
 							name="example"
