@@ -17,6 +17,7 @@ import {
 	DBAlertModule,
 	DBSectionModule,
 	DBInfotextModule,
+	DBSelectModule,
 	DBDrawerModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
@@ -34,9 +35,12 @@ import { CardComponent } from './components/card/card.component';
 import { DividerComponent } from './components/divider/divider.component';
 import { DefaultComponent } from './components/default.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
 	declarations: [
+		SelectComponent,
+
 		AppComponent,
 		DefaultComponent,
 		FormComponent,
@@ -53,6 +57,8 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 		DrawerComponent
 	],
 	imports: [
+		DBSelectModule,
+
 		AppRoutingModule,
 		BrowserModule,
 		DBButtonModule,

@@ -17,6 +17,10 @@
  */
 const getComponents = () => [
 	{
+		name: 'select'
+	},
+
+	{
 		name: 'drawer',
 		overwrites: {
 			react: [
