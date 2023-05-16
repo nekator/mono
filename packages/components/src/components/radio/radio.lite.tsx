@@ -27,7 +27,6 @@ export default function DBRadio(props: DBRadioProps) {
 	const state = useStore<DBRadioState>({
 		initialized: false,
 		_id: DEFAULT_ID,
-		_checked: false,
 		_isValid: undefined,
 
 		handleChange: (event: any) => {
@@ -38,8 +37,6 @@ export default function DBRadio(props: DBRadioProps) {
 			if (props.change) {
 				props.change(event);
 			}
-
-			state._checked = event.target?.checked;
 
 			if (event.target?.validity?.valid != state._isValid) {
 				state._isValid = event.target?.validity?.valid;
