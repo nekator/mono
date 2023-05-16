@@ -3,12 +3,16 @@ import {
 	DBButton,
 	DBInput,
 	DBRadio,
+	DBCheckbox,
+	DBSelect,
 	DBTag
 } from "../../../../../output/vue/vue3/src";
 
 import { ref } from "vue";
 const input = ref("");
 const radio = ref("");
+const checkbox = ref("");
+const select = ref("");
 const tags = ref<string[]>([]);
 
 const array = ["X", "Y", "Z"];
@@ -29,6 +33,8 @@ const logAll = () => {
 		JSON.stringify({
 			input: input.value,
 			radio: radio.value,
+			select: select.value,
+			checkbox: checkbox.checked,
 			tags: tags.value
 		})
 	);
@@ -74,6 +80,21 @@ const logAll = () => {
 							>
 						</li>
 					</ul>
+					<p>Checkbox:</p>
+					<DBCheckbox
+						@change="checkbox = $event.target.checked"
+						name="checkbox"
+						>Checkbox</DBCheckbox
+					>
+					<p>DBSelect:</p>
+					<DBSelect
+						:value="select"
+						label="Label"
+						@change="(event) => (select = event.target.value)"
+					>
+						<option value="test1">Test1</option>
+						<option value="test2">Test2</option>
+					</DBSelect>
 					<p>Button:</p>
 					<DBButton type="button" variant="primary" @click="logAll()">
 						Hi from Showcase!
@@ -86,12 +107,12 @@ const logAll = () => {
 			<dl>
 				<dt>inputs value</dt>
 				<dd>{{ input ? input : "No Input set" }}</dd>
-			</dl>
-			<dl>
 				<dt>radio value</dt>
 				<dd>{{ radio ? radio : "No radio set" }}</dd>
-			</dl>
-			<dl>
+				<dt>checkbox value</dt>
+				<dd>{{ `checkbox ${checkbox ? "" : "un"}checked` }}</dd>
+				<dt>select value</dt>
+				<dd>{{ select ? select : "No select set" }}</dd>
 				<dt>tags value</dt>
 				<dd>{{ JSON.stringify(tags) }}</dd>
 			</dl>

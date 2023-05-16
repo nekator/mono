@@ -5,8 +5,28 @@ import classNames from 'classnames';
 useMetadata({
 	isAttachedToShadowDom: false,
 	component: {
-		includeIcon: false,
-		properties: []
+		// MS Power Apps
+		includeIcon: true,
+		properties: [
+			// jscpd:ignore-start
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'href', type: 'SingleLine.URL' },
+			{ name: 'title', type: 'SingleLine.Text' },
+			{
+				name: 'variant',
+				type: 'Enum',
+				values: [
+					{ key: 'Adaptive', name: 'Adaptive', value: 'adaptive' },
+					{ key: 'Primary', name: 'primary', value: 'primary' },
+					{
+						key: 'Inline',
+						name: 'Inline',
+						value: 'inline'
+					}
+				]
+			}
+			// jscpd:ignore-end
+		]
 	}
 });
 
@@ -53,6 +73,9 @@ export default function DBLink(props: DBLinkProps) {
 			onClick={(event) => state.handleClick(event)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
+			</Show>
+			<Show when={props.text}>
+				<span>{props.text}</span>
 			</Show>
 			{props.children}
 		</a>

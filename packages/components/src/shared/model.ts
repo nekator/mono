@@ -116,7 +116,7 @@ export type FormProps = {
 
 export type FormCheckProps = {
 	/**
-	 * Define the radio/checkbox/tag elements checked state
+	 * Define the radio or checkbox elements checked state
 	 */
 	checked?: boolean;
 };
@@ -185,6 +185,7 @@ export type LinkProps = {
 		| 'strict-origin-when-cross-origin'
 		| 'unsafe-url';
 	selected?: boolean;
+	text?: string;
 };
 
 export type CardProps = {

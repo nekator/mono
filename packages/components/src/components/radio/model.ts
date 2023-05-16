@@ -9,8 +9,8 @@ import {
 	GlobalState,
 	FormProps,
 	FormState,
-	FormCheckState,
-	FormCheckProps
+	FormCheckProps,
+	FormCheckState
 } from '../../shared/model';
 
 export interface DBRadioDefaultProps {

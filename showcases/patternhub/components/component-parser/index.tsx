@@ -7,6 +7,9 @@ import {
 	DBLink,
 	DBAlert,
 	DBInput,
+	DBSelect,
+	DBCheckbox,
+	DBTag,
 	DBRadio,
 	DBDivider,
 	DBCard,
@@ -14,7 +17,6 @@ import {
 	DBSection,
 	DBHeader
 } from '../src';
-import DBTag from '../src/components/tag/tag';
 import { ComponentParserType, ComponentType } from './data';
 
 const validHosts = ['marketingportal.extranet.deutschebahn.com'];
@@ -150,6 +152,13 @@ const ComponentSwitch = ({
 			</DBInput>
 		);
 	}
+	if (type === 'checkbox') {
+		return (
+			<DBCheckbox className={className} {...props}>
+				{resolvedContent}
+			</DBCheckbox>
+		);
+	}
 	if (type === 'radio') {
 		return (
 			<DBRadio className={className} {...props}>
@@ -169,6 +178,14 @@ const ComponentSwitch = ({
 			<DBSection className={className} {...props}>
 				{resolvedContent}
 			</DBSection>
+		);
+	}
+
+	if (type === 'select') {
+		return (
+			<DBSelect className={className} {...props}>
+				{resolvedContent}
+			</DBSelect>
 		);
 	}
 

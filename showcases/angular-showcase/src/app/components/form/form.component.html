@@ -37,6 +37,21 @@
 						>
 					</li>
 				</ul>
+				<p>Checkbox:</p>
+				<db-checkbox
+					(change)="checkbox = $event.target.checked"
+					name="checkbox"
+					label="Checkbox"
+				></db-checkbox>
+				<p>DBSelect:</p>
+				<db-select
+					[value]="select"
+					label="Label"
+					(change)="select = $event.target.value"
+				>
+					<option value="test1">Test1</option>
+					<option value="test2">Test2</option>
+				</db-select>
 				<p>Button:</p>
 				<db-button
 					type="button"
@@ -53,12 +68,12 @@
 		<dl>
 			<dt>inputs value</dt>
 			<dd>{{ input ? input : "No Input set" }}</dd>
-		</dl>
-		<dl>
 			<dt>radio value</dt>
 			<dd>{{ radio ? radio : "No radio set" }}</dd>
-		</dl>
-		<dl>
+			<dt>checkbox value</dt>
+			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
+			<dt>select value</dt>
+			<dd>{{ select ? select : "No select set" }}</dd>
 			<dt>tags value</dt>
 			<dd>{{ getTags() }}</dd>
 		</dl>

@@ -17,6 +17,10 @@
  */
 const getComponents = () => [
 	{
+		name: 'select'
+	},
+
+	{
 		name: 'drawer',
 		overwrites: {
 			react: [
@@ -40,6 +44,26 @@ const getComponents = () => [
 	},
 	{
 		name: 'code-docs'
+	},
+
+	{
+		name: 'checkbox',
+		overwrites: {
+			vue: [
+				{
+					from: 'immediate: true,',
+					to: 'immediate: true,\nflush: "post"'
+				}
+			]
+		},
+		config: {
+			vue: {
+				vModel: [
+					{ modelValue: 'checked', binding: ':checked' },
+					{ modelValue: 'indeterminate', binding: ':indeterminate' }
+				]
+			}
+		}
 	},
 
 	{

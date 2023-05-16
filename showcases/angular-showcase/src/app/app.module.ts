@@ -11,11 +11,13 @@ import {
 	DBHeaderModule,
 	DBBrandModule,
 	DBLinkModule,
+	DBCheckboxModule,
 	DBRadioModule,
 	DBCodeDocsModule,
 	DBAlertModule,
 	DBSectionModule,
 	DBInfotextModule,
+	DBSelectModule,
 	DBDrawerModule,
 	DBTagModule
 } from '../../../../output/angular/src';
@@ -27,6 +29,7 @@ import { LinkComponent } from './components/link/link.component';
 import { InputComponent } from './components/input/input.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { RadioComponent } from './components/radio/radio.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { InfotextComponent } from './components/infotext/infotext.component';
 import { SectionComponent } from './components/section/section.component';
 import { CardComponent } from './components/card/card.component';
@@ -34,9 +37,11 @@ import { DividerComponent } from './components/divider/divider.component';
 import { DefaultComponent } from './components/default.component';
 import { TagComponent } from './components/tag/tag.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
 	declarations: [
+		SelectComponent,
 		TagComponent,
 		AppComponent,
 		DefaultComponent,
@@ -46,6 +51,7 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 		LinkComponent,
 		AlertComponent,
 		RadioComponent,
+		CheckboxComponent,
 		InfotextComponent,
 		SectionComponent,
 		CardComponent,
@@ -54,6 +60,7 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 	],
 	imports: [
 		DBTagModule,
+		DBSelectModule,
 		AppRoutingModule,
 		BrowserModule,
 		DBButtonModule,
@@ -70,6 +77,7 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 		DBSectionModule,
 		DBInfotextModule,
 		FormsModule,
+		DBCheckboxModule,
 		DBRadioModule,
 		DBDrawerModule
 	],
