@@ -44,7 +44,7 @@ export interface DBTagDefaultProps {
 	 */
 	strong?: boolean;
 	/**
-	 * If "interactive" is set to true, you can pass a value to the checkbox input.
+	 * If "interactive" is set to true, you can pass a value to the underlying checkbox or radio input.
 	 */
 	value?: string;
 }
