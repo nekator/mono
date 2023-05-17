@@ -13,19 +13,19 @@
 
 ### sizes
 
-| Before  | Status |  After   | Description                                                                             |
-| ------- | :----: | :------: | --------------------------------------------------------------------------------------- |
-| `small` |   🔁   | `strong` | We removed small tags because of tonality. But you can use `strong` to highlight a tag. |
+| Before  | Status | After | Description                                                                             |
+| ------- | :----: | :---: | --------------------------------------------------------------------------------------- |
+| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `strong` to highlight a tag. |
 
 ### variants
 
-| Before        | Status | After           | Description                                     |
-| ------------- | :----: | --------------- | ----------------------------------------------- |
-| `poi-*`       |   ❌   | ❌              | We removed all point of intrest colors for now. |
-| `track`       |   ❌   | ❌              | We removed track for now.                       |
-| `error`       |   🔁   | `critical`      |                                                 |
-| `informative` |   🔁   | `informational` |                                                 |
-| `success`     |   🔁   | `successful`    |                                                 |
+| Before        | Status | After           | Description                                      |
+| ------------- | :----: | --------------- | ------------------------------------------------ |
+| `poi-*`       |   ❌   | ❌              | We removed all point of interest colors for now. |
+| `track`       |   ❌   | ❌              | We removed track for now.                        |
+| `error`       |   🔁   | `critical`      |                                                  |
+| `informative` |   🔁   | `informational` |                                                  |
+| `success`     |   🔁   | `successful`    |                                                  |
 
 ### icons
 
