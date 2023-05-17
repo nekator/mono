@@ -111,7 +111,19 @@ export default function DBTag(props: DBTagProps) {
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 
-			<Show when={state.isInteractive()}>
+			<Show
+				when={state.isInteractive()}
+				else={
+					<span
+						class={state.getClassNames('tag-label', {
+							'is-icon-text-replace':
+								state.iconVisible(props.icon) && props.noText
+						})}
+						data-icon={props.icon}
+						data-overflow={props.overflow}>
+						{props.children}
+					</span>
+				}>
 				<input
 					id={state._id}
 					type={
@@ -127,17 +139,17 @@ export default function DBTag(props: DBTagProps) {
 					aria-invalid={props.invalid}
 					onChange={(event) => state.handleChange(event)}
 				/>
+				<label
+					class={state.getClassNames('tag-label', {
+						'is-icon-text-replace':
+							state.iconVisible(props.icon) && props.noText
+					})}
+					htmlFor={state.isInteractive() ? state._id : undefined}
+					data-icon={props.icon}
+					data-overflow={props.overflow}>
+					{props.children}
+				</label>
 			</Show>
-			<label
-				class={state.getClassNames('tag-label', {
-					'is-icon-text-replace':
-						state.iconVisible(props.icon) && props.noText
-				})}
-				htmlFor={state.isInteractive() ? state._id : undefined}
-				data-icon={props.icon}
-				data-overflow={props.overflow}>
-				{props.children}
-			</label>
 
 			<Show when={props.behaviour === 'removable'}>
 				<DBButton
