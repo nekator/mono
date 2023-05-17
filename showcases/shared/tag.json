@@ -115,8 +115,16 @@
 				}
 			},
 			{
-				"name": "Interactive-unique",
+				"name": "Interactive-unique 01",
 				"props": {
+					"name": "interactive-unique",
+					"behaviour": "interactive-unique"
+				}
+			},
+			{
+				"name": "Interactive-unique 02",
+				"props": {
+					"name": "interactive-unique",
 					"behaviour": "interactive-unique"
 				}
 			},
