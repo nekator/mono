@@ -128,7 +128,6 @@ export type FormState = {
 
 export type FormCheckState = {
 	initialized: boolean;
-	_checked: boolean;
 };
 
 export type GlobalTextProps = {
