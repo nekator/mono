@@ -21,11 +21,7 @@ export default function DBIcon(props: DBIconProps) {
 	// This is used as forwardRef
 	let component: any;
 	// jscpd:ignore-start
-	const state = useStore<DBIconState>({
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		}
-	});
+	const state = useStore<DBIconState>({});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -37,7 +33,7 @@ export default function DBIcon(props: DBIconProps) {
 	return (
 		<span
 			ref={component}
-			class={state.getClassNames('db-icon', props.className, {
+			class={classNames('db-icon', props.className, {
 				'is-icon-text-replace': props.withText
 			})}
 			data-icon={props.icon}

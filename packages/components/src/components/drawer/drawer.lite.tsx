@@ -61,9 +61,6 @@ export default function DBDrawer(props: DBDrawerProps) {
 					}, 401);
 				}
 			}
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 

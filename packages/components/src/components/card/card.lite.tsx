@@ -37,9 +37,6 @@ export default function DBCard(props: DBCardProps) {
 			if (props.onClick) {
 				props.onClick(event);
 			}
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -53,7 +50,7 @@ export default function DBCard(props: DBCardProps) {
 	return (
 		<div
 			ref={component}
-			class={state.getClassNames('db-card', props.className)}
+			class={classNames('db-card', props.className)}
 			data-variant={props.variant}
 			data-color-variant={props.colorVariant}
 			data-elevation={props.elevation}

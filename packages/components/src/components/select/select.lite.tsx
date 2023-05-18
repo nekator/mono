@@ -72,9 +72,6 @@ export default function DBSelect(props: DBSelectProps) {
 		getIcon: (variant?: DefaultVariantType) => {
 			return variant ? DefaultVariantsIcon[variant] : '';
 		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		},
 		getOptionLabel: (option: DBSelectOptionType) => {
 			return option.label ?? option.value.toString();
 		}
@@ -96,7 +93,7 @@ export default function DBSelect(props: DBSelectProps) {
 	return (
 		<>
 			<div
-				class={state.getClassNames('db-select', props.className)}
+				class={classNames('db-select', props.className)}
 				data-variant={props.variant}
 				data-icon={props.icon}>
 				<Show when={state.stylePath}>

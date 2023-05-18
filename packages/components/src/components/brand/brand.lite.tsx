@@ -20,11 +20,7 @@ export default function DBBrand(props: DBBrandProps) {
 	// This is used as forwardRef
 	let component: any;
 	// jscpd:ignore-start
-	const state = useStore<DBBrandState>({
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		}
-	});
+	const state = useStore<DBBrandState>({});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -34,9 +30,7 @@ export default function DBBrand(props: DBBrandProps) {
 	// jscpd:ignore-end
 
 	return (
-		<div
-			ref={component}
-			class={state.getClassNames('db-brand', props.className)}>
+		<div ref={component} class={classNames('db-brand', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

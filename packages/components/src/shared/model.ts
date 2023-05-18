@@ -41,7 +41,6 @@ export type GlobalProps = {
 export type GlobalState = {
 	_id?: string;
 	stylePath?: string;
-	getClassNames: (...args: classNames.ArgumentArray) => string;
 };
 
 export type DefaultVariantType =

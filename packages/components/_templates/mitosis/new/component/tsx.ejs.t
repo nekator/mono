@@ -19,9 +19,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
   let component: any;
   // jscpd:ignore-start
   const state = useStore<DB<%= h.changeCase.pascal(name) %>State>({
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		}
+
   });
 
   onMount(() => {
@@ -32,7 +30,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
   // jscpd:ignore-end
 
   return (
-    <div ref={component} class={state.getClassNames('db-<%= name %>', props.className)}>
+    <div ref={component} class={classNames('db-<%= name %>', props.className)}>
       <Show when={state.stylePath}>
         <link rel="stylesheet" href={state.stylePath} />
       </Show>

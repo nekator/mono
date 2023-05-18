@@ -65,9 +65,6 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -111,7 +108,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			<input
 				ref={component}
 				type="checkbox"
-				class={state.getClassNames('db-checkbox', props.className)}
+				class={classNames('db-checkbox', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}

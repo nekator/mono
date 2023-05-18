@@ -53,9 +53,6 @@ export default function DBAlert(props: DBAlertProps) {
 		},
 		iconVisible: (icon?: string) => {
 			return Boolean(icon && icon !== '_' && icon !== 'none');
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -69,7 +66,7 @@ export default function DBAlert(props: DBAlertProps) {
 	return (
 		<div
 			ref={component}
-			class={state.getClassNames('db-alert', props.className)}
+			class={classNames('db-alert', props.className)}
 			aria-live={props.ariaLive}
 			data-variant={props.variant}
 			data-type={props.type}

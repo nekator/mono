@@ -36,10 +36,7 @@ export default function DBTab(props: DBTabProps) {
 	const formRef = useRef<HTMLInputElement>(null);
 	// jscpd:ignore-start
 	const state = useStore<DBTabState>({
-		mId: DEFAULT_ID,
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		}
+		mId: DEFAULT_ID
 	});
 
 	onMount(() => {
@@ -55,9 +52,7 @@ export default function DBTab(props: DBTabProps) {
 	// jscpd:ignore-end
 
 	return (
-		<div
-			ref={component}
-			class={state.getClassNames('db-tab', props.className)}>
+		<div ref={component} class={classNames('db-tab', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

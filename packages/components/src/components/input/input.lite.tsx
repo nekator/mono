@@ -95,9 +95,6 @@ export default function DBInput(props: DBInputProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -115,7 +112,7 @@ export default function DBInput(props: DBInputProps) {
 
 	return (
 		<div
-			class={state.getClassNames('db-input', props.className)}
+			class={classNames('db-input', props.className)}
 			data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

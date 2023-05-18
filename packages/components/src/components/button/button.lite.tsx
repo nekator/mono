@@ -59,9 +59,6 @@ export default function DBButton(props: DBButtonProps) {
 		},
 		iconVisible: (icon?: string) => {
 			return Boolean(icon && icon !== '_' && icon !== 'none');
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -76,7 +73,7 @@ export default function DBButton(props: DBButtonProps) {
 		<button
 			id={props.id}
 			ref={component}
-			class={state.getClassNames('db-button', props.className, {
+			class={classNames('db-button', props.className, {
 				'is-icon-text-replace':
 					state.iconVisible(props.icon) && props.noText
 			})}
