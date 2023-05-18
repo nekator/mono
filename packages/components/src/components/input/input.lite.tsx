@@ -8,7 +8,7 @@ import {
 	DefaultVariantsIcon,
 	KeyValueType
 } from '../../shared/model';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -112,7 +112,7 @@ export default function DBInput(props: DBInputProps) {
 
 	return (
 		<div
-			class={classNames('db-input', props.className)}
+			class={clsx('db-input', props.className)}
 			data-variant={props.variant}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

@@ -8,7 +8,7 @@ import {
 import { DBCheckboxProps, DBCheckboxState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -108,7 +108,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			<input
 				ref={component}
 				type="checkbox"
-				class={classNames('db-checkbox', props.className)}
+				class={clsx('db-checkbox', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}

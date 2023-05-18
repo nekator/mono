@@ -1,6 +1,6 @@
 import { For, onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBSelectState, DBSelectProps, DBSelectOptionType } from './model';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
 import { uuid } from '../../utils';
 import { DBIcon } from '../icon';
@@ -93,7 +93,7 @@ export default function DBSelect(props: DBSelectProps) {
 	return (
 		<>
 			<div
-				class={classNames('db-select', props.className)}
+				class={clsx('db-select', props.className)}
 				data-variant={props.variant}
 				data-icon={props.icon}>
 				<Show when={state.stylePath}>

@@ -10,7 +10,7 @@ import {
 import { DBDrawerState, DBDrawerProps } from './model';
 import { DBButton } from '../button';
 import { DEFAULT_CLOSE_BUTTON, DEFAULT_ID } from '../../shared/constants';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { uuid } from '../../utils';
 
 useMetadata({
@@ -90,10 +90,7 @@ export default function DBDrawer(props: DBDrawerProps) {
 			</Show>
 			<article
 				ref={dialogContainerRef}
-				class={
-					'db-drawer-container' +
-					(props.className ? ' ' + props.className : '')
-				}
+				class={clsx('db-drawer-container', props.className)}
 				data-spacing={props.spacing}
 				data-width={props.width}
 				data-direction={props.direction}

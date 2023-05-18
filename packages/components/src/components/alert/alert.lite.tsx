@@ -10,7 +10,7 @@ import { DBIcon } from '../icon';
 import { DefaultVariantsIcon } from '../../shared/model';
 import { DBButton } from '../button';
 import { DBLink } from '../link';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { DEFAULT_CLOSE_BUTTON } from '../../shared/constants';
 
 useMetadata({
@@ -66,7 +66,7 @@ export default function DBAlert(props: DBAlertProps) {
 	return (
 		<div
 			ref={component}
-			class={classNames('db-alert', props.className)}
+			class={clsx('db-alert', props.className)}
 			aria-live={props.ariaLive}
 			data-variant={props.variant}
 			data-type={props.type}

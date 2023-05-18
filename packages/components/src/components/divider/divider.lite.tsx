@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBDividerState, DBDividerProps } from './model';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -50,7 +50,7 @@ export default function DBDivider(props: DBDividerProps) {
 			ref={component}
 			data-margin={props.margin}
 			data-variant={props.variant}
-			class={classNames('db-divider', props.className)}>
+			class={clsx('db-divider', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
