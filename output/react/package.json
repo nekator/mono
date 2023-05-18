@@ -25,7 +25,7 @@
     "tsc": "tsc -p . --sourceMap false"
   },
   "dependencies": {
-    "classnames": "^2.3.2"
+    "clsx": "^1.2.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.6.1",
