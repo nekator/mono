@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { IconTypes } from './icon-types';
 
 export type GlobalProps = {
