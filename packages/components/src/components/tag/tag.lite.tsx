@@ -102,7 +102,8 @@ export default function DBTag(props: DBTagProps) {
 		<div
 			ref={component}
 			class={state.getClassNames('db-tag', props.className)}
-			tabIndex={state.getTabIndex()}
+			// TODO: It's unclear whatfor we would need this – either it's interactive, than the focus would need to be on the included form element, or it's not interactive and than we wouldn't need and shouldn't set a tabindex
+			// tabIndex={state.getTabIndex()}
 			data-interactive={state.isInteractive()}
 			data-disabled={props.disabled}
 			data-variant={props.variant}
