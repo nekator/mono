@@ -26,7 +26,7 @@ useMetadata({
 			{ name: 'size',
 				type: 'Enum',
 				values: [
-					{ key: 'Regular', name: 'Regular', value: 'regular' },
+					{ key: 'Regular', name: 'Regular', value: 'undefined' },
 					{ key: 'Small', name: 'Small', value: 'small' }
 				]
 			},
