@@ -22,13 +22,6 @@ useMetadata({
 			{ name: 'name', type: 'SingleLine.Text' },
 			{ name: 'checked', type: 'TwoOptions' },
 			{ name: 'disabled', type: 'TwoOptions' },
-			{ name: 'size',
-				type: 'Enum',
-				values: [
-					{ key: 'Regular', name: 'Regular', value: 'regular' },
-					{ key: 'Small', name: 'Small', value: 'small' }
-				]
-			},
 			{ name: 'id', type: 'SingleLine.Text' }
 			// jscpd:ignore-end
 		]
