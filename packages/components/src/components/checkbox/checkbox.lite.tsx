@@ -23,13 +23,6 @@ useMetadata({
 			{ name: 'checked', type: 'TwoOptions' },
 			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
 			{ name: 'disabled', type: 'TwoOptions' },
-			{ name: 'size',
-				type: 'Enum',
-				values: [
-					{ key: 'Regular', name: 'Regular', value: 'undefined' },
-					{ key: 'Small', name: 'Small', value: 'small' }
-				]
-			},
 			{ name: 'id', type: 'SingleLine.Text' }
 			// jscpd:ignore-end
 		]
