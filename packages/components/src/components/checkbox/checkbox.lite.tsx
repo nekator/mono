@@ -14,7 +14,7 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		// MS Power Apps
-		includeIcon: false,
+		includeIcon: true,
 		hasDisabledProp: true,
 		properties: [
 			// jscpd:ignore-start
