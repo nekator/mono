@@ -20,8 +20,8 @@ useMetadata({
 			// jscpd:ignore-start
 			{ name: 'children', type: 'SingleLine.Text' },
 			{ name: 'name', type: 'SingleLine.Text' },
-			{ name: 'checked', type: 'TwoOptions' },
-			{ name: 'disabled', type: 'TwoOptions' },
+			// { name: 'checked', type: 'TwoOptions' },
+			// { name: 'disabled', type: 'TwoOptions' },
 			{ name: 'id', type: 'SingleLine.Text' }
 			// jscpd:ignore-end
 		]
