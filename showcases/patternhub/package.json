@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@code-hike/mdx": "^0.8.3",
-    "@db-ui/react-elements": "^0.24.0",
+    "@db-ui/react-elements": "^0.24.1",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
