@@ -28,6 +28,11 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	// TODO: Extract those transition durations as variables #645
 	transition: border-width 0.15s $db-transition-functional-timing;
 
+	// TODO: probably extract this to an overwrite or external file
+	// workarounds for power apps
+	width: auto;
+	padding: 0;
+
 	&:checked {
 		border-width: calc(#{$font-size-height} * 0.3);
 
