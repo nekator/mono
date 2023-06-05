@@ -32,25 +32,25 @@
 			@if ($name == "critical") {
 				@extend %db-bg-critical;
 
-				&[data-strong="true"] {
+				&[data-type="strong"] {
 					@extend %db-critical-component;
 				}
 			} @else if ($name == "informational") {
 				@extend %db-bg-informational;
 
-				&[data-strong="true"] {
+				&[data-type="strong"] {
 					@extend %db-informational-component;
 				}
 			} @else if ($name == "warning") {
 				@extend %db-bg-warning;
 
-				&[data-strong="true"] {
+				&[data-type="strong"] {
 					@extend %db-warning-component;
 				}
 			} @else if ($name == "successful") {
 				@extend %db-bg-successful;
 
-				&[data-strong="true"] {
+				&[data-type="strong"] {
 					@extend %db-successful-component;
 				}
 			}
@@ -68,7 +68,7 @@
 	&:has(input:checked) {
 		@extend %db-bg-neutral-4-ia;
 
-		&[data-strong="true"] {
+		&[data-type="strong"] {
 			@extend %db-neutral-component-ia;
 		}
 
@@ -77,25 +77,25 @@
 				@if ($name == "critical") {
 					@extend %db-bg-critical-ia;
 
-					&[data-strong="true"] {
+					&[data-type="strong"] {
 						@extend %db-critical-component-ia;
 					}
 				} @else if ($name == "informational") {
 					@extend %db-bg-informational-ia;
 
-					&[data-strong="true"] {
+					&[data-type="strong"] {
 						@extend %db-informational-component-ia;
 					}
 				} @else if ($name == "warning") {
 					@extend %db-bg-warning-ia;
 
-					&[data-strong="true"] {
+					&[data-type="strong"] {
 						@extend %db-warning-component-ia;
 					}
 				} @else if ($name == "successful") {
 					@extend %db-bg-successful-ia;
 
-					&[data-strong="true"] {
+					&[data-type="strong"] {
 						@extend %db-successful-component-ia;
 					}
 				}
