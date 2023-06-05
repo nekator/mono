@@ -8,8 +8,8 @@ For general installation and configuration look at the [components](https://www.
 <!-- index.html -->
 ...
 <body>
-	<div class="db-tag" tabindex="0">
-		<label class="tag-label">Tag</label>
+	<div class="db-tag" data-interactive="false">
+		<span class="tag-label">regular (Default)</span>
 	</div>
 </body>
 ```
