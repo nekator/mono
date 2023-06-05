@@ -163,6 +163,12 @@ $spacings: (
 		}
 	}
 
+	&[data-backdrop="false"] {
+		.db-drawer-container {
+			box-shadow: $db-elevation-4;
+		}
+	}
+
 	&[open] {
 		.db-drawer-container {
 			&:not([data-direction]),
