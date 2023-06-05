@@ -15,7 +15,7 @@
 
 | Before  | Status | After | Description                                                                             |
 | ------- | :----: | :---: | --------------------------------------------------------------------------------------- |
-| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `strong` to highlight a tag. |
+| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `strong` property to highlight a tag. |
 
 ### variants
 
