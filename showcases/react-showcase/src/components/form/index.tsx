@@ -62,7 +62,9 @@ const FormComponent = () => {
 												? undefined
 												: 'successful'
 										}
-										strong={index === 2}
+										type={
+											index === 2 ? 'strong' : undefined
+										}
 										behaviour="interactive"
 										onChange={() => {
 											if (tags.includes(tag)) {

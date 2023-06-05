@@ -13,9 +13,9 @@
 
 ### sizes
 
-| Before  | Status | After | Description                                                                             |
-| ------- | :----: | :---: | --------------------------------------------------------------------------------------- |
-| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `strong` property to highlight a tag. |
+| Before  | Status | After | Description                                                                                                        |
+| ------- | :----: | :---: | ------------------------------------------------------------------------------------------------------------------ |
+| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `type` property with value `strong` to emphasize a tag. |
 
 ### variants
 

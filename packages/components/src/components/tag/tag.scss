@@ -9,7 +9,7 @@
 @use "../../styles/button-components";
 
 @mixin get-border-and-icon($colors) {
-	&:not(&[data-strong="true"]) {
+	&:not(&[data-type="strong"]) {
 		--db-current-border-color: #{map.get($colors, "border")};
 
 		.tag-label {
@@ -23,7 +23,7 @@
 %tag-colors {
 	@extend %db-bg-neutral-4;
 
-	&[data-strong="true"] {
+	&[data-type="strong"] {
 		@extend %db-neutral-component;
 	}
 

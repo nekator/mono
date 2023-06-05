@@ -29,7 +29,7 @@
 			{
 				"name": "Strong",
 				"props": {
-					"strong": true
+					"type": "strong"
 				}
 			}
 		]
@@ -68,35 +68,35 @@
 			{
 				"name": "Neutral Strong",
 				"props": {
-					"strong": true
+					"type": "strong"
 				}
 			},
 			{
 				"name": "Critical Strong",
 				"props": {
 					"variant": "critical",
-					"strong": true
+					"type": "strong"
 				}
 			},
 			{
 				"name": "Informational Strong",
 				"props": {
 					"variant": "informational",
-					"strong": true
+					"type": "strong"
 				}
 			},
 			{
 				"name": "Successful Strong",
 				"props": {
 					"variant": "successful",
-					"strong": true
+					"type": "strong"
 				}
 			},
 			{
 				"name": "Warning Strong",
 				"props": {
 					"variant": "warning",
-					"strong": true
+					"type": "strong"
 				}
 			}
 		]

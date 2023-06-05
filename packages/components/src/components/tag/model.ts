@@ -40,9 +40,9 @@ export interface DBTagDefaultProps {
 	 */
 	removeButton?: string;
 	/**
-	 * The strong attribute changes the font-size of the label to bold.
+	 * The type attribute divides in between a weak or strong importance.
 	 */
-	strong?: boolean;
+	type?: 'weak' | 'strong';
 	/**
 	 * If "interactive" is set to true, you can pass a value to the underlying checkbox or radio input.
 	 */

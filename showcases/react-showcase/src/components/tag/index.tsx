@@ -13,7 +13,7 @@ const getTag = ({
 	checked,
 	noText,
 	behaviour,
-	strong,
+	type,
 	label,
 	removeButton
 }: DBTagProps) => (
@@ -23,7 +23,7 @@ const getTag = ({
 		icon={icon}
 		noText={noText}
 		behaviour={behaviour}
-		strong={strong}
+		type={type}
 		checked={checked}
 		label={label}
 		overflow={overflow}

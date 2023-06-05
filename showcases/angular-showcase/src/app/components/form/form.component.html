@@ -31,7 +31,7 @@
 						<db-tag
 							[variant]="i === 0 ? undefined : 'successful'"
 							(onChange)="changeTags(tag)"
-							[strong]="i === 2"
+							[type]="i === 2 ? 'strong' : ''"
 							behaviour="interactive"
 							>{{ getTagName(tag) }}</db-tag
 						>
