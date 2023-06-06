@@ -56,6 +56,9 @@ const getComponents = () => [
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
+			},
+			angular: {
+				//controlValueAccessor: true
 			}
 		}
 	},
@@ -73,6 +76,10 @@ const getComponents = () => [
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
+			},
+			angular: {
+				// TODO update with checked
+				//controlValueAccessor: true
 			}
 		}
 	},
@@ -111,6 +118,9 @@ const getComponents = () => [
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'value', binding: ':value' }]
+			},
+			angular: {
+				controlValueAccessor: true
 			}
 		}
 	},

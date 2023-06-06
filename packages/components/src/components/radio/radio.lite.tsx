@@ -129,3 +129,10 @@ export default function DBRadio(props: DBRadioProps) {
 		</>
 	);
 }
+
+/**
+ *  writeValue(value: any) {
+	console.log("radio comp write value", value)
+	   if(value === this.value) this.checked = true;
+	}
+ */

@@ -9,9 +9,10 @@ import {
 
 import { ref } from "vue";
 const input = ref("");
-const radio = ref("");
-const checkbox = ref("");
 const select = ref("");
+const firstInput = ref("");
+const radio = ref<HTMLInputElement>();
+const checkbox = ref<HTMLInputElement>();
 
 const radioNames = ["X", "Y", "Z"];
 
@@ -21,12 +22,17 @@ const dataList = [{ key: "test", value: "Test" }, { key: "test2" }];
 const logAll = () => {
 	alert(
 		JSON.stringify({
-			input: input.value,
+			input: firstInput.value,
 			radio: radio.value,
 			select: select.value,
 			checkbox: checkbox.checked
 		})
 	);
+};
+
+const reset = () => {
+	firstInput.value = "resetted";
+	checkbox.value = false;
 };
 </script>
 
@@ -44,7 +50,7 @@ const logAll = () => {
 						name="input-name"
 						class="fullWidth"
 						:dataList="dataList"
-						v-model:value="input"
+						v-model:value="firstInput"
 					/>
 					<p>Radio:</p>
 					<ul>
@@ -72,6 +78,9 @@ const logAll = () => {
 						<option value="test2">Test2</option>
 					</DBSelect>
 					<p>Button:</p>
+					<DBButton type="button" @click="reset()">
+						Reset Form
+					</DBButton>
 					<DBButton type="button" variant="primary" @click="logAll()">
 						Hi from Showcase!
 					</DBButton>
@@ -82,7 +91,7 @@ const logAll = () => {
 			<h2>Output</h2>
 			<dl>
 				<dt>inputs value</dt>
-				<dd>{{ input ? input : "No Input set" }}</dd>
+				<dd>{{ firstInput ? firstInput : "No Input set" }}</dd>
 				<dt>radio value</dt>
 				<dd>{{ radio ? radio : "No radio set" }}</dd>
 				<dt>checkbox value</dt>

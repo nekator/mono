@@ -1,33 +1,46 @@
 <div class="form-container">
 	<div>
-		<form>
+		<form [formGroup]="form" (submit)="onFormSubmit()">
 			<fieldset>
 				<p>Input:</p>
+				<!-- OR [(ngModel)]="model.input" -->
 				<db-input
-					[(ngModel)]="input"
-					name="username"
+					name="form"
+					id="form"
 					label="Textinput"
+					placeholder="Placeholder"
+					description="Description"
+					icon="account"
+					formControlName="input"
+				>
+				</db-input>
+
+				<db-input
+					name="form"
+					id="datalist"
+					label="Textinput with Datalist"
 					placeholder="Placeholder"
 					description="Description"
 					[dataList]="dataList"
 					icon="account"
-					ngDefaultControl
 				>
 				</db-input>
+
 				<p>Radio:</p>
 				<ul>
 					<li *ngFor="let radioName of radioNames">
 						<db-radio
-							(change)="radio = radioName"
-							[label]="getRadioName(radioName)"
-							[value]="radioName"
+							label="Label"
 							name="RadioGroup"
+							[value]="radioName"
+							(change)="model.radio = radioName"
+							[label]="getRadioName(radioName)"
 						></db-radio>
 					</li>
 				</ul>
 				<p>Checkbox:</p>
 				<db-checkbox
-					(change)="checkbox = $event.target.checked"
+					(change)="model.checkbox = $event.target.checked"
 					name="checkbox"
 					label="Checkbox"
 				></db-checkbox>
@@ -41,11 +54,10 @@
 					<option value="test2">Test2</option>
 				</db-select>
 				<p>Button:</p>
-				<db-button
-					type="button"
-					variant="primary"
-					(click)="showValues()"
-				>
+				<db-button type="button" (click)="resetValues()">
+					Reset
+				</db-button>
+				<db-button type="submit" variant="primary">
 					Hi from Showcase!
 				</db-button>
 			</fieldset>
@@ -55,9 +67,15 @@
 		<h2>Output</h2>
 		<dl>
 			<dt>inputs value</dt>
-			<dd>{{ input ? input : "No Input set" }}</dd>
+			<dd>
+				{{
+					form.get("input")?.value
+						? form.get("input")?.value
+						: "No Input set"
+				}}
+			</dd>
 			<dt>radio value</dt>
-			<dd>{{ radio ? radio : "No radio set" }}</dd>
+			<dd>{{ model.radio ? model.radio : "No radio set" }}</dd>
 			<dt>checkbox value</dt>
 			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
 			<dt>select value</dt>
