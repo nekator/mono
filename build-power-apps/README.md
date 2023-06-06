@@ -52,7 +52,7 @@ We pass this config file to `hygen` and use the templates from `packages/compone
 ## How to test
 
 Every component has its own `package.json` and testing environment.
-For the button we need to do those steps to test:
+For the button we need to do those steps to test (after at least doing an `npm run build` previously):
 
 1. `cd build-power-apps/button`
 2. `npm i`
