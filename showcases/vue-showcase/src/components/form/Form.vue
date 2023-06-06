@@ -52,7 +52,7 @@ const logAll = () => {
 							<DBRadio
 								@change="radio = radioName"
 								name="radio-group"
-								v-model:value="radio"
+								:value="radioName"
 								>Radio {{ radioName }}</DBRadio
 							>
 						</li>
