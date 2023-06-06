@@ -6,21 +6,24 @@
 				"name": "functional",
 				"className": "db-ui-functional",
 				"props": {
-					"name": "Tonality"
+					"name": "Tonality",
+					"value": "functional"
 				}
 			},
 			{
 				"name": "regular (Default)",
 				"className": "db-ui-regular",
 				"props": {
-					"name": "Tonality"
+					"name": "Tonality",
+					"value": "regular"
 				}
 			},
 			{
 				"name": "expressive",
 				"className": "db-ui-expressive",
 				"props": {
-					"name": "Tonality"
+					"name": "Tonality",
+					"value": "expressive"
 				}
 			}
 		]
@@ -31,14 +34,16 @@
 			{
 				"name": "Default",
 				"props": {
-					"name": "States"
+					"name": "States",
+					"value": "default"
 				}
 			},
 			{
 				"name": "Disabled",
 				"props": {
 					"name": "States",
-					"disabled": true
+					"disabled": true,
+					"value": "disabled"
 				}
 			},
 			{
@@ -46,28 +51,32 @@
 				"props": {
 					"name": "SpecialState",
 					"disabled": true,
-					"checked": true
+					"checked": true,
+					"value": "disabled-checked"
 				}
 			},
 			{
 				"name": "Required",
 				"props": {
 					"name": "States",
-					"required": true
+					"required": true,
+					"value": "required"
 				}
 			},
 			{
 				"name": "Checked",
 				"props": {
 					"name": "States",
-					"checked": true
+					"checked": true,
+					"value": "checked"
 				}
 			},
 			{
 				"name": "Invalid",
 				"props": {
 					"name": "States",
-					"invalid": true
+					"invalid": true,
+					"value": "invalid"
 				}
 			}
 		]
@@ -78,14 +87,16 @@
 			{
 				"name": "Default",
 				"props": {
-					"name": "Size"
+					"name": "Size",
+					"value": "default"
 				}
 			},
 			{
 				"name": "Small",
 				"props": {
 					"name": "Size",
-					"size": "small"
+					"size": "small",
+					"value": "small"
 				}
 			}
 		]

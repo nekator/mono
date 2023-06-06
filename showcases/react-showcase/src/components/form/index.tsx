@@ -43,6 +43,7 @@ const FormComponent = () => {
 								<li key={radioName}>
 									<DBRadio
 										name="radio-group"
+										value={radioName}
 										onChange={() => {
 											setRadio(radioName);
 										}}>
