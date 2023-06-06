@@ -23,11 +23,17 @@ export class FormComponent {
 	getRadioName = (radioName: string): string => `Radio ${radioName}`;
 
 	resetValues(): void {
+		this.model.input = 'reset';
 		this.form.get('input')?.setValue('reset');
 	}
 
 	onFormSubmit(): void {
 		// eslint-disable-next-line no-alert
-		alert(JSON.stringify(this.form.value));
+		alert(
+			'Formvalue: ' +
+				JSON.stringify(this.form.value) +
+				' / Model data: ' +
+				JSON.stringify(this.model)
+		);
 	}
 }
