@@ -22,6 +22,7 @@ useMetadata({
 });
 
 const DEFAULT_VALUES = {
+	// TODO: We should think this through again, if we would really like to have default and especially english, instead of german labels in here
 	removeButtonText: 'Remove tag'
 };
 
