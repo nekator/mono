@@ -15,7 +15,7 @@
 
 | Before  | Status | After | Description                                                                                                        |
 | ------- | :----: | :---: | ------------------------------------------------------------------------------------------------------------------ |
-| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `type` property with value `strong` to emphasize a tag. |
+| `small` |   ❌   |  ❌   | We removed small tags because of tonality. But you can use `type` property with value `strong` to emphasize a tag for a differentiation. |
 
 ### variants
 
