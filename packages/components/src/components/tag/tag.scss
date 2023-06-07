@@ -128,7 +128,7 @@
 		@extend %interactive-colors;
 	}
 
-	/* TODO: most likely we need to replace this by a "visually only"-hiding CSS declaration (there's a SCSS mixin for that most likely) */
+	// TODO: most likely we need to replace this by a "visually only"-hiding CSS declaration (there's a SCSS mixin for that most likely)
 	input {
 		display: none;
 	}
@@ -152,6 +152,7 @@
 			overflow: hidden;
 		}
 
+		// TODO: Clarify whether this is necessary, as it should be defined globally already
 		&::before {
 			&[data-icon] {
 				--icon-font-family: var(--db-base-icon-font-family);
