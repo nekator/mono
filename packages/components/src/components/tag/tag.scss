@@ -7,11 +7,12 @@
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/body-styles" as *;
 @use "../../styles/button-components";
+@use "@db-ui/foundations/build/scss/helpers/functions" as *;
 
 @mixin get-border-and-icon($colors) {
 	&:not(&[data-type="strong"]) {
 		--db-current-border-color: #{map.get($colors, "border")};
-/*
+		/*
 		.tag-label {
 			::before {
 				color: map.get($colors, "element");
@@ -128,9 +129,8 @@
 		@extend %interactive-colors;
 	}
 
-	// TODO: most likely we need to replace this by a "visually only"-hiding CSS declaration (there's a SCSS mixin for that most likely)
 	input {
-		display: none;
+		@include a11y-visually-hidden();
 	}
 
 	.tag-label {
@@ -139,7 +139,7 @@
 
 		&:not(.is-icon-text-replace) {
 			margin-inline: $db-spacing-fixed-2xs;
-/*
+			/*
 			::before {
 				margin-inline-end: $db-spacing-fixed-2xs;
 			}
