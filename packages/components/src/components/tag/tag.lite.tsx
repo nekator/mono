@@ -22,7 +22,7 @@ useMetadata({
 });
 
 const DEFAULT_VALUES = {
-	removeButtonText: 'Remove Tag'
+	removeButtonText: 'Remove tag'
 };
 
 export default function DBTag(props: DBTagProps) {
