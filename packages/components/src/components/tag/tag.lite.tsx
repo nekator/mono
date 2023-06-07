@@ -56,7 +56,7 @@ export default function DBTag(props: DBTagProps) {
 				return undefined;
 			}
 
-			return props.tabIndex ?? null;
+			return props.tabIndex ?? undefined;
 		},
 		handleRemove: () => {
 			if (props.onRemove) {
