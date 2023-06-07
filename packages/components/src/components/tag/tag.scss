@@ -11,13 +11,14 @@
 @mixin get-border-and-icon($colors) {
 	&:not(&[data-type="strong"]) {
 		--db-current-border-color: #{map.get($colors, "border")};
-
+/*
 		.tag-label {
 			::before {
 				color: map.get($colors, "element");
 			}
 		}
 	}
+*/
 }
 
 %tag-colors {
