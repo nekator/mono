@@ -128,7 +128,7 @@
 		@extend %interactive-colors;
 	}
 
-	/* TODO: most likely we need to replace this by a "visually only"-hiding CSS declaration (there's a SCSS mixin for that most likely)
+	/* TODO: most likely we need to replace this by a "visually only"-hiding CSS declaration (there's a SCSS mixin for that most likely) */
 	input {
 		display: none;
 	}
