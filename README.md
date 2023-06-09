@@ -22,7 +22,8 @@ designers, and content authors build, maintain, and scale best of class digital 
 </figure>
 
 We currently don't fully support Mozilla Firefox until it adds natively support to the following CSS properties, that are expected later this year
-- [`:has`](https://caniuse.com/css-has)
+- [CSS: `:has`](https://caniuse.com/css-has)
+- [`popover`-attribute](https://caniuse.com/mdn-api_htmlinputelement_popovertargetaction)(not in use currently by us, but planned)
 
 ## Packages
 
