@@ -21,6 +21,9 @@ designers, and content authors build, maintain, and scale best of class digital 
 	<figcaption><a href="https://bradfrost.com/blog/post/bdconf-stephen-hay-presents-responsive-design-workflow/" target="_blank" rel="noopener noreferrer">Stephen Hay</a>. <a href="https://vimeo.com/67476280" title="Brad Frosts at beyond tellerrand conference regarding Atomic Design" target="_blank" rel="noopener noreferrer">Citated in a talk by Brad Frost at beyond tellerrand conference.</a></figcaption>
 </figure>
 
+We currently don't fully support Mozilla Firefox until it adds natively support to the following CSS properties, that are expected later this year
+- ':has'
+
 ## Packages
 
 | Package                             | Content                             | Version                                                                                                                                                                                                              |
