@@ -22,7 +22,7 @@ designers, and content authors build, maintain, and scale best of class digital 
 </figure>
 
 We currently don't fully support Mozilla Firefox until it adds natively support to the following CSS properties, that are expected later this year
-- `:has`
+- [`:has`](https://caniuse.com/css-has)
 
 ## Packages
 
