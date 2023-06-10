@@ -15,9 +15,32 @@ import classNames from 'classnames';
 useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
-		includeIcon: false,
+		includeIcon: true,
 		isFormComponent: true,
-		properties: []
+		properties: [
+			{ name: 'name', type: 'SingleLine.Text' },
+			// { name: 'disabled', type: 'TwoOptions' },
+			{
+				name: 'variant',
+				type: 'Enum',
+				values: [
+					{ key: 'Adaptive', name: 'Adaptive', value: 'adaptive' },
+					{ key: 'Critical', name: 'Critical', value: 'critical' },
+					{
+						key: 'Informational',
+						name: 'Informational',
+						value: 'informational'
+					},
+					{ key: 'Warning', name: 'Warning', value: 'warning' },
+					{
+						key: 'Successful',
+						name: 'Successful',
+						value: 'successful'
+					}
+				]
+			}
+			// type
+		]
 	}
 });
 
