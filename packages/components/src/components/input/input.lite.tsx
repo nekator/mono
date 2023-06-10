@@ -137,6 +137,8 @@ export default function DBInput(props: DBInputProps) {
 				aria-invalid={props.invalid}
 				maxLength={props.maxLength}
 				minLength={props.minLength}
+				max={props.max}
+				min={props.min}
 				pattern={props.pattern}
 				onChange={(event) => state.handleChange(event)}
 				onBlur={(event) => state.handleBlur(event)}
