@@ -16,7 +16,16 @@ useMetadata({
 		// MS Power Apps
 		includeIcon: false,
 		hasDisabledProp: true,
-		properties: []
+		properties: [
+			// jscpd:ignore-start
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'name', type: 'SingleLine.Text' },
+			{ name: 'id', type: 'SingleLine.Text' }
+			// TODO: We'll most likely need these later on
+			// { name: 'checked', type: 'TwoOptions' },
+			// { name: 'disabled', type: 'TwoOptions' },
+			// jscpd:ignore-end
+		]
 	}
 });
 
