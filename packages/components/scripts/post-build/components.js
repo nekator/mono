@@ -40,6 +40,9 @@ const getComponents = () => [
 	},
 
 	{
+		name: 'tag'
+	},
+	{
 		name: 'code-docs'
 	},
 

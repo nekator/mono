@@ -248,7 +248,7 @@
 			&,
 			& + label {
 				// Decided against cursor: not-allowed, compare to e.g. https://phabricator.wikimedia.org/T121960
-				opacity: 0.25;
+				opacity: $default-opacity;
 				pointer-events: none;
 			}
 		}

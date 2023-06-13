@@ -1,4 +1,5 @@
 import CheckboxComponent from '../components/checkbox';
+import TagComponent from '../components/tag';
 import DrawerComponent from '../components/drawer';
 import SelectComponent from '../components/select';
 
@@ -22,6 +23,7 @@ export type NavigationItem = {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
 	{ path: 'checkbox', label: 'Checkbox', component: <CheckboxComponent /> },
 	{ path: 'divider', label: 'Divider', component: <DividerComponent /> },
+	{ path: 'tag', label: 'Tag', component: <TagComponent /> },
 	{ path: 'select', label: 'Select', component: <SelectComponent /> },
 	{ path: 'radio', label: 'Radio', component: <RadioComponent /> },
 	{ path: 'alert', label: 'Alert', component: <AlertComponent /> },

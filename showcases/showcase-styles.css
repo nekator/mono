@@ -20,6 +20,11 @@
 	gap: var(--db-spacing-fixed-md);
 }
 
+.variants-list > div {
+	align-items: center;
+	display: flex;
+}
+
 .html-code-container {
 	display: flex;
 	flex-direction: column;
@@ -42,6 +47,7 @@
 
 .form-container {
 	display: flex;
+	gap: var(--db-spacing-fixed-md);
 	margin: var(--db-spacing-fixed-md);
 }
 
@@ -51,7 +57,7 @@
 	border-color: transparent;
 }
 
-.form-container div {
+.form-container > div {
 	flex-direction: column;
 	width: 50%;
 }
