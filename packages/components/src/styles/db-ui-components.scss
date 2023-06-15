@@ -17,11 +17,14 @@
 @use "../components/checkbox/checkbox" as *;
 @use "../components/radio/radio" as *;
 @use "../components/code-docs/code-docs" as *;
+@use "../components/tag/tag" as *;
 @use "../components/drawer/drawer" as *;
 
 @use "../components/select/select" as *;
 
 // angular-workaround
+dbtag,
+db-tag,
 dbselect,
 db-select,
 dbalert,
