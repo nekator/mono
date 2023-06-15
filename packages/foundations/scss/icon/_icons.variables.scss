@@ -4,9 +4,6 @@
 $icon-size: 24 !default;
 $icon-style: "outline" !default;
 $icons-font-family: '#{"icons-" + $icon-size + "-" + $icon-style}, "missing-icons"' !default;
-$icon-content-space: to-rem(
-	$pxValue: 6
-) !default;
 
 $icon-glyphs-personenverkehr: (
 	"account": "\1f642",

@@ -4,7 +4,8 @@ import {
 	DBInput,
 	DBRadio,
 	DBCheckbox,
-	DBSelect
+	DBSelect,
+	DBTag
 } from "../../../../../output/vue/vue3/src";
 
 import { ref } from "vue";
@@ -12,10 +13,19 @@ const input = ref("");
 const radio = ref("");
 const checkbox = ref("");
 const select = ref("");
+const tags = ref<string[]>([]);
 
-const radioNames = ["X", "Y", "Z"];
+const array = ["X", "Y", "Z"];
 
 const dataList = [{ key: "test", value: "Test" }, { key: "test2" }];
+
+const changeTags = (tag: string) => {
+	if (tags.value.includes(tag)) {
+		tags.value = tags.value.filter((t) => t !== tag);
+	} else {
+		tags.value = [...tags.value, tag];
+	}
+};
 
 // eslint-disable-next-line no-alert
 const logAll = () => {
@@ -24,7 +34,8 @@ const logAll = () => {
 			input: input.value,
 			radio: radio.value,
 			select: select.value,
-			checkbox: checkbox.checked
+			checkbox: checkbox.checked,
+			tags: tags.value
 		})
 	);
 };
@@ -42,18 +53,31 @@ const logAll = () => {
 						description="Description"
 						icon="account"
 						name="input-name"
-						class="fullWidth"
 						:dataList="dataList"
 						v-model:value="input"
 					/>
 					<p>Radio:</p>
 					<ul>
-						<li v-for="radioName in radioNames">
+						<li v-for="radioName in array">
 							<DBRadio
 								@change="radio = radioName"
 								name="radio-group"
 								:value="radioName"
 								>Radio {{ radioName }}</DBRadio
+							>
+						</li>
+					</ul>
+					<p>Tags:</p>
+					<ul>
+						<li v-for="(tag, index) in array">
+							<DBTag
+								:variant="
+									index === 0 ? undefined : 'successful'
+								"
+								@Change="changeTags(tag)"
+								:strong="index === 2"
+								behaviour="interactive"
+								>Tag {{ tag }}</DBTag
 							>
 						</li>
 					</ul>
@@ -90,6 +114,8 @@ const logAll = () => {
 				<dd>{{ `checkbox ${checkbox ? "" : "un"}checked` }}</dd>
 				<dt>select value</dt>
 				<dd>{{ select ? select : "No select set" }}</dd>
+				<dt>tags value</dt>
+				<dd>{{ JSON.stringify(tags) }}</dd>
 			</dl>
 		</div>
 	</div>

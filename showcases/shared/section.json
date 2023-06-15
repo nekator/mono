@@ -24,19 +24,22 @@
 		"examples": [
 			{
 				"name": "Full (Default)",
-				"style": { "width": "100%" },
+				"style": {
+					"width": "100%",
+					"display": "block"
+				},
 				"props": {}
 			},
 			{
 				"name": "Medium",
-				"style": { "width": "100%" },
+				"style": { "width": "100%", "display": "block" },
 				"props": {
 					"variant": "medium"
 				}
 			},
 			{
 				"name": "Large",
-				"style": { "width": "100%" },
+				"style": { "width": "100%", "display": "block" },
 				"props": {
 					"variant": "large"
 				}
