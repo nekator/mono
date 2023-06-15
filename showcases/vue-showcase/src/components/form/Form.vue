@@ -68,6 +68,7 @@ const reset = () => {
 							<DBRadio
 								@change="radio = radioName"
 								name="radio-group"
+								:value="radioName"
 								>Radio {{ radioName }}</DBRadio
 							>
 						</li>
