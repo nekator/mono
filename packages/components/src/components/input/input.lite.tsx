@@ -102,8 +102,10 @@ export default function DBInput(props: DBInputProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id || 'input-' + uuid();
-		state._dataListId = props.dataListId || `datalist-${uuid()}`;
+		state._id = props.id ? props.id : 'input-' + uuid();
+		state._dataListId = props.dataListId
+			? props.dataListId
+			: `datalist-${state._id}`;
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
