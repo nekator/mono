@@ -39,7 +39,7 @@
 
 				<p>Radio:</p>
 				<ul>
-					<li *ngFor="let radioName of radioNames">
+					<li *ngFor="let radioName of array">
 						<db-radio
 							label="Label"
 							name="RadioGroup"
@@ -47,6 +47,18 @@
 							(change)="model.radio = radioName"
 							[label]="getRadioName(radioName)"
 						></db-radio>
+					</li>
+				</ul>
+				<p>Tags:</p>
+				<ul>
+					<li *ngFor="let tag of array; let i = index">
+						<db-tag
+							[variant]="i === 0 ? undefined : 'successful'"
+							(onChange)="changeTags(tag)"
+							[type]="i === 2 ? 'strong' : 'weak'"
+							behaviour="interactive"
+							>{{ getTagName(tag) }}</db-tag
+						>
 					</li>
 				</ul>
 				<p>Checkbox:</p>
@@ -93,6 +105,8 @@
 			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
 			<dt>select value</dt>
 			<dd>{{ select ? select : "No select set" }}</dd>
+			<dt>tags value</dt>
+			<dd>{{ getTags() }}</dd>
 		</dl>
 	</div>
 </div>

@@ -6,9 +6,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 	templateUrl: './form.component.html'
 })
 export class FormComponent {
-	radioNames = ['X', 'Y', 'Z'];
+	array = ['X', 'Y', 'Z'];
 	radio = '';
 	input = '';
+	tags: string[] = [];
 
 	select = '';
 	checkbox = '';
@@ -22,6 +23,16 @@ export class FormComponent {
 
 	getRadioName = (radioName: string): string => `Radio ${radioName}`;
 
+	getTagName = (tag: string): string => `Tag ${tag}`;
+
+	getTags = (): string => JSON.stringify(this.tags);
+
+	changeTags = (tag: string) => {
+		this.tags = this.tags.includes(tag)
+			? this.tags.filter((t) => t !== tag)
+			: [...this.tags, tag];
+	};
+
 	resetValues(): void {
 		this.model.input = 'reset';
 		this.form.get('input')?.setValue('reset');
@@ -34,6 +45,18 @@ export class FormComponent {
 				JSON.stringify(this.form.value) +
 				' / Model data: ' +
 				JSON.stringify(this.model)
+  };
+
+	showValues(): void {
+		// eslint-disable-next-line no-alert
+		alert(
+			JSON.stringify({
+				input: this.input,
+				radio: this.radio,
+				select: this.select,
+				checkbox: this.checkbox,
+				tags: this.tags
+			})
 		);
 	}
 }

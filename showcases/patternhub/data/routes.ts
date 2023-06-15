@@ -82,6 +82,10 @@ const componentChildren = [
 			{
 				label: 'DBInfotext',
 				name: 'infotext'
+			},
+			{
+				label: 'DBTag',
+				name: 'tag'
 			}
 		]
 	},

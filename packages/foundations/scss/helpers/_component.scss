@@ -3,9 +3,10 @@
 @use "../helpers/functions" as *;
 @use "../icon/icons.helpers" as *;
 
-/* TODO: We should get the variables from UX */
+/* TODO: We should get the variables from UX, and probably want to make those global variables */
 $default-border-radius: 4px;
 $default-card-border-radius: var(--default-card-border-radius, 8px);
+$default-opacity: 0.25;
 
 %default-adaptive-border {
 	border: solid 1px var(--db-current-color, $db-colors-neutral-on-bg-enabled);
