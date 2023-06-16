@@ -161,6 +161,11 @@
 		}
 	}
 
+	.db-button[data-size="small"] {
+		border-radius: to-rem(3);
+		height: 100%;
+	}
+
 	&[data-disabled="true"] {
 		opacity: $default-opacity;
 		pointer-events: none;
