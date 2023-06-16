@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1633],{30692:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/button/docs/Vue",function(){return _(82256)}])}},function(n){n.O(0,[4996,2256,9774,2888,179],function(){return n(n.s=30692)}),_N_E=n.O()}]);
