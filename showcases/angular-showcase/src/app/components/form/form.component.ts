@@ -45,7 +45,8 @@ export class FormComponent {
 				JSON.stringify(this.form.value) +
 				' / Model data: ' +
 				JSON.stringify(this.model)
-  };
+		);
+	}
 
 	showValues(): void {
 		// eslint-disable-next-line no-alert
