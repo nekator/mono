@@ -15,6 +15,7 @@ import { DBRadio } from "../../../../../output/vue/vue3/src";
 				:name="exampleProps.name"
 				:checked="exampleProps.checked"
 				:invalid="exampleProps.invalid"
+				:value="exampleProps.value"
 				:required="exampleProps.required"
 				:disabled="exampleProps.disabled"
 			>
