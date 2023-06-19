@@ -141,7 +141,7 @@ export default function DBInput(props: DBInputProps) {
 				onChange={(event) => state.handleChange(event)}
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
-				list={state._dataListId}
+				list={props.dataList && state._dataListId}
 			/>
 			<label
 				htmlFor={state._id}
