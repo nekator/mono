@@ -7,7 +7,12 @@ useMetadata({
 	component: {
 		// MS Power Apps
 		includeIcon: false,
-		properties: []
+		properties: [
+			{ name: 'anchorRef', type: 'SingleLine.URL' },
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'title', type: 'SingleLine.Text' },
+			{ name: 'imgAlt', type: 'SingleLine.Text' },
+		]
 	}
 });
 
