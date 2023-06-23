@@ -14,8 +14,8 @@ useMetadata({
 const DEFAULT_VALUES = {
 	anchorRef: '/',
 	src: './assets/images/db_logo.svg',
-	width: 57,
-	height: 40
+	width: 34,
+	height: 24
 };
 
 export default function DBBrand(props: DBBrandProps) {
