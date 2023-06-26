@@ -2,6 +2,13 @@ import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBBrandState, DBBrandProps } from './model';
 import classNames from 'classnames';
 
+const DEFAULT_VALUES = {
+	anchorRef: '/',
+	src: './assets/images/db_logo.svg',
+	width: 57,
+	height: 40
+};
+
 useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
@@ -15,13 +22,6 @@ useMetadata({
 		]
 	}
 });
-
-const DEFAULT_VALUES = {
-	anchorRef: '/',
-	src: './assets/images/db_logo.svg',
-	width: 57,
-	height: 40
-};
 
 export default function DBBrand(props: DBBrandProps) {
 	// This is used as forwardRef
