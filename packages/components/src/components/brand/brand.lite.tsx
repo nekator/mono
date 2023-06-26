@@ -5,8 +5,8 @@ import classNames from 'classnames';
 const DEFAULT_VALUES = {
 	anchorRef: '/',
 	src: './assets/images/db_logo.svg',
-	width: 57,
-	height: 40
+	width: 34,
+	height: 24
 };
 
 useMetadata({
@@ -44,13 +44,13 @@ useMetadata({
 			{
 				name: 'imgWidth',
 				type: 'Decimal',
-				defaultValue: 57,
+				defaultValue: 34,
 				displayNameKey: 'Logo Bild-Breite'
 			},
 			{
 				name: 'imgHeight',
 				type: 'Decimal',
-				defaultValue: 40,
+				defaultValue: 24,
 				displayNameKey: 'Logo Bild-Höhe'
 			}
 		]
