@@ -15,10 +15,44 @@ useMetadata({
 		// MS Power Apps
 		includeIcon: false,
 		properties: [
-			{ name: 'anchorRef', type: 'SingleLine.URL' },
-			{ name: 'children', type: 'SingleLine.Text' },
-			{ name: 'title', type: 'SingleLine.Text' },
-			{ name: 'imgAlt', type: 'SingleLine.Text' },
+			{
+				name: 'anchorRef',
+				type: 'SingleLine.URL',
+				displayNameKey: 'Logo Link URL'
+			},
+			{
+				name: 'title',
+				type: 'SingleLine.Text',
+				displayNameKey: 'Link-Alternativtext'
+			},
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				displayNameKey: 'Text neben Logo'
+			},
+			{
+				name: 'imgSrc',
+				type: 'SingleLine.URL',
+				defaultValue: 'https://db-ui.github.io/images/db_logo.svg',
+				displayNameKey: 'Logo URL'
+			},
+			{
+				name: 'imgAlt',
+				type: 'SingleLine.Text',
+				displayNameKey: 'Bild-Alternativtext'
+			},
+			{
+				name: 'imgWidth',
+				type: 'Decimal',
+				defaultValue: 57,
+				displayNameKey: 'Logo Bild-Breite'
+			},
+			{
+				name: 'imgHeight',
+				type: 'Decimal',
+				defaultValue: 40,
+				displayNameKey: 'Logo Bild-Höhe'
+			}
 		]
 	}
 });
