@@ -10,13 +10,7 @@ force: true
              control-type="standard">
 
         <%  if(locals.props){ locals.props.forEach((prop)=>{ -%>
-        <property name="<%= prop.name %>"
-
-				  <% if(typeof prop.displayNameKey !== 'undefined' && prop.displayNameKey){ -%>
-                  display-name-key="<%= prop.displayNameKey %>"
-                  <% } else { -%>
-                  display-name-key="<%= prop.name %>_Display_Key"
-				  <% } -%>
+        <property name="<%= prop.name %>" display-name-key="<%= prop.name %>_Display_Key"
 
                   description-key="<%= prop.name %>_Desc_Key"
 
