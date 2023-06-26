@@ -17,41 +17,34 @@ useMetadata({
 		properties: [
 			{
 				name: 'anchorRef',
-				type: 'SingleLine.URL',
-				displayNameKey: 'Logo Link URL'
+				type: 'SingleLine.URL'
 			},
 			{
 				name: 'title',
-				type: 'SingleLine.Text',
-				displayNameKey: 'Link-Alternativtext'
+				type: 'SingleLine.Text'
 			},
 			{
 				name: 'children',
-				type: 'SingleLine.Text',
-				displayNameKey: 'Text neben Logo'
+				type: 'SingleLine.Text'
 			},
 			{
 				name: 'imgSrc',
 				type: 'SingleLine.URL',
-				defaultValue: 'https://db-ui.github.io/images/db_logo.svg',
-				displayNameKey: 'Logo URL'
+				defaultValue: 'https://db-ui.github.io/images/db_logo.svg'
 			},
 			{
 				name: 'imgAlt',
-				type: 'SingleLine.Text',
-				displayNameKey: 'Bild-Alternativtext'
+				type: 'SingleLine.Text'
 			},
 			{
 				name: 'imgWidth',
 				type: 'Decimal',
-				defaultValue: 34,
-				displayNameKey: 'Logo Bild-Breite'
+				defaultValue: 34
 			},
 			{
 				name: 'imgHeight',
 				type: 'Decimal',
-				defaultValue: 24,
-				displayNameKey: 'Logo Bild-Höhe'
+				defaultValue: 24
 			}
 		]
 	}
