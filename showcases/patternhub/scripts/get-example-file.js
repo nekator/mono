@@ -39,6 +39,10 @@ const getOption = (optionName, tsType) => {
 	}
 
 	if (tsType.name === 'signature' && tsType.raw === '() => void') {
+		return `${optionName}={() => console.log("Click")}`;
+	}
+
+	if (tsType.name === 'signature' && tsType.raw === '() => void') {
 		return `${optionName}={() => console.log("${optionName}")}`;
 	}
 

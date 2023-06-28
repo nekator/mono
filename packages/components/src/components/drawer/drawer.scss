@@ -120,6 +120,7 @@ $spacings: (
 		height: 100%;
 		width: 100%;
 		position: fixed;
+		box-shadow: $db-elevation-4;
 
 		&:not([data-width="full"]) {
 			max-width: var(

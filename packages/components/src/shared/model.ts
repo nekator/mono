@@ -13,9 +13,9 @@ export type GlobalProps = {
 	className?: string;
 
 	/**
-	 * React specific for render process.
+	 * [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used to link to the elements that describe the element with the set attribute.
 	 */
-	key?: string;
+	describedbyid?: string;
 
 	/**
 	 * [ID](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) of the component, generated automatically for some components as a fallback if unset.
@@ -23,14 +23,19 @@ export type GlobalProps = {
 	id?: string;
 
 	/**
-	 * [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used to link to the elements that describe the element with the set attribute.
+	 * React specific for render process.
 	 */
-	describedbyid?: string;
+	key?: string;
 
 	/**
 	 * Web Component specific: Adds a link tag with the path to show css inside Shadow DOM.
 	 */
 	stylePath?: string;
+
+	/**
+	 * The default tabindex (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex?retiredLocale=de).
+	 */
+	tabIndex?: number;
 
 	/**
 	 * The [title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title) specifies the tooltip of the component.
@@ -121,10 +126,16 @@ export type FormState = {
 	_value?: any;
 };
 
+export type FormCheckState = {
+	initialized: boolean;
+};
+
 export type GlobalTextProps = {
 	placeholder?: string;
 	maxLength?: number;
 	minLength?: number;
+	max?: number;
+	min?: number;
 	pattern?: string;
 };
 

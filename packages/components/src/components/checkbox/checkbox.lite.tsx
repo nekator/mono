@@ -14,9 +14,18 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		// MS Power Apps
-		includeIcon: false,
+		includeIcon: true,
 		hasDisabledProp: true,
-		properties: []
+		properties: [
+			// jscpd:ignore-start
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'name', type: 'SingleLine.Text' },
+			// { name: 'checked', type: 'TwoOptions' },
+			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
+			// { name: 'disabled', type: 'TwoOptions' },
+			{ name: 'id', type: 'SingleLine.Text' }
+			// jscpd:ignore-end
+		]
 	}
 });
 
@@ -73,7 +82,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 
 	onMount(() => {
 		state.initialized = true;
-		state._id = props.id ? props.id : 'checkbox-' + uuid();
+		state._id = props.id || 'checkbox-' + uuid();
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;

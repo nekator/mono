@@ -1,4 +1,5 @@
 @use "../helpers/functions" as *;
+@use "../variables.global" as *;
 @use "icons.variables" as *;
 @use "icons.placeholder" as *;
 
@@ -11,12 +12,15 @@
 ) {
 	&::#{$position} {
 		@if $position == "before" {
-			margin-inline-end: var(--icon-margin-after, #{$icon-content-space});
+			margin-inline-end: var(
+				--icon-margin-after,
+				#{$db-spacing-fixed-xs}
+			);
 		}
 		@if $position == "after" {
 			margin-inline-start: var(
 				--icon-margin-before,
-				#{$icon-content-space}
+				#{$db-spacing-fixed-xs}
 			);
 		}
 

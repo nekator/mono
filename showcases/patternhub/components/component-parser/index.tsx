@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import DBSelect from '../src/components/select/select';
 
 import {
 	DBInfotext,
@@ -8,7 +7,9 @@ import {
 	DBLink,
 	DBAlert,
 	DBInput,
+	DBSelect,
 	DBCheckbox,
+	DBTag,
 	DBRadio,
 	DBDivider,
 	DBCard,
@@ -153,9 +154,9 @@ const ComponentSwitch = ({
 	}
 	if (type === 'checkbox') {
 		return (
-			<DBInput className={className} {...props}>
+			<DBCheckbox className={className} {...props}>
 				{resolvedContent}
-			</DBInput>
+			</DBCheckbox>
 		);
 	}
 	if (type === 'radio') {
@@ -185,6 +186,14 @@ const ComponentSwitch = ({
 			<DBSelect className={className} {...props}>
 				{resolvedContent}
 			</DBSelect>
+		);
+	}
+
+	if (type === 'tag') {
+		return (
+			<DBTag className={className} {...props}>
+				{resolvedContent}
+			</DBTag>
 		);
 	}
 
