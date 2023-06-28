@@ -10,6 +10,7 @@ import { DBButton } from '../button';
 import { uuid } from '../../utils';
 import { DBTagState, DBTagProps } from './model';
 import { DEFAULT_ID } from '../../shared/constants';
+import { DBIcon } from '../icon';
 import classNames from 'classnames';
 
 useMetadata({
