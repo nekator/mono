@@ -117,4 +117,20 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="icon_Display_Key" xml:space="preserve">
+        <value>Icon</value>
+    </data>
+    <data name="withText_Display_Key" xml:space="preserve">
+        <value>Text darstellen</value>
+    </data>
+    <data name="title_Display_Key" xml:space="preserve">
+        <value>Alternativtext</value>
+        <comment>Text des title-HTML-Attributs</comment>
+    </data>
+    <data name="componentHeight_Display_Key" xml:space="preserve">
+        <value>Höhe</value>
+    </data>
+    <data name="componentWidth_Display_Key" xml:space="preserve">
+        <value>Breite</value>
+    </data>
 </root>

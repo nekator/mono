@@ -117,4 +117,28 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="children_Display_Key" xml:space="preserve">
+        <value>Text</value>
+    </data>
+    <data name="variant_Display_Key" xml:space="preserve">
+        <value>Variante</value>
+    </data>
+    <data name="icon_Display_Key" xml:space="preserve">
+        <value>Icon</value>
+    </data>
+    <data name="noText_Display_Key" xml:space="preserve">
+        <value>Text ausblenden</value>
+    </data>
+    <data name="width_Display_Key" xml:space="preserve">
+        <value>Icon Breite</value>
+    </data>
+    <data name="clicked_Display_Key" xml:space="preserve">
+        <value>Clicked</value>
+    </data>
+    <data name="componentHeight_Display_Key" xml:space="preserve">
+        <value>Höhe</value>
+    </data>
+    <data name="componentWidth_Display_Key" xml:space="preserve">
+        <value>Breite</value>
+    </data>
 </root>

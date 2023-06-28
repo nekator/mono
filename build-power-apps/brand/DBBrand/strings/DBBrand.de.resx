@@ -122,14 +122,14 @@
         <comment>Linkziel des Logos</comment>
     </data>
     <data name="title_Display_Key" xml:space="preserve">
-        <value>Titel des Logo Links</value>
+        <value>Titel des Links</value>
         <comment>Title Attribut</comment>
     </data>
     <data name="children_Display_Key" xml:space="preserve">
-        <value>Anwendungsname</value>
+        <value>Text</value>
     </data>
     <data name="imgSrc_Display_Key" xml:space="preserve">
-        <value>URL des Logos</value>
+        <value>Logo URL</value>
     </data>
     <data name="imgAlt_Display_Key" xml:space="preserve">
         <value>Alternativtext</value>
