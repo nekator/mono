@@ -19,7 +19,7 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   [Liquid Oxygen, UI component library for the Liquid Design System of Merck KGaA](https://liquid.merck.design/liquid/)
     -   Web Components / StencilJS
 -   [Porsche Design System](https://designsystem.porsche.com/v3/)
-	-   Web Components / StencilJS
+    -   Web Components / StencilJS
 -   [Barmer Puls Design System](https://barmer-puls.entw.bconnect.barmer.de/)
     -   React Native
     -   [Storybook](https://barmer-puls-react.entw.bconnect.barmer.de/?path=/story/surfaces-accordion--base)
