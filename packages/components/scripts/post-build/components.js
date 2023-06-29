@@ -61,7 +61,7 @@ const getComponents = () => [
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
 			},
 			angular: {
-				//controlValueAccessor: true
+				controlValueAccessor: 'checked'
 			}
 		}
 	},
@@ -81,8 +81,7 @@ const getComponents = () => [
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
 			},
 			angular: {
-				// TODO update with checked
-				//controlValueAccessor: true
+				controlValueAccessor: false
 			}
 		}
 	},
@@ -123,7 +122,7 @@ const getComponents = () => [
 				vModel: [{ modelValue: 'value', binding: ':value' }]
 			},
 			angular: {
-				controlValueAccessor: true
+				controlValueAccessor: 'value'
 			}
 		}
 	},
