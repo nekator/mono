@@ -9,6 +9,11 @@
 			icon="account"
 		>
 		</db-input>
+		<db-checkbox
+			[(ngModel)]="model.checkbox2"
+			name="checkbox2"
+			label="Checkbox ngModel"
+		></db-checkbox>
 
 		<h6>Reactive Forms Example:</h6>
 		<form [formGroup]="form" (submit)="onFormSubmit()">
@@ -49,6 +54,7 @@
 						></db-radio>
 					</li>
 				</ul>
+
 				<p>Tags:</p>
 				<ul>
 					<li *ngFor="let tag of array; let i = index">
@@ -64,9 +70,17 @@
 				<p>Checkbox:</p>
 				<db-checkbox
 					(change)="model.checkbox = $event.target.checked"
+					[checked]="model.checkbox"
 					name="checkbox"
 					label="Checkbox"
 				></db-checkbox>
+
+				<db-checkbox
+					formControlName="checkbox"
+					name="checkbox3"
+					label="Checkbox reactive"
+				></db-checkbox>
+
 				<p>DBSelect:</p>
 				<db-select
 					[value]="select"
@@ -102,7 +116,13 @@
 			<dt>radio value</dt>
 			<dd>{{ model.radio ? model.radio : "No radio set" }}</dd>
 			<dt>checkbox value</dt>
-			<dd>checkbox {{ checkbox ? "" : "un" }}checked</dd>
+			<dd>checkbox {{ model.checkbox ? "" : "un" }}checked</dd>
+			<dt>checkbox2 value (ngModel)</dt>
+			<dd>checkbox {{ model.checkbox2 ? "" : "un" }}checked</dd>
+			<dt>checkbox formControl value</dt>
+			<dd>
+				checkbox {{ form.get("checkbox")?.value ? "" : "un" }}checked
+			</dd>
 			<dt>select value</dt>
 			<dd>{{ select ? select : "No select set" }}</dd>
 			<dt>tags value</dt>

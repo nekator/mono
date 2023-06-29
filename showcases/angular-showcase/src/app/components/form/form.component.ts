@@ -12,13 +12,13 @@ export class FormComponent {
 	tags: string[] = [];
 
 	select = '';
-	checkbox = '';
-	model = { input: 'Anna', radio: 'X', checkbox: false };
+	model = { input: 'Anna', radio: 'X', checkbox: true, checkbox2: true };
 	dataList = [{ key: 'test', value: 'Test' }, { key: 'test2' }];
 
 	// Reference: https://blog.angular-university.io/angular-custom-form-controls/
 	form = new FormGroup({
-		input: new FormControl('Filled with formControl')
+		input: new FormControl('Filled with formControl'),
+		checkbox: new FormControl(true)
 	});
 
 	getRadioName = (radioName: string): string => `Radio ${radioName}`;
@@ -35,7 +35,10 @@ export class FormComponent {
 
 	resetValues(): void {
 		this.model.input = 'reset';
+		this.model.checkbox = false;
+		this.model.checkbox2 = false;
 		this.form.get('input')?.setValue('reset');
+		this.form.get('checkbox')?.setValue(false);
 	}
 
 	onFormSubmit(): void {
@@ -55,7 +58,8 @@ export class FormComponent {
 				input: this.input,
 				radio: this.radio,
 				select: this.select,
-				checkbox: this.checkbox,
+				checkbox: this.model.checkbox,
+				checkbox2: this.model.checkbox2,
 				tags: this.tags
 			})
 		);
