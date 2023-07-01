@@ -20,7 +20,8 @@ useMetadata({
 			// jscpd:ignore-start
 			{ name: 'children', type: 'SingleLine.Text' },
 			{ name: 'name', type: 'SingleLine.Text' },
-			{ name: 'id', type: 'SingleLine.Text' }
+			{ name: 'id', type: 'SingleLine.Text' },
+			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' } // $event.target["value"|"checked"|...]
 			// TODO: We'll most likely need these later on
 			// { name: 'checked', type: 'TwoOptions' },
 			// { name: 'disabled', type: 'TwoOptions' },
@@ -53,6 +54,11 @@ export default function DBRadio(props: DBRadioProps) {
 					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
+			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
+			// VUE:this.$emit("update:checked", event.target.checked);
+
+			// Angular: propagate change event to work with reactive and template driven forms
+			this.propagateChange(event.target.checked);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -74,12 +80,14 @@ export default function DBRadio(props: DBRadioProps) {
 		},
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
-		}
+		},
+		// callback for controlValueAccessor's onChange handler
+		propagateChange: (_: any) => {}
 	});
 
 	onMount(() => {
 		state.initialized = true;
-		state._id = props.id ? props.id : 'radio-' + uuid();
+		state._id = props.id || 'radio-' + uuid();
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
@@ -115,6 +123,7 @@ export default function DBRadio(props: DBRadioProps) {
 				aria-describedby={props.describedbyid}
 				aria-invalid={props.invalid}
 				data-size={props.size}
+				value={props.value}
 				required={props.required}
 				onChange={(event) => state.handleChange(event)}
 				onBlur={(event) => state.handleBlur(event)}

@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {
 	DBButtonModule,
@@ -18,7 +18,8 @@ import {
 	DBSectionModule,
 	DBInfotextModule,
 	DBSelectModule,
-	DBDrawerModule
+	DBDrawerModule,
+	DBTagModule
 } from '../../../../output/angular/src';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -34,13 +35,14 @@ import { SectionComponent } from './components/section/section.component';
 import { CardComponent } from './components/card/card.component';
 import { DividerComponent } from './components/divider/divider.component';
 import { DefaultComponent } from './components/default.component';
+import { TagComponent } from './components/tag/tag.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
 	declarations: [
 		SelectComponent,
-
+		TagComponent,
 		AppComponent,
 		DefaultComponent,
 		FormComponent,
@@ -57,8 +59,8 @@ import { SelectComponent } from './components/select/select.component';
 		DrawerComponent
 	],
 	imports: [
+		DBTagModule,
 		DBSelectModule,
-
 		AppRoutingModule,
 		BrowserModule,
 		DBButtonModule,
@@ -75,6 +77,7 @@ import { SelectComponent } from './components/select/select.component';
 		DBSectionModule,
 		DBInfotextModule,
 		FormsModule,
+		ReactiveFormsModule,
 		DBCheckboxModule,
 		DBRadioModule,
 		DBDrawerModule

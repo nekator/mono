@@ -56,6 +56,9 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 
 			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
 			// VUE:this.$emit("update:checked", event.target.checked);
+
+			// Angular: propagate change event to work with reactive and template driven forms
+			this.propagateChange(event.target.checked);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -77,12 +80,14 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 		},
 		getClassNames: (...args: classNames.ArgumentArray) => {
 			return classNames(args);
-		}
+		},
+		// callback for controlValueAccessor's onChange handler
+		propagateChange: (_: any) => {}
 	});
 
 	onMount(() => {
 		state.initialized = true;
-		state._id = props.id ? props.id : 'checkbox-' + uuid();
+		state._id = props.id || 'checkbox-' + uuid();
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
