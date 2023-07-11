@@ -17,7 +17,12 @@ useMetadata({
 		includeIcon: true,
 		hasDisabledProp: true,
 		properties: [
-			{ name: 'label', type: 'SingleLine.Text', required: true },
+			{
+				name: 'label',
+				type: 'SingleLine.Text',
+				required: true,
+				defaultValue: 'Input'
+			},
 			{ name: 'placeholder', type: 'SingleLine.Text' },
 			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
 			{
