@@ -7,10 +7,12 @@ import {
 } from '@builder.io/mitosis';
 import { DBCodeDocsProps, DBCodeDocsState } from './model';
 import { DBCard } from '../card';
+import classNames from 'classnames';
 
 useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
+		// MS Power Apps
 		includeIcon: false,
 		properties: []
 	}
@@ -25,6 +27,7 @@ const DEFAULT_VALUES = {
 export default function DBCodeDocs(props: DBCodeDocsProps) {
 	// This is used as forwardRef
 	let component: any;
+	// jscpd:ignore-start
 	const state = useStore<DBCodeDocsState>({
 		open: false,
 		toggleCode: () => {
@@ -34,6 +37,9 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 			return state.open
 				? props.hideCodeLabel ?? DEFAULT_VALUES.hideCodeLabel
 				: props.showCodeLabel ?? DEFAULT_VALUES.showCodeLabel;
+		},
+		getClassNames: (...args: classNames.ArgumentArray) => {
+			return classNames(args);
 		}
 	});
 
@@ -42,14 +48,12 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+	// jscpd:ignore-end
 
 	return (
 		<DBCard
 			ref={component}
-			className={
-				'db-code-docs' +
-				(props.className ? ' ' + props.className : '')
-			}
+			className={state.getClassNames('db-code-docs', props.className)}
 			elevation="none">
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
@@ -62,7 +66,7 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 					data-variant="primary">
 					{state.getShowButtonLabel()}
 				</summary>
-				<div class="code">
+				<div class="db-ui-functional code">
 					<Slot name="code"></Slot>
 				</div>
 			</details>
