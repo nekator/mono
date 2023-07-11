@@ -34,7 +34,6 @@ force: true
                   of-type="<%= prop.type %>"
                   <% } else if(prop.type === "Icon"){ -%>
                   of-type="Enum">
-                  <value name="None" display-name-key="None">_</value>
                   <value name="Account" display-name-key="Account">account</value>
                   <value name="Edit" display-name-key="Edit">edit</value>
                   <!-- TODO: Add other icons here -->
