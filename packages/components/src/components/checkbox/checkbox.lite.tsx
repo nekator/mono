@@ -14,9 +14,18 @@ useMetadata({
 	isAttachedToShadowDom: true,
 	component: {
 		// MS Power Apps
-		includeIcon: false,
+		includeIcon: true,
 		hasDisabledProp: true,
-		properties: []
+		properties: [
+			// jscpd:ignore-start
+			{ name: 'children', type: 'SingleLine.Text' },
+			{ name: 'name', type: 'SingleLine.Text' },
+			// { name: 'checked', type: 'TwoOptions' },
+			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
+			// { name: 'disabled', type: 'TwoOptions' },
+			{ name: 'id', type: 'SingleLine.Text' }
+			// jscpd:ignore-end
+		]
 	}
 });
 
@@ -47,6 +56,9 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 
 			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
 			// VUE:this.$emit("update:checked", event.target.checked);
+
+			// Angular: propagate change event to work with reactive and template driven forms
+			this.propagateChange(event.target.checked);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -65,12 +77,14 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
-		}
+		},
+		// callback for controlValueAccessor's onChange handler
+		propagateChange: (_: any) => {}
 	});
 
 	onMount(() => {
 		state.initialized = true;
-		state._id = props.id ? props.id : 'checkbox-' + uuid();
+		state._id = props.id || 'checkbox-' + uuid();
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;

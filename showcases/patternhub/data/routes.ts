@@ -82,6 +82,20 @@ const componentChildren = [
 			{
 				label: 'DBInfotext',
 				name: 'infotext'
+			},
+			{
+				label: 'DBTag',
+				name: 'tag'
+			}
+		]
+	},
+	{
+		label: '05 Navigation',
+		link: '/components/05-navigation',
+		children: [
+			{
+				label: 'DBNavigationItem',
+				name: 'navigation-item'
 			}
 		]
 	},

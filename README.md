@@ -5,13 +5,13 @@
 
 # DB UI Mono (Alpha) 🚂💖
 
-![Based on DB UX Design System guidelines](https://img.shields.io/badge/Based%20on-DB%20Design%20System%20UX%20Guides%20%2B%20Standards-d7dce1.svg)
+![Part of DB UX Design System Core](/docs/images/download/Part of-DB UX Design System Core-d7dce1.svg)
 ![Main pipeline](https://github.com/db-ui/mono/actions/workflows/default.yml/badge.svg)
-![Apache 2.0 license badge](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE-OF-CONDUCT.md)
+![Apache 2.0 license badge](/docs/images/download/License-Apache_2.0-blue.svg)
+[![code style: prettier](/docs/images/download/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![XO code style](/docs/images/download/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+[![PRs Welcome](/docs/images/download/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Contributor Covenant](/docs/images/download/Contributor Covenant-2.0-4baaaa.svg)](CODE-OF-CONDUCT.md)
 
 DB UI Mono provides robust HTML UI components, reusable visual styles, and powerful tooling to help developers,
 designers, and content authors build, maintain, and scale best of class digital experiences.
@@ -20,6 +20,13 @@ designers, and content authors build, maintain, and scale best of class digital 
 	<cite>We’re not designing pages anymore. We’re designing systems of components.</cite>
 	<figcaption><a href="https://bradfrost.com/blog/post/bdconf-stephen-hay-presents-responsive-design-workflow/" target="_blank" rel="noopener noreferrer">Stephen Hay</a>. <a href="https://vimeo.com/67476280" title="Brad Frosts at beyond tellerrand conference regarding Atomic Design" target="_blank" rel="noopener noreferrer">Citated in a talk by Brad Frost at beyond tellerrand conference.</a></figcaption>
 </figure>
+
+
+> **Warning**
+> We currently don't fully support Mozilla Firefox until it adds the following functionalities, that are expected to get integrated later this year:
+> - [CSS: `:has`](https://caniuse.com/css-has)
+> - [`popover`-attribute](https://caniuse.com/mdn-api_htmlinputelement_popovertargetaction)(not in use by us currently, but planned)
+
 
 ## Packages
 
@@ -95,7 +102,7 @@ Here is an overview of all components you can use:
 | Switch                                                  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Table                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
 | [Tabs](packages/components/src/components/tabs)         | 04 - Data-Display |     ✅      |   v2    |    ❌    |        ❌        |
-| Tag                                                     | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Tag](packages/components/src/components/tag)           | 04 - Data-Display |     ✅      |   v3    |    ❌    |        ✅        |
 | Text                                                    | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
 | Textarea                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
 | Timeline                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
@@ -130,7 +137,7 @@ Add the plugin and rule to your configuration:
 	Consistent & Compliant
 	</strong></summary>
 
-DB UI Mono is based on the [DB UX Design System](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten),
+DB UI Mono is part of [DB UX Design System Core](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten),
 that are the guidelines for any Personenverkehr Customer and Deutsche Bahn Enterprise website and web applications.
 
 </details>

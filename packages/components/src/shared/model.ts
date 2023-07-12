@@ -12,9 +12,9 @@ export type GlobalProps = {
 	className?: string;
 
 	/**
-	 * React specific for render process.
+	 * [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used to link to the elements that describe the element with the set attribute.
 	 */
-	key?: string;
+	describedbyid?: string;
 
 	/**
 	 * [ID](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) of the component, generated automatically for some components as a fallback if unset.
@@ -22,14 +22,19 @@ export type GlobalProps = {
 	id?: string;
 
 	/**
-	 * [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used to link to the elements that describe the element with the set attribute.
+	 * React specific for render process.
 	 */
-	describedbyid?: string;
+	key?: string;
 
 	/**
 	 * Web Component specific: Adds a link tag with the path to show css inside Shadow DOM.
 	 */
 	stylePath?: string;
+
+	/**
+	 * The default tabindex (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex?retiredLocale=de).
+	 */
+	tabIndex?: number;
 
 	/**
 	 * The [title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title) specifies the tooltip of the component.
@@ -70,8 +75,22 @@ export type IconProps = {
 	icon?: IconTypes;
 };
 
+export type IconAfterProps = {
+	/**
+	 * Define an icon by it's identifier (like e.g. _account_, compare to [Icons](https://db-ui.github.io/mono/review/main/foundations/icons) to get displayed in front of the elements content.
+	 */
+	iconAfter?: IconTypes;
+};
+
 export type IconState = {
 	iconVisible: (icon?: string) => boolean;
+};
+
+export type WidthProps = {
+	/**
+	 * Width of the component. Auto width based on children size, full width based on parent elements width.
+	 */
+	width?: 'full' | 'auto';
 };
 
 export type FormProps = {
@@ -117,12 +136,20 @@ export type FormCheckProps = {
 export type FormState = {
 	_isValid?: boolean | undefined;
 	_value?: any;
+	// callback for controlValueAccessor's onChange handler
+	propagateChange?: (value: any) => void;
+};
+
+export type InitializedState = {
+	initialized: boolean;
 };
 
 export type GlobalTextProps = {
 	placeholder?: string;
 	maxLength?: number;
 	minLength?: number;
+	max?: number;
+	min?: number;
 	pattern?: string;
 };
 
@@ -220,6 +247,9 @@ export type ChangeEventProps = {
 
 export type ChangeEventState = {
 	handleChange: (event: any) => void;
+
+	// some frameworks, e.g. angular need specific change listeners for internal use
+	propagateChange?: (_: any) => void;
 };
 
 export type FocusEventProps = {

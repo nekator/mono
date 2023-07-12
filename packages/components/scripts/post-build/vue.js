@@ -44,7 +44,6 @@ const updateVModelBindings = (input, bindings) => {
 	return fileContent
 		.split('\n')
 		.map((line) => {
-
 			return line.replace('// VUE:', '');
 		})
 		.join('\n');
@@ -68,11 +67,6 @@ module.exports = (tmp) => {
 				files: `../../${outputFolder}/vue/vue3/src/components/${componentName}/${componentName}.spec.tsx`,
 				from: `react`,
 				to: `vue`
-			});
-			Replace.sync({
-				files: `../../${outputFolder}/vue/vue3/src/components/${componentName}/${componentName}.spec.tsx`,
-				from: /new AxeBuilder/g,
-				to: `new AxeBuilder.default`
 			});
 
 			Replace.sync({
@@ -99,7 +93,17 @@ module.exports = (tmp) => {
 				});
 			}
 
-			runReplacements([], component, 'vue', vueFile);
+			runReplacements(
+				[
+					{
+						from: 'immediate: true,',
+						to: 'immediate: true,\nflush: "post"'
+					}
+				],
+				component,
+				'vue',
+				vueFile
+			);
 		} catch (error) {
 			console.error('Error occurred:', error);
 		}

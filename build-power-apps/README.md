@@ -49,10 +49,12 @@ useMetadata({
 
 We pass this config file to `hygen` and use the templates from `packages/components/_templates/power-apps/new` to generate all required files for Power Apps components inside `build-power-apps` folder.
 
+All translations for the display keys (`name` value defined in the components file like e.g. `button.lite.tsx` plus the suffix `_Display_Key` like e.g. `headline_Display_Key` in this case) are being maintained with the related `.resx` files (like e.g. `build-power-apps/button/DBButton/strings/DBButton.de.resx`), which are referenced within each components config files `resources` node.
+
 ## How to test
 
 Every component has its own `package.json` and testing environment.
-For the button we need to do those steps to test:
+For the button we need to do those steps to test (after at least doing an `npm run build` previously):
 
 1. `cd build-power-apps/button`
 2. `npm i`

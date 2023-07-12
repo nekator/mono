@@ -1,4 +1,6 @@
+import { NavigationItemComponent } from '../components/navigation-item/navigation-item.component';
 import { SelectComponent } from '../components/select/select.component';
+import { TagComponent } from '../components/tag/tag.component';
 import { InputComponent } from '../components/input/input.component';
 import { ButtonComponent } from '../components/button/button.component';
 import { FormComponent } from '../components/form/form.component';
@@ -13,6 +15,12 @@ import { DividerComponent } from '../components/divider/divider.component';
 import { DrawerComponent } from '../components/drawer/drawer.component';
 
 export const NAVIGATION_ITEMS: any[] = [
+	{
+		path: 'navigation-item',
+		label: 'NavigationItem',
+		component: NavigationItemComponent
+	},
+
 	{ path: 'divider', label: 'Divider', component: DividerComponent },
 	{ path: 'select', label: 'Select', component: SelectComponent },
 	{ path: 'radio', label: 'Radio', component: RadioComponent },
@@ -22,6 +30,7 @@ export const NAVIGATION_ITEMS: any[] = [
 	{ path: 'infotext', label: 'Infotext', component: InfotextComponent },
 	{ path: 'section', label: 'Section', component: SectionComponent },
 	{ path: 'link', label: 'Link', component: LinkComponent },
+	{ path: 'tag', label: 'Tag', component: TagComponent },
 	{ path: 'button', label: 'Button', component: ButtonComponent },
 	{ path: 'input', label: 'Input', component: InputComponent },
 	{ path: 'card', label: 'Card', component: CardComponent },

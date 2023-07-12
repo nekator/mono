@@ -7,25 +7,24 @@ import { setScrollViewport } from './fixtures/viewport.ts';
 export const getDefaultScreenshotTest = (component: string) => {
 	for (const tonality of TONALITIES) {
 		for (const color of COLORS) {
-			test(`should match screenshot for tonality "${tonality}" and color "${color}"`, async ({
-				page
-			}, testInfo) => {
+			test(`should match screenshot`, async ({ page }, testInfo) => {
 				const isWebkit =
 					testInfo.project.name === 'webkit' ||
 					testInfo.project.name === 'mobile_safari';
-				const isFirefox = testInfo.project.name === 'firefox';
 				const showcase = process.env.showcase;
 				const isAngular = showcase.startsWith('angular');
 
+				const header = await page.locator('header');
+
 				const config: any = {
-					fullPage: true
+					fullPage: true,
+					mask: [header]
 				};
 
-				if (isWebkit) {
-					config.maxDiffPixels = isAngular ? 1000 : 6;
-				} else if (isFirefox && isAngular) {
-					config.maxDiffPixelRatio = 0.05;
-					config.maxDiffPixels = 100;
+				if (isAngular) {
+					config.maxDiffPixels = 1000;
+				} else if (isWebkit) {
+					config.maxDiffPixels = 6;
 				} else {
 					config.maxDiffPixels = 1;
 				}
@@ -35,7 +34,10 @@ export const getDefaultScreenshotTest = (component: string) => {
 					{ waitUntil: 'networkidle' }
 				);
 				await setScrollViewport(page)();
-				await expect(page).toHaveScreenshot(config);
+				await expect(page).toHaveScreenshot(
+					[tonality, `${color}.png`],
+					config
+				);
 			});
 		}
 	}

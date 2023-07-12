@@ -28,8 +28,13 @@ export default function DBDrawer(props: DBDrawerProps) {
 	const state = useStore<DBDrawerState>({
 		_id: DEFAULT_ID,
 		handleClose: (event: any) => {
+			if (event.key === 'Escape') {
+				event.preventDefault();
+			}
+
 			if (
 				event === 'close' ||
+				event.key === 'Escape' ||
 				(event.target.nodeName === 'DIALOG' && !props.noBackdrop)
 			) {
 				if (props.onClose) {
@@ -65,7 +70,7 @@ export default function DBDrawer(props: DBDrawerProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id ? props.id : 'drawer-' + uuid();
+		state._id = props.id || 'drawer-' + uuid();
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
@@ -84,6 +89,7 @@ export default function DBDrawer(props: DBDrawerProps) {
 			onClick={(event) => {
 				state.handleClose(event);
 			}}
+			onKeyDown={(event) => state.handleClose(event)}
 			data-backdrop={!props.noBackdrop}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
