@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBSectionState, DBSectionProps } from './model';
-import clsx from 'clsx';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -27,7 +27,7 @@ export default function DBSection(props: DBSectionProps) {
 	return (
 		<section
 			ref={component}
-			className={clsx('db-section', props.className)}
+			className={cls('db-section', props.className)}
 			data-size={props.size || 'medium'}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

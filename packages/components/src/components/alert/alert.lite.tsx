@@ -1,17 +1,11 @@
-import {
-	onMount,
-	Show,
-	Slot,
-	useMetadata,
-	useStore
-} from '@builder.io/mitosis';
-import { DBAlertState, DBAlertProps } from './model';
-import { DBIcon } from '../icon';
-import { DefaultVariantsIcon } from '../../shared/model';
-import { DBButton } from '../button';
-import { DBLink } from '../link';
-import clsx from 'clsx';
-import { DEFAULT_CLOSE_BUTTON } from '../../shared/constants';
+import { onMount, Show, useMetadata, useStore } from "@builder.io/mitosis";
+import { DBAlertProps, DBAlertState } from "./model";
+import { DBIcon } from "../icon";
+import { DefaultVariantsIcon } from "../../shared/model";
+import { DBButton } from "../button";
+import { DBLink } from "../link";
+import { DEFAULT_CLOSE_BUTTON } from "../../shared/constants";
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -66,7 +60,7 @@ export default function DBAlert(props: DBAlertProps) {
 	return (
 		<div
 			ref={component}
-			class={clsx('db-alert', props.className)}
+			class={cls('db-alert', props.className)}
 			aria-live={props.ariaLive}
 			data-variant={props.variant}
 			data-type={props.type}

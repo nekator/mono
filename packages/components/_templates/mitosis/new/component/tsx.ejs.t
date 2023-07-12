@@ -3,7 +3,7 @@ to: src/components/<%= name %>/<%= name %>.lite.tsx
 ---
 import { onMount, Show, useMetadata, useStore } from "@builder.io/mitosis";
 import { DB<%= h.changeCase.pascal(name) %>State, DB<%= h.changeCase.pascal(name) %>Props } from "./model";
-import clsx from "clsx";
+import { cls } from "../../utils";
 
 useMetadata({
   isAttachedToShadowDom: true,
@@ -30,7 +30,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
   // jscpd:ignore-end
 
   return (
-    <div ref={component} class={clsx('db-<%= name %>', props.className)}>
+    <div ref={component} class={cls('db-<%= name %>', props.className)}>
       <Show when={state.stylePath}>
         <link rel="stylesheet" href={state.stylePath} />
       </Show>

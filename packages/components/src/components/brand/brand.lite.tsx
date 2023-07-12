@@ -1,13 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import { cls } from '../../utils';
 import { DBBrandState, DBBrandProps } from './model';
-import clsx from 'clsx';
-
-const DEFAULT_VALUES = {
-	anchorRef: '/',
-	src: './assets/images/db_logo.svg',
-	width: 34,
-	height: 24
-};
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -54,7 +47,14 @@ export default function DBBrand(props: DBBrandProps) {
 	// This is used as forwardRef
 	let component: any;
 	// jscpd:ignore-start
-	const state = useStore<DBBrandState>({});
+	const state = useStore<DBBrandState>({
+		defaultValues: {
+			anchorRef: '/',
+			src: './assets/images/db_logo.svg',
+			width: 34,
+			height: 24
+		}
+	});
 
 	onMount(() => {
 		if (props.stylePath) {
@@ -64,21 +64,23 @@ export default function DBBrand(props: DBBrandProps) {
 	// jscpd:ignore-end
 
 	return (
-		<div ref={component} class={clsx('db-brand', props.className)}>
+		<div ref={component} class={cls('db-brand', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
 
 			<a
-				href={props.anchorRef ?? DEFAULT_VALUES.anchorRef}
+				href={
+					props.anchorRef ?? state.defaultValues.anchorRef.toString()
+				}
 				title={props.anchorTitle}
 				rel={props.anchorRelation}>
 				<Show when={!props.hideDefaultAsset}>
 					<img
-						src={props.imgSrc ?? DEFAULT_VALUES.src}
+						src={props.imgSrc ?? state.defaultValues.src.toString()}
 						alt={props.imgAlt ?? ''}
-						height={props.imgHeight ?? DEFAULT_VALUES.height}
-						width={props.imgWidth ?? DEFAULT_VALUES.width}
+						height={props.imgHeight ?? state.defaultValues.height}
+						width={props.imgWidth ?? state.defaultValues.width}
 						className="db-logo"
 					/>
 				</Show>

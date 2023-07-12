@@ -45,6 +45,7 @@ export type GlobalProps = {
 export type GlobalState = {
 	_id?: string;
 	stylePath?: string;
+	defaultValues?: { [key: string]: string | number };
 };
 
 export type DefaultVariantType =

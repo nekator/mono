@@ -6,7 +6,7 @@ import {
 	useStore
 } from '@builder.io/mitosis';
 import { DBPageProps, DBPageState } from './model';
-import clsx from 'clsx';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -33,7 +33,7 @@ export default function DBPage(props: DBPageProps) {
 	return (
 		<div
 			ref={component}
-			class={clsx('db-page', props.className, {
+			class={cls('db-page', props.className, {
 				'fixed-header-footer': props.type === 'fixedHeaderFooter'
 			})}>
 			<Show when={state.stylePath}>

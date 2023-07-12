@@ -27,8 +27,5 @@
     "access": "public"
   },
   "sideEffects": false,
-  "source": "src/index.js",
-  "dependencies": {
-    "clsx": "^1.2.1"
-  }
+  "source": "src/index.js"
 }

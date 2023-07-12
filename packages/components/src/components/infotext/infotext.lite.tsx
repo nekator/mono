@@ -2,7 +2,7 @@ import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBIcon } from '../icon';
 import { DBInfotextState, DBInfotextProps } from './model';
 import { DefaultVariantsIcon } from '../../shared/model';
-import clsx from 'clsx';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -57,7 +57,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 	return (
 		<span
 			ref={component}
-			class={clsx('db-infotext', props.className)}
+			class={cls('db-infotext', props.className)}
 			title={props.title}
 			data-variant={props.variant}
 			data-size={props.size}>
