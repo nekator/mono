@@ -52,8 +52,8 @@ export default function DBBrand(props: DBBrandProps) {
 		defaultValues: {
 			anchorRef: '/',
 			src: './assets/images/db_logo.svg',
-			width: "34",
-			height: "24"
+			width: '34',
+			height: '24'
 		}
 	});
 
