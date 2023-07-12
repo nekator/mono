@@ -11,7 +11,7 @@ useMetadata({
 			{
 				name: 'icon',
 				type: 'Icon',
-				defaultValue: 'Account'
+				defaultValue: 'None'
 			},
 			{ name: 'withText', type: 'TwoOptions' },
 			{ name: 'title', type: 'SingleLine.Text' }
