@@ -11,7 +11,11 @@ useMetadata({
 		includeIcon: true,
 		properties: [
 			// jscpd:ignore-start
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Infotext'
+			},
 			{
 				name: 'variant',
 				type: 'Enum',

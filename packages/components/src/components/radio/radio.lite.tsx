@@ -18,7 +18,11 @@ useMetadata({
 		hasDisabledProp: true,
 		properties: [
 			// jscpd:ignore-start
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Radio'
+			},
 			{ name: 'name', type: 'SingleLine.Text' },
 			{ name: 'id', type: 'SingleLine.Text' },
 			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' } // $event.target["value"|"checked"|...]

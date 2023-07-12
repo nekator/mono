@@ -21,7 +21,11 @@ useMetadata({
 		hasOnClick: true,
 		properties: [
 			{ name: 'headline', type: 'SingleLine.Text' },
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Alert'
+			},
 			{
 				name: 'icon',
 				type: 'Icon' // this is a custom type not provided by ms

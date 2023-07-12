@@ -25,7 +25,8 @@ useMetadata({
 			},
 			{
 				name: 'children',
-				type: 'SingleLine.Text'
+				type: 'SingleLine.Text',
+				defaultValue: 'Anwendungsname'
 			},
 			{
 				name: 'imgSrc',

@@ -10,7 +10,8 @@ useMetadata({
 		properties: [
 			{
 				name: 'icon',
-				type: 'Icon'
+				type: 'Icon',
+				defaultValue: 'None'
 			},
 			{ name: 'withText', type: 'TwoOptions' },
 			{ name: 'title', type: 'SingleLine.Text' }
