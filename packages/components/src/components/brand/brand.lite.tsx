@@ -31,7 +31,7 @@ useMetadata({
 			{
 				name: 'imgSrc',
 				type: 'SingleLine.URL',
-				defaultValue: 'https://db-ui.github.io/images/db_logo.svg'
+				defaultValue: 'https://ppassets.azureedge.net/assets/images/db_logo.svg'
 			},
 			{
 				name: 'imgAlt',
