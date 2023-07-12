@@ -134,7 +134,7 @@ export default function DBInput(props: DBInputProps) {
 				type={props.type || 'text'}
 				placeholder={
 					props.placeholder ??
-					state.defaultValues.placeholder.toString()
+					state.defaultValues.placeholder
 				}
 				aria-labelledby={state._id + '-label'}
 				disabled={props.disabled}
