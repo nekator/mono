@@ -8,7 +8,7 @@ import {
 import { DBCheckboxProps, DBCheckboxState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
-import classNames from 'classnames';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -82,9 +82,6 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.focus(event);
 			}
 		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		},
 		// callback for controlValueAccessor's onChange handler
 		propagateChange: (_: any) => {}
 	});
@@ -129,7 +126,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			<input
 				ref={component}
 				type="checkbox"
-				class={state.getClassNames('db-checkbox', props.className)}
+				class={cls('db-checkbox', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}

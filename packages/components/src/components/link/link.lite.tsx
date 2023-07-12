@@ -1,6 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBLinkState, DBLinkProps } from './model';
-import classNames from 'classnames';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: false,
@@ -47,9 +47,6 @@ export default function DBLink(props: DBLinkProps) {
 			if (props.onClick) {
 				props.onClick(event);
 			}
-		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
 		}
 	});
 
@@ -63,7 +60,7 @@ export default function DBLink(props: DBLinkProps) {
 	return (
 		<a
 			ref={component}
-			class={state.getClassNames('db-link', props.className)}
+			class={cls('db-link', props.className)}
 			href={props.href}
 			title={props.title}
 			target={props.target}

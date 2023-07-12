@@ -8,7 +8,7 @@ import {
 import { DBRadioProps, DBRadioState } from './model';
 import { uuid } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
-import classNames from 'classnames';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -82,9 +82,6 @@ export default function DBRadio(props: DBRadioProps) {
 				props.focus(event);
 			}
 		},
-		getClassNames: (...args: classNames.ArgumentArray) => {
-			return classNames(args);
-		},
 		// callback for controlValueAccessor's onChange handler
 		propagateChange: (_: any) => {}
 	});
@@ -119,7 +116,7 @@ export default function DBRadio(props: DBRadioProps) {
 			<input
 				ref={component}
 				type="radio"
-				class={state.getClassNames('db-radio', props.className)}
+				class={cls('db-radio', props.className)}
 				id={state._id}
 				name={props.name}
 				checked={props.checked}
