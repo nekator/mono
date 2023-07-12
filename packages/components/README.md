@@ -1,19 +1,61 @@
 # @db-ui/components
 
-![Apache 2.0 license badge](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+![Apache 2.0 license badge](/docs/images/download/License-Apache_2.0-blue.svg)
+[![code style: prettier](/docs/images/download/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Conventional Commits](/docs/images/download/Conventional Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![PRs Welcome](/docs/images/download/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
 A library containing all styles for components of [DB UX Design System (technical components)](https://github.com/db-ui/mono).
 
-We currently support:
+> **Note**
+> Furthermore we currently support these additional JavaScript frameworks, with more coming soon:
 
 -   [Angular components](https://www.npmjs.com/package/@db-ui/ngx-components)
 -   [React components](https://www.npmjs.com/package/@db-ui/react-components)
 -   [Vue components](https://www.npmjs.com/package/@db-ui/v-components)
 
-Please look at your desired framework to retrieve more information.
+Please take a look at your desired framework to retrieve more information.
+
+---
+
+If you just need the styling follow this:
+
+## Install
+
+`npm i @db-ui/components`
+
+## Dependencies
+
+Import the styles in `scss` or `css`. Based on your technology the file names could be different.
+
+-   Default (db-ui-42): asset path point to `../assets`
+-   Webpack (db-ui-42-webpack): asset path point to `~@db-ui/foundations/assets`
+-   Rollup (db-ui-42-rollup): asset path point to `@db-ui/foundations/assets`
+
+`db-ui-42` bundles all dependencies from [foundations](https://www.npmjs.com/package/@db-ui/foundations) + all [components](https://github.com/db-ui/mono/blob/main/packages/components/src/styles/db-ui-components.scss) available.
+
+**SCSS**
+
+```scss
+// index.scss
+@use "@db-ui/components/build/styles/db-ui-42-rollup" as *;
+```
+
+**CSS**
+
+Within HTML files directly:
+
+```html
+<!-- index.html //-->
+<link rel="stylesheet" href="/styles/db-ui-42.css" />
+```
+
+Or within your JavaScript files, with the related bundler as a prefix (in this case rollup and equivalents like Vite):
+
+```js
+// main.js
+import "@db-ui/components/build/styles/db-ui-42-rollup.css";
+```
 
 ## Deutsche Bahn brand
 

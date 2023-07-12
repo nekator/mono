@@ -5,13 +5,13 @@
 
 # DB UI Mono (Alpha) 🚂💖
 
-![Based on DB UX Design System guidelines](https://img.shields.io/badge/Based%20on-DB%20Design%20System%20UX%20Guides%20%2B%20Standards-d7dce1.svg)
+![Part of DB UX Design System Core](/docs/images/download/Part of-DB UX Design System Core-d7dce1.svg)
 ![Main pipeline](https://github.com/db-ui/mono/actions/workflows/default.yml/badge.svg)
-![Apache 2.0 license badge](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE-OF-CONDUCT.md)
+![Apache 2.0 license badge](/docs/images/download/License-Apache_2.0-blue.svg)
+[![code style: prettier](/docs/images/download/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![XO code style](/docs/images/download/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+[![PRs Welcome](/docs/images/download/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Contributor Covenant](/docs/images/download/Contributor Covenant-2.0-4baaaa.svg)](CODE-OF-CONDUCT.md)
 
 DB UI Mono provides robust HTML UI components, reusable visual styles, and powerful tooling to help developers,
 designers, and content authors build, maintain, and scale best of class digital experiences.
@@ -21,12 +21,19 @@ designers, and content authors build, maintain, and scale best of class digital 
 	<figcaption><a href="https://bradfrost.com/blog/post/bdconf-stephen-hay-presents-responsive-design-workflow/" target="_blank" rel="noopener noreferrer">Stephen Hay</a>. <a href="https://vimeo.com/67476280" title="Brad Frosts at beyond tellerrand conference regarding Atomic Design" target="_blank" rel="noopener noreferrer">Citated in a talk by Brad Frost at beyond tellerrand conference.</a></figcaption>
 </figure>
 
+
+> **Warning**
+> We currently don't fully support Mozilla Firefox until it adds the following functionalities, that are expected to get integrated later this year:
+> - [CSS: `:has`](https://caniuse.com/css-has)
+> - [`popover`-attribute](https://caniuse.com/mdn-api_htmlinputelement_popovertargetaction)(not in use by us currently, but planned)
+
+
 ## Packages
 
 | Package                             | Content                             | Version                                                                                                                                                                                                              |
 | ----------------------------------- | ----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [foundations](packages/foundations) | CSS/Scss/Tailwind styles and assets | [![@db-ui/foundations on Npmjs](https://img.shields.io/npm/v/@db-ui/foundations.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/foundations "DB UI – on NPM")                |
-| [components](packages/components)   | CSS/Scss styles for components      | [![@db-ui/components on Npmjs](https://img.shields.io/npm/v/@db-ui/components.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/components "DB UI – on NPM")                   |
+| [foundations](packages/foundations) | CSS/SCSS/Tailwind styles and assets | [![@db-ui/foundations on Npmjs](https://img.shields.io/npm/v/@db-ui/foundations.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/foundations "DB UI – on NPM")                |
+| [components](packages/components)   | CSS/SCSS styles for components      | [![@db-ui/components on Npmjs](https://img.shields.io/npm/v/@db-ui/components.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/components "DB UI – on NPM")                   |
 | [ngx-components](output/angular)    | Native Angular components           | [![@db-ui/ngx-components on Npmjs](https://img.shields.io/npm/v/@db-ui/ngx-components.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/ngx-components "DB UI – on NPM")       |
 | [react-components](output/react)    | Native React components             | [![@db-ui/react-components on Npmjs](https://img.shields.io/npm/v/@db-ui/react-components.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/react-components "DB UI – on NPM") |
 | [v-components](output/vue/vue3)     | Native Vue components               | [![@db-ui/v-components on Npmjs](https://img.shields.io/npm/v/@db-ui/v-components.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/@db-ui/v-components "DB UI – on NPM")             |
@@ -35,7 +42,7 @@ designers, and content authors build, maintain, and scale best of class digital 
 
 Install your preferred package via npm or yarn e.g. `npm i @db-ui/react-components`.
 
-Afterwards you need to add the specific css or scss files to provide the styles of DB UX Design System.
+Afterwards you need to add the specific CSS or SCSS files to provide the styles of DB UX Design System.
 For a detailed overview look at our [examples](examples).
 
 ## Components
@@ -45,65 +52,65 @@ Here is an overview of all components you can use:
 <details>
   <summary><strong>Table of Components</strong></summary>
 
-| Name                                                  | Category          | Inside Repo | Styling | Complete | Planned for beta |
-| ----------------------------------------------------- | ----------------- | :---------: | :-----: | :------: | :--------------: |
-| Accordion                                             | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Alert                                                 | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
-| Avatar                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Backdrop                                              | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
-| Badge                                                 | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
-| Bottom-Navigation                                     | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Breadcrumbs                                           | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
-| [Button](packages/components/src/components/button)   | 02 - Action       |     ✅      |   v3    |    ❌    |        ✅        |
-| Button-Group                                          | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| [Card](packages/components/src/components/card)       | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
-| Carousel                                              | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ❌        |
-| Checkbox                                              | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
-| Combobox                                              | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Container                                             | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Date-Picker                                           | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| [Divider](packages/components/src/components/divider) | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
-| Drawer                                                | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| Dropdown                                              | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
-| Floating-Button                                       | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Footer                                                | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| Grid                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| Header                                                | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| [Icons](packages/components/src/components/icon)      | 04 - Data-Display |     ✅      |   v3    |    ✅    |        ✅        |
-| Image                                                 | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Indicator                                             | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Infotext                                              | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| [Input](packages/components/src/components/input)     | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
-| Link                                                  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
-| List-Item                                             | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Menu                                                  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
-| Modal                                                 | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
-| Notification                                          | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
-| Numbers-Field                                         | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Pagination                                            | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Popover                                               | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ❌        |
-| Progress                                              | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
-| [Radio](packages/components/src/components/radio)     | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
-| Rating                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Section                                               | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
-| Select                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
-| Skeleton                                              | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
-| Slider                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Spinner                                               | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
-| Stack/List                                            | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
-| Stepper                                               | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Switch                                                | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Table                                                 | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| [Tabs](packages/components/src/components/tabs)       | 04 - Data-Display |     ✅      |   v2    |    ❌    |        ❌        |
-| Tag                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Text                                                  | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Textarea                                              | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
-| Timeline                                              | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Time-Picker                                           | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Toggle-Button                                         | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
-| Tooltip                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Tree                                                  | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Upload                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Name                                                    | Category          | Inside Repo | Styling | Complete | Planned for beta |
+| ------------------------------------------------------- | ----------------- | :---------: | :-----: | :------: | :--------------: |
+| Accordion                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| Alert                                                   | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
+| Avatar                                                  | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| Backdrop                                                | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
+| Badge                                                   | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
+| Bottom-Navigation                                       | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Breadcrumbs                                             | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Button](packages/components/src/components/button)     | 02 - Action       |     ✅      |   v3    |    ❌    |        ✅        |
+| Button-Group                                            | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| [Card](packages/components/src/components/card)         | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
+| Carousel                                                | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ❌        |
+| [Checkbox](packages/components/src/components/checkbox) | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
+| Combobox                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Container                                               | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Date-Picker                                             | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| [Divider](packages/components/src/components/divider)   | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
+| Drawer                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| Dropdown                                                | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
+| Floating-Button                                         | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Footer                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| Grid                                                    | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| Header                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Icons](packages/components/src/components/icon)        | 04 - Data-Display |     ✅      |   v3    |    ✅    |        ✅        |
+| Image                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| Indicator                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| Infotext                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Input](packages/components/src/components/input)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
+| Link                                                    | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
+| List-Item                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| Menu                                                    | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
+| Modal                                                   | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
+| Notification                                            | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
+| Numbers-Field                                           | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Pagination                                              | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Popover                                                 | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ❌        |
+| Progress                                                | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
+| [Radio](packages/components/src/components/radio)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
+| Rating                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Section                                                 | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Select](packages/components/src/components/select)     | 03 - Data-Input   |     ✅      |   ✅    |    ✅    |        ✅        |
+| Skeleton                                                | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
+| Slider                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Spinner                                                 | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
+| Stack/List                                              | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
+| Stepper                                                 | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Switch                                                  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Table                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| [Tabs](packages/components/src/components/tabs)         | 04 - Data-Display |     ✅      |   v2    |    ❌    |        ❌        |
+| [Tag](packages/components/src/components/tag)           | 04 - Data-Display |     ✅      |   v3    |    ❌    |        ✅        |
+| Text                                                    | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| Textarea                                                | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ✅        |
+| Timeline                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| Time-Picker                                             | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
+| Toggle-Button                                           | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
+| Tooltip                                                 | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| Tree                                                    | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
+| Upload                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
 
 </details>
 
@@ -130,7 +137,7 @@ Add the plugin and rule to your configuration:
 	Consistent & Compliant
 	</strong></summary>
 
-DB UI Mono is based on the [DB UX Design System](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten),
+DB UI Mono is part of [DB UX Design System Core](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten),
 that are the guidelines for any Personenverkehr Customer and Deutsche Bahn Enterprise website and web applications.
 
 </details>
@@ -186,6 +193,10 @@ npm run start
 ```
 
 Please mind the [conventions for git commits](/docs/conventions.adoc#user-content-git-commits-conventions).
+
+### Versions
+
+All versions in all `package.json` files are set to `0.0.0`, we change those during release process in CI/CD.
 
 <!-- markdownlint-disable MD026 -->
 
@@ -273,4 +284,4 @@ our [Contributor Covenant Code of Conduct](CODE-OF-CONDUCT.md).
 
 ## License
 
-This project is licensed under [Apache-2.0](LICENSE), Copyright 2022 by DB Systel GmbH.
+This project is licensed under [Apache-2.0](LICENSE), Copyright 2023 by DB Systel GmbH.

@@ -1,16 +1,49 @@
 <script setup lang="ts">
-import { DBButton, DBInput } from "../../../../../output/vue/vue3/src";
+import {
+	DBButton,
+	DBInput,
+	DBRadio,
+	DBCheckbox,
+	DBSelect,
+	DBTag
+} from "../../../../../output/vue/vue3/src";
 
 import { ref } from "vue";
 const input = ref("");
+const select = ref("");
+const firstInput = ref("");
+const radio = ref<HTMLInputElement>();
+const checkbox = ref<HTMLInputElement>();
+const tags = ref<string[]>([]);
+
+const array = ["X", "Y", "Z"];
+
+const dataList = [{ key: "test", value: "Test" }, { key: "test2" }];
+
+const changeTags = (tag: string) => {
+	if (tags.value.includes(tag)) {
+		tags.value = tags.value.filter((t) => t !== tag);
+	} else {
+		tags.value = [...tags.value, tag];
+	}
+};
 
 // eslint-disable-next-line no-alert
 const logAll = () => {
 	alert(
 		JSON.stringify({
-			input: input.value
+			input: firstInput.value,
+			radio: radio.value,
+			select: select.value,
+			checkbox: checkbox.checked,
+			tags: tags.value
 		})
 	);
+};
+
+const reset = () => {
+	firstInput.value = "resetted";
+	checkbox.value = false;
 };
 </script>
 
@@ -19,17 +52,60 @@ const logAll = () => {
 		<div>
 			<form>
 				<fieldset>
-					<p>DbInput:</p>
+					<p>Input:</p>
 					<DBInput
 						label="Textinput"
 						placeholder="Placeholder"
 						description="Description"
-						icon="edit"
+						icon="account"
 						name="input-name"
-						class="fullWidth"
-						v-model:value="input"
+						:dataList="dataList"
+						v-model:value="firstInput"
 					/>
-					<p>DbButton:</p>
+					<p>Radio:</p>
+					<ul>
+						<li v-for="radioName in array">
+							<DBRadio
+								@change="radio = radioName"
+								name="radio-group"
+								:value="radioName"
+								>Radio {{ radioName }}</DBRadio
+							>
+						</li>
+					</ul>
+					<p>Tags:</p>
+					<ul>
+						<li v-for="(tag, index) in array">
+							<DBTag
+								:variant="
+									index === 0 ? undefined : 'successful'
+								"
+								@Change="changeTags(tag)"
+								:strong="index === 2"
+								behaviour="interactive"
+								>Tag {{ tag }}</DBTag
+							>
+						</li>
+					</ul>
+					<p>Checkbox:</p>
+					<DBCheckbox
+						@change="checkbox = $event.target.checked"
+						name="checkbox"
+						>Checkbox</DBCheckbox
+					>
+					<p>DBSelect:</p>
+					<DBSelect
+						:value="select"
+						label="Label"
+						@change="(event) => (select = event.target.value)"
+					>
+						<option value="test1">Test1</option>
+						<option value="test2">Test2</option>
+					</DBSelect>
+					<p>Button:</p>
+					<DBButton type="button" @click="reset()">
+						Reset Form
+					</DBButton>
 					<DBButton type="button" variant="primary" @click="logAll()">
 						Hi from Showcase!
 					</DBButton>
@@ -40,7 +116,15 @@ const logAll = () => {
 			<h2>Output</h2>
 			<dl>
 				<dt>inputs value</dt>
-				<dd>{{ input ? input : "No Input set" }}</dd>
+				<dd>{{ firstInput ? firstInput : "No Input set" }}</dd>
+				<dt>radio value</dt>
+				<dd>{{ radio ? radio : "No radio set" }}</dd>
+				<dt>checkbox value</dt>
+				<dd>{{ `checkbox ${checkbox ? "" : "un"}checked` }}</dd>
+				<dt>select value</dt>
+				<dd>{{ select ? select : "No select set" }}</dd>
+				<dt>tags value</dt>
+				<dd>{{ JSON.stringify(tags) }}</dd>
 			</dl>
 		</div>
 	</div>
