@@ -15,21 +15,17 @@ export const cls = (...args: ClassNameArg[]) => {
 
 	args.forEach((arg, index) => {
 		if (arg) {
-			if (index != 0) {
-				result += ' ';
-			}
-
 			if (typeof arg === 'string') {
-				result += arg;
+				result += `${arg} `;
 			} else {
 				for (let key in arg) {
 					if (arg[key]) {
-						result += key;
+						result += `${key} `;
 					}
 				}
 			}
 		}
 	});
 
-	return result;
+	return result.trim();
 };
