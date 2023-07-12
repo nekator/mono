@@ -18,7 +18,11 @@ useMetadata({
 		hasDisabledProp: true,
 		properties: [
 			// jscpd:ignore-start
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Checkbox'
+			},
 			{ name: 'name', type: 'SingleLine.Text' },
 			// { name: 'checked', type: 'TwoOptions' },
 			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]

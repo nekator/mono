@@ -16,7 +16,11 @@ useMetadata({
 		includeIcon: true,
 		isFormComponent: true,
 		properties: [
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Tag'
+			},
 			{ name: 'name', type: 'SingleLine.Text' },
 			// { name: 'disabled', type: 'TwoOptions' },
 			{

@@ -10,7 +10,11 @@ useMetadata({
 		hasDisabledProp: true,
 		hasOnClick: true,
 		properties: [
-			{ name: 'children', type: 'SingleLine.Text' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Button'
+			},
 			{
 				name: 'variant',
 				type: 'Enum',
@@ -27,7 +31,8 @@ useMetadata({
 						name: 'Solid',
 						value: 'solid'
 					}
-				]
+				],
+				defaultValue: 'primary'
 			},
 			{
 				name: 'icon',

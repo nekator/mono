@@ -9,8 +9,16 @@ useMetadata({
 		includeIcon: true,
 		properties: [
 			// jscpd:ignore-start
-			{ name: 'children', type: 'SingleLine.Text' },
-			{ name: 'href', type: 'SingleLine.URL' },
+			{
+				name: 'children',
+				type: 'SingleLine.Text',
+				defaultValue: 'Link'
+			},
+			{
+				name: 'href',
+				type: 'SingleLine.URL',
+				defaultValue: 'https://www.deutschebahn.com/'
+			},
 			{ name: 'title', type: 'SingleLine.Text' },
 			{
 				name: 'variant',
