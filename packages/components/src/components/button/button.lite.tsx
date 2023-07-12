@@ -1,7 +1,6 @@
 import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
-import { DBIcon } from '../icon';
 import type { DBButtonProps, DBButtonState } from './model';
-import clsx from 'clsx';
+import { cls } from "../../utils";
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -73,11 +72,12 @@ export default function DBButton(props: DBButtonProps) {
 		<button
 			id={props.id}
 			ref={component}
-			class={clsx('db-button', props.className, {
+			class={cls('db-button', props.className, {
 				'is-icon-text-replace':
 					state.iconVisible(props.icon) && props.noText
 			})}
 			type={props.type}
+			title={props.title}
 			disabled={props.disabled}
 			aria-label={props.label}
 			data-icon={state.iconVisible(props.icon) ? props.icon : undefined}

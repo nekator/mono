@@ -17,7 +17,7 @@ import { Ref, ref } from "vue";
 interface DefaultExample extends DefaultComponentExample {
 	name?: string;
 	example?: any;
-	style?: { width?: string };
+	style?: { display?: string; width?: string; height?: string };
 	className?: string;
 	props?: any;
 	code?: {

@@ -1,6 +1,6 @@
 import { For, onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBSelectState, DBSelectProps, DBSelectOptionType } from './model';
-import clsx from 'clsx';
+import { cls } from '../../utils';
 import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
 import { uuid } from '../../utils';
 import { DBIcon } from '../icon';
@@ -14,10 +14,6 @@ useMetadata({
 	}
 });
 
-const DEFAULT_VALUES = {
-	label: DEFAULT_LABEL
-};
-
 export default function DBSelect(props: DBSelectProps) {
 	// This is used as forwardRef
 	let component: any;
@@ -26,7 +22,6 @@ export default function DBSelect(props: DBSelectProps) {
 		_id: DEFAULT_ID,
 		_isValid: undefined,
 		_value: undefined,
-
 		handleClick: (event: any) => {
 			if (props.onClick) {
 				props.onClick(event);
@@ -78,7 +73,7 @@ export default function DBSelect(props: DBSelectProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id ? props.id : 'select-' + uuid();
+		state._id = props.id || 'select-' + uuid();
 
 		if (props.value) {
 			state._value = props.value;
@@ -93,7 +88,7 @@ export default function DBSelect(props: DBSelectProps) {
 	return (
 		<>
 			<div
-				class={clsx('db-select', props.className)}
+				class={cls('db-select', props.className)}
 				data-variant={props.variant}
 				data-icon={props.icon}>
 				<Show when={state.stylePath}>
@@ -165,7 +160,7 @@ export default function DBSelect(props: DBSelectProps) {
 					{props.children}
 				</select>
 				<label htmlFor={state._id}>
-					{props.label ?? DEFAULT_VALUES.label}
+					{props.label ?? DEFAULT_LABEL}
 				</label>
 
 				<Show when={props.variant}>

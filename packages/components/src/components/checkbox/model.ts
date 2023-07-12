@@ -9,7 +9,8 @@ import {
 	GlobalState,
 	FormProps,
 	FormState,
-	FormCheckProps
+	FormCheckProps,
+	InitializedState
 } from '../../shared/model';
 
 export interface DBCheckboxDefaultProps {
@@ -34,12 +35,12 @@ export type DBCheckboxProps = DBCheckboxDefaultProps &
 	FormCheckProps;
 
 export type DBCheckboxDefaultState = {
-	initialized: boolean;
-	_indeterminate: boolean;
+	_indeterminate?: boolean;
 };
 
 export type DBCheckboxState = DBCheckboxDefaultState &
 	GlobalState &
 	ChangeEventState &
 	FocusEventState &
-	FormState;
+	FormState &
+	InitializedState;
