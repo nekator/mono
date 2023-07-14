@@ -55,7 +55,7 @@ Here is an overview of all components you can use:
 | Name                                                    | Category          | Inside Repo | Styling | Complete | Planned for beta |
 | ------------------------------------------------------- | ----------------- | :---------: | :-----: | :------: | :--------------: |
 | Accordion                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
-| Alert                                                   | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Alert](packages/components/src/components/alert)       | 05 - Feedback     |     ✅      |   v3    |    ✅    |        ✅        |
 | Avatar                                                  | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
 | Backdrop                                                | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
 | Badge                                                   | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
