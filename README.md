@@ -61,6 +61,7 @@ Here is an overview of all components you can use:
 | Badge                                                   | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ✅        |
 | Bottom-Navigation                                       | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Breadcrumbs                                             | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Brand](packages/components/src/components/brand)       | 04 - Data-Display |     ✅      |   v3    |    ✅    |        ✅        |
 | [Button](packages/components/src/components/button)     | 02 - Action       |     ✅      |   v3    |    ❌    |        ✅        |
 | Button-Group                                            | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | [Card](packages/components/src/components/card)         | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
