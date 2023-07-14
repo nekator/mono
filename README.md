@@ -92,7 +92,7 @@ Here is an overview of all components you can use:
 | Progress                                                | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
 | [Radio](packages/components/src/components/radio)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
 | Rating                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
-| Section                                                 | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Section](packages/components/src/components/section)   | 01 - Layout       |     ✅      |   v3    |    ✅    |        ✅        |
 | [Select](packages/components/src/components/select)     | 03 - Data-Input   |     ✅      |   ✅    |    ✅    |        ✅        |
 | Skeleton                                                | 05 - Feedback     |     ❌      |   ❌    |    ❌    |        ❌        |
 | Slider                                                  | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
