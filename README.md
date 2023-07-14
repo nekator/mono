@@ -81,7 +81,7 @@ Here is an overview of all components you can use:
 | Indicator                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
 | Infotext                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
 | [Input](packages/components/src/components/input)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
-| Link                                                    | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Link](packages/components/src/components/link)		  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
 | List-Item                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
 | Menu                                                    | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
 | Modal                                                   | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
