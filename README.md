@@ -70,7 +70,7 @@ Here is an overview of all components you can use:
 | Container                                               | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Date-Picker                                             | 03 - Data-Input   |     ❌      |   ❌    |    ❌    |        ❌        |
 | [Divider](packages/components/src/components/divider)   | 01 - Layout       |     ✅      |   v3    |    ❌    |        ✅        |
-| Drawer                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Drawer](packages/components/src/components/drawer)     | 01 - Layout       |     ✅      |   v3    |    ✅    |        ✅        |
 | Dropdown                                                | 06 - Utility      |     ❌      |   ❌    |    ❌    |        ✅        |
 | Floating-Button                                         | 02 - Action       |     ❌      |   ❌    |    ❌    |        ❌        |
 | Footer                                                  | 01 - Layout       |     ❌      |   ❌    |    ❌    |        ✅        |
