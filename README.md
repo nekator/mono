@@ -80,7 +80,7 @@ Here is an overview of all components you can use:
 | [Icons](packages/components/src/components/icon)        | 04 - Data-Display |     ✅      |   v3    |    ✅    |        ✅        |
 | Image                                                   | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
 | Indicator                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ❌        |
-| Infotext                                                | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
+| [Infotext](packages/components/src/components/infotext) | 04 - Data-Display |     ✅      |   v3    |    ✅    |        ✅        |
 | [Input](packages/components/src/components/input)       | 03 - Data-Input   |     ✅      |   v3    |    ❌    |        ✅        |
 | [Link](packages/components/src/components/link)		  | 02 - Action       |     ❌      |   ❌    |    ❌    |        ✅        |
 | List-Item                                               | 04 - Data-Display |     ❌      |   ❌    |    ❌    |        ✅        |
