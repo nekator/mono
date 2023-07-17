@@ -28,6 +28,7 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   [Netherlands government](https://nldesignsystem.nl/), Tech Stack (among others):
     -   Web Components / StencilJS
     -   Storybook
+-   [wien.at](https://handbuch.wien.gv.at/pattern-library/patterns/)
 
 ## Design System "registries" / overviews
 
