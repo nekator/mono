@@ -32,7 +32,7 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   HTML & CSS first
     -   JavaScript only as an addition, mainly because of that the target are content pages even only
     -   Web Components (upcoming)
--   ["Informationstechnikzentrum Bund" Germany](https://public-ui.github.io/)
+-   ["Informationstechnikzentrum Bund" Germany / KoliBri steht für "Komponentenbibliothek für die Barrierefreiheit"](https://public-ui.github.io/)
     -   Web Components 
 
 ## Design System "registries" / overviews
