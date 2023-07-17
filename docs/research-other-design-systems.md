@@ -29,6 +29,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   Web Components / StencilJS
     -   Storybook
 -   [wien.at](https://handbuch.wien.gv.at/pattern-library/patterns/)
+    -   HTML & CSS first
+    -   JavaScript only as an addition, mainly because of that the target are content pages even only
 
 ## Design System "registries" / overviews
 
