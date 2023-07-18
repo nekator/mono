@@ -35,7 +35,7 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   JavaScript only as an addition, mainly because of that the target are content pages even only
     -   Web Components (upcoming)
 -   ["Informationstechnikzentrum Bund" Germany / KoliBri steht für "Komponentenbibliothek für die Barrierefreiheit"](https://public-ui.github.io/)
-    -   Web Components
+    -   Web Components / StencilJS
 
 ## Design System "registries" / overviews
 
