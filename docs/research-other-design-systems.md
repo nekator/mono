@@ -41,3 +41,4 @@ We'd like to maintain a list of other design systems that might be interesting f
 
 -   <https://adele.uxpin.com/>
 -   <https://storybook.js.org/showcase>
+-   <https://component.gallery/>
