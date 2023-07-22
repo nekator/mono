@@ -125,7 +125,7 @@
     </data>
     <data name="id_Display_Key" xml:space="preserve">
         <value>ID</value>
-        <comment>Feld ID-HTML-Wert</comment>
+        <comment>Value of the ID-HTML-attribute</comment>
     </data>
     <data name="value_Display_Key" xml:space="preserve">
         <value>Initial value</value>

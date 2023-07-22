@@ -122,14 +122,14 @@
     </data>
     <data name="name_Display_Key" xml:space="preserve">
         <value>Fieldname</value>
-        <comment>Name für die Formularübermittlung</comment>
+        <comment>Name for this fields form-submittal</comment>
     </data>
     <data name="value_Display_Key" xml:space="preserve">
         <value>Initial value</value>
     </data>
     <data name="id_Display_Key" xml:space="preserve">
         <value>ID</value>
-        <comment>Wert des id-HTML-Attributs</comment>
+        <comment>id-HTML-attributs value</comment>
     </data>
     <data name="componentHeight_Display_Key" xml:space="preserve">
         <value>Height</value>

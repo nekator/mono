@@ -119,11 +119,11 @@
     </resheader>
     <data name="anchorRef_Display_Key" xml:space="preserve">
         <value>Logo URL</value>
-        <comment>Linkziel des Logos</comment>
+        <comment>Logos link target</comment>
     </data>
     <data name="title_Display_Key" xml:space="preserve">
         <value>Link title</value>
-        <comment>Title Attribut</comment>
+        <comment>Title attribute</comment>
     </data>
     <data name="children_Display_Key" xml:space="preserve">
         <value>Text</value>

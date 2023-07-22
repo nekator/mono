@@ -122,7 +122,7 @@
     </data>
     <data name="name_Display_Key" xml:space="preserve">
         <value>Fieldname</value>
-        <comment>Key mit dem der Feldwert übermittelt wird.</comment>
+        <comment>Name for this fields form-submittal</comment>
     </data>
     <data name="variant_Display_Key" xml:space="preserve">
         <value>Variant</value>

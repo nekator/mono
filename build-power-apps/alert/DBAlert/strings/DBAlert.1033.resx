@@ -119,7 +119,7 @@
     </resheader>
     <data name="headline_Display_Key" xml:space="preserve">
         <value>Headline</value>
-        <comment>Text der Überschrift</comment>
+        <comment>Headline copy</comment>
     </data>
     <data name="children_Display_Key" xml:space="preserve">
         <value>Paragraph</value>

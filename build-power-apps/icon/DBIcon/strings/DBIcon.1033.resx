@@ -125,7 +125,7 @@
     </data>
     <data name="title_Display_Key" xml:space="preserve">
         <value>Alternative text</value>
-        <comment>Text des title-HTML-Attributs</comment>
+        <comment>Copy of the title-HTML-attribute</comment>
     </data>
     <data name="componentHeight_Display_Key" xml:space="preserve">
         <value>Height</value>
