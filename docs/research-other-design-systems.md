@@ -1,6 +1,6 @@
 # Other design systems
 
-We'd like to maintain a list of other design systems that might be interesting for research and inspiration.
+We'd like to maintain a list of other design systems that might be interesting for research and inspiration. And even also add some meta information especially on technical aspects.
 
 -   [Telekom Scale](https://github.com/telekom/scale), Tech Stack:
     -   Web Components / StencilJS
