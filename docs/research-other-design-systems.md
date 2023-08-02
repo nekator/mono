@@ -15,6 +15,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   [Web Components / StencilJS](https://gitlab.com/SNCF/wcs)
     -   Storybook
 -   [IBM / Carbon Design System](https://github.com/carbon-design-system/carbon)
+	-   ["React first, with official support for Web Components"](https://carbondesignsystem.com/developing/frameworks/other-frameworks)
+	-   Storybook
 -   [Material Web](https://github.com/material-components/material-web)
     -   Web Components
 -   [NS.nl / Platform](https://www.ns.nl/platform/components/index.html)
