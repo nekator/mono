@@ -36,6 +36,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   Web Components (upcoming)
 -   ["Informationstechnikzentrum Bund" Germany / KoliBri steht für "Komponentenbibliothek für die Barrierefreiheit"](https://public-ui.github.io/)
     -   Web Components / StencilJS
+-   [Washington Post Design System (WPDS)](https://build.washingtonpost.com/)
+	-   React
 
 ## Design System "registries" / overviews
 
