@@ -25,7 +25,7 @@
 			@include set-component-variables(nth($styles, $i + 1));
 		}
 
-		%db-font-size#{nth($styles, $i + 1)} {
+		%db-font-size-#{nth($styles, $i + 1)} {
 			@include set-font-size(nth($styles, $i + 1));
 		}
 
