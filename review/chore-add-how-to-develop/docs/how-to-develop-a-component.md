@@ -15,11 +15,11 @@
 
 -   Your main work for the component will be inside `packages/components/src/components/my-awesome-component`.
 
--   To develop on your component you can start a development server by running `npm run dev`, this will give you some options to choose from. When you begin "scribbling" (html+scss) with a component you can select `plain-html`. For _advanced users_ you can skip this and develop directly for one framework (html+scss+ts) see [Test Frameworks with Showcases](#test-frameworks-with-showcases).
+-   To develop on your component you can start a development server by running `npm run dev`, this will give you some options to choose from. When you begin "scribbling" (html+scss) with a component you can select `plain-html`. For _advanced users_ you can skip this and develop directly for one framework (html+scss+ts), see [Test Frameworks with Showcases](#test-frameworks-with-showcases).
 
 ### Styling with SCSS
 
-Starting with the `packages/components/src/components/my-awesome-component/my-awesome-component.scss` there are some thing you should know:
+Starting with `packages/components/src/components/my-awesome-component/my-awesome-component.scss` there are some thing you should know:
 
 1. The most important dependency are the variables.global `@use "@db-ui/foundations/build/scss/variables.global" as *;`. They enable you to use e.g. `$db-spacing-fixed-md` for paddings, margins etc.
 2. A lot of times you have to force another `font-size / line-height`, you can do it with `@use "@db-ui/foundations/build/scss/helpers/font" as *;` and the corresponding placeholder extend `@extend %db-overwrite-font-size-sm;`.
