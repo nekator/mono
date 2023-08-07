@@ -7,6 +7,12 @@
 					"target": "web"
 				}
 			},
+			"local-name": {
+				"value": "DB Screen Sans",
+				"attributes": {
+					"target": "web"
+				}
+			},
 			"font-family": {
 				"value": "'DB Screen Sans'",
 				"attributes": {
