@@ -39,10 +39,10 @@
 
 // As this font is not officially used within the Design System so far, we're not providing it as a token at the moment
 @font-face {
-	font-family: "DB Screen Sans Digital Regular";
+	font-family: $db-font-db-screensans-digital-regular-font-family;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: $db-font-db-screensans-digital-regular-font-weight;
 	src:
-		local("DB Screen Sans Digital"),
-		url($fonts-path + "dbscreensans-digitalregular.woff2") format("woff2");
+		local($db-font-db-screensans-digital-regular-name),
+		url($fonts-path + $db-font-db-screensans-digital-regular-woff2) format("woff2");
 }

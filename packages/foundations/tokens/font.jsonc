@@ -116,6 +116,38 @@
 				}
 			}
 		},
+		"db-screensans-digital-regular": {
+			"name": {
+				"value": "'DB Screen Sans Digital Regular'",
+				"attributes": {
+					"target": "web"
+				}
+			},
+			"local-name": {
+				"value": "DB Screen Sans Digital",
+				"attributes": {
+					"target": "web"
+				}
+			},
+			"font-family": {
+				"value": "'DB Screen Sans Digital', 'DB Screen Sans'",
+				"attributes": {
+					"target": "web"
+				}
+			},
+			"font-weight": {
+				"value": "400",
+				"attributes": {
+					"target": "web"
+				}
+			},
+			"woff2": {
+				"value": "'dbscreensans-digitalregular.woff2'",
+				"attributes": {
+					"target": "web"
+				}
+			}
+		},
 		"family": {
 			"sans": {
 				"value": "{font.db-screensans-regular.font-family.value}, Helvetica, Arial, sans-serif",
