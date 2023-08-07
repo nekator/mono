@@ -65,6 +65,12 @@
 					"target": "web"
 				}
 			},
+			"local-name": {
+				"value": "DB Screen Head",
+				"attributes": {
+					"target": "web"
+				}
+			},
 			"font-family": {
 				"value": "'DB Screen Head'",
 				"attributes": {
