@@ -130,7 +130,7 @@
 				}
 			},
 			"font-family": {
-				"value": "'DB Screen Sans Digital', 'DB Screen Sans'",
+				"value": "'DB Screen Sans Digital'",
 				"attributes": {
 					"target": "web"
 				}
