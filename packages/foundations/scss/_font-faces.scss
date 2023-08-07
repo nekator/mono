@@ -43,6 +43,6 @@
 	font-style: normal;
 	font-weight: $db-font-db-screensans-digital-regular-font-weight;
 	src:
-		local($db-font-db-screensans-digital-regular-name),
+		local($db-font-db-screensans-digital-regular-local-name),
 		url($fonts-path + $db-font-db-screensans-digital-regular-woff2) format("woff2");
 }
