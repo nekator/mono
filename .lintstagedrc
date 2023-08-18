@@ -2,6 +2,9 @@
 	"*": "jscpd --exitCode 1 .",
 	"*.md": "markdownlint -c .markdown-lint.yml",
 	"*.{css,scss}": "stylelint --fix",
-	"*.{js,ts,tsx}": ["cross-env TIMING=1 NODE_OPTIONS=\"--max-old-space-size=4096\" xo --fix", "prettier --write"],
-	"*.!{js,ts,tsx}": "prettier --write --ignore-unknown"
+	"*.{js,ts,tsx}": [
+		"cross-env TIMING=1 NODE_OPTIONS=\"--max-old-space-size=4096\" xo --fix",
+		"prettier --write"
+	],
+	"!*.{js,ts,tsx}": "prettier --write --ignore-unknown"
 }
