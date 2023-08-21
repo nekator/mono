@@ -94,6 +94,20 @@ export type WidthProps = {
 	width?: 'full' | 'auto';
 };
 
+export type SizeProps = {
+	/**
+	 * The size attribute changes the font-size and other related sizes of the component.
+	 */
+	size?: 'medium' | 'small';
+};
+
+export type EmphasisProps = {
+	/**
+	 * The emphasis attribute divides in between a weak or strong importance.
+	 */
+	emphasis?: 'weak' | 'strong';
+};
+
 export type FormProps = {
 	/**
 	 * React specific attribute to set default value.
@@ -136,7 +150,6 @@ export type FormCheckProps = {
 
 export type FormState = {
 	_isValid?: boolean | undefined;
-	_value?: any;
 	// callback for controlValueAccessor's onChange handler
 	propagateChange?: (value: any) => void;
 };
@@ -280,6 +293,17 @@ export type InnerCloseButtonProps = {
 	 * The closeButtonText attribute changes the text inside the close button.
 	 */
 	closeButtonText?: string;
+};
+
+export type NavigationBackButtonProps = {
+	/**
+	 * The backButtonId attribute changes the id inside the back button.
+	 */
+	backButtonId?: string;
+	/**
+	 * The backButtonText attribute changes the text inside the back button.
+	 */
+	backButtonText?: string;
 };
 
 export type KeyValueType = {
