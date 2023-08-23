@@ -12,7 +12,7 @@ body {
 	@extend %db-component-variables-md;
 }
 
-* {
+:where([class^="db-"], [class^="db-"] *) {
 	@extend %db-font-size-md;
 }
 
