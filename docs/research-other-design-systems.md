@@ -15,8 +15,8 @@ We'd like to maintain a list of other design systems that might be interesting f
     -   [Web Components / StencilJS](https://gitlab.com/SNCF/wcs)
     -   Storybook
 -   [IBM / Carbon Design System](https://github.com/carbon-design-system/carbon)
-	-   ["React first, with official support for Web Components"](https://carbondesignsystem.com/developing/frameworks/other-frameworks)
-	-   Storybook
+    -   ["React first, with official support for Web Components"](https://carbondesignsystem.com/developing/frameworks/other-frameworks)
+    -   Storybook
 -   [Material Web](https://github.com/material-components/material-web)
     -   Web Components
 -   [NS.nl / Platform](https://www.ns.nl/platform/components/index.html)
@@ -39,7 +39,7 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   ["Informationstechnikzentrum Bund" Germany / KoliBri steht für "Komponentenbibliothek für die Barrierefreiheit"](https://public-ui.github.io/)
     -   Web Components / StencilJS
 -   [Washington Post Design System (WPDS)](https://build.washingtonpost.com/)
-	-   React
+    -   React
 
 ## Design System "registries" / overviews
 
