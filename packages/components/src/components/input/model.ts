@@ -32,7 +32,8 @@ export type DBInputDefaultProps = {
 		| 'hidden'
 		| 'date'
 		| 'datetime-local'
-		| 'week';
+		| 'week'
+		| 'color';
 	value?: any;
 	variant?: DefaultVariantProps;
 };
@@ -50,7 +51,6 @@ export type DBInputProps = DBInputDefaultProps &
 
 export type DBInputDefaultState = {
 	_dataListId?: string;
-	_value?: any;
 	getIcon: (variant?: DefaultVariantType) => string;
 };
 

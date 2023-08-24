@@ -1,4 +1,11 @@
-import { For, onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
+import {
+	For,
+	onMount,
+	onUpdate,
+	Show,
+	useMetadata,
+	useStore
+} from '@builder.io/mitosis';
 import { DBSelectState, DBSelectProps, DBSelectOptionType } from './model';
 import { cls } from '../../utils';
 import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
@@ -45,6 +52,13 @@ export default function DBSelect(props: DBSelectProps) {
 					props.validityChange(!!event.target?.validity?.valid);
 				}
 			}
+
+			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
+			// VUE:this.$emit("update:value", event.target.value);
+
+			// Change event to work with reactive and template driven forms
+			// ANGULAR: this.propagateChange(event.target.checked);
+			// ANGULAR: this.writeValue(event.target.checked);
 		},
 		handleBlur: (event: any) => {
 			if (props.onBlur) {
@@ -83,6 +97,12 @@ export default function DBSelect(props: DBSelectProps) {
 			state.stylePath = props.stylePath;
 		}
 	});
+
+	onUpdate(() => {
+		if (props.value) {
+			state._value = props.value;
+		}
+	}, [props.value]);
 	// jscpd:ignore-end
 
 	return (
@@ -97,15 +117,15 @@ export default function DBSelect(props: DBSelectProps) {
 				{/* Required has to be true to use floating label */}
 				{/* data-value is used in css to check if value is set */}
 				<select
-					data-value={state._value}
 					ref={component}
+					data-value={props.value || state._value}
 					aria-invalid={props.invalid}
 					aria-required={props.required}
 					required={props.required}
 					disabled={props.disabled}
 					id={state._id}
 					name={props.name}
-					value={state._value}
+					value={props.value || state._value}
 					onClick={(event) => state.handleClick(event)}
 					onChange={(event) => state.handleChange(event)}
 					onBlur={(event) => state.handleBlur(event)}

@@ -4,8 +4,10 @@ export type ComponentParserType = {
 
 export type ComponentType = {
 	index?: string | number;
-	type?: /* hygen type */
-	| 'navigation-item'
+	type?: /* Template hygen type */
+	| 'main-navigation'
+		| 'badge'
+		| 'navigation-item'
 		| 'tag'
 		| 'select'
 		| 'h1'
