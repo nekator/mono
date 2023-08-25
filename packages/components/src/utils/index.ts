@@ -1,7 +1,7 @@
 import { DefaultVariantType } from '../shared/model';
 
 export const uuid = () => {
-	return window?.crypto?.randomUUID() ?? window?.crypto?.getRandomValues(new Uint32Array(3))?.join('-') ?? Math.random().toString();
+	return window?.crypto?.randomUUID ? window?.crypto?.randomUUID() : window?.crypto?.getRandomValues ? window?.crypto?.getRandomValues(new Uint32Array(3))?.join('-') : Math.random().toString().substring(2);
 };
 
 export const addAttributeToChildren = (
@@ -48,6 +48,6 @@ export const getMessageIcon = (
 	return messageIcon
 		? messageIcon
 		: !variant || variant === 'adaptive'
-		? 'none'
-		: undefined;
+			? 'none'
+			: undefined;
 };
