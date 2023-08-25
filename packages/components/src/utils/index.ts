@@ -1,7 +1,7 @@
 import { DefaultVariantType } from '../shared/model';
 
 export const uuid = () => {
-	return window?.crypto?.randomUUID ? window?.crypto?.randomUUID() : window?.crypto?.getRandomValues ? window?.crypto?.getRandomValues(new Uint32Array(3))?.join('-') : Math.random().toString().substring(2);
+	return window?.crypto?.randomUUID ? window.crypto.randomUUID() : window?.crypto?.getRandomValues ? window.crypto.getRandomValues(new Uint32Array(3))?.join('-') : Math.random().toString().substring(2);
 };
 
 export const addAttributeToChildren = (
