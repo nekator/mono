@@ -1,7 +1,7 @@
 import { DefaultVariantType } from '../shared/model';
 
 export const uuid = () => {
-	if (window) {
+	if (typeof window !== 'undefined') {
 		if (window.crypto?.randomUUID) {
 			return window.crypto.randomUUID();
 		} else if (window.crypto?.getRandomValues) {
