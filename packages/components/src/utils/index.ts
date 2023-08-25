@@ -1,12 +1,14 @@
 import { DefaultVariantType } from '../shared/model';
 
 export const uuid = () => {
-	if (crypto?.randomUUID) {
-		return crypto.randomUUID();
-	} else if (crypto?.getRandomValues) {
-		return crypto
-			.getRandomValues(new Uint32Array(3))
-			.join('-');
+	if (window) {
+		if (window.crypto?.randomUUID) {
+			return window.crypto.randomUUID();
+		} else if (window.crypto?.getRandomValues) {
+			return window.crypto
+				.getRandomValues(new Uint32Array(3))
+				.join('-');
+		}
 	}
 
 	return Math.random().toString().substring(2);
