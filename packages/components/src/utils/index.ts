@@ -5,9 +5,7 @@ export const uuid = () => {
 		if (window.crypto?.randomUUID) {
 			return window.crypto.randomUUID();
 		} else if (window.crypto?.getRandomValues) {
-			return window.crypto
-				.getRandomValues(new Uint32Array(3))
-				.join('-');
+			return window.crypto.getRandomValues(new Uint32Array(3)).join('-');
 		}
 	}
 
@@ -58,6 +56,6 @@ export const getMessageIcon = (
 	return messageIcon
 		? messageIcon
 		: !variant || variant === 'adaptive'
-			? 'none'
-			: undefined;
+		? 'none'
+		: undefined;
 };
