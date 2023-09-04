@@ -84,15 +84,6 @@
 				}
 			},
 			{
-				"name": "Filled",
-				"props": {
-					"label": "Label",
-					"value": "Input Text",
-					"disabled": true,
-					"message": "Filled"
-				}
-			},
-			{
 				"name": "Filled Number",
 				"props": {
 					"label": "Label",
@@ -119,12 +110,12 @@
 				}
 			},
 			{
-				"name": "Disabled with value",
+				"name": "Disabled filled",
 				"props": {
 					"label": "Label",
 					"value": "Input Text",
 					"disabled": true,
-					"message": "Disabled with value"
+					"message": "Disabled filled"
 				}
 			},
 			{
@@ -132,7 +123,6 @@
 				"props": {
 					"label": "Label",
 					"value": "Input Text",
-					"disabled": true,
 					"required": true,
 					"message": "Required"
 				}
