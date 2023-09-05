@@ -84,6 +84,14 @@
 				}
 			},
 			{
+				"name": "Filled",
+				"props": {
+					"label": "Label",
+					"value": "Input Text",
+					"message": "Filled"
+				}
+			},
+			{
 				"name": "Filled Number",
 				"props": {
 					"label": "Label",
