@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9583],{49583:function(t,n,r){r.r(n),r.d(n,{db_meta:function(){return e}});var u=r(29247);let e=class{render(){return(0,u.h)(u.H,null,(0,u.h)("slot",null))}constructor(t){(0,u.r)(this,t)}};e.style=":host{margin-top:auto;margin-bottom:auto}"}}]);
