@@ -11,13 +11,19 @@ useMetadata({
 		includeIcon: false,
 		hasDisabledProp: true,
 		properties: [
-			// 	{ name: 'label', type: 'SingleLine.Text', required: true },
-			// 	{ name: 'placeholder', type: 'SingleLine.Text' },
-			// 	{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
-			// 	{
-			// 		name: 'variant',
-			// 		type: 'DefaultVariant' // this is a custom type not provided by ms
-			// 	}
+			{
+				name: 'label',
+				type: 'SingleLine.Text',
+				defaultValue: 'Textarea',
+				required: true
+			},
+			{ name: 'placeholder', type: 'SingleLine.Text' },
+			{ name: 'value', type: 'SingleLine.Text', onChange: 'value' }, // $event.target["value"|"checked"|...]
+			{
+				name: 'variant',
+				type: 'DefaultVariant', // this is a custom type not provided by ms
+				defaultValue: 'adaptive'
+			}
 		]
 	}
 });
