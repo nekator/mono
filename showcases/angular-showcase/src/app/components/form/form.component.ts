@@ -14,13 +14,21 @@ export class FormComponent {
 	checked = [true, false];
 
 	select = '';
-	model = { input: 'Anna', radio: 'X', checkbox: true, checkbox2: true };
+	model = {
+		input: 'Anna',
+		radio: 'X',
+		checkbox: true,
+		checkbox2: true,
+		select: 'test2'
+	};
+
 	dataList = [{ key: 'test', value: 'Test' }, { key: 'test2' }];
 
 	// Reference: https://blog.angular-university.io/angular-custom-form-controls/
 	form = new FormGroup({
 		input: new FormControl('Filled with formControl'),
-		checkbox: new FormControl(true)
+		checkbox: new FormControl(true),
+		select: new FormControl('test2')
 	});
 
 	getRadioName = (radioName: string): string => `Radio ${radioName}`;
@@ -64,6 +72,12 @@ export class FormComponent {
 
 	handleChange3 = (event: any) => {
 		this.checked = [this.checked[0], event.target.checked];
+	};
+
+	handleChange4 = (event: any) => {
+		this.form.get('select')?.setValue(event.target.value, {
+			onlySelf: true
+		});
 	};
 
 	showValues(): void {
