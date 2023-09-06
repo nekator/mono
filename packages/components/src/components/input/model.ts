@@ -6,11 +6,10 @@ import {
 	FocusEventState,
 	FormMessageProps,
 	FormProps,
-	FormReadonlyProps,
 	FormState,
 	GlobalProps,
 	GlobalState,
-	GlobalTextProps,
+	FormTextProps,
 	IconAfterProps,
 	IconProps,
 	IconVisibleState,
@@ -21,6 +20,22 @@ import {
 export type DBInputDefaultProps = {
 	dataList?: KeyValueType[];
 	dataListId?: string;
+	/**
+	 * Maximum value
+	 */
+	max?: number | string;
+	/**
+	 * Minimum value
+	 */
+	min?: number | string;
+
+	/**
+	 * Pattern the value must match to be valid
+	 */
+	pattern?: string;
+	/**
+	 * 	Type of form control
+	 */
 	type?:
 		| 'color'
 		| 'date'
@@ -40,12 +55,11 @@ export type DBInputDefaultProps = {
 		| 'week'
 		| string;
 	step?: number | string;
-	variant?: DefaultVariantProps;
 };
 
 export type DBInputProps = DBInputDefaultProps &
 	GlobalProps &
-	GlobalTextProps &
+	FormTextProps &
 	ChangeEventProps &
 	FocusEventProps &
 	ValidEventProps &
@@ -53,8 +67,7 @@ export type DBInputProps = DBInputDefaultProps &
 	IconProps &
 	IconAfterProps &
 	DefaultVariantProps &
-	FormMessageProps &
-	FormReadonlyProps;
+	FormMessageProps;
 
 export type DBInputDefaultState = {
 	_dataListId?: string;
