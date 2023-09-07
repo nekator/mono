@@ -135,7 +135,7 @@
     <data name="componentWidth_Display_Key" xml:space="preserve">
         <value>Breite</value>
     </data>
-    <data name="DBInput_Display_Key" xml:space="preserve">
+    <data name="DBTextarea_Display_Key" xml:space="preserve">
         <value>DB Textarea</value>
     </data>
 </root>
