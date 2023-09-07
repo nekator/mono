@@ -79,7 +79,7 @@
 	position: relative;
 
 	// padding-inline-end according to current amount of icons
-	&:has(> .icon-before) {
+	&:has(> .icon-before, > [type="search"]) {
 		--db-input-padding-inline-start: #{calc(#{$db-sizing-md})};
 		--db-input-label-max-width: 70%;
 
@@ -125,17 +125,30 @@
 		}
 	}
 
+	&:has(> [type="search"]) {
+		@include icon("search");
+	}
+
 	.db-icon,
 	db-icon,
-	&:has(> datalist)::after {
-		@extend %db-overwrite-font-size-sm;
-
+	&:has(> datalist)::after,
+	&:has(> [type="search"])::before {
 		block-size: $db-sizing-md;
 		display: flex;
 		align-items: center;
 		position: absolute;
 		inset-block-start: 0;
 		margin-inline: $db-spacing-fixed-sm;
+	}
+
+	.db-icon,
+	db-icon,
+	&:has(> datalist)::after {
+		@extend %db-overwrite-font-size-sm;
+	}
+
+	&:has(> [type="search"])::before {
+		@extend %db-overwrite-font-size-md;
 	}
 
 	.icon-after,
@@ -283,11 +296,6 @@
 				--db-input-padding-inline-start: #{calc(
 						$db-spacing-fixed-sm * 2 + 0.625rem
 					)};
-			}
-
-			& ~ .icon-state {
-				// TODO replace with svg icon
-				@include icon("search");
 			}
 
 			&:focus,
