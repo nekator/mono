@@ -182,5 +182,65 @@
 				}
 			}
 		]
+	},
+	{
+		"name": "Types",
+		"examples": [
+			{
+				"name": "(Default) Text",
+				"props": {
+					"label": "Label",
+					"message": "(Default) Text"
+				}
+			},
+			{
+				"name": "Password",
+				"props": {
+					"label": "Label",
+					"message": "Password",
+					"type": "password"
+				}
+			},
+			{
+				"name": "Search",
+				"props": {
+					"label": "Label",
+					"message": "Search",
+					"type": "search"
+				}
+			},
+			{
+				"name": "E-Mail",
+				"props": {
+					"label": "Label",
+					"message": "E-Mail",
+					"type": "email"
+				}
+			},
+			{
+				"name": "Number",
+				"props": {
+					"label": "Label",
+					"message": "Number",
+					"type": "number"
+				}
+			},
+			{
+				"name": "Tel",
+				"props": {
+					"label": "Label",
+					"message": "Tel",
+					"type": "tel"
+				}
+			},
+			{
+				"name": "URL",
+				"props": {
+					"label": "Label",
+					"message": "URL",
+					"type": "url"
+				}
+			}
+		]
 	}
 ]
