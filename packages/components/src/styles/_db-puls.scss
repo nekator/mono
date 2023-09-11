@@ -1,13 +1,14 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
 
 %db-puls {
 	@include component.screen("m") {
 		&::after {
 			border-inline-start: none;
-			border-block-end: $default-border-radius solid $db-colors-primary;
-			inset-block-end: calc(-1 * #{$db-spacing-fixed-xs});
+			border-block-end: $default-border-radius solid
+				var.$db-colors-primary;
+			inset-block-end: calc(-1 * #{var.$db-spacing-fixed-xs});
 			inline-size: 0;
 			block-size: auto;
 			inset-inline-start: 50%;
@@ -26,8 +27,8 @@
 		block-size: 0;
 		transform: translate(0, -50%);
 		inset-block-start: 50%;
-		inset-inline-start: calc(-1 * #{$db-spacing-fixed-xs});
-		border-inline-start: $default-border-radius solid $db-colors-primary;
+		inset-inline-start: calc(-1 * #{var.$db-spacing-fixed-xs});
+		border-inline-start: $default-border-radius solid var.$db-colors-primary;
 	}
 }
 

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "./../../styles/dialog-init" as *;
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/animation/animations" as *;
@@ -28,7 +28,7 @@
 	&:not([data-width="full"]) {
 		max-block-size: var(
 			--db-drawer-max-height,
-			calc(100% - $db-spacing-fixed-xl)
+			calc(100% - var.$db-spacing-fixed-xl)
 		);
 		max-inline-size: none;
 	}
@@ -55,16 +55,16 @@
 
 $spacings: (
 	"small": (
-		"block": $db-spacing-fixed-xs,
-		"inline": $db-spacing-fixed-md
+		"block": var.$db-spacing-fixed-xs,
+		"inline": var.$db-spacing-fixed-md
 	),
 	"medium": (
-		"block": $db-spacing-fixed-sm,
-		"inline": $db-spacing-fixed-lg
+		"block": var.$db-spacing-fixed-sm,
+		"inline": var.$db-spacing-fixed-lg
 	),
 	"large": (
-		"block": $db-spacing-fixed-md,
-		"inline": $db-spacing-fixed-xl
+		"block": var.$db-spacing-fixed-md,
+		"inline": var.$db-spacing-fixed-xl
 	),
 	"none": (
 		"block": 0,
@@ -111,7 +111,7 @@ $spacings: (
 		@extend %spacing-drawer;
 		display: flex;
 		flex-direction: column;
-		background-color: $db-colors-neutral-bg;
+		background-color: var.$db-colors-neutral-bg;
 		block-size: 100%;
 		inline-size: 100%;
 		position: fixed;
@@ -120,7 +120,7 @@ $spacings: (
 		&:not([data-width="full"]) {
 			max-inline-size: var(
 				--db-drawer-max-width,
-				calc(100% - $db-spacing-fixed-xl)
+				calc(100% - var.$db-spacing-fixed-xl)
 			);
 		}
 

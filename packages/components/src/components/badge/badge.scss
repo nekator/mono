@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
@@ -40,7 +40,7 @@
 }
 
 .db-badge {
-	--badge-size: #{$db-spacing-fixed-sm};
+	--badge-size: #{var.$db-spacing-fixed-sm};
 	@extend %component-border;
 	@extend %db-overwrite-font-size-sm;
 	@extend %default-button;
@@ -49,7 +49,7 @@
 
 	display: flex;
 	border-radius: 42px; // extreme radius
-	padding-inline: $db-spacing-fixed-xs;
+	padding-inline: var.$db-spacing-fixed-xs;
 	block-size: fit-content;
 	inline-size: fit-content;
 
@@ -61,7 +61,7 @@
 	}
 
 	&:has(.db-icon) {
-		padding: $db-spacing-fixed-2xs;
+		padding: var.$db-spacing-fixed-2xs;
 	}
 
 	& > *,
@@ -70,9 +70,9 @@
 	}
 
 	&[data-size="small"] {
-		--badge-size: #{$db-spacing-fixed-xs};
+		--badge-size: #{var.$db-spacing-fixed-xs};
 		@extend %db-overwrite-font-size-2xs;
-		padding-inline: $db-spacing-fixed-2xs;
+		padding-inline: var.$db-spacing-fixed-2xs;
 
 		&:empty,
 		> span:empty {
@@ -80,7 +80,7 @@
 		}
 
 		&:has(.db-icon) {
-			padding: $db-spacing-fixed-3xs;
+			padding: var.$db-spacing-fixed-3xs;
 		}
 
 		& > *,

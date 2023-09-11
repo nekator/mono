@@ -1,13 +1,13 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
 
 .db-section {
-	padding-inline: $db-spacing-fixed-md;
+	padding-inline: var.$db-spacing-fixed-md;
 
 	@include component.screen("m") {
-		padding-inline: $db-spacing-fixed-md;
+		padding-inline: var.$db-spacing-fixed-md;
 	}
 
 	&[data-variant="full"] {
@@ -19,15 +19,15 @@
 	}
 
 	&[data-size="small"] {
-		padding-block: $db-spacing-responsive-sm;
+		padding-block: var.$db-spacing-responsive-sm;
 	}
 
 	&[data-size="medium"] {
-		padding-block: $db-spacing-responsive-md;
+		padding-block: var.$db-spacing-responsive-md;
 	}
 
 	&[data-size="large"] {
-		padding-block: $db-spacing-responsive-lg;
+		padding-block: var.$db-spacing-responsive-lg;
 	}
 
 	& > div {

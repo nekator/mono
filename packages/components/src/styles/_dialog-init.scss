@@ -1,6 +1,6 @@
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 
-$backdrop-color: $db-colors-neutral-on-bg;
+$backdrop-color: var.$db-colors-neutral-on-bg;
 
 %backdrop {
 	background-color: $backdrop-color;

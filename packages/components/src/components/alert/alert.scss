@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
@@ -59,8 +59,8 @@
 	@extend %component-border;
 	@extend %grid-layout;
 	display: grid;
-	padding: $db-spacing-fixed-md;
-	gap: $db-spacing-fixed-xs $db-spacing-fixed-md;
+	padding: var.$db-spacing-fixed-md;
+	gap: var.$db-spacing-fixed-xs var.$db-spacing-fixed-md;
 	inline-size: inherit;
 
 	// TODO: probably extract this to an overwrite or external file

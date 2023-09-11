@@ -1,7 +1,7 @@
 @use "sass:string";
 @use "../color-placeholder" as *;
 @use "../variables" as *;
-@use "../variables.global" as *;
+@use "../variables.global" as var;
 
 $color-variants: "neutral", "neutral-strong", "primary", "critical",
 	"successful", "warning", "informational";
@@ -107,27 +107,27 @@ $color-variants: "neutral", "neutral-strong", "primary", "critical",
 
 $component-variants: (
 	"critical": (
-		"border": $db-colors-critical-border-weak,
-		"element": $db-colors-critical-element,
-		"on-bg": $db-colors-critical-on-bg,
-		"primary": $db-colors-critical
+		"border": var.$db-colors-critical-border-weak,
+		"element": var.$db-colors-critical-element,
+		"on-bg": var.$db-colors-critical-on-bg,
+		"primary": var.$db-colors-critical
 	),
 	"informational": (
-		"border": $db-colors-informational-border-weak,
-		"element": $db-colors-informational-element,
-		"on-bg": $db-colors-informational-on-bg,
-		"primary": $db-colors-informational
+		"border": var.$db-colors-informational-border-weak,
+		"element": var.$db-colors-informational-element,
+		"on-bg": var.$db-colors-informational-on-bg,
+		"primary": var.$db-colors-informational
 	),
 	"warning": (
-		"border": $db-colors-warning-border-weak,
-		"element": $db-colors-warning-element,
-		"on-bg": $db-colors-warning-on-bg,
-		"primary": $db-colors-warning
+		"border": var.$db-colors-warning-border-weak,
+		"element": var.$db-colors-warning-element,
+		"on-bg": var.$db-colors-warning-on-bg,
+		"primary": var.$db-colors-warning
 	),
 	"successful": (
-		"border": $db-colors-successful-border-weak,
-		"element": $db-colors-successful-element,
-		"on-bg": $db-colors-successful-on-bg,
-		"primary": $db-colors-successful
+		"border": var.$db-colors-successful-border-weak,
+		"element": var.$db-colors-successful-element,
+		"on-bg": var.$db-colors-successful-on-bg,
+		"primary": var.$db-colors-successful
 	)
 );

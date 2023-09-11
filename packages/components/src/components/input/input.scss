@@ -1,7 +1,7 @@
 @charset "utf-8";
 @use "@db-ui/foundations/build/scss/default.assets-paths" as *;
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
 @use "@db-ui/foundations/build/scss/helpers/font" as *;
@@ -33,7 +33,7 @@
 	// add 0.1em to adjust label with input padding-inline-start
 	transform: translate(
 			calc($translationX + 0.1em),
-			calc($db-sizing-md * $transformScale)
+			calc(var.$db-sizing-md * $transformScale)
 		)
 		scale(var(--db-input-label-scale));
 }
@@ -43,18 +43,18 @@
 		(
 				var(--db-input-padding-end-icon-after) +
 					var(--db-input-padding-end-datalist)
-			) * #{$db-sizing-md} + #{$db-spacing-fixed-sm} - var(
+			) * #{var.$db-sizing-md} + #{var.$db-spacing-fixed-sm} - var(
 				--db-input-padding-end-datalist
-			) * #{$db-spacing-fixed-sm} - var(
+			) * #{var.$db-spacing-fixed-sm} - var(
 				--db-input-padding-end-icon-after
-			) * #{$db-spacing-fixed-sm}
+			) * #{var.$db-spacing-fixed-sm}
 	);
 	display: flex;
 	align-items: center;
 	flex-direction: row;
 	position: absolute;
 	inset-block-start: 0;
-	block-size: $db-sizing-md;
+	block-size: var.$db-sizing-md;
 
 	pointer-events: none;
 	inset-inline-end: 0;
@@ -63,7 +63,7 @@
 }
 
 .db-input {
-	--db-input-padding-inline-start: #{$db-spacing-fixed-sm};
+	--db-input-padding-inline-start: #{var.$db-spacing-fixed-sm};
 	--db-input-padding-end-icon-after: 0;
 	--db-input-padding-end-data-variant: 0;
 	--db-input-padding-end-datalist: 0;
@@ -80,7 +80,7 @@
 
 	// padding-inline-end according to current amount of icons
 	&:has(> .icon-before, > [type="search"]) {
-		--db-input-padding-inline-start: #{calc(#{$db-sizing-md})};
+		--db-input-padding-inline-start: #{calc(#{var.$db-sizing-md})};
 		--db-input-label-max-width: 70%;
 
 		input {
@@ -103,7 +103,7 @@
 
 	&:has(> datalist):has(> .icon-after) {
 		.icon-after {
-			padding-inline-start: $db-spacing-fixed-xs;
+			padding-inline-start: var.$db-spacing-fixed-xs;
 		}
 	}
 
@@ -133,12 +133,12 @@
 	db-icon,
 	&:has(> datalist)::after,
 	&:has(> [type="search"])::before {
-		block-size: $db-sizing-md;
+		block-size: var.$db-sizing-md;
 		display: flex;
 		align-items: center;
 		position: absolute;
 		inset-block-start: 0;
-		margin-inline: $db-spacing-fixed-sm;
+		margin-inline: var.$db-spacing-fixed-sm;
 	}
 
 	.db-icon,
@@ -160,9 +160,8 @@
 
 	.icon-after {
 		margin-inline-end: calc(
-			#{$db-spacing-fixed-sm} + var(--db-input-padding-end-datalist) * #{$db-sizing-md} - var(
-					--db-input-padding-end-datalist
-				) * #{$db-spacing-fixed-sm}
+			#{var.$db-spacing-fixed-sm} + var(--db-input-padding-end-datalist) *
+				#{var.$db-sizing-md} - var(--db-input-padding-end-datalist) * #{var.$db-spacing-fixed-sm}
 		);
 	}
 
@@ -188,7 +187,7 @@
 		);
 		transition: transform 0.2s $db-transition-functional-timing;
 		will-change: transform;
-		block-size: $db-sizing-md;
+		block-size: var.$db-sizing-md;
 		cursor: text;
 		// setting max-width to prevent users from too long labels by displaying text-overflow: ellipsis
 		max-inline-size: var(--db-input-label-max-width, 80%);
@@ -206,7 +205,7 @@
 					var(--db-input-padding-end-icon-after) +
 						var(--db-input-padding-end-data-variant) +
 						var(--db-input-padding-end-datalist)
-				) * #{$db-sizing-md}
+				) * #{var.$db-sizing-md}
 		);
 
 		@extend %default-interactive-component;
@@ -215,13 +214,13 @@
 		@include bg-transparent-hover();
 		@include get-variant-bg-color(0.08);
 
-		color: $db-colors-neutral-on-bg;
+		color: var.$db-colors-neutral-on-bg;
 
-		block-size: $db-sizing-md;
+		block-size: var.$db-sizing-md;
 		max-inline-size: 100%;
 		inline-size: 100%;
-		padding: $db-spacing-fixed-xs var(--db-input-padding-inline-end)
-			$db-spacing-fixed-xs var(--db-input-padding-inline-start);
+		padding: var.$db-spacing-fixed-xs var(--db-input-padding-inline-end)
+			var.$db-spacing-fixed-xs var(--db-input-padding-inline-start);
 
 		// TODO: Evaluate whether those could get moved to ../_form-elements.scss
 		&:focus,
@@ -232,8 +231,8 @@
 						var(--db-input-focus-opacity)
 				)
 				calc(
-					$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
-						$db-spacing-fixed-xs
+					var.$db-spacing-fixed-xs - var(--db-input-focus-opacity) *
+						var.$db-spacing-fixed-xs
 				);
 
 			+ label {
@@ -287,14 +286,14 @@
 
 		&[type="search"] {
 			// TODO: Change rem to a x times db-sizing-md
-			$paddingLeft: calc($db-spacing-fixed-sm * 2 + 0.625rem);
+			$paddingLeft: calc(var.$db-spacing-fixed-sm * 2 + 0.625rem);
 
 			padding-inline-start: var(--db-input-padding-inline-start);
 
 			&,
 			& + label {
 				--db-input-padding-inline-start: #{calc(
-						$db-spacing-fixed-sm * 2 + 0.625rem
+						var.$db-spacing-fixed-sm * 2 + 0.625rem
 					)};
 			}
 
@@ -311,9 +310,9 @@
 			&::-webkit-search-cancel-button {
 				appearance: none;
 				position: absolute;
-				inset-inline-end: $db-spacing-fixed-sm;
+				inset-inline-end: var.$db-spacing-fixed-sm;
 				inset-block-start: 0;
-				block-size: $db-sizing-md;
+				block-size: var.$db-sizing-md;
 				inline-size: 1em;
 				background: url(#{$icons-path}functional/images/navigation/db_ic_cancel_24.svg)
 					no-repeat 50% 50%;

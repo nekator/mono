@@ -1,6 +1,6 @@
 @use "@db-ui/foundations/build/scss/init" as *;
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
@@ -10,7 +10,7 @@
 	@extend %color-variants;
 	@extend %default-card;
 
-	background-color: $db-colors-neutral-bg;
+	background-color: var.$db-colors-neutral-bg;
 
 	display: flex;
 	flex-direction: column;
@@ -20,11 +20,11 @@
 	}
 
 	&[data-spacing="medium"] {
-		padding: $db-spacing-fixed-lg;
+		padding: var.$db-spacing-fixed-lg;
 	}
 
 	&[data-spacing="small"] {
-		padding: $db-spacing-fixed-md;
+		padding: var.$db-spacing-fixed-md;
 	}
 
 	&[data-variant="interactive"] {

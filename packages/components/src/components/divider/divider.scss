@@ -1,10 +1,10 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 
 .db-divider {
 	&:not([data-margin="none"]) {
-		margin: $db-spacing-fixed-sm 0;
+		margin: var.$db-spacing-fixed-sm 0;
 	}
 
 	&:not([data-variant="vertical"]) {
@@ -19,7 +19,7 @@
 		inline-size: 1px;
 
 		&:not([data-margin="none"]) {
-			margin: 0 $db-spacing-fixed-sm;
+			margin: 0 var.$db-spacing-fixed-sm;
 		}
 	}
 }

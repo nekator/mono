@@ -1,15 +1,15 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as *;
+@use "@db-ui/foundations/build/scss/variables.global" as var;
 @use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/tonality" as *;
 
 .db-header {
-	background-color: $db-colors-neutral-bg;
+	background-color: var.$db-colors-neutral-bg;
 	box-shadow: $db-elevation-4;
 	display: flex;
 	flex-direction: column;
-	margin-block-end: $db-spacing-fixed-2xs;
+	margin-block-end: var.$db-spacing-fixed-2xs;
 	position: relative;
 
 	min-block-size: $default-mobile-header-height;
@@ -34,13 +34,13 @@
 .db-header-navigation-bar {
 	display: flex;
 	position: relative;
-	padding: $db-spacing-fixed-xs $db-spacing-fixed-md;
-	gap: $db-spacing-fixed-xs;
+	padding: var.$db-spacing-fixed-xs var.$db-spacing-fixed-md;
+	gap: var.$db-spacing-fixed-xs;
 	inline-size: 100%;
 	align-items: center;
 
 	@include component.screen("m") {
-		padding: $db-spacing-fixed-md;
+		padding: var.$db-spacing-fixed-md;
 	}
 }
 
@@ -50,13 +50,13 @@
 	@include functions.divider("top");
 	display: flex;
 	flex-direction: column;
-	gap: $db-spacing-fixed-sm;
+	gap: var.$db-spacing-fixed-sm;
 	justify-content: flex-end;
 
-	padding: $db-spacing-fixed-md;
+	padding: var.$db-spacing-fixed-md;
 
 	@include component.screen("m") {
-		padding: $db-spacing-fixed-xs $db-spacing-fixed-md;
+		padding: var.$db-spacing-fixed-xs var.$db-spacing-fixed-md;
 		margin: 0;
 		flex-direction: row;
 
@@ -93,14 +93,14 @@
 }
 
 .db-header-brand-container {
-	min-block-size: $db-sizing-md;
+	min-block-size: var.$db-sizing-md;
 	@include component.screen("m") {
 		@include functions.divider("left", "after");
 
 		&::after {
 			position: inherit;
 			block-size: 100%;
-			margin-inline: $db-spacing-fixed-sm;
+			margin-inline: var.$db-spacing-fixed-sm;
 		}
 	}
 }
@@ -113,7 +113,7 @@
 		block-size: 100%;
 
 		@include component.screen("m") {
-			margin-inline-end: $db-spacing-fixed-sm;
+			margin-inline-end: var.$db-spacing-fixed-sm;
 		}
 	}
 }
@@ -134,7 +134,7 @@
 	flex: 0 1 auto;
 	flex-grow: 0;
 	flex-shrink: 0;
-	padding-block-start: $db-spacing-fixed-xs;
+	padding-block-start: var.$db-spacing-fixed-xs;
 
 	@include component.screen("m") {
 		&::before {
@@ -153,17 +153,17 @@
 }
 
 .db-header-navigation {
-	padding-block: $db-spacing-fixed-md;
+	padding-block: var.$db-spacing-fixed-md;
 }
 
 .db-header-navigation,
 .db-header-action-bar {
 	display: flex;
-	gap: $db-spacing-fixed-sm;
-	padding-inline: $db-spacing-fixed-md;
+	gap: var.$db-spacing-fixed-sm;
+	padding-inline: var.$db-spacing-fixed-md;
 
 	@include component.screen("m") {
-		gap: $db-spacing-fixed-xs;
+		gap: var.$db-spacing-fixed-xs;
 		padding: 0;
 	}
 }
@@ -171,7 +171,9 @@
 .db-header-drawer {
 	--db-drawer-content-padding-inline: 0;
 	// 1px for box shadow of header
-	--db-drawer-header-padding-block-end: calc(1px + #{$db-spacing-fixed-xs});
+	--db-drawer-header-padding-block-end: calc(
+		1px + #{var.$db-spacing-fixed-xs}
+	);
 	padding-block-end: 0;
 
 	& .db-drawer-content {

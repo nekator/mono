@@ -1,7 +1,7 @@
 @use "@csstools/normalize.css/normalize" as *;
 
 @use "variables" as *;
-@use "variables.global" as *;
+@use "variables.global" as var;
 @use "color-placeholder" as *;
 @use "tonality" as *;
 @use "init" as *;
