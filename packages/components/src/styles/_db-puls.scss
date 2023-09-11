@@ -1,9 +1,9 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 
 %db-puls {
-	@include screen("m") {
+	@include component.screen("m") {
 		&::after {
 			border-inline-start: none;
 			border-block-end: $default-border-radius solid $db-colors-primary;
@@ -32,7 +32,7 @@
 }
 
 %show-db-puls {
-	@include screen("m") {
+	@include component.screen("m") {
 		&::after {
 			block-size: auto;
 			inline-size: 100%;

@@ -1,6 +1,6 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 
 .db-divider {
 	&:not([data-margin="none"]) {
@@ -8,13 +8,13 @@
 	}
 
 	&:not([data-variant="vertical"]) {
-		@include divider();
+		@include functions.divider();
 		block-size: 1px;
 		inline-size: 100%;
 	}
 
 	&[data-variant="vertical"] {
-		@include divider("left");
+		@include functions.divider("left");
 		block-size: 100%;
 		inline-size: 1px;
 

@@ -3,11 +3,11 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/helpers/font" as *;
 @use "../../styles/button-components" as *;
 @use "../../styles/tag-components" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 
 .db-tag {
 	@extend %focus-placeholder;
@@ -29,7 +29,7 @@
 	}
 
 	input {
-		@include a11y-visually-hidden();
+		@include functions.a11y-visually-hidden();
 	}
 
 	.tag-label {
@@ -61,7 +61,7 @@
 	}
 
 	.db-button[data-size="small"] {
-		border-radius: to-rem(3);
+		border-radius: functions.to-rem(3);
 		block-size: 100%;
 	}
 

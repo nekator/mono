@@ -2,12 +2,12 @@
 @use "@db-ui/foundations/build/scss/default.assets-paths" as *;
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
+@use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
 @use "@db-ui/foundations/build/scss/helpers/font" as *;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "../../styles/form-components" as form;
 
 :root,
@@ -126,7 +126,7 @@
 	}
 
 	&:has(> [type="search"]) {
-		@include icon("search");
+		@include icons.icon("search");
 	}
 
 	.db-icon,

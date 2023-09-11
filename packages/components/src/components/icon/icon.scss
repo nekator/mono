@@ -1,7 +1,7 @@
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
+@use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
 
 .db-icon {
-	@include is-icon-text-replace();
+	@include icons.is-icon-text-replace();
 
 	display: flex;
 

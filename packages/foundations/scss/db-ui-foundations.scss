@@ -5,7 +5,7 @@
 @use "color-placeholder" as *;
 @use "tonality" as *;
 @use "init" as *;
-@use "helpers/component" as *;
+@use "helpers/component" as component;
 
 :root {
 	@extend %db-bg-neutral;

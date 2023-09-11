@@ -1,7 +1,7 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/tonality" as *;
 
 .db-header {
@@ -14,7 +14,7 @@
 
 	min-block-size: $default-mobile-header-height;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		--db-drawer-max-width: #{$db-screens-s};
 	}
 
@@ -39,7 +39,7 @@
 	inline-size: 100%;
 	align-items: center;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		padding: $db-spacing-fixed-md;
 	}
 }
@@ -47,7 +47,7 @@
 .db-header-meta-navigation {
 	@extend %db-bg-neutral-transparent-semi;
 	@extend %db-ui-functional;
-	@include divider("top");
+	@include functions.divider("top");
 	display: flex;
 	flex-direction: column;
 	gap: $db-spacing-fixed-sm;
@@ -55,7 +55,7 @@
 
 	padding: $db-spacing-fixed-md;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		padding: $db-spacing-fixed-xs $db-spacing-fixed-md;
 		margin: 0;
 		flex-direction: row;
@@ -87,15 +87,15 @@
 }
 
 .db-header-action-container:has(> .db-header-action-bar:empty) {
-	@include screen("m") {
+	@include component.screen("m") {
 		display: none;
 	}
 }
 
 .db-header-brand-container {
 	min-block-size: $db-sizing-md;
-	@include screen("m") {
-		@include divider("left", "after");
+	@include component.screen("m") {
+		@include functions.divider("left", "after");
 
 		&::after {
 			position: inherit;
@@ -106,13 +106,13 @@
 }
 
 .db-header-action-container {
-	@include divider("left");
+	@include functions.divider("left");
 
 	&::before {
 		position: inherit;
 		block-size: 100%;
 
-		@include screen("m") {
+		@include component.screen("m") {
 			margin-inline-end: $db-spacing-fixed-sm;
 		}
 	}
@@ -130,13 +130,13 @@
 }
 
 .db-header-action-bar {
-	@include divider("top");
+	@include functions.divider("top");
 	flex: 0 1 auto;
 	flex-grow: 0;
 	flex-shrink: 0;
 	padding-block-start: $db-spacing-fixed-xs;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		&::before {
 			display: none;
 		}
@@ -162,7 +162,7 @@
 	gap: $db-spacing-fixed-sm;
 	padding-inline: $db-spacing-fixed-md;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		gap: $db-spacing-fixed-xs;
 		padding: 0;
 	}
@@ -185,13 +185,13 @@
 [data-hide-on="mobile"] {
 	display: none;
 
-	@include screen("m") {
+	@include component.screen("m") {
 		display: inherit;
 	}
 }
 
 [data-hide-on="desktop"] {
-	@include screen("m") {
+	@include component.screen("m") {
 		display: none;
 	}
 }

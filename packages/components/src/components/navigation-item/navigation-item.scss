@@ -1,17 +1,16 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
+@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
 @use "@db-ui/foundations/build/scss/animation/animations" as *;
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as icon-helper;
 @use "../../styles/db-puls" as *;
 
 %sub-navi-handler-desktop {
 	// show sub-navigation on hover
-	@include screen("m") {
+	@include component.screen("m") {
 		&:hover,
 		&:focus-visible {
 			& ~ .db-sub-navigation {
@@ -108,7 +107,7 @@
 	}
 
 	.db-navigation-item-expand-button {
-		@include screen("m", "max") {
+		@include component.screen("m", "max") {
 			@include sub-navi-handler-mobile();
 		}
 
@@ -170,17 +169,17 @@
 
 	visibility: hidden;
 
-	@include screen("m", "max") {
+	@include component.screen("m", "max") {
 		@include sub-navigation-mobile();
 	}
 
-	@include screen("m") {
+	@include component.screen("m") {
 		.db-mobile-navigation-back {
 			display: none;
 		}
 	}
 
-	@include screen("m") {
+	@include component.screen("m") {
 		border-radius: $default-card-border-radius;
 		box-shadow: $db-elevation-4;
 		padding: $db-spacing-fixed-sm;
@@ -242,7 +241,7 @@
 }
 
 .db-mobile-navigation-back {
-	@include divider("bottom");
+	@include functions.divider("bottom");
 	display: flex;
 	font-weight: normal;
 	background-color: $db-colors-neutral-bg-0-enabled;

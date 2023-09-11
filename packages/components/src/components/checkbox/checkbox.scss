@@ -1,9 +1,9 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as *;
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as *;
+@use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/tonality" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as *;
+@use "@db-ui/foundations/build/scss/helpers/component" as component;
 @use "@db-ui/foundations/build/scss/color/color-variants" as col-var;
 
 // TODO: Move this to shared style
@@ -44,7 +44,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 		@extend %db-bg-inverted-ia;
 
 		// Check icon
-		@include icon("done");
+		@include icons.icon("done");
 
 		// The icon within the checkbox has the same dimensions as the checkbox itself and that for there can't be any border
 		border-width: 0;
@@ -57,7 +57,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	// }
 
 	&:indeterminate {
-		@include icon("minus");
+		@include icons.icon("minus");
 
 		&::before {
 			line-height: 20px;

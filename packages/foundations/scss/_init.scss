@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "variables.global" as *;
 @use "color-placeholder" as *;
-@use "helpers/functions" as *;
+@use "helpers/functions" as functions;
 @use "color/code-colors" as *;
 
 :root {
