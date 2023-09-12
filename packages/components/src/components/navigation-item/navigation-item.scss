@@ -152,7 +152,7 @@
 	position: fixed;
 	// additional #{$db-spacing-fixed-regular-3xs} for border
 	inset-block: calc(
-			#{$default-mobile-header-height} + #{$db-spacing-fixed-regular-3xs}
+			#{component.$default-mobile-header-height} + #{$db-spacing-fixed-regular-3xs}
 		)
 		calc(
 			#{var.$db-sizing-md} + #{var.$db-spacing-fixed-xs} * 2 + #{$db-spacing-fixed-regular-3xs}
