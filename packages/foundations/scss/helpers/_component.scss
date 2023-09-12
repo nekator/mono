@@ -45,7 +45,7 @@ $default-mobile-header-height: functions.to-rem(56);
 }
 
 %default-card {
-	border-radius: component.$default-card-border-radius;
+	border-radius: $default-card-border-radius;
 	box-shadow: var-todo.$db-elevation-4;
 }
 
