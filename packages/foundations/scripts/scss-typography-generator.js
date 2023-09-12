@@ -3,7 +3,7 @@ const prefix = 'db';
 const fileHeader = `
 @use "variables" as *;
 @use "icon/icons.helpers" as icon-helper;
-@use "helpers/functions" as functions;
+@use "helpers/functions";
 // Do not edit directly
 // Generated on
 // ${new Date().toString()}
