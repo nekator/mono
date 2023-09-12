@@ -21,11 +21,11 @@
 	);
 	--db-current-border-color: var(
 		--db-neutral-border-enabled,
-		#{var.$db-colors-neutral-border-enabled}
+		#{$db-colors-neutral-border-enabled}
 	);
 	--db-current-border-weak-color: var(
 		--db-neutral-border-weak-enabled,
-		#{var.$db-colors-neutral-border-weak-enabled}
+		#{$db-colors-neutral-border-weak-enabled}
 	);
 
 	background-color: var(--db-current-bg-color);
