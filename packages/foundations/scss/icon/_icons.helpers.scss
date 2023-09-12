@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "sass:map";
 @use "sass:list";
-@use "../helpers/functions" as functions;
+@use "../helpers/functions";
 @use "../variables.global" as var;
 
 $default-icon-size: 24;

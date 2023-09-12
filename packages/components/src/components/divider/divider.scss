@@ -1,6 +1,6 @@
 @use "@db-ui/foundations/build/scss/variables" as *;
 @use "@db-ui/foundations/build/scss/variables.global" as var;
-@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
+@use "@db-ui/foundations/build/scss/helpers/functions";
 
 .db-divider {
 	&:not([data-margin="none"]) {

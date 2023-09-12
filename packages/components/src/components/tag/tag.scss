@@ -7,7 +7,7 @@
 @use "@db-ui/foundations/build/scss/helpers/font" as *;
 @use "../../styles/button-components" as *;
 @use "../../styles/tag-components" as *;
-@use "@db-ui/foundations/build/scss/helpers/functions" as functions;
+@use "@db-ui/foundations/build/scss/helpers/functions";
 
 .db-tag {
 	@extend %focus-placeholder;
