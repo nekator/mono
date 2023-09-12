@@ -96,7 +96,7 @@
 			padding-inline-start: calc(
 				#{var.$db-spacing-fixed-sm} + var(--db-base-font-size) * var(
 						--db-base-line-height
-					) + #{$default-icon-margin-end}
+					) + #{icon-helper.$default-icon-margin-end}
 			);
 		}
 	}
