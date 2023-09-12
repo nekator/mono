@@ -29,7 +29,7 @@ $default-mobile-header-height: functions.to-rem(56);
 }
 %default-interactive-component {
 	@extend %default-adaptive-border;
-	border-radius: component.$default-border-radius;
+	border-radius: $default-border-radius;
 }
 
 %default-color-transition {
