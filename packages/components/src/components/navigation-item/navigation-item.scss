@@ -51,7 +51,7 @@
 	inline-size: 100%;
 	display: inline-flex;
 
-	border-radius: $default-card-border-radius;
+	border-radius: component.$default-card-border-radius;
 	padding: var.$db-spacing-fixed-xs var.$db-spacing-fixed-sm;
 	white-space: nowrap; // we don't want to break
 	text-align: center;
@@ -141,7 +141,7 @@
 	}
 
 	&[aria-disabled="true"] {
-		opacity: $default-disabled-opacity;
+		opacity: component.$default-disabled-opacity;
 		pointer-events: none;
 	}
 }
@@ -180,7 +180,7 @@
 	}
 
 	@include component.screen("m") {
-		border-radius: $default-card-border-radius;
+		border-radius: component.$default-card-border-radius;
 		box-shadow: $db-elevation-4;
 		padding: var.$db-spacing-fixed-sm;
 

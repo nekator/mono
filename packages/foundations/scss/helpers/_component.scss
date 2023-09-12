@@ -29,7 +29,7 @@ $default-mobile-header-height: functions.to-rem(56);
 }
 %default-interactive-component {
 	@extend %default-adaptive-border;
-	border-radius: $default-border-radius;
+	border-radius: component.$default-border-radius;
 }
 
 %default-color-transition {
@@ -45,7 +45,7 @@ $default-mobile-header-height: functions.to-rem(56);
 }
 
 %default-card {
-	border-radius: $default-card-border-radius;
+	border-radius: component.$default-card-border-radius;
 	box-shadow: var-todo.$db-elevation-4;
 }
 

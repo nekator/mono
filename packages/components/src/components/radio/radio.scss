@@ -62,7 +62,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	&:disabled {
 		&,
 		& + label {
-			opacity: $default-disabled-opacity;
+			opacity: component.$default-disabled-opacity;
 		}
 	}
 

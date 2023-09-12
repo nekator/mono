@@ -6,7 +6,7 @@
 	@include component.screen("m") {
 		&::after {
 			border-inline-start: none;
-			border-block-end: $default-border-radius solid
+			border-block-end: component.$default-border-radius solid
 				var.$db-colors-primary;
 			inset-block-end: calc(-1 * #{var.$db-spacing-fixed-xs});
 			inline-size: 0;
@@ -20,7 +20,7 @@
 	&::after {
 		content: "";
 		position: absolute;
-		border-radius: $default-border-radius;
+		border-radius: component.$default-border-radius;
 		transition:
 			height 0.15s $db-transition-emotional-timing,
 			width 0.15s $db-transition-emotional-timing;
@@ -28,7 +28,8 @@
 		transform: translate(0, -50%);
 		inset-block-start: 50%;
 		inset-inline-start: calc(-1 * #{var.$db-spacing-fixed-xs});
-		border-inline-start: $default-border-radius solid var.$db-colors-primary;
+		border-inline-start: component.$default-border-radius solid
+			var.$db-colors-primary;
 	}
 }
 

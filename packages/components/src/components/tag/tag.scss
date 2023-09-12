@@ -66,7 +66,7 @@
 	}
 
 	&[data-disabled="true"] {
-		opacity: $default-disabled-opacity;
+		opacity: component.$default-disabled-opacity;
 		pointer-events: none;
 	}
 }

@@ -19,7 +19,7 @@ $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 	position: relative;
 
 	border: max(calc(#{$font-size-height} / 16 + 0.5px), 2px) solid currentColor;
-	border-radius: $checkbox-border-radius;
+	border-radius: component.$checkbox-border-radius;
 
 	display: inline-flex;
 	block-size: $font-size-height;

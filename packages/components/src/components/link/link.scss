@@ -65,7 +65,7 @@
 	}
 
 	&:focus-visible {
-		border-radius: $default-border-radius;
+		border-radius: component.$default-border-radius;
 	}
 
 	&[data-content="internal"],

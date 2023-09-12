@@ -12,7 +12,7 @@
 	margin-block-end: var.$db-spacing-fixed-2xs;
 	position: relative;
 
-	min-block-size: $default-mobile-header-height;
+	min-block-size: component.$default-mobile-header-height;
 
 	@include component.screen("m") {
 		--db-drawer-max-width: #{$db-screens-s};
