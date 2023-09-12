@@ -3,7 +3,7 @@
 @use "@db-ui/foundations/build/scss/helpers/functions";
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/font" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 @use "@db-ui/foundations/build/scss/color/color-variants" as col-var;
 
 $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));

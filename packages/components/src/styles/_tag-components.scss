@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "@db-ui/foundations/build/scss/color/color-variants" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 
 @mixin overwrite-strong-white() {
 	/* We force white as color for strong tags */

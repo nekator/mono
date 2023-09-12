@@ -4,7 +4,7 @@
 @use "@db-ui/foundations/build/scss/color-placeholder" as color-placeholder;
 @use "@db-ui/foundations/build/scss/color/color-variants" as color-variants;
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 @use "../../styles/button-components" as *;
 
 .db-button {

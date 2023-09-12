@@ -7,7 +7,7 @@
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/helpers/functions";
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 
 %db-link-height {
 	display: inline-block;

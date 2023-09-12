@@ -3,7 +3,7 @@
 @use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
 @use "@db-ui/foundations/build/scss/color-placeholder" as *;
 @use "@db-ui/foundations/build/scss/tonality" as *;
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 @use "@db-ui/foundations/build/scss/color/color-variants" as col-var;
 
 // TODO: Move this to shared style

@@ -5,7 +5,7 @@
 @use "@db-ui/foundations/build/scss/variables" as var-todo;
 @use "@db-ui/foundations/build/scss/variables.global" as var;
 
-@use "@db-ui/foundations/build/scss/helpers/component" as component;
+@use "@db-ui/foundations/build/scss/helpers/component";
 @use "@db-ui/foundations/build/scss/color/color-variants" as variants;
 
 $dropdown-icon-transition: transform var-todo.$db-transition-emotional-straight;
