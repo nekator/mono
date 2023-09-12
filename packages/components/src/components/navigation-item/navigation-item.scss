@@ -244,7 +244,7 @@
 	@include functions.divider("bottom");
 	display: flex;
 	font-weight: normal;
-	background-color: var.$db-colors-neutral-bg-0-enabled;
+	background-color: $db-colors-neutral-bg-0-enabled;
 	padding-block-end: var.$db-spacing-fixed-md;
 	margin-block-end: var.$db-spacing-fixed-md;
 }
