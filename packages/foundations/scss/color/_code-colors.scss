@@ -8,7 +8,7 @@
 	);
 	--db-current-color: var(
 		--db-neutral-bg-enabled,
-		#{var.$db-colors-neutral-bg-0-enabled}
+		#{$db-colors-neutral-bg-0-enabled}
 	);
 	--db-current-bg-color: color-mix(
 		in srgb,
