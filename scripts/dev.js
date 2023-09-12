@@ -34,7 +34,8 @@ inquirer
 	])
 
 	.then((answers) => {
-		let startCommand = 'npm-run-all -p start:foundations dev:sass';
+		let startCommand =
+			'npm-run-all -p start:foundations dev:assets dev:sass';
 		if (answers?.frameworks)
 			for (const answer of answers.frameworks) {
 				startCommand +=
