@@ -110,7 +110,9 @@ export default function DBTextarea(props: DBTextareaProps) {
 				disabled={props.disabled}
 				required={props.required}
 				readOnly={props.readOnly}
+				/* eslint-disable react/no-unknown-property */
 				dirName={props.dirName}
+				/* eslint-enable react/no-unknown-property */
 				form={props.form}
 				maxLength={props.maxLength}
 				minLength={props.minLength}
