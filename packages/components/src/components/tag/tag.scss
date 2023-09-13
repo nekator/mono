@@ -1,31 +1,28 @@
 @use "sass:map";
-@use "@db-ui/foundations/build/scss/init" as *;
-@use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as var;
-@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/variables";
+@use "@db-ui/foundations/build/scss/color-placeholder";
 @use "@db-ui/foundations/build/scss/helpers/component";
-@use "@db-ui/foundations/build/scss/helpers/font" as *;
-@use "../../styles/button-components" as *;
-@use "../../styles/tag-components" as *;
+@use "@db-ui/foundations/build/scss/helpers/font";
+@use "../../styles/button-components";
+@use "../../styles/tag-components";
 @use "@db-ui/foundations/build/scss/helpers/functions";
 
 .db-tag {
-	@extend %focus-placeholder;
 	@extend %default-interactive-component;
 	@extend %component-border;
 	@extend %db-overwrite-font-size-sm;
 	@extend %default-button;
 
-	block-size: var.$db-sizing-sm;
-	min-inline-size: var.$db-sizing-sm;
+	block-size: variables.$db-sizing-sm;
+	min-inline-size: variables.$db-sizing-sm;
 	inline-size: fit-content;
 
 	&:not(&[data-interactive="true"]) {
-		@include get-tag-colors();
+		@include tag-components.get-tag-colors();
 	}
 
 	&[data-interactive="true"] {
-		@include get-tag-colors-interactive();
+		@include tag-components.get-tag-colors-interactive();
 	}
 
 	input {
@@ -37,22 +34,22 @@
 		display: block;
 
 		&:not(.is-icon-text-replace) {
-			margin-inline: var.$db-spacing-fixed-2xs;
+			margin-inline: variables.$db-spacing-fixed-2xs;
 			/*
 			::before {
-				margin-inline-end: var.$db-spacing-fixed-2xs;
+				margin-inline-end: variables.$db-spacing-fixed-2xs;
 			}
 */
 		}
 
 		&[data-overflow="true"] {
-			max-inline-size: var.$db-sizing-2xl;
+			max-inline-size: variables.$db-sizing-2xl;
 			text-overflow: ellipsis;
 			overflow: hidden;
 		}
 
 		&[data-icon] {
-			--db-icon-margin-end: #{var.$db-spacing-fixed-3xs};
+			--db-icon-margin-end: #{variables.$db-spacing-fixed-3xs};
 
 			&::before {
 				vertical-align: top;

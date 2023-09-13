@@ -1,10 +1,9 @@
 @use "sass:map";
-@use "./../../styles/dialog-init" as *;
-@use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as var;
+@use "./../../styles/dialog-init";
+@use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/helpers/functions";
 @use "@db-ui/foundations/build/scss/helpers/component";
-@use "@db-ui/foundations/build/scss/animation/animations" as *;
+@use "@db-ui/foundations/build/scss/animation/animations";
 
 %direction-right {
 	inset-inline: auto 0;
@@ -28,7 +27,7 @@
 	&:not([data-width="full"]) {
 		max-block-size: var(
 			--db-drawer-max-height,
-			calc(100% - var.$db-spacing-fixed-xl)
+			calc(100% - #{variables.$db-spacing-fixed-xl})
 		);
 		max-inline-size: none;
 	}
@@ -55,16 +54,16 @@
 
 $spacings: (
 	"small": (
-		"block": var.$db-spacing-fixed-xs,
-		"inline": var.$db-spacing-fixed-md
+		"block": variables.$db-spacing-fixed-xs,
+		"inline": variables.$db-spacing-fixed-md
 	),
 	"medium": (
-		"block": var.$db-spacing-fixed-sm,
-		"inline": var.$db-spacing-fixed-lg
+		"block": variables.$db-spacing-fixed-sm,
+		"inline": variables.$db-spacing-fixed-lg
 	),
 	"large": (
-		"block": var.$db-spacing-fixed-md,
-		"inline": var.$db-spacing-fixed-xl
+		"block": variables.$db-spacing-fixed-md,
+		"inline": variables.$db-spacing-fixed-xl
 	),
 	"none": (
 		"block": 0,
@@ -111,21 +110,21 @@ $spacings: (
 		@extend %spacing-drawer;
 		display: flex;
 		flex-direction: column;
-		background-color: var.$db-colors-neutral-bg;
+		background-color: variables.$db-colors-neutral-bg;
 		block-size: 100%;
 		inline-size: 100%;
 		position: fixed;
-		box-shadow: $db-elevation-4;
+		box-shadow: variables.$db-elevation-4;
 
 		&:not([data-width="full"]) {
 			max-inline-size: var(
 				--db-drawer-max-width,
-				calc(100% - var.$db-spacing-fixed-xl)
+				calc(100% - #{variables.$db-spacing-fixed-xl})
 			);
 		}
 
 		&[data-rounded="true"] {
-			box-shadow: $db-elevation-4;
+			box-shadow: variables.$db-elevation-4;
 		}
 
 		&[data-direction="left"] {
@@ -169,37 +168,41 @@ $spacings: (
 		.db-drawer-container {
 			&:not([data-direction]),
 			&[data-direction="right"] {
-				animation: show-right-to-left $animation-show-timing;
+				animation: show-right-to-left animations.$animation-show-timing;
 			}
 
 			&[data-direction="left"] {
-				animation: show-left-to-right $animation-show-timing;
+				animation: show-left-to-right animations.$animation-show-timing;
 			}
 
 			&[data-direction="up"] {
-				animation: show-bottom-to-top $animation-show-timing;
+				animation: show-bottom-to-top animations.$animation-show-timing;
 			}
 
 			&[data-direction="down"] {
-				animation: show-top-to-bottom $animation-show-timing;
+				animation: show-top-to-bottom animations.$animation-show-timing;
 			}
 
 			&[hidden] {
 				&:not([data-direction]),
 				&[data-direction="right"] {
-					animation: hide-right-to-left $animation-hide-timing;
+					animation: hide-right-to-left
+						animations.$animation-hide-timing;
 				}
 
 				&[data-direction="left"] {
-					animation: hide-left-to-right $animation-hide-timing;
+					animation: hide-left-to-right
+						animations.$animation-hide-timing;
 				}
 
 				&[data-direction="up"] {
-					animation: hide-bottom-to-top $animation-hide-timing;
+					animation: hide-bottom-to-top
+						animations.$animation-hide-timing;
 				}
 
 				&[data-direction="down"] {
-					animation: hide-top-to-bottom $animation-hide-timing;
+					animation: hide-top-to-bottom
+						animations.$animation-hide-timing;
 				}
 			}
 		}

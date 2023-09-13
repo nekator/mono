@@ -1,23 +1,22 @@
 @use "sass:map";
-@use "@db-ui/foundations/build/scss/variables" as *;
-@use "@db-ui/foundations/build/scss/variables.global" as var;
-@use "@db-ui/foundations/build/scss/color-placeholder" as *;
+@use "@db-ui/foundations/build/scss/variables";
+@use "@db-ui/foundations/build/scss/color-placeholder";
 @use "@db-ui/foundations/build/scss/helpers/component";
-@use "@db-ui/foundations/build/scss/color/color-variants" as *;
-@use "@db-ui/foundations/build/scss/icon/icons.helpers" as icons;
-@use "@db-ui/foundations/build/scss/helpers/font" as *;
-@use "../../styles/form-components" as form;
+@use "@db-ui/foundations/build/scss/color/color-variants";
+@use "@db-ui/foundations/build/scss/icon/icon-helpers";
+@use "@db-ui/foundations/build/scss/helpers/font";
+@use "../../styles/form-components";
 
 %select-icon {
 	@extend %dropdown-icon;
 
 	&::after {
-		inset-inline-end: var.$db-spacing-fixed-sm;
+		inset-inline-end: variables.$db-spacing-fixed-sm;
 	}
 
 	&:has(select:focus-within) {
 		&::after {
-			transform: form.$dropdown-icon-transform;
+			transform: form-components.$dropdown-icon-transform;
 		}
 	}
 }
@@ -26,8 +25,7 @@
 	@extend %db-overwrite-font-size-md;
 	inset-block-start: calc(
 		(
-				var.$db-sizing-md - var(--db-base-font-size) *
-					var(--db-base-line-height)
+				#{variables.$db-sizing-md} - var(--db-base-font-size) * var(--db-base-line-height)
 			) / 2
 	);
 }
@@ -41,12 +39,12 @@
 	@extend %disabled-form-element;
 	@extend %required-form-element;
 
-	@include form.get-input-color-variants();
+	@include form-components.get-input-color-variants();
 
 	position: relative;
 	min-inline-size: calc(
-		var(--db-select-min-width, calc(3 * var.$db-sizing-md)) +
-			var(--db-has-before) * (var.$db-sizing-md)
+		var(--db-select-min-width, calc(3 * #{variables.$db-sizing-md})) +
+			var(--db-has-before) * #{variables.$db-sizing-md}
 	);
 
 	&[data-icon] {
@@ -56,7 +54,7 @@
 	&[data-variant="adaptive"],
 	&:not([data-variant]) {
 		select {
-			@include get-variant-bg-color(0.08);
+			@include color-variants.get-variant-bg-color(0.08);
 		}
 	}
 
@@ -64,22 +62,22 @@
 		@extend %default-interactive-component;
 		@extend %component-border;
 
-		@include bg-transparent-hover();
+		@include color-variants.bg-transparent-hover();
 
 		border-radius: component.$default-border-radius;
 
 		appearance: none;
 		background-color: transparent;
-		block-size: var.$db-sizing-md;
+		block-size: variables.$db-sizing-md;
 		text-overflow: ellipsis;
 		text-indent: calc(
 			var(--db-has-before) *
-				(var.$db-sizing-md - var.$db-spacing-fixed-sm)
+				(#{variables.$db-sizing-md} - #{variables.$db-spacing-fixed-sm})
 		);
 		inline-size: 100%;
-		padding-block-start: var.$db-spacing-fixed-sm;
-		padding-inline-start: var.$db-spacing-fixed-sm;
-		padding-inline-end: var.$db-sizing-md;
+		padding-block-start: variables.$db-spacing-fixed-sm;
+		padding-inline-start: variables.$db-spacing-fixed-sm;
+		padding-inline-end: variables.$db-sizing-md;
 
 		&:not([data-value]) {
 			& ~ label {
@@ -104,15 +102,15 @@
 
 	label {
 		@extend %db-overwrite-font-size-2xs;
-		inset-block-start: var.$db-spacing-fixed-2xs;
+		inset-block-start: variables.$db-spacing-fixed-2xs;
 		transition:
 			left,
 			top,
-			font-size 0.2s $db-transition-functional-timing;
+			font-size 0.2s variables.$db-transition-functional-timing;
 		inset-inline-start: calc(
 			var(--db-has-before) *
-				(var.$db-sizing-md - var.$db-spacing-fixed-sm) +
-				var.$db-spacing-fixed-sm
+				(#{variables.$db-sizing-md} - #{variables.$db-spacing-fixed-sm}) +
+				#{variables.$db-spacing-fixed-sm}
 		);
 	}
 
@@ -125,23 +123,25 @@
 	}
 
 	&::before {
-		inset-inline-start: var.$db-spacing-fixed-sm;
+		inset-inline-start: variables.$db-spacing-fixed-sm;
 	}
 
 	.icon-state {
 		@extend %db-overwrite-font-size-sm;
 
-		@include icons.to-solid-icon();
+		@include icon-helpers.to-solid-icon();
 
 		display: flex;
-		inset-inline-end: calc(var.$db-sizing-md - var.$db-spacing-fixed-xs);
+		inset-inline-end: calc(
+			#{variables.$db-sizing-md} - #{variables.$db-spacing-fixed-xs}
+		);
 
 		// angular specific nesting
 
 		.db-icon {
 			@extend %db-overwrite-font-size-sm;
 
-			@include icons.to-solid-icon();
+			@include icon-helpers.to-solid-icon();
 		}
 	}
 
