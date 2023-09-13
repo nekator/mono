@@ -9,8 +9,8 @@
 	grid-template-areas: "icon content close";
 	grid-template-columns: min-content 1fr min-content;
 
-	@include component.screen("sm", "max") {
-		&:has(.db-alert-link) {
+	&:has(.db-alert-link) {
+		@include component.screen("sm", "max") {
 			grid-template-columns: min-content 1fr min-content;
 			grid-template-areas:
 				"icon content close"
@@ -34,14 +34,6 @@
 			grid-template-areas:
 				"icon head close"
 				"icon content content";
-
-			&:has(.db-alert-link) {
-				grid-template-columns: min-content 1fr min-content;
-				grid-template-areas:
-					"icon head close"
-					"icon content content"
-					"icon link link";
-			}
 		}
 
 		&:has(.db-alert-link) {
@@ -49,6 +41,14 @@
 			grid-template-areas:
 				"icon head head link close"
 				"icon content content content content";
+
+			@include component.screen("sm", "max") {
+				grid-template-columns: min-content 1fr min-content;
+				grid-template-areas:
+					"icon head close"
+					"icon content content"
+					"icon link link";
+			}
 		}
 	}
 }
