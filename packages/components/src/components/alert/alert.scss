@@ -10,17 +10,15 @@
 	grid-template-columns: min-content 1fr min-content;
 
 	&:has(.db-alert-link) {
+		grid-template-areas: "icon content link close";
+		grid-template-columns: min-content 1fr min-content min-content;
+
 		@include component.screen("sm", "max") {
 			grid-template-columns: min-content 1fr min-content;
 			grid-template-areas:
 				"icon content close"
 				"icon link link";
 		}
-	}
-
-	&:has(.db-alert-link) {
-		grid-template-areas: "icon content link close";
-		grid-template-columns: min-content 1fr min-content min-content;
 	}
 
 	&:has(.db-alert-headline) {
