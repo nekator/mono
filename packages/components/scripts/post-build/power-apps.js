@@ -119,6 +119,12 @@ module.exports = () => {
 
 			Replace.sync({
 				files: `../../output/power-apps/${cleanName}/${powerAppsFolder}/${component.name}.tsx`,
+				from: `dirName=`,
+				to: `dirname=`
+			});
+
+			Replace.sync({
+				files: `../../output/power-apps/${cleanName}/${powerAppsFolder}/${component.name}.tsx`,
 				from: `import * as React from "react";`,
 				to: `import * as React from "react";\nimport "./index.scss";`
 			});
