@@ -149,6 +149,7 @@ export default function DBInput(props: DBInputProps) {
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
 				list={props.dataList && state._dataListId}
+				aria-describedby={props.message && state._id + '-infotext'}
 			/>
 			<label
 				htmlFor={state._id}
@@ -181,7 +182,8 @@ export default function DBInput(props: DBInputProps) {
 				<DBInfotext
 					size="small"
 					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}>
+					icon={getMessageIcon(props.variant, props.messageIcon)}
+					id={state._id + '-infotext'}>
 					{props.message}
 				</DBInfotext>
 			</Show>

@@ -122,7 +122,8 @@ export default function DBSelect(props: DBSelectProps) {
 				onClick={(event) => state.handleClick(event)}
 				onChange={(event) => state.handleChange(event)}
 				onBlur={(event) => state.handleBlur(event)}
-				onFocus={(event) => state.handleFocus(event)}>
+				onFocus={(event) => state.handleFocus(event)}
+				aria-describedby={props.message && state._id + '-infotext'}>
 				{/* Empty option for floating label */}
 				<option hidden></option>
 				<Show when={props.options}>
@@ -173,7 +174,8 @@ export default function DBSelect(props: DBSelectProps) {
 				<DBInfotext
 					size="small"
 					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}>
+					icon={getMessageIcon(props.variant, props.messageIcon)}
+					id={state._id + '-infotext'}>
 					{props.message}
 				</DBInfotext>
 			</Show>

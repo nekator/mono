@@ -122,6 +122,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 				onFocus={(event) => state.handleFocus(event)}
 				defaultValue={props.defaultValue ?? props.children}
 				value={props.value}
+				aria-describedby={props.message && state._id + '-infotext'}
 				placeholder={
 					props.placeholder ?? state.defaultValues.placeholder
 				}
@@ -133,7 +134,8 @@ export default function DBTextarea(props: DBTextareaProps) {
 				<DBInfotext
 					size="small"
 					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}>
+					icon={getMessageIcon(props.variant, props.messageIcon)}
+					id={state._id + '-infotext'}>
 					{props.message}
 				</DBInfotext>
 			</Show>
