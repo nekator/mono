@@ -39,7 +39,10 @@ $default-mobile-header-height: functions.to-rem(56);
 				#{variables.$db-transition-duration-ultra-fast}
 			),
 		background-color
-			var(--db-transition-color, #{variables.$db-transition-color});
+			var(
+				--db-transition-color,
+				#{variables.$db-transition-emotional-straight}
+			);
 }
 
 %default-fg-transition {
@@ -49,7 +52,11 @@ $default-mobile-header-height: functions.to-rem(56);
 				--db-transition-duration-ultra-fast,
 				#{variables.$db-transition-duration-ultra-fast}
 			),
-		color var(--db-transition-color, #{variables.$db-transition-color});
+		color
+			var(
+				--db-transition-color,
+				#{variables.$db-transition-emotional-straight}
+			);
 }
 
 %default-card {
