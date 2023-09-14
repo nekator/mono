@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import '@db-ui/components/build/styles/db-ui-42-rollup.css';
