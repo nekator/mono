@@ -23,11 +23,25 @@
 				"attributes": {
 					"target": "web"
 				}
+			},
+			"straight": {
+				"value": "{transition.duration.fast.value} {transition.emotional.timing.value}",
+				"comment": "Consider this as beta for the moment",
+				"attributes": {
+					"target": "web"
+				}
 			}
 		},
 		"functional": {
 			"timing": {
 				"value": "cubic-bezier(0.15, 0, 0.45, 1)",
+				"comment": "Consider this as beta for the moment",
+				"attributes": {
+					"target": "web"
+				}
+			},
+			"straight": {
+				"value": "{transition.duration.fast.value} {transition.functional.timing.value}",
 				"comment": "Consider this as beta for the moment",
 				"attributes": {
 					"target": "web"
