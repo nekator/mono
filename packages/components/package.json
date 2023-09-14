@@ -32,7 +32,6 @@
     "copy:outputs": "cpr build ../../build-outputs/components/build -o",
     "copy:package.json": "cpr package.json ../../build-outputs/components/package.json -o",
     "copy:readme": "cpr README.md ../../build-outputs/components/README.md -o",
-    "dev:assets": "nodemon --watch src -e html,scss -x \"npm run build-assets\"",
     "dev:angular": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:angular\"",
     "dev:html": "cpr ../foundations/assets build/assets -o && npm run build-assets && npm run build-style:01_sass && vite --open",
     "dev:react": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:react\"",
