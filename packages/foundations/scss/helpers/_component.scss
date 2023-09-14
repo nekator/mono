@@ -31,7 +31,7 @@ $default-mobile-header-height: functions.to-rem(56);
 	border-radius: $default-border-radius;
 }
 
-%default-color-transition {
+%default-transition {
 	transition:
 		outline
 			var(
@@ -39,15 +39,17 @@ $default-mobile-header-height: functions.to-rem(56);
 				#{variables.$db-transition-duration-ultra-fast}
 			),
 		background-color
+			var(--db-transition-color, #{variables.$db-transition-color});
+}
+
+%default-fg-transition {
+	transition:
+		outline
 			var(
-				--db-transition-color,
-				#{variables.$db-transition-functional-straight}
+				--db-transition-duration-ultra-fast,
+				#{variables.$db-transition-duration-ultra-fast}
 			),
-		color
-			var(
-				--db-transition-color,
-				#{variables.$db-transition-functional-straight}
-			);
+		color var(--db-transition-color, #{variables.$db-transition-color});
 }
 
 %default-card {
