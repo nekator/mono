@@ -20,7 +20,7 @@
     "build-components:directives": "cpr overrides/angular ../../output/angular -o",
     "build-components:docs": "react-docgen ../../output/react/src/components/**/*.tsx -o ../../output/docs.json -i *.spec.tsx",
     "build-components:post": "node scripts/post-build/index.js",
-    "build-assets": "cpr src build -o -f \"(.ts|.tsx|.md)$\"",
+    "build-assets": "cpr src build -o -f \"(.ts|.tsx|.md|.html)$\"",
     "build-style": "npm-run-all build-style:*",
     "build-style:01_sass": "sass src:build --no-source-map --load-path=node_modules/ --load-path=../../node_modules/ --future-deprecation=import",
     "build-style:02_postcss": "postcss build/**/*.css --replace",
