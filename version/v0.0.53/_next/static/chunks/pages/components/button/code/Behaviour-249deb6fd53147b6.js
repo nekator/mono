@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3170],{77769:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/button/code/Behaviour",function(){return _(31676)}])}},function(n){n.O(0,[4996,1676,9774,2888,179],function(){return n(n.s=77769)}),_N_E=n.O()}]);
