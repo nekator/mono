@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4926],{48308:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/textarea/code/Variant",function(){return e(88606)}])}},function(n){n.O(0,[4996,8606,9774,2888,179],function(){return n(n.s=48308)}),_N_E=n.O()}]);
