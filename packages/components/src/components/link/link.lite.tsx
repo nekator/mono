@@ -24,6 +24,17 @@ useMetadata({
 				name: 'variant',
 				type: 'Enum',
 				values: [
+					{ key: '_self', name: '_self', value: '_self' },
+					{ key: '_blank', name: '_blank', value: '_blank' },
+					{ key: '_parent', name: '_parent', value: '_parent' },
+					{ key: '_top', name: '_top', value: '_top' }
+				],
+				defaultValue: '_blank'
+			},
+			{
+				name: 'target',
+				type: 'Enum',
+				values: [
 					{ key: 'Adaptive', name: 'Adaptive', value: 'adaptive' },
 					{ key: 'Primary', name: 'primary', value: 'primary' },
 					{
