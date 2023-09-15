@@ -83,6 +83,7 @@ export default function DBSelect(props: DBSelectProps) {
 
 	onMount(() => {
 		state._id = props.id || 'select-' + uuid();
+		state._messageId = state._id + '-message';
 
 		if (props.value) {
 			state._value = props.value;
@@ -123,7 +124,7 @@ export default function DBSelect(props: DBSelectProps) {
 				onChange={(event) => state.handleChange(event)}
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
-				aria-describedby={props.message && state._id + '-infotext'}>
+				aria-describedby={props.message && state._messageId}>
 				{/* Empty option for floating label */}
 				<option hidden></option>
 				<Show when={props.options}>
@@ -175,7 +176,7 @@ export default function DBSelect(props: DBSelectProps) {
 					size="small"
 					variant={props.variant}
 					icon={getMessageIcon(props.variant, props.messageIcon)}
-					id={state._id + '-infotext'}>
+					id={state._messageId}>
 					{props.message}
 				</DBInfotext>
 			</Show>

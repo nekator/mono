@@ -83,6 +83,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 		}
 
 		state._id = props.id || 'textarea-' + uuid();
+		state._messageId = state._id + '-message';
 	});
 	// jscpd:ignore-end
 
@@ -122,7 +123,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 				onFocus={(event) => state.handleFocus(event)}
 				defaultValue={props.defaultValue ?? props.children}
 				value={props.value}
-				aria-describedby={props.message && state._id + '-infotext'}
+				aria-describedby={props.message && state._messageId}
 				placeholder={
 					props.placeholder ?? state.defaultValues.placeholder
 				}
@@ -135,7 +136,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 					size="small"
 					variant={props.variant}
 					icon={getMessageIcon(props.variant, props.messageIcon)}
-					id={state._id + '-infotext'}>
+					id={state._messageId}>
 					{props.message}
 				</DBInfotext>
 			</Show>

@@ -102,6 +102,7 @@ export default function DBInput(props: DBInputProps) {
 
 	onMount(() => {
 		state._id = props.id || 'input-' + uuid();
+		state._messageId = state._id + '-message';
 		state._dataListId = props.dataListId || `datalist-${uuid()}`;
 
 		if (props.stylePath) {
@@ -149,7 +150,7 @@ export default function DBInput(props: DBInputProps) {
 				onBlur={(event) => state.handleBlur(event)}
 				onFocus={(event) => state.handleFocus(event)}
 				list={props.dataList && state._dataListId}
-				aria-describedby={props.message && state._id + '-infotext'}
+				aria-describedby={props.message && state._messageId}
 			/>
 			<label
 				htmlFor={state._id}
@@ -183,7 +184,7 @@ export default function DBInput(props: DBInputProps) {
 					size="small"
 					variant={props.variant}
 					icon={getMessageIcon(props.variant, props.messageIcon)}
-					id={state._id + '-infotext'}>
+					id={state._messageId}>
 					{props.message}
 				</DBInfotext>
 			</Show>
