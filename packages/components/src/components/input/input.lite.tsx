@@ -2,7 +2,7 @@ import { For, onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBIcon } from '../icon';
 import { cls, getMessageIcon, uuid } from '../../utils';
 import { DBInputProps, DBInputState } from './model';
-import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
+import { DEFAULT_ID, DEFAULT_LABEL, DEFAULT_MESSAGE_ID_SUFFIX } from '../../shared/constants';
 import { KeyValueType } from '../../shared/model';
 import { DBInfotext } from '../infotext';
 
@@ -48,6 +48,7 @@ export default function DBInput(props: DBInputProps) {
 	// jscpd:ignore-start
 	const state = useStore<DBInputState>({
 		_id: DEFAULT_ID,
+		_messageId: DEFAULT_ID + DEFAULT_MESSAGE_ID_SUFFIX,
 		_isValid: undefined,
 		_dataListId: DEFAULT_ID,
 		defaultValues: {
@@ -102,7 +103,7 @@ export default function DBInput(props: DBInputProps) {
 
 	onMount(() => {
 		state._id = props.id || 'input-' + uuid();
-		state._messageId = state._id + '-message';
+		state._messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
 		state._dataListId = props.dataListId || `datalist-${uuid()}`;
 
 		if (props.stylePath) {

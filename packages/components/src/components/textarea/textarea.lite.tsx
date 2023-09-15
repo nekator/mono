@@ -2,7 +2,7 @@ import { onMount, Show, useMetadata, useStore } from '@builder.io/mitosis';
 import { DBTextareaProps, DBTextareaState } from './model';
 import { DBInfotext } from '../infotext';
 import { cls, getMessageIcon, uuid } from '../../utils';
-import { DEFAULT_ID, DEFAULT_LABEL } from '../../shared/constants';
+import { DEFAULT_ID, DEFAULT_LABEL, DEFAULT_MESSAGE_ID_SUFFIX } from '../../shared/constants';
 
 useMetadata({
 	isAttachedToShadowDom: true,
@@ -38,6 +38,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 	// jscpd:ignore-start
 	const state = useStore<DBTextareaState>({
 		_id: DEFAULT_ID,
+		_messageId: DEFAULT_ID + DEFAULT_MESSAGE_ID_SUFFIX,
 		_isValid: undefined,
 		defaultValues: {
 			label: DEFAULT_LABEL,
@@ -93,7 +94,7 @@ export default function DBTextarea(props: DBTextareaProps) {
 		}
 
 		state._id = props.id || 'textarea-' + uuid();
-		state._messageId = state._id + '-message';
+		state._messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
 	});
 	// jscpd:ignore-end
 
