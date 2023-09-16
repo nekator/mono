@@ -4,4 +4,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # TODO: There is some peerDependency not working with type:module from commitlint
-npx --yes commitlint --edit "$1"
+npx --no commitlint --edit "$1"
