@@ -1,11 +1,9 @@
-@use "@csstools/normalize.css/normalize" as *;
+@use "color-placeholder";
+@use "helpers/component";
+@use "tonality";
 
-@use "variables" as *;
-@use "variables.global" as *;
-@use "color-placeholder" as *;
-@use "tonality" as *;
-@use "init" as *;
-@use "helpers/component" as *;
+@forward "@csstools/normalize.css/normalize";
+@forward "init";
 
 :root {
 	@extend %db-bg-neutral;
@@ -19,10 +17,10 @@
 
 [class^="db-"],
 [class^="db-"] * {
-	@extend %default-color-transition;
+	@extend %default-transition;
 
 	::before,
 	::after {
-		@extend %default-color-transition;
+		@extend %default-transition;
 	}
 }
