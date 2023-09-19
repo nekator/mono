@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1413],{47967:function(n,o,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/accordion/code/Tonality",function(){return _(92136)}])}},function(n){n.O(0,[4996,2136,9774,2888,179],function(){return n(n.s=47967)}),_N_E=n.O()}]);
