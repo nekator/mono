@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6382],{98988:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/accordion/docs/HTML",function(){return o(73544)}])}},function(n){n.O(0,[4996,3544,9774,2888,179],function(){return n(n.s=98988)}),_N_E=n.O()}]);
