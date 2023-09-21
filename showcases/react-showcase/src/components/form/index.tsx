@@ -13,6 +13,7 @@ import type { KeyValueType } from '../../../../../output/react/src/shared/model'
 
 const FormComponent = () => {
 	const [input, setInput] = useState('');
+	const [dateinput, setDateinput] = useState('');
 	const [textarea, setTextarea] = useState('default textarea');
 	const [textareaChildren, setTextareaChildren] = useState('');
 	const [radio, setRadio] = useState('');
@@ -62,6 +63,15 @@ const FormComponent = () => {
 							onChange={(event) => {
 								setTextarea(event.target.value);
 							}}
+						/>
+						<DBInput
+							label="Date input"
+							message="Description"
+							name="input-date-name"
+							onChange={(event) => {
+								setDateinput(event.target.value);
+							}}
+							type="date"
 						/>
 						<DBTextarea
 							label="Textarea Default value"
@@ -189,6 +199,8 @@ const FormComponent = () => {
 				<dl>
 					<dt>inputs value</dt>
 					<dd>{input || 'No Input set'}</dd>
+					<dt>date inputs value</dt>
+					<dd>{dateinput || 'No date input set'}</dd>
 					<dt>textarea values</dt>
 					<dd>{textarea || 'No Textrea set'}</dd>
 					<dd>{textareaChildren || 'No Textrea set'}</dd>
