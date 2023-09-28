@@ -4,7 +4,7 @@
 :root {
 	// TODO: probably move these to the tokens as well
 	--db-focus-outline-offset: 2px;
-	--db-focus-outline-color: #{variables.$db-colors-informational};
+	--db-focus-outline-color: #fff;
 	--db-focus-outline-size: 2px;
 	--db-disabled-text-opacity: 0.5;
 }
@@ -82,7 +82,7 @@ iframe {
 			var(--db-focus-outline-size)
 		);
 		box-shadow: 0 0 0
-			var(--db-focus-outline-offset, var(--db-focus-outline-size)) #fff;
+			var(--db-focus-outline-offset, var(--db-focus-outline-size)) #{variables.$db-colors-informational};
 	}
 }
 
