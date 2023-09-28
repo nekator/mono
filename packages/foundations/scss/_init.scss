@@ -3,9 +3,9 @@
 
 :root {
 	// TODO: probably move these to the tokens as well
-	--db-focus-outline-offset: 1px;
+	--db-focus-outline-offset: 2px;
 	--db-focus-outline-color: #{variables.$db-colors-informational};
-	--db-focus-outline-size: max(2px, 0.08em);
+	--db-focus-outline-size: 2px;
 	--db-disabled-text-opacity: 0.5;
 }
 
@@ -64,7 +64,15 @@ iframe {
 
 // Focus styles
 %focus-placeholder,
-:is(a, button, input, textarea, summary, select) {
+:is(
+		a,
+		button,
+		input,
+		textarea,
+		summary,
+		select,
+		[tabindex]:not([tabindex="-1"])
+	) {
 	&:focus-visible {
 		outline: var(--db-focus-outline-size)
 			var(--db-focus-outline-style, solid)
@@ -73,6 +81,8 @@ iframe {
 			--db-focus-outline-offset,
 			var(--db-focus-outline-size)
 		);
+		box-shadow: 0 0 0
+			var(--db-focus-outline-offset, var(--db-focus-outline-size)) #fff;
 	}
 }
 
