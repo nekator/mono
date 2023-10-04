@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4484],{71321:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/checkbox/docs/Vue",function(){return u(28158)}])}},function(n){n.O(0,[64996,28158,49774,92888,40179],function(){return n(n.s=71321)}),_N_E=n.O()}]);
