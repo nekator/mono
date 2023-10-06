@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[92885],{34704:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/button/code/Size",function(){return u(7588)}])}},function(n){n.O(0,[64996,7588,49774,92888,40179],function(){return n(n.s=34704)}),_N_E=n.O()}]);
