@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[35068],{10298:function(n,o,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/popover/code/Tonality",function(){return _(2812)}])}},function(n){n.O(0,[64996,2812,49774,92888,40179],function(){return n(n.s=10298)}),_N_E=n.O()}]);
