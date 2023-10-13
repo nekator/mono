@@ -4,10 +4,14 @@
 
 :root {
 	// TODO: probably move these to the tokens as well
-	--db-focus-outline-offset: 2px;
-	--db-focus-outline-color: #fff;
+	--db-focus-outline-offset: 6px;
+	// TODO: This needs to get adapted to a general color token
+	--db-focus-outline-color: #309fd1;
 	--db-focus-outline-size: 2px;
-	--db-disabled-text-opacity: 0.5;
+	// TODO: This needs to get adapted to a general color token
+	--db-focus-box-shadow1-color: #fff;
+	// TODO: This needs to get adapted to a general color token
+	--db-focus-box-shadow2-color: #242629;
 }
 
 // *! this is an opionionated (especially based on "enhancing" normalize.css) version of minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css
@@ -78,12 +82,12 @@ iframe {
 		outline: var(--db-focus-outline-size)
 			var(--db-focus-outline-style, solid)
 			var(--db-focus-outline-color, currentColor);
-		outline-offset: var(
-			--db-focus-outline-offset,
-			var(--db-focus-outline-size)
-		);
-		box-shadow: 0 0 0
-			var(--db-focus-outline-offset, var(--db-focus-outline-size)) #{variables.$db-colors-informational};
+		outline-offset: var(--db-focus-outline-offset);
+		box-shadow:
+			0 0 0 calc(var(--db-focus-outline-offset) - 2px)
+				var(--db-focus-box-shadow1-color),
+			0 0 0 var(--db-focus-outline-offset)
+				var(--db-focus-box-shadow2-color);
 	}
 }
 
