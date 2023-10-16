@@ -82,7 +82,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.2",
-    "@commitlint/config-conventional": "17.7.0",
+    "@commitlint/config-conventional": "17.8.0",
     "@playwright/test": "1.35.1",
     "commander": "^11.1.0",
     "cpr": "3.0.1",
