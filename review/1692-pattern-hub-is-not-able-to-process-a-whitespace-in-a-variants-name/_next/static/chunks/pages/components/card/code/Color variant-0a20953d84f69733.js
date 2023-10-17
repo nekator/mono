@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4537],{48875:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/card/code/Color variant",function(){return o(31263)}])}},function(n){n.O(0,[4996,1263,9774,2888,179],function(){return n(n.s=48875)}),_N_E=n.O()}]);
