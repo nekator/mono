@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[16511],{40540:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/badge/code/Size",function(){return e(98563)}])}},function(n){n.O(0,[64996,98563,49774,92888,40179],function(){return n(n.s=40540)}),_N_E=n.O()}]);
