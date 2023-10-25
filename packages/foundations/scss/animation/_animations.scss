@@ -89,3 +89,18 @@
 		transform: translateY(0%);
 	}
 }
+
+@keyframes popover-animation {
+	0% {
+		opacity: 0;
+		transform: translate(
+			var(--db-popover-translate-x, 0%),
+			var(--db-popover-translate-y, 0%)
+		);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0%, 0%);
+	}
+}
