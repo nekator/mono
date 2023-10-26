@@ -33,6 +33,10 @@ const componentChildren: NavigationItem[] = [
 				name: 'icon'
 			},
 			{
+				label: 'DBTooltip',
+				name: 'tooltip'
+			},
+			{
 				label: 'DBInfotext',
 				name: 'infotext'
 			},
@@ -131,6 +135,16 @@ const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBNavigationItem',
 				name: 'navigation-item'
+			}
+		]
+	},
+	{
+		label: 'Utilities',
+		path: '/components/utilities',
+		subNavigation: [
+			{
+				label: 'DBPopover',
+				name: 'popover'
 			}
 		]
 	}
