@@ -81,7 +81,7 @@
     "update:icon-fonts": "npm-run-all generate:icon-fonts generate:icon-types"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.1.0",
+    "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
     "@playwright/test": "1.35.1",
     "commander": "^11.1.0",
@@ -104,7 +104,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-pkg": "0.18.0",
     "prettier-plugin-sh": "^0.13.1",
-    "replace-in-file": "^7.0.1",
+    "replace-in-file": "^7.0.2",
     "rimraf": "5.0.5",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "9.0.5",
