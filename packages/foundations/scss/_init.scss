@@ -88,6 +88,8 @@ iframe {
 				var(--db-focus-box-shadow1-color),
 			0 0 0 var(--db-focus-outline-offset)
 				var(--db-focus-box-shadow2-color);
+		// TODO: replace by correct Design token for this size
+		border-radius: 2px;
 	}
 }
 
