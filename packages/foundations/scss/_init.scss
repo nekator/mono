@@ -94,7 +94,7 @@ iframe {
 :is(
 		a,
 		button,
-		input:not([type="radio"]),
+		input,
 		textarea,
 		summary,
 		select,
@@ -110,8 +110,11 @@ iframe {
 				var(--db-focus-box-shadow1-color),
 			0 0 0 var(--db-focus-outline-offset)
 				var(--db-focus-box-shadow2-color);
-		// TODO: replace by correct Design token for this size after that one has been integrated
-		border-radius: variables.$db-border-radius;
+
+		&:not([type="radio"]) {
+			// TODO: replace by correct Design token for this size after that one has been integrated
+			border-radius: variables.$db-border-radius;
+		}
 	}
 }
 
