@@ -2,7 +2,7 @@
 @use "colors";
 @use "animation";
 @use "tonality";
-@use "helpers/component";
+@use "@db-ui/components/build/scss/styles/component";
 
 :root {
 	// TODO: probably move these to the tokens as well
