@@ -1,6 +1,7 @@
 @use "variables";
 @use "color/code-colors";
 @use "color-placeholder";
+@use "helpers/component";
 
 :root {
 	// TODO: probably move these to the tokens as well
@@ -72,7 +73,7 @@ iframe {
 :is(
 		a,
 		button,
-		input,
+		input:not([type="radio"]),
 		textarea,
 		summary,
 		select,
@@ -88,8 +89,8 @@ iframe {
 				var(--db-focus-box-shadow1-color),
 			0 0 0 var(--db-focus-outline-offset)
 				var(--db-focus-box-shadow2-color);
-		// TODO: replace by correct Design token for this size
-		border-radius: 2px;
+		// TODO: replace by correct Design token for this size after that one has been integrated
+		border-radius: component.$default-border-radius;
 	}
 }
 
