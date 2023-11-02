@@ -1,3 +1,5 @@
+@use "helpers";
+
 /* Use sizing's for fixed heights/widths e.g. the db-button has always a fixed height*/
 $db-sizing-3xs: var(--db-sizing-3xs);
 $db-sizing-2xs: var(--db-sizing-2xs);
@@ -57,3 +59,6 @@ $db-transition-functional-straight: #{$db-transition-duration-medium} #{$db-tran
 
 $db-transition-show-straight: var(--db-transition-show-straight);
 $db-transition-hide-straight: var(--db-transition-hide-straight);
+
+/* Border radius */
+$db-border-radius: helpers.to-rem(4);

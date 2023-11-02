@@ -7,8 +7,7 @@
 	@include screen-sizes.screen("md") {
 		&::after {
 			border-inline-start: none;
-			border-block-end: component.$default-border-radius solid
-				colors.$db-brand;
+			border-block-end: variables.$db-border-radius solid colors.$db-brand;
 			inset-block-end: calc(-1 * #{variables.$db-spacing-fixed-xs});
 			inline-size: 0;
 			block-size: auto;
@@ -21,7 +20,7 @@
 	&::after {
 		content: "";
 		position: absolute;
-		border-radius: component.$default-border-radius;
+		border-radius: variables.$db-border-radius;
 		transition:
 			height 0.15s variables.$db-transition-emotional-timing,
 			width 0.15s variables.$db-transition-emotional-timing;
@@ -29,8 +28,7 @@
 		transform: translate(0, -50%);
 		inset-block-start: 50%;
 		inset-inline-start: calc(-1 * #{variables.$db-spacing-fixed-xs});
-		border-inline-start: component.$default-border-radius solid
-			colors.$db-brand;
+		border-inline-start: variables.$db-border-radius solid colors.$db-brand;
 	}
 }
 

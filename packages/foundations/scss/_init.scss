@@ -2,7 +2,6 @@
 @use "colors";
 @use "animation";
 @use "tonality";
-@use "@db-ui/components/build/scss/styles/component";
 
 :root {
 	// TODO: probably move these to the tokens as well
@@ -112,7 +111,7 @@ iframe {
 			0 0 0 var(--db-focus-outline-offset)
 				var(--db-focus-box-shadow2-color);
 		// TODO: replace by correct Design token for this size after that one has been integrated
-		border-radius: component.$default-border-radius;
+		border-radius: variables.$db-border-radius;
 	}
 }
 

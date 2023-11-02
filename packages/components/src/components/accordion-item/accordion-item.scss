@@ -52,7 +52,7 @@
 
 		&:focus-visible {
 			// TODO: Replace by correct Design token after that one has been integrated
-			border-radius: component.$default-border-radius;
+			border-radius: variables.$db-border-radius;
 		}
 	}
 
