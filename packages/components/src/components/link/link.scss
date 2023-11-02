@@ -55,10 +55,6 @@
 		}
 	}
 
-	&:focus-visible {
-		border-radius: variables.$db-border-radius;
-	}
-
 	&[data-content="internal"],
 	&[data-content="external"] {
 		--db-icon-margin-start: #{variables.$db-spacing-fixed-2xs};
