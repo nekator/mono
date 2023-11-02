@@ -7,8 +7,7 @@
 :root {
 	// TODO: probably move these to the tokens as well
 	--db-focus-outline-offset: 6px;
-	--db-focus-outline-color: #309fd1;
-	// --db-focus-outline-color: #{colors.$db-informational-text};
+	--db-focus-outline-color: #309fd1; // #{colors.$db-informational-text};
 	--db-focus-outline-size: 2px;
 	--db-focus-box-shadow1-color: #fff;
 	--db-focus-box-shadow2-color: #242629;
