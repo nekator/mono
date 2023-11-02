@@ -51,8 +51,8 @@
 		}
 
 		&:focus-visible {
-			// TODO: Evaluate whether this number is intended
-			border-radius: component.$default-border-radius + 2;
+			// TODO: Replace by correct Design token after that one has been integrated
+			border-radius: component.$default-border-radius;
 		}
 	}
 
