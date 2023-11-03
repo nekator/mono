@@ -6,10 +6,10 @@
 :root {
 	// TODO: probably move these to the tokens as well
 	--db-focus-outline-offset: 6px;
-	--db-focus-outline-color: #309fd1; // #{colors.$db-informational-text};
+	--db-focus-outline-color: #{colors.$db-informational-text};
 	--db-focus-outline-size: 2px;
-	--db-focus-box-shadow1-color: #fff;
-	--db-focus-box-shadow2-color: #242629;
+	--db-focus-box-shadow1-color: #{colors.$db-base-bg};
+	--db-focus-box-shadow2-color: #{colors.$db-base-on-bg};
 
 	// TODO: probably move this to the tokens as well
 	--db-disabled-text-opacity: 0.5;
