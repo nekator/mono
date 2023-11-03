@@ -152,12 +152,11 @@
 }
 
 %default-popover {
+	@extend %default-card;
 	@extend %popover-placement;
 
 	@extend %component-border;
 
-	border-radius: component.$default-card-border-radius;
-	box-shadow: variables.$db-elevation-2;
 	position: absolute;
 	background-color: colors.$db-base-bg;
 	visibility: hidden;
