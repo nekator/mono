@@ -111,6 +111,19 @@ iframe {
 			0 0 0 var(--db-focus-outline-offset)
 				var(--db-focus-box-shadow2-color);
 
+		// TODO: The fallback currently only includes the same CSS Custom Property, which doesn't make any sense
+		transition:
+			outline
+				var(
+					--db-transition-duration-ultra-fast,
+					#{variables.$db-transition-duration-ultra-fast}
+				),
+			box-shadow
+				var(
+					--db-transition-duration-ultra-fast,
+					#{variables.$db-transition-duration-ultra-fast}
+				);
+
 		&:not([type="radio"]) {
 			// TODO: replace by correct Design token for this size after that one has been integrated
 			border-radius: variables.$db-border-radius;
