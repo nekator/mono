@@ -1,0 +1,9 @@
+@use "./default-color-scheme";
+
+[data-color-scheme="light"] {
+	@include default-color-scheme.get-color-scheme-light;
+}
+
+[data-color-scheme="dark"] {
+	@include default-color-scheme.get-color-scheme-dark;
+}
