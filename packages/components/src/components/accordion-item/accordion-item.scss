@@ -23,7 +23,7 @@
 
 	&[aria-disabled="true"] {
 		pointer-events: none;
-		opacity: component.$default-disabled-opacity;
+		opacity: variables.$db-opacity-sm;
 	}
 
 	summary {
@@ -45,8 +45,7 @@
 		}
 
 		&:focus-visible {
-			// TODO: Replace by correct Design token after that one has been integrated
-			border-radius: variables.$db-border-radius;
+			border-radius: variables.$db-border-radius-md;
 		}
 	}
 
