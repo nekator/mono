@@ -12,9 +12,6 @@
 	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg};
 	--db-focus-box-shadow-on-bg-color: #{colors.$db-base-on-bg};
 
-	// TODO: probably move this to the tokens as well
-	--db-disabled-text-opacity: 0.5;
-
 	@extend %db-component-variables-md;
 	@extend %db-bg-base;
 
