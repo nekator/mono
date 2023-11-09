@@ -5,11 +5,12 @@
 
 :root {
 	// TODO: probably move these to the tokens as well
-	--db-focus-outline-offset: 6px;
-	--db-focus-outline-color: #{colors.$db-informational-text};
+	--db-focus-outline-offset: 4px;
 	--db-focus-outline-size: 2px;
-	--db-focus-box-shadow1-color: #{colors.$db-base-bg};
-	--db-focus-box-shadow2-color: #{colors.$db-base-on-bg};
+
+	--db-focus-outline-color: #{colors.$db-informational-text};
+	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg};
+	--db-focus-box-shadow-on-bg-color: #{colors.$db-base-on-bg};
 
 	// TODO: probably move this to the tokens as well
 	--db-disabled-text-opacity: 0.5;
@@ -104,12 +105,18 @@ iframe {
 		outline: var(--db-focus-outline-size)
 			var(--db-focus-outline-style, solid)
 			var(--db-focus-outline-color, currentColor);
-		outline-offset: var(--db-focus-outline-offset);
+		outline-offset: calc(
+			var(--db-focus-outline-offset) + var(--db-focus-outline-size)
+		);
 		box-shadow:
-			0 0 0 calc(var(--db-focus-outline-offset) - 2px)
-				var(--db-focus-box-shadow1-color),
 			0 0 0 var(--db-focus-outline-offset)
-				var(--db-focus-box-shadow2-color);
+				var(--db-focus-box-shadow-bg-color),
+			0 0 0
+				calc(
+					var(--db-focus-outline-offset) +
+						var(--db-focus-outline-size)
+				)
+				var(--db-focus-box-shadow-on-bg-color);
 
 		// TODO: The fallback currently only includes the same CSS Custom Property, which doesn't make any sense
 		transition:
