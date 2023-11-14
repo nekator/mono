@@ -21,9 +21,9 @@ const gatherIcons = (temporaryDirectory, values) => {
 	const splitSizesArray = withSizes ? ['', ...availableSizes] : [''];
 	const splitVariantsArray = variants.length > 0 ? ['', ...variants] : [''];
 
-	const globPaths = globSync(paths, { ignore: ignoreGlobs }).map((path) =>
-		path.replace(/\\/g, '/')
-	);
+	const globPaths = globSync(paths, {
+		ignore: [...ignoreGlobs, '**/.DS_Store']
+	}).map((path) => path.replace(/\\/g, '/'));
 
 	if (dryRun) {
 		// eslint-disable-next-line no-console
