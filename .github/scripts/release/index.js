@@ -7,12 +7,12 @@ import updateIconRelease from './update-icon-release.js';
 
 import ChildProcess from 'node:child_process';
 
-const release = async ({ github, context, iconReleaseId }) => {
+const release = async ({ github, context, workspace, iconReleaseId }) => {
 	const release_id = context.payload.release.id;
 
 	// 1. Upload power-apps asset
 	const assetName = 'DBUI.zip';
-	const assetPath = `${github.workspace}/build-power-apps/DBUI/bin/Release/${assetName}`;
+	const assetPath = `${workspace}/build-power-apps/DBUI/bin/Release/${assetName}`;
 	await uploadAsset({ github, context, release_id, assetName, assetPath });
 
 	// 2. Update  IconRelease with current tag
@@ -24,7 +24,7 @@ const release = async ({ github, context, iconReleaseId }) => {
 
 	// 3. Upload latest icon assets
 	const iconsName = 'icons.zip';
-	const iconsPath = `${github.workspace}/packages/foundations/assets`;
+	const iconsPath = `${workspace}/packages/foundations/assets`;
 	ChildProcess.execSync(`zip -r ${iconsName} ${iconsPath}/icons`);
 
 	// 3.1 Upload to current release

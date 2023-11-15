@@ -57,8 +57,9 @@ jobs:
           result-encoding: json
           script: |
             const { default: release } = await import('${{ github.workspace }}/.github/scripts/release/index.js');
-            const iconReleaseId = '$ICON_RELEASE_ID'
-            return await release({github, context, iconReleaseId})
+            const iconReleaseId = '${{ vars.$ICON_RELEASE_ID }}'
+            const workspace = '${{ github.workspace }}';
+            return await release({github, context, workspace, iconReleaseId})
 
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow
