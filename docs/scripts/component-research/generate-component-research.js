@@ -22,7 +22,8 @@ inquirer
 
 	.then(({ name }) => {
 		const path = `./research/${name}.md`;
-		let fileContent = `# DEV Research ${name}
+		let fileContent = `<!-- markdownlint-disable MD013 -->
+# DEV Research ${name}
 
 ## Overview
 
