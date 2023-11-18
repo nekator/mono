@@ -1,7 +1,6 @@
 module.exports = {
 	prettier: true,
 	plugins: ['@db-ui'],
-	extensions: ['.js', '.jsx', '.mjs', '.cjs', '.tsx', '.ts']
 	overrides: [
 		{
 			files: ['./showcases/angular-showcase/**'],
