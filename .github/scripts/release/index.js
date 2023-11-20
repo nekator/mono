@@ -3,8 +3,7 @@
  */
 
 import uploadAsset from './upload-asset.js';
-
-import ChildProcess from 'node:child_process';
+import zipFolder from './zip-folder.js';
 
 const release = async ({ github, context, workspace, iconReleaseId }) => {
 	const { id: release_id } = context.payload.release;
@@ -12,7 +11,7 @@ const release = async ({ github, context, workspace, iconReleaseId }) => {
 	// 3. Upload latest icon assets
 	const iconsName = 'icons.zip';
 	const iconsPath = `${workspace}/packages/foundations/assets`;
-	ChildProcess.execSync(`zip -r ${iconsName} ${iconsPath}/icons`);
+	await zipFolder(iconsName, iconsPath, `${iconsPath}/icons`);
 
 	// 3.1 Upload to current release
 	await uploadAsset({
