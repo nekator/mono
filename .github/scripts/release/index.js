@@ -10,11 +10,6 @@ import ChildProcess from 'node:child_process';
 const release = async ({ github, context, workspace, iconReleaseId }) => {
 	const release_id = context.payload.release.id;
 
-	// 1. Upload power-apps asset
-	const assetName = 'DBUI.zip';
-	const assetPath = `${workspace}/build-power-apps/DBUI/bin/Release/${assetName}`;
-	await uploadAsset({ github, context, release_id, assetName, assetPath });
-
 	// 2. Update  IconRelease with current tag
 	const updatedIconRelease = await updateIconRelease({
 		github,

@@ -33,12 +33,6 @@ jobs:
           name: db-ui-outputs
           path: build-outputs
 
-      - name: ⬇ Download Power Apps zip
-        uses: ./.github/actions/download-tar-artifact
-        with:
-          name: db-ui-powerapps
-          path: build-power-apps/DBUI
-
       - name: 📰 Publish to NPM Registries
         run: |
           chmod +rx ./.github/scripts/publish-npm.sh
