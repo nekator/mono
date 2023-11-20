@@ -3,20 +3,11 @@
  */
 
 import uploadAsset from './upload-asset.js';
-import getIconReleaseId from './get-icon-release-id.js';
 
 import ChildProcess from 'node:child_process';
 
 const release = async ({ github, context, workspace, iconReleaseId }) => {
-	const { id: release_id, tag_name } = context.payload.release;
-
-	// 2. latest IconReleaseId
-	const latestIconReleaseId = await getIconReleaseId({
-		github,
-		context,
-		iconReleaseId,
-		tag_name
-	});
+	const { id: release_id } = context.payload.release;
 
 	// 3. Upload latest icon assets
 	const iconsName = 'icons.zip';
@@ -37,7 +28,7 @@ const release = async ({ github, context, workspace, iconReleaseId }) => {
 		await uploadAsset({
 			github,
 			context,
-			release_id: latestIconReleaseId,
+			release_id: iconReleaseId,
 			assetName: iconsName,
 			assetPath: `${iconsPath}/${iconsName}`
 		});
