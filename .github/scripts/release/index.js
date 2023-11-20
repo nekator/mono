@@ -3,18 +3,19 @@
  */
 
 import uploadAsset from './upload-asset.js';
-import updateIconRelease from './update-icon-release.js';
+import getIconReleaseId from './get-icon-release-id.js';
 
 import ChildProcess from 'node:child_process';
 
 const release = async ({ github, context, workspace, iconReleaseId }) => {
-	const release_id = context.payload.release.id;
+	const { id: release_id, tag_name } = context.payload.release;
 
-	// 2. Update  IconRelease with current tag
-	const updatedIconRelease = await updateIconRelease({
+	// 2. latest IconReleaseId
+	const latestIconReleaseId = await getIconReleaseId({
 		github,
 		context,
-		iconReleaseId
+		iconReleaseId,
+		tag_name
 	});
 
 	// 3. Upload latest icon assets
@@ -36,7 +37,7 @@ const release = async ({ github, context, workspace, iconReleaseId }) => {
 		await uploadAsset({
 			github,
 			context,
-			release_id: updatedIconRelease.id,
+			release_id: latestIconReleaseId,
 			assetName: iconsName,
 			assetPath: `${iconsPath}/${iconsName}`
 		});

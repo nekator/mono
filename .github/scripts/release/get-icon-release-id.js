@@ -2,14 +2,14 @@
  * Uploads a file to a release
  */
 
-const updateIconRelease = async ({ github, context, iconReleaseId }) => {
+const getIconReleaseId = async ({
+	github,
+	context,
+	iconReleaseId,
+	tag_name
+}) => {
 	const { repo, owner } = context.repo;
 	let releaseId = iconReleaseId;
-
-	const { tag_name } = await github.rest.repos.getLatestRelease({
-		owner,
-		repo
-	});
 
 	if (releaseId === 'false') {
 		// We use release_id from GitHub variables https://github.com/db-ui/mono/settings/variables/actions/ICON_RELEASE_ID
@@ -29,12 +29,7 @@ const updateIconRelease = async ({ github, context, iconReleaseId }) => {
 		}
 	}
 
-	return await github.rest.repos.updateRelease({
-		owner,
-		repo,
-		release_id: releaseId,
-		tag_name
-	});
+	return releaseId;
 };
 
-export default updateIconRelease;
+export default getIconReleaseId;
