@@ -9,7 +9,7 @@
 			}
 		},
 		{
-			"files": ["*.sh", ".env"],
+			"files": [".env"],
 			"options": {
 				"parser": "sh"
 			}
