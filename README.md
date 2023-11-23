@@ -53,11 +53,11 @@ Here is an overview of all components you can use:
 
 | Name                                                                                          | Category          | Status | Planned for beta |
 | --------------------------------------------------------------------------------------------- | ----------------- | :----: | :--------------: |
-| [Accordion](https://db-ui.github.io/mono/review/main/components/alert/overview)               | 04 - Data-Display | Alpha  |        ✅        |
+| [Accordion](https://db-ui.github.io/mono/review/main/components/accordion/overview)           | 04 - Data-Display | Alpha  |        ✅        |
 | [Alert](https://db-ui.github.io/mono/review/main/components/alert/overview)                   | 05 - Feedback     |  Beta  |        ✅        |
 | Avatar                                                                                        | 04 - Data-Display |   ❌   |        ❌        |
 | Backdrop                                                                                      | 06 - Utility      |   ❌   |        ✅        |
-| [Badge](https://db-ui.github.io/mono/review/main/components/alert/overview)                   | 05 - Feedback     | Alpha  |        ✅        |
+| [Badge](https://db-ui.github.io/mono/review/main/components/badge/overview)                   | 05 - Feedback     | Alpha  |        ✅        |
 | Bottom-Navigation                                                                             | 02 - Action       |   ❌   |        ❌        |
 | Breadcrumbs                                                                                   | 02 - Action       |   ❌   |        ✅        |
 | [Brand](https://db-ui.github.io/mono/review/main/components/brand/overview)                   | 04 - Data-Display |  Beta  |        ✅        |
@@ -85,7 +85,7 @@ Here is an overview of all components you can use:
 | List-Item                                                                                     | 04 - Data-Display |   ❌   |        ✅        |
 | Menu                                                                                          | 02 - Action       |   ❌   |        ✅        |
 | Modal                                                                                         | 06 - Utility      |   ❌   |        ✅        |
-| [NavigationItem](https://db-ui.github.io/mono/review/main/components/navigationitem/overview) | 05 - Navigation   |  Beta  |        ✅        |
+| [NavigationItem](https://db-ui.github.io/mono/review/main/components/navigation-item/overview) | 05 - Navigation   |  Beta  |        ✅        |
 | Notification                                                                                  | 05 - Feedback     |   ❌   |        ✅        |
 | Numbers-Field                                                                                 | 03 - Data-Input   |   ❌   |        ❌        |
 | Pagination                                                                                    | 02 - Action       |   ❌   |        ❌        |
@@ -102,10 +102,10 @@ Here is an overview of all components you can use:
 | Stepper                                                                                       | 02 - Action       |   ❌   |        ❌        |
 | Switch                                                                                        | 02 - Action       |   ❌   |        ❌        |
 | Table                                                                                         | 04 - Data-Display |   ❌   |        ❌        |
-| [Tabs](https://db-ui.github.io/mono/review/main/components/tabs/overview)                     | 04 - Data-Display | Alpha  |        ❌        |
+| Tabs																		                    | 04 - Data-Display | Alpha  |        ❌        |
 | [Tag](https://db-ui.github.io/mono/review/main/components/tag/overview)                       | 04 - Data-Display | Alpha  |        ✅        |
 | Text                                                                                          | 04 - Data-Display |   ❌   |        ✅        |
-| [Textarea](https://db-ui.github.io/mono/review/main/components/tag/overview)                  | 03 - Data-Input   | Alpha  |        ✅        |
+| [Textarea](https://db-ui.github.io/mono/review/main/components/textarea/overview)             | 03 - Data-Input   | Alpha  |        ✅        |
 | Timeline                                                                                      | 04 - Data-Display |   ❌   |        ❌        |
 | Time-Picker                                                                                   | 03 - Data-Input   |   ❌   |        ❌        |
 | Toggle-Button                                                                                 | 02 - Action       |   ❌   |        ❌        |
