@@ -2,14 +2,14 @@
   "name": "@db-ui/foundations",
   "version": "0.0.0",
   "description": "Provides basic tokens and assets based on DB UX Design System Core.",
-  "bin": {
-    "generate-icon-fonts": "build/scripts/generate-icon-fonts/index.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/db-ui/mono.git"
   },
   "license": "Apache-2.0",
+  "bin": {
+    "generate-icon-fonts": "build/scripts/generate-icon-fonts/index.js"
+  },
   "main": "build.js",
   "files": [
     "assets",
