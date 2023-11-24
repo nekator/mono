@@ -6,7 +6,6 @@
 @use "../../styles/component";
 
 .db-accordion-item {
-	@extend %bg-transparent;
 	@include helpers.divider($position: "top");
 
 	position: relative;
@@ -28,7 +27,8 @@
 
 	summary {
 		@extend %dropdown-icon;
-		@include colors.bg-transparent-interactive(false);
+		@include colors.set-transparent-bg-interactive(false);
+		@include colors.set-transparent-bg(0);
 
 		list-style: none;
 		display: flex;

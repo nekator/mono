@@ -79,10 +79,6 @@
 		inline-size: 100%;
 		margin-inline-start: 0;
 
-		&:has(input:not(:checked)) {
-			--db-current-base-color-alpha: 100%;
-		}
-
 		&:has(input:checked) {
 			border-width: variables.$db-border-height-sm;
 
@@ -98,7 +94,6 @@
 
 	a {
 		@extend %default-transition;
-		@include colors.bg-transparent-interactive(false);
 		display: inline-flex;
 		text-decoration: none;
 
@@ -120,31 +115,6 @@
 		border: none;
 	}
 
-	input:checked {
-		@include colors.bg-transparent-hover();
-	}
-
-	button {
-		@include colors.bg-transparent-interactive();
-	}
-
-	button,
-	label:has(input:checked) {
-		@include colors.bg-transparent-interactive();
-		@include colors.get-variant-bg-color(0.08);
-	}
-
-	&:not([data-emphasis="strong"]) {
-		label:has(input[type="radio"]:checked) {
-			&:enabled {
-				&:hover,
-				&:active {
-					--db-current-base-color-alpha: 92%;
-				}
-			}
-		}
-	}
-
 	button,
 	a,
 	label {
@@ -153,11 +123,6 @@
 		block-size: inherit;
 		padding: 0 variables.$db-spacing-fixed-2xs;
 		border-radius: variables.$db-border-radius-md;
-	}
-
-	button,
-	a {
-		@include colors.get-variant-bg-color(0.08);
 	}
 
 	db-button,
@@ -191,7 +156,7 @@
 	.db-tab-remove-button {
 		&:is(button),
 		button {
-			@include colors.get-variant-bg-color(0);
+			@include colors.set-transparent-bg(0);
 			margin-inline-start: variables.$db-spacing-fixed-2xs;
 			block-size: 100%;
 		}

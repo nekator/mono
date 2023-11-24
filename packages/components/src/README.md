@@ -50,12 +50,11 @@ Main use-case to overwrite a color or change colors by `data-variant`. Example:
 @use "@db-ui/foundations/build/scss/colors";
 
 .db-xxx {
-	@include colors.bg-transparent-hover();
-	@include colors.get-variant-bg-color(0.08);
+	@include colors.set-transparent-bg-hover();
 
-	@each $name, $colors in colors.$component-variants {
+	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			--db-current-border-color: #{map.get($colors, "border")};
+			--db-current-border-color: var(--db-#{$name}-5);
 		}
 	}
 }

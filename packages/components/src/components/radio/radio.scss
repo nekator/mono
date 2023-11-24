@@ -16,7 +16,7 @@
 
 			// The radio element still has the default background for the dot on :hover when in checked state
 			&:enabled:hover {
-				@extend %bg-transparent;
+				background-color: var(--db-current-bg-color);
 			}
 		}
 	}

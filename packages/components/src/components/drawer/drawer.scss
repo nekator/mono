@@ -111,7 +111,7 @@ $spacings: (
 		@extend %spacing-drawer;
 		display: flex;
 		flex-direction: column;
-		background-color: colors.$db-base-bg;
+		background-color: colors.$db-base-12;
 		block-size: 100%;
 		inline-size: 100%;
 		position: fixed;

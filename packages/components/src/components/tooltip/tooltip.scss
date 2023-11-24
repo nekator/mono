@@ -25,7 +25,7 @@ $tooltip-arrow-shadow-size: variables.$db-sizing-2xs;
 			content: "";
 			box-shadow: variables.$db-elevation-md;
 			position: absolute;
-			background-color: colors.$db-base-bg;
+			background-color: colors.$db-base-12;
 			inline-size: $tooltip-arrow-shadow-size;
 			block-size: $tooltip-arrow-shadow-size;
 			clip-path: polygon(
@@ -83,7 +83,7 @@ $tooltip-arrow-shadow-size: variables.$db-sizing-2xs;
 
 		&::after {
 			// TODO: Check whether this is the correct reference
-			background-color: colors.$db-neutral-text;
+			background-color: var(--db-neutral-4);
 		}
 	}
 }

@@ -46,7 +46,7 @@
 	@extend %default-interactive-component;
 	@extend %transparent-border;
 
-	@include colors.get-variant-bg-color(0);
+	@include colors.set-transparent-bg(0);
 	cursor: pointer;
 	inline-size: 100%;
 	display: inline-flex;
@@ -59,11 +59,11 @@
 
 	&:hover,
 	&:has(~ .db-sub-navigation:hover) {
-		@include colors.get-variant-bg-color(0.16);
+		@include colors.set-transparent-bg(colors.$default-alpha-hover);
 	}
 
 	&:active {
-		@include colors.get-variant-bg-color(0.24);
+		@include colors.set-transparent-bg(colors.$default-alpha-pressed);
 	}
 
 	&::after {
@@ -151,7 +151,7 @@
 	flex-direction: column;
 	z-index: 70;
 	inset-inline-start: 0;
-	background-color: colors.$db-base-bg;
+	background-color: colors.$db-base-12;
 
 	visibility: hidden;
 
@@ -234,7 +234,7 @@
 	@include helpers.divider("bottom");
 	display: flex;
 	font-weight: normal;
-	background-color: colors.$db-base-bg;
+	background-color: colors.$db-base-12;
 	padding-block-end: variables.$db-spacing-fixed-md;
 	margin-block-end: variables.$db-spacing-fixed-md;
 }

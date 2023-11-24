@@ -10,9 +10,9 @@
 	@extend %default-interactive-component;
 	@extend %default-button;
 
-	@include colors.bg-transparent-interactive();
+	@include colors.set-transparent-bg-interactive();
 
-	color: colors.$db-base-on-bg;
+	color: colors.$db-current-color;
 
 	block-size: variables.$db-sizing-md;
 	inline-size: fit-content;
@@ -49,7 +49,6 @@
 	}
 
 	&[data-variant="primary"] {
-		@extend %db-brand-component-interactive;
 		@extend %transparent-border;
 		background-color: colors.$db-brand;
 		color: colors.$db-brand-on;
@@ -63,13 +62,15 @@
 		}
 	}
 
-	&[data-variant="solid"] {
-		@extend %transparent-border;
-		@include colors.get-variant-bg-color(0.08);
-	}
-
+	&[data-variant="solid"],
 	&[data-variant="text"] {
 		@extend %transparent-border;
+	}
+
+	&[data-variant="outlined"],
+	&:not([data-variant]),
+	&[data-variant="text"] {
+		@include colors.set-transparent-bg(0); // overwrite to transparent
 	}
 
 	&:disabled {

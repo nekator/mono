@@ -108,14 +108,6 @@ $floating-label-size: calc(
 	}
 }
 
-@mixin set-current-colors($color-variant) {
-	--db-current-color: #{map.get($color-variant, "on-bg")};
-	--db-current-border-weak-color: #{map.get($color-variant, "border")};
-	--db-current-element-color: #{map.get($color-variant, "element")};
-	--db-current-base-color: #{map.get($color-variant, "text")};
-	--db-current-bg-color: #{map.get($color-variant, "bg")};
-}
-
 @mixin get-validity-color($key: "valid") {
 	$variant: "successful";
 
@@ -123,17 +115,15 @@ $floating-label-size: calc(
 		$variant: "critical";
 	}
 
-	$color-variant: map.get(colors.$component-variants, $variant);
-
 	& {
-		@include set-current-colors($color-variant);
+		@extend %db-bg-#{$variant}-variables;
 	}
 
 	textarea,
 	input,
 	select,
 	[id$="-placeholder"] {
-		color: map.get($color-variant, "on-bg");
+		color: var(--db-#{$variant}-1);
 	}
 }
 
@@ -201,8 +191,7 @@ $floating-label-size: calc(
 		@extend %default-interactive-component;
 		@extend %component-border;
 
-		@include colors.bg-transparent-hover();
-		@include colors.get-variant-bg-color(0.08);
+		@include colors.set-transparent-bg-hover();
 
 		appearance: none;
 		max-inline-size: 100%;
@@ -221,7 +210,7 @@ $floating-label-size: calc(
 		}
 
 		&:is(input, textarea):read-only {
-			background-color: colors.$db-base-bg !important;
+			background-color: colors.$db-base-12 !important;
 		}
 	}
 
@@ -285,14 +274,14 @@ $floating-label-size: calc(
 	}
 
 	// colors
-	@each $name, $colors in colors.$component-variants {
+	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@include set-current-colors($colors);
+			@extend %db-bg-#{$name}-variables;
 		}
 
 		&[data-variant="#{$name}"] #{$selector},
 		&[data-variant="#{$name}"] [id$="-placeholder"] {
-			color: map.get($colors, "on-bg");
+			color: var(--db-#{$name}-1);
 		}
 	}
 
@@ -307,12 +296,12 @@ $floating-label-size: calc(
 // CHECKBOX & RADIO
 
 @mixin get-validity-color-check($key: "valid") {
-	$text-color: colors.$db-successful-text;
-	$bg-color: colors.$db-successful-bg;
+	$text-color: var(--db-successful-4);
+	$bg-color: var(--db-successful-11);
 
 	@if ($key != "valid") {
-		$text-color: colors.$db-critical-text;
-		$bg-color: colors.$db-critical-bg;
+		$text-color: var(--db-critical-4);
+		$bg-color: var(--db-critical-11);
 	}
 
 	input {
@@ -327,8 +316,8 @@ $floating-label-size: calc(
 
 		&:checked {
 			--db-base-text-enabled: #{$text-color};
-			--db-base-text-hover: #{colors.$db-successful-text-hover};
-			--db-base-text-pressed: #{colors.$db-successful-text-pressed};
+			--db-base-text-hover: var(--db-successful-3);
+			--db-base-text-pressed: var(--db-successful-2);
 		}
 	}
 
@@ -360,7 +349,8 @@ $floating-label-size: calc(
 	}
 
 	input {
-		@include colors.bg-transparent-interactive();
+		@include colors.set-transparent-bg-interactive();
+		@include colors.set-transparent-bg(0); // overwrite to transparent
 
 		align-content: center;
 

@@ -9,7 +9,7 @@ $default-mobile-header-height: var(
 );
 
 %default-adaptive-border {
-	border: variables.$db-border-height-sm solid colors.$db-base-on-bg;
+	border: variables.$db-border-height-sm solid colors.$db-current-color;
 }
 
 %transparent-border {
@@ -17,7 +17,8 @@ $default-mobile-header-height: var(
 }
 
 %component-border {
-	border: variables.$db-border-height-sm solid colors.$db-base-border-weak;
+	border: variables.$db-border-height-sm solid
+		colors.$db-current-border-weak-color;
 }
 
 %default-interactive-component {

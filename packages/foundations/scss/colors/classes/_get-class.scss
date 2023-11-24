@@ -13,9 +13,5 @@
 		&-transparent-semi {
 			@extend %db-bg-#{$variant}-transparent-semi;
 		}
-
-		&-interactive {
-			@extend %db-bg-#{$variant}-interactive;
-		}
 	}
 }

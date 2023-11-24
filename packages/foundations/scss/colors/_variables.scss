@@ -1,74 +1,123 @@
 $variants: "base", "neutral", "brand", "critical", "successful", "warning",
 	"informational";
 
+$variant-colors: "neutral", "critical", "successful", "warning", "informational";
+
 // current
 $db-current-color: var(--db-current-color);
 $db-current-bg-color: var(--db-current-bg-color);
+$db-current-border-weak-color: var(--db-current-border-weak-color);
+$db-current-border-color: var(--db-current-border-color);
+
+// special tokens just for db-button
+$db-brand-on: var(--db-brand-on-enabled);
+$db-brand: var(--db-brand-origin-enabled);
+$db-brand-hover: var(--db-brand-origin-hover);
+$db-brand-pressed: var(--db-brand-origin-pressed);
 
 // Variants for adaptive components like input, select, alert, ...
 
 // base
-$db-base-bg: var(--db-base-bg-enabled);
-$db-base-on-bg: var(--db-current-color, var(--db-base-on-bg-enabled));
-$db-base-border-weak: var(
-	--db-current-border-weak-color,
-	var(--db-base-border-weak-enabled)
-);
-$db-base-border: var(--db-current-border-color, var(--db-base-border-enabled));
+$db-base-0: var(--db-base-0);
+$db-base-1: var(--db-base-1);
+$db-base-2: var(--db-base-2);
+$db-base-3: var(--db-base-3);
+$db-base-4: var(--db-base-4);
+$db-base-5: var(--db-base-5);
+$db-base-6: var(--db-base-6);
+$db-base-7: var(--db-base-7);
+$db-base-8: var(--db-base-8);
+$db-base-9: var(--db-base-9);
+$db-base-10: var(--db-base-10);
+$db-base-11: var(--db-base-11);
+$db-base-12: var(--db-base-12);
 
 // brand
-
-$db-brand-on: var(--db-brand-on-enabled);
-// just for db-button
-$db-brand: var(--db-brand-origin-enabled);
-$db-brand-hover: var(--db-brand-origin-hover);
-$db-brand-pressed: var(--db-brand-origin-pressed);
-// just for db-link
-$db-brand-text: var(--db-brand-text-enabled);
-$db-brand-text-hover: var(--db-brand-text-hover);
-$db-brand-text-pressed: var(--db-brand-text-pressed);
+$db-brand-0: var(--db-brand-0);
+$db-brand-1: var(--db-brand-1);
+$db-brand-2: var(--db-brand-2);
+$db-brand-3: var(--db-brand-3);
+$db-brand-4: var(--db-brand-4);
+$db-brand-5: var(--db-brand-5);
+$db-brand-6: var(--db-brand-6);
+$db-brand-7: var(--db-brand-7);
+$db-brand-8: var(--db-brand-8);
+$db-brand-9: var(--db-brand-9);
+$db-brand-10: var(--db-brand-10);
+$db-brand-11: var(--db-brand-11);
+$db-brand-12: var(--db-brand-12);
 
 // neutral
-$db-neutral-border-weak: var(--db-neutral-border-weak-enabled);
-$db-neutral-element: var(--db-neutral-element-enabled);
-$db-neutral-on-bg: var(--db-neutral-on-bg-enabled);
-$db-neutral-bg: var(--db-neutral-bg-enabled);
-$db-neutral-text: var(--db-neutral-text-enabled);
-$db-neutral-text-hover: var(--db-neutral-text-hover);
-$db-neutral-text-pressed: var(--db-neutral-text-pressed);
-
-// critical
-$db-critical-border-weak: var(--db-critical-border-weak-enabled);
-$db-critical-element: var(--db-critical-element-enabled);
-$db-critical-on-bg: var(--db-critical-on-bg-enabled);
-$db-critical-bg: var(--db-critical-bg-enabled);
-$db-critical-text: var(--db-critical-text-enabled);
-$db-critical-text-hover: var(--db-critical-text-hover);
-$db-critical-text-pressed: var(--db-critical-text-pressed);
+$db-neutral-0: var(--db-neutral-0);
+$db-neutral-1: var(--db-neutral-1);
+$db-neutral-2: var(--db-neutral-2);
+$db-neutral-3: var(--db-neutral-3);
+$db-neutral-4: var(--db-neutral-4);
+$db-neutral-5: var(--db-neutral-5);
+$db-neutral-6: var(--db-neutral-6);
+$db-neutral-7: var(--db-neutral-7);
+$db-neutral-8: var(--db-neutral-8);
+$db-neutral-9: var(--db-neutral-9);
+$db-neutral-10: var(--db-neutral-10);
+$db-neutral-11: var(--db-neutral-11);
+$db-neutral-12: var(--db-neutral-12);
 
 // informational
-$db-informational-border-weak: var(--db-informational-border-weak-enabled);
-$db-informational-element: var(--db-informational-element-enabled);
-$db-informational-on-bg: var(--db-informational-on-bg-enabled);
-$db-informational-bg: var(--db-informational-bg-enabled);
-$db-informational-text: var(--db-informational-text-enabled);
-$db-informational-text-hover: var(--db-informational-text-hover);
-$db-informational-text-pressed: var(--db-informational-text-pressed);
+$db-informational-0: var(--db-informational-0);
+$db-informational-1: var(--db-informational-1);
+$db-informational-2: var(--db-informational-2);
+$db-informational-3: var(--db-informational-3);
+$db-informational-4: var(--db-informational-4);
+$db-informational-5: var(--db-informational-5);
+$db-informational-6: var(--db-informational-6);
+$db-informational-7: var(--db-informational-7);
+$db-informational-8: var(--db-informational-8);
+$db-informational-9: var(--db-informational-9);
+$db-informational-10: var(--db-informational-10);
+$db-informational-11: var(--db-informational-11);
+$db-informational-12: var(--db-informational-12);
 
 // warning
-$db-warning-border-weak: var(--db-warning-border-weak-enabled);
-$db-warning-element: var(--db-warning-element-enabled);
-$db-warning-on-bg: var(--db-warning-on-bg-enabled);
-$db-warning-bg: var(--db-warning-bg-enabled);
-$db-warning-text: var(--db-warning-text-enabled);
-$db-warning-text-hover: var(--db-warning-text-hover);
-$db-warning-text-pressed: var(--db-warning-text-pressed);
+$db-warning-0: var(--db-warning-0);
+$db-warning-1: var(--db-warning-1);
+$db-warning-2: var(--db-warning-2);
+$db-warning-3: var(--db-warning-3);
+$db-warning-4: var(--db-warning-4);
+$db-warning-5: var(--db-warning-5);
+$db-warning-6: var(--db-warning-6);
+$db-warning-7: var(--db-warning-7);
+$db-warning-8: var(--db-warning-8);
+$db-warning-9: var(--db-warning-9);
+$db-warning-10: var(--db-warning-10);
+$db-warning-11: var(--db-warning-11);
+$db-warning-12: var(--db-warning-12);
 
 // successful
-$db-successful-border-weak: var(--db-successful-border-weak-enabled);
-$db-successful-element: var(--db-successful-element-enabled);
-$db-successful-on-bg: var(--db-successful-on-bg-enabled);
-$db-successful-bg: var(--db-successful-bg-enabled);
-$db-successful-text: var(--db-successful-text-enabled);
-$db-successful-text-hover: var(--db-successful-text-hover);
-$db-successful-text-pressed: var(--db-successful-text-pressed);
+$db-successful-0: var(--db-successful-0);
+$db-successful-1: var(--db-successful-1);
+$db-successful-2: var(--db-successful-2);
+$db-successful-3: var(--db-successful-3);
+$db-successful-4: var(--db-successful-4);
+$db-successful-5: var(--db-successful-5);
+$db-successful-6: var(--db-successful-6);
+$db-successful-7: var(--db-successful-7);
+$db-successful-8: var(--db-successful-8);
+$db-successful-9: var(--db-successful-9);
+$db-successful-10: var(--db-successful-10);
+$db-successful-11: var(--db-successful-11);
+$db-successful-12: var(--db-successful-12);
+
+// critical
+$db-critical-0: var(--db-critical-0);
+$db-critical-1: var(--db-critical-1);
+$db-critical-2: var(--db-critical-2);
+$db-critical-3: var(--db-critical-3);
+$db-critical-4: var(--db-critical-4);
+$db-critical-5: var(--db-critical-5);
+$db-critical-6: var(--db-critical-6);
+$db-critical-7: var(--db-critical-7);
+$db-critical-8: var(--db-critical-8);
+$db-critical-9: var(--db-critical-9);
+$db-critical-10: var(--db-critical-10);
+$db-critical-11: var(--db-critical-11);
+$db-critical-12: var(--db-critical-12);

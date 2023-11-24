@@ -19,13 +19,24 @@
 		}
 
 		&:checked {
-			@extend %db-base-component-interactive;
-
 			// Check icon
 			@include icons.set-icon("done");
 
 			// The icon within the checkbox has the same dimensions as the checkbox itself and that for there can't be any border
 			border-width: 0;
+
+			color: var(--db-current-bg-color);
+			background-color: var(--db-current-color);
+
+			&:enabled {
+				&:hover {
+					background-color: var(--db-current-color-hover);
+				}
+
+				&:active {
+					background-color: var(--db-current-color-pressed);
+				}
+			}
 		}
 
 		&:indeterminate {

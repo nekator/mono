@@ -2,61 +2,129 @@
 @use "sass:color";
 @use "variables";
 
-@each $variant in variables.$variants {
-	%db-#{$variant}-component {
-		--db-current-color: var(--db-#{$variant}-on-enabled);
-		color: var(--db-current-color);
-		background-color: var(--db-#{$variant}-text-enabled);
-	}
+$default-alpha: 0.08;
+$default-alpha-hover: 0.16;
+$default-alpha-pressed: 0.24;
 
-	%db-#{$variant}-component-interactive {
-		@extend %db-#{$variant}-component;
+@mixin set-transparent-bg($alpha: $default-alpha) {
+	background-color: color-mix(
+		in srgb,
+		transparent string.unquote(calc((1 - $alpha) * 100) + "%"),
+		var(--db-current-base-color)
+	);
+}
 
+@mixin set-transparent-bg-hover($with-enabled: true) {
+	@include set-transparent-bg();
+
+	@if ($with-enabled) {
 		&:enabled {
 			&:hover {
-				background-color: var(--db-#{$variant}-text-hover);
+				@include set-transparent-bg($default-alpha-hover);
+			}
+		}
+	} @else {
+		&:hover {
+			@include set-transparent-bg($default-alpha-hover);
+		}
+	}
+}
+
+@mixin set-transparent-bg-interactive($with-enabled: true) {
+	@include set-transparent-bg-hover($with-enabled);
+
+	@if ($with-enabled) {
+		&:enabled {
+			&:active {
+				@include set-transparent-bg($default-alpha-pressed);
+			}
+		}
+	} @else {
+		&:active {
+			@include set-transparent-bg($default-alpha-pressed);
+		}
+	}
+}
+
+@mixin color-variants($interactive) {
+	@each $variant in variables.$variants {
+		&[data-color-variant="#{$variant}"] {
+			@extend %db-bg-#{$variant};
+		}
+		@if ($interactive == true) {
+			&[data-color-variant="#{$variant}-ia"] {
+				@extend %db-bg-#{$variant};
+				@include set-transparent-bg-interactive();
+			}
+		}
+	}
+}
+
+%color-variants {
+	@include color-variants(false);
+}
+%color-variants-ia {
+	@include color-variants(true);
+}
+
+@each $variant in variables.$variants {
+	%db-#{$variant}-component {
+		--db-current-color: var(--db-#{$variant}-12);
+		color: var(--db-current-color);
+		background-color: var(--db-#{$variant}-4);
+
+		&-interactive {
+			@extend %db-#{$variant}-component;
+
+			&:hover {
+				background-color: var(--db-#{$variant}-3);
 			}
 
 			&:active {
-				background-color: var(--db-#{$variant}-text-pressed);
+				background-color: var(--db-#{$variant}-2);
 			}
 		}
 	}
 
 	%db-#{$variant}-text-interactive {
-		--db-current-color: var(--db-#{$variant}-text-enabled);
+		--db-current-color: var(--db-#{$variant}-4);
 		color: var(--db-current-color);
 
 		&:enabled {
 			&:hover {
-				--db-current-color: var(--db-#{$variant}-text-hover);
+				--db-current-color: var(--db-#{$variant}-3);
 			}
 
 			&:active {
-				--db-current-color: var(--db-#{$variant}-text-pressed);
+				--db-current-color: var(--db-#{$variant}-2);
 			}
 		}
 	}
 
 	%db-bg-#{$variant}-variables {
-		--db-current-base-color: var(--db-#{$variant}-text-enabled);
-		--db-current-color: var(--db-#{$variant}-on-bg-enabled);
-		--db-current-bg-color: color-mix(
-			in srgb,
-			transparent var(--db-bg-transparent, 0%),
-			var(--db-#{$variant}-bg-enabled)
-		);
-		--db-current-element-color: var(--db-#{$variant}-element-enabled);
-		--db-current-border-color: var(--db-#{$variant}-border-enabled);
-		--db-current-border-weak-color: var(
-			--db-#{$variant}-border-weak-enabled
-		);
+		/* used for transparent backgrounds */
+		--db-current-base-color: var(--db-#{$variant}-4);
 
-		--db-focus-box-shadow-bg-color: color-mix(
-			in srgb,
-			transparent var(--db-bg-transparent, 0%),
-			var(--db-#{$variant}-bg-enabled)
-		);
+		/* used for text */
+		--db-current-color: var(--db-#{$variant}-1);
+		--db-current-color-hover: var(
+			--db-#{$variant}-2
+		); // used for checkbox:checked
+		--db-current-color-pressed: var(
+			--db-#{$variant}-3
+		); // used for checkbox:checked
+
+		/* used as normal backgrounds */
+		@if ($variant == "base") {
+			--db-current-bg-color: var(--db-#{$variant}-12);
+		} @else {
+			--db-current-bg-color: var(--db-#{$variant}-11);
+		}
+
+		/* used for icons and borders */
+		--db-current-element-color: var(--db-#{$variant}-5);
+		--db-current-border-color: var(--db-#{$variant}-5);
+		--db-current-border-weak-color: var(--db-#{$variant}-6);
 	}
 
 	%db-bg-#{$variant} {
@@ -68,49 +136,40 @@
 			&-full,
 			&-semi {
 				@extend %db-bg-#{$variant}-variables;
-				color: var(--db-#{$variant}-on-bg-enabled);
-				background-color: color-mix(
-					in srgb,
-					transparent var(--db-bg-transparent, 100%),
-					var(--db-current-base-color)
-				);
+			}
+
+			&-full {
+				@include set-transparent-bg(0);
 			}
 
 			&-semi {
-				background-color: color-mix(
-					in srgb,
-					transparent var(--db-bg-transparent, 92%),
-					var(--db-current-base-color)
-				);
-			}
-		}
-
-		&-interactive {
-			@extend %db-bg-#{$variant};
-
-			&:enabled {
-				&:hover {
-					--db-bg-transparent: 84%;
-				}
-
-				&:active {
-					--db-bg-transparent: 68%;
-				}
+				@include set-transparent-bg(0.08);
 			}
 		}
 
 		&[data-emphasis="weak"] {
-			--db-current-color: var(--db-#{$variant}-on-bg-weak-enabled);
+			--db-current-color: var(--db-#{$variant}-2);
 			color: var(--db-current-color);
 		}
 
-		&-strong,
-		&-strong-interactive {
-			--db-current-bg-color: color-mix(
-				in srgb,
-				transparent var(--db-bg-transparent, 0%),
-				var(--db-#{$variant}-bg-strong-enabled)
-			);
+		&-strong {
+			--db-current-color: var(--db-#{$variant}-1);
+			--db-current-bg-color: var(--db-#{$variant}-10);
+			--db-current-border-weak-color: var(--db-#{$variant}-6);
+			background-color: var(--db-current-bg-color);
+			color: var(--db-current-color);
+
+			&-interactive {
+				@extend %db-bg-#{$variant}-strong;
+
+				&:hover {
+					background-color: var(--db-#{$variant}-9);
+				}
+
+				&:active {
+					background-color: var(--db-#{$variant}-8);
+				}
+			}
 		}
 	}
 }

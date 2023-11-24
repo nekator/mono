@@ -9,51 +9,25 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	@extend %db-bg-base-strong;
 
 	&[data-emphasis="strong"] {
+		// border should be same color like background
+		--db-current-border-weak-color: var(--db-base-4);
 		@extend %db-base-component;
 	}
 
-	@each $name, $colors in colors.$component-variants {
+	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@if ($name == "neutral") {
-				@extend %db-bg-neutral;
+			@extend %db-bg-#{$name}-strong;
 
-				&[data-emphasis="strong"] {
-					@extend %db-neutral-component;
-				}
-			} @else if ($name == "critical") {
-				@extend %db-bg-critical;
-
-				&[data-emphasis="strong"] {
-					@extend %db-critical-component;
-				}
-			} @else if ($name == "informational") {
-				@extend %db-bg-informational;
-
-				&[data-emphasis="strong"] {
-					@extend %db-informational-component;
-				}
-			} @else if ($name == "warning") {
-				@extend %db-bg-warning;
-
-				&[data-emphasis="strong"] {
-					@extend %db-warning-component;
-				}
-			} @else if ($name == "successful") {
-				@extend %db-bg-successful;
-
-				&[data-emphasis="strong"] {
-					@extend %db-successful-component;
-				}
-			}
-
-			&:not(&[data-emphasis="strong"]) {
-				--db-current-border-color: #{map.get($colors, "border")};
+			&[data-emphasis="strong"] {
+				// border should be same color like background
+				--db-current-border-weak-color: var(--db-#{$name}-4);
+				@extend %db-#{$name}-component;
 			}
 		}
 	}
 }
 
-@mixin interactive-selectors() {
+@mixin get-interactive-selectors() {
 	&:not(:has(dbbutton)) button:not(.db-tab-remove-button),
 	dbbutton:not(.db-tab-remove-button) > button,
 	db-button > button,
@@ -64,34 +38,45 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 }
 
 @mixin get-tag-colors-interactive() {
-	@include interactive-selectors() {
-		@extend %db-bg-base-strong-interactive;
+	label:has(input) {
+		@include colors.set-transparent-bg-interactive(false);
+		@include colors.set-transparent-bg(0); // overwrite to transparent
 	}
 
-	label:has(input[type="radio"]:checked) {
-		@extend %db-bg-base-strong-interactive;
-	}
+	&:not([data-emphasis]),
+	&[data-emphasis="weak"] {
+		@each $name in colors.$variant-colors {
+			&[data-variant="#{$name}"] {
+				label:has(input) {
+					@extend %db-bg-#{$name}-variables;
+				}
+			}
+		}
 
-	@each $name, $colors in colors.$component-variants {
-		&[data-variant="#{$name}"] {
-			@include interactive-selectors() {
-				@if ($name == "neutral") {
-					@extend %db-bg-neutral-interactive;
-				} @else if ($name == "critical") {
-					@extend %db-bg-critical-interactive;
-				} @else if ($name == "informational") {
-					@extend %db-bg-informational-interactive;
-				} @else if ($name == "warning") {
-					@extend %db-bg-warning-interactive;
-				} @else if ($name == "successful") {
-					@extend %db-bg-successful-interactive;
+		@include get-interactive-selectors() {
+			@extend %db-bg-base-strong-interactive;
+		}
+
+		label:has(input[type="radio"]:checked) {
+			@extend %db-bg-base-strong;
+		}
+
+		@each $name in colors.$variant-colors {
+			&[data-variant="#{$name}"] {
+				@include get-interactive-selectors() {
+					@extend %db-bg-#{$name}-strong-interactive;
+				}
+
+				label:has(input[type="radio"]:checked) {
+					@extend %db-bg-#{$name}-strong;
 				}
 			}
 		}
 	}
 
 	&[data-emphasis="strong"] {
-		@include interactive-selectors() {
+		--db-current-color: var(--db-base-12);
+		@include get-interactive-selectors() {
 			@extend %db-base-component-interactive;
 		}
 
@@ -99,28 +84,22 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 			@extend %db-base-component;
 		}
 
-		&:has(input:checked, a, button) {
-			--db-current-icon-color: var(--db-base-on-enabled);
-			--db-current-color: var(--db-base-on-enabled);
-			color: var(--db-current-color);
-		}
-
-		@each $name, $colors in colors.$component-variants {
+		@each $name in colors.$variant-colors {
 			&[data-variant="#{$name}"] {
-				@include interactive-selectors() {
-					@if ($name == "neutral") {
-						@extend %db-neutral-component-interactive;
-					} @else if ($name == "critical") {
-						@extend %db-critical-component-interactive;
-					} @else if ($name == "informational") {
-						@extend %db-informational-component-interactive;
-					} @else if ($name == "warning") {
-						@extend %db-warning-component-interactive;
-					} @else if ($name == "successful") {
-						@extend %db-successful-component-interactive;
-					}
+				--db-current-color: var(--db-#{$name}-12);
+				@include get-interactive-selectors() {
+					@extend %db-#{$name}-component-interactive;
+				}
+
+				label:has(input[type="radio"]:checked) {
+					@extend %db-#{$name}-component;
 				}
 			}
+		}
+
+		&:has(input:checked, a, button) {
+			--db-current-icon-color: var(--db-current-color);
+			color: var(--db-current-color);
 		}
 	}
 }

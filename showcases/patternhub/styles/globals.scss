@@ -108,7 +108,7 @@ div[class^="ch-"] {
 	div,
 	span {
 		@extend %db-overwrite-font-size-sm;
-		color: colors.$db-base-on-bg;
+		color: colors.$db-current-color;
 	}
 }
 

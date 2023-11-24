@@ -103,7 +103,7 @@
 		}
 	}
 
-	@each $name, $colors in colors.$component-variants {
+	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
 			@if ($name == "neutral") {
 				@extend %db-bg-neutral;
@@ -120,7 +120,7 @@
 			@include icons.variant-icons($name);
 
 			&::before {
-				--db-current-icon-color: #{map.get($colors, "element")};
+				--db-current-icon-color: var(--db-#{$name}-5);
 			}
 		}
 	}
