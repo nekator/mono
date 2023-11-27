@@ -166,17 +166,6 @@ Mono, meaning apps only need to keep their DB UI Mono package updated to ensure 
 
 </details>
 
-## More information
-
-Additionally we'll provide some more information over time regrading the whole ecosystem:
-
--   [DB UX Design System documentation within the DB Marketingportal (german)](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten)
--   [Confluence / Base Wiki - "Technische Umsetzung des Enterprise UI Design Systems" (german, only available internally)](https://db.de/pu8moh)
--   [Confluence - Web UI Component Library (only available internally)](https://db.de/1tyr73)
--   [Changelog](https://github.com/db-ui/core/blob/main/CHANGELOG.md)
--   [Architectural Decision Records](https://github.com/db-ui/core/tree/main/docs/adr)
--   [DB UI Mono 1.x Gitlab repository (only accessible internally)](https://db.de/4cwtyn/)
-
 ## Things to keep in mind
 
 ### Developed for and driven by the community
