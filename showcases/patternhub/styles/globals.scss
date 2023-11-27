@@ -85,7 +85,7 @@ table {
 
 table td,
 table th {
-	border: 1px solid colors.$db-neutral-border-weak;
+	border: 1px solid colors.$db-current-border-weak-color;
 	padding: variables.$db-spacing-fixed-md;
 	max-width: 33vw;
 }
