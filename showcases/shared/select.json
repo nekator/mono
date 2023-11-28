@@ -329,7 +329,7 @@
 					],
 					"label": "Label",
 					"value": "Filled - Valid",
-					"required": true
+					"invalid": false
 				}
 			},
 			{
@@ -428,7 +428,7 @@
 					],
 					"label": "Label",
 					"value": "Filled - Valid",
-					"required": true,
+					"invalid": false,
 					"labelVariant": "floating"
 				}
 			},
