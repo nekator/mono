@@ -41,6 +41,13 @@
 					"labelVariant": "floating",
 					"value": "Floating Label"
 				}
+			},
+			{
+				"name": "Hidden Label",
+				"props": {
+					"label": "Label",
+					"labelVariant": "hidden"
+				}
 			}
 		]
 	},
@@ -248,13 +255,6 @@
 				"props": {
 					"label": "Label",
 					"iconAfter": "x_placeholder"
-				}
-			},
-			{
-				"name": "Hidden Label",
-				"props": {
-					"label": "Label",
-					"labelVariant": "hidden"
 				}
 			}
 		]
