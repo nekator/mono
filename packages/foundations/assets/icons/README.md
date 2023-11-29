@@ -18,6 +18,6 @@ We process the following changes:
         -   `fill="#78be14" style="var(--db-icon-pulse-color, #78be14)"`
     -   `id`-Attribute (generic `icon` id within all SVG files)
 
-## Icon font generation
+### Icon font generation
 
 We've documented those necessary steps within our [docs folder](../../packages/foundations/docs/Icons.md).
