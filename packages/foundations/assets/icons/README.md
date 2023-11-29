@@ -11,7 +11,7 @@ We process the following changes:
 
 -   Minifications with [`ImageOptim`](https://imageoptim.com/mac)
 -   Adding some contents within the SVGs (these assets might get exported correctly in the future)
-    -   CSS variables 
+    -   CSS variables, add `style`-attribute next to the existing `fill`-attribute:
         -   `fill="#282D37" style="var(--db-icon-color, currentColor)"`
         -   `fill="#55b9e6" style="var(--db-icon-color, #55b9e6)"`
         -   `fill="#EC0016" style="var(--db-icon-pulse-color, #EC0016)"`
