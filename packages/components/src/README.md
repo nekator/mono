@@ -54,7 +54,7 @@ Main use-case to overwrite a color or change colors by `data-variant`. Example:
 
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			--db-current-border-color: var(--db-#{$name}-5);
+			--db-current-border-color: var(--db-#{$name}-contrast-low);
 		}
 	}
 }

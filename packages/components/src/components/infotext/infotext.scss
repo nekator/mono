@@ -22,10 +22,10 @@
 	@each $name, $colors in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
 			@include icons.variant-icons($name);
-			color: var(--db-#{$name}-4);
+			color: var(--db-#{$name}-contrast-high);
 
 			&::before {
-				--db-current-icon-color: var(--db-#{$name}-5);
+				--db-current-icon-color: var(--db-#{$name}-contrast-low);
 			}
 		}
 	}

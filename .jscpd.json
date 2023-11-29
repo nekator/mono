@@ -46,7 +46,8 @@
 		"**/**config.ts",
 		"**/navigation-items.ts",
 		"showcases/angular-showcase/.angular/cache",
-		"packages/foundations/assets/icons/functional/fonts/**"
+		"packages/foundations/assets/icons/functional/fonts/**",
+		"packages/foundations/scss/colors/_default-color-scheme.scss"
 	],
 	"absolute": true
 }

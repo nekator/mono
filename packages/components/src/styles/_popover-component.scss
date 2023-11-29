@@ -158,7 +158,7 @@
 	@extend %component-border;
 
 	position: absolute;
-	background-color: colors.$db-base-12;
+	background-color: colors.$db-base-bg;
 	visibility: hidden;
 	z-index: 1;
 	// i HTML tags browsers default styling reset

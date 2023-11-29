@@ -120,7 +120,7 @@
 			@include icons.variant-icons($name);
 
 			&::before {
-				--db-current-icon-color: var(--db-#{$name}-5);
+				--db-current-icon-color: var(--db-#{$name}-contrast-low);
 			}
 		}
 	}

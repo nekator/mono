@@ -123,7 +123,7 @@ $floating-label-size: calc(
 	input,
 	select,
 	[id$="-placeholder"] {
-		color: var(--db-#{$variant}-1);
+		color: var(--db-#{$variant}-on-bg);
 	}
 }
 
@@ -210,7 +210,7 @@ $floating-label-size: calc(
 		}
 
 		&:is(input, textarea):read-only {
-			background-color: colors.$db-base-12 !important;
+			background-color: colors.$db-base-bg !important;
 		}
 	}
 
@@ -281,7 +281,7 @@ $floating-label-size: calc(
 
 		&[data-variant="#{$name}"] #{$selector},
 		&[data-variant="#{$name}"] [id$="-placeholder"] {
-			color: var(--db-#{$name}-1);
+			color: var(--db-#{$name}-on-bg);
 		}
 	}
 
@@ -296,12 +296,12 @@ $floating-label-size: calc(
 // CHECKBOX & RADIO
 
 @mixin get-validity-color-check($key: "valid") {
-	$text-color: var(--db-successful-4);
-	$bg-color: var(--db-successful-11);
+	$text-color: #{colors.$db-successful-contrast-high};
+	$bg-color: #{colors.$db-successful-bg-weak};
 
 	@if ($key != "valid") {
-		$text-color: var(--db-critical-4);
-		$bg-color: var(--db-critical-11);
+		$text-color: #{colors.$db-critical-contrast-high};
+		$bg-color: #{colors.$db-critical-bg-weak};
 	}
 
 	input {
@@ -316,8 +316,8 @@ $floating-label-size: calc(
 
 		&:checked {
 			--db-base-text-enabled: #{$text-color};
-			--db-base-text-hover: var(--db-successful-3);
-			--db-base-text-pressed: var(--db-successful-2);
+			--db-base-text-hover: #{colors.$db-successful-contrast-high-hover};
+			--db-base-text-pressed: #{colors.$db-successful-contrast-high-pressed};
 		}
 	}
 

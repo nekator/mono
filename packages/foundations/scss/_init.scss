@@ -4,8 +4,8 @@
 @use "tonality";
 
 :root {
-	--db-focus-outline-color: var(--db-informational-4);
-	--db-focus-box-shadow-bg-color: #{colors.$db-base-12};
+	--db-focus-outline-color: #{colors.$db-informational-contrast-high};
+	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg};
 	--db-focus-box-shadow-on-bg-color: #{colors.$db-current-color};
 
 	@extend %db-component-variables-md;

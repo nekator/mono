@@ -10,7 +10,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 	&[data-emphasis="strong"] {
 		// border should be same color like background
-		--db-current-border-weak-color: var(--db-base-4);
+		--db-current-border-weak-color: #{colors.$db-base-contrast-high};
 		@extend %db-base-component;
 	}
 
@@ -20,7 +20,9 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 			&[data-emphasis="strong"] {
 				// border should be same color like background
-				--db-current-border-weak-color: var(--db-#{$name}-4);
+				--db-current-border-weak-color: var(
+					--db-#{$name}-contrast-high
+				);
 				@extend %db-#{$name}-component;
 			}
 		}
@@ -47,7 +49,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	&[data-emphasis="weak"] {
 		@each $name in colors.$variant-colors {
 			&[data-variant="#{$name}"] {
-				label:has(input) {
+				label:has(input[type="checkbox"]:checked) {
 					@extend %db-bg-#{$name}-variables;
 				}
 			}
@@ -75,7 +77,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	}
 
 	&[data-emphasis="strong"] {
-		--db-current-color: var(--db-base-12);
+		--db-current-color: #{colors.$db-base-bg};
 		@include get-interactive-selectors() {
 			@extend %db-base-component-interactive;
 		}
@@ -86,7 +88,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 		@each $name in colors.$variant-colors {
 			&[data-variant="#{$name}"] {
-				--db-current-color: var(--db-#{$name}-12);
+				--db-current-color: var(--db-#{$name}-bg);
 				@include get-interactive-selectors() {
 					@extend %db-#{$name}-component-interactive;
 				}

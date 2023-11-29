@@ -69,62 +69,59 @@ $default-alpha-pressed: 0.24;
 
 @each $variant in variables.$variants {
 	%db-#{$variant}-component {
-		--db-current-color: var(--db-#{$variant}-12);
+		--db-current-color: var(--db-#{$variant}-bg);
 		color: var(--db-current-color);
-		background-color: var(--db-#{$variant}-4);
+		background-color: var(--db-#{$variant}-contrast-high);
 
 		&-interactive {
 			@extend %db-#{$variant}-component;
 
 			&:hover {
-				background-color: var(--db-#{$variant}-3);
+				background-color: var(--db-#{$variant}-contrast-high-hover);
 			}
 
 			&:active {
-				background-color: var(--db-#{$variant}-2);
+				background-color: var(--db-#{$variant}-contrast-high-pressed);
 			}
 		}
 	}
 
 	%db-#{$variant}-text-interactive {
-		--db-current-color: var(--db-#{$variant}-4);
+		--db-current-color: var(--db-#{$variant}-contrast-high);
 		color: var(--db-current-color);
 
 		&:enabled {
 			&:hover {
-				--db-current-color: var(--db-#{$variant}-3);
+				--db-current-color: var(--db-#{$variant}-contrast-high-hover);
 			}
 
 			&:active {
-				--db-current-color: var(--db-#{$variant}-2);
+				--db-current-color: var(--db-#{$variant}-contrast-high-pressed);
 			}
 		}
 	}
 
 	%db-bg-#{$variant}-variables {
 		/* used for transparent backgrounds */
-		--db-current-base-color: var(--db-#{$variant}-4);
+		--db-current-base-color: var(--db-#{$variant}-contrast-high);
 
 		/* used for text */
-		--db-current-color: var(--db-#{$variant}-1);
-		--db-current-color-hover: var(
-			--db-#{$variant}-2
-		); // used for checkbox:checked
-		--db-current-color-pressed: var(
-			--db-#{$variant}-3
-		); // used for checkbox:checked
+		--db-current-color: var(--db-#{$variant}-on-bg);
+		/* used for checkbox:checked */
+		--db-current-color-hover: var(--db-#{$variant}-on-bg-hover);
+		--db-current-color-pressed: var(--db-#{$variant}-on-bg-pressed);
 
 		/* used as normal backgrounds */
 		@if ($variant == "base") {
-			--db-current-bg-color: var(--db-#{$variant}-12);
+			--db-current-bg-color: var(--db-#{$variant}-bg);
 		} @else {
-			--db-current-bg-color: var(--db-#{$variant}-11);
+			--db-current-bg-color: var(--db-#{$variant}-bg-weak);
 		}
 
 		/* used for icons and borders */
-		--db-current-element-color: var(--db-#{$variant}-5);
-		--db-current-border-color: var(--db-#{$variant}-5);
-		--db-current-border-weak-color: var(--db-#{$variant}-6);
+		--db-current-element-color: var(--db-#{$variant}-contrast-low);
+		--db-current-border-color: var(--db-#{$variant}-border);
+		--db-current-border-weak-color: var(--db-#{$variant}-border-weak);
 	}
 
 	%db-bg-#{$variant} {
@@ -148,14 +145,20 @@ $default-alpha-pressed: 0.24;
 		}
 
 		&[data-emphasis="weak"] {
-			--db-current-color: var(--db-#{$variant}-2);
+			/* used for text */
+			--db-current-color: var(--db-#{$variant}-on-bg-weak);
+			/* used for checkbox:checked */
+			--db-current-color-hover: var(--db-#{$variant}-on-bg-weak-hover);
+			--db-current-color-pressed: var(
+				--db-#{$variant}-on-bg-weak-pressed
+			);
 			color: var(--db-current-color);
 		}
 
 		&-strong {
-			--db-current-color: var(--db-#{$variant}-1);
-			--db-current-bg-color: var(--db-#{$variant}-10);
-			--db-current-border-weak-color: var(--db-#{$variant}-6);
+			--db-current-color: var(--db-#{$variant}-on-bg);
+			--db-current-bg-color: var(--db-#{$variant}-bg-strong);
+			--db-current-border-weak-color: var(--db-#{$variant}-border-weak);
 			background-color: var(--db-current-bg-color);
 			color: var(--db-current-color);
 
@@ -163,11 +166,11 @@ $default-alpha-pressed: 0.24;
 				@extend %db-bg-#{$variant}-strong;
 
 				&:hover {
-					background-color: var(--db-#{$variant}-9);
+					background-color: var(--db-#{$variant}-bg-hover);
 				}
 
 				&:active {
-					background-color: var(--db-#{$variant}-8);
+					background-color: var(--db-#{$variant}-bg-pressed);
 				}
 			}
 		}

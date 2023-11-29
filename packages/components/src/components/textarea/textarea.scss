@@ -44,7 +44,7 @@ $scrollbar-width: helpers.to-rem(12);
 		@extend %default-transition;
 		z-index: 3;
 		inline-size: $scrollbar-width;
-		background-color: colors.$db-base-12;
+		background-color: colors.$db-base-bg;
 		border-start-end-radius: variables.$db-border-radius-md;
 	}
 
@@ -58,7 +58,7 @@ $scrollbar-width: helpers.to-rem(12);
 	&:read-only {
 		&::-webkit-scrollbar-track,
 		&::-webkit-scrollbar-button:single-button {
-			background-color: colors.$db-base-12 !important;
+			background-color: colors.$db-base-bg !important;
 		}
 	}
 
@@ -102,7 +102,7 @@ $scrollbar-width: helpers.to-rem(12);
 		}
 
 		&::-webkit-scrollbar-corner {
-			background-color: colors.$db-base-12;
+			background-color: colors.$db-base-bg;
 		}
 	}
 
@@ -141,7 +141,7 @@ $scrollbar-width: helpers.to-rem(12);
 			&::before {
 				@extend %default-transition;
 				@include get-scrolling-workaround();
-				background-color: colors.$db-base-12;
+				background-color: colors.$db-base-bg;
 			}
 
 			&::after {
@@ -163,7 +163,7 @@ $scrollbar-width: helpers.to-rem(12);
 
 			&:has(textarea:read-only) {
 				&::after {
-					background-color: colors.$db-base-12 !important;
+					background-color: colors.$db-base-bg !important;
 				}
 			}
 		}

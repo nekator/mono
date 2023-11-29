@@ -99,7 +99,7 @@
 
 		&::after {
 			--db-icon-margin-start: 0;
-			content: "" !important;
+			content: none !important;
 		}
 	}
 
