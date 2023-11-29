@@ -4,6 +4,7 @@ This icon package contains all functional and illustrative icons that are provid
 - [Functional Icons](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Icons/Icon-Bibliotheken/Bibliothek-Funktionale-Icons)
 - [Illustrative Icons](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Icons/Icon-Bibliotheken/Bibliothek-Illustrative-Icons)
 
+## Dev related: How to provide these icons
 ## Modifications for SVGs
 
 We process the following changes:
