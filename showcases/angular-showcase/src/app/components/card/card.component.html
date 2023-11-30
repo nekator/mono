@@ -11,14 +11,10 @@
 		let-variantIndex="variantIndex"
 	>
 		<db-card
-			[colorVariant]="exampleProps.colorVariant"
 			[variant]="exampleProps.variant"
 			[spacing]="exampleProps.spacing"
 		>
 			<strong>{{ exampleName }}</strong>
-			<span *ngIf="exampleProps.colorVariant">{{
-				exampleProps.colorVariant
-			}}</span>
 		</db-card>
 	</ng-template>
 </app-default-component>

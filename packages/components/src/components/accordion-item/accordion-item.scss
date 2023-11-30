@@ -34,14 +34,21 @@
 
 	summary {
 		@extend %dropdown-icon;
-		@include colors.set-transparent-bg-interactive(false);
-		@include colors.set-transparent-bg(0);
+		background-color: colors.$db-current-bg-transparent-full;
 
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
 		padding: variables.$db-spacing-fixed-md;
 		gap: variables.$db-spacing-fixed-md;
+
+		&:hover {
+			background-color: colors.$db-current-bg-transparent-hover;
+		}
+
+		&:active {
+			background-color: colors.$db-current-bg-transparent-pressed;
+		}
 
 		&::-webkit-details-marker {
 			display: none;

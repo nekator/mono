@@ -51,7 +51,7 @@ $scrollbar-width: helpers.to-rem(12);
 	&:hover {
 		&::-webkit-scrollbar-track,
 		&::-webkit-scrollbar-button:single-button {
-			@include colors.set-transparent-bg(0.16);
+			background-color: colors.$db-current-bg-transparent-hover;
 		}
 	}
 
@@ -63,28 +63,28 @@ $scrollbar-width: helpers.to-rem(12);
 	}
 
 	&::-webkit-scrollbar-track {
-		@include colors.set-transparent-bg();
+		background-color: colors.$db-current-bg-transparent-semi;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		@include colors.set-transparent-bg(0.24);
-
-		&:hover {
-			@include colors.set-transparent-bg(0.32);
-		}
-
-		&:active {
-			@include colors.set-transparent-bg(0.4);
-		}
+		background-color: colors.$db-current-bg-transparent-pressed;
 	}
 
 	/* Buttons */
 	&::-webkit-scrollbar-button:single-button {
-		@include colors.set-transparent-bg-interactive(false);
+		background-color: colors.$db-current-bg-transparent-semi;
 		background-size: $scrollbar-width;
 		background-repeat: no-repeat;
 		background-position: center;
 		block-size: form-components.$floating-label-size;
+
+		&:hover {
+			background-color: colors.$db-current-bg-transparent-hover;
+		}
+
+		&:active {
+			background-color: colors.$db-current-bg-transparent-pressed;
+		}
 	}
 	/* Up */
 	&::-webkit-scrollbar-button:single-button:vertical:decrement {
@@ -98,7 +98,7 @@ $scrollbar-width: helpers.to-rem(12);
 
 	&[data-label-variant="floating"] {
 		&::-webkit-resizer {
-			@include colors.set-transparent-bg();
+			background-color: colors.$db-current-bg-transparent-semi;
 		}
 
 		&::-webkit-scrollbar-corner {
@@ -107,7 +107,7 @@ $scrollbar-width: helpers.to-rem(12);
 	}
 
 	&::-webkit-resizer {
-		@include colors.set-transparent-bg(0);
+		background-color: colors.$db-current-bg-transparent-full;
 		background-size: $scrollbar-width;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -147,7 +147,7 @@ $scrollbar-width: helpers.to-rem(12);
 			&::after {
 				@extend %component-border;
 				@include get-scrolling-workaround();
-				@include colors.set-transparent-bg();
+				background-color: colors.$db-current-bg-transparent-full;
 				z-index: 1;
 				border-block-end: none;
 				border-inline-end: none;
@@ -155,9 +155,7 @@ $scrollbar-width: helpers.to-rem(12);
 
 			&:has(textarea:enabled:hover) {
 				&::after {
-					@include colors.set-transparent-bg(
-						colors.$default-alpha-hover
-					);
+					background-color: colors.$db-current-bg-transparent-hover;
 				}
 			}
 

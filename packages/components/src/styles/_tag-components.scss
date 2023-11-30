@@ -10,7 +10,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 	&[data-emphasis="strong"] {
 		// border should be same color like background
-		--db-current-border-weak-color: #{colors.$db-base-contrast-high};
+		--db-current-border-color: #{colors.$db-base-contrast-high};
 		@extend %db-base-component;
 	}
 
@@ -20,9 +20,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 			&[data-emphasis="strong"] {
 				// border should be same color like background
-				--db-current-border-weak-color: var(
-					--db-#{$name}-contrast-high
-				);
+				--db-current-border-color: var(--db-#{$name}-contrast-high);
 				@extend %db-#{$name}-component;
 			}
 		}
@@ -41,8 +39,15 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 @mixin get-tag-colors-interactive() {
 	label:has(input) {
-		@include colors.set-transparent-bg-interactive(false);
-		@include colors.set-transparent-bg(0); // overwrite to transparent
+		background-color: colors.$db-current-bg-transparent-full;
+
+		&:hover {
+			background-color: colors.$db-current-bg-transparent-hover;
+		}
+
+		&:active {
+			background-color: colors.$db-current-bg-transparent-pressed;
+		}
 	}
 
 	&:not([data-emphasis]),

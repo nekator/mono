@@ -46,7 +46,7 @@
 	@extend %default-interactive-component;
 	@extend %transparent-border;
 
-	@include colors.set-transparent-bg(0);
+	background-color: colors.$db-current-bg-transparent-full;
 	cursor: pointer;
 	inline-size: 100%;
 	display: inline-flex;
@@ -59,11 +59,11 @@
 
 	&:hover,
 	&:has(~ .db-sub-navigation:hover) {
-		@include colors.set-transparent-bg(colors.$default-alpha-hover);
+		background-color: colors.$db-current-bg-transparent-hover;
 	}
 
 	&:active {
-		@include colors.set-transparent-bg(colors.$default-alpha-pressed);
+		background-color: colors.$db-current-bg-transparent-pressed;
 	}
 
 	&::after {

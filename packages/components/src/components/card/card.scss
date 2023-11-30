@@ -3,7 +3,6 @@
 @use "../../styles/component";
 
 .db-card {
-	@extend %color-variants;
 	@extend %default-card;
 
 	background-color: colors.$db-base-bg;

@@ -10,8 +10,6 @@
 	@extend %default-interactive-component;
 	@extend %default-button;
 
-	@include colors.set-transparent-bg-interactive();
-
 	color: colors.$db-current-color;
 
 	block-size: variables.$db-sizing-md;
@@ -70,7 +68,17 @@
 	&[data-variant="outlined"],
 	&:not([data-variant]),
 	&[data-variant="text"] {
-		@include colors.set-transparent-bg(0); // overwrite to transparent
+		background-color: colors.$db-current-bg-transparent-full;
+	}
+
+	&:enabled {
+		&:hover {
+			background-color: colors.$db-current-bg-transparent-hover;
+		}
+
+		&:active {
+			background-color: colors.$db-current-bg-transparent-pressed;
+		}
 	}
 
 	&:disabled {

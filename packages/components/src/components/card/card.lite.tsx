@@ -37,7 +37,6 @@ export default function DBCard(props: DBCardProps) {
 			id={props.id}
 			class={cls('db-card', props.className)}
 			data-variant={props.variant}
-			data-color-variant={props.colorVariant}
 			data-elevation={props.elevation}
 			data-spacing={props.spacing}
 			onClick={(event: ClickEvent<HTMLElement>) =>

@@ -17,8 +17,7 @@ $default-mobile-header-height: var(
 }
 
 %component-border {
-	border: variables.$db-border-height-sm solid
-		colors.$db-current-border-weak-color;
+	border: variables.$db-border-height-sm solid colors.$db-current-border-color;
 }
 
 %default-interactive-component {

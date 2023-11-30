@@ -2,71 +2,6 @@
 @use "sass:color";
 @use "variables";
 
-$default-alpha: 0.08;
-$default-alpha-hover: 0.16;
-$default-alpha-pressed: 0.24;
-
-@mixin set-transparent-bg($alpha: $default-alpha) {
-	background-color: color-mix(
-		in srgb,
-		transparent string.unquote(calc((1 - $alpha) * 100) + "%"),
-		var(--db-current-base-color)
-	);
-}
-
-@mixin set-transparent-bg-hover($with-enabled: true) {
-	@include set-transparent-bg();
-
-	@if ($with-enabled) {
-		&:enabled {
-			&:hover {
-				@include set-transparent-bg($default-alpha-hover);
-			}
-		}
-	} @else {
-		&:hover {
-			@include set-transparent-bg($default-alpha-hover);
-		}
-	}
-}
-
-@mixin set-transparent-bg-interactive($with-enabled: true) {
-	@include set-transparent-bg-hover($with-enabled);
-
-	@if ($with-enabled) {
-		&:enabled {
-			&:active {
-				@include set-transparent-bg($default-alpha-pressed);
-			}
-		}
-	} @else {
-		&:active {
-			@include set-transparent-bg($default-alpha-pressed);
-		}
-	}
-}
-
-@mixin color-variants($interactive) {
-	@each $variant in variables.$variants {
-		&[data-color-variant="#{$variant}"] {
-			@extend %db-bg-#{$variant};
-		}
-		@if ($interactive == true) {
-			&[data-color-variant="#{$variant}-ia"] {
-				@extend %db-bg-#{$variant};
-				@include set-transparent-bg-interactive();
-			}
-		}
-	}
-}
-
-%color-variants {
-	@include color-variants(false);
-}
-%color-variants-ia {
-	@include color-variants(true);
-}
-
 @each $variant in variables.$variants {
 	%db-#{$variant}-component {
 		--db-current-color: var(--db-#{$variant}-bg);
@@ -103,7 +38,18 @@ $default-alpha-pressed: 0.24;
 
 	%db-bg-#{$variant}-variables {
 		/* used for transparent backgrounds */
-		--db-current-base-color: var(--db-#{$variant}-contrast-high);
+		--db-current-bg-transparent-full: var(
+			--db-#{$variant}-bg-transparent-full
+		);
+		--db-current-bg-transparent-semi: var(
+			--db-#{$variant}-bg-transparent-semi
+		);
+		--db-current-bg-transparent-hover: var(
+			--db-#{$variant}-bg-transparent-hover
+		);
+		--db-current-bg-transparent-pressed: var(
+			--db-#{$variant}-bg-transparent-pressed
+		);
 
 		/* used for text */
 		--db-current-color: var(--db-#{$variant}-on-bg);
@@ -119,9 +65,8 @@ $default-alpha-pressed: 0.24;
 		}
 
 		/* used for icons and borders */
-		--db-current-element-color: var(--db-#{$variant}-contrast-low);
+		--db-current-contrast-low-color: var(--db-#{$variant}-contrast-low);
 		--db-current-border-color: var(--db-#{$variant}-border);
-		--db-current-border-weak-color: var(--db-#{$variant}-border-weak);
 	}
 
 	%db-bg-#{$variant} {
@@ -136,11 +81,11 @@ $default-alpha-pressed: 0.24;
 			}
 
 			&-full {
-				@include set-transparent-bg(0);
+				background-color: var(--db-current-bg-transparent-full);
 			}
 
 			&-semi {
-				@include set-transparent-bg(0.08);
+				background-color: var(--db-current-bg-transparent-semi);
 			}
 		}
 
@@ -158,7 +103,7 @@ $default-alpha-pressed: 0.24;
 		&-strong {
 			--db-current-color: var(--db-#{$variant}-on-bg);
 			--db-current-bg-color: var(--db-#{$variant}-bg-strong);
-			--db-current-border-weak-color: var(--db-#{$variant}-border-weak);
+			--db-current-border-color: var(--db-#{$variant}-border);
 			background-color: var(--db-current-bg-color);
 			color: var(--db-current-color);
 
@@ -166,11 +111,11 @@ $default-alpha-pressed: 0.24;
 				@extend %db-bg-#{$variant}-strong;
 
 				&:hover {
-					background-color: var(--db-#{$variant}-bg-hover);
+					background-color: var(--db-#{$variant}-bg-strong-hover);
 				}
 
 				&:active {
-					background-color: var(--db-#{$variant}-bg-pressed);
+					background-color: var(--db-#{$variant}-bg-strong-pressed);
 				}
 			}
 		}

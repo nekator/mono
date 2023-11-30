@@ -191,7 +191,7 @@ $floating-label-size: calc(
 		@extend %default-interactive-component;
 		@extend %component-border;
 
-		@include colors.set-transparent-bg-hover();
+		background-color: colors.$db-current-bg-transparent-semi;
 
 		appearance: none;
 		max-inline-size: 100%;
@@ -207,6 +207,10 @@ $floating-label-size: calc(
 
 		@include placeholder-content() {
 			opacity: variables.$db-opacity-md;
+		}
+
+		&:hover {
+			background-color: colors.$db-current-bg-transparent-hover;
 		}
 
 		&:is(input, textarea):read-only {
@@ -296,34 +300,40 @@ $floating-label-size: calc(
 // CHECKBOX & RADIO
 
 @mixin get-validity-color-check($key: "valid") {
-	$text-color: #{colors.$db-successful-contrast-high};
-	$bg-color: #{colors.$db-successful-bg-weak};
+	$variant: successful;
 
 	@if ($key != "valid") {
-		$text-color: #{colors.$db-critical-contrast-high};
-		$bg-color: #{colors.$db-critical-bg-weak};
+		$variant: citical;
 	}
 
 	input {
-		--db-current-bg-color: #{$bg-color};
-		--db-current-base-color: #{$text-color};
+		--db-current-bg-color: var(--db-#{$variant}-bg-weak);
+		--db-current-bg-transparent-semi: var(
+			--db-#{$variant}-bg-transparent-semi
+		);
+		--db-current-bg-transparent-hover: var(
+			--db-#{$variant}-bg-transparent-hover
+		);
+		--db-current-bg-transparent-pressed: var(
+			--db-#{$variant}-bg-transparent-pressed
+		);
 		border-color: var(--db-current-color);
 
 		&:not(:checked),
 		&:is([type="radio"]) {
-			--db-current-color: #{$text-color};
+			--db-current-color: var(--db-#{$variant}-contrast-high);
 		}
 
 		&:checked {
-			--db-base-text-enabled: #{$text-color};
-			--db-base-text-hover: #{colors.$db-successful-contrast-high-hover};
-			--db-base-text-pressed: #{colors.$db-successful-contrast-high-pressed};
+			--db-base-on-bg: #{colors.$db-successful-contrast-high};
+			--db-base-on-bg-hover: #{colors.$db-successful-contrast-high-hover};
+			--db-base-on-bg-pressed: #{colors.$db-successful-contrast-high-pressed};
 		}
 	}
 
 	&:is(label),
 	label {
-		color: #{$text-color};
+		color: var(--db-#{$variant}-contrast-high);
 	}
 }
 
@@ -349,8 +359,7 @@ $floating-label-size: calc(
 	}
 
 	input {
-		@include colors.set-transparent-bg-interactive();
-		@include colors.set-transparent-bg(0); // overwrite to transparent
+		background-color: colors.$db-current-bg-transparent-full;
 
 		align-content: center;
 
@@ -369,6 +378,16 @@ $floating-label-size: calc(
 		// workarounds for power apps
 		inline-size: auto;
 		padding: 0;
+
+		&:enabled {
+			&:hover {
+				background-color: colors.$db-current-bg-transparent-hover;
+			}
+
+			&:active {
+				background-color: colors.$db-current-bg-transparent-pressed;
+			}
+		}
 	}
 
 	&[data-size="small"] {

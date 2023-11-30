@@ -26,67 +26,6 @@
 		]
 	},
 	{
-		"name": "ColorVariant",
-		"examples": [
-			{
-				"name": "(Default) adaptive",
-				"props": {
-					"variant": "interactive",
-					"spacing": "small",
-					"colorVariant": "adaptive"
-				}
-			},
-			{
-				"name": "neutral",
-				"props": {
-					"colorVariant": "neutral",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			},
-			{
-				"name": "brand",
-				"props": {
-					"colorVariant": "brand",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			},
-			{
-				"name": "critical",
-				"props": {
-					"colorVariant": "critical",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			},
-			{
-				"name": "successful",
-				"props": {
-					"colorVariant": "successful",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			},
-			{
-				"name": "warning",
-				"props": {
-					"colorVariant": "warning",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			},
-			{
-				"name": "informational",
-				"props": {
-					"colorVariant": "informational",
-					"variant": "interactive",
-					"spacing": "small"
-				}
-			}
-		]
-	},
-	{
 		"name": "Spacing",
 		"examples": [
 			{
