@@ -81,7 +81,7 @@ export default function DBRadio(props: DBRadioProps) {
 				}
 			}
 		}
-	}, [state.initialized]);
+	}, [state.initialized, props.checked]);
 
 	return (
 		<label
