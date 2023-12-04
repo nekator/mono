@@ -15,6 +15,9 @@
  *     angular?: {
  * 			controlValueAccessor?: string,
  * 			directives?: {name:string, ngContentName?:string}[]
+ * 		},
+ *     react?: {
+ * 			propsPassingFilter?: string[];
  * 		}
  * }
  * }]}
@@ -91,6 +94,11 @@ const getComponents = () => [
 		name: 'drawer',
 		overwrites: {
 			webComponents: [{ from: '__prev.find', to: '!!__prev.find' }]
+		},
+		config: {
+			react: {
+				propsPassingFilter: ['onClose']
+			}
 		}
 	},
 
