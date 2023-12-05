@@ -55,7 +55,7 @@ export const getCodeByFramework = (componentName, framework, example) => {
 				framework !== 'react' &&
 				(props[key] instanceof Object || key === 'click')
 			) {
-				value = value.replace(/"/g, "'");
+				value = value.replaceAll('"', "'");
 			}
 
 			if (framework === 'angular') {
@@ -101,7 +101,7 @@ export const getColorVariants = () => [
 
 export const getComponentName = (filePath) => {
 	let componentName = filePath.split('/').at(-1);
-	componentName = componentName.replace('.tsx', '').replace(/\s/g, '');
+	componentName = componentName.replace('.tsx', '').replaceAll(/\s/g, '');
 	return componentName;
 };
 

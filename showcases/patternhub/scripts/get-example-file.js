@@ -76,8 +76,8 @@ const getOption = (optionName, tsType) => {
 			(property) =>
 				`"${getOption(property.key, property.value)
 					.replace('=', '":')
-					.replace(/{/g, '')
-					.replace(/}/g, '')}`
+					.replaceAll('{', '')
+					.replaceAll('}', '')}`
 		)}}}`;
 	}
 
