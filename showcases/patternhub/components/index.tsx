@@ -40,7 +40,7 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 	}, [router]);
 
 	const getHref = (variant: DefaultComponentVariants) =>
-		typeof window !== 'undefined' && window.location.origin
+		window?.location.origin
 			? `${window?.location?.href}?page=${variant.name.toLowerCase()}`
 			: '';
 
