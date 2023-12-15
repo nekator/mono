@@ -1,10 +1,4 @@
-import {
-	onMount,
-	Show,
-	useMetadata,
-	useRef,
-	useStore
-} from '@builder.io/mitosis';
+import {onMount, Show, useMetadata, useRef, useStore} from '@builder.io/mitosis';
 import { cls } from '../../utils';
 import { DBBrandState, DBBrandProps } from './model';
 
@@ -32,7 +26,10 @@ export default function DBBrand(props: DBBrandProps) {
 	// jscpd:ignore-end
 
 	return (
-		<div ref={ref} id={props.id} class={cls('db-brand', props.className)}>
+		<div
+			ref={ref}
+			id={props.id}
+			class={cls('db-brand', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

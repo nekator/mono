@@ -2,8 +2,7 @@ import {
 	onMount,
 	Show,
 	Slot,
-	useMetadata,
-	useRef,
+	useMetadata, useRef,
 	useStore
 } from '@builder.io/mitosis';
 import { DBCodeDocsProps, DBCodeDocsState } from './model';
@@ -42,7 +41,9 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 	// jscpd:ignore-end
 
 	return (
-		<DBCard ref={ref} className={cls('db-code-docs', props.className)}>
+		<DBCard
+			ref={ref}
+			className={cls('db-code-docs', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

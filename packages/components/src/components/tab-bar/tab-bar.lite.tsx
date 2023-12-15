@@ -1,11 +1,4 @@
-import {
-	For,
-	onMount,
-	Show,
-	useMetadata,
-	useRef,
-	useStore
-} from '@builder.io/mitosis';
+import {For, onMount, Show, useMetadata, useRef, useStore} from '@builder.io/mitosis';
 import { DBTab } from '../tab';
 import type { DBTabProps } from '../tab/model';
 import type { DBTabBarState, DBTabBarProps } from './model';
