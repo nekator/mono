@@ -1,4 +1,10 @@
-import {onMount, Show, useMetadata, useRef, useStore} from '@builder.io/mitosis';
+import {
+	onMount,
+	Show,
+	useMetadata,
+	useRef,
+	useStore
+} from '@builder.io/mitosis';
 import { DBMainNavigationState, DBMainNavigationProps } from './model';
 import { cls } from '../../utils';
 

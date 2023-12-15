@@ -61,7 +61,8 @@ const toggleDrawer = (open: boolean) => {
 		</template>
 
 		<DBMainNavigation>
-			// https://github.com/db-ui/mono/blob/main/packages/components/src/components/main-navigation/docs/Vue.md
+			//
+			https://github.com/db-ui/mono/blob/main/packages/components/src/components/main-navigation/docs/Vue.md
 		</DBMainNavigation>
 	</DBHeader>
 </template>

@@ -35,10 +35,7 @@ export default function DBTab(props: DBTabProps) {
 	// jscpd:ignore-end
 
 	return (
-		<div
-			ref={ref}
-			id={props.id}
-			class={cls('db-tab', props.className)}>
+		<div ref={ref} id={props.id} class={cls('db-tab', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>
