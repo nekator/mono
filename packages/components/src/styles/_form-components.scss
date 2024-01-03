@@ -195,6 +195,7 @@ $floating-label-size: calc(
 
 @mixin set-default-form-component($selector) {
 	--db-form-has-before: 0;
+	--db-current-icon-color: #{colors.$db-current-color};
 	@extend %db-overwrite-font-size-sm;
 
 	@include set-floating-label-overwrites($selector);

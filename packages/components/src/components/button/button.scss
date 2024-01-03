@@ -51,12 +51,14 @@
 		background-color: colors.$db-brand;
 		color: colors.$db-brand-on;
 
-		&:hover {
-			background-color: colors.$db-brand-hover;
-		}
+		&:enabled {
+			&:hover {
+				background-color: colors.$db-brand-hover;
+			}
 
-		&:active {
-			background-color: colors.$db-brand-pressed;
+			&:active {
+				background-color: colors.$db-brand-pressed;
+			}
 		}
 	}
 

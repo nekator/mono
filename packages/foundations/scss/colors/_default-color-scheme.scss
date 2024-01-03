@@ -1,191 +1,613 @@
 @mixin get-color-scheme-light {
-	--db-base-0: #000;
-	--db-base-1: #1a1c1e;
-	--db-base-2: #2e3034;
-	--db-base-3: #43464b;
-	--db-base-4: #5a5e64;
-	--db-base-5: #80858e;
-	--db-base-6: #989ea8;
-	--db-base-7: #b0b5bc;
-	--db-base-8: #c4c7cd;
-	--db-base-9: #e0e2e4;
-	--db-base-10: #eff0f1;
-	--db-base-11: #f8f8f9;
-	--db-base-12: #fff;
-	--db-brand-0: #000;
-	--db-brand-1: #410002;
-	--db-brand-2: #680004;
-	--db-brand-3: #920009;
-	--db-brand-4: #be000f;
-	--db-brand-5: #ff2d35;
-	--db-brand-6: #ff7072;
-	--db-brand-7: #ff9799;
-	--db-brand-8: #ffb4b5;
-	--db-brand-9: #ffd8d9;
-	--db-brand-10: #ffebec;
-	--db-brand-11: #fff7f7;
-	--db-brand-12: #fff;
-	--db-neutral-0: #000;
-	--db-neutral-1: #1a1c1f;
-	--db-neutral-2: #2e3035;
-	--db-neutral-3: #43464d;
-	--db-neutral-4: #595e67;
-	--db-neutral-5: #7f8592;
-	--db-neutral-6: #989eaa;
-	--db-neutral-7: #b0b4be;
-	--db-neutral-8: #c4c7ce;
-	--db-neutral-9: #e0e1e5;
-	--db-neutral-10: #eff0f2;
-	--db-neutral-11: #f8f8f9;
-	--db-neutral-12: #fff;
-	--db-informational-0: #000;
-	--db-informational-1: #041e2b;
-	--db-informational-2: #0a3447;
-	--db-informational-3: #124b65;
-	--db-informational-4: #1b6485;
-	--db-informational-5: #2a8ebb;
-	--db-informational-6: #33a8dd;
-	--db-informational-7: #48c0f9;
-	--db-informational-8: #8bcffa;
-	--db-informational-9: #c8e5fd;
-	--db-informational-10: #e4f2fe;
-	--db-informational-11: #f3f9fe;
-	--db-informational-12: #fff;
-	--db-warning-0: #000;
-	--db-warning-1: #2c1600;
-	--db-warning-2: #492800;
-	--db-warning-3: #683b00;
-	--db-warning-4: #895000;
-	--db-warning-5: #c07300;
-	--db-warning-6: #e38800;
-	--db-warning-7: #ff9e2f;
-	--db-warning-8: #ffb884;
-	--db-warning-9: #ffdac6;
-	--db-warning-10: #ffece3;
-	--db-warning-11: #fff7f3;
-	--db-warning-12: #fff;
-	--db-successful-0: #000;
-	--db-successful-1: #0f2001;
-	--db-successful-2: #1d3702;
-	--db-successful-3: #2c4f05;
-	--db-successful-4: #3d6909;
-	--db-successful-5: #589412;
-	--db-successful-6: #69b017;
-	--db-successful-7: #79c91c;
-	--db-successful-8: #86dd20;
-	--db-successful-9: #98fb25;
-	--db-successful-10: #cbffad;
-	--db-successful-11: #eaffdf;
-	--db-successful-12: #fff;
-	--db-critical-0: #000;
-	--db-critical-1: #410002;
-	--db-critical-2: #680004;
-	--db-critical-3: #920009;
-	--db-critical-4: #be000f;
-	--db-critical-5: #ff2d35;
-	--db-critical-6: #ff7072;
-	--db-critical-7: #ff9799;
-	--db-critical-8: #ffb4b5;
-	--db-critical-9: #ffd8d9;
-	--db-critical-10: #ffebec;
-	--db-critical-11: #fff7f7;
-	--db-critical-12: #fff;
+	--db-base-bg: var(--db-base-12);
+	--db-base-bg-hover: var(--db-base-11);
+	--db-base-bg-pressed: var(--db-base-10);
+	--db-base-bg-weak: var(--db-base-11);
+	--db-base-bg-weak-hover: var(--db-base-10);
+	--db-base-bg-weak-pressed: var(--db-base-9);
+	--db-base-bg-strong: var(--db-base-10);
+	--db-base-bg-strong-hover: var(--db-base-9);
+	--db-base-bg-strong-pressed: var(--db-base-8);
+	--db-base-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-base-4)
+	);
+	--db-base-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-base-4)
+	);
+	--db-base-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-base-4)
+	);
+	--db-base-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-base-4)
+	);
+	--db-base-on-bg: var(--db-base-1);
+	--db-base-on-bg-hover: var(--db-base-2);
+	--db-base-on-bg-pressed: var(--db-base-3);
+	--db-base-on-bg-weak: var(--db-base-3);
+	--db-base-on-bg-weak-hover: var(--db-base-4);
+	--db-base-on-bg-weak-pressed: var(--db-base-5);
+	--db-base-contrast-high: var(--db-base-4);
+	--db-base-contrast-high-hover: var(--db-base-3);
+	--db-base-contrast-high-pressed: var(--db-base-2);
+	--db-base-contrast-low: var(--db-base-5);
+	--db-base-contrast-low-hover: var(--db-base-4);
+	--db-base-contrast-low-pressed: var(--db-base-3);
+	--db-base-border: var(--db-base-7);
+	--db-brand-on-enabled: #fff;
+	--db-brand-origin-enabled: #ec0016;
+	--db-brand-origin-hover: #ff2d35;
+	--db-brand-origin-pressed: #ff7072;
+	--db-brand-bg: var(--db-brand-12);
+	--db-brand-bg-hover: var(--db-brand-11);
+	--db-brand-bg-pressed: var(--db-brand-10);
+	--db-brand-bg-weak: var(--db-brand-11);
+	--db-brand-bg-weak-hover: var(--db-brand-10);
+	--db-brand-bg-weak-pressed: var(--db-brand-9);
+	--db-brand-bg-strong: var(--db-brand-10);
+	--db-brand-bg-strong-hover: var(--db-brand-9);
+	--db-brand-bg-strong-pressed: var(--db-brand-8);
+	--db-brand-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-brand-4)
+	);
+	--db-brand-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-brand-4)
+	);
+	--db-brand-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-brand-4)
+	);
+	--db-brand-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-brand-4)
+	);
+	--db-brand-on-bg: var(--db-brand-1);
+	--db-brand-on-bg-hover: var(--db-brand-2);
+	--db-brand-on-bg-pressed: var(--db-brand-3);
+	--db-brand-on-bg-weak: var(--db-brand-3);
+	--db-brand-on-bg-weak-hover: var(--db-brand-4);
+	--db-brand-on-bg-weak-pressed: var(--db-brand-5);
+	--db-brand-contrast-high: var(--db-brand-4);
+	--db-brand-contrast-high-hover: var(--db-brand-3);
+	--db-brand-contrast-high-pressed: var(--db-brand-2);
+	--db-brand-contrast-low: var(--db-brand-5);
+	--db-brand-contrast-low-hover: var(--db-brand-4);
+	--db-brand-contrast-low-pressed: var(--db-brand-3);
+	--db-brand-border: var(--db-brand-7);
+	--db-neutral-bg: var(--db-neutral-12);
+	--db-neutral-bg-hover: var(--db-neutral-11);
+	--db-neutral-bg-pressed: var(--db-neutral-10);
+	--db-neutral-bg-weak: var(--db-neutral-11);
+	--db-neutral-bg-weak-hover: var(--db-neutral-10);
+	--db-neutral-bg-weak-pressed: var(--db-neutral-9);
+	--db-neutral-bg-strong: var(--db-neutral-10);
+	--db-neutral-bg-strong-hover: var(--db-neutral-9);
+	--db-neutral-bg-strong-pressed: var(--db-neutral-8);
+	--db-neutral-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-neutral-4)
+	);
+	--db-neutral-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-neutral-4)
+	);
+	--db-neutral-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-neutral-4)
+	);
+	--db-neutral-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-neutral-4)
+	);
+	--db-neutral-on-bg: var(--db-neutral-1);
+	--db-neutral-on-bg-hover: var(--db-neutral-2);
+	--db-neutral-on-bg-pressed: var(--db-neutral-3);
+	--db-neutral-on-bg-weak: var(--db-neutral-3);
+	--db-neutral-on-bg-weak-hover: var(--db-neutral-4);
+	--db-neutral-on-bg-weak-pressed: var(--db-neutral-5);
+	--db-neutral-contrast-high: var(--db-neutral-4);
+	--db-neutral-contrast-high-hover: var(--db-neutral-3);
+	--db-neutral-contrast-high-pressed: var(--db-neutral-2);
+	--db-neutral-contrast-low: var(--db-neutral-5);
+	--db-neutral-contrast-low-hover: var(--db-neutral-4);
+	--db-neutral-contrast-low-pressed: var(--db-neutral-3);
+	--db-neutral-border: var(--db-neutral-7);
+	--db-informational-bg: var(--db-informational-12);
+	--db-informational-bg-hover: var(--db-informational-11);
+	--db-informational-bg-pressed: var(--db-informational-10);
+	--db-informational-bg-weak: var(--db-informational-11);
+	--db-informational-bg-weak-hover: var(--db-informational-10);
+	--db-informational-bg-weak-pressed: var(--db-informational-9);
+	--db-informational-bg-strong: var(--db-informational-10);
+	--db-informational-bg-strong-hover: var(--db-informational-9);
+	--db-informational-bg-strong-pressed: var(--db-informational-8);
+	--db-informational-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-informational-4)
+	);
+	--db-informational-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-informational-4)
+	);
+	--db-informational-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-informational-4)
+	);
+	--db-informational-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-informational-4)
+	);
+	--db-informational-on-bg: var(--db-informational-1);
+	--db-informational-on-bg-hover: var(--db-informational-2);
+	--db-informational-on-bg-pressed: var(--db-informational-3);
+	--db-informational-on-bg-weak: var(--db-informational-3);
+	--db-informational-on-bg-weak-hover: var(--db-informational-4);
+	--db-informational-on-bg-weak-pressed: var(--db-informational-5);
+	--db-informational-contrast-high: var(--db-informational-4);
+	--db-informational-contrast-high-hover: var(--db-informational-3);
+	--db-informational-contrast-high-pressed: var(--db-informational-2);
+	--db-informational-contrast-low: var(--db-informational-5);
+	--db-informational-contrast-low-hover: var(--db-informational-4);
+	--db-informational-contrast-low-pressed: var(--db-informational-3);
+	--db-informational-border: var(--db-informational-7);
+	--db-warning-bg: var(--db-warning-12);
+	--db-warning-bg-hover: var(--db-warning-11);
+	--db-warning-bg-pressed: var(--db-warning-10);
+	--db-warning-bg-weak: var(--db-warning-11);
+	--db-warning-bg-weak-hover: var(--db-warning-10);
+	--db-warning-bg-weak-pressed: var(--db-warning-9);
+	--db-warning-bg-strong: var(--db-warning-10);
+	--db-warning-bg-strong-hover: var(--db-warning-9);
+	--db-warning-bg-strong-pressed: var(--db-warning-8);
+	--db-warning-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-warning-4)
+	);
+	--db-warning-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-warning-4)
+	);
+	--db-warning-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-warning-4)
+	);
+	--db-warning-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-warning-4)
+	);
+	--db-warning-on-bg: var(--db-warning-1);
+	--db-warning-on-bg-hover: var(--db-warning-2);
+	--db-warning-on-bg-pressed: var(--db-warning-3);
+	--db-warning-on-bg-weak: var(--db-warning-3);
+	--db-warning-on-bg-weak-hover: var(--db-warning-4);
+	--db-warning-on-bg-weak-pressed: var(--db-warning-5);
+	--db-warning-contrast-high: var(--db-warning-4);
+	--db-warning-contrast-high-hover: var(--db-warning-3);
+	--db-warning-contrast-high-pressed: var(--db-warning-2);
+	--db-warning-contrast-low: var(--db-warning-5);
+	--db-warning-contrast-low-hover: var(--db-warning-4);
+	--db-warning-contrast-low-pressed: var(--db-warning-3);
+	--db-warning-border: var(--db-warning-7);
+	--db-successful-bg: var(--db-successful-12);
+	--db-successful-bg-hover: var(--db-successful-11);
+	--db-successful-bg-pressed: var(--db-successful-10);
+	--db-successful-bg-weak: var(--db-successful-11);
+	--db-successful-bg-weak-hover: var(--db-successful-10);
+	--db-successful-bg-weak-pressed: var(--db-successful-9);
+	--db-successful-bg-strong: var(--db-successful-10);
+	--db-successful-bg-strong-hover: var(--db-successful-9);
+	--db-successful-bg-strong-pressed: var(--db-successful-8);
+	--db-successful-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-successful-4)
+	);
+	--db-successful-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-successful-4)
+	);
+	--db-successful-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-successful-4)
+	);
+	--db-successful-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-successful-4)
+	);
+	--db-successful-on-bg: var(--db-successful-1);
+	--db-successful-on-bg-hover: var(--db-successful-2);
+	--db-successful-on-bg-pressed: var(--db-successful-3);
+	--db-successful-on-bg-weak: var(--db-successful-3);
+	--db-successful-on-bg-weak-hover: var(--db-successful-4);
+	--db-successful-on-bg-weak-pressed: var(--db-successful-5);
+	--db-successful-contrast-high: var(--db-successful-4);
+	--db-successful-contrast-high-hover: var(--db-successful-3);
+	--db-successful-contrast-high-pressed: var(--db-successful-2);
+	--db-successful-contrast-low: var(--db-successful-5);
+	--db-successful-contrast-low-hover: var(--db-successful-4);
+	--db-successful-contrast-low-pressed: var(--db-successful-3);
+	--db-successful-border: var(--db-successful-7);
+	--db-critical-bg: var(--db-critical-12);
+	--db-critical-bg-hover: var(--db-critical-11);
+	--db-critical-bg-pressed: var(--db-critical-10);
+	--db-critical-bg-weak: var(--db-critical-11);
+	--db-critical-bg-weak-hover: var(--db-critical-10);
+	--db-critical-bg-weak-pressed: var(--db-critical-9);
+	--db-critical-bg-strong: var(--db-critical-10);
+	--db-critical-bg-strong-hover: var(--db-critical-9);
+	--db-critical-bg-strong-pressed: var(--db-critical-8);
+	--db-critical-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-critical-4)
+	);
+	--db-critical-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-critical-4)
+	);
+	--db-critical-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-critical-4)
+	);
+	--db-critical-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-critical-4)
+	);
+	--db-critical-on-bg: var(--db-critical-1);
+	--db-critical-on-bg-hover: var(--db-critical-2);
+	--db-critical-on-bg-pressed: var(--db-critical-3);
+	--db-critical-on-bg-weak: var(--db-critical-3);
+	--db-critical-on-bg-weak-hover: var(--db-critical-4);
+	--db-critical-on-bg-weak-pressed: var(--db-critical-5);
+	--db-critical-contrast-high: var(--db-critical-4);
+	--db-critical-contrast-high-hover: var(--db-critical-3);
+	--db-critical-contrast-high-pressed: var(--db-critical-2);
+	--db-critical-contrast-low: var(--db-critical-5);
+	--db-critical-contrast-low-hover: var(--db-critical-4);
+	--db-critical-contrast-low-pressed: var(--db-critical-3);
+	--db-critical-border: var(--db-critical-7);
+
+	--db-textarea-resizer-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiB3aWR0aD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTExLjUgMTYuNWEuOTk5Ljk5OSAwIDAgMSAtLjcwNy0xLjcwN2w0LTRhLjk5OS45OTkgMCAxIDEgMS40MTQgMS40MTRsLTQgNGEuOTk3Ljk5NyAwIDAgMSAtLjcwNy4yOTN6bS03IDBhLjk5OS45OTkgMCAwIDEgLS43MDctMS43MDdsMTEtMTFhLjk5OS45OTkgMCAxIDEgMS40MTQgMS40MTRsLTExIDExYS45OTcuOTk3IDAgMCAxIC0uNzA3LjI5M3oiIGZpbGw9IiMyODJkMzciIHN0eWxlPSJ2YXIoLS1kYi1pY29uLWNvbG9yLCBjdXJyZW50Q29sb3IpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4NCg==");
+	--db-textarea-scrollbar-button-decrement: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiB3aWR0aD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQuOTk0IDEzYS45OTguOTk4IDAgMCAxIC0uOTk0LS45OTVjMC0uMjY2LjEzMy0uNTMxLjI5OC0uNjk3bDUuMDA2LTUuMDFjLjE5OS0uMTk4LjQ2NC0uMjk4LjY5Ni0uMjk4LjIyNyAwIC40NTUuMDczLjYyLjIybDUuMDgyIDUuMDg4Yy4xOTkuMTY2LjI5OC40MzEuMjk4LjY5N2EuOTk4Ljk5OCAwIDAgMSAtLjk5NC45OTVjLS4yNjYgMC0uNTMtLjEtLjczLS4yOTlsLTQuMjc2LTQuMjgtNC4yNzYgNC4yOGMtLjIuMi0uNDY0LjI5OS0uNzMuMjk5eiIgZmlsbD0iIzI4MmQzNyIgc3R5bGU9InZhcigtLWRiLWljb24tY29sb3IsIGN1cnJlbnRDb2xvcikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg0K");
+	--db-textarea-scrollbar-button-increment: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTEwLjQ3MiA4LjY5Ni0zLjUzMiAzLjUzNGEuOTk4Ljk5OCAwIDEgMSAtMS40MTMtMS40MTNsMi44MjUtMi44MjUtMi44MjUtMi44MjVhLjk5OC45OTggMCAxIDEgMS40MTMtMS40MTNsMy41MzIgMy41MzJhLjk5OS45OTkgMCAwIDEgMCAxLjQxMnoiIGZpbGw9InZhcigtLWRiLWljb24tY29sb3IsIGN1cnJlbnRDb2xvcikiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJtYXRyaXgoMCAxIC0xIDAgMTUuOTkxIC0uMDA5KSIvPjwvc3ZnPg0K");
 
 	color-scheme: light;
 }
 
 @mixin get-color-scheme-dark {
-	--db-base-0: #fff;
-	--db-base-1: #f8f8f9;
-	--db-base-2: #eff0f1;
-	--db-base-3: #e0e2e4;
-	--db-base-4: #c4c7cd;
-	--db-base-5: #b0b5bc;
-	--db-base-6: #989ea8;
-	--db-base-7: #80858e;
-	--db-base-8: #5a5e64;
-	--db-base-9: #43464b;
-	--db-base-10: #2e3034;
-	--db-base-11: #1a1c1e;
-	--db-base-12: #1a1c1e;
-	--db-brand-0: #fff;
-	--db-brand-1: #fff7f7;
-	--db-brand-2: #ffebec;
-	--db-brand-3: #ffd8d9;
-	--db-brand-4: #ffb4b5;
-	--db-brand-5: #ff9799;
-	--db-brand-6: #ff7072;
-	--db-brand-7: #ff2d35;
-	--db-brand-8: #be000f;
-	--db-brand-9: #920009;
-	--db-brand-10: #680004;
-	--db-brand-11: #410002;
-	--db-brand-12: #000;
-	--db-neutral-0: #fff;
-	--db-neutral-1: #f8f8f9;
-	--db-neutral-2: #eff0f2;
-	--db-neutral-3: #e0e1e5;
-	--db-neutral-4: #c4c7ce;
-	--db-neutral-5: #b0b4be;
-	--db-neutral-6: #989eaa;
-	--db-neutral-7: #7f8592;
-	--db-neutral-8: #595e67;
-	--db-neutral-9: #43464d;
-	--db-neutral-10: #2e3035;
-	--db-neutral-11: #1a1c1f;
-	--db-neutral-12: #000;
-	--db-informational-0: #fff;
-	--db-informational-1: #f3f9fe;
-	--db-informational-2: #e4f2fe;
-	--db-informational-3: #c8e5fd;
-	--db-informational-4: #8bcffa;
-	--db-informational-5: #48c0f9;
-	--db-informational-6: #33a8dd;
-	--db-informational-7: #2a8ebb;
-	--db-informational-8: #1b6485;
-	--db-informational-9: #124b65;
-	--db-informational-10: #0a3447;
-	--db-informational-11: #041e2b;
-	--db-informational-12: #000;
-	--db-warning-0: #fff;
-	--db-warning-1: #fff7f3;
-	--db-warning-2: #ffece3;
-	--db-warning-3: #ffdac6;
-	--db-warning-4: #ffb884;
-	--db-warning-5: #ff9e2f;
-	--db-warning-6: #e38800;
-	--db-warning-7: #c07300;
-	--db-warning-8: #895000;
-	--db-warning-9: #683b00;
-	--db-warning-10: #492800;
-	--db-warning-11: #2c1600;
-	--db-warning-12: #000;
-	--db-successful-0: #fff;
-	--db-successful-1: #eaffdf;
-	--db-successful-2: #cbffad;
-	--db-successful-3: #98fb25;
-	--db-successful-4: #86dd20;
-	--db-successful-5: #79c91c;
-	--db-successful-6: #69b017;
-	--db-successful-7: #589412;
-	--db-successful-8: #3d6909;
-	--db-successful-9: #2c4f05;
-	--db-successful-10: #1d3702;
-	--db-successful-11: #0f2001;
-	--db-successful-12: #000;
-	--db-critical-0: #fff;
-	--db-critical-1: #fff7f7;
-	--db-critical-2: #ffebec;
-	--db-critical-3: #ffd8d9;
-	--db-critical-4: #ffb4b5;
-	--db-critical-5: #ff9799;
-	--db-critical-6: #ff7072;
-	--db-critical-7: #ff2d35;
-	--db-critical-8: #be000f;
-	--db-critical-9: #920009;
-	--db-critical-10: #680004;
-	--db-critical-11: #410002;
-	--db-critical-12: #000;
+	--db-base-bg: var(--db-base-2);
+	--db-base-bg-hover: var(--db-base-3);
+	--db-base-bg-pressed: var(--db-base-4);
+	--db-base-bg-weak: var(--db-base-1);
+	--db-base-bg-weak-hover: var(--db-base-2);
+	--db-base-bg-weak-pressed: var(--db-base-3);
+	--db-base-bg-strong: var(--db-base-0);
+	--db-base-bg-strong-hover: var(--db-base-1);
+	--db-base-bg-strong-pressed: var(--db-base-2);
+	--db-base-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-base-8)
+	);
+	--db-base-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-base-8)
+	);
+	--db-base-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-base-8)
+	);
+	--db-base-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-base-8)
+	);
+	--db-base-on-bg: var(--db-base-11);
+	--db-base-on-bg-hover: var(--db-base-10);
+	--db-base-on-bg-pressed: var(--db-base-9);
+	--db-base-on-bg-weak: var(--db-base-9);
+	--db-base-on-bg-weak-hover: var(--db-base-8);
+	--db-base-on-bg-weak-pressed: var(--db-base-7);
+	--db-base-contrast-high: var(--db-base-8);
+	--db-base-contrast-high-hover: var(--db-base-7);
+	--db-base-contrast-high-pressed: var(--db-base-6);
+	--db-base-contrast-low: var(--db-base-7);
+	--db-base-contrast-low-hover: var(--db-base-6);
+	--db-base-contrast-low-pressed: var(--db-base-5);
+	--db-base-border: var(--db-base-4);
+	--db-brand-on-enabled: #fff;
+	--db-brand-origin-enabled: #ec0016;
+	--db-brand-origin-hover: #fff;
+	--db-brand-origin-pressed: #fff7f7;
+	--db-brand-bg: var(--db-brand-2);
+	--db-brand-bg-hover: var(--db-brand-3);
+	--db-brand-bg-pressed: var(--db-brand-4);
+	--db-brand-bg-weak: var(--db-brand-1);
+	--db-brand-bg-weak-hover: var(--db-brand-2);
+	--db-brand-bg-weak-pressed: var(--db-brand-3);
+	--db-brand-bg-strong: var(--db-brand-0);
+	--db-brand-bg-strong-hover: var(--db-brand-1);
+	--db-brand-bg-strong-pressed: var(--db-brand-2);
+	--db-brand-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-brand-8)
+	);
+	--db-brand-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-brand-8)
+	);
+	--db-brand-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-brand-8)
+	);
+	--db-brand-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-brand-8)
+	);
+	--db-brand-on-bg: var(--db-brand-11);
+	--db-brand-on-bg-hover: var(--db-brand-10);
+	--db-brand-on-bg-pressed: var(--db-brand-9);
+	--db-brand-on-bg-weak: var(--db-brand-9);
+	--db-brand-on-bg-weak-hover: var(--db-brand-8);
+	--db-brand-on-bg-weak-pressed: var(--db-brand-7);
+	--db-brand-contrast-high: var(--db-brand-8);
+	--db-brand-contrast-high-hover: var(--db-brand-7);
+	--db-brand-contrast-high-pressed: var(--db-brand-6);
+	--db-brand-contrast-low: var(--db-brand-7);
+	--db-brand-contrast-low-hover: var(--db-brand-6);
+	--db-brand-contrast-low-pressed: var(--db-brand-5);
+	--db-brand-border: var(--db-brand-4);
+	--db-neutral-bg: var(--db-neutral-2);
+	--db-neutral-bg-hover: var(--db-neutral-3);
+	--db-neutral-bg-pressed: var(--db-neutral-4);
+	--db-neutral-bg-weak: var(--db-neutral-1);
+	--db-neutral-bg-weak-hover: var(--db-neutral-2);
+	--db-neutral-bg-weak-pressed: var(--db-neutral-3);
+	--db-neutral-bg-strong: var(--db-neutral-0);
+	--db-neutral-bg-strong-hover: var(--db-neutral-1);
+	--db-neutral-bg-strong-pressed: var(--db-neutral-2);
+	--db-neutral-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-neutral-8)
+	);
+	--db-neutral-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-neutral-8)
+	);
+	--db-neutral-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-neutral-8)
+	);
+	--db-neutral-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-neutral-8)
+	);
+	--db-neutral-on-bg: var(--db-neutral-11);
+	--db-neutral-on-bg-hover: var(--db-neutral-10);
+	--db-neutral-on-bg-pressed: var(--db-neutral-9);
+	--db-neutral-on-bg-weak: var(--db-neutral-9);
+	--db-neutral-on-bg-weak-hover: var(--db-neutral-8);
+	--db-neutral-on-bg-weak-pressed: var(--db-neutral-7);
+	--db-neutral-contrast-high: var(--db-neutral-8);
+	--db-neutral-contrast-high-hover: var(--db-neutral-7);
+	--db-neutral-contrast-high-pressed: var(--db-neutral-6);
+	--db-neutral-contrast-low: var(--db-neutral-7);
+	--db-neutral-contrast-low-hover: var(--db-neutral-6);
+	--db-neutral-contrast-low-pressed: var(--db-neutral-5);
+	--db-neutral-border: var(--db-neutral-4);
+	--db-informational-bg: var(--db-informational-2);
+	--db-informational-bg-hover: var(--db-informational-3);
+	--db-informational-bg-pressed: var(--db-informational-4);
+	--db-informational-bg-weak: var(--db-informational-1);
+	--db-informational-bg-weak-hover: var(--db-informational-2);
+	--db-informational-bg-weak-pressed: var(--db-informational-3);
+	--db-informational-bg-strong: var(--db-informational-0);
+	--db-informational-bg-strong-hover: var(--db-informational-1);
+	--db-informational-bg-strong-pressed: var(--db-informational-2);
+	--db-informational-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-informational-8)
+	);
+	--db-informational-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-informational-8)
+	);
+	--db-informational-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-informational-8)
+	);
+	--db-informational-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-informational-8)
+	);
+	--db-informational-on-bg: var(--db-informational-11);
+	--db-informational-on-bg-hover: var(--db-informational-10);
+	--db-informational-on-bg-pressed: var(--db-informational-9);
+	--db-informational-on-bg-weak: var(--db-informational-9);
+	--db-informational-on-bg-weak-hover: var(--db-informational-8);
+	--db-informational-on-bg-weak-pressed: var(--db-informational-7);
+	--db-informational-contrast-high: var(--db-informational-8);
+	--db-informational-contrast-high-hover: var(--db-informational-7);
+	--db-informational-contrast-high-pressed: var(--db-informational-6);
+	--db-informational-contrast-low: var(--db-informational-7);
+	--db-informational-contrast-low-hover: var(--db-informational-6);
+	--db-informational-contrast-low-pressed: var(--db-informational-5);
+	--db-informational-border: var(--db-informational-4);
+	--db-warning-bg: var(--db-warning-2);
+	--db-warning-bg-hover: var(--db-warning-3);
+	--db-warning-bg-pressed: var(--db-warning-4);
+	--db-warning-bg-weak: var(--db-warning-1);
+	--db-warning-bg-weak-hover: var(--db-warning-2);
+	--db-warning-bg-weak-pressed: var(--db-warning-3);
+	--db-warning-bg-strong: var(--db-warning-0);
+	--db-warning-bg-strong-hover: var(--db-warning-1);
+	--db-warning-bg-strong-pressed: var(--db-warning-2);
+	--db-warning-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-warning-8)
+	);
+	--db-warning-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-warning-8)
+	);
+	--db-warning-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-warning-8)
+	);
+	--db-warning-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-warning-8)
+	);
+	--db-warning-on-bg: var(--db-warning-11);
+	--db-warning-on-bg-hover: var(--db-warning-10);
+	--db-warning-on-bg-pressed: var(--db-warning-9);
+	--db-warning-on-bg-weak: var(--db-warning-9);
+	--db-warning-on-bg-weak-hover: var(--db-warning-8);
+	--db-warning-on-bg-weak-pressed: var(--db-warning-7);
+	--db-warning-contrast-high: var(--db-warning-8);
+	--db-warning-contrast-high-hover: var(--db-warning-7);
+	--db-warning-contrast-high-pressed: var(--db-warning-6);
+	--db-warning-contrast-low: var(--db-warning-7);
+	--db-warning-contrast-low-hover: var(--db-warning-6);
+	--db-warning-contrast-low-pressed: var(--db-warning-5);
+	--db-warning-border: var(--db-warning-4);
+	--db-successful-bg: var(--db-successful-2);
+	--db-successful-bg-hover: var(--db-successful-3);
+	--db-successful-bg-pressed: var(--db-successful-4);
+	--db-successful-bg-weak: var(--db-successful-1);
+	--db-successful-bg-weak-hover: var(--db-successful-2);
+	--db-successful-bg-weak-pressed: var(--db-successful-3);
+	--db-successful-bg-strong: var(--db-successful-0);
+	--db-successful-bg-strong-hover: var(--db-successful-1);
+	--db-successful-bg-strong-pressed: var(--db-successful-2);
+	--db-successful-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-successful-8)
+	);
+	--db-successful-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-successful-8)
+	);
+	--db-successful-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-successful-8)
+	);
+	--db-successful-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-successful-8)
+	);
+	--db-successful-on-bg: var(--db-successful-11);
+	--db-successful-on-bg-hover: var(--db-successful-10);
+	--db-successful-on-bg-pressed: var(--db-successful-9);
+	--db-successful-on-bg-weak: var(--db-successful-9);
+	--db-successful-on-bg-weak-hover: var(--db-successful-8);
+	--db-successful-on-bg-weak-pressed: var(--db-successful-7);
+	--db-successful-contrast-high: var(--db-successful-8);
+	--db-successful-contrast-high-hover: var(--db-successful-7);
+	--db-successful-contrast-high-pressed: var(--db-successful-6);
+	--db-successful-contrast-low: var(--db-successful-7);
+	--db-successful-contrast-low-hover: var(--db-successful-6);
+	--db-successful-contrast-low-pressed: var(--db-successful-5);
+	--db-successful-border: var(--db-successful-4);
+	--db-critical-bg: var(--db-critical-2);
+	--db-critical-bg-hover: var(--db-critical-3);
+	--db-critical-bg-pressed: var(--db-critical-4);
+	--db-critical-bg-weak: var(--db-critical-1);
+	--db-critical-bg-weak-hover: var(--db-critical-2);
+	--db-critical-bg-weak-pressed: var(--db-critical-3);
+	--db-critical-bg-strong: var(--db-critical-0);
+	--db-critical-bg-strong-hover: var(--db-critical-1);
+	--db-critical-bg-strong-pressed: var(--db-critical-2);
+	--db-critical-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-critical-8)
+	);
+	--db-critical-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-critical-8)
+	);
+	--db-critical-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-critical-8)
+	);
+	--db-critical-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-critical-8)
+	);
+	--db-critical-on-bg: var(--db-critical-11);
+	--db-critical-on-bg-hover: var(--db-critical-10);
+	--db-critical-on-bg-pressed: var(--db-critical-9);
+	--db-critical-on-bg-weak: var(--db-critical-9);
+	--db-critical-on-bg-weak-hover: var(--db-critical-8);
+	--db-critical-on-bg-weak-pressed: var(--db-critical-7);
+	--db-critical-contrast-high: var(--db-critical-8);
+	--db-critical-contrast-high-hover: var(--db-critical-7);
+	--db-critical-contrast-high-pressed: var(--db-critical-6);
+	--db-critical-contrast-low: var(--db-critical-7);
+	--db-critical-contrast-low-hover: var(--db-critical-6);
+	--db-critical-contrast-low-pressed: var(--db-critical-5);
+	--db-critical-border: var(--db-critical-4);
+
+	--db-textarea-resizer-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiB3aWR0aD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTExLjUgMTYuNWEuOTk5Ljk5OSAwIDAgMSAtLjcwNy0xLjcwN2w0LTRhLjk5OS45OTkgMCAxIDEgMS40MTQgMS40MTRsLTQgNGEuOTk3Ljk5NyAwIDAgMSAtLjcwNy4yOTN6bS03IDBhLjk5OS45OTkgMCAwIDEgLS43MDctMS43MDdsMTEtMTFhLjk5OS45OTkgMCAxIDEgMS40MTQgMS40MTRsLTExIDExYS45OTcuOTk3IDAgMCAxIC0uNzA3LjI5M3oiIGZpbGw9IiNmOGY4ZjkiIHN0eWxlPSJ2YXIoLS1kYi1pY29uLWNvbG9yLCBjdXJyZW50Q29sb3IpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4NCg==");
+	--db-textarea-scrollbar-button-decrement: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiB3aWR0aD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQuOTk0IDEzYS45OTguOTk4IDAgMCAxIC0uOTk0LS45OTVjMC0uMjY2LjEzMy0uNTMxLjI5OC0uNjk3bDUuMDA2LTUuMDFjLjE5OS0uMTk4LjQ2NC0uMjk4LjY5Ni0uMjk4LjIyNyAwIC40NTUuMDczLjYyLjIybDUuMDgyIDUuMDg4Yy4xOTkuMTY2LjI5OC40MzEuMjk4LjY5N2EuOTk4Ljk5OCAwIDAgMSAtLjk5NC45OTVjLS4yNjYgMC0uNTMtLjEtLjczLS4yOTlsLTQuMjc2LTQuMjgtNC4yNzYgNC4yOGMtLjIuMi0uNDY0LjI5OS0uNzMuMjk5eiIgZmlsbD0iI2Y4ZjhmOSIgc3R5bGU9InZhcigtLWRiLWljb24tY29sb3IsIGN1cnJlbnRDb2xvcikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg0K");
+	--db-textarea-scrollbar-button-increment: url("data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiB3aWR0aD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQuOTk0IDdhLjk5OC45OTggMCAwIDAgLS45OTQuOTk1YzAgLjI2Ni4xMzMuNTMxLjI5OC42OTdsNS4wMDYgNS4wMWMuMTk5LjE5OC40NjQuMjk4LjY5Ni4yOThhLjkzNi45MzYgMCAwIDAgLjYyLS4yMmw1LjA4Mi01LjA4OGMuMTk5LS4xNjYuMjk4LS40MzEuMjk4LS42OTdhLjk5OC45OTggMCAwIDAgLS45OTQtLjk5NWMtLjI2NiAwLS41My4xLS43My4yOTlsLTQuMjc2IDQuMjgtNC4yNzYtNC4yOGExLjAyOCAxLjAyOCAwIDAgMCAtLjczLS4yOTl6IiBmaWxsPSIjZjhmOGY5IiBzdHlsZT0idmFyKC0tZGItaWNvbi1jb2xvciwgY3VycmVudENvbG9yKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+DQo=");
 
 	color-scheme: dark;
 }

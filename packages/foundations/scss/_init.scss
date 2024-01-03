@@ -3,8 +3,6 @@
 @use "animation";
 @use "tonality";
 
-@forward "colors/speaking-colors";
-
 :root {
 	--db-focus-outline-color: #{colors.$db-informational-contrast-high};
 	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg};

@@ -4,6 +4,7 @@
 
 .db-card {
 	@extend %default-card;
+	@extend %component-border;
 
 	background-color: colors.$db-base-bg;
 
