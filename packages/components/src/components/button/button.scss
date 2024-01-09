@@ -73,6 +73,10 @@
 		background-color: colors.$db-current-bg-transparent-full;
 	}
 
+	&[data-variant="solid"] {
+		background-color: colors.$db-current-bg-transparent-semi;
+	}
+
 	&:enabled {
 		&:hover {
 			background-color: colors.$db-current-bg-transparent-hover;
