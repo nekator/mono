@@ -5,18 +5,26 @@
 
 $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
+%set-adaptive-strong-tag {
+	--db-current-icon-color: #{colors.$db-current-bg-1-color};
+	--db-current-color: #{colors.$db-current-bg-1-color};
+	--db-current-bg-color: #{colors.$db-current-contrast-high-color};
+	// border should be same color like background
+	--db-current-border-color: #{colors.$db-current-contrast-high-color};
+
+	@extend %set-current-colors;
+}
+
 @mixin get-tag-colors() {
-	@extend %db-bg-base-strong;
+	background-color: colors.$db-current-bg-2-color;
 
 	&[data-emphasis="strong"] {
-		// border should be same color like background
-		--db-current-border-color: #{colors.$db-base-contrast-high};
-		@extend %db-base-component;
+		@extend %set-adaptive-strong-tag;
 	}
 
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@extend %db-bg-#{$name}-strong;
+			@extend %db-#{$name}-bg-2;
 
 			&[data-emphasis="strong"] {
 				// border should be same color like background
@@ -27,86 +35,99 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	}
 }
 
+// get button and link tags
 @mixin get-interactive-selectors() {
 	&:not(:has(dbbutton)) button:not(.db-tab-remove-button),
 	dbbutton:not(.db-tab-remove-button) > button,
 	db-button > button,
-	a,
-	label:has(input[type="checkbox"]:checked) {
+	a {
 		@content;
 	}
 }
 
+%set-interactive-weak {
+	background-color: colors.$db-current-bg-2-color;
+
+	&:hover {
+		background-color: colors.$db-current-bg-2-hover-color;
+	}
+
+	&:active {
+		background-color: colors.$db-current-bg-2-pressed-color;
+	}
+}
+
+%set-interactive-strong {
+	@extend %set-adaptive-strong-tag;
+
+	&:hover {
+		background-color: colors.$db-current-contrast-high-hover-color;
+	}
+
+	&:active {
+		background-color: colors.$db-current-contrast-high-pressed-color;
+	}
+}
+
 @mixin get-tag-colors-interactive() {
+	// overwrite current variables for semantic color
+	@each $name in colors.$variant-colors {
+		&[data-variant="#{$name}"] {
+			@extend %db-#{$name}-variables;
+		}
+	}
+
 	label:has(input) {
-		background-color: colors.$db-current-bg-transparent-full;
-
-		&:hover {
-			background-color: colors.$db-current-bg-transparent-hover;
-		}
-
-		&:active {
-			background-color: colors.$db-current-bg-transparent-pressed;
-		}
+		@extend %set-interactive-weak;
 	}
 
 	&:not([data-emphasis]),
 	&[data-emphasis="weak"] {
-		@each $name in colors.$variant-colors {
-			&[data-variant="#{$name}"] {
-				label:has(input[type="checkbox"]:checked) {
-					@extend %db-bg-#{$name}-variables;
-				}
+		// buttons and links should have bg-2
+		@include get-interactive-selectors() {
+			@extend %set-interactive-weak;
+		}
+
+		// checkbox should have bg-3 (checked)
+		label:has(input[type="checkbox"]:checked) {
+			background-color: colors.$db-current-bg-3-color;
+
+			&:hover {
+				background-color: colors.$db-current-bg-3-hover-color;
+			}
+
+			&:active {
+				background-color: colors.$db-current-bg-3-pressed-color;
 			}
 		}
 
-		@include get-interactive-selectors() {
-			@extend %db-bg-base-strong-interactive;
-		}
-
+		// radio should have bg-3 (checked) without hover/pressed
 		label:has(input[type="radio"]:checked) {
-			@extend %db-bg-base-strong;
-		}
-
-		@each $name in colors.$variant-colors {
-			&[data-variant="#{$name}"] {
-				@include get-interactive-selectors() {
-					@extend %db-bg-#{$name}-strong-interactive;
-				}
-
-				label:has(input[type="radio"]:checked) {
-					@extend %db-bg-#{$name}-strong;
-				}
+			&,
+			&:hover,
+			&:active {
+				background-color: colors.$db-current-bg-3-color;
 			}
 		}
 	}
 
 	&[data-emphasis="strong"] {
-		--db-current-color: #{colors.$db-base-bg};
+
 		@include get-interactive-selectors() {
-			@extend %db-base-component-interactive;
+			@extend %set-interactive-strong;
 		}
 
 		label:has(input[type="radio"]:checked) {
-			@extend %db-base-component;
+			@extend %set-adaptive-strong-tag;
 		}
 
-		@each $name in colors.$variant-colors {
-			&[data-variant="#{$name}"] {
-				--db-current-color: var(--db-#{$name}-bg);
-				@include get-interactive-selectors() {
-					@extend %db-#{$name}-component-interactive;
-				}
-
-				label:has(input[type="radio"]:checked) {
-					@extend %db-#{$name}-component;
-				}
-			}
+		label:has(input[type="checkbox"]:checked) {
+			@extend %set-interactive-strong;
 		}
 
-		&:has(input:checked, a, button) {
-			--db-current-icon-color: var(--db-current-color);
-			color: var(--db-current-color);
+		&:has(a),
+		&:has(input:checked) {
+			@extend %set-adaptive-strong-tag;
 		}
 	}
 }

@@ -65,7 +65,7 @@ const getLink = (variantName: string) => {
 		currentUrl += "?";
 	}
 	if (!currentUrl.includes("color=")) {
-		currentUrl += `&color=${route.query[COLOR_CONST] || COLOR.NEUTRAL}`;
+		currentUrl += `&color=${route.query[COLOR_CONST] || COLOR.BASE_BG_1}`;
 	}
 	if (!currentUrl.includes("tonality=")) {
 		currentUrl += `&tonality=${

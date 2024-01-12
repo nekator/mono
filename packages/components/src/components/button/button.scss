@@ -47,6 +47,7 @@
 	}
 
 	&[data-variant="primary"] {
+		--db-current-icon-color: #{colors.$db-brand-on};
 		@extend %transparent-border;
 		background-color: colors.$db-brand;
 		color: colors.$db-brand-on;

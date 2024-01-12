@@ -6,10 +6,10 @@
 	@extend %default-card;
 	@extend %component-border;
 
-	background-color: colors.$db-base-bg;
-
 	display: flex;
 	flex-direction: column;
+
+	background-color: colors.$db-current-bg-color;
 
 	& > a {
 		text-decoration: none;

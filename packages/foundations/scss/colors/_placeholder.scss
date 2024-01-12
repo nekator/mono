@@ -1,11 +1,32 @@
 @use "sass:string";
 @use "variables";
 
+%set-current-colors {
+	background-color: var(--db-current-bg-color);
+	color: var(--db-current-color);
+
+	&::before,
+	&::after {
+		color: var(--db-current-icon-color, inherit);
+	}
+}
+
+@mixin bg-types() {
+	&-1,
+	&-2,
+	&-3,
+	&-transparent-full,
+	&-transparent-semi {
+		@content;
+	}
+}
+
 @each $variant in variables.$variants {
 	%db-#{$variant}-component {
-		--db-current-color: var(--db-#{$variant}-bg);
-		color: var(--db-current-color);
-		background-color: var(--db-#{$variant}-contrast-high);
+		--db-current-icon-color: var(--db-#{$variant}-bg-1);
+		--db-current-color: var(--db-#{$variant}-bg-1);
+		--db-current-bg-color: var(--db-#{$variant}-contrast-high);
+		@extend %set-current-colors;
 
 		&-interactive {
 			@extend %db-#{$variant}-component;
@@ -20,22 +41,7 @@
 		}
 	}
 
-	%db-#{$variant}-text-interactive {
-		--db-current-color: var(--db-#{$variant}-contrast-high);
-		color: var(--db-current-color);
-
-		&:enabled {
-			&:hover {
-				--db-current-color: var(--db-#{$variant}-contrast-high-hover);
-			}
-
-			&:active {
-				--db-current-color: var(--db-#{$variant}-contrast-high-pressed);
-			}
-		}
-	}
-
-	%db-bg-#{$variant}-variables {
+	%db-#{$variant}-variables {
 		/* used for transparent backgrounds */
 		--db-current-bg-transparent-full: var(
 			--db-#{$variant}-bg-transparent-full
@@ -52,71 +58,81 @@
 
 		/* used for text */
 		--db-current-color: var(--db-#{$variant}-on-bg);
+		--db-current-icon-color: var(--db-#{$variant}-on-bg);
 		/* used for checkbox:checked */
 		--db-current-color-hover: var(--db-#{$variant}-on-bg-hover);
 		--db-current-color-pressed: var(--db-#{$variant}-on-bg-pressed);
 
-		/* used as normal backgrounds */
-		@if ($variant == "base") {
-			--db-current-bg-color: var(--db-#{$variant}-bg);
-		} @else {
-			--db-current-bg-color: var(--db-#{$variant}-bg-weak);
-		}
+		/* used for backgrounds */
+		--db-current-bg-1-color: var(--db-#{$variant}-bg-1);
+		--db-current-bg-2-color: var(--db-#{$variant}-bg-2);
+		--db-current-bg-3-color: var(--db-#{$variant}-bg-3);
 
 		/* used for icons and borders */
 		--db-current-contrast-low-color: var(--db-#{$variant}-contrast-low);
 		--db-current-border-color: var(--db-#{$variant}-border);
+
+		/* used for adaptive tags (interactive) */
+		--db-current-bg-1-hover-color: var(--db-#{$variant}-bg-1-hover);
+		--db-current-bg-1-pressed-color: var(--db-#{$variant}-bg-1-pressed);
+		--db-current-bg-2-hover-color: var(--db-#{$variant}-bg-2-hover);
+		--db-current-bg-2-pressed-color: var(--db-#{$variant}-bg-2-pressed);
+		--db-current-bg-3-hover-color: var(--db-#{$variant}-bg-3-hover);
+		--db-current-bg-3-pressed-color: var(--db-#{$variant}-bg-3-pressed);
+		/* used for adaptive tags (strong & interactive) */
+		--db-current-contrast-high-color: var(--db-#{$variant}-contrast-high);
+		--db-current-contrast-high-hover-color: var(
+			--db-#{$variant}-contrast-high-hover
+		);
+		--db-current-contrast-high-pressed-color: var(
+			--db-#{$variant}-contrast-high-pressed
+		);
 	}
 
-	%db-bg-#{$variant} {
-		@extend %db-bg-#{$variant}-variables;
-		background-color: var(--db-current-bg-color);
-		color: var(--db-current-color);
+	%db-#{$variant}-bg {
+		// 1. set all variables for color variant to every bg type
+		@include bg-types() {
+			@extend %db-#{$variant}-variables;
+		}
 
-		&-transparent {
-			&-full,
-			&-semi {
-				@extend %db-bg-#{$variant}-variables;
-			}
+		// 3. set current colors
+		@include bg-types() {
+			@extend %set-current-colors;
 
-			&-full {
-				background-color: var(--db-current-bg-transparent-full);
-			}
-
-			&-semi {
-				background-color: var(--db-current-bg-transparent-semi);
+			&[data-emphasis="weak"] {
+				/* used for text */
+				--db-current-color: var(--db-#{$variant}-on-bg-weak);
+				/* used for checkbox:checked */
+				--db-current-color-hover: var(
+					--db-#{$variant}-on-bg-weak-hover
+				);
+				--db-current-color-pressed: var(
+					--db-#{$variant}-on-bg-weak-pressed
+				);
+				color: var(--db-current-color);
 			}
 		}
 
-		&[data-emphasis="weak"] {
-			/* used for text */
-			--db-current-color: var(--db-#{$variant}-on-bg-weak);
-			/* used for checkbox:checked */
-			--db-current-color-hover: var(--db-#{$variant}-on-bg-weak-hover);
-			--db-current-color-pressed: var(
-				--db-#{$variant}-on-bg-weak-pressed
-			);
-			color: var(--db-current-color);
+		// 2. overwrite current-bg-color based on type
+
+		&-1 {
+			--db-current-bg-color: var(--db-current-bg-1-color);
 		}
 
-		&-strong {
-			--db-current-color: var(--db-#{$variant}-on-bg);
-			--db-current-bg-color: var(--db-#{$variant}-bg-strong);
-			--db-current-border-color: var(--db-#{$variant}-border);
-			background-color: var(--db-current-bg-color);
-			color: var(--db-current-color);
+		&-2 {
+			--db-current-bg-color: var(--db-current-bg-2-color);
+		}
 
-			&-interactive {
-				@extend %db-bg-#{$variant}-strong;
+		&-3 {
+			--db-current-bg-color: var(--db-current-bg-3-color);
+		}
 
-				&:hover {
-					background-color: var(--db-#{$variant}-bg-strong-hover);
-				}
+		&-transparent-full {
+			--db-current-bg-color: var(--db-current-bg-transparent-full);
+		}
 
-				&:active {
-					background-color: var(--db-#{$variant}-bg-strong-pressed);
-				}
-			}
+		&-transparent-semi {
+			--db-current-bg-color: var(--db-current-bg-transparent-semi);
 		}
 	}
 }

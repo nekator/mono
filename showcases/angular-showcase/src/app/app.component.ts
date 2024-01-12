@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 	colors = COLORS;
 
 	tonality = TONALITY.REGULAR;
-	color = COLOR.BASE;
+	color = COLOR.BASE_BG_1;
 
 	page: string;
 	fullscreen: boolean;
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
 	}
 
 	getChangeableClasses = () => {
-		return `db-ui-${this.tonality} db-bg-${this.color}`;
+		return `db-ui-${this.tonality} db-${this.color}`;
 	};
 
 	onChange = async (value: any) => {

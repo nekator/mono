@@ -5,7 +5,7 @@ import { type DBSectionProps } from '../../../../../output/react/src/components/
 import { getVariants } from '../data';
 
 const getSection = ({ variant, size, children }: DBSectionProps) => (
-	<DBSection className="db-bg-informational" size={size} variant={variant}>
+	<DBSection className="db-informational-bg-2" size={size} variant={variant}>
 		{children}
 	</DBSection>
 );

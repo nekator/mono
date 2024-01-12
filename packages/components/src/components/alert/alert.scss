@@ -62,8 +62,14 @@
 	// TODO: probably extract this to an overwrite or external file
 	text-align: start; // workaround for power apps
 
+	background-color: colors.$db-current-bg-2-color;
+
 	@include icons.has-no-icon() {
 		@include icons.set-icon("info");
+	}
+
+	&::before {
+		--db-current-icon-color: #{colors.$db-current-contrast-low-color};
 	}
 
 	dblink,
@@ -105,23 +111,9 @@
 
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@if ($name == "neutral") {
-				@extend %db-bg-neutral;
-			} @else if ($name == "critical") {
-				@extend %db-bg-critical;
-			} @else if ($name == "informational") {
-				@extend %db-bg-informational;
-			} @else if ($name == "warning") {
-				@extend %db-bg-warning;
-			} @else if ($name == "successful") {
-				@extend %db-bg-successful;
-			}
+			@extend %db-#{$name}-variables;
 
 			@include icons.variant-icons($name);
-
-			&::before {
-				--db-current-icon-color: var(--db-#{$name}-contrast-low);
-			}
 		}
 	}
 }

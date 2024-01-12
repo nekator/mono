@@ -5,11 +5,11 @@
 
 :root {
 	--db-focus-outline-color: #{colors.$db-informational-contrast-high};
-	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg};
+	--db-focus-box-shadow-bg-color: #{colors.$db-base-bg-1};
 	--db-focus-box-shadow-on-bg-color: #{colors.$db-current-color};
 
 	@extend %db-component-variables-md;
-	@extend %db-bg-base;
+	@extend %db-base-bg-1;
 
 	/* This is a MS power apps specific class name */
 	.app-canvas,
@@ -181,7 +181,7 @@ code {
 }
 
 blockquote {
-	@extend %db-bg-neutral-transparent-semi;
+	@extend %db-neutral-bg-transparent-semi;
 	margin: 0;
 	padding: variables.$db-spacing-fixed-sm variables.$db-spacing-fixed-md;
 }

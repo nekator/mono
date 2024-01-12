@@ -91,11 +91,11 @@ table th {
 }
 
 table tr:nth-child(even) {
-	@extend %db-bg-neutral-transparent-semi;
+	@extend %db-neutral-bg-transparent-semi;
 }
 
 table th {
-	@extend %db-bg-neutral-transparent-semi;
+	@extend %db-neutral-bg-transparent-semi;
 	padding-inline: variables.$db-spacing-fixed-md;
 }
 

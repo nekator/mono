@@ -1,17 +1,28 @@
 @mixin init($variant) {
-	.db-bg-#{$variant} {
-		@extend %db-bg-#{$variant};
+	.db-#{$variant}-bg {
+		@extend %db-#{$variant}-bg-1;
 
-		&-strong {
-			@extend %db-bg-#{$variant}-strong;
+		[data-bg-weight="1"],
+		&-1 {
+			@extend %db-#{$variant}-bg-1;
+		}
+
+		[data-bg-weight="2"],
+		&-2 {
+			@extend %db-#{$variant}-bg-2;
+		}
+
+		[data-bg-weight="3"],
+		&-3 {
+			@extend %db-#{$variant}-bg-3;
 		}
 
 		&-transparent-full {
-			@extend %db-bg-#{$variant}-transparent-full;
+			@extend %db-#{$variant}-bg-transparent-full;
 		}
 
 		&-transparent-semi {
-			@extend %db-bg-#{$variant}-transparent-semi;
+			@extend %db-#{$variant}-bg-transparent-semi;
 		}
 	}
 }

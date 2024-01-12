@@ -28,7 +28,7 @@ const router = useRouter();
 const route = useRoute();
 
 const tonality = ref(TONALITY.REGULAR);
-const color = ref(COLOR.BASE);
+const color = ref(COLOR.BASE_BG_1);
 const page = ref();
 const fullscreen = ref();
 
@@ -38,9 +38,7 @@ const toggleDrawer = (open: boolean) => {
 	drawerOpen.value = open;
 };
 
-const classNames = computed(
-	() => `db-ui-${tonality.value} db-bg-${color.value}`
-);
+const classNames = computed(() => `db-ui-${tonality.value} db-${color.value}`);
 
 const onChange = (event: any) => {
 	router.push({

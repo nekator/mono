@@ -6,7 +6,7 @@
 @use "../../styles/component";
 
 .db-header {
-	background-color: colors.$db-base-bg;
+	background-color: colors.$db-base-bg-1;
 	box-shadow: variables.$db-elevation-md;
 	display: flex;
 	flex-direction: column;
@@ -45,7 +45,7 @@
 }
 
 .db-header-meta-navigation {
-	@extend %db-bg-neutral-transparent-semi;
+	@extend %db-neutral-bg-transparent-semi;
 	@extend %db-ui-functional;
 	@include helpers.divider("top");
 	display: flex;

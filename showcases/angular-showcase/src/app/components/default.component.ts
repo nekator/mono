@@ -22,7 +22,7 @@ export class DefaultComponent implements OnInit {
 	@Input() exampleTemplate: TemplateRef<any>;
 
 	tonality = TONALITY.REGULAR;
-	color = COLOR.NEUTRAL;
+	color = COLOR.BASE_BG_1;
 	page: string;
 
 	variantRef: DefaultComponentVariants | undefined;
@@ -62,7 +62,7 @@ export class DefaultComponent implements OnInit {
 		}
 
 		if (!currentUrl.includes('color=')) {
-			currentUrl += `&color=${this.color || COLOR.NEUTRAL}`;
+			currentUrl += `&color=${this.color || COLOR.BASE_BG_1}`;
 		}
 
 		if (!currentUrl.includes('tonality=')) {

@@ -581,11 +581,11 @@
 }
 
 [data-color-scheme="light"] {
-	@extend %db-bg-base;
+	@extend %db-base-bg-1;
 	@include default-color-scheme.get-color-scheme-light;
 }
 
 [data-color-scheme="dark"] {
-	@extend %db-bg-base;
+	@extend %db-base-bg-1;
 	@include default-color-scheme.get-color-scheme-dark;
 }

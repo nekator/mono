@@ -25,16 +25,20 @@
 			// The icon within the checkbox has the same dimensions as the checkbox itself and that for there can't be any border
 			border-width: 0;
 
-			color: var(--db-current-bg-color);
-			background-color: var(--db-current-color);
+			color: colors.$db-current-bg-color;
+			background-color: colors.$db-current-color;
+
+			&::before {
+				color: colors.$db-current-bg-color;
+			}
 
 			&:enabled {
 				&:hover {
-					background-color: var(--db-current-color-hover);
+					background-color: colors.$db-current-color-hover;
 				}
 
 				&:active {
-					background-color: var(--db-current-color-pressed);
+					background-color: colors.$db-current-color-pressed;
 				}
 			}
 		}

@@ -117,7 +117,7 @@ $floating-label-size: calc(
 	}
 
 	& {
-		@extend %db-bg-#{$variant}-variables;
+		@extend %db-#{$variant}-variables;
 	}
 
 	#{$selector},
@@ -240,7 +240,7 @@ $floating-label-size: calc(
 		}
 
 		&:is(input, textarea):read-only {
-			background-color: colors.$db-base-bg !important;
+			background-color: colors.$db-base-bg-1 !important;
 		}
 	}
 
@@ -274,7 +274,7 @@ $floating-label-size: calc(
 	// disabled
 	&:has(#{$selector}:disabled) {
 		// Decided against cursor: not-allowed, compare to e.g. https://phabricator.wikimedia.org/T121960
-		opacity: variables.$db-opacity-sm;
+		opacity: variables.$db-opacity-md;
 		pointer-events: none;
 	}
 
@@ -306,7 +306,7 @@ $floating-label-size: calc(
 	// colors
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@extend %db-bg-#{$name}-variables;
+			@extend %db-#{$name}-variables;
 		}
 
 		&[data-variant="#{$name}"] #{$selector},

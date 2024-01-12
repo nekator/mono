@@ -7,7 +7,7 @@ import getActionBar from './action-bar.js';
 import getNavigation from './navigation.js';
 
 const getClassName = (tonality, color) => {
-	return `db-ui-${tonality} db-bg-${color}`;
+	return `db-ui-${tonality} db-${color}`;
 };
 
 const insertParameter = (queryParameters, key, value) => {
@@ -33,7 +33,7 @@ onload = () => {
 	const queryParameters = getQueryParams();
 
 	const tonality = queryParameters.tonality ?? 'regular';
-	const color = queryParameters.color ?? 'neutral-0';
+	const color = queryParameters.color ?? 'base-bg-1';
 	content.className = getClassName(tonality, color);
 
 	if (selectTonalities.length > 0) {

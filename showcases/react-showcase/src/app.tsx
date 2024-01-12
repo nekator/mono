@@ -13,7 +13,7 @@ const App = () => {
 
 	if (pageName || fullscreen) {
 		return (
-			<div className={`db-ui-${tonality} db-bg-${color}`}>
+			<div className={`db-ui-${tonality} db-${color}`}>
 				<Outlet />
 			</div>
 		);
@@ -60,7 +60,7 @@ const App = () => {
 					<Navigation />
 				</DBHeader>
 			}>
-			<div className={`db-ui-${tonality} db-bg-${color}`}>
+			<div className={`db-ui-${tonality} db-${color}`}>
 				<Outlet />
 			</div>
 		</DBPage>

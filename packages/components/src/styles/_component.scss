@@ -32,23 +32,3 @@ $default-mobile-header-height: var(
 	);
 	box-shadow: variables.$db-elevation-md;
 }
-
-%adaptive-neutral-component {
-	@extend %db-bg-neutral-transparent-semi;
-}
-
-%adaptive-critical-component {
-	@extend %db-bg-critical-transparent-semi;
-}
-
-%adaptive-warning-component {
-	@extend %db-bg-warning-transparent-semi;
-}
-
-%adaptive-informational-component {
-	@extend %db-bg-informational-transparent-semi;
-}
-
-%adaptive-successful-component {
-	@extend %db-bg-successful-transparent-semi;
-}
