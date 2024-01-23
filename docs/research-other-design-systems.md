@@ -30,9 +30,9 @@ We'd like to maintain a list of other design systems that might be interesting f
 -   [SAP UI5 Web Components](https://sap.github.io/ui5-webcomponents/)
     -   [Web Components](https://github.com/SAP/ui5-webcomponents)
 -   [Audi Design System](https://www.audi.com/ci/en/guides/user-interface/components/buttons.html)
-	-   React
+    -   React
 -   [DHL Design System](https://www.dpdhl-brands.com/en/dhl/buttons)
-	-   React
+    -   React
 -   [Netherlands government](https://nldesignsystem.nl/), Tech Stack (among others):
     -   Web Components / StencilJS
     -   Storybook
