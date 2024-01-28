@@ -70,3 +70,6 @@ updates:
           - "@next*"
           - "eslint-config-next"
           - "next"
+      builder.io:
+        patterns:
+          - "@builder.io/mitosis"
