@@ -45,7 +45,7 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 			window.location.href
 			? `${
 					window.location.href.split('?')[0]
-			  }?page=${variant.name.toLowerCase()}`
+				}?page=${variant.name.toLowerCase()}`
 			: '';
 	};
 

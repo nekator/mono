@@ -45,7 +45,7 @@ const ComponentSwitch = ({
 					props={innerComponent.props}
 					className={innerComponent.className}
 				/>
-		  ))
+			))
 		: content;
 
 	if (type === 'h1') {

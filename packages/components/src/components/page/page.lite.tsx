@@ -2,7 +2,8 @@ import {
 	onMount,
 	Show,
 	Slot,
-	useMetadata, useRef,
+	useMetadata,
+	useRef,
 	useStore
 } from '@builder.io/mitosis';
 import { DBPageProps, DBPageState } from './model';

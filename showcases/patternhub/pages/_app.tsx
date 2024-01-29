@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
 								? props.src
 								: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${
 										props.src
-								  }`
+									}`
 						}
 					/>
 				)

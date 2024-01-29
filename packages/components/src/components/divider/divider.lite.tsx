@@ -1,4 +1,10 @@
-import {onMount, Show, useMetadata, useRef, useStore} from '@builder.io/mitosis';
+import {
+	onMount,
+	Show,
+	useMetadata,
+	useRef,
+	useStore
+} from '@builder.io/mitosis';
 import { DBDividerState, DBDividerProps } from './model';
 import { cls } from '../../utils';
 
