@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[72926],{64721:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/tag/docs/Vue",function(){return u(98587)}])}},function(n){n.O(0,[64996,98587,92888,49774,40179],function(){return n(n.s=64721)}),_N_E=n.O()}]);
