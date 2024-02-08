@@ -1,7 +1,6 @@
 import {
 	For,
 	onMount,
-	onUpdate,
 	Show,
 	useMetadata,
 	useRef,
@@ -128,17 +127,14 @@ export default function DBSelect(props: DBSelectProps) {
 							<>
 								<Show when={option.options}>
 									<optgroup
-										key={'optgroup-' + option.value}
+										key={'optgroup-' + uuid()}
 										label={state.getOptionLabel(option)}>
 										<For each={option.options}>
 											{(
 												optgroupOption: DBSelectOptionType
 											) => (
 												<option
-													key={
-														'option-' +
-														optgroupOption.value
-													}
+													key={'option-' + uuid()}
 													value={optgroupOption.value}
 													disabled={
 														optgroupOption.disabled
@@ -153,7 +149,7 @@ export default function DBSelect(props: DBSelectProps) {
 								</Show>
 								<Show when={!option.options}>
 									<option
-										key={'option-' + option.value}
+										key={'option-' + uuid()}
 										value={option.value}
 										disabled={option.disabled}>
 										{state.getOptionLabel(option)}
