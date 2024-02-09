@@ -27,6 +27,12 @@
 				"props": {}
 			},
 			{
+				"name": "Neutral",
+				"props": {
+					"variant": "neutral"
+				}
+			},
+			{
 				"name": "Critical",
 				"props": {
 					"variant": "critical"

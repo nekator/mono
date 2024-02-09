@@ -62,7 +62,7 @@
 	// TODO: probably extract this to an overwrite or external file
 	text-align: start; // workaround for power apps
 
-	background-color: colors.$db-current-bg-2-color;
+	background-color: colors.$db-current-bg-lvl-2-color;
 
 	@include icons.has-no-icon() {
 		@include icons.set-icon("info");

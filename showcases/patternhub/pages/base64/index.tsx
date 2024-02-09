@@ -14,7 +14,7 @@ const Base64 = () => {
 	const [url, setUrl] = useState<string>('');
 
 	const [tonality, setTonality] = useState<string>(TONALITY.REGULAR);
-	const [color, setColor] = useState<string>(COLOR.BASE_BG_1);
+	const [color, setColor] = useState<string>(COLOR.NEUTRAL_BG_LEVEL_1);
 
 	useEffect(() => {
 		setUrl(

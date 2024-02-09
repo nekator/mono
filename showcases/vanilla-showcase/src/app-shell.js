@@ -33,7 +33,7 @@ onload = () => {
 	const queryParameters = getQueryParams();
 
 	const tonality = queryParameters.tonality ?? 'regular';
-	const color = queryParameters.color ?? 'base-bg-1';
+	const color = queryParameters.color ?? 'neutral-bg-lvl-1';
 	content.className = getClassName(tonality, color);
 
 	if (selectTonalities.length > 0) {

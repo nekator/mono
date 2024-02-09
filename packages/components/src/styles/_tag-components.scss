@@ -6,8 +6,8 @@
 $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 %set-adaptive-strong-tag {
-	--db-current-icon-color: #{colors.$db-current-bg-1-color};
-	--db-current-color: #{colors.$db-current-bg-1-color};
+	--db-current-icon-color: #{colors.$db-current-bg-lvl-1-color};
+	--db-current-color: #{colors.$db-current-bg-lvl-1-color};
 	--db-current-bg-color: #{colors.$db-current-contrast-high-color};
 	// border should be same color like background
 	--db-current-border-color: #{colors.$db-current-contrast-high-color};
@@ -16,7 +16,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 }
 
 @mixin get-tag-colors() {
-	background-color: colors.$db-current-bg-2-color;
+	background-color: colors.$db-current-bg-lvl-1-color;
 
 	&[data-emphasis="strong"] {
 		@extend %set-adaptive-strong-tag;
@@ -24,7 +24,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			@extend %db-#{$name}-bg-2;
+			@extend %db-#{$name}-bg-lvl-1;
 
 			&[data-emphasis="strong"] {
 				// border should be same color like background
@@ -46,14 +46,14 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 }
 
 %set-interactive-weak {
-	background-color: colors.$db-current-bg-2-color;
+	background-color: colors.$db-current-bg-lvl-1-color;
 
 	&:hover {
-		background-color: colors.$db-current-bg-2-hover-color;
+		background-color: colors.$db-current-bg-lvl-1-hover-color;
 	}
 
 	&:active {
-		background-color: colors.$db-current-bg-2-pressed-color;
+		background-color: colors.$db-current-bg-lvl-1-pressed-color;
 	}
 }
 
@@ -83,36 +83,35 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 	&:not([data-emphasis]),
 	&[data-emphasis="weak"] {
-		// buttons and links should have bg-2
+		// buttons and links should have bg-lvl-2
 		@include get-interactive-selectors() {
 			@extend %set-interactive-weak;
 		}
 
-		// checkbox should have bg-3 (checked)
+		// checkbox should have bg-lvl-3 (checked)
 		label:has(input[type="checkbox"]:checked) {
-			background-color: colors.$db-current-bg-3-color;
+			background-color: colors.$db-current-bg-lvl-3-color;
 
 			&:hover {
-				background-color: colors.$db-current-bg-3-hover-color;
+				background-color: colors.$db-current-bg-lvl-3-hover-color;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-3-pressed-color;
+				background-color: colors.$db-current-bg-lvl-3-pressed-color;
 			}
 		}
 
-		// radio should have bg-3 (checked) without hover/pressed
+		// radio should have bg-lvl-3 (checked) without hover/pressed
 		label:has(input[type="radio"]:checked) {
 			&,
 			&:hover,
 			&:active {
-				background-color: colors.$db-current-bg-3-color;
+				background-color: colors.$db-current-bg-lvl-3-color;
 			}
 		}
 	}
 
 	&[data-emphasis="strong"] {
-
 		@include get-interactive-selectors() {
 			@extend %set-interactive-strong;
 		}

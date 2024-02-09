@@ -28,7 +28,7 @@ const router = useRouter();
 const route = useRoute();
 
 const tonality = ref(TONALITY.REGULAR);
-const color = ref(COLOR.BASE_BG_1);
+const color = ref(COLOR.NEUTRAL_BG_LEVEL_1);
 const page = ref();
 const fullscreen = ref();
 

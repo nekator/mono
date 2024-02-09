@@ -1,101 +1,13 @@
 @mixin get-color-scheme-light {
-	--db-base-bg: var(--db-base-14);
-	--db-base-bg-hover: var(--db-base-13);
-	--db-base-bg-pressed: var(--db-base-12);
-	--db-base-bg-weak: var(--db-base-13);
-	--db-base-bg-weak-hover: var(--db-base-12);
-	--db-base-bg-weak-pressed: var(--db-base-11);
-	--db-base-bg-strong: var(--db-base-12);
-	--db-base-bg-strong-hover: var(--db-base-11);
-	--db-base-bg-strong-pressed: var(--db-base-10);
-	--db-base-bg-transparent-full: color-mix(
-		in srgb,
-		transparent 100%,
-		var(--db-base-6)
-	);
-	--db-base-bg-transparent-semi: color-mix(
-		in srgb,
-		transparent 92%,
-		var(--db-base-6)
-	);
-	--db-base-bg-transparent-hover: color-mix(
-		in srgb,
-		transparent 84%,
-		var(--db-base-6)
-	);
-	--db-base-bg-transparent-pressed: color-mix(
-		in srgb,
-		transparent 76%,
-		var(--db-base-6)
-	);
-	--db-base-on-bg: var(--db-base-3);
-	--db-base-on-bg-hover: var(--db-base-4);
-	--db-base-on-bg-pressed: var(--db-base-5);
-	--db-base-on-bg-weak: var(--db-base-5);
-	--db-base-on-bg-weak-hover: var(--db-base-6);
-	--db-base-on-bg-weak-pressed: var(--db-base-7);
-	--db-base-contrast-high: var(--db-base-6);
-	--db-base-contrast-high-hover: var(--db-base-5);
-	--db-base-contrast-high-pressed: var(--db-base-4);
-	--db-base-contrast-low: var(--db-base-7);
-	--db-base-contrast-low-hover: var(--db-base-6);
-	--db-base-contrast-low-pressed: var(--db-base-5);
-	--db-base-border: var(--db-base-10);
-	--db-brand-on-enabled: #fff;
-	--db-brand-origin-enabled: #ec0016;
-	--db-brand-origin-hover: #c00010;
-	--db-brand-origin-pressed: #930009;
-	--db-brand-bg: var(--db-brand-14);
-	--db-brand-bg-hover: var(--db-brand-13);
-	--db-brand-bg-pressed: var(--db-brand-12);
-	--db-brand-bg-weak: var(--db-brand-13);
-	--db-brand-bg-weak-hover: var(--db-brand-12);
-	--db-brand-bg-weak-pressed: var(--db-brand-11);
-	--db-brand-bg-strong: var(--db-brand-12);
-	--db-brand-bg-strong-hover: var(--db-brand-11);
-	--db-brand-bg-strong-pressed: var(--db-brand-10);
-	--db-brand-bg-transparent-full: color-mix(
-		in srgb,
-		transparent 100%,
-		var(--db-brand-6)
-	);
-	--db-brand-bg-transparent-semi: color-mix(
-		in srgb,
-		transparent 92%,
-		var(--db-brand-6)
-	);
-	--db-brand-bg-transparent-hover: color-mix(
-		in srgb,
-		transparent 84%,
-		var(--db-brand-6)
-	);
-	--db-brand-bg-transparent-pressed: color-mix(
-		in srgb,
-		transparent 76%,
-		var(--db-brand-6)
-	);
-	--db-brand-on-bg: var(--db-brand-3);
-	--db-brand-on-bg-hover: var(--db-brand-4);
-	--db-brand-on-bg-pressed: var(--db-brand-5);
-	--db-brand-on-bg-weak: var(--db-brand-5);
-	--db-brand-on-bg-weak-hover: var(--db-brand-6);
-	--db-brand-on-bg-weak-pressed: var(--db-brand-7);
-	--db-brand-contrast-high: var(--db-brand-6);
-	--db-brand-contrast-high-hover: var(--db-brand-5);
-	--db-brand-contrast-high-pressed: var(--db-brand-4);
-	--db-brand-contrast-low: var(--db-brand-7);
-	--db-brand-contrast-low-hover: var(--db-brand-6);
-	--db-brand-contrast-low-pressed: var(--db-brand-5);
-	--db-brand-border: var(--db-brand-10);
-	--db-neutral-bg: var(--db-neutral-14);
-	--db-neutral-bg-hover: var(--db-neutral-13);
-	--db-neutral-bg-pressed: var(--db-neutral-12);
-	--db-neutral-bg-weak: var(--db-neutral-13);
-	--db-neutral-bg-weak-hover: var(--db-neutral-12);
-	--db-neutral-bg-weak-pressed: var(--db-neutral-11);
-	--db-neutral-bg-strong: var(--db-neutral-12);
-	--db-neutral-bg-strong-hover: var(--db-neutral-11);
-	--db-neutral-bg-strong-pressed: var(--db-neutral-10);
+	--db-neutral-bg-lvl-1: var(--db-neutral-14);
+	--db-neutral-bg-lvl-1-hover: var(--db-neutral-13);
+	--db-neutral-bg-lvl-1-pressed: var(--db-neutral-12);
+	--db-neutral-bg-lvl-2: var(--db-neutral-13);
+	--db-neutral-bg-lvl-2-hover: var(--db-neutral-12);
+	--db-neutral-bg-lvl-2-pressed: var(--db-neutral-11);
+	--db-neutral-bg-lvl-3: var(--db-neutral-12);
+	--db-neutral-bg-lvl-3-hover: var(--db-neutral-11);
+	--db-neutral-bg-lvl-3-pressed: var(--db-neutral-10);
 	--db-neutral-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -129,15 +41,61 @@
 	--db-neutral-contrast-low-hover: var(--db-neutral-6);
 	--db-neutral-contrast-low-pressed: var(--db-neutral-5);
 	--db-neutral-border: var(--db-neutral-10);
-	--db-informational-bg: var(--db-informational-14);
-	--db-informational-bg-hover: var(--db-informational-13);
-	--db-informational-bg-pressed: var(--db-informational-12);
-	--db-informational-bg-weak: var(--db-informational-13);
-	--db-informational-bg-weak-hover: var(--db-informational-12);
-	--db-informational-bg-weak-pressed: var(--db-informational-11);
-	--db-informational-bg-strong: var(--db-informational-12);
-	--db-informational-bg-strong-hover: var(--db-informational-11);
-	--db-informational-bg-strong-pressed: var(--db-informational-10);
+	--db-brand-on-enabled: #fff;
+	--db-brand-origin-enabled: #ec0016;
+	--db-brand-origin-hover: #c00010;
+	--db-brand-origin-pressed: #930009;
+	--db-brand-bg-lvl-1: var(--db-brand-14);
+	--db-brand-bg-lvl-1-hover: var(--db-brand-13);
+	--db-brand-bg-lvl-1-pressed: var(--db-brand-12);
+	--db-brand-bg-lvl-2: var(--db-brand-13);
+	--db-brand-bg-lvl-2-hover: var(--db-brand-12);
+	--db-brand-bg-lvl-2-pressed: var(--db-brand-11);
+	--db-brand-bg-lvl-3: var(--db-brand-12);
+	--db-brand-bg-lvl-3-hover: var(--db-brand-11);
+	--db-brand-bg-lvl-3-pressed: var(--db-brand-10);
+	--db-brand-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-brand-6)
+	);
+	--db-brand-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 92%,
+		var(--db-brand-6)
+	);
+	--db-brand-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-brand-6)
+	);
+	--db-brand-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-brand-6)
+	);
+	--db-brand-on-bg: var(--db-brand-3);
+	--db-brand-on-bg-hover: var(--db-brand-4);
+	--db-brand-on-bg-pressed: var(--db-brand-5);
+	--db-brand-on-bg-weak: var(--db-brand-5);
+	--db-brand-on-bg-weak-hover: var(--db-brand-6);
+	--db-brand-on-bg-weak-pressed: var(--db-brand-7);
+	--db-brand-contrast-high: var(--db-brand-6);
+	--db-brand-contrast-high-hover: var(--db-brand-5);
+	--db-brand-contrast-high-pressed: var(--db-brand-4);
+	--db-brand-contrast-low: var(--db-brand-7);
+	--db-brand-contrast-low-hover: var(--db-brand-6);
+	--db-brand-contrast-low-pressed: var(--db-brand-5);
+	--db-brand-border: var(--db-brand-10);
+	--db-informational-bg-lvl-1: var(--db-informational-14);
+	--db-informational-bg-lvl-1-hover: var(--db-informational-13);
+	--db-informational-bg-lvl-1-pressed: var(--db-informational-12);
+	--db-informational-bg-lvl-2: var(--db-informational-13);
+	--db-informational-bg-lvl-2-hover: var(--db-informational-12);
+	--db-informational-bg-lvl-2-pressed: var(--db-informational-11);
+	--db-informational-bg-lvl-3: var(--db-informational-12);
+	--db-informational-bg-lvl-3-hover: var(--db-informational-11);
+	--db-informational-bg-lvl-3-pressed: var(--db-informational-10);
 	--db-informational-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -171,15 +129,15 @@
 	--db-informational-contrast-low-hover: var(--db-informational-6);
 	--db-informational-contrast-low-pressed: var(--db-informational-5);
 	--db-informational-border: var(--db-informational-10);
-	--db-warning-bg: var(--db-warning-14);
-	--db-warning-bg-hover: var(--db-warning-13);
-	--db-warning-bg-pressed: var(--db-warning-12);
-	--db-warning-bg-weak: var(--db-warning-13);
-	--db-warning-bg-weak-hover: var(--db-warning-12);
-	--db-warning-bg-weak-pressed: var(--db-warning-11);
-	--db-warning-bg-strong: var(--db-warning-12);
-	--db-warning-bg-strong-hover: var(--db-warning-11);
-	--db-warning-bg-strong-pressed: var(--db-warning-10);
+	--db-warning-bg-lvl-1: var(--db-warning-14);
+	--db-warning-bg-lvl-1-hover: var(--db-warning-13);
+	--db-warning-bg-lvl-1-pressed: var(--db-warning-12);
+	--db-warning-bg-lvl-2: var(--db-warning-13);
+	--db-warning-bg-lvl-2-hover: var(--db-warning-12);
+	--db-warning-bg-lvl-2-pressed: var(--db-warning-11);
+	--db-warning-bg-lvl-3: var(--db-warning-12);
+	--db-warning-bg-lvl-3-hover: var(--db-warning-11);
+	--db-warning-bg-lvl-3-pressed: var(--db-warning-10);
 	--db-warning-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -213,15 +171,15 @@
 	--db-warning-contrast-low-hover: var(--db-warning-6);
 	--db-warning-contrast-low-pressed: var(--db-warning-5);
 	--db-warning-border: var(--db-warning-10);
-	--db-successful-bg: var(--db-successful-14);
-	--db-successful-bg-hover: var(--db-successful-13);
-	--db-successful-bg-pressed: var(--db-successful-12);
-	--db-successful-bg-weak: var(--db-successful-13);
-	--db-successful-bg-weak-hover: var(--db-successful-12);
-	--db-successful-bg-weak-pressed: var(--db-successful-11);
-	--db-successful-bg-strong: var(--db-successful-12);
-	--db-successful-bg-strong-hover: var(--db-successful-11);
-	--db-successful-bg-strong-pressed: var(--db-successful-10);
+	--db-successful-bg-lvl-1: var(--db-successful-14);
+	--db-successful-bg-lvl-1-hover: var(--db-successful-13);
+	--db-successful-bg-lvl-1-pressed: var(--db-successful-12);
+	--db-successful-bg-lvl-2: var(--db-successful-13);
+	--db-successful-bg-lvl-2-hover: var(--db-successful-12);
+	--db-successful-bg-lvl-2-pressed: var(--db-successful-11);
+	--db-successful-bg-lvl-3: var(--db-successful-12);
+	--db-successful-bg-lvl-3-hover: var(--db-successful-11);
+	--db-successful-bg-lvl-3-pressed: var(--db-successful-10);
 	--db-successful-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -255,15 +213,15 @@
 	--db-successful-contrast-low-hover: var(--db-successful-6);
 	--db-successful-contrast-low-pressed: var(--db-successful-5);
 	--db-successful-border: var(--db-successful-10);
-	--db-critical-bg: var(--db-critical-14);
-	--db-critical-bg-hover: var(--db-critical-13);
-	--db-critical-bg-pressed: var(--db-critical-12);
-	--db-critical-bg-weak: var(--db-critical-13);
-	--db-critical-bg-weak-hover: var(--db-critical-12);
-	--db-critical-bg-weak-pressed: var(--db-critical-11);
-	--db-critical-bg-strong: var(--db-critical-12);
-	--db-critical-bg-strong-hover: var(--db-critical-11);
-	--db-critical-bg-strong-pressed: var(--db-critical-10);
+	--db-critical-bg-lvl-1: var(--db-critical-14);
+	--db-critical-bg-lvl-1-hover: var(--db-critical-13);
+	--db-critical-bg-lvl-1-pressed: var(--db-critical-12);
+	--db-critical-bg-lvl-2: var(--db-critical-13);
+	--db-critical-bg-lvl-2-hover: var(--db-critical-12);
+	--db-critical-bg-lvl-2-pressed: var(--db-critical-11);
+	--db-critical-bg-lvl-3: var(--db-critical-12);
+	--db-critical-bg-lvl-3-hover: var(--db-critical-11);
+	--db-critical-bg-lvl-3-pressed: var(--db-critical-10);
 	--db-critical-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -306,103 +264,15 @@
 }
 
 @mixin get-color-scheme-dark {
-	--db-base-bg: var(--db-base-3);
-	--db-base-bg-hover: var(--db-base-4);
-	--db-base-bg-pressed: var(--db-base-5);
-	--db-base-bg-weak: var(--db-base-2);
-	--db-base-bg-weak-hover: var(--db-base-3);
-	--db-base-bg-weak-pressed: var(--db-base-4);
-	--db-base-bg-strong: var(--db-base-1);
-	--db-base-bg-strong-hover: var(--db-base-2);
-	--db-base-bg-strong-pressed: var(--db-base-3);
-	--db-base-bg-transparent-full: color-mix(
-		in srgb,
-		transparent 100%,
-		var(--db-base-9)
-	);
-	--db-base-bg-transparent-semi: color-mix(
-		in srgb,
-		transparent 84%,
-		var(--db-base-9)
-	);
-	--db-base-bg-transparent-hover: color-mix(
-		in srgb,
-		transparent 76%,
-		var(--db-base-9)
-	);
-	--db-base-bg-transparent-pressed: color-mix(
-		in srgb,
-		transparent 68%,
-		var(--db-base-9)
-	);
-	--db-base-on-bg: var(--db-base-12);
-	--db-base-on-bg-hover: var(--db-base-11);
-	--db-base-on-bg-pressed: var(--db-base-10);
-	--db-base-on-bg-weak: var(--db-base-10);
-	--db-base-on-bg-weak-hover: var(--db-base-9);
-	--db-base-on-bg-weak-pressed: var(--db-base-8);
-	--db-base-contrast-high: var(--db-base-9);
-	--db-base-contrast-high-hover: var(--db-base-8);
-	--db-base-contrast-high-pressed: var(--db-base-7);
-	--db-base-contrast-low: var(--db-base-8);
-	--db-base-contrast-low-hover: var(--db-base-7);
-	--db-base-contrast-low-pressed: var(--db-base-6);
-	--db-base-border: var(--db-base-6);
-	--db-brand-on-enabled: #fff;
-	--db-brand-origin-enabled: #ec0016;
-	--db-brand-origin-hover: #ff2730;
-	--db-brand-origin-pressed: #ff7072;
-	--db-brand-bg: var(--db-brand-3);
-	--db-brand-bg-hover: var(--db-brand-4);
-	--db-brand-bg-pressed: var(--db-brand-5);
-	--db-brand-bg-weak: var(--db-brand-2);
-	--db-brand-bg-weak-hover: var(--db-brand-3);
-	--db-brand-bg-weak-pressed: var(--db-brand-4);
-	--db-brand-bg-strong: var(--db-brand-1);
-	--db-brand-bg-strong-hover: var(--db-brand-2);
-	--db-brand-bg-strong-pressed: var(--db-brand-3);
-	--db-brand-bg-transparent-full: color-mix(
-		in srgb,
-		transparent 100%,
-		var(--db-brand-9)
-	);
-	--db-brand-bg-transparent-semi: color-mix(
-		in srgb,
-		transparent 84%,
-		var(--db-brand-9)
-	);
-	--db-brand-bg-transparent-hover: color-mix(
-		in srgb,
-		transparent 76%,
-		var(--db-brand-9)
-	);
-	--db-brand-bg-transparent-pressed: color-mix(
-		in srgb,
-		transparent 68%,
-		var(--db-brand-9)
-	);
-	--db-brand-on-bg: var(--db-brand-12);
-	--db-brand-on-bg-hover: var(--db-brand-11);
-	--db-brand-on-bg-pressed: var(--db-brand-10);
-	--db-brand-on-bg-weak: var(--db-brand-10);
-	--db-brand-on-bg-weak-hover: var(--db-brand-9);
-	--db-brand-on-bg-weak-pressed: var(--db-brand-8);
-	--db-brand-contrast-high: var(--db-brand-9);
-	--db-brand-contrast-high-hover: var(--db-brand-8);
-	--db-brand-contrast-high-pressed: var(--db-brand-7);
-	--db-brand-contrast-low: var(--db-brand-8);
-	--db-brand-contrast-low-hover: var(--db-brand-7);
-	--db-brand-contrast-low-pressed: var(--db-brand-6);
-	--db-brand-border: var(--db-brand-6);
-	--db-neutral-bg: var(--db-neutral-3);
-	--db-neutral-bg-hover: var(--db-neutral-4);
-	--db-neutral-bg-pressed: var(--db-neutral-5);
-	--db-neutral-bg-weak: var(--db-neutral-2);
-	--db-neutral-bg-weak-hover: var(--db-neutral-3);
-	--db-neutral-bg-weak-pressed: var(--db-neutral-4);
-	--db-neutral-bg-strong: var(--db-neutral-1);
-	--db-neutral-bg-strong-hover: var(--db-neutral-2);
-	--db-neutral-bg-strong-pressed: var(--db-neutral-3);
+	--db-neutral-bg-lvl-1: var(--db-neutral-3);
+	--db-neutral-bg-lvl-1-hover: var(--db-neutral-4);
+	--db-neutral-bg-lvl-1-pressed: var(--db-neutral-5);
+	--db-neutral-bg-lvl-2: var(--db-neutral-2);
+	--db-neutral-bg-lvl-2-hover: var(--db-neutral-3);
+	--db-neutral-bg-lvl-2-pressed: var(--db-neutral-4);
+	--db-neutral-bg-lvl-3: var(--db-neutral-1);
+	--db-neutral-bg-lvl-3-hover: var(--db-neutral-2);
+	--db-neutral-bg-lvl-3-pressed: var(--db-neutral-3);
 	--db-neutral-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -436,15 +306,61 @@
 	--db-neutral-contrast-low-hover: var(--db-neutral-7);
 	--db-neutral-contrast-low-pressed: var(--db-neutral-6);
 	--db-neutral-border: var(--db-neutral-6);
-	--db-informational-bg: var(--db-informational-3);
-	--db-informational-bg-hover: var(--db-informational-4);
-	--db-informational-bg-pressed: var(--db-informational-5);
-	--db-informational-bg-weak: var(--db-informational-2);
-	--db-informational-bg-weak-hover: var(--db-informational-3);
-	--db-informational-bg-weak-pressed: var(--db-informational-4);
-	--db-informational-bg-strong: var(--db-informational-1);
-	--db-informational-bg-strong-hover: var(--db-informational-2);
-	--db-informational-bg-strong-pressed: var(--db-informational-3);
+	--db-brand-on-enabled: #fff;
+	--db-brand-origin-enabled: #ec0016;
+	--db-brand-origin-hover: #ff2730;
+	--db-brand-origin-pressed: #ff7072;
+	--db-brand-bg-lvl-1: var(--db-brand-3);
+	--db-brand-bg-lvl-1-hover: var(--db-brand-4);
+	--db-brand-bg-lvl-1-pressed: var(--db-brand-5);
+	--db-brand-bg-lvl-2: var(--db-brand-2);
+	--db-brand-bg-lvl-2-hover: var(--db-brand-3);
+	--db-brand-bg-lvl-2-pressed: var(--db-brand-4);
+	--db-brand-bg-lvl-3: var(--db-brand-1);
+	--db-brand-bg-lvl-3-hover: var(--db-brand-2);
+	--db-brand-bg-lvl-3-pressed: var(--db-brand-3);
+	--db-brand-bg-transparent-full: color-mix(
+		in srgb,
+		transparent 100%,
+		var(--db-brand-9)
+	);
+	--db-brand-bg-transparent-semi: color-mix(
+		in srgb,
+		transparent 84%,
+		var(--db-brand-9)
+	);
+	--db-brand-bg-transparent-hover: color-mix(
+		in srgb,
+		transparent 76%,
+		var(--db-brand-9)
+	);
+	--db-brand-bg-transparent-pressed: color-mix(
+		in srgb,
+		transparent 68%,
+		var(--db-brand-9)
+	);
+	--db-brand-on-bg: var(--db-brand-12);
+	--db-brand-on-bg-hover: var(--db-brand-11);
+	--db-brand-on-bg-pressed: var(--db-brand-10);
+	--db-brand-on-bg-weak: var(--db-brand-10);
+	--db-brand-on-bg-weak-hover: var(--db-brand-9);
+	--db-brand-on-bg-weak-pressed: var(--db-brand-8);
+	--db-brand-contrast-high: var(--db-brand-9);
+	--db-brand-contrast-high-hover: var(--db-brand-8);
+	--db-brand-contrast-high-pressed: var(--db-brand-7);
+	--db-brand-contrast-low: var(--db-brand-8);
+	--db-brand-contrast-low-hover: var(--db-brand-7);
+	--db-brand-contrast-low-pressed: var(--db-brand-6);
+	--db-brand-border: var(--db-brand-6);
+	--db-informational-bg-lvl-1: var(--db-informational-3);
+	--db-informational-bg-lvl-1-hover: var(--db-informational-4);
+	--db-informational-bg-lvl-1-pressed: var(--db-informational-5);
+	--db-informational-bg-lvl-2: var(--db-informational-2);
+	--db-informational-bg-lvl-2-hover: var(--db-informational-3);
+	--db-informational-bg-lvl-2-pressed: var(--db-informational-4);
+	--db-informational-bg-lvl-3: var(--db-informational-1);
+	--db-informational-bg-lvl-3-hover: var(--db-informational-2);
+	--db-informational-bg-lvl-3-pressed: var(--db-informational-3);
 	--db-informational-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -478,15 +394,15 @@
 	--db-informational-contrast-low-hover: var(--db-informational-7);
 	--db-informational-contrast-low-pressed: var(--db-informational-6);
 	--db-informational-border: var(--db-informational-6);
-	--db-warning-bg: var(--db-warning-3);
-	--db-warning-bg-hover: var(--db-warning-4);
-	--db-warning-bg-pressed: var(--db-warning-5);
-	--db-warning-bg-weak: var(--db-warning-2);
-	--db-warning-bg-weak-hover: var(--db-warning-3);
-	--db-warning-bg-weak-pressed: var(--db-warning-4);
-	--db-warning-bg-strong: var(--db-warning-1);
-	--db-warning-bg-strong-hover: var(--db-warning-2);
-	--db-warning-bg-strong-pressed: var(--db-warning-3);
+	--db-warning-bg-lvl-1: var(--db-warning-3);
+	--db-warning-bg-lvl-1-hover: var(--db-warning-4);
+	--db-warning-bg-lvl-1-pressed: var(--db-warning-5);
+	--db-warning-bg-lvl-2: var(--db-warning-2);
+	--db-warning-bg-lvl-2-hover: var(--db-warning-3);
+	--db-warning-bg-lvl-2-pressed: var(--db-warning-4);
+	--db-warning-bg-lvl-3: var(--db-warning-1);
+	--db-warning-bg-lvl-3-hover: var(--db-warning-2);
+	--db-warning-bg-lvl-3-pressed: var(--db-warning-3);
 	--db-warning-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -520,15 +436,15 @@
 	--db-warning-contrast-low-hover: var(--db-warning-7);
 	--db-warning-contrast-low-pressed: var(--db-warning-6);
 	--db-warning-border: var(--db-warning-6);
-	--db-successful-bg: var(--db-successful-3);
-	--db-successful-bg-hover: var(--db-successful-4);
-	--db-successful-bg-pressed: var(--db-successful-5);
-	--db-successful-bg-weak: var(--db-successful-2);
-	--db-successful-bg-weak-hover: var(--db-successful-3);
-	--db-successful-bg-weak-pressed: var(--db-successful-4);
-	--db-successful-bg-strong: var(--db-successful-1);
-	--db-successful-bg-strong-hover: var(--db-successful-2);
-	--db-successful-bg-strong-pressed: var(--db-successful-3);
+	--db-successful-bg-lvl-1: var(--db-successful-3);
+	--db-successful-bg-lvl-1-hover: var(--db-successful-4);
+	--db-successful-bg-lvl-1-pressed: var(--db-successful-5);
+	--db-successful-bg-lvl-2: var(--db-successful-2);
+	--db-successful-bg-lvl-2-hover: var(--db-successful-3);
+	--db-successful-bg-lvl-2-pressed: var(--db-successful-4);
+	--db-successful-bg-lvl-3: var(--db-successful-1);
+	--db-successful-bg-lvl-3-hover: var(--db-successful-2);
+	--db-successful-bg-lvl-3-pressed: var(--db-successful-3);
 	--db-successful-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,
@@ -562,15 +478,15 @@
 	--db-successful-contrast-low-hover: var(--db-successful-7);
 	--db-successful-contrast-low-pressed: var(--db-successful-6);
 	--db-successful-border: var(--db-successful-6);
-	--db-critical-bg: var(--db-critical-3);
-	--db-critical-bg-hover: var(--db-critical-4);
-	--db-critical-bg-pressed: var(--db-critical-5);
-	--db-critical-bg-weak: var(--db-critical-2);
-	--db-critical-bg-weak-hover: var(--db-critical-3);
-	--db-critical-bg-weak-pressed: var(--db-critical-4);
-	--db-critical-bg-strong: var(--db-critical-1);
-	--db-critical-bg-strong-hover: var(--db-critical-2);
-	--db-critical-bg-strong-pressed: var(--db-critical-3);
+	--db-critical-bg-lvl-1: var(--db-critical-3);
+	--db-critical-bg-lvl-1-hover: var(--db-critical-4);
+	--db-critical-bg-lvl-1-pressed: var(--db-critical-5);
+	--db-critical-bg-lvl-2: var(--db-critical-2);
+	--db-critical-bg-lvl-2-hover: var(--db-critical-3);
+	--db-critical-bg-lvl-2-pressed: var(--db-critical-4);
+	--db-critical-bg-lvl-3: var(--db-critical-1);
+	--db-critical-bg-lvl-3-hover: var(--db-critical-2);
+	--db-critical-bg-lvl-3-pressed: var(--db-critical-3);
 	--db-critical-bg-transparent-full: color-mix(
 		in srgb,
 		transparent 100%,

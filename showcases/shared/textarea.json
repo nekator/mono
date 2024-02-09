@@ -80,6 +80,14 @@
 				}
 			},
 			{
+				"name": "Neutral",
+				"props": {
+					"label": "Label",
+					"variant": "neutral",
+					"message": "Neutral Message"
+				}
+			},
+			{
 				"name": "Critical",
 				"props": {
 					"label": "Label",

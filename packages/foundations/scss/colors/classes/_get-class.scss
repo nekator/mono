@@ -1,20 +1,20 @@
 @mixin init($variant) {
 	.db-#{$variant}-bg {
-		@extend %db-#{$variant}-bg-1;
+		@extend %db-#{$variant}-bg-lvl-1;
 
 		[data-bg-weight="1"],
-		&-1 {
-			@extend %db-#{$variant}-bg-1;
+		&-lvl-1 {
+			@extend %db-#{$variant}-bg-lvl-1;
 		}
 
 		[data-bg-weight="2"],
-		&-2 {
-			@extend %db-#{$variant}-bg-2;
+		&-lvl-2 {
+			@extend %db-#{$variant}-bg-lvl-2;
 		}
 
 		[data-bg-weight="3"],
-		&-3 {
-			@extend %db-#{$variant}-bg-3;
+		&-lvl-3 {
+			@extend %db-#{$variant}-bg-lvl-3;
 		}
 
 		&-transparent-full {

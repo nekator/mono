@@ -46,19 +46,21 @@ const Example = () => {
 				<div
 					className="tonality-example-page-functional"
 					data-tonality="functional">
-					<DBCard className="db-neutral-bg-2" spacing="small">
+					<DBCard className="db-neutral-bg-lvl-2" spacing="small">
 						We are functional
 					</DBCard>
-					<DBCard className="db-informational-bg-2" spacing="small">
+					<DBCard
+						className="db-informational-bg-lvl-2"
+						spacing="small">
 						even that we have
 					</DBCard>
-					<DBCard className="db-successful-bg-2" spacing="small">
+					<DBCard className="db-successful-bg-lvl-2" spacing="small">
 						a color
 					</DBCard>
-					<DBCard className="db-warning-bg-2" spacing="small">
+					<DBCard className="db-warning-bg-lvl-2" spacing="small">
 						the user shouldn't
 					</DBCard>
-					<DBCard className="db-critical-bg-2" spacing="small">
+					<DBCard className="db-critical-bg-lvl-2" spacing="small">
 						focus us
 					</DBCard>
 				</div>

@@ -179,6 +179,25 @@
 				}
 			},
 			{
+				"name": "Neutral",
+				"style": {
+					"width": "300px"
+				},
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label",
+					"variant": "neutral",
+					"message": "Neutral Message"
+				}
+			},
+			{
 				"name": "Critical",
 				"style": {
 					"width": "300px"

@@ -12,9 +12,9 @@
 }
 
 @mixin bg-types() {
-	&-1,
-	&-2,
-	&-3,
+	&-lvl-1,
+	&-lvl-2,
+	&-lvl-3,
 	&-transparent-full,
 	&-transparent-semi {
 		@content;
@@ -23,8 +23,8 @@
 
 @each $variant in variables.$variants {
 	%db-#{$variant}-component {
-		--db-current-icon-color: var(--db-#{$variant}-bg-1);
-		--db-current-color: var(--db-#{$variant}-bg-1);
+		--db-current-icon-color: var(--db-#{$variant}-bg-lvl-1);
+		--db-current-color: var(--db-#{$variant}-bg-lvl-1);
 		--db-current-bg-color: var(--db-#{$variant}-contrast-high);
 		@extend %set-current-colors;
 
@@ -64,21 +64,27 @@
 		--db-current-color-pressed: var(--db-#{$variant}-on-bg-pressed);
 
 		/* used for backgrounds */
-		--db-current-bg-1-color: var(--db-#{$variant}-bg-1);
-		--db-current-bg-2-color: var(--db-#{$variant}-bg-2);
-		--db-current-bg-3-color: var(--db-#{$variant}-bg-3);
+		--db-current-bg-lvl-1-color: var(--db-#{$variant}-bg-lvl-1);
+		--db-current-bg-lvl-2-color: var(--db-#{$variant}-bg-lvl-2);
+		--db-current-bg-lvl-3-color: var(--db-#{$variant}-bg-lvl-3);
 
 		/* used for icons and borders */
 		--db-current-contrast-low-color: var(--db-#{$variant}-contrast-low);
 		--db-current-border-color: var(--db-#{$variant}-border);
 
 		/* used for adaptive tags (interactive) */
-		--db-current-bg-1-hover-color: var(--db-#{$variant}-bg-1-hover);
-		--db-current-bg-1-pressed-color: var(--db-#{$variant}-bg-1-pressed);
-		--db-current-bg-2-hover-color: var(--db-#{$variant}-bg-2-hover);
-		--db-current-bg-2-pressed-color: var(--db-#{$variant}-bg-2-pressed);
-		--db-current-bg-3-hover-color: var(--db-#{$variant}-bg-3-hover);
-		--db-current-bg-3-pressed-color: var(--db-#{$variant}-bg-3-pressed);
+		--db-current-bg-lvl-1-hover-color: var(--db-#{$variant}-bg-lvl-1-hover);
+		--db-current-bg-lvl-1-pressed-color: var(
+			--db-#{$variant}-bg-lvl-1-pressed
+		);
+		--db-current-bg-lvl-2-hover-color: var(--db-#{$variant}-bg-lvl-2-hover);
+		--db-current-bg-lvl-2-pressed-color: var(
+			--db-#{$variant}-bg-lvl-2-pressed
+		);
+		--db-current-bg-lvl-3-hover-color: var(--db-#{$variant}-bg-lvl-3-hover);
+		--db-current-bg-lvl-3-pressed-color: var(
+			--db-#{$variant}-bg-lvl-3-pressed
+		);
 		/* used for adaptive tags (strong & interactive) */
 		--db-current-contrast-high-color: var(--db-#{$variant}-contrast-high);
 		--db-current-contrast-high-hover-color: var(
@@ -115,16 +121,16 @@
 
 		// 2. overwrite current-bg-color based on type
 
-		&-1 {
-			--db-current-bg-color: var(--db-current-bg-1-color);
+		&-lvl-1 {
+			--db-current-bg-color: var(--db-current-bg-lvl-1-color);
 		}
 
-		&-2 {
-			--db-current-bg-color: var(--db-current-bg-2-color);
+		&-lvl-2 {
+			--db-current-bg-color: var(--db-current-bg-lvl-2-color);
 		}
 
-		&-3 {
-			--db-current-bg-color: var(--db-current-bg-3-color);
+		&-lvl-3 {
+			--db-current-bg-color: var(--db-current-bg-lvl-3-color);
 		}
 
 		&-transparent-full {

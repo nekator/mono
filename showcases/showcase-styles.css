@@ -102,7 +102,7 @@
 	display: flex;
 	gap: var(--db-spacing-fixed-sm);
 	padding: var(--db-spacing-fixed-xs) var(--db-spacing-fixed-sm);
-	background-color: var(--db-base-bg-2);
+	background-color: var(--db-base-bg-lvl-2);
 }
 
 .badge-inline-container .db-badge {
