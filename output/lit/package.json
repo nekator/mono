@@ -1,0 +1,32 @@
+{
+  "name": "@db-ui/lit-components",
+  "version": "0.0.0",
+  "description": "Lit components for @db-ui/components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/db-ui/mono.git"
+  },
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "npm-run-all tsc",
+    "mv:dist": "cpr dist ../../build-outputs/lit-components/dist -o",
+    "mv:package.json": "cpr package.json ../../build-outputs/lit-components/package.json -o",
+    "mv:readme": "cpr README.md ../../build-outputs/lit-components/README.md -o",
+    "postbuild": "npm-run-all -p mv:*",
+    "tsc": "tsc -p . --sourceMap false"
+  },
+  "dependencies": {
+    "lit": "^3.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "sideEffects": false
+}

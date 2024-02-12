@@ -1,0 +1,23 @@
+{
+  "name": "lit-showcase",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "copy:assets": "cpr ../../packages/foundations/assets ./public/assets  -o",
+    "copy:colors": "cpr ../../packages/foundations/build/css/colors/classes/all.css ./public/styles/colors/classes/all.css  -o",
+    "copy:styles": "cpr ../../packages/components/build/styles/db-ui-42.css ./public/styles/db-ui-42.css  -o",
+    "dev": "vite --open",
+    "prebuild": "npm-run-all -p copy:*",
+    "predev": "npm-run-all -p copy:*",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@db-ui/lit-components": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
+}

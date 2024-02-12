@@ -56,8 +56,8 @@ export const getMessageIcon = (
 	return messageIcon
 		? messageIcon
 		: !variant || variant === 'adaptive'
-		  ? 'none'
-		  : undefined;
+			? 'none'
+			: undefined;
 };
 
 export const filterPassingProps = (
@@ -79,10 +79,26 @@ export const filterPassingProps = (
 			return obj;
 		}, {});
 
+/**
+ * Laod styles for web components
+ */
+export const getGlobalStyleSheets = () =>
+	Array.from(document.styleSheets)
+		.filter((styleSheet) => styleSheet.href?.includes('db'))
+		.map((styleSheet) => {
+			const sheet = new CSSStyleSheet();
+			const css = Array.from(styleSheet.cssRules)
+				.map((rule) => rule.cssText)
+				.join(' ');
+			sheet.replaceSync(css);
+			return sheet;
+		});
+
 export default {
 	filterPassingProps,
 	getMessageIcon,
 	cls,
 	addAttributeToChildren,
-	uuid
+	uuid,
+	getGlobalStyleSheets
 };

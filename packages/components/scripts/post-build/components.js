@@ -4,6 +4,7 @@
  * overwrites?:{
  * 	global?:{from:string,to:string}[],
  * 	angular?:{from:string,to:string}[],
+ * 	lit?:{from:string,to:string}[],
  * 	react?:{from:string,to:string}[],
  * 	vue?:{from:string,to:string}[],
  * 	webComponents?:{from:string,to:string}[]
@@ -93,7 +94,21 @@ const getComponents = () => [
 	{
 		name: 'drawer',
 		overwrites: {
-			webComponents: [{ from: '__prev.find', to: '!!__prev.find' }]
+			webComponents: [{ from: '__prev.find', to: '!!__prev.find' }],
+			lit: [
+				{
+					from: /if \(dialogContainerRef/g,
+					to: 'if (this.dialogContainerRef'
+				},
+				{
+					from: /dialogContainerRef\./g,
+					to: 'this.dialogContainerRef.'
+				},
+				{
+					from: 'ref!: HTMLElement;',
+					to: 'ref!: HTMLDialogElement;'
+				}
+			]
 		},
 		config: {
 			react: {
@@ -237,7 +252,15 @@ const getComponents = () => [
 		name: 'tab-bar'
 	},
 	{
-		name: 'tab'
+		name: 'tab',
+		overwrites: {
+			lit: [
+				{
+					from: /formRef\?\./g,
+					to: 'this.formRef?.'
+				}
+			]
+		}
 	},
 	{
 		name: 'button'

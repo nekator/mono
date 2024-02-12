@@ -15,6 +15,10 @@ const runReplacements = (replacements, component, framework, file) => {
 		replacements = [...replacements, ...component.overwrites.global];
 	}
 
+	if (framework === 'lit') {
+		console.log(replacements);
+	}
+
 	for (const replacement of replacements) {
 		const option = {
 			files: file,
