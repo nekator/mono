@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[99128],{39210:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/badge/docs/Angular",function(){return u(16467)}])}},function(n){n.O(0,[64996,16467,92888,49774,40179],function(){return n(n.s=39210)}),_N_E=n.O()}]);
