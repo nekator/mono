@@ -134,7 +134,12 @@ export default function DBSelect(props: DBSelectProps) {
 												optgroupOption: DBSelectOptionType
 											) => (
 												<option
-													key={'option-' + uuid()}
+													key={
+														'option-' +
+														optgroupOption.id
+															? optgroupOption.id
+															: uuid()
+													}
 													value={optgroupOption.value}
 													disabled={
 														optgroupOption.disabled
