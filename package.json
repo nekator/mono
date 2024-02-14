@@ -93,7 +93,7 @@
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
     "http-server": "14.1.1",
-    "husky": "9.0.10",
+    "husky": "9.0.11",
     "inquirer": "^9.2.14",
     "jscpd": "^3.5.10",
     "lint-staged": "^15.2.2",
