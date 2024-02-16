@@ -42,7 +42,7 @@
     "eslint-config-next": "14.1.0",
     "iframe-resizer": "^4.3.9",
     "open-cli": "^8.0.0",
-    "sass": "^1.70.0",
+    "sass": "^1.71.0",
     "typescript": "5.3.3"
   }
 }
