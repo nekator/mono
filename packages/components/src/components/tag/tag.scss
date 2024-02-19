@@ -116,6 +116,7 @@
 	a {
 		@extend %default-transition;
 		display: inline-flex;
+		align-items: center;
 		text-decoration: none;
 
 		&::after {
