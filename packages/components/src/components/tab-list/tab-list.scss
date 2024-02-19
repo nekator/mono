@@ -89,7 +89,7 @@
 		}
 
 		&::before {
-			@extend %adaptive-neutral-component;
+			@extend %db-neutral-bg-transparent-semi;
 			content: "";
 			border-radius: variables.$db-border-radius-md;
 			block-size: variables.$db-border-height-lg;
@@ -146,7 +146,7 @@
 		}
 
 		&::before {
-			@extend %adaptive-neutral-component;
+			@extend %db-neutral-bg-transparent-semi;
 			content: "";
 			border-radius: variables.$db-border-radius-md;
 			inline-size: variables.$db-border-height-lg;

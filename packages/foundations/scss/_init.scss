@@ -2,10 +2,9 @@
 @use "colors";
 @use "animation";
 @use "tonality";
+@use "focus";
 
 :root {
-	--db-focus-outline-color: #{colors.$db-informational-contrast-high};
-
 	@extend %db-component-variables-md;
 	@extend %db-neutral-bg-lvl-1;
 

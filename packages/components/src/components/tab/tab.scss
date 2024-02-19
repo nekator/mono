@@ -1,17 +1,26 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/focus";
 @use "../../styles/component";
 
 .db-tab {
 	@extend %default-interactive-component;
 	@extend %transparent-border;
-	@include colors.bg-transparent-interactive();
 
 	display: inline-flex;
 	padding: variables.$db-spacing-fixed-xs variables.$db-spacing-fixed-sm;
 	align-items: center;
 	white-space: nowrap;
 	position: relative;
+	background-color: colors.$db-current-bg-transparent-full;
+
+	&:hover {
+		background-color: colors.$db-current-bg-transparent-hover;
+	}
+
+	&:active {
+		background-color: colors.$db-current-bg-transparent-pressed;
+	}
 
 	input {
 		&[type="radio"] {

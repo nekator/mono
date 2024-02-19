@@ -42,7 +42,7 @@
 			{
 				"name": "auto",
 				"style": { "width": "300px" },
-				"className": "db-bg-informational",
+				"className": "db-informational-bg-lvl-2",
 				"props": {
 					"width": "auto"
 				}
@@ -50,7 +50,7 @@
 			{
 				"name": "full - alignment: start",
 				"style": { "width": "300px" },
-				"className": "db-bg-informational",
+				"className": "db-informational-bg-lvl-2",
 				"props": {
 					"width": "full"
 				}
@@ -58,7 +58,7 @@
 			{
 				"name": "full - alignment: center",
 				"style": { "width": "300px" },
-				"className": "db-bg-informational",
+				"className": "db-informational-bg-lvl-2",
 				"props": {
 					"width": "full",
 					"alignment": "center"

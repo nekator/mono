@@ -1,0 +1,26 @@
+@use "variables";
+@use "colors";
+
+%focus-placeholder {
+	outline: #{variables.$db-border-height-md} solid #{colors.$db-informational-contrast-high};
+	outline-offset: calc(
+		#{variables.$db-border-height-lg} + #{variables.$db-border-height-md}
+	);
+
+	// TODO: The fallback currently only includes the same CSS Custom Property, which doesn't make any sense
+	transition:
+		outline
+			var(
+				--db-transition-duration-ultra-fast,
+				#{variables.$db-transition-duration-ultra-fast}
+			),
+		box-shadow
+			var(
+				--db-transition-duration-ultra-fast,
+				#{variables.$db-transition-duration-ultra-fast}
+			);
+
+	&:not([type="radio"]) {
+		border-radius: variables.$db-border-radius-md;
+	}
+}
