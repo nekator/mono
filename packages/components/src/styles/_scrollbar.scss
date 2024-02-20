@@ -11,6 +11,7 @@ $scrollbar-width: helpers.to-rem(8);
 		@extend %default-transition;
 		z-index: 3;
 		inline-size: $scrollbar-width;
+		block-size: $scrollbar-width;
 		background-color: colors.$db-neutral-bg-lvl-1;
 		border-start-end-radius: variables.$db-border-radius-md;
 	}
