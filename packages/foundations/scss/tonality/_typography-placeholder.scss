@@ -32,12 +32,12 @@
 		)};
 }
 
-@mixin get-icons($tonality, $device, $size) {
-	--db-base-icon-weight-#{$size}: #{string.unquote(
-			"var(--db-base-icon-weight-#{$tonality}-#{$device}-#{$size})"
+@mixin get-icons($tonality, $device, $size, $type: "body") {
+	--db-base-#{$type}-icon-weight-#{$size}: #{string.unquote(
+			"var(--db-base-icon-weight-#{$tonality}-#{$device}-#{$type}-#{$size})"
 		)};
-	--db-base-icon-font-size-#{$size}: #{string.unquote(
-			"var(--db-base-icon-font-size-#{$tonality}-#{$device}-#{$size})"
+	--db-base-#{$type}-icon-font-size-#{$size}: #{string.unquote(
+			"var(--db-base-icon-font-size-#{$tonality}-#{$device}-#{$type}-#{$size})"
 		)};
 }
 
@@ -45,17 +45,20 @@
 	%db-typography-headline-#{$tonality} {
 		@each $size in variables.$headline {
 			@include get-font($tonality, "mobile", $size, "headline");
+			@include get-icons($tonality, "mobile", $size, "headline");
 		}
 
 		@include screen-sizes.screen() {
 			@each $size in variables.$headline {
 				@include get-font($tonality, "tablet", $size, "headline");
+				@include get-icons($tonality, "tablet", $size, "headline");
 			}
 		}
 
 		@include screen-sizes.screen("md") {
 			@each $size in variables.$headline {
 				@include get-font($tonality, "desktop", $size, "headline");
+				@include get-icons($tonality, "desktop", $size, "headline");
 			}
 		}
 	}

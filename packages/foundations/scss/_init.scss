@@ -186,36 +186,72 @@ h1 {
 	line-height: var(--db-type-headline-line-height-xl);
 	font-size: var(--db-type-headline-font-size-xl);
 	margin-block: variables.$db-spacing-fixed-xl;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-xl);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-xl);
+	}
 }
 
 h2 {
 	line-height: var(--db-type-headline-line-height-lg);
 	font-size: var(--db-type-headline-font-size-lg);
 	margin-block: variables.$db-spacing-fixed-lg;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-lg);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-lg);
+	}
 }
 
 h3 {
 	line-height: var(--db-type-headline-line-height-md);
 	font-size: var(--db-type-headline-font-size-md);
 	margin-block: variables.$db-spacing-fixed-md;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-md);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-md);
+	}
 }
 
 h4 {
 	line-height: var(--db-type-headline-line-height-sm);
 	font-size: var(--db-type-headline-font-size-sm);
 	margin-block: variables.$db-spacing-fixed-sm;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-sm);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-sm);
+	}
 }
 
 h5 {
 	line-height: var(--db-type-headline-line-height-xs);
 	font-size: var(--db-type-headline-font-size-xs);
 	margin-block: variables.$db-spacing-fixed-xs;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-xs);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-xs);
+	}
 }
 
 h6 {
 	line-height: var(--db-type-headline-line-height-2xs);
 	font-size: var(--db-type-headline-font-size-2xs);
 	margin-block: variables.$db-spacing-fixed-2xs;
+
+	&::before,
+	&::after {
+		--db-icon-font-size: var(--db-base-headline-icon-font-size-2xs);
+		--db-icon-font-weight: var(--db-base-headline-icon-weight-2xs);
+	}
 }
 
 p {
