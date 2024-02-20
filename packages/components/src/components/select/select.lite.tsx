@@ -169,7 +169,6 @@ export default function DBSelect(props: DBSelectProps) {
 			<Show when={props.message}>
 				<DBInfotext
 					size="small"
-					variant={props.variant}
 					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}

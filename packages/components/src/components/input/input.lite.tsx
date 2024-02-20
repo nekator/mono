@@ -150,7 +150,6 @@ export default function DBInput(props: DBInputProps) {
 			<Show when={props.message}>
 				<DBInfotext
 					size="small"
-					variant={props.variant}
 					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}

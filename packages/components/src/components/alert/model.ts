@@ -1,5 +1,5 @@
 import {
-	CardProps,
+	ElevationProps,
 	ClickEventProps,
 	ClickEventState,
 	SemanticProps,
@@ -41,7 +41,7 @@ export type DBAlertProps = DBAlertDefaultProps &
 	GlobalProps &
 	ClickEventProps<HTMLButtonElement> &
 	IconProps &
-	CardProps &
+	ElevationProps &
 	SemanticProps &
 	InnerCloseButtonProps;
 

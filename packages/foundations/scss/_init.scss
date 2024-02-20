@@ -270,3 +270,20 @@ p {
 }
 
 @include densities(density.$densities);
+
+// interactive elevation
+
+[data-interactive="elevation"] {
+	cursor: pointer;
+	transition: box-shadow variables.$db-transition-duration-fast
+		variables.$db-transition-functional-timing;
+	box-shadow: variables.$db-elevation-md;
+
+	&:hover:not(:disabled) {
+		box-shadow: variables.$db-elevation-lg;
+	}
+
+	&:active:not(:disabled) {
+		box-shadow: variables.$db-elevation-sm;
+	}
+}

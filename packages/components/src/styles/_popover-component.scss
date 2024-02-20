@@ -155,10 +155,9 @@
 	@extend %default-card;
 	@extend %popover-placement;
 
-	@extend %component-border;
-
 	position: absolute;
 	background-color: colors.$db-neutral-bg-lvl-1;
+	box-shadow: variables.$db-elevation-md;
 	visibility: hidden;
 	z-index: 1;
 	// i HTML tags browsers default styling reset

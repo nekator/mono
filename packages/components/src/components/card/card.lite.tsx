@@ -1,4 +1,5 @@
 import {
+	Fragment,
 	onMount,
 	Show,
 	useMetadata,
@@ -35,24 +36,17 @@ export default function DBCard(props: DBCardProps) {
 		<div
 			ref={ref}
 			id={props.id}
-			class={cls('db-card', props.className)}
-			data-variant={props.variant}
-			data-elevation={props.elevation}
+			className={cls('db-card', props.className)}
+			data-behaviour={props.behaviour}
+			data-elevation-level={props.elevationLevel}
 			data-spacing={props.spacing}
+			role={props.behaviour === 'interactive' ? 'button' : undefined}
+			tabIndex={props.behaviour === 'interactive' ? 0 : undefined}
 			onClick={(event: ClickEvent<HTMLElement>) =>
 				state.handleClick(event)
 			}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
-			</Show>
-			<Show when={props.imgSrc}>
-				<img
-					class="db-card-image"
-					src={props.imgSrc}
-					alt={props.imgAlt}
-					height={props.imgHeight}
-					width={props.imgWidth}
-				/>
 			</Show>
 			{props.children}
 		</div>

@@ -28,9 +28,9 @@ $default-disabled: 0.4;
 }
 
 %default-card {
+	@extend %component-border;
 	border-radius: var(
 		--default-card-border-radius,
 		#{variables.$db-border-radius-lg}
 	);
-	box-shadow: variables.$db-elevation-md;
 }

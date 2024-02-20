@@ -4,12 +4,9 @@
 
 .db-card {
 	@extend %default-card;
-	@extend %component-border;
 
 	display: flex;
 	flex-direction: column;
-
-	background-color: colors.$db-current-bg-color;
 
 	& > a {
 		text-decoration: none;
@@ -19,25 +16,55 @@
 		padding: variables.$db-spacing-fixed-lg;
 	}
 
-	&[data-spacing="small"] {
+	&[data-spacing="small"],
+	&:not([data-spacing]) {
 		padding: variables.$db-spacing-fixed-md;
 	}
 
-	&[data-variant="interactive"] {
-		// TODO use transition duration as variable
-		transition: box-shadow 0.15s variables.$db-transition-functional-timing;
+	&[data-spacing="none"] {
+		padding: 0;
+	}
 
-		&:hover:not([data-elevation="none"]) {
-			cursor: pointer;
-			box-shadow: variables.$db-elevation-lg;
-		}
+	&[data-elevation-level="1"],
+	&:not([data-elevation-level]) {
+		background-color: colors.$db-current-bg-lvl-1-color;
 
-		&:active:not([data-elevation="none"]) {
-			box-shadow: variables.$db-elevation-sm;
+		&[data-behaviour="interactive"]:not(:disabled) {
+			&:hover {
+				background-color: colors.$db-current-bg-lvl-1-hover-color;
+			}
+
+			&:active {
+				background-color: colors.$db-current-bg-lvl-1-pressed-color;
+			}
 		}
 	}
 
-	&[data-elevation="none"] {
-		box-shadow: none;
+	&[data-elevation-level="2"] {
+		background-color: colors.$db-current-bg-lvl-2-color;
+
+		&[data-behaviour="interactive"]:not(:disabled) {
+			&:hover {
+				background-color: colors.$db-current-bg-lvl-2-hover-color;
+			}
+
+			&:active {
+				background-color: colors.$db-current-bg-lvl-2-pressed-color;
+			}
+		}
+	}
+
+	&[data-elevation-level="3"] {
+		background-color: colors.$db-current-bg-lvl-3-color;
+
+		&[data-behaviour="interactive"]:not(:disabled) {
+			&:hover {
+				background-color: colors.$db-current-bg-lvl-3-hover-color;
+			}
+
+			&:active {
+				background-color: colors.$db-current-bg-lvl-3-pressed-color;
+			}
+		}
 	}
 }

@@ -357,7 +357,7 @@ export type LinkProps = {
 	text?: string;
 };
 
-export type CardProps = {
+export type ElevationProps = {
 	/**
 	 * The elevation attribute changes the style of the card (box-shadow).
 	 */

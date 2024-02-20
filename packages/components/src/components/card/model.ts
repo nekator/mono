@@ -1,5 +1,4 @@
 import {
-	CardProps,
 	ClickEventProps,
 	ClickEventState,
 	GlobalProps,
@@ -10,16 +9,16 @@ import {
 
 export type DBCardDefaultProps = {
 	/**
-	 * Makes the card interactive (clickable).
+	 * Makes the card interactive
 	 */
-	variant?: 'default' | 'interactive';
+	behaviour?: 'default' | 'interactive';
+
+	elevationLevel?: '1' | '2' | '3';
 };
 
 export type DBCardProps = DBCardDefaultProps &
 	GlobalProps &
 	ClickEventProps<HTMLElement> &
-	ImageProps &
-	CardProps &
 	SpacingProps;
 
 export type DBCardDefaultState = {};

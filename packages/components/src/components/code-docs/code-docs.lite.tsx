@@ -42,7 +42,10 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 	// jscpd:ignore-end
 
 	return (
-		<DBCard ref={ref} className={cls('db-code-docs', props.className)}>
+		<DBCard
+			spacing="none"
+			ref={ref}
+			className={cls('db-code-docs', props.className)}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
 			</Show>

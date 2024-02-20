@@ -10,7 +10,8 @@ import { DBCard } from "../../../../../output/vue/vue3/src";
 			#example="{ exampleIndex, variantIndex, exampleName, exampleProps }"
 		>
 			<DBCard
-				:variant="exampleProps.variant"
+				:behaviour="exampleProps.behaviour"
+				:elevationLevel="exampleProps.elevationLevel"
 				:spacing="exampleProps.spacing"
 			>
 				<strong>{{ exampleName }}</strong>

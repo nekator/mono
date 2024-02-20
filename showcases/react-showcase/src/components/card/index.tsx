@@ -4,8 +4,16 @@ import defaultComponentVariants from '../../../../shared/card.json';
 import { getVariants } from '../data';
 import type { DBCardProps } from '../../../../../output/react/src/components/card/model';
 
-const getCard = ({ variant, children, spacing }: DBCardProps) => (
-	<DBCard variant={variant} spacing={spacing}>
+const getCard = ({
+	behaviour,
+	children,
+	spacing,
+	elevationLevel
+}: DBCardProps) => (
+	<DBCard
+		behaviour={behaviour}
+		spacing={spacing}
+		elevationLevel={elevationLevel}>
 		<strong>{children}</strong>
 	</DBCard>
 );

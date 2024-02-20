@@ -316,4 +316,11 @@ div[class^="ch-"] {
 	section {
 		padding: variables.$db-spacing-fixed-md;
 	}
+
+	.color-cards {
+		grid-column: span 2 / span 2;
+		display: grid;
+		gap: variables.$db-spacing-fixed-md;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
 }
