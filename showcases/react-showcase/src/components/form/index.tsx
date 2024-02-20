@@ -195,7 +195,7 @@ const FormComponent = () => {
 						</DBButton>
 						<DBButton
 							type="button"
-							variant="primary"
+							variant="brand"
 							onClick={(clickEvent) => {
 								// eslint-disable-next-line no-alert
 								alert(

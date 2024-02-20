@@ -61,7 +61,7 @@ const Base64 = () => {
 			<DBLink
 				href={url}
 				target="_blank"
-				variant="primary"
+				variant="brand"
 				content="external">
 				Open IFrame
 			</DBLink>

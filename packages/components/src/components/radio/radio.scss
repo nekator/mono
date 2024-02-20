@@ -15,7 +15,7 @@
 			border-width: calc(#{form-components.$font-size-height} * 0.3);
 
 			// The radio element still has the default background for the dot on :hover when in checked state
-			&:enabled:hover {
+			&:not(:disabled):hover {
 				background-color: colors.$db-current-bg-color;
 			}
 		}

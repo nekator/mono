@@ -1,6 +1,7 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/colors";
 @use "@db-ui/foundations/build/scss/focus";
+@use "@db-ui/foundations/build/scss/icons";
 @use "../../styles/component";
 
 .db-tab {
@@ -39,7 +40,7 @@
 		}
 	}
 
-	&.is-icon-text-replace[data-icon]::before {
+	&[data-no-text="true"][data-icon]::before {
 		margin-inline-end: 0;
 	}
 
@@ -57,6 +58,10 @@
 
 	&[data-icon-after]::after {
 		margin-inline-start: variables.$db-spacing-fixed-sm;
+	}
+
+	&[data-no-text="true"] {
+		@include icons.is-icon-text-replace();
 	}
 
 	&[data-width="full"] {

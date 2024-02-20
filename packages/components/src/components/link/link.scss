@@ -72,7 +72,7 @@
 	}
 
 	// We couldn't extend any existing SCSS placeholders, as this is a special construct
-	&[data-variant="primary"] {
+	&[data-variant="brand"] {
 		--db-current-color: #{colors.$db-brand-contrast-high};
 		--db-current-icon-color: #{colors.$db-brand-contrast-high};
 		color: colors.$db-current-color;

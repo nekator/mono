@@ -15,7 +15,7 @@ enum buttonVariants {
 	'text' = 'text'
 }
 export const buttonVariantsList = Object.values(buttonVariants);
-export type ButtonVariantsType = 'outlined' | 'primary' | 'solid' | 'text';
+export type ButtonVariantsType = 'outlined' | 'brand' | 'filed' | 'ghost';
 
 export type DBButtonDefaultProps = {
 	/**

@@ -172,7 +172,7 @@ const reset = () => {
 					<DBButton type="button" @click="reset()">
 						Reset Form
 					</DBButton>
-					<DBButton type="button" variant="primary" @click="logAll()">
+					<DBButton type="button" variant="brand" @click="logAll()">
 						Hi from Showcase!
 					</DBButton>
 				</fieldset>

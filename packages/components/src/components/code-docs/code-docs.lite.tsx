@@ -51,7 +51,7 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 				<summary
 					class="db-button code-button"
 					data-size="small"
-					data-variant="primary">
+					data-variant="brand">
 					{state.getShowButtonLabel()}
 				</summary>
 				<div class="db-ui-functional code">

@@ -43,12 +43,11 @@ export default function DBTab(props: DBTabProps) {
 		<label
 			htmlFor={state._id}
 			role="tab"
-			className={cls('db-tab', props.className, {
-				'is-icon-text-replace': props.noText
-			})}
+			className={cls('db-tab', props.className)}
 			data-icon={props.icon}
 			data-icon-after={props.iconAfter}
 			data-width={props.width}
+			data-no-text={props.noText}
 			data-alignment={props.alignment}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

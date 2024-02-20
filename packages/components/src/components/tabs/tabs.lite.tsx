@@ -183,7 +183,7 @@ export default function DBTabs(props: DBTabsProps) {
 			<Show when={state.showScrollLeft}>
 				<DBButton
 					className="tabs-scroll-left"
-					variant="text"
+					variant="ghost"
 					icon="chevron_left"
 					noText
 					onClick={() => state.scroll(true)}>
@@ -220,7 +220,7 @@ export default function DBTabs(props: DBTabsProps) {
 			<Show when={state.showScrollRight}>
 				<DBButton
 					className="tabs-scroll-right"
-					variant="text"
+					variant="ghost"
 					icon="chevron_right"
 					noText
 					onClick={() => state.scroll()}>

@@ -68,7 +68,7 @@
 				border-inline-end: none;
 			}
 
-			&:has(textarea:enabled:hover) {
+			&:has(textarea:not(:disabled):hover) {
 				&::after {
 					background-color: colors.$db-current-bg-transparent-hover;
 				}

@@ -63,7 +63,7 @@ export default function DBTag(props: DBTagProps) {
 					icon="close"
 					size="small"
 					noText
-					variant="text"
+					variant="ghost"
 					title={state.getRemoveButtonText()}>
 					{state.getRemoveButtonText()}
 				</DBButton>
