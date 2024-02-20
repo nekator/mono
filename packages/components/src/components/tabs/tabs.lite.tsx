@@ -113,6 +113,10 @@ export default function DBTabs(props: DBTabsProps) {
 									'data-alignment',
 									props.alignment || 'start'
 								);
+								tab.setAttribute(
+									'data-orientation',
+									props.orientation || 'horizontal'
+								);
 
 								const input = tab.getElementsByTagName('input');
 								if (input.length > 0) {
