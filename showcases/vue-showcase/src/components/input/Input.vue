@@ -12,7 +12,6 @@ import { DBInput } from "../../../../../output/vue/vue3/src";
 			<DBInput
 				:variant="exampleProps.variant"
 				:label="exampleProps.label"
-				:labelVariant="exampleProps.labelVariant"
 				:message="exampleProps.message"
 				:placeholder="exampleName"
 				:minLength="exampleProps.minLength"

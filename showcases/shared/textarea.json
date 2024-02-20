@@ -38,7 +38,7 @@
 				"name": "Floating Label",
 				"props": {
 					"label": "Label",
-					"labelVariant": "floating",
+					"variant": "floating",
 					"value": "Floating Label"
 				}
 			},
@@ -46,7 +46,7 @@
 				"name": "Hidden Label",
 				"props": {
 					"label": "Label",
-					"labelVariant": "hidden"
+					"variant": "hidden"
 				}
 			}
 		]
@@ -65,58 +65,6 @@
 				"props": {
 					"label": "Label",
 					"message": "Helper Message"
-				}
-			}
-		]
-	},
-	{
-		"name": "Semantic",
-		"examples": [
-			{
-				"name": "(Default) Adaptive",
-				"props": {
-					"label": "Label",
-					"message": "Helper Message"
-				}
-			},
-			{
-				"name": "Neutral",
-				"props": {
-					"label": "Label",
-					"variant": "neutral",
-					"message": "Neutral Message"
-				}
-			},
-			{
-				"name": "Critical",
-				"props": {
-					"label": "Label",
-					"variant": "critical",
-					"message": "Critical Message"
-				}
-			},
-			{
-				"name": "Informational",
-				"props": {
-					"label": "Label",
-					"variant": "informational",
-					"message": "Informational Message"
-				}
-			},
-			{
-				"name": "Successful",
-				"props": {
-					"label": "Label",
-					"variant": "successful",
-					"message": "Successful Message"
-				}
-			},
-			{
-				"name": "Warning",
-				"props": {
-					"label": "Label",
-					"variant": "warning",
-					"message": "Warning Message"
 				}
 			}
 		]
@@ -177,7 +125,7 @@
 				"name": "(Default) Empty",
 				"props": {
 					"label": "Label",
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			},
 			{
@@ -185,7 +133,7 @@
 				"props": {
 					"label": "Label",
 					"value": "Filled",
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			},
 			{
@@ -194,7 +142,7 @@
 					"label": "Label",
 					"invalid": true,
 					"value": "Filled - Invalid",
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			},
 			{
@@ -203,7 +151,7 @@
 					"label": "Label",
 					"value": "Filled - Valid",
 					"invalid": false,
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			},
 			{
@@ -211,7 +159,7 @@
 				"props": {
 					"label": "Label",
 					"disabled": true,
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			},
 			{
@@ -220,7 +168,7 @@
 					"label": "Label",
 					"value": "Readonly - Filled",
 					"readOnly": true,
-					"labelVariant": "floating"
+					"variant": "floating"
 				}
 			}
 		]

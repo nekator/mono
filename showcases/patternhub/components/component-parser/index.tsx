@@ -355,7 +355,7 @@ const ComponentParser = ({ componentsString }: ComponentParserType) => {
 		);
 	}
 
-	return <DBInfotext variant="critical">Wrong format</DBInfotext>;
+	return <DBInfotext semantic="critical">Wrong format</DBInfotext>;
 };
 
 export default ComponentParser;

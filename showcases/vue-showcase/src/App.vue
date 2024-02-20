@@ -114,7 +114,7 @@ const sortedNavigation = getSortedNavigationItems(navigationItems);
 				<template v-slot:meta-navigation>
 					<DBSelect
 						label="Density"
-						labelVariant="floating"
+						variant="floating"
 						v-model:value="density"
 						@change="onChange($event)"
 					>
@@ -124,7 +124,7 @@ const sortedNavigation = getSortedNavigationItems(navigationItems);
 					</DBSelect>
 					<DBSelect
 						label="Color"
-						labelVariant="floating"
+						variant="floating"
 						v-model:value="color"
 						@change="onChange($event)"
 					>

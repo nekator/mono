@@ -48,18 +48,18 @@ export type GlobalState = {
 	defaultValues?: { [key: string]: string };
 };
 
-export type DefaultVariantType =
+export type SemanticType =
 	| 'adaptive'
 	| 'neutral'
 	| 'critical'
 	| 'informational'
 	| 'warning'
 	| 'successful';
-export type DefaultVariantProps = {
+export type SemanticProps = {
 	/**
-	 * The variant defines the default variants for most components.
+	 * The semantic defines the default variants for most components.
 	 */
-	variant?: DefaultVariantType;
+	semantic?: SemanticType;
 };
 
 export type IconProps = {
@@ -213,14 +213,14 @@ export type FormCheckProps = {
 	/**
 	 * Hide the label of a radio/checkbox.
 	 */
-	labelVariant?: 'hidden';
+	variant?: 'hidden';
 };
 
 export type FormMessageProps = {
 	/**
-	 * Change the variant of the label to float
+	 * Change the variant of the label to float or hidden
 	 */
-	labelVariant?: 'above' | 'floating' | 'hidden';
+	variant?: 'above' | 'floating' | 'hidden';
 	/**
 	 * Text that appears in the form control when it has no value set
 	 */

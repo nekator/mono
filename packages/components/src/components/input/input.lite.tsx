@@ -6,7 +6,7 @@ import {
 	useRef,
 	useStore
 } from '@builder.io/mitosis';
-import { cls, getMessageIcon, uuid } from '../../utils';
+import { cls, uuid } from '../../utils';
 import { DBInputProps, DBInputState } from './model';
 import {
 	DEFAULT_ID,
@@ -88,7 +88,6 @@ export default function DBInput(props: DBInputProps) {
 		<div
 			class={cls('db-input', props.className)}
 			data-variant={props.variant}
-			data-label-variant={props.labelVariant}
 			data-icon={props.icon}
 			data-icon-after={props.iconAfter}>
 			<Show when={state.stylePath}>
@@ -152,7 +151,7 @@ export default function DBInput(props: DBInputProps) {
 				<DBInfotext
 					size="small"
 					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}
+					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}
 				</DBInfotext>

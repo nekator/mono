@@ -64,7 +64,7 @@ $scrollbar-width: helpers.to-rem(8);
 		background-image: var(--db-textarea-scrollbar-button-increment);
 	}
 
-	&[data-label-variant="floating"] {
+	&[data-variant="floating"] {
 		&::-webkit-resizer {
 			background-color: colors.$db-current-bg-transparent-semi;
 		}

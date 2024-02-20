@@ -15,7 +15,7 @@ const log = (exampleName: string) => {
 			#example="{ exampleIndex, variantIndex, exampleName, exampleProps }"
 		>
 			<DBAlert
-				:variant="exampleProps.variant"
+				:semantic="exampleProps.semantic"
 				:headline="exampleProps.headline"
 				:link="exampleProps.link"
 				:icon="exampleProps.icon"

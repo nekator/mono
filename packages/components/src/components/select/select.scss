@@ -46,7 +46,7 @@ $has-before-padding: calc(
 		background-color: colors.$db-current-bg-color;
 	}
 
-	&[data-label-variant="hidden"] {
+	&[data-variant="hidden"] {
 		--db-label-visible-height: 0;
 		--db-label-visible-spacing: 1;
 	}

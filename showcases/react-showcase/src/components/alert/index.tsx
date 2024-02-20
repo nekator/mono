@@ -5,7 +5,7 @@ import { type DBAlertProps } from '../../../../../output/react/src/components/al
 import { getVariants } from '../data';
 
 const getAlert = ({
-	variant,
+	semantic,
 	icon,
 	headline,
 	link,
@@ -14,7 +14,7 @@ const getAlert = ({
 	behaviour
 }: DBAlertProps) => (
 	<DBAlert
-		variant={variant}
+		semantic={semantic}
 		icon={icon}
 		headline={headline}
 		link={link}

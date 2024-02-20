@@ -23,7 +23,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	}
 
 	@each $name in colors.$variant-colors {
-		&[data-variant="#{$name}"] {
+		&[data-semantic="#{$name}"] {
 			@extend %db-#{$name}-bg-lvl-1;
 
 			&[data-emphasis="strong"] {
@@ -72,7 +72,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 @mixin get-tag-colors-interactive() {
 	// overwrite current variables for semantic color
 	@each $name in colors.$variant-colors {
-		&[data-variant="#{$name}"] {
+		&[data-semantic="#{$name}"] {
 			@extend %db-#{$name}-variables;
 		}
 	}

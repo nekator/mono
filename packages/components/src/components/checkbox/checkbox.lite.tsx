@@ -95,7 +95,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 	return (
 		<label
 			data-size={props.size}
-			data-label-variant={props.labelVariant}
+			data-variant={props.variant}
 			className={cls('db-checkbox', props.className)}
 			htmlFor={state._id}>
 			<Show when={state.stylePath}>

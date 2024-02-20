@@ -51,7 +51,7 @@ const MetaNavigation = ({
 		<>
 			<DBSelect
 				label="Density"
-				labelVariant="floating"
+				variant="floating"
 				value={density}
 				onChange={(event) => {
 					setDensity(event?.target?.value);
@@ -64,7 +64,7 @@ const MetaNavigation = ({
 			</DBSelect>
 			<DBSelect
 				label="Color"
-				labelVariant="floating"
+				variant="floating"
 				value={color}
 				onChange={(event) => {
 					setColor(event?.target?.value);

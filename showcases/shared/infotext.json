@@ -20,7 +20,7 @@
 		]
 	},
 	{
-		"name": "Variant",
+		"name": "Semantic",
 		"examples": [
 			{
 				"name": "(Default) Adaptive",
@@ -29,31 +29,31 @@
 			{
 				"name": "Neutral",
 				"props": {
-					"variant": "neutral"
+					"semantic": "neutral"
 				}
 			},
 			{
 				"name": "Critical",
 				"props": {
-					"variant": "critical"
+					"semantic": "critical"
 				}
 			},
 			{
 				"name": "Informational",
 				"props": {
-					"variant": "informational"
+					"semantic": "informational"
 				}
 			},
 			{
 				"name": "Successful",
 				"props": {
-					"variant": "successful"
+					"semantic": "successful"
 				}
 			},
 			{
 				"name": "Warning",
 				"props": {
-					"variant": "warning"
+					"semantic": "warning"
 				}
 			}
 		]

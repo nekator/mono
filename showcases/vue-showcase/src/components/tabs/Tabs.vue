@@ -16,7 +16,7 @@ import {
 			#example="{ exampleIndex, variantIndex, exampleName, exampleProps }"
 		>
 			<div class="w-full">
-				<DBInfotext icon="none" size="small" variant="informational">
+				<DBInfotext icon="none" size="small" semantic="informational">
 					{{ exampleName }}:
 				</DBInfotext>
 				<DBTabs

@@ -1,14 +1,13 @@
 import {
 	For,
 	onMount,
-	onUpdate,
 	Show,
 	useMetadata,
 	useRef,
 	useStore
 } from '@builder.io/mitosis';
 import { DBSelectOptionType, DBSelectProps, DBSelectState } from './model';
-import { cls, getMessageIcon, uuid } from '../../utils';
+import { cls, uuid } from '../../utils';
 import {
 	DEFAULT_ID,
 	DEFAULT_LABEL,
@@ -90,7 +89,6 @@ export default function DBSelect(props: DBSelectProps) {
 		<div
 			class={cls('db-select', props.className)}
 			data-variant={props.variant}
-			data-label-variant={props.labelVariant}
 			data-icon={props.icon}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />
@@ -172,7 +170,7 @@ export default function DBSelect(props: DBSelectProps) {
 				<DBInfotext
 					size="small"
 					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}
+					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}
 				</DBInfotext>

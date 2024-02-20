@@ -11,7 +11,7 @@ const ColorOverview = () => {
 				className="color-schemes-container"
 				data-color-scheme={colorScheme}>
 				<p>This container changes based on the state.</p>
-				<DBTag variant="informational" emphasis="strong">
+				<DBTag semantic="informational" emphasis="strong">
 					{colorScheme}
 				</DBTag>
 				<DBButton

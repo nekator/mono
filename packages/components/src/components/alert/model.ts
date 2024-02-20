@@ -2,7 +2,7 @@ import {
 	CardProps,
 	ClickEventProps,
 	ClickEventState,
-	DefaultVariantProps,
+	SemanticProps,
 	GlobalProps,
 	GlobalState,
 	IconProps,
@@ -42,7 +42,7 @@ export type DBAlertProps = DBAlertDefaultProps &
 	ClickEventProps<HTMLButtonElement> &
 	IconProps &
 	CardProps &
-	DefaultVariantProps &
+	SemanticProps &
 	InnerCloseButtonProps;
 
 export interface DBAlertDefaultState {}

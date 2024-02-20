@@ -32,7 +32,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 			class={cls('db-infotext', props.className)}
 			title={props.title}
 			data-icon={props.icon}
-			data-variant={props.variant}
+			data-semantic={props.semantic}
 			data-size={props.size}>
 			<Show when={state.stylePath}>
 				<link rel="stylesheet" href={state.stylePath} />

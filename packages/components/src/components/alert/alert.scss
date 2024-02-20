@@ -110,7 +110,7 @@
 	}
 
 	@each $name in colors.$variant-colors {
-		&[data-variant="#{$name}"] {
+		&[data-semantic="#{$name}"] {
 			@extend %db-#{$name}-variables;
 
 			@include icons.variant-icons($name);

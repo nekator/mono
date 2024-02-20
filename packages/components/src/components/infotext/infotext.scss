@@ -19,8 +19,17 @@
 		@extend %db-overwrite-font-size-xs;
 	}
 
+	&[data-semantic="adaptive"],
+	&:not([data-semantic]) {
+		color: colors.$db-neutral-contrast-high;
+
+		&::before {
+			--db-current-icon-color: #{colors.$db-neutral-contrast-low};
+		}
+	}
+
 	@each $name, $colors in colors.$variant-colors {
-		&[data-variant="#{$name}"] {
+		&[data-semantic="#{$name}"] {
 			@include icons.variant-icons($name);
 			color: var(--db-#{$name}-contrast-high);
 

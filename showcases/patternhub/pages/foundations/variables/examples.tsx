@@ -37,7 +37,7 @@ const Example = () => {
 										spacing="small">
 										<DBInfotext
 											icon="none"
-											variant="informational">
+											semantic="informational">
 											{density}
 										</DBInfotext>
 										<div

@@ -11,7 +11,6 @@ import { DBInput, DBSelect } from "../../../../../output/vue/vue3/src";
 		>
 			<DBSelect
 				:label="exampleProps.label"
-				:labelVariant="exampleProps.labelVariant"
 				:placeholder="exampleName"
 				:variant="exampleProps.variant"
 				:options="exampleProps.options"

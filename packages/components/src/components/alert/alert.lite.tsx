@@ -40,7 +40,7 @@ export default function DBAlert(props: DBAlertProps) {
 			id={props.id}
 			class={cls('db-alert', props.className)}
 			aria-live={props.ariaLive}
-			data-variant={props.variant}
+			data-semantic={props.semantic}
 			data-type={props.type}
 			data-icon={props.icon}
 			data-elevation={props.elevation}>

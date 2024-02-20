@@ -11,7 +11,7 @@ import { DBInfotext } from "../../../../../output/vue/vue3/src";
 		>
 			<DBInfotext
 				:size="exampleProps.size"
-				:variant="exampleProps.variant"
+				:semantic="exampleProps.semantic"
 				:icon="exampleProps.icon"
 			>
 				{{ exampleName }}

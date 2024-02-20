@@ -16,7 +16,6 @@ import { DBTextarea } from "../../../../../output/vue/vue3/src";
 				:required="exampleProps.required"
 				:readOnly="exampleProps.readOnly"
 				:label="exampleProps.label"
-				:labelVariant="exampleProps.labelVariant"
 				:placeholder="exampleProps.placeholder || exampleName"
 				:rows="exampleProps.rows"
 				:value="exampleProps.value"

@@ -70,7 +70,7 @@
 		]
 	},
 	{
-		"name": "Variant",
+		"name": "Semantic",
 		"examples": [
 			{
 				"name": "(Default) Adaptive",
@@ -90,7 +90,7 @@
 				"style": { "width": "300px" },
 				"props": {
 					"type": "alert",
-					"variant": "neutral",
+					"semantic": "neutral",
 					"headline": "Headline",
 					"link": {
 						"href": "#",
@@ -103,7 +103,7 @@
 				"style": { "width": "300px" },
 				"props": {
 					"type": "alert",
-					"variant": "critical",
+					"semantic": "critical",
 					"headline": "Headline",
 					"link": {
 						"href": "#",
@@ -116,7 +116,7 @@
 				"style": { "width": "300px" },
 				"props": {
 					"type": "alert",
-					"variant": "informational",
+					"semantic": "informational",
 					"headline": "Headline",
 					"link": {
 						"href": "#",
@@ -129,7 +129,7 @@
 				"style": { "width": "300px" },
 				"props": {
 					"type": "alert",
-					"variant": "successful",
+					"semantic": "successful",
 					"headline": "Headline",
 					"link": {
 						"href": "#",
@@ -142,7 +142,7 @@
 				"style": { "width": "300px" },
 				"props": {
 					"type": "alert",
-					"variant": "warning",
+					"semantic": "warning",
 					"headline": "Headline",
 					"link": {
 						"href": "#",

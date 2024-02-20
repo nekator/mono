@@ -50,7 +50,7 @@
 			variables.$db-spacing-fixed-xs;
 	}
 
-	&[data-label-variant="floating"] {
+	&[data-variant="floating"] {
 		&:has(textarea:focus-within),
 		&:has(textarea:not(:placeholder-shown)) {
 			&::before {
