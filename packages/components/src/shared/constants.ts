@@ -7,15 +7,15 @@ export const DEFAULT_PLACEHOLDER_ID_SUFFIX: string = '-placeholder';
 export const DEFAULT_BACK: string = 'Back';
 
 export const DEFAULT_CLOSE_BUTTON: string = 'Close Button';
-export const TONALITY_CONST: string = 'tonality';
+export const DENSITY_CONST: string = 'density';
 export const COLOR_CONST: string = 'color';
 
-export enum TONALITY {
+export enum DENSITY {
 	'FUNCTIONAL' = 'functional',
 	'REGULAR' = 'regular',
 	'EXPRESSIVE' = 'expressive'
 }
-export const TONALITIES: TONALITY[] = Object.entries(TONALITY).map(
+export const DENSITIES: DENSITY[] = Object.entries(DENSITY).map(
 	([, value]) => value
 );
 

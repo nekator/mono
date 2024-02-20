@@ -6,14 +6,14 @@ import MetaNavigation from './meta-navigation';
 import Navigation from './navigation';
 
 const App = () => {
-	const [tonality, setTonality, color, setColor, pageName, fullscreen] =
+	const [density, setDensity, color, setColor, pageName, fullscreen] =
 		useQuery();
 
 	const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
 
 	if (pageName || fullscreen) {
 		return (
-			<div className={`db-ui-${tonality} db-${color}`}>
+			<div className={`db-density-${density} db-${color}`}>
 				<Outlet />
 			</div>
 		);
@@ -35,7 +35,7 @@ const App = () => {
 					slotMetaNavigation={
 						<MetaNavigation
 							onColorChange={setColor}
-							onTonalityChange={setTonality}
+							onDensityChange={setDensity}
 						/>
 					}
 					slotCallToAction={
@@ -60,7 +60,7 @@ const App = () => {
 					<Navigation />
 				</DBHeader>
 			}>
-			<div className={`db-ui-${tonality} db-${color}`}>
+			<div className={`db-density-${density} db-${color}`}>
 				<Outlet />
 			</div>
 		</DBPage>

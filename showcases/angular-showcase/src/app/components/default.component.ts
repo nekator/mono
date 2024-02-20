@@ -18,8 +18,8 @@ import type {
 import {
 	COLOR,
 	COLOR_CONST,
-	TONALITY,
-	TONALITY_CONST
+	DENSITY,
+	DENSITY_CONST
 } from '../../../../../packages/components/src/shared/constants';
 
 @Component({
@@ -34,7 +34,7 @@ export class DefaultComponent implements OnInit {
 	@Input() variants: DefaultComponentProps['variants'] = [];
 	@Input() exampleTemplate!: TemplateRef<any>;
 
-	tonality = TONALITY.REGULAR;
+	density = DENSITY.REGULAR;
 	color = COLOR.NEUTRAL_BG_LEVEL_1;
 	page?: string;
 
@@ -45,8 +45,8 @@ export class DefaultComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.route.queryParams.subscribe((parameters) => {
-			if (parameters[TONALITY_CONST]) {
-				this.tonality = parameters[TONALITY_CONST];
+			if (parameters[DENSITY_CONST]) {
+				this.density = parameters[DENSITY_CONST];
 			}
 
 			if (parameters['page']) {
@@ -78,8 +78,8 @@ export class DefaultComponent implements OnInit {
 			currentUrl += `&color=${this.color || COLOR.NEUTRAL_BG_LEVEL_1}`;
 		}
 
-		if (!currentUrl.includes('tonality=')) {
-			currentUrl += `&tonality=${this.tonality || TONALITY.REGULAR}`;
+		if (!currentUrl.includes('density=')) {
+			currentUrl += `&density=${this.density || DENSITY.REGULAR}`;
 		}
 
 		return `${currentUrl}&page=${variantName.toLowerCase()}`;

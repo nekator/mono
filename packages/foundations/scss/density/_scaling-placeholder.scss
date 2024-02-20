@@ -1,20 +1,20 @@
 @use "variables";
 @use "../screen-sizes";
 
-@function get-variable($key, $tonality, $size, $device: "") {
-	@return var(--db-#{$key}-#{$tonality}-#{$device}#{$size});
+@function get-variable($key, $density, $size, $device: "") {
+	@return var(--db-#{$key}-#{$density}-#{$device}#{$size});
 }
 
 /* stylelint-disable */
 // TODO: remove this after https://github.com/db-ui/mono/pull/1545
-@mixin get-temp-label-variables-tonality($tonality) {
+@mixin get-temp-label-variables-density($density) {
 	$label-scale: 0.65;
 	$focusOpacity: 1;
-	@if ($tonality== "functional") {
+	@if ($density== "functional") {
 		$label-scale: 1;
 		$focusOpacity: 0;
 	}
-	@if ($tonality== "expressive") {
+	@if ($density== "expressive") {
 		$label-scale: 0.55;
 		$focusOpacity: 1;
 	}
@@ -27,14 +27,14 @@
 }
 /* stylelint-enable */
 
-@each $tonality in variables.$tonalities {
-	%db-scaling-#{$tonality} {
-		@include get-temp-label-variables-tonality($tonality);
+@each $density in variables.$densities {
+	%db-scaling-#{$density} {
+		@include get-temp-label-variables-density($density);
 
 		@each $sizing in variables.$sizings {
 			--db-sizing-#{$sizing}: #{get-variable(
 					"sizing",
-					$tonality,
+					$density,
 					$sizing
 				)};
 		}
@@ -42,7 +42,7 @@
 		@each $fix in variables.$sizings {
 			--db-spacing-fixed-#{$fix}: #{get-variable(
 					"spacing-fixed",
-					$tonality,
+					$density,
 					$fix
 				)};
 		}
@@ -50,7 +50,7 @@
 		@each $res in variables.$sizings {
 			--db-spacing-responsive-#{$res}: #{get-variable(
 					"spacing-responsive",
-					$tonality,
+					$density,
 					$res,
 					"mobile-"
 				)};
@@ -60,7 +60,7 @@
 			@each $res in variables.$sizings {
 				--db-spacing-responsive-#{$res}: #{get-variable(
 						"spacing-responsive",
-						$tonality,
+						$density,
 						$res,
 						"tablet-"
 					)};
@@ -71,7 +71,7 @@
 			@each $res in variables.$sizings {
 				--db-spacing-responsive-#{$res}: #{get-variable(
 						"spacing-responsive",
-						$tonality,
+						$density,
 						$res,
 						"desktop-"
 					)};

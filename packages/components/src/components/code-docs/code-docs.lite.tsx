@@ -54,7 +54,7 @@ export default function DBCodeDocs(props: DBCodeDocsProps) {
 					data-variant="brand">
 					{state.getShowButtonLabel()}
 				</summary>
-				<div class="db-ui-functional code">
+				<div class="db-density-functional code">
 					<Slot name="code"></Slot>
 				</div>
 			</details>

@@ -10,10 +10,10 @@ import {
 import {
 	COLOR,
 	COLORS,
-	TONALITIES,
-	TONALITY,
+	DENSITIES,
+	DENSITY,
 	COLOR_CONST,
-	TONALITY_CONST
+	DENSITY_CONST
 } from "../../../packages/components/src/shared/constants";
 import {
 	getSortedNavigationItems,
@@ -27,7 +27,7 @@ import NavItemComponent from "./NavItemComponent.vue";
 const router = useRouter();
 const route = useRoute();
 
-const tonality = ref(TONALITY.REGULAR);
+const density = ref(DENSITY.REGULAR);
 const color = ref(COLOR.NEUTRAL_BG_LEVEL_1);
 const page = ref();
 const fullscreen = ref();
@@ -38,14 +38,16 @@ const toggleDrawer = (open: boolean) => {
 	drawerOpen.value = open;
 };
 
-const classNames = computed(() => `db-ui-${tonality.value} db-${color.value}`);
+const classNames = computed(
+	() => `db-density-${density.value} db-${color.value}`
+);
 
 const onChange = (event: any) => {
 	router.push({
 		path: route.path,
 		query: {
 			...route.query,
-			[TONALITY_CONST]: tonality.value,
+			[DENSITY_CONST]: density.value,
 			[COLOR_CONST]: color.value
 		}
 	});
@@ -57,8 +59,8 @@ watch(
 		if (query[COLOR_CONST] && query[COLOR_CONST] !== color.value) {
 			color.value = query[COLOR_CONST];
 		}
-		if (query[TONALITY_CONST] && query[TONALITY_CONST] !== tonality.value) {
-			tonality.value = query[TONALITY_CONST];
+		if (query[DENSITY_CONST] && query[DENSITY_CONST] !== density.value) {
+			density.value = query[DENSITY_CONST];
 		}
 		if (query.page) {
 			page.value = query.page;
@@ -111,12 +113,12 @@ const sortedNavigation = getSortedNavigationItems(navigationItems);
 				</template>
 				<template v-slot:meta-navigation>
 					<DBSelect
-						label="Tonality"
+						label="Density"
 						labelVariant="floating"
-						v-model:value="tonality"
+						v-model:value="density"
 						@change="onChange($event)"
 					>
-						<option v-for="ton of TONALITIES" :value="ton">
+						<option v-for="ton of DENSITIES" :value="ton">
 							{{ ton }}
 						</option>
 					</DBSelect>

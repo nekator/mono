@@ -26,11 +26,11 @@
 			<ng-container *dbMetaNavigation>
 				<db-select
 					labelVariant="floating"
-					label="Tonality"
-					[(ngModel)]="tonality"
+					label="Density"
+					[(ngModel)]="density"
 					(change)="onChange($event)"
 				>
-					@for (t of tonalities; track t) {
+					@for (t of densities; track t) {
 						<option>
 							{{ t }}
 						</option>

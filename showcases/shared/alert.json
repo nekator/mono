@@ -1,11 +1,11 @@
 [
 	{
-		"name": "Tonality",
+		"name": "Density",
 		"examples": [
 			{
 				"name": "functional",
 				"style": { "width": "300px" },
-				"className": "db-ui-functional",
+				"className": "db-density-functional",
 				"props": {
 					"headline": "Headline",
 					"link": {
@@ -17,7 +17,7 @@
 			{
 				"name": "regular (Default)",
 				"style": { "width": "300px" },
-				"className": "db-ui-regular",
+				"className": "db-density-regular",
 				"props": {
 					"headline": "Headline",
 					"link": {
@@ -29,7 +29,7 @@
 			{
 				"name": "expressive",
 				"style": { "width": "300px" },
-				"className": "db-ui-expressive",
+				"className": "db-density-expressive",
 				"props": {
 					"headline": "Headline",
 					"link": {

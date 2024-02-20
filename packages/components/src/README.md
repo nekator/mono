@@ -28,12 +28,12 @@ Main use-case to set/overwrite an icon inside a component. Example:
 }
 ```
 
-### Tonality/ Fonts
+### Density/ Fonts
 
 Main use-case to overwrite a default font-size/line-height. Example:
 
 ```scss
-@use "@db-ui/foundations/build/scss/tonality";
+@use "@db-ui/foundations/build/scss/density";
 
 .db-xxx {
 	label {

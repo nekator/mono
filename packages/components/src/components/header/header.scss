@@ -1,7 +1,7 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/screen-sizes";
 @use "@db-ui/foundations/build/scss/helpers";
-@use "@db-ui/foundations/build/scss/tonality";
+@use "@db-ui/foundations/build/scss/density";
 @use "@db-ui/foundations/build/scss/colors";
 @use "../../styles/component";
 
@@ -46,7 +46,7 @@
 
 .db-header-meta-navigation {
 	@extend %db-neutral-bg-transparent-semi;
-	@extend %db-ui-functional;
+	@extend %db-density-functional;
 	@include helpers.divider("top");
 	display: flex;
 	flex-direction: column;

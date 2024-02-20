@@ -1,7 +1,7 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/colors";
 @use "@db-ui/foundations/build/scss/screen-sizes";
-@use "@db-ui/foundations/build/scss/tonality";
+@use "@db-ui/foundations/build/scss/density";
 
 @forward "@db-ui/components/build/styles/db-ui-42-webpack";
 
@@ -78,7 +78,7 @@ iframe {
 
 /* TODO: Use real table css in future */
 table {
-	@extend %db-ui-functional;
+	@extend %db-density-functional;
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -173,9 +173,9 @@ div[class^="ch-"] {
 	}
 }
 
-// tonality examples
+// density examples
 
-.tonality-example-grid {
+.density-example-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: variables.$db-spacing-fixed-md;
@@ -185,18 +185,18 @@ div[class^="ch-"] {
 	}
 }
 
-.tonality-example-page {
+.density-example-page {
 	display: flex;
 	flex-direction: column;
 	gap: variables.$db-spacing-fixed-md;
 
-	.tonality-example-page-regular {
+	.density-example-page-regular {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: variables.$db-spacing-fixed-md;
 	}
 
-	.tonality-example-page-functional {
+	.density-example-page-functional {
 		display: grid;
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 		gap: variables.$db-spacing-fixed-md;

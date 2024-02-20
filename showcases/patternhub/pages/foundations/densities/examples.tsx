@@ -1,11 +1,11 @@
 import DefaultPage from '../../../components/default-page';
 import { DBButton, DBInput, DBCard } from '../../../components/src';
 
-const tonalities = ['functional', 'regular', 'expressive'];
+const densities = ['functional', 'regular', 'expressive'];
 const Example = () => {
 	return (
 		<DefaultPage>
-			<h1>Tonality Examples</h1>
+			<h1>Density Examples</h1>
 
 			<p>
 				Open "inspect" to see the different spacings & sizing applied to
@@ -14,14 +14,14 @@ const Example = () => {
 
 			<h2>Example side by side:</h2>
 
-			<div className="tonality-example-grid">
-				{tonalities.map((tonality) => (
-					<h3 key={`grid-headline-${tonality}`}>{tonality}</h3>
+			<div className="density-example-grid">
+				{densities.map((density) => (
+					<h3 key={`grid-headline-${density}`}>{density}</h3>
 				))}
-				{tonalities.map((tonality) => (
+				{densities.map((density) => (
 					<article
-						data-tonality={tonality}
-						key={`grid-card-${tonality}`}>
+						data-density={density}
+						key={`grid-card-${density}`}>
 						<DBCard spacing="small">
 							<h4>Login</h4>
 							<p>
@@ -40,12 +40,12 @@ const Example = () => {
 				))}
 			</div>
 
-			<h2>Example multiple tonalities working together:</h2>
+			<h2>Example multiple densities working together:</h2>
 
-			<div className="tonality-example-page">
+			<div className="density-example-page">
 				<div
-					className="tonality-example-page-functional"
-					data-tonality="functional">
+					className="density-example-page-functional"
+					data-density="functional">
 					<DBCard className="db-neutral-bg-lvl-2" spacing="small">
 						We are functional
 					</DBCard>
@@ -65,15 +65,15 @@ const Example = () => {
 					</DBCard>
 				</div>
 				<div
-					className="tonality-example-page-expressive"
-					data-tonality="expressive">
+					className="density-example-page-expressive"
+					data-density="expressive">
 					<DBCard spacing="medium">
 						I'm expressive the user should focus me first
 					</DBCard>
 				</div>
 				<div
-					className="tonality-example-page-regular"
-					data-tonality="regular">
+					className="density-example-page-regular"
+					data-density="regular">
 					<DBCard spacing="small">We</DBCard>
 					<DBCard spacing="small">are</DBCard>
 					<DBCard spacing="small">regular</DBCard>

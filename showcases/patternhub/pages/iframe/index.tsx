@@ -7,7 +7,7 @@ import { COLOR } from '../../components/src/shared/constants';
 const IframeComponent = () => {
 	const router = useRouter();
 
-	const tonality = router.query.tonality ?? 'regular';
+	const density = router.query.density ?? 'regular';
 	const color = router.query.color ?? COLOR.NEUTRAL_BG_LEVEL_1;
 
 	const componentsString: string = (router.query.components as string) ?? '';
@@ -16,7 +16,7 @@ const IframeComponent = () => {
 
 	return (
 		<div
-			className={`iframe-component-container db-ui-${tonality} db-${color}`}>
+			className={`iframe-component-container db-density-${density} db-${color}`}>
 			<ComponentParser componentsString={components} />
 		</div>
 	);
