@@ -114,7 +114,7 @@ const reset = () => {
 					<ul>
 						<li v-for="(tag, index) in array">
 							<DBTag
-								:variant="
+								:semantic="
 									index === 0 ? undefined : 'successful'
 								"
 								:emphasis="index === 2 ? 'strong' : 'weak'"

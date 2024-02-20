@@ -61,14 +61,14 @@ export const COLORS_SIMPLE: COLOR_SIMPLE[] = Object.entries(COLOR_SIMPLE).map(
 	([, value]) => value
 );
 
-export enum VARIANT {
+export enum SEMANTIC {
 	'CRITICAL' = 'critical',
 	'INFORMATIONAL' = 'informational',
 	'WARNING' = 'warning',
 	'SUCCESSFUL' = 'successful'
 }
 
-export const VARIANTS: VARIANT[] = Object.entries(VARIANT).map(
+export const SEMANTICS: SEMANTIC[] = Object.entries(SEMANTIC).map(
 	([, value]) => value
 );
 

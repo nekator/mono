@@ -118,7 +118,7 @@ const FormComponent = () => {
 							{['X', 'Y', 'Z'].map((tag, index) => (
 								<li key={`tag-${tag}`}>
 									<DBTag
-										variant={
+										semantic={
 											index === 0
 												? undefined
 												: 'successful'

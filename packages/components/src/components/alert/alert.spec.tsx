@@ -5,7 +5,7 @@ import { DBAlert } from './index';
 import {
 	DEFAULT_VIEWPORT,
 	TESTING_VIEWPORTS,
-	VARIANTS
+	SEMANTICS
 	// @ts-ignore - vue can only find it with .ts as file ending
 } from '../../shared/constants.ts';
 
@@ -24,12 +24,12 @@ const testComponent = () => {
 };
 
 const testVariants = () => {
-	for (const variant of VARIANTS) {
-		test(`should match screenshot for variant ${variant}`, async ({
+	for (const semantic of SEMANTICS) {
+		test(`should match screenshot for semantic ${semantic}`, async ({
 			mount
 		}) => {
 			const component = await mount(
-				<DBAlert variant={variant}>Test</DBAlert>
+				<DBAlert semantic={semantic}>Test</DBAlert>
 			);
 			await expect(component).toHaveScreenshot();
 		});

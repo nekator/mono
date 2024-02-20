@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import DefaultPage from '../../../components/default-page';
 import { DBButton, DBTag, DBCard } from '../../../components/src';
-import { VARIANTS } from '../../../components/src/shared/constants';
+import { SEMANTICS } from '../../../components/src/shared/constants';
 
-const colors = ['neutral', ...VARIANTS];
+const colors = ['neutral', ...SEMANTICS];
 
 const ColorOverview = () => {
 	const [colorScheme, setColorScheme] = useState<string>('light');
