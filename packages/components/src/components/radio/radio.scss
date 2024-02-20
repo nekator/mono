@@ -12,11 +12,25 @@
 			variables.$db-transition-functional-timing;
 
 		&:checked {
-			border-width: calc(#{form-components.$font-size-height} * 0.3);
-
 			// The radio element still has the default background for the dot on :hover when in checked state
 			&:not(:disabled):hover {
 				background-color: colors.$db-current-bg-color;
+			}
+
+			&:not([data-size="small"]) {
+				border-width: calc(
+					(
+							#{form-components.$font-size-height} - #{variables.$db-sizing-2xs}
+						) / 2
+				);
+			}
+
+			&[data-size="small"] {
+				border-width: calc(
+					(
+							#{form-components.$font-size-height} - #{variables.$db-sizing-3xs}
+						) / 2
+				);
 			}
 		}
 	}
