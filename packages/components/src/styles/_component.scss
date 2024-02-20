@@ -8,6 +8,8 @@ $default-mobile-header-height: var(
 	#{helpers.to-rem(56)}
 );
 
+$default-disabled: 0.4;
+
 %default-adaptive-border {
 	border: variables.$db-border-height-sm solid colors.$db-current-color;
 }

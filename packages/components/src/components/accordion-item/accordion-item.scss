@@ -29,7 +29,7 @@
 
 	&[aria-disabled="true"] {
 		pointer-events: none;
-		opacity: variables.$db-opacity-sm;
+		opacity: component.$default-disabled;
 	}
 
 	summary {

@@ -40,7 +40,7 @@
 
 	// "disabled" links
 	&[aria-disabled="true"] {
-		opacity: variables.$db-opacity-md;
+		opacity: component.$default-disabled;
 		pointer-events: none;
 	}
 

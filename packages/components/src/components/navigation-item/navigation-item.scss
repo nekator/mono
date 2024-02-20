@@ -132,7 +132,7 @@
 	}
 
 	&[aria-disabled="true"] {
-		opacity: variables.$db-opacity-sm;
+		opacity: component.$default-disabled;
 		pointer-events: none;
 	}
 }

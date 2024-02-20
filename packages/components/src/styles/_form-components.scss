@@ -102,7 +102,7 @@ $floating-label-size: calc(
 				@include placeholder-content() {
 					transition: opacity
 						variables.$db-transition-emotional-straight;
-					opacity: variables.$db-opacity-md;
+					opacity: component.$default-disabled;
 				}
 			}
 		}
@@ -232,14 +232,14 @@ $floating-label-size: calc(
 			);
 
 		@include placeholder-content() {
-			opacity: variables.$db-opacity-md;
+			opacity: component.$default-disabled;
 		}
 
 		&:hover {
 			background-color: colors.$db-current-bg-transparent-hover;
 		}
 
-		&:is(input, textarea):read-only {
+		&:is(input, textarea):not(:disabled):read-only {
 			background-color: colors.$db-neutral-bg-lvl-1 !important;
 		}
 	}
@@ -250,7 +250,7 @@ $floating-label-size: calc(
 		padding-block-end: variables.$db-spacing-fixed-xs;
 		pointer-events: none;
 		cursor: text;
-		opacity: variables.$db-opacity-lg;
+		opacity: component.$default-disabled;
 
 		transition: font-size variables.$db-transition-emotional-straight;
 		max-inline-size: 25ch;
@@ -274,7 +274,7 @@ $floating-label-size: calc(
 	// disabled
 	&:has(#{$selector}:disabled) {
 		// Decided against cursor: not-allowed, compare to e.g. https://phabricator.wikimedia.org/T121960
-		opacity: variables.$db-opacity-md;
+		opacity: component.$default-disabled;
 		pointer-events: none;
 	}
 
@@ -374,7 +374,7 @@ $floating-label-size: calc(
 	}
 
 	&:has(input:disabled) {
-		opacity: variables.$db-opacity-md;
+		opacity: component.$default-disabled;
 	}
 
 	&:is(label),
