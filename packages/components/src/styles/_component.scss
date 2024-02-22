@@ -11,7 +11,8 @@ $default-mobile-header-height: var(
 $default-disabled: 0.4;
 
 %default-adaptive-border {
-	border: variables.$db-border-height-sm solid colors.$db-current-color;
+	border: variables.$db-border-height-sm solid
+		colors.$db-current-color-enabled;
 }
 
 %transparent-border {
@@ -19,7 +20,7 @@ $default-disabled: 0.4;
 }
 
 %component-border {
-	border: variables.$db-border-height-sm solid colors.$db-current-border-color;
+	border: variables.$db-border-height-sm solid colors.$db-current-color-border;
 }
 
 %default-interactive-component {

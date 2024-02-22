@@ -27,43 +27,43 @@
 
 	&[data-elevation-level="1"],
 	&:not([data-elevation-level]) {
-		background-color: colors.$db-current-bg-lvl-1-color;
+		background-color: colors.$db-current-color-bg-lvl-1-enabled;
 
 		&[data-behaviour="interactive"]:not(:disabled) {
 			&:hover {
-				background-color: colors.$db-current-bg-lvl-1-hover-color;
+				background-color: colors.$db-current-color-bg-lvl-1-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-lvl-1-pressed-color;
+				background-color: colors.$db-current-color-bg-lvl-1-pressed;
 			}
 		}
 	}
 
 	&[data-elevation-level="2"] {
-		background-color: colors.$db-current-bg-lvl-2-color;
+		background-color: colors.$db-current-color-bg-lvl-2-enabled;
 
 		&[data-behaviour="interactive"]:not(:disabled) {
 			&:hover {
-				background-color: colors.$db-current-bg-lvl-2-hover-color;
+				background-color: colors.$db-current-color-bg-lvl-2-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-lvl-2-pressed-color;
+				background-color: colors.$db-current-color-bg-lvl-2-pressed;
 			}
 		}
 	}
 
 	&[data-elevation-level="3"] {
-		background-color: colors.$db-current-bg-lvl-3-color;
+		background-color: colors.$db-current-color-bg-lvl-3-enabled;
 
 		&[data-behaviour="interactive"]:not(:disabled) {
 			&:hover {
-				background-color: colors.$db-current-bg-lvl-3-hover-color;
+				background-color: colors.$db-current-color-bg-lvl-3-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-lvl-3-pressed-color;
+				background-color: colors.$db-current-color-bg-lvl-3-pressed;
 			}
 		}
 	}

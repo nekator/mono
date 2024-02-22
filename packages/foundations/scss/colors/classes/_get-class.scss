@@ -25,4 +25,12 @@
 			@extend %db-#{$variant}-bg-transparent-semi;
 		}
 	}
+
+	.db-#{$variant}-component {
+		@extend %db-#{$variant}-component;
+
+		&-interactive {
+			@extend %db-#{$variant}-component-interactive;
+		}
+	}
 }

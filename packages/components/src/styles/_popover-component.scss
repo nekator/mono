@@ -156,7 +156,7 @@
 	@extend %popover-placement;
 
 	position: absolute;
-	background-color: colors.$db-neutral-bg-lvl-1;
+	background-color: colors.$db-neutral-bg-lvl-1-enabled;
 	box-shadow: variables.$db-elevation-md;
 	visibility: hidden;
 	z-index: 1;

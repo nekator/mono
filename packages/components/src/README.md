@@ -52,16 +52,16 @@ Main use-case to overwrite a color or change colors by `data-variant`. Example:
 .db-xxx {
 	&:enabled {
 		&:hover {
-			background-color: colors.$db-current-bg-transparent-hover;
+			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 		&:active {
-			background-color: colors.$db-current-bg-transparent-pressed;
+			background-color: colors.$db-current-color-bg-transparent-pressed;
 		}
 	}
 
 	@each $name in colors.$variant-colors {
 		&[data-variant="#{$name}"] {
-			--db-current-border-color: var(--db-#{$name}-contrast-low);
+			--db-current-color-border: var(--db-#{$name}-contrast-low-enabled);
 		}
 	}
 }

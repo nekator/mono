@@ -46,7 +46,7 @@
 	@extend %default-interactive-component;
 	@extend %transparent-border;
 
-	background-color: colors.$db-current-bg-transparent-full;
+	background-color: colors.$db-current-color-bg-transparent-full-enabled;
 	cursor: pointer;
 	inline-size: 100%;
 	display: inline-flex;
@@ -59,11 +59,11 @@
 
 	&:hover,
 	&:has(~ .db-sub-navigation:hover) {
-		background-color: colors.$db-current-bg-transparent-hover;
+		background-color: colors.$db-current-color-bg-transparent-hover;
 	}
 
 	&:active {
-		background-color: colors.$db-current-bg-transparent-pressed;
+		background-color: colors.$db-current-color-bg-transparent-pressed;
 	}
 }
 
@@ -170,7 +170,7 @@
 	flex-direction: column;
 	z-index: 70;
 	inset-inline-start: 0;
-	background-color: colors.$db-neutral-bg-lvl-1;
+	background-color: colors.$db-neutral-bg-lvl-1-enabled;
 
 	visibility: hidden;
 
@@ -288,7 +288,7 @@
 	@include helpers.divider("bottom");
 	display: flex;
 	font-weight: normal;
-	background-color: colors.$db-neutral-bg-lvl-1;
+	background-color: colors.$db-neutral-bg-lvl-1-enabled;
 	padding-block-end: variables.$db-spacing-fixed-md;
 	margin-block-end: variables.$db-spacing-fixed-md;
 }

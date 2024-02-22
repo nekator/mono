@@ -11,7 +11,7 @@ $dropdown-icon-transition: transform variables.$db-transition-emotional-straight
 $dropdown-icon-transform: rotate(-180deg);
 
 $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
-$icon-size-sm: var(--db-base-icon-font-size-sm);
+$icon-size-sm: var(--db-base-body-icon-font-size-sm);
 $label-size-height-sm: calc(
 	var(--db-type-body-font-size-sm) * var(--db-type-body-line-height-sm)
 );
@@ -122,8 +122,8 @@ $floating-label-size: calc(
 
 	#{$selector},
 	[id$="-placeholder"] {
-		color: var(--db-#{$variant}-on-bg);
-		caret-color: var(--db-#{$variant}-on-bg);
+		color: var(--db-#{$variant}-on-bg-enabled);
+		caret-color: var(--db-#{$variant}-on-bg-enabled);
 	}
 }
 
@@ -196,7 +196,7 @@ $floating-label-size: calc(
 
 @mixin set-default-form-component($selector) {
 	--db-form-has-before: 0;
-	--db-current-icon-color: #{colors.$db-current-color};
+	--db-current-icon-color: #{colors.$db-current-color-enabled};
 	@extend %db-overwrite-font-size-sm;
 
 	@include set-floating-label-overwrites($selector);
@@ -218,8 +218,8 @@ $floating-label-size: calc(
 		@extend %default-interactive-component;
 		@extend %component-border;
 
-		background-color: colors.$db-current-bg-transparent-semi;
-		caret-color: colors.$db-current-color;
+		background-color: colors.$db-current-color-bg-transparent-semi-enabled;
+		caret-color: colors.$db-current-color-enabled;
 
 		appearance: none;
 		max-inline-size: 100%;
@@ -238,11 +238,11 @@ $floating-label-size: calc(
 		}
 
 		&:hover {
-			background-color: colors.$db-current-bg-transparent-hover;
+			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 
 		&:is(input, textarea):not(:disabled):read-only {
-			background-color: colors.$db-neutral-bg-lvl-1 !important;
+			background-color: colors.$db-neutral-bg-lvl-1-enabled !important;
 		}
 	}
 
@@ -323,24 +323,26 @@ $floating-label-size: calc(
 	}
 
 	input {
-		--db-current-bg-transparent-semi: var(
-			--db-#{$variant}-bg-transparent-semi
+		--db-current-color-bg-transparent-semi: var(
+			--db-#{$variant}-bg-transparent-semi-enabled
 		);
-		--db-current-bg-transparent-hover: var(
+		--db-current-color-bg-transparent-hover: var(
 			--db-#{$variant}-bg-transparent-hover
 		);
-		--db-current-bg-transparent-pressed: var(
+		--db-current-color-bg-transparent-pressed: var(
 			--db-#{$variant}-bg-transparent-pressed
 		);
-		border-color: var(--db-current-color);
+		border-color: colors.$db-current-color-enabled;
 
 		&:not(:checked),
 		&:is([type="radio"]) {
-			--db-current-color: var(--db-#{$variant}-contrast-high);
+			--db-current-color-enabled: var(
+				--db-#{$variant}-contrast-high-enabled
+			);
 		}
 
 		&:checked {
-			--db-current-color: #{colors.$db-successful-contrast-high};
+			--db-current-color-enabled: #{colors.$db-successful-contrast-high-enabled};
 			--db-current-color-hover: #{colors.$db-successful-contrast-high-hover};
 			--db-current-color-pressed: #{colors.$db-successful-contrast-high-pressed};
 		}
@@ -348,7 +350,7 @@ $floating-label-size: calc(
 
 	&:is(label),
 	label {
-		color: var(--db-#{$variant}-contrast-high);
+		color: var(--db-#{$variant}-contrast-high-enabled);
 	}
 }
 
@@ -374,7 +376,7 @@ $floating-label-size: calc(
 	}
 
 	input {
-		background-color: colors.$db-current-bg-transparent-full;
+		background-color: colors.$db-current-color-bg-transparent-full-enabled;
 
 		align-content: center;
 
@@ -396,11 +398,11 @@ $floating-label-size: calc(
 
 		&:enabled {
 			&:hover {
-				background-color: colors.$db-current-bg-transparent-hover;
+				background-color: colors.$db-current-color-bg-transparent-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-transparent-pressed;
+				background-color: colors.$db-current-color-bg-transparent-pressed;
 			}
 		}
 	}

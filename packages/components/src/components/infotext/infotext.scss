@@ -21,20 +21,22 @@
 
 	&[data-semantic="adaptive"],
 	&:not([data-semantic]) {
-		color: colors.$db-neutral-contrast-high;
+		color: colors.$db-neutral-contrast-high-enabled;
 
 		&::before {
-			--db-current-icon-color: #{colors.$db-neutral-contrast-low};
+			--db-current-icon-color: #{colors.$db-neutral-contrast-low-enabled};
 		}
 	}
 
 	@each $name, $colors in colors.$variant-colors {
 		&[data-semantic="#{$name}"] {
 			@include icons.variant-icons($name);
-			color: var(--db-#{$name}-contrast-high);
+			color: var(--db-#{$name}-contrast-high-enabled);
 
 			&::before {
-				--db-current-icon-color: var(--db-#{$name}-contrast-low);
+				--db-current-icon-color: var(
+					--db-#{$name}-contrast-low-enabled
+				);
 			}
 		}
 	}

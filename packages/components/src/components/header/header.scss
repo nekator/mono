@@ -6,13 +6,14 @@
 @use "../../styles/component";
 
 .db-header {
-	background-color: colors.$db-neutral-bg-lvl-1;
-	box-shadow: variables.$db-elevation-md;
+	background-color: colors.$db-neutral-bg-lvl-1-enabled;
 	display: flex;
 	flex-direction: column;
 	position: relative;
 
 	min-block-size: component.$default-mobile-header-height;
+	border-block-end: variables.$db-border-height-sm solid
+		colors.$db-current-color-border;
 
 	@include screen-sizes.screen("md") {
 		--db-drawer-max-width: #{screen-sizes.$db-breakpoint-sm};
@@ -76,6 +77,17 @@
 	inline-size: 100%;
 	gap: inherit;
 	align-items: center;
+	block-size: 100%;
+
+	@include screen-sizes.screen("md") {
+		@include helpers.divider("left");
+
+		&::before {
+			position: inherit;
+			block-size: 100%;
+			margin-inline-start: variables.$db-spacing-fixed-sm;
+		}
+	}
 }
 
 .db-header-call-to-action {
@@ -94,15 +106,6 @@
 
 .db-header-brand-container {
 	min-block-size: variables.$db-sizing-md;
-	@include screen-sizes.screen("md") {
-		@include helpers.divider("left", "after");
-
-		&::after {
-			position: inherit;
-			block-size: 100%;
-			margin-inline: variables.$db-spacing-fixed-sm;
-		}
-	}
 }
 
 .db-header-action-container {

@@ -34,7 +34,7 @@
 
 	summary {
 		@extend %dropdown-icon;
-		background-color: colors.$db-current-bg-transparent-full;
+		background-color: colors.$db-current-color-bg-transparent-full-enabled;
 
 		list-style: none;
 		display: flex;
@@ -43,11 +43,11 @@
 		gap: variables.$db-spacing-fixed-md;
 
 		&:hover {
-			background-color: colors.$db-current-bg-transparent-hover;
+			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 
 		&:active {
-			background-color: colors.$db-current-bg-transparent-pressed;
+			background-color: colors.$db-current-color-bg-transparent-pressed;
 		}
 
 		&::-webkit-details-marker {

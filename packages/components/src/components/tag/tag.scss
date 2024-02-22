@@ -107,8 +107,16 @@
 				)
 			);
 
-			&:checked::before {
-				--db-icon: "";
+			&:checked {
+				&,
+				&:not(:disabled):hover,
+				&:not(:disabled):active {
+					background-color: colors.$db-brand-bg-transparent-full-enabled;
+				}
+
+				&::before {
+					--db-icon: "";
+				}
 			}
 		}
 	}
@@ -180,7 +188,7 @@
 		&:is(button),
 		button {
 			// overwrite to transparent
-			background-color: colors.$db-current-bg-transparent-full;
+			background-color: colors.$db-current-color-bg-transparent-full-enabled;
 			margin-inline-start: variables.$db-spacing-fixed-2xs;
 			block-size: 100%;
 		}

@@ -15,14 +15,14 @@
 	align-items: center;
 	white-space: nowrap;
 	position: relative;
-	background-color: colors.$db-current-bg-transparent-full;
+	background-color: colors.$db-current-color-bg-transparent-full-enabled;
 
 	&:hover {
-		background-color: colors.$db-current-bg-transparent-hover;
+		background-color: colors.$db-current-color-bg-transparent-hover;
 	}
 
 	&:active {
-		background-color: colors.$db-current-bg-transparent-pressed;
+		background-color: colors.$db-current-color-bg-transparent-pressed;
 	}
 
 	input {

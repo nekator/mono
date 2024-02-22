@@ -5,32 +5,8 @@
 	@return var(--db-#{$key}-#{$density}-#{$device}#{$size});
 }
 
-/* stylelint-disable */
-// TODO: remove this after https://github.com/db-ui/mono/pull/1545
-@mixin get-temp-label-variables-density($density) {
-	$label-scale: 0.65;
-	$focusOpacity: 1;
-	@if ($density== "functional") {
-		$label-scale: 1;
-		$focusOpacity: 0;
-	}
-	@if ($density== "expressive") {
-		$label-scale: 0.55;
-		$focusOpacity: 1;
-	}
-
-	--db-input-label-scale: #{$label-scale};
-	--db-input-focus-opacity: #{$focusOpacity};
-
-	--db-textarea-label-scale: #{$label-scale};
-	--db-textarea-focus-opacity: #{$focusOpacity};
-}
-/* stylelint-enable */
-
 @each $density in variables.$densities {
 	%db-scaling-#{$density} {
-		@include get-temp-label-variables-density($density);
-
 		@each $sizing in variables.$sizings {
 			--db-sizing-#{$sizing}: #{get-variable(
 					"sizing",

@@ -62,14 +62,14 @@
 	// TODO: probably extract this to an overwrite or external file
 	text-align: start; // workaround for power apps
 
-	background-color: colors.$db-current-bg-lvl-2-color;
+	background-color: colors.$db-current-color-bg-lvl-2-enabled;
 
 	@include icons.has-no-icon() {
 		@include icons.set-icon("info");
 	}
 
 	&::before {
-		--db-current-icon-color: #{colors.$db-current-contrast-low-color};
+		--db-current-icon-color: #{colors.$db-current-color-contrast-low-enabled};
 	}
 
 	dblink,

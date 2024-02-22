@@ -6,17 +6,17 @@
 $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 %set-adaptive-strong-tag {
-	--db-current-icon-color: #{colors.$db-current-bg-lvl-1-color};
-	--db-current-color: #{colors.$db-current-bg-lvl-1-color};
-	--db-current-bg-color: #{colors.$db-current-contrast-high-color};
+	--db-current-icon-color: #{colors.$db-current-color-bg-lvl-1-enabled};
+	--db-current-color-enabled: #{colors.$db-current-color-bg-lvl-1-enabled};
+	--db-current-color-bg-enabled: #{colors.$db-current-color-contrast-high-enabled};
 	// border should be same color like background
-	--db-current-border-color: #{colors.$db-current-contrast-high-color};
+	--db-current-color-border: #{colors.$db-current-color-contrast-high-enabled};
 
 	@extend %set-current-colors;
 }
 
 @mixin get-tag-colors() {
-	background-color: colors.$db-current-bg-lvl-1-color;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 
 	&[data-emphasis="strong"] {
 		@extend %set-adaptive-strong-tag;
@@ -28,7 +28,9 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 			&[data-emphasis="strong"] {
 				// border should be same color like background
-				--db-current-border-color: var(--db-#{$name}-contrast-high);
+				--db-current-color-border: var(
+					--db-#{$name}-contrast-high-enabled
+				);
 				@extend %db-#{$name}-component;
 			}
 		}
@@ -46,14 +48,14 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 }
 
 %set-interactive-weak {
-	background-color: colors.$db-current-bg-lvl-1-color;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 
 	&:hover {
-		background-color: colors.$db-current-bg-lvl-1-hover-color;
+		background-color: colors.$db-current-color-bg-lvl-1-hover;
 	}
 
 	&:active {
-		background-color: colors.$db-current-bg-lvl-1-pressed-color;
+		background-color: colors.$db-current-color-bg-lvl-1-pressed;
 	}
 }
 
@@ -61,11 +63,11 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	@extend %set-adaptive-strong-tag;
 
 	&:hover {
-		background-color: colors.$db-current-contrast-high-hover-color;
+		background-color: colors.$db-current-color-contrast-high-hover;
 	}
 
 	&:active {
-		background-color: colors.$db-current-contrast-high-pressed-color;
+		background-color: colors.$db-current-color-contrast-high-pressed;
 	}
 }
 
@@ -90,14 +92,14 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 		// checkbox should have bg-lvl-3 (checked)
 		label:has(input[type="checkbox"]:checked) {
-			background-color: colors.$db-current-bg-lvl-3-color;
+			background-color: colors.$db-current-color-bg-lvl-3-enabled;
 
 			&:hover {
-				background-color: colors.$db-current-bg-lvl-3-hover-color;
+				background-color: colors.$db-current-color-bg-lvl-3-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-current-bg-lvl-3-pressed-color;
+				background-color: colors.$db-current-color-bg-lvl-3-pressed;
 			}
 		}
 
@@ -106,7 +108,7 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 			&,
 			&:hover,
 			&:active {
-				background-color: colors.$db-current-bg-lvl-3-color;
+				background-color: colors.$db-current-color-bg-lvl-3-enabled;
 			}
 		}
 	}

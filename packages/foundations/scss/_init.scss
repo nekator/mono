@@ -111,7 +111,7 @@ iframe {
 	list-style-type: "\2022"+ "   ";
 
 	li::marker {
-		color: #{colors.$db-brand};
+		color: #{colors.$db-brand-origin-enabled};
 	}
 }
 

@@ -10,7 +10,7 @@
 	@extend %default-interactive-component;
 	@extend %default-button;
 
-	color: colors.$db-current-color;
+	color: colors.$db-current-color-enabled;
 
 	block-size: variables.$db-sizing-md;
 	inline-size: fit-content;
@@ -50,18 +50,18 @@
 	}
 
 	&[data-variant="brand"] {
-		--db-current-icon-color: #{colors.$db-brand-on};
+		--db-current-icon-color: #{colors.$db-brand-on-enabled};
 		@extend %transparent-border;
-		background-color: colors.$db-brand;
-		color: colors.$db-brand-on;
+		background-color: colors.$db-brand-origin-enabled;
+		color: colors.$db-brand-on-enabled;
 
 		&:not(:disabled) {
 			&:hover {
-				background-color: colors.$db-brand-hover;
+				background-color: colors.$db-brand-origin-hover;
 			}
 
 			&:active {
-				background-color: colors.$db-brand-pressed;
+				background-color: colors.$db-brand-origin-pressed;
 			}
 		}
 	}
@@ -74,20 +74,20 @@
 	&[data-variant="outlined"],
 	&:not([data-variant]),
 	&[data-variant="ghost"] {
-		background-color: colors.$db-current-bg-transparent-full;
+		background-color: colors.$db-current-color-bg-transparent-full-enabled;
 	}
 
 	&[data-variant="filled"] {
-		background-color: colors.$db-current-bg-transparent-semi;
+		background-color: colors.$db-current-color-bg-transparent-semi-enabled;
 	}
 
 	&:not(:disabled) {
 		&:hover {
-			background-color: colors.$db-current-bg-transparent-hover;
+			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 
 		&:active {
-			background-color: colors.$db-current-bg-transparent-pressed;
+			background-color: colors.$db-current-color-bg-transparent-pressed;
 		}
 	}
 
