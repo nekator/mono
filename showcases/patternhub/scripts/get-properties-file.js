@@ -47,20 +47,20 @@ const getOptions = (tsType) => {
  * @returns {string}
  */
 const getPropertiesFile = ({ displayName, description, props }) => {
-	const propKeys = Object.keys(props);
+	const propertyKeys = Object.keys(props);
 
-	let propTable = '';
+	let propertyTable = '';
 
-	for (const propKey of propKeys) {
-		const prop = props[propKey];
-		const options = getOptions(prop.tsType);
-		propTable += `| ${propKey} `;
-		propTable += `| ${
-			prop.description.replaceAll(/\r\n|\r|\n/g, '<br/>') ||
+	for (const propertyKey of propertyKeys) {
+		const property = props[propertyKey];
+		const options = getOptions(property.tsType);
+		propertyTable += `| ${propertyKey} `;
+		propertyTable += `| ${
+			property.description.replaceAll(/\r\n|\r|\n/g, '<br/>') ||
 			'No description'
 		} `;
-		propTable += `| ${prop.tsType.type ?? prop.tsType.name} `;
-		propTable += `| ${
+		propertyTable += `| ${property.tsType.type ?? property.tsType.name} `;
+		propertyTable += `| ${
 			options
 				? `<pre><code className="code-pre-wrap">${options.replaceAll(
 						'<T>',
@@ -79,7 +79,7 @@ ${description}
 
 | Name | Description | Type | Options |
 | ---- | ----------- | ---- | ------- |
-${propTable}
+${propertyTable}
 
 export default ({ children }) => <DefaultPage>{children}</DefaultPage>;`;
 };
