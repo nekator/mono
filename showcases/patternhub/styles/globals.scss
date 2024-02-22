@@ -85,7 +85,7 @@ table {
 
 table td,
 table th {
-	border: 1px solid colors.$db-current-border-color;
+	border: 1px solid colors.$db-current-color-border;
 	padding: variables.$db-spacing-fixed-md;
 	max-width: 33vw;
 }
@@ -108,7 +108,7 @@ div[class^="ch-"] {
 	div,
 	span {
 		@extend %db-overwrite-font-size-sm;
-		color: colors.$db-current-color;
+		color: colors.$db-current-color-enabled;
 	}
 }
 
@@ -300,7 +300,7 @@ div[class^="ch-"] {
 
 .color-schemes-container {
 	padding: variables.$db-spacing-fixed-md;
-	border: 1px dashed var(--db-current-color);
+	border: 1px dashed colors.$db-current-color-enabled;
 	display: grid;
 	gap: variables.$db-spacing-fixed-md;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
