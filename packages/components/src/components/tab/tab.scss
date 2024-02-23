@@ -25,6 +25,10 @@
 		background-color: colors.$db-current-color-bg-transparent-pressed;
 	}
 
+	&:has(input:disabled) {
+		opacity: variables.$db-opacity-sm;
+	}
+
 	input {
 		&[type="radio"] {
 			@extend %db-puls;
