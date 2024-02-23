@@ -52,6 +52,23 @@
 		100% + 2px + var(--db-popover-distance) * var(--db-popover-gap, 0)
 	);
 
+	&[data-placement="bottom"],
+	&[data-placement="top"] {
+		--db-popover-center-x: -50%;
+	}
+
+	&[data-placement="left"],
+	&[data-placement="right"] {
+		--db-popover-center-y: -50%;
+	}
+
+	&[data-placement="bottom"],
+	&[data-placement="top"],
+	&[data-placement="left"],
+	&[data-placement="right"] {
+		inset-#{$secondary}-start: 50%;
+	}
+
 	&[data-placement$="end"] {
 		inset-#{$secondary}-end: 0;
 	}
@@ -162,6 +179,7 @@
 	z-index: 1;
 	// i HTML tags browsers default styling reset
 	font-style: normal;
+	white-space: nowrap;
 
 	&[data-width="fixed"] {
 		inline-size: max-content;
