@@ -48,7 +48,7 @@ We both maintain a [public backlog](https://github.com/orgs/db-ui/projects/4/vie
 | Name                                                                                           | Category          | Status | Planned for beta |
 | ---------------------------------------------------------------------------------------------- | ----------------- | :----: | :--------------: |
 | [Accordion](https://db-ui.github.io/mono/review/main/components/accordion/overview)            | 04 - Data-Display | Alpha  |        ✅        |
-| [Alert](https://db-ui.github.io/mono/review/main/components/alert/overview)                    | 05 - Feedback     |  Beta  |        ✅        |
+| [Notification](https://db-ui.github.io/mono/review/main/components/notification/overview)      | 05 - Feedback     |  Beta  |        ✅        |
 | Avatar                                                                                         | 04 - Data-Display |   ❌   |        ❌        |
 | Backdrop                                                                                       | 06 - Utility      |   ❌   |        ✅        |
 | [Badge](https://db-ui.github.io/mono/review/main/components/badge/overview)                    | 05 - Feedback     | Alpha  |        ✅        |

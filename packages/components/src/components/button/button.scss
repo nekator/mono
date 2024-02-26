@@ -24,6 +24,10 @@
 		@include icons.is-icon-text-replace();
 		padding: 0;
 		inline-size: variables.$db-sizing-md;
+
+		&::before {
+			margin: auto;
+		}
 	}
 
 	&[data-size="small"] {

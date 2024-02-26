@@ -357,13 +357,6 @@ export type LinkProps = {
 	text?: string;
 };
 
-export type ElevationProps = {
-	/**
-	 * The elevation attribute changes the style of the card (box-shadow).
-	 */
-	elevation?: 'default' | 'none';
-};
-
 export type ClickEvent<T> = MouseEvent;
 export type ClickEventProps<T> = {
 	/**

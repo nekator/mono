@@ -94,8 +94,8 @@ const componentChildren: NavigationItem[] = [
 		path: '/components/feedback',
 		subNavigation: [
 			{
-				label: 'DBAlert',
-				name: 'alert'
+				label: 'DBNotification',
+				name: 'notification'
 			},
 			{
 				label: 'DBBadge',

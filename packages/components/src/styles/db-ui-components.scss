@@ -11,7 +11,7 @@
 @forward "../components/link/link";
 @forward "../components/section/section";
 @forward "../components/infotext/infotext";
-@forward "../components/alert/alert";
+@forward "../components/notification/notification";
 @forward "../components/checkbox/checkbox";
 @forward "../components/radio/radio";
 @forward "../components/code-docs/code-docs";
@@ -73,7 +73,7 @@ db-radio,
 dbselect,
 db-select,
 dbalert,
-db-alert,
+db-notification,
 dbcodedocs,
 db-codedocs,
 dbbrand,
@@ -109,7 +109,7 @@ db-tabbar {
 	display: contents;
 }
 
-db-alert,
+db-notification,
 dbalert {
 	inline-size: inherit;
 }

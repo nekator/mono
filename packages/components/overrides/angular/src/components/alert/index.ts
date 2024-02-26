@@ -1,1 +1,1 @@
-export { DBAlert } from './alert';
+export { DBNotification } from './notification';

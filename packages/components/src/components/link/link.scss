@@ -6,50 +6,14 @@
 @use "@db-ui/foundations/build/scss/helpers";
 @use "@db-ui/foundations/build/scss/icons";
 @use "@db-ui/foundations/build/scss/colors";
-@use "../../styles/component";
-
-%db-link-height {
-	display: inline-block;
-	block-size: variables.$db-sizing-sm;
-}
+@use "../../styles/link-components";
 
 .db-link {
-	@extend %default-fg-transition;
-	@extend %db-link-height;
-	inline-size: fit-content;
-
-	// Link underline
-	// TODO: We should evaluate whether we could move this declaration to the @font-face declarations even already
-	text-underline-position: from-font;
-	text-decoration-thickness: helpers.to-rem($pxValue: 1);
-
-	white-space: nowrap;
-
-	&:hover {
-		color: color-mix(
-			in srgb,
-			transparent 25%,
-			colors.$db-current-color-enabled
-		);
-	}
-
-	&:active {
-		color: color-mix(
-			in srgb,
-			transparent 50%,
-			colors.$db-current-color-enabled
-		);
-	}
+	@extend %db-default-link;
 
 	a {
 		// Workaround for angular
 		@extend %db-link-height;
-	}
-
-	// "disabled" links
-	&[aria-disabled="true"] {
-		opacity: component.$default-disabled;
-		pointer-events: none;
 	}
 
 	&:not([data-variant="inline"]) {
@@ -64,10 +28,6 @@
 		&[data-content="external"] {
 			@include icons.set-icon("link_external", "after");
 		}
-	}
-
-	&:focus-visible {
-		border-radius: variables.$db-border-radius-md;
 	}
 
 	&[data-content="internal"],

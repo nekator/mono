@@ -6,7 +6,7 @@ import DBTab from '../src/components/tab/tab';
 import DBTooltip from '../src/components/tooltip/tooltip';
 import DBPopover from '../src/components/popover/popover';
 import {
-	DBAlert,
+	DBNotification,
 	DBBrand,
 	DBButton,
 	DBCard,
@@ -105,11 +105,11 @@ const ComponentSwitch = ({
 		}
 	}
 
-	if (type === 'alert') {
+	if (type === 'notification') {
 		return (
-			<DBAlert className={className} {...props}>
+			<DBNotification className={className} {...props}>
 				{resolvedContent}
-			</DBAlert>
+			</DBNotification>
 		);
 	}
 

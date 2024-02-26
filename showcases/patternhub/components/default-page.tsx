@@ -68,7 +68,7 @@ const DefaultPage = ({ children }: any) => {
 										Profile
 									</DBButton>
 									<DBButton
-										icon="alert"
+										icon="notification"
 										variant="ghost"
 										noText>
 										Notification
