@@ -33,7 +33,7 @@ export default function DBTab(props: DBTabProps) {
 	// jscpd:ignore-end
 
 	onUpdate(() => {
-		if (props.active && state.initialized) {
+		if (props.active && state.initialized && ref) {
 			ref.click();
 			state.initialized = false;
 		}
