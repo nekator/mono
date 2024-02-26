@@ -68,7 +68,7 @@ export default function DBAccordion(props: DBAccordionProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id || 'brand-' + uuid();
+		state._id = props.id || 'accordion-' + uuid();
 
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
