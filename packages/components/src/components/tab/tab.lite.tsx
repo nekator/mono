@@ -2,14 +2,12 @@ import {
 	onMount,
 	onUpdate,
 	Show,
-	Slot,
 	useMetadata,
 	useRef,
 	useStore
 } from '@builder.io/mitosis';
 import type { DBTabProps, DBTabState } from './model';
-import { cls, uuid } from '../../utils';
-import { ClickEvent } from '../../shared/model';
+import { cls } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
 
 useMetadata({
@@ -25,7 +23,6 @@ export default function DBTab(props: DBTabProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id || 'tab-' + uuid();
 		state.initialized = true;
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;

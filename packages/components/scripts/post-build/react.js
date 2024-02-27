@@ -99,6 +99,10 @@ module.exports = (tmp) => {
 				{
 					from: /<\/>/g,
 					to: '</React.Fragment>'
+				},
+				{
+					from: '{ cls }',
+					to: '{ cls, uuid }'
 				}
 			];
 
