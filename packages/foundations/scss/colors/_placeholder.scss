@@ -2,12 +2,12 @@
 @use "variables";
 
 %set-current-colors {
-	background: var(--db-current-color-bg-enabled);
-	color: var(--db-current-color-enabled);
+	background: variables.$db-current-color-bg-enabled;
+	color: variables.$db-current-color-enabled;
 
 	&::before,
 	&::after {
-		color: var(--db-current-icon-color, inherit);
+		color: variables.$db-current-icon-color;
 	}
 }
 
@@ -23,11 +23,12 @@
 
 @each $variant in variables.$variants {
 	%db-#{$variant}-component {
-		--db-current-icon-color: var(--db-#{$variant}-bg-lvl-1-enabled);
-		--db-current-color-enabled: var(--db-#{$variant}-bg-lvl-1-enabled);
+		--db-current-icon-color: var(--db-#{$variant}-on-contrast-enabled);
+		--db-current-color-enabled: var(--db-#{$variant}-on-contrast-enabled);
 		--db-current-color-bg-enabled: var(
 			--db-#{$variant}-contrast-high-enabled
 		);
+		--db-current-color-border: var(--db-#{$variant}-contrast-high-enabled);
 		@extend %set-current-colors;
 
 		&-interactive {
@@ -96,6 +97,10 @@
 			--db-#{$variant}-bg-lvl-3-pressed
 		);
 		/* used for adaptive tags (strong & interactive) */
+		--db-current-color-on-contrast-enabled: var(
+			--db-#{$variant}-on-contrast-enabled
+		);
+
 		--db-current-color-contrast-high-enabled: var(
 			--db-#{$variant}-contrast-high-enabled
 		);

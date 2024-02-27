@@ -34,6 +34,9 @@
 	--db-neutral-on-bg-weak-enabled: var(--db-neutral-5);
 	--db-neutral-on-bg-weak-hover: var(--db-neutral-6);
 	--db-neutral-on-bg-weak-pressed: var(--db-neutral-7);
+	--db-neutral-on-contrast-enabled: var(--db-neutral-14);
+	--db-neutral-on-contrast-hover: var(--db-neutral-13);
+	--db-neutral-on-contrast-pressed: var(--db-neutral-12);
 	--db-neutral-contrast-high-enabled: var(--db-neutral-6);
 	--db-neutral-contrast-high-hover: var(--db-neutral-5);
 	--db-neutral-contrast-high-pressed: var(--db-neutral-4);
@@ -80,6 +83,9 @@
 	--db-brand-on-bg-weak-enabled: var(--db-brand-5);
 	--db-brand-on-bg-weak-hover: var(--db-brand-6);
 	--db-brand-on-bg-weak-pressed: var(--db-brand-7);
+	--db-brand-on-contrast-enabled: var(--db-brand-14);
+	--db-brand-on-contrast-hover: var(--db-brand-13);
+	--db-brand-on-contrast-pressed: var(--db-brand-12);
 	--db-brand-contrast-high-enabled: var(--db-brand-6);
 	--db-brand-contrast-high-hover: var(--db-brand-5);
 	--db-brand-contrast-high-pressed: var(--db-brand-4);
@@ -122,6 +128,9 @@
 	--db-informational-on-bg-weak-enabled: var(--db-informational-5);
 	--db-informational-on-bg-weak-hover: var(--db-informational-6);
 	--db-informational-on-bg-weak-pressed: var(--db-informational-7);
+	--db-informational-on-contrast-enabled: var(--db-informational-14);
+	--db-informational-on-contrast-hover: var(--db-informational-13);
+	--db-informational-on-contrast-pressed: var(--db-informational-12);
 	--db-informational-contrast-high-enabled: var(--db-informational-6);
 	--db-informational-contrast-high-hover: var(--db-informational-5);
 	--db-informational-contrast-high-pressed: var(--db-informational-4);
@@ -164,6 +173,9 @@
 	--db-warning-on-bg-weak-enabled: var(--db-warning-5);
 	--db-warning-on-bg-weak-hover: var(--db-warning-6);
 	--db-warning-on-bg-weak-pressed: var(--db-warning-7);
+	--db-warning-on-contrast-enabled: var(--db-warning-14);
+	--db-warning-on-contrast-hover: var(--db-warning-13);
+	--db-warning-on-contrast-pressed: var(--db-warning-12);
 	--db-warning-contrast-high-enabled: var(--db-warning-6);
 	--db-warning-contrast-high-hover: var(--db-warning-5);
 	--db-warning-contrast-high-pressed: var(--db-warning-4);
@@ -206,6 +218,9 @@
 	--db-successful-on-bg-weak-enabled: var(--db-successful-5);
 	--db-successful-on-bg-weak-hover: var(--db-successful-6);
 	--db-successful-on-bg-weak-pressed: var(--db-successful-7);
+	--db-successful-on-contrast-enabled: var(--db-successful-14);
+	--db-successful-on-contrast-hover: var(--db-successful-13);
+	--db-successful-on-contrast-pressed: var(--db-successful-12);
 	--db-successful-contrast-high-enabled: var(--db-successful-6);
 	--db-successful-contrast-high-hover: var(--db-successful-5);
 	--db-successful-contrast-high-pressed: var(--db-successful-4);
@@ -248,6 +263,9 @@
 	--db-critical-on-bg-weak-enabled: var(--db-critical-5);
 	--db-critical-on-bg-weak-hover: var(--db-critical-6);
 	--db-critical-on-bg-weak-pressed: var(--db-critical-7);
+	--db-critical-on-contrast-enabled: var(--db-critical-14);
+	--db-critical-on-contrast-hover: var(--db-critical-13);
+	--db-critical-on-contrast-pressed: var(--db-critical-12);
 	--db-critical-contrast-high-enabled: var(--db-critical-6);
 	--db-critical-contrast-high-hover: var(--db-critical-5);
 	--db-critical-contrast-high-pressed: var(--db-critical-4);
@@ -299,6 +317,9 @@
 	--db-neutral-on-bg-weak-enabled: var(--db-neutral-10);
 	--db-neutral-on-bg-weak-hover: var(--db-neutral-9);
 	--db-neutral-on-bg-weak-pressed: var(--db-neutral-8);
+	--db-neutral-on-contrast-enabled: var(--db-neutral-3);
+	--db-neutral-on-contrast-hover: var(--db-neutral-4);
+	--db-neutral-on-contrast-pressed: var(--db-neutral-5);
 	--db-neutral-contrast-high-enabled: var(--db-neutral-9);
 	--db-neutral-contrast-high-hover: var(--db-neutral-8);
 	--db-neutral-contrast-high-pressed: var(--db-neutral-7);
@@ -345,6 +366,9 @@
 	--db-brand-on-bg-weak-enabled: var(--db-brand-10);
 	--db-brand-on-bg-weak-hover: var(--db-brand-9);
 	--db-brand-on-bg-weak-pressed: var(--db-brand-8);
+	--db-brand-on-contrast-enabled: var(--db-brand-3);
+	--db-brand-on-contrast-hover: var(--db-brand-4);
+	--db-brand-on-contrast-pressed: var(--db-brand-5);
 	--db-brand-contrast-high-enabled: var(--db-brand-9);
 	--db-brand-contrast-high-hover: var(--db-brand-8);
 	--db-brand-contrast-high-pressed: var(--db-brand-7);
@@ -387,6 +411,9 @@
 	--db-informational-on-bg-weak-enabled: var(--db-informational-10);
 	--db-informational-on-bg-weak-hover: var(--db-informational-9);
 	--db-informational-on-bg-weak-pressed: var(--db-informational-8);
+	--db-informational-on-contrast-enabled: var(--db-informational-3);
+	--db-informational-on-contrast-hover: var(--db-informational-4);
+	--db-informational-on-contrast-pressed: var(--db-informational-5);
 	--db-informational-contrast-high-enabled: var(--db-informational-9);
 	--db-informational-contrast-high-hover: var(--db-informational-8);
 	--db-informational-contrast-high-pressed: var(--db-informational-7);
@@ -429,6 +456,9 @@
 	--db-warning-on-bg-weak-enabled: var(--db-warning-10);
 	--db-warning-on-bg-weak-hover: var(--db-warning-9);
 	--db-warning-on-bg-weak-pressed: var(--db-warning-8);
+	--db-warning-on-contrast-enabled: var(--db-warning-3);
+	--db-warning-on-contrast-hover: var(--db-warning-4);
+	--db-warning-on-contrast-pressed: var(--db-warning-5);
 	--db-warning-contrast-high-enabled: var(--db-warning-9);
 	--db-warning-contrast-high-hover: var(--db-warning-8);
 	--db-warning-contrast-high-pressed: var(--db-warning-7);
@@ -471,6 +501,9 @@
 	--db-successful-on-bg-weak-enabled: var(--db-successful-10);
 	--db-successful-on-bg-weak-hover: var(--db-successful-9);
 	--db-successful-on-bg-weak-pressed: var(--db-successful-8);
+	--db-successful-on-contrast-enabled: var(--db-successful-3);
+	--db-successful-on-contrast-hover: var(--db-successful-4);
+	--db-successful-on-contrast-pressed: var(--db-successful-5);
 	--db-successful-contrast-high-enabled: var(--db-successful-9);
 	--db-successful-contrast-high-hover: var(--db-successful-8);
 	--db-successful-contrast-high-pressed: var(--db-successful-7);
@@ -513,6 +546,9 @@
 	--db-critical-on-bg-weak-enabled: var(--db-critical-10);
 	--db-critical-on-bg-weak-hover: var(--db-critical-9);
 	--db-critical-on-bg-weak-pressed: var(--db-critical-8);
+	--db-critical-on-contrast-enabled: var(--db-critical-3);
+	--db-critical-on-contrast-hover: var(--db-critical-4);
+	--db-critical-on-contrast-pressed: var(--db-critical-5);
 	--db-critical-contrast-high-enabled: var(--db-critical-9);
 	--db-critical-contrast-high-hover: var(--db-critical-8);
 	--db-critical-contrast-high-pressed: var(--db-critical-7);

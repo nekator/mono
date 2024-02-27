@@ -6,10 +6,9 @@
 $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 
 %set-adaptive-strong-tag {
-	--db-current-icon-color: #{colors.$db-current-color-bg-lvl-1-enabled};
-	--db-current-color-enabled: #{colors.$db-current-color-bg-lvl-1-enabled};
+	--db-current-icon-color: #{colors.$db-current-color-on-contrast-enabled};
+	--db-current-color-enabled: #{colors.$db-current-color-on-contrast-enabled};
 	--db-current-color-bg-enabled: #{colors.$db-current-color-contrast-high-enabled};
-	// border should be same color like background
 	--db-current-color-border: #{colors.$db-current-color-contrast-high-enabled};
 
 	@extend %set-current-colors;
@@ -27,10 +26,6 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 			@extend %db-#{$name}-bg-lvl-1;
 
 			&[data-emphasis="strong"] {
-				// border should be same color like background
-				--db-current-color-border: var(
-					--db-#{$name}-contrast-high-enabled
-				);
 				@extend %db-#{$name}-component;
 			}
 		}
