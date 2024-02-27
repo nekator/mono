@@ -76,6 +76,10 @@ module.exports = (tmp) => {
 					to: ''
 				},
 				{
+					from: '{ cls }',
+					to: '{ cls, uuid }'
+				},
+				{
 					from: '} from "../../utils"',
 					to: ', filterPassingProps } from "../../utils"'
 				},
@@ -99,10 +103,6 @@ module.exports = (tmp) => {
 				{
 					from: /<\/>/g,
 					to: '</React.Fragment>'
-				},
-				{
-					from: '{ cls }',
-					to: '{ cls, uuid }'
 				}
 			];
 
