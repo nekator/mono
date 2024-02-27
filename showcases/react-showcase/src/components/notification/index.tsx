@@ -4,14 +4,6 @@ import defaultComponentVariants from '../../../../shared/notification.json';
 import { type DBNotificationProps } from '../../../../../output/react/src/components/notification/model';
 import { getVariants } from '../data';
 
-const getBasePath = (): string => {
-	try {
-		return process?.env?.NEXT_PUBLIC_BASE_PATH;
-	} catch {}
-
-	return import.meta.env.BASE_URL;
-};
-
 const getNotification = ({
 	semantic,
 	icon,
@@ -32,7 +24,9 @@ const getNotification = ({
 		slotImage={
 			img ? (
 				<img
-					src={`${getBasePath()}/assets/images/placeholder.png`}
+					src={`${
+						import.meta.env.BASE_URL
+					}/assets/images/placeholder.png`}
 					alt="Placeholder"
 				/>
 			) : undefined

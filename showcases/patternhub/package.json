@@ -13,6 +13,7 @@
     "compile:03_copy-docs": "cpr ../../docs ./public/docs -o",
     "compile:04_components": "node scripts/esbuild-generate.mjs",
     "compile:05_run": "node generated.js",
+    "compile:06_replace_base": "node scripts/fix-base-path.js",
     "dev": "cross-env NEXT_PUBLIC_BASE_PATH=/mono/sub npm-run-all compile -p open next:dev",
     "lint": "next lint",
     "next:dev": "next dev",
