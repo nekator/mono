@@ -8,7 +8,7 @@ import {
 	useStore
 } from '@builder.io/mitosis';
 import type { DBTabProps, DBTabState } from './model';
-import { cls } from '../../utils';
+import { cls, uuid } from '../../utils';
 import { ClickEvent } from '../../shared/model';
 import { DEFAULT_ID } from '../../shared/constants';
 
@@ -25,6 +25,7 @@ export default function DBTab(props: DBTabProps) {
 	});
 
 	onMount(() => {
+		state._id = props.id || 'tab-' + uuid();
 		state.initialized = true;
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
