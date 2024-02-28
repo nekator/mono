@@ -6,7 +6,8 @@ import {
 	useStore
 } from '@builder.io/mitosis';
 import { DBInfotextProps, DBInfotextState } from './model';
-import { cls } from '../../utils';
+import { cls, uuid } from '../../utils';
+import { DEFAULT_ID } from '../../shared/constants';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -15,10 +16,13 @@ useMetadata({
 export default function DBInfotext(props: DBInfotextProps) {
 	const ref = useRef<HTMLSpanElement>(null);
 	// jscpd:ignore-start
-	const state = useStore<DBInfotextState>({});
+	const state = useStore<DBInfotextState>({
+		_id: DEFAULT_ID
+	});
 	// jscpd:ignore-end
 
 	onMount(() => {
+		state._id = props.id || 'infotext-' + uuid();
 		if (props.stylePath) {
 			state.stylePath = props.stylePath;
 		}
@@ -28,7 +32,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 	return (
 		<span
 			ref={ref}
-			id={props.id}
+			id={state._id}
 			class={cls('db-infotext', props.className)}
 			title={props.title}
 			data-icon={props.icon}
