@@ -75,5 +75,4 @@ const App = ({ Component, pageProps }: AppProps) => (
 		<Component {...pageProps} />
 	</MDXProvider>
 );
-
 export default App;
