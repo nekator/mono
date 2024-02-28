@@ -111,7 +111,7 @@ $spacings: (
 		@extend %spacing-drawer;
 		display: flex;
 		flex-direction: column;
-		background-color: colors.$db-neutral-bg-lvl-1-enabled;
+		background-color: colors.$db-current-color-bg-lvl-1-enabled;
 		block-size: 100%;
 		inline-size: 100%;
 		position: fixed;
@@ -170,44 +170,44 @@ $spacings: (
 			&:not([data-direction]),
 			&[data-direction="right"] {
 				animation: show-right-to-left
-					variables.$db-transition-show-straight;
+					variables.$db-transition-straight-show;
 			}
 
 			&[data-direction="left"] {
 				animation: show-left-to-right
-					variables.$db-transition-show-straight;
+					variables.$db-transition-straight-show;
 			}
 
 			&[data-direction="up"] {
 				animation: show-bottom-to-top
-					variables.$db-transition-show-straight;
+					variables.$db-transition-straight-show;
 			}
 
 			&[data-direction="down"] {
 				animation: show-top-to-bottom
-					variables.$db-transition-show-straight;
+					variables.$db-transition-straight-show;
 			}
 
 			&[hidden] {
 				&:not([data-direction]),
 				&[data-direction="right"] {
 					animation: hide-right-to-left
-						variables.$db-transition-hide-straight;
+						variables.$db-transition-straight-hide;
 				}
 
 				&[data-direction="left"] {
 					animation: hide-left-to-right
-						variables.$db-transition-hide-straight;
+						variables.$db-transition-straight-hide;
 				}
 
 				&[data-direction="up"] {
 					animation: hide-bottom-to-top
-						variables.$db-transition-hide-straight;
+						variables.$db-transition-straight-hide;
 				}
 
 				&[data-direction="down"] {
 					animation: hide-top-to-bottom
-						variables.$db-transition-hide-straight;
+						variables.$db-transition-straight-hide;
 				}
 			}
 		}

@@ -3,7 +3,6 @@
 @use "./colors/placeholder";
 
 :root {
-	/* REST */
 	--db-spacing-responsive-regular-desktop-3xl: 40rem;
 	--db-spacing-responsive-regular-desktop-2xl: 30rem;
 	--db-spacing-responsive-regular-desktop-xl: 15rem;
@@ -729,6 +728,23 @@
 		0 0 8px 1px rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.14);
 	--db-elevation-lg: 0 0 4px -3px rgba(0, 0, 0, 0.2),
 		0 0 16px 3px rgba(0, 0, 0, 0.12), 0 0 8px 1px rgba(0, 0, 0, 0.14);
+	--db-transition-duration-x-slow: 0.5s;
+	--db-transition-duration-slow: 0.4s;
+	--db-transition-duration-medium: 0.3s;
+	--db-transition-duration-fast: 0.15s;
+	--db-transition-duration-x-fast: 0.075s;
+	--db-transition-timing-show: cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+	--db-transition-timing-hide: cubic-bezier(0.49, 0.1, 0.16, 1) normal both;
+	--db-transition-timing-emotional: cubic-bezier(0.27, 0.05, 0.4, 0.95);
+	--db-transition-timing-functional: cubic-bezier(0.15, 0, 0.45, 1);
+	--db-transition-straight-show: 0.5s cubic-bezier(0.49, 0.1, 0.16, 1) normal
+		both;
+	--db-transition-straight-hide: 0.4s cubic-bezier(0.49, 0.1, 0.16, 1) normal
+		both;
+	--db-transition-straight-emotional: 0.3s cubic-bezier(0.27, 0.05, 0.4, 0.95);
+	--db-transition-straight-functional: 0.3s cubic-bezier(0.15, 0, 0.45, 1);
+	--db-font-family-sans: "DB Screen Sans", Helvetica, Arial, sans-serif;
+	--db-font-family-head: "DB Screen Head", Helvetica, Arial, sans-serif;
 
 	/* COLORS */
 	@include default-palette.get-color-palette;

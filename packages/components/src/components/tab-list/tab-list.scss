@@ -51,7 +51,7 @@
 		}
 
 		&::before {
-			@extend %db-neutral-bg-transparent-semi;
+			background-color: colors.$db-current-color-bg-transparent-semi-enabled;
 			content: "";
 			border-radius: variables.$db-border-radius-md;
 			block-size: variables.$db-border-height-lg;
@@ -107,7 +107,7 @@
 		}
 
 		&::before {
-			@extend %db-neutral-bg-transparent-semi;
+			background-color: colors.$db-current-color-bg-transparent-semi-enabled;
 			content: "";
 			border-radius: variables.$db-border-radius-md;
 			inline-size: variables.$db-border-height-lg;

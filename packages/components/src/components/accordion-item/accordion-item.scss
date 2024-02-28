@@ -66,7 +66,7 @@
 	&[open] {
 		summary + div {
 			animation: accordion-open
-				variables.$db-transition-emotional-straight normal both;
+				variables.$db-transition-straight-emotional normal both;
 		}
 
 		summary::after {

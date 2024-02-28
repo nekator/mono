@@ -132,7 +132,7 @@
 	}
 
 	&:not([data-animation="disabled"]) {
-		animation: popover-animation variables.$db-transition-emotional-straight
+		animation: popover-animation variables.$db-transition-straight-emotional
 			normal both;
 
 		&[data-delay="slow"] {
@@ -173,7 +173,7 @@
 	@extend %popover-placement;
 
 	position: absolute;
-	background-color: colors.$db-neutral-bg-lvl-1-enabled;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 	box-shadow: variables.$db-elevation-md;
 	visibility: hidden;
 	z-index: 1;

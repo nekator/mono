@@ -26,7 +26,7 @@
 		& ~ .db-sub-navigation {
 			visibility: visible;
 			transition: visibility 0ms linear 0ms;
-			animation: show-right-to-left variables.$db-transition-show-straight;
+			animation: show-right-to-left variables.$db-transition-straight-show;
 
 			.db-sub-navigation {
 				inset-block: 0;
@@ -37,7 +37,7 @@
 	&:not(&[aria-expanded="true"]) {
 		& ~ .db-sub-navigation {
 			transition: visibility 0ms linear 410ms; // hide animation is 0.4s
-			animation: hide-right-to-left variables.$db-transition-hide-straight;
+			animation: hide-right-to-left variables.$db-transition-straight-hide;
 		}
 	}
 }
@@ -170,7 +170,7 @@
 	flex-direction: column;
 	z-index: 70;
 	inset-inline-start: 0;
-	background-color: colors.$db-neutral-bg-lvl-1-enabled;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 
 	visibility: hidden;
 
@@ -288,7 +288,7 @@
 	@include helpers.divider("bottom");
 	display: flex;
 	font-weight: normal;
-	background-color: colors.$db-neutral-bg-lvl-1-enabled;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 	padding-block-end: variables.$db-spacing-fixed-md;
 	margin-block-end: variables.$db-spacing-fixed-md;
 }

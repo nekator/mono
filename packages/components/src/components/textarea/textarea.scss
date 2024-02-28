@@ -56,7 +56,7 @@
 			&::before {
 				@extend %default-transition;
 				@include get-scrolling-workaround();
-				background-color: colors.$db-neutral-bg-lvl-1-enabled;
+				background-color: colors.$db-current-color-bg-lvl-1-enabled;
 			}
 
 			&::after {
@@ -76,7 +76,7 @@
 
 			&:has(textarea:read-only) {
 				&::after {
-					background-color: colors.$db-neutral-bg-lvl-1-enabled !important;
+					background-color: colors.$db-current-color-bg-lvl-1-enabled !important;
 				}
 			}
 		}

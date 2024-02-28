@@ -6,7 +6,7 @@
 @use "../../styles/component";
 
 .db-header {
-	background-color: colors.$db-neutral-bg-lvl-1-enabled;
+	background-color: colors.$db-current-color-bg-lvl-1-enabled;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -46,13 +46,13 @@
 }
 
 .db-header-meta-navigation {
-	@extend %db-neutral-bg-transparent-semi;
 	@extend %db-density-functional;
 	@include helpers.divider("top");
 	display: flex;
 	flex-direction: column;
 	gap: variables.$db-spacing-fixed-sm;
 	justify-content: flex-end;
+	background-color: colors.$db-current-color-bg-lvl-2-enabled;
 
 	padding: variables.$db-spacing-fixed-md;
 

@@ -21,10 +21,10 @@
 
 	&[data-semantic="adaptive"],
 	&:not([data-semantic]) {
-		color: colors.$db-neutral-contrast-high-enabled;
+		color: colors.$db-current-color-contrast-high-enabled;
 
 		&::before {
-			--db-current-icon-color: #{colors.$db-neutral-contrast-low-enabled};
+			--db-current-icon-color: #{colors.$db-current-color-contrast-low-enabled};
 		}
 	}
 

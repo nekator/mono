@@ -32,8 +32,10 @@
 		position: absolute;
 		border-radius: variables.$db-border-radius-md;
 		transition:
-			height 0.15s variables.$db-transition-emotional-timing,
-			width 0.15s variables.$db-transition-emotional-timing;
+			height variables.$db-transition-duration-fast
+				variables.$db-transition-timing-emotional,
+			width variables.$db-transition-duration-fast
+				variables.$db-transition-timing-emotional;
 	}
 }
 

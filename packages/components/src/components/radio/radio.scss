@@ -9,7 +9,7 @@
 		border-color: currentColor;
 		border-radius: variables.$db-border-radius-3xl;
 		transition: border-width variables.$db-transition-duration-fast
-			variables.$db-transition-functional-timing;
+			variables.$db-transition-timing-functional;
 
 		&:checked {
 			// The radio element still has the default background for the dot on :hover when in checked state
