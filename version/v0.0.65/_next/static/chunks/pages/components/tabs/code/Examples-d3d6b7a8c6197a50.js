@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[72096],{12637:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/tabs/code/Examples",function(){return u(96245)}])}},function(n){n.O(0,[64996,96245,92888,49774,40179],function(){return n(n.s=12637)}),_N_E=n.O()}]);
