@@ -715,13 +715,25 @@
 	--db-typography-expressive-mobile-headline-3xs-font-size: 1rem;
 	--db-base-icon-weight-expressive-mobile-headline-3xs: 20;
 	--db-base-icon-font-size-expressive-mobile-headline-3xs: 1.25rem;
-	--db-border-height-sm: 0.0625rem;
-	--db-border-height-md: 0.125rem;
-	--db-border-height-lg: 0.25rem;
-	--db-border-radius-sm: 0.15625rem;
-	--db-border-radius-md: 0.25rem;
-	--db-border-radius-lg: 0.5rem;
-	--db-border-radius-3xl: 2.625rem;
+	--db-border-height-3xs: 0.0625rem;
+	--db-border-height-2xs: 0.125rem;
+	--db-border-height-xs: 0.25rem;
+	--db-border-height-sm: 0.375rem;
+	--db-border-height-md: 0.5rem;
+	--db-border-height-lg: 0.625rem;
+	--db-border-height-xl: 0.75rem;
+	--db-border-height-2xl: 0.875rem;
+	--db-border-height-3xl: 1rem;
+	--db-border-radius-3xs: 0.0625rem;
+	--db-border-radius-2xs: 0.125rem;
+	--db-border-radius-xs: 0.25rem;
+	--db-border-radius-sm: 0.5rem;
+	--db-border-radius-md: 0.75rem;
+	--db-border-radius-lg: 1rem;
+	--db-border-radius-xl: 1.5rem;
+	--db-border-radius-2xl: 1.75rem;
+	--db-border-radius-3xl: 2rem;
+	--db-border-radius-full: 500rem;
 	--db-elevation-sm: 0 0 1px -1px rgba(0, 0, 0, 0.2),
 		0 0 4px 1px rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14);
 	--db-elevation-md: 0 0 2px -1px rgba(0, 0, 0, 0.2),

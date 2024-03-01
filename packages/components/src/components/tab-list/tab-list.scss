@@ -53,8 +53,8 @@
 		&::before {
 			background-color: colors.$db-current-color-bg-transparent-semi-enabled;
 			content: "";
-			border-radius: variables.$db-border-radius-md;
-			block-size: variables.$db-border-height-lg;
+			border-radius: variables.$db-border-radius-xs;
+			block-size: variables.$db-border-height-xs;
 			position: absolute;
 
 			inset-inline: variables.$db-spacing-fixed-sm;
@@ -62,7 +62,7 @@
 			/* 2x padding + 1x margin + text + 3x border  */
 			inset-block-start: calc(
 				2 * #{variables.$db-spacing-fixed-xs} + #{variables.$db-spacing-fixed-sm} +
-					#{form-components.$font-size-height} + #{variables.$db-border-height-sm} *
+					#{form-components.$font-size-height} + #{variables.$db-border-height-3xs} *
 					3
 			);
 		}
@@ -109,14 +109,14 @@
 		&::before {
 			background-color: colors.$db-current-color-bg-transparent-semi-enabled;
 			content: "";
-			border-radius: variables.$db-border-radius-md;
-			inline-size: variables.$db-border-height-lg;
+			border-radius: variables.$db-border-radius-xs;
+			inline-size: variables.$db-border-height-xs;
 			inset-block: variables.$db-spacing-fixed-sm;
 			position: absolute;
 
 			inset-inline-start: calc(
 				-1 * #{variables.$db-spacing-fixed-xs} + #{variables.$db-spacing-fixed-sm} +
-					#{variables.$db-border-height-sm}
+					#{variables.$db-border-height-3xs}
 			);
 		}
 	}

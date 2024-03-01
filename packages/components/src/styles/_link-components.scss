@@ -42,7 +42,7 @@
 	white-space: nowrap;
 
 	&:focus-visible {
-		border-radius: variables.$db-border-radius-md;
+		border-radius: variables.$db-border-radius-xs;
 	}
 
 	// "disabled" links

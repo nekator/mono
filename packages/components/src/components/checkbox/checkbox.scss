@@ -9,7 +9,7 @@
 	@extend %check-element;
 
 	input {
-		border-radius: variables.$db-border-radius-sm;
+		border-radius: variables.$db-border-radius-2xs;
 
 		&::before {
 			--db-icon-margin-end: 0;

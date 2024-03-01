@@ -46,18 +46,31 @@
 		]
 	},
 	"borderRadius": {
-		"DEFAULT": "var(--db-border-radius-md)",
+		"DEFAULT": "var(--db-border-radius-xs)",
+		"none": 0,
+		"3xs": "var(--db-border-radius-3xs)",
+		"2xs": "var(--db-border-radius-2xs)",
+		"xs": "var(--db-border-radius-xs)",
 		"sm": "var(--db-border-radius-sm)",
 		"md": "var(--db-border-radius-md)",
 		"lg": "var(--db-border-radius-lg)",
-		"3xl": "var(--db-border-radius-3xl)"
+		"xl": "var(--db-border-radius-xl)",
+		"2xl": "var(--db-border-radius-2xl)",
+		"3xl": "var(--db-border-radius-3xl)",
+		"full": "var(--db-border-radius-full)"
 	},
 	"borderWidth": {
-		"DEFAULT": "var(--db-border-height-sm)",
-		"none": "0",
+		"DEFAULT": "var(--db-border-height-3xs)",
+		"none": 0,
+		"3xs": "var(--db-border-height-3xs)",
+		"2xs": "var(--db-border-height-2xs)",
+		"xs": "var(--db-border-height-xs)",
 		"sm": "var(--db-border-height-sm)",
 		"md": "var(--db-border-height-md)",
-		"lg": "var(--db-border-height-lg)"
+		"lg": "var(--db-border-height-lg)",
+		"xl": "var(--db-border-height-xl)",
+		"2xl": "var(--db-border-height-2xl)",
+		"3xl": "var(--db-border-height-3xl)"
 	},
 	"screens": {
 		"xs": "360px",
@@ -73,6 +86,7 @@
 		"lg": "var(--db-elevation-lg)"
 	},
 	"spacing": {
+		"none": 0,
 		"0": 0,
 		"fix-3xs": "var(--db-spacing-fixed-3xs)",
 		"fix-2xs": "var(--db-spacing-fixed-2xs)",

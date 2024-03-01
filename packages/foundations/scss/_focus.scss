@@ -2,9 +2,9 @@
 @use "colors";
 
 %focus-placeholder {
-	outline: #{variables.$db-border-height-md} solid #{colors.$db-informational-contrast-high-enabled};
+	outline: #{variables.$db-border-height-2xs} solid #{colors.$db-informational-contrast-high-enabled};
 	outline-offset: calc(
-		#{variables.$db-border-height-lg} + #{variables.$db-border-height-md}
+		#{variables.$db-border-height-xs} + #{variables.$db-border-height-2xs}
 	);
 
 	// TODO: The fallback currently only includes the same CSS Custom Property, which doesn't make any sense
@@ -21,6 +21,6 @@
 			);
 
 	&:not([type="radio"]) {
-		border-radius: variables.$db-border-radius-md;
+		border-radius: variables.$db-border-radius-xs;
 	}
 }

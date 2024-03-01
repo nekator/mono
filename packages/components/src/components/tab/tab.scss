@@ -35,7 +35,7 @@
 			position: absolute;
 			appearance: none;
 			inline-size: 100%;
-			block-size: calc(100% + #{variables.$db-border-height-sm});
+			block-size: calc(100% + #{variables.$db-border-height-3xs});
 			margin-inline-end: initial;
 			inset: 0;
 
@@ -59,7 +59,7 @@
 				&::after {
 					inset-block-start: calc(
 						#{variables.$db-spacing-fixed-xs} * 2 + #{form-components.$font-size-height} +
-							#{variables.$db-border-height-sm} * 2
+							#{variables.$db-border-height-3xs} * 2
 					);
 					inset-block-end: auto;
 				}

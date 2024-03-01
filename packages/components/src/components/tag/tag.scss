@@ -80,7 +80,7 @@
 		margin-inline-start: 0;
 
 		&:has(input:checked) {
-			border-width: variables.$db-border-height-sm;
+			border-width: variables.$db-border-height-3xs;
 
 			&::before {
 				content: none;
@@ -102,7 +102,7 @@
 							var(
 									--db-padding-inline-start,
 									#{variables.$db-spacing-fixed-2xs}
-								) + #{variables.$db-border-height-sm}
+								) + #{variables.$db-border-height-3xs}
 						) * -1
 				)
 			);
@@ -153,7 +153,7 @@
 		@extend %component-border;
 		block-size: inherit;
 		padding: 0 variables.$db-spacing-fixed-2xs;
-		border-radius: variables.$db-border-radius-md;
+		border-radius: variables.$db-border-radius-xs;
 	}
 
 	db-button,

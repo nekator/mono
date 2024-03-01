@@ -11,27 +11,28 @@ $default-mobile-header-height: var(
 $default-disabled: 0.4;
 
 %default-adaptive-border {
-	border: variables.$db-border-height-sm solid
+	border: variables.$db-border-height-3xs solid
 		colors.$db-current-color-enabled;
 }
 
 %transparent-border {
-	border: variables.$db-border-height-sm solid transparent;
+	border: variables.$db-border-height-3xs solid transparent;
 }
 
 %component-border {
-	border: variables.$db-border-height-sm solid colors.$db-current-color-border;
+	border: variables.$db-border-height-3xs solid
+		colors.$db-current-color-border;
 }
 
 %default-interactive-component {
 	@extend %default-adaptive-border;
-	border-radius: variables.$db-border-radius-md;
+	border-radius: variables.$db-border-radius-xs;
 }
 
 %default-card {
 	@extend %component-border;
 	border-radius: var(
 		--default-card-border-radius,
-		#{variables.$db-border-radius-lg}
+		#{variables.$db-border-radius-sm}
 	);
 }

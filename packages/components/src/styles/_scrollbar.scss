@@ -13,7 +13,7 @@ $scrollbar-width: helpers.to-rem(8);
 		inline-size: $scrollbar-width;
 		block-size: $scrollbar-width;
 		background-color: colors.$db-current-color-bg-lvl-1-enabled;
-		border-start-end-radius: variables.$db-border-radius-md;
+		border-start-end-radius: variables.$db-border-radius-xs;
 	}
 
 	&:hover {
@@ -80,11 +80,11 @@ $scrollbar-width: helpers.to-rem(8);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-image: var(--db-textarea-resizer-image);
-		border-end-end-radius: variables.$db-border-radius-md;
+		border-end-end-radius: variables.$db-border-radius-xs;
 	}
 
 	&::-webkit-scrollbar-corner {
 		@extend %default-transition;
-		border-end-end-radius: variables.$db-border-radius-md;
+		border-end-end-radius: variables.$db-border-radius-xs;
 	}
 }

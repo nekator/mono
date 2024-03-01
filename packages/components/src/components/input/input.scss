@@ -70,7 +70,7 @@ $icon-padding: calc(
 			appearance: none;
 			position: absolute;
 			inset-inline-end: calc(
-				#{variables.$db-spacing-fixed-sm} + #{variables.$db-border-height-sm}
+				#{variables.$db-spacing-fixed-sm} + #{variables.$db-border-height-3xs}
 			);
 		}
 	}

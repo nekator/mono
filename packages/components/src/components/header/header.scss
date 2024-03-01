@@ -12,7 +12,7 @@
 	position: relative;
 
 	min-block-size: component.$default-mobile-header-height;
-	border-block-end: variables.$db-border-height-sm solid
+	border-block-end: variables.$db-border-height-3xs solid
 		colors.$db-current-color-border;
 
 	@include screen-sizes.screen("md") {
