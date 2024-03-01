@@ -116,8 +116,29 @@ $floating-label-size: calc(
 		$variant: "critical";
 	}
 
-	& {
-		@extend %db-#{$variant}-variables;
+	@if ($selector != textarea) {
+		& {
+			@extend %db-#{$variant}-variables;
+		}
+	} @else {
+		// this is a workaround for the textarea scrollbar
+		& {
+			--db-textarea-read-only: var(--db-#{$variant}-bg-lvl-1-enabled);
+			--db-current-color-bg-transparent-full-enabled: var(
+				--db-#{$variant}-bg-transparent-full-enabled
+			);
+			--db-current-color-bg-transparent-semi-enabled: var(
+				--db-#{$variant}-bg-transparent-semi-enabled
+			);
+			--db-current-color-bg-transparent-hover: var(
+				--db-#{$variant}-bg-transparent-hover
+			);
+			--db-current-color-bg-transparent-pressed: var(
+				--db-#{$variant}-bg-transparent-pressed
+			);
+			--db-current-color-enabled: var(--db-#{$variant}-on-bg-enabled);
+			--db-current-color-border: var(--db-#{$variant}-border);
+		}
 	}
 
 	#{$selector},
@@ -242,7 +263,10 @@ $floating-label-size: calc(
 		}
 
 		&:is(input, textarea):not(:disabled):read-only {
-			background-color: colors.$db-current-color-bg-lvl-1-enabled !important;
+			background-color: var(
+				--db-textarea-read-only,
+				#{colors.$db-current-color-bg-lvl-1-enabled}
+			) !important;
 		}
 	}
 
