@@ -43,20 +43,20 @@
 
 @each $density in variables.$densities {
 	%db-typography-headline-#{$density} {
-		@each $size in variables.$headline {
+		@each $size in variables.$sizings {
 			@include get-font($density, "mobile", $size, "headline");
 			@include get-icons($density, "mobile", $size, "headline");
 		}
 
 		@include screen-sizes.screen() {
-			@each $size in variables.$headline {
+			@each $size in variables.$sizings {
 				@include get-font($density, "tablet", $size, "headline");
 				@include get-icons($density, "tablet", $size, "headline");
 			}
 		}
 
 		@include screen-sizes.screen("md") {
-			@each $size in variables.$headline {
+			@each $size in variables.$sizings {
 				@include get-font($density, "desktop", $size, "headline");
 				@include get-icons($density, "desktop", $size, "headline");
 			}
@@ -64,20 +64,20 @@
 	}
 
 	%db-typography-body-#{$density} {
-		@each $size in variables.$body {
+		@each $size in variables.$sizings {
 			@include get-font($density, "mobile", $size);
 			@include get-icons($density, "mobile", $size);
 		}
 
 		@include screen-sizes.screen() {
-			@each $size in variables.$body {
+			@each $size in variables.$sizings {
 				@include get-font($density, "tablet", $size);
 				@include get-icons($density, "mobile", $size);
 			}
 		}
 
 		@include screen-sizes.screen("md") {
-			@each $size in variables.$body {
+			@each $size in variables.$sizings {
 				@include get-font($density, "desktop", $size);
 				@include get-icons($density, "mobile", $size);
 			}
