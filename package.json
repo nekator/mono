@@ -81,13 +81,13 @@
     "test:angular-showcase": "npm run test:e2e --workspace=angular-showcase",
     "test:react-showcase": "npm run test:e2e --workspace=react-showcase",
     "test:vue-showcase": "npm run test:e2e --workspace=vue-showcase",
-    "update:dependency:playwright": "node scripts/update-playwright.js",
+    "update:dependency:playwright": "node .github/scripts/update-playwright.js",
     "update:icon-fonts": "npm-run-all generate:icon-fonts generate:icon-types"
   },
   "devDependencies": {
     "@commitlint/cli": "19.0.3",
     "@commitlint/config-conventional": "19.0.3",
-    "@playwright/test": "1.41.2",
+    "@playwright/test": "1.42.0",
     "adm-zip": "0.5.10",
     "commander": "^12.0.0",
     "cpr": "3.0.1",
