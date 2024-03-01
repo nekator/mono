@@ -57,13 +57,16 @@
 	text-align: center;
 	align-items: center; // Centering the content vertically and horizontally
 
-	&:hover,
-	&:has(~ .db-sub-navigation:hover) {
+	@include helpers.hover {
 		background-color: colors.$db-current-color-bg-transparent-hover;
 	}
 
-	&:active {
+	@include helpers.active {
 		background-color: colors.$db-current-color-bg-transparent-pressed;
+	}
+
+	&:has(~ .db-sub-navigation:hover) {
+		background-color: colors.$db-current-color-bg-transparent-hover;
 	}
 }
 

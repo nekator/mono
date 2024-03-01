@@ -2,6 +2,7 @@
 @use "@db-ui/foundations/build/scss/colors";
 @use "@db-ui/foundations/build/scss/focus";
 @use "@db-ui/foundations/build/scss/icons";
+@use "@db-ui/foundations/build/scss/helpers";
 @use "../../styles/component";
 @use "../../styles/db-puls";
 @use "../../styles/form-components";
@@ -17,11 +18,11 @@
 	position: relative;
 	background-color: colors.$db-current-color-bg-transparent-full-enabled;
 
-	&:hover {
+	@include helpers.hover {
 		background-color: colors.$db-current-color-bg-transparent-hover;
 	}
 
-	&:active {
+	@include helpers.active {
 		background-color: colors.$db-current-color-bg-transparent-pressed;
 	}
 
@@ -38,6 +39,7 @@
 			block-size: calc(100% + #{variables.$db-border-height-3xs});
 			margin-inline-end: initial;
 			inset: 0;
+			cursor: inherit;
 
 			&:focus-within,
 			&:focus-visible {

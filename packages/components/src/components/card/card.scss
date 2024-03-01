@@ -1,5 +1,6 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/helpers";
 @use "../../styles/component";
 
 .db-card {
@@ -29,12 +30,12 @@
 	&:not([data-elevation-level]) {
 		background-color: colors.$db-current-color-bg-lvl-1-enabled;
 
-		&[data-behaviour="interactive"]:not(:disabled) {
-			&:hover {
+		&[data-behaviour="interactive"] {
+			@include helpers.hover {
 				background-color: colors.$db-current-color-bg-lvl-1-hover;
 			}
 
-			&:active {
+			@include helpers.active {
 				background-color: colors.$db-current-color-bg-lvl-1-pressed;
 			}
 		}
@@ -43,12 +44,12 @@
 	&[data-elevation-level="2"] {
 		background-color: colors.$db-current-color-bg-lvl-2-enabled;
 
-		&[data-behaviour="interactive"]:not(:disabled) {
-			&:hover {
+		&[data-behaviour="interactive"] {
+			@include helpers.hover {
 				background-color: colors.$db-current-color-bg-lvl-2-hover;
 			}
 
-			&:active {
+			@include helpers.active {
 				background-color: colors.$db-current-color-bg-lvl-2-pressed;
 			}
 		}
@@ -57,12 +58,12 @@
 	&[data-elevation-level="3"] {
 		background-color: colors.$db-current-color-bg-lvl-3-enabled;
 
-		&[data-behaviour="interactive"]:not(:disabled) {
-			&:hover {
+		&[data-behaviour="interactive"] {
+			@include helpers.hover {
 				background-color: colors.$db-current-color-bg-lvl-3-hover;
 			}
 
-			&:active {
+			@include helpers.active {
 				background-color: colors.$db-current-color-bg-lvl-3-pressed;
 			}
 		}

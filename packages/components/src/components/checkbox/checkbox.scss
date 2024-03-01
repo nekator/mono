@@ -2,6 +2,7 @@
 @use "@db-ui/foundations/build/scss/icons";
 @use "@db-ui/foundations/build/scss/density";
 @use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/helpers";
 @use "../../styles/component";
 @use "../../styles/form-components";
 
@@ -28,18 +29,16 @@
 			color: colors.$db-current-color-bg-enabled;
 			background-color: colors.$db-current-color-enabled;
 
-			&::before {
-				color: colors.$db-current-color-bg-enabled;
+			@include helpers.hover {
+				background-color: colors.$db-current-color-hover;
 			}
 
-			&:not(:disabled) {
-				&:hover {
-					background-color: colors.$db-current-color-hover;
-				}
+			@include helpers.active {
+				background-color: colors.$db-current-color-pressed;
+			}
 
-				&:active {
-					background-color: colors.$db-current-color-pressed;
-				}
+			&::before {
+				color: colors.$db-current-color-bg-enabled;
 			}
 		}
 

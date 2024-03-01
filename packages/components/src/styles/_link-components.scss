@@ -12,7 +12,7 @@
 %db-link-default-color {
 	color: colors.$db-current-color-enabled;
 
-	&:hover {
+	@include helpers.hover {
 		color: color-mix(
 			in srgb,
 			transparent 25%,
@@ -20,7 +20,7 @@
 		);
 	}
 
-	&:active {
+	@include helpers.active {
 		color: color-mix(
 			in srgb,
 			transparent 50%,

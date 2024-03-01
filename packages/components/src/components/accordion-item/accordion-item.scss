@@ -42,11 +42,11 @@
 		padding: variables.$db-spacing-fixed-md;
 		gap: variables.$db-spacing-fixed-md;
 
-		&:hover {
+		@include helpers.hover {
 			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 
-		&:active {
+		@include helpers.active {
 			background-color: colors.$db-current-color-bg-transparent-pressed;
 		}
 

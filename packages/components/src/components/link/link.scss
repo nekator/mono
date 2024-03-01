@@ -45,11 +45,11 @@
 		--db-current-icon-color: #{colors.$db-brand-contrast-high-enabled};
 		color: colors.$db-current-color-enabled;
 
-		&:hover {
+		@include helpers.hover {
 			--db-current-color-enabled: #{colors.$db-brand-contrast-high-hover};
 		}
 
-		&:active {
+		@include helpers.active {
 			--db-current-color-enabled: #{colors.$db-brand-contrast-high-pressed};
 		}
 	}

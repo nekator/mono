@@ -48,15 +48,15 @@ Main use-case to overwrite a color or change colors by `data-variant`. Example:
 
 ```scss
 @use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/helpers";
 
 .db-xxx {
-	&:enabled {
-		&:hover {
-			background-color: colors.$db-current-color-bg-transparent-hover;
-		}
-		&:active {
-			background-color: colors.$db-current-color-bg-transparent-pressed;
-		}
+	@include helpers.hover {
+		background-color: colors.$db-current-color-bg-transparent-hover;
+	}
+
+	@include helpers.active {
+		background-color: colors.$db-current-color-bg-transparent-pressed;
 	}
 
 	@each $name in colors.$variant-colors {

@@ -3,6 +3,7 @@
 @use "animation";
 @use "density";
 @use "focus";
+@use "helpers";
 
 :root {
 	@extend %db-component-variables-md;
@@ -303,11 +304,11 @@ p {
 		variables.$db-transition-timing-functional;
 	box-shadow: variables.$db-elevation-md;
 
-	&:hover:not(:disabled) {
+	@include helpers.hover {
 		box-shadow: variables.$db-elevation-lg;
 	}
 
-	&:active:not(:disabled) {
+	@include helpers.active {
 		box-shadow: variables.$db-elevation-sm;
 	}
 }

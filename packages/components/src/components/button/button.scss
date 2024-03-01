@@ -3,6 +3,7 @@
 @use "@db-ui/foundations/build/scss/variables";
 @use "@db-ui/foundations/build/scss/colors";
 @use "@db-ui/foundations/build/scss/icons";
+@use "@db-ui/foundations/build/scss/helpers";
 @use "../../styles/component";
 @use "../../styles/button-components";
 
@@ -18,6 +19,14 @@
 
 	// disable text-decoration if someone wants to use the button for an <a> tag
 	text-decoration: none;
+
+	@include helpers.hover {
+		background-color: colors.$db-current-color-bg-transparent-hover;
+	}
+
+	@include helpers.active {
+		background-color: colors.$db-current-color-bg-transparent-pressed;
+	}
 
 	// Square icon only buttons
 	&[data-no-text="true"] {
@@ -59,14 +68,12 @@
 		background-color: colors.$db-brand-origin-enabled;
 		color: colors.$db-brand-on-enabled;
 
-		&:not(:disabled) {
-			&:hover {
-				background-color: colors.$db-brand-origin-hover;
-			}
+		@include helpers.hover {
+			background-color: colors.$db-brand-origin-hover;
+		}
 
-			&:active {
-				background-color: colors.$db-brand-origin-pressed;
-			}
+		@include helpers.active {
+			background-color: colors.$db-brand-origin-pressed;
 		}
 	}
 
@@ -83,16 +90,6 @@
 
 	&[data-variant="filled"] {
 		background-color: colors.$db-current-color-bg-transparent-semi-enabled;
-	}
-
-	&:not(:disabled) {
-		&:hover {
-			background-color: colors.$db-current-color-bg-transparent-hover;
-		}
-
-		&:active {
-			background-color: colors.$db-current-color-bg-transparent-pressed;
-		}
 	}
 
 	&:disabled {

@@ -237,7 +237,7 @@ $floating-label-size: calc(
 			opacity: component.$default-disabled;
 		}
 
-		&:hover {
+		@include helpers.hover {
 			background-color: colors.$db-current-color-bg-transparent-hover;
 		}
 
@@ -373,6 +373,11 @@ $floating-label-size: calc(
 		display: flex;
 		align-items: center;
 		position: relative;
+
+		&:not(:has(input:disabled)) {
+			@include helpers.hover;
+			@include helpers.active;
+		}
 	}
 
 	input {
@@ -396,14 +401,12 @@ $floating-label-size: calc(
 		inline-size: auto;
 		padding: 0;
 
-		&:enabled {
-			&:hover {
-				background-color: colors.$db-current-color-bg-transparent-hover;
-			}
+		@include helpers.hover {
+			background-color: colors.$db-current-color-bg-transparent-hover;
+		}
 
-			&:active {
-				background-color: colors.$db-current-color-bg-transparent-pressed;
-			}
+		@include helpers.active {
+			background-color: colors.$db-current-color-bg-transparent-pressed;
 		}
 	}
 

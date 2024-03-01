@@ -48,3 +48,35 @@
 		}
 	}
 }
+
+@mixin cursor-pointer() {
+	cursor: pointer;
+
+	&:is(textarea),
+	&:is(input) {
+		cursor: initial;
+	}
+
+	&:is(input[type="checkbox"]),
+	&:is(input[type="radio"]) {
+		cursor: pointer;
+	}
+
+	@content;
+}
+
+@mixin hover() {
+	&:hover:not(:disabled):not([aria-disabled="true"]) {
+		@include cursor-pointer() {
+			@content;
+		}
+	}
+}
+
+@mixin active() {
+	&:active:not(:disabled):not([aria-disabled="true"]) {
+		@include cursor-pointer() {
+			@content;
+		}
+	}
+}
