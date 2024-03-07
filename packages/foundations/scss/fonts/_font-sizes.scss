@@ -32,11 +32,6 @@ $font-sizes: "3xl", "2xl", "xl", "lg", "md", "sm", "xs", "2xs", "3xs";
 		%db-overwrite-font-size-#{$font-size} {
 			@include set-component-variables($font-size);
 			@include set-font-size($font-size);
-
-			&::before {
-				@include set-component-variables($font-size);
-				@include set-font-size($font-size);
-			}
 		}
 	}
 }

@@ -67,6 +67,7 @@ export default function DBNotification(props: DBNotificationProps) {
 					id={props.closeButtonId}
 					icon="close"
 					variant="ghost"
+					size="small"
 					noText
 					onClick={(event: ClickEvent<HTMLButtonElement>) =>
 						state.handleClose(event)
