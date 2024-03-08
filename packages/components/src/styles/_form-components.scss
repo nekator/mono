@@ -26,6 +26,10 @@ $floating-label-size: calc(
 	#{variables.$db-spacing-fixed-3xs} + #{variables.$db-spacing-fixed-2xs} + #{$label-size-height-2xs}
 );
 
+$input-types: "button", "checkbox", "color", "date", "datetime-local", "email",
+	"file", "hidden", "image", "month", "number", "password", "radio", "range",
+	"reset", "search", "submit", "tel", "text", "time", "url", "week";
+
 %dropdown-icon {
 	@include icons.set-icon("expand_more", "after");
 
@@ -109,8 +113,86 @@ $floating-label-size: calc(
 	}
 }
 
+@mixin set-css-message-prop($key: "valid") {
+	&:has(select) {
+		.db-infotext {
+			--db-#{$key}-message: var(
+				--db-select-#{$key}-message,
+				var(--db-default-#{$key}-message)
+			);
+		}
+	}
+
+	&:has(textarea) {
+		.db-infotext {
+			--db-#{$key}-message: var(
+				--db-textarea-#{$key}-message,
+				var(--db-default-#{$key}-message)
+			);
+		}
+	}
+
+	&:has(input) {
+		.db-infotext {
+			--db-#{$key}-message: var(
+				--db-input-#{$key}-message,
+				var(--db-default-#{$key}-message)
+			);
+		}
+	}
+
+	@each $type in $input-types {
+		&:has(input[type="#{$type}"]) {
+			.db-infotext {
+				--db-#{$key}-message: var(
+					--db-input-#{$type}-#{$key}-message,
+					var(--db-default-#{$key}-message)
+				);
+			}
+		}
+	}
+}
+
 @mixin get-validity-color($selector, $key: "valid") {
 	$variant: "successful";
+
+	@include set-css-message-prop($key);
+
+	#{$selector},
+	[id$="-placeholder"] {
+		color: var(--db-#{$variant}-on-bg-enabled);
+		caret-color: var(--db-#{$variant}-on-bg-enabled);
+	}
+
+	.db-infotext {
+		--db-#{$key}-message: var(--db-default-#{$key}-message);
+		@include icons.variant-icons($variant);
+		display: inherit;
+		color: var(--db-#{$variant}-contrast-high-enabled);
+
+		&:not(:empty) {
+			font-size: 0;
+		}
+
+		&[data-#{$key}-message] {
+			&::after {
+				content: attr(data-#{$key}-message);
+			}
+		}
+
+		&:not([data-#{$key}-message]) {
+			&::after {
+				content: var(
+					--db-#{$key}-message,
+					"TODO: Add a #{$key} message"
+				);
+			}
+		}
+
+		&::before {
+			--db-current-icon-color: var(--db-#{$variant}-contrast-low-enabled);
+		}
+	}
 
 	@if ($key != "valid") {
 		$variant: "critical";
@@ -140,38 +222,19 @@ $floating-label-size: calc(
 			--db-current-color-border: var(--db-#{$variant}-border);
 		}
 	}
-
-	#{$selector},
-	[id$="-placeholder"] {
-		color: var(--db-#{$variant}-on-bg-enabled);
-		caret-color: var(--db-#{$variant}-on-bg-enabled);
-	}
 }
 
 @function get-validations($selector, $key) {
+	// TODO: add validations for input & textarea as well
+	//  https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation
 	$validations: ":required";
-	$user: "user-";
-
-	// Differentiating form elements
-	@if ($selector == select or $selector == check) {
-		$user: "";
-	} @else {
-		// TODO: add validations for input & textarea as well
-		//  https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation
-		$validations: ":required";
-	}
 
 	// We need to do a more complicated check for non-typed-input-elements
 	@if ($selector == input) {
 		$validations: ':not([type="text"], [type="password"], [type="search"]),:is([type="text"], [type="password"], [type="search"]):required';
 	}
 
-	// Check elements (radio and checkbox) should get selected by their native HTML tag `input`
-	@if ($selector == check) {
-		$selector: input;
-	}
-
-	$has-selectors: "&:has(#{$selector}:not([aria-invalid]):is(#{$validations}):#{$user}#{$key}),";
+	$has-selectors: "&:has(#{$selector}:not([aria-invalid]):is(#{$validations}):user-#{$key}),";
 
 	@return string.unquote(string.slice($has-selectors, 1, -2));
 }
@@ -182,17 +245,13 @@ $floating-label-size: calc(
 		$boolean: "false";
 	}
 
-	#{get-validations($selector,$key)} {
-		@content;
-	}
-
 	@if ($selector == check) {
 		$selector: input;
-	}
-
-	// :user-valid or :user-invalid workaround
-	@supports not selector(:user-#{$key}) {
 		&:has(#{$selector}:not([aria-invalid]):required:#{$key}) {
+			@content;
+		}
+	} @else {
+		#{get-validations($selector,$key)} {
 			@content;
 		}
 	}
@@ -295,6 +354,10 @@ $floating-label-size: calc(
 	// Helper message
 	& .db-infotext {
 		margin-block-start: variables.$db-spacing-fixed-2xs;
+
+		&:empty {
+			display: none;
+		}
 	}
 
 	// disabled

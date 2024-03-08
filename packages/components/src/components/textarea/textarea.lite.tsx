@@ -122,14 +122,14 @@ export default function DBTextarea(props: DBTextareaProps) {
 				cols={props.cols}
 			/>
 
-			<Show when={props.message}>
-				<DBInfotext
-					size="small"
-					icon={props.messageIcon}
-					id={state._messageId}>
-					{props.message}
-				</DBInfotext>
-			</Show>
+			<DBInfotext
+				size="small"
+				icon={props.messageIcon}
+				id={state._messageId}
+				data-valid-message={props.validMessage}
+				data-invalid-message={props.invalidMessage}>
+				{props.message}
+			</DBInfotext>
 		</div>
 	);
 }

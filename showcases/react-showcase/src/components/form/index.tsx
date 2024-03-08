@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
-import { DBTabList, DBTabPanel, DBTabs } from '@db-ui/react-components/src';
-import { DBDivider } from '@db-ui/react-components';
+import {
+	DBTabList,
+	DBTabPanel,
+	DBTabs,
+	DBDivider
+} from '@db-ui/react-components/src';
 import {
 	DBButton,
 	DBCheckbox,

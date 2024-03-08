@@ -74,11 +74,10 @@
 				}
 			},
 			{
-				"name": "Required - Checked",
+				"name": "Required - Indeterminate",
 				"props": {
 					"name": "Requirement",
-					"required": true,
-					"checked": true
+					"indeterminate": true
 				}
 			}
 		]

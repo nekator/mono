@@ -39,6 +39,14 @@ const getInput = ({
 			onChange={(event) => {
 				setDynamicValue(event.target.value);
 			}}
+			invalidMessage={
+				invalid !== undefined || required
+					? 'Invalid Message'
+					: undefined
+			}
+			validMessage={
+				invalid !== undefined || required ? 'Valid Message' : undefined
+			}
 		/>
 	);
 };

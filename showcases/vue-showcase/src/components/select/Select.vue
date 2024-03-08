@@ -19,8 +19,19 @@ import { DBInput, DBSelect } from "../../../../../output/vue/vue3/src";
 				:value="exampleProps.value"
 				:message="exampleProps.message"
 				:required="exampleProps.required"
-				>{{ exampleName }}</DBSelect
+				:invalidMessage="
+					exampleProps.invalid !== undefined || exampleProps.required
+						? 'Invalid Message'
+						: undefined
+				"
+				:validMessage="
+					exampleProps.invalid !== undefined || exampleProps.required
+						? 'Valid Message'
+						: undefined
+				"
 			>
+				{{ exampleName }}
+			</DBSelect>
 		</template>
 	</DefaultComponent>
 </template>

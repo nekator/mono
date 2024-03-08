@@ -231,6 +231,16 @@ export type FormMessageProps = {
 	message?: string;
 
 	/**
+	 * Helper message for valid form components
+	 */
+	validMessage?: string;
+
+	/**
+	 * Helper message for invalid form components
+	 */
+	invalidMessage?: string;
+
+	/**
 	 * Set/overwrite icon for helper message for form components
 	 */
 	messageIcon?: IconTypes;
