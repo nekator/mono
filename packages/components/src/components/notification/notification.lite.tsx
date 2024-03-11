@@ -8,7 +8,6 @@ import {
 } from '@builder.io/mitosis';
 import { DBNotificationProps, DBNotificationState } from './model';
 import { DBButton } from '../button';
-import { DBLink } from '../link';
 import { DEFAULT_CLOSE_BUTTON, DEFAULT_ID } from '../../shared/constants';
 import { cls, uuid } from '../../utils';
 import { ClickEvent } from '../../shared/model';
