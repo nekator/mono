@@ -113,50 +113,12 @@ $input-types: "button", "checkbox", "color", "date", "datetime-local", "email",
 	}
 }
 
-@mixin set-css-message-prop($key: "valid") {
-	&:has(select) {
-		.db-infotext {
-			--db-#{$key}-message: var(
-				--db-select-#{$key}-message,
-				var(--db-default-#{$key}-message)
-			);
-		}
-	}
-
-	&:has(textarea) {
-		.db-infotext {
-			--db-#{$key}-message: var(
-				--db-textarea-#{$key}-message,
-				var(--db-default-#{$key}-message)
-			);
-		}
-	}
-
-	&:has(input) {
-		.db-infotext {
-			--db-#{$key}-message: var(
-				--db-input-#{$key}-message,
-				var(--db-default-#{$key}-message)
-			);
-		}
-	}
-
-	@each $type in $input-types {
-		&:has(input[type="#{$type}"]) {
-			.db-infotext {
-				--db-#{$key}-message: var(
-					--db-input-#{$type}-#{$key}-message,
-					var(--db-default-#{$key}-message)
-				);
-			}
-		}
-	}
-}
-
 @mixin get-validity-color($selector, $key: "valid") {
 	$variant: "successful";
 
-	@include set-css-message-prop($key);
+	@if ($key != "valid") {
+		$variant: "critical";
+	}
 
 	#{$selector},
 	[id$="-placeholder"] {
@@ -165,37 +127,19 @@ $input-types: "button", "checkbox", "color", "date", "datetime-local", "email",
 	}
 
 	.db-infotext {
-		--db-#{$key}-message: var(--db-default-#{$key}-message);
-		@include icons.variant-icons($variant);
-		display: inherit;
-		color: var(--db-#{$variant}-contrast-high-enabled);
-
-		&:not(:empty) {
-			font-size: 0;
-		}
-
-		&[data-#{$key}-message] {
-			&::after {
-				content: attr(data-#{$key}-message);
+		@if ($key == "valid") {
+			&[data-semantic="successful"] {
+				display: flex;
+			}
+		} @else {
+			&[data-semantic="critical"] {
+				display: flex;
 			}
 		}
 
-		&:not([data-#{$key}-message]) {
-			&::after {
-				content: var(
-					--db-#{$key}-message,
-					"TODO: Add a #{$key} message"
-				);
-			}
+		&:not([data-semantic]) {
+			display: none;
 		}
-
-		&::before {
-			--db-current-icon-color: var(--db-#{$variant}-contrast-low-enabled);
-		}
-	}
-
-	@if ($key != "valid") {
-		$variant: "critical";
 	}
 
 	@if ($selector != textarea) {
@@ -352,11 +296,14 @@ $input-types: "button", "checkbox", "color", "date", "datetime-local", "email",
 	}
 
 	// Helper message
-	& .db-infotext {
+	.db-infotext {
+		display: none;
 		margin-block-start: variables.$db-spacing-fixed-2xs;
 
-		&:empty {
-			display: none;
+		&:not([data-semantic]) {
+			&:not(:empty) {
+				display: flex;
+			}
 		}
 	}
 

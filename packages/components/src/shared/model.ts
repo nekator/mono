@@ -311,6 +311,9 @@ export type FormMessageProps = {
 
 export type FormState = {
 	_messageId?: string;
+	_validMessageId?: string;
+	_invalidMessageId?: string;
+	_descByIds?: string;
 };
 
 export type InitializedState = {

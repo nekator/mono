@@ -8,40 +8,4 @@
 
 ## Valid/Invalid Messages
 
-### One component
-
-If you use some framework you can pass the props `invalidMessage` and `validMessage` to the component.
-
-### All components/ Group of components
-
-You can set default messages to all components or a group of components.
-
-For example to set default messages you would use:
-
-```css
-:root {
-	--db-default-valid-message: "This is valid.";
-	--db-default-invalid-message: "This is invalid!";
-}
-```
-
-You can also set messages to a group of form-components, for example:
-
-```css
-:root {
-	--db-textarea-valid-message: "Great!";
-	--db-textarea-invalid-message: "Please write your text!";
-}
-```
-
-For `input` you can also specify the [type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types), for example:
-
-```css
-/* replace email by the type you want to change*/
-:root {
-	--db-input-email-valid-message: "Valid E-Mail.";
-	--db-input-email-invalid-message: "You didn't provide a valid E-Mail";
-}
-```
-
-> **Note:** If you use some translation tool you can set the css-properties via JavaScript on you `html` or `body` to make sure every form-component uses the correct validation message. You can overwrite the default messages by `invalidMessage` or `validMessage` anytime.
+If you use some framework you can pass the props `invalidMessage` and `validMessage` to the component. If you use plain html you need to add 2 `.db-infotext` with `[data-semantic="successful"]` &`[data-semantic="critical"]` inside your form-element.
