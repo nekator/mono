@@ -97,7 +97,7 @@ export default function DBTabs(props: DBTabsProps) {
 				}
 			}
 		},
-		initTabs() {
+		initTabs(init) {
 			if (ref) {
 				const tabs = ref.getElementsByClassName('db-tab');
 				if (tabs?.length > 0) {
@@ -141,15 +141,18 @@ export default function DBTabs(props: DBTabsProps) {
 								}
 
 								// Auto select
-								const autoSelect =
-									!props.initialSelectedMode ||
-									props.initialSelectedMode === 'auto';
-								const shouldAutoSelect =
-									(props.initialSelectedIndex === undefined &&
-										index === 0) ||
-									props.initialSelectedIndex === index;
-								if (autoSelect && shouldAutoSelect) {
-									firstInput.click();
+								if (init) {
+									const autoSelect =
+										!props.initialSelectedMode ||
+										props.initialSelectedMode === 'auto';
+									const shouldAutoSelect =
+										(props.initialSelectedIndex ===
+											undefined &&
+											index === 0) ||
+										props.initialSelectedIndex === index;
+									if (autoSelect && shouldAutoSelect) {
+										firstInput.click();
+									}
 								}
 							}
 						}
@@ -189,24 +192,27 @@ export default function DBTabs(props: DBTabsProps) {
 	onUpdate(() => {
 		if (ref && state.initialized) {
 			state.initTabList();
-			state.initTabs();
+			state.initTabs(true);
 
-			const observer = new MutationObserver((mutations) => {
-				mutations.forEach((mutation) => {
-					if (
-						mutation.removedNodes.length ||
-						mutation.addedNodes.length
-					) {
-						state.initTabList();
-						state.initTabs();
-					}
+			const childTabLists = ref.getElementsByClassName('db-tab-list');
+			if (childTabLists?.length > 0) {
+				const observer = new MutationObserver((mutations) => {
+					mutations.forEach((mutation) => {
+						if (
+							mutation.removedNodes.length ||
+							mutation.addedNodes.length
+						) {
+							state.initTabList();
+							state.initTabs();
+						}
+					});
 				});
-			});
 
-			observer.observe(ref, {
-				childList: true,
-				subtree: true
-			});
+				observer.observe(childTabLists[0], {
+					childList: true,
+					subtree: true
+				});
+			}
 
 			state.initialized = false;
 		}
