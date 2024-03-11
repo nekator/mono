@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[41228],{19529:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/notification/code/Semantic",function(){return o(78362)}])}},function(n){n.O(0,[64996,78362,92888,49774,40179],function(){return n(n.s=19529)}),_N_E=n.O()}]);
