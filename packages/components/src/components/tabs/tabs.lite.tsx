@@ -97,7 +97,7 @@ export default function DBTabs(props: DBTabsProps) {
 				}
 			}
 		},
-		initTabs(init) {
+		initTabs(init?: boolean) {
 			if (ref) {
 				const tabs = ref.getElementsByClassName('db-tab');
 				if (tabs?.length > 0) {
