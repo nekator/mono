@@ -124,7 +124,7 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 							</DBButton>
 						</div>
 					</Show>
-					<Slot name="sub-navigation"></Slot>
+					<Slot name="subNavigation"></Slot>
 				</menu>
 			</Show>
 		</li>

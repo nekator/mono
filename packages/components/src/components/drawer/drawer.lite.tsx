@@ -13,12 +13,7 @@ import { DEFAULT_CLOSE_BUTTON } from '../../shared/constants';
 import { cls } from '../../utils';
 
 useMetadata({
-	isAttachedToShadowDom: true,
-	component: {
-		// MS Power Apps
-		includeIcon: false,
-		properties: [{ name: 'open', type: 'TwoOptions' }]
-	}
+	isAttachedToShadowDom: true
 });
 
 export default function DBDrawer(props: DBDrawerProps) {
@@ -95,7 +90,7 @@ export default function DBDrawer(props: DBDrawerProps) {
 				data-rounded={props.rounded}>
 				<header class="db-drawer-header">
 					<div class="db-drawer-header-text">
-						<Slot name="drawer-header" />
+						<Slot name="drawerHeader" />
 					</div>
 					<Show when={props.withCloseButton}>
 						<DBButton

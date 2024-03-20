@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import {
-	DBNavigationItem,
-	DBSubNavigation
-} from "../../../output/vue/vue3/src";
+import { DBNavigationItem } from "../../../output/vue/src";
 import { NavItem } from "./utils/navigation-items";
 import { useRoute } from "vue-router";
 
 defineProps<{
-	navItem?: NavItem;
+	navItem: NavItem;
 }>();
 
 const route = useRoute();
@@ -23,7 +20,7 @@ const isActive = (navItem: NavItem) =>
 		:backButtonText="`Back to ${navItem.label}`"
 		:active="isActive(navItem)"
 	>
-		<template v-if="navItem.subNavigation" v-slot:sub-navigation>
+		<template v-if="navItem.subNavigation" v-slot:subnavigation>
 			<template v-for="item of navItem.subNavigation">
 				<NavItemComponent :navItem="item"></NavItemComponent>
 			</template>

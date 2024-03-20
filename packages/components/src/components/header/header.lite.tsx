@@ -74,16 +74,16 @@ export default function DBHeader(props: DBHeaderProps) {
 				<div class="db-header-drawer-navigation">
 					<div class="db-header-navigation">{props.children}</div>
 					<div class="db-header-meta-navigation">
-						<Slot name="meta-navigation" />
+						<Slot name="metaNavigation" />
 					</div>
 				</div>
 				<div class="db-header-action-bar">
-					<Slot name="action-bar" />
+					<Slot name="actionBar" />
 				</div>
 			</DBDrawer>
 
 			<div class="db-header-meta-navigation">
-				<Slot name="meta-navigation" />
+				<Slot name="metaNavigation" />
 			</div>
 			<div class="db-header-navigation-bar">
 				<div class="db-header-brand-container">
@@ -92,7 +92,7 @@ export default function DBHeader(props: DBHeaderProps) {
 				<div class="db-header-navigation-container">
 					<div class="db-header-navigation">{props.children}</div>
 					<div class="db-header-call-to-action">
-						<Slot name="call-to-action" />
+						<Slot name="callToAction" />
 					</div>
 				</div>
 				<div class="db-header-action-container">
@@ -108,7 +108,7 @@ export default function DBHeader(props: DBHeaderProps) {
 						</DBButton>
 					</div>
 					<div class="db-header-action-bar">
-						<Slot name="action-bar" />
+						<Slot name="actionBar" />
 					</div>
 				</div>
 			</div>
