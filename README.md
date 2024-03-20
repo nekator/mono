@@ -85,6 +85,12 @@ This is mainly a platform providing the space and technology for a common basis 
 is mainly driven by the community and adapted out of the work done in projects and through the huge amount of feedback
 that we're gaining out of the community. So please support us in any way possible, this is greatly appreciated!
 
+## Migration
+
+Check our migration docs for breaking changes
+
+1. [Alpha ➡ Beta](https://github.com/db-ui/mono/tree/main/docs) (0.0.x➡0.x.x)
+
 ## How to start develop / contribute
 
 ```shell
