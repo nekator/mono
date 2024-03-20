@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[77435],{22211:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/header/code/Behaviour",function(){return e(99854)}])}},function(n){n.O(0,[64996,99854,92888,49774,40179],function(){return n(n.s=22211)}),_N_E=n.O()}]);
