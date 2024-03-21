@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6300],{26121:function(n,_,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/tab-list/docs/React",function(){return t(13524)}])}},function(n){n.O(0,[64996,13524,92888,49774,40179],function(){return n(n.s=26121)}),_N_E=n.O()}]);
