@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[16301],{79172:function(n,o,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/notification/code/Behaviour",function(){return _(90046)}])}},function(n){n.O(0,[64996,90046,92888,49774,40179],function(){return n(n.s=79172)}),_N_E=n.O()}]);
