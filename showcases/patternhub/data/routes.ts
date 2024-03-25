@@ -27,11 +27,11 @@ const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBBrand',
 				name: 'brand'
-			},
+			} /* TODO: Uncomment this if dev and design is aligned
 			{
 				label: 'DBIcon',
 				name: 'icon'
-			},
+			}, */,
 			{
 				label: 'DBTooltip',
 				name: 'tooltip'
@@ -51,6 +51,15 @@ const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBAccordionItem',
 				name: 'accordion-item'
+			},
+			{
+				label: 'DBTabs',
+				name: 'tabs'
+			},
+
+			{
+				label: 'DBTab',
+				name: 'tab'
 			}
 		]
 	},
@@ -113,11 +122,11 @@ const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBHeader',
 				name: 'header'
-			},
+			} /* TODO: Uncomment this if dev and design is aligned
 			{
 				label: 'DBPage',
 				name: 'page'
-			},
+			}, */,
 			{
 				label: 'DBSection',
 				name: 'section'
@@ -168,6 +177,17 @@ export const ROUTES: NavigationItem[] = [
 					{
 						label: 'Color Schemes',
 						path: '/foundations/colors/color-schemes'
+					}
+				]
+			},
+			{
+				label: 'Font Sizes',
+				path: '/foundations/font-sizes',
+				subNavigation: [
+					{ label: 'Readme', path: '/foundations/font-sizes/readme' },
+					{
+						label: 'Overview',
+						path: '/foundations/font-sizes/overview'
 					}
 				]
 			},

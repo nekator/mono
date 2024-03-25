@@ -1,5 +1,15 @@
-import { Component, type OnInit, Input, TemplateRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	TemplateRef,
+	NO_ERRORS_SCHEMA
+} from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { DBLink } from '../../../../../output/angular/src/components/link/link';
+import { DBDivider } from '../../../../../output/angular/src/components/divider/divider';
+import { DBCard } from '../../../../../output/angular/src/components/card/card';
 import type {
 	DefaultComponentProps,
 	DefaultComponentVariants,
@@ -14,19 +24,22 @@ import {
 
 @Component({
 	selector: 'app-default-component',
-	templateUrl: './default.component.html'
+	templateUrl: './default.component.html',
+	imports: [DBCard, DBDivider, DBLink, NgTemplateOutlet],
+	standalone: true,
+	schemas: [NO_ERRORS_SCHEMA]
 })
 export class DefaultComponent implements OnInit {
 	@Input() title: DefaultComponentProps['title'] = '';
 	@Input() variants: DefaultComponentProps['variants'] = [];
-	@Input() exampleTemplate: TemplateRef<any>;
+	@Input() exampleTemplate!: TemplateRef<any>;
 
 	tonality = TONALITY.REGULAR;
 	color = COLOR.NEUTRAL;
-	page: string;
+	page?: string;
 
 	variantRef: DefaultComponentVariants | undefined;
-	variantRefIndex: number;
+	variantRefIndex = 0;
 
 	constructor(private readonly route: ActivatedRoute) {}
 
@@ -70,11 +83,5 @@ export class DefaultComponent implements OnInit {
 		}
 
 		return `${currentUrl}&page=${variantName.toLowerCase()}`;
-	};
-
-	getCodeSnippets = (examples: DefaultComponentExample[]) => {
-		return examples
-			.filter((example) => example.code)
-			.map((example) => `/* ${example.name} */\n${example.code}`);
 	};
 }
