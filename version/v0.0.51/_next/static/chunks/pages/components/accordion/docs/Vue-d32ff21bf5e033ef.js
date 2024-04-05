@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4560],{24691:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/accordion/docs/Vue",function(){return o(37977)}])}},function(n){n.O(0,[4996,7977,9774,2888,179],function(){return n(n.s=24691)}),_N_E=n.O()}]);
