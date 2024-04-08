@@ -6,7 +6,7 @@ to: "<%= showcases ? `../../showcases/shared/${name}.json` : null %>"
 		"name": "Tonality",
 		"examples": [
 			{
-				"name": "functional",
+				"name": "Functional",
 				"className": "db-ui-functional",
 				"props": {
 				}
@@ -18,7 +18,7 @@ to: "<%= showcases ? `../../showcases/shared/${name}.json` : null %>"
 				}
 			},
 			{
-				"name": "expressive",
+				"name": "Expressive",
 				"className": "db-ui-expressive",
 				"props": {
 				}
