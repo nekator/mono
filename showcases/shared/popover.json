@@ -10,7 +10,7 @@
 				}
 			},
 			{
-				"name": "regular (Default)",
+				"name": "Regular (Default)",
 				"className": "db-ui-regular",
 				"props": {
 					"id": "popover-02"

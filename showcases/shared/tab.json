@@ -10,10 +10,10 @@
 				}
 			},
 			{
-				"name": "regular (Default)",
+				"name": "Regular (Default)",
 				"className": "db-ui-regular tab-hide-article",
 				"props": {
-					"label": "regular (Default)"
+					"label": "Regular (Default)"
 				}
 			},
 			{
