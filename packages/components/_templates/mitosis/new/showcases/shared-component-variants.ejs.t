@@ -12,7 +12,7 @@ to: "<%= showcases ? `../../showcases/shared/${name}.json` : null %>"
 				}
 			},
 			{
-				"name": "Regular (Default)",
+				"name": "(Default) Regular",
 				"className": "db-ui-regular",
 				"props": {
 				}

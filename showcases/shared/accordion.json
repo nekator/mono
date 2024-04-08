@@ -14,7 +14,7 @@
 				}
 			},
 			{
-				"name": "Regular (Default)",
+				"name": "(Default) Regular",
 				"className": "db-ui-regular",
 				"props": {},
 				"code": {
@@ -68,7 +68,7 @@
 		"name": "Behaviour",
 		"examples": [
 			{
-				"name": "Multiple (Default)",
+				"name": "(Default) Multiple",
 				"props": {
 					"behaviour": "multiple"
 				},
