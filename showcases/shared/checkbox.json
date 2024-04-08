@@ -29,7 +29,7 @@
 		"name": "States",
 		"examples": [
 			{
-				"name": "(Default) Unselected",
+				"name": "(Default) Unchecked",
 				"props": {
 					"name": "States"
 				}
