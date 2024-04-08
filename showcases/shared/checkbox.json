@@ -87,7 +87,7 @@
 		"name": "Size",
 		"examples": [
 			{
-				"name": "Default",
+				"name": "(Default) Medium",
 				"props": {
 					"name": "Size"
 				}
