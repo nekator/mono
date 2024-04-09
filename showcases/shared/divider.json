@@ -3,19 +3,19 @@
 		"name": "Tonality",
 		"examples": [
 			{
-				"name": "functional",
+				"name": "Functional",
 				"style": { "width": "200px" },
 				"className": "db-ui-functional",
 				"props": {}
 			},
 			{
-				"name": "(Default) regular",
+				"name": "(Default) Regular",
 				"style": { "width": "200px" },
 				"className": "db-ui-regular",
 				"props": {}
 			},
 			{
-				"name": "expressive",
+				"name": "Expressive",
 				"style": { "width": "200px" },
 				"className": "db-ui-expressive",
 				"props": {}

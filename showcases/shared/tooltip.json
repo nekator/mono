@@ -3,7 +3,7 @@
 		"name": "Tonality",
 		"examples": [
 			{
-				"name": "functional",
+				"name": "Functional",
 				"className": "db-ui-functional",
 				"props": {
 					"content": "Tooltip",
@@ -11,7 +11,7 @@
 				}
 			},
 			{
-				"name": "(Default) regular",
+				"name": "(Default) Regular",
 				"className": "db-ui-regular",
 				"props": {
 					"content": "Tooltip",
@@ -19,7 +19,7 @@
 				}
 			},
 			{
-				"name": "expressive",
+				"name": "Expressive",
 				"className": "db-ui-expressive",
 				"props": {
 					"content": "Tooltip",
