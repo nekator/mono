@@ -3,7 +3,7 @@
 		"name": "Tonality",
 		"examples": [
 			{
-				"name": "functional",
+				"name": "Functional",
 				"className": "db-ui-functional",
 				"props": {
 					"id": "popover-01"
@@ -17,7 +17,7 @@
 				}
 			},
 			{
-				"name": "expressive",
+				"name": "Expressive",
 				"className": "db-ui-expressive",
 				"props": {
 					"id": "popover-03"
