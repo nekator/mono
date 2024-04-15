@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[30431],{57997:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/tag/code/Variant",function(){return u(57989)}])}},function(n){n.O(0,[9572,57989,92888,49774,40179],function(){return n(n.s=57997)}),_N_E=n.O()}]);
