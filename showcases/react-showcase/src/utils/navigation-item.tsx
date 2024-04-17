@@ -116,17 +116,75 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		path: '03',
 		label: '03 Data-Input',
 		subNavigation: getSortedNavigationItems([
-			{ path: 'input', label: 'Input', component: <InputComponent /> },
+			{
+				path: 'input',
+				label: 'Input',
+				subNavigation: getSortedNavigationItems([
+					{
+						path: 'link',
+						label: 'Link',
+						component: <LinkComponent />
+					},
+					{
+						path: 'button',
+						label: 'Button',
+						component: <ButtonComponent />
+					}
+				])
+			},
 			{
 				path: 'textarea',
 				label: 'Textarea',
-				component: <TextareaComponent />
+				subNavigation: getSortedNavigationItems([
+					{
+						path: 'link',
+						label: 'Link',
+						component: <LinkComponent />
+					},
+					{
+						path: 'button',
+						label: 'Button',
+						component: <ButtonComponent />
+					}
+				])
 			},
 			{ path: 'radio', label: 'Radio', component: <RadioComponent /> },
 			{
 				path: 'checkbox',
 				label: 'Checkbox',
-				component: <CheckboxComponent />
+				subNavigation: getSortedNavigationItems([
+					{
+						path: 'link',
+						label: 'Link',
+						component: <LinkComponent />
+					},
+					{
+						path: 'button',
+						label: 'Button',
+						component: <ButtonComponent />
+					},
+					{
+						path: 'link',
+						label: 'Link',
+						component: <LinkComponent />
+					},
+					{
+						path: 'button',
+						label: 'Button',
+						subNavigation: getSortedNavigationItems([
+							{
+								path: 'link',
+								label: 'Link',
+								component: <LinkComponent />
+							},
+							{
+								path: 'button',
+								label: 'Button',
+								component: <ButtonComponent />
+							}
+						])
+					}
+				])
 			},
 			{ path: 'select', label: 'Select', component: <SelectComponent /> }
 		])

@@ -56,6 +56,8 @@ export interface DBNavigationItemDefaultState {
 	 * Internal state property to show/hide sub-navigation button
 	 */
 	hasSubNavigation?: boolean;
+	startMouseFollow: () => void;
+	refOnMouseMove?: (event: MouseEvent) => void;
 }
 
 export type DBNavigationItemState = DBNavigationItemDefaultState &
