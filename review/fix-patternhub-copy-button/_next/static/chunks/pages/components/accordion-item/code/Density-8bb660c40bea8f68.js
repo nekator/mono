@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[52042],{99412:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/accordion-item/code/Density",function(){return o(79794)}])}},function(n){n.O(0,[9572,79794,92888,49774,40179],function(){return n(n.s=99412)}),_N_E=n.O()}]);
