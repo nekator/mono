@@ -56,8 +56,21 @@ export interface DBNavigationItemDefaultState {
 	 * Internal state property to show/hide sub-navigation button
 	 */
 	hasSubNavigation?: boolean;
-	startMouseFollow: () => void;
-	refOnMouseMove?: (event: MouseEvent) => void;
+	subNavigation?: HTMLMenuElement;
+	tryInitSubNavigationHandling: () => void;
+	addMouseListeners: () => void;
+	onMouseMove: (event: MouseEvent) => void;
+	tryUpdateSubNavigationOffset: () => void;
+	updateSubNavigationState: () => void;
+	// cacheSafeTriangleData: () => void;
+	triangleData?: {
+		itemRect: DOMRect;
+		parentElementWidth: number;
+		subNavigationHeight: number;
+		padding: number;
+	};
+	outsideVX: null | string;
+	outsideVY: null | string;
 }
 
 export type DBNavigationItemState = DBNavigationItemDefaultState &

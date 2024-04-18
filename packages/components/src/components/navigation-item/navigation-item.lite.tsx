@@ -10,10 +10,9 @@ import {
 } from '@builder.io/mitosis';
 import { DBNavigationItemProps, DBNavigationItemState } from './model';
 import { DBButton } from '../button';
-import { cls, uuid, visibleInVX, visibleInVY } from '../../utils';
+import { cls, handleDataOutside, uuid } from '../../utils';
 import { DEFAULT_BACK } from '../../shared/constants';
 import { ClickEvent } from '../../shared/model';
-import { windows } from 'rimraf';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -28,8 +27,12 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 		hasAreaPopup: false,
 		hasSubNavigation: true,
 		isSubNavigationExpanded: false,
+		subNavigation: undefined,
 		subNavigationId: 'sub-navigation-' + uuid(),
-		refOnMouseMove: undefined,
+		triangleData: undefined,
+		outsideVX: null,
+		outsideVY: null,
+
 		handleClick: (event: ClickEvent<HTMLButtonElement>) => {
 			if (props.onClick) {
 				props.onClick(event);
@@ -39,28 +42,41 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 				state.isSubNavigationExpanded = true;
 			}
 		},
+
 		handleBackClick: (event: ClickEvent<HTMLButtonElement>) => {
 			event.stopPropagation();
 			state.isSubNavigationExpanded = false;
 		},
-		startMouseFollow: () => {
-			const subMenu = Array.from(ref.children).find((child) =>
-				child.classList.contains('db-sub-navigation')
-			);
 
-			const subMenuElement = subMenu
-				? (subMenu as HTMLElement)
-				: undefined;
+		tryUpdateSubNavigationOffset: () => {
+			if (state.hasSubNavigation && state.subNavigation) {
+				handleDataOutside(state.subNavigation);
+				console.log(
+					'TEST',
+					state.subNavigation.getAttribute('data-outside-vx')
+				);
+				state.outsideVX =
+					state.subNavigation.getAttribute('data-outside-vx');
+				state.outsideVY =
+					state.subNavigation.getAttribute('data-outside-vy');
+			}
+		},
 
-			if (!document || !ref.parentElement || !subMenuElement) {
+		tryInitSubNavigationHandling: () => {
+			if (
+				!ref ||
+				!ref.parentElement ||
+				!state.hasSubNavigation ||
+				!state.hasAreaPopup ||
+				!ref.parentElement.classList.contains('db-sub-navigation') ||
+				ref.closest('.db-drawer')
+			) {
 				return;
 			}
 
 			const itemRect = ref.getBoundingClientRect();
-			const subMenuHeight = subMenuElement.getBoundingClientRect().height;
 			const parentElementWidth =
 				ref.parentElement.getBoundingClientRect().width;
-			const padding = (parentElementWidth - itemRect.width) / 2;
 
 			// the triangle has the width of the sub-navigation, current nav-item can be wider.
 			// so the width of the triangle must be adapted to the possibly wider nav-item.
@@ -69,87 +85,136 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 				`${parentElementWidth}px`
 			);
 
+			state.triangleData = {
+				itemRect,
+				parentElementWidth,
+				subNavigationHeight:
+					state.subNavigation.getBoundingClientRect().height,
+				padding: (parentElementWidth - itemRect.width) / 2
+			};
+		},
+
+		addMouseListeners: () => {
+			ref.addEventListener('mouseenter', () => {
+				state.tryUpdateSubNavigationOffset();
+
+				document.removeEventListener('mousemove', state.onMouseMove);
+				document.addEventListener('mousemove', state.onMouseMove);
+			});
+
+			ref.addEventListener('mouseleave', () => {
+				// state.triangleData = null;
+				document.removeEventListener('mousemove', state.onMouseMove);
+			});
+		},
+
+		onMouseMove: (event: MouseEvent) => {
+			if (!state.triangleData || !state.subNavigation) {
+				return;
+			}
+
 			const getTriangleTipX = (mouseX: number): number => {
-				if (subMenuElement.getAttribute('data-outside-vx')) {
+				if (
+					state.subNavigation.getAttribute('data-outside-vx') ===
+					'right'
+				) {
 					// vertical flipped triangle needs an inverted x pos
-					return itemRect.width - mouseX;
+					return state.triangleData.itemRect.width - mouseX;
 				}
 
+				console.log(mouseX, state.triangleData.itemRect.width);
+
 				// triangle stops shrinking from 75% x pos
-				return Math.min(mouseX, itemRect.width * 0.75);
+				return Math.min(
+					mouseX,
+					state.triangleData.itemRect.width * 0.75
+				);
 			};
 
 			const getTriangleTipY = (mouseY: number): number => {
 				// padding must be added to the y pos of the tip so that the y pos matches the cursor
 				const mouseYLimited =
-					Math.max(Math.min(mouseY, itemRect.height), 0) + padding;
+					Math.max(
+						Math.min(mouseY, state.triangleData.itemRect.height),
+						0
+					) + state.triangleData.padding;
 
-				if (subMenuElement.getAttribute('data-outside-vy')) {
+				if (
+					state.subNavigation.getAttribute('data-outside-vy') ===
+					'bottom'
+				) {
 					// add offset to tip y pos to match corrected sub-navigation y pos
 					return (
 						mouseYLimited +
-						(subMenuHeight - padding * 2 - itemRect.height)
+						(state.triangleData.subNavigationHeight -
+							state.triangleData.padding * 2 -
+							state.triangleData.itemRect.height)
 					);
 				}
 
 				return mouseYLimited;
 			};
 
-			const onMouseMove = (event: MouseEvent) => {
-				const mouseX = event.clientX - itemRect.left;
-				const mouseY = event.clientY - itemRect.top;
+			const mouseX = event.clientX - state.triangleData.itemRect.left;
+			const mouseY = event.clientY - state.triangleData.itemRect.top;
 
-				const tipX = getTriangleTipX(mouseX);
-				const tipY = getTriangleTipY(mouseY);
+			const tipX = getTriangleTipX(mouseX);
+			const tipY = getTriangleTipY(mouseY);
 
-				const tipUpperPos = `${tipX}px ${tipY + padding}px`;
-				const tipLowerPos = `${tipX}px ${tipY - padding}px`;
+			const tipUpperPos = `${tipX}px ${tipY + state.triangleData.padding}px`;
+			const tipLowerPos = `${tipX}px ${tipY - state.triangleData.padding}px`;
 
-				ref.style.setProperty(
-					'--db-navigation-item-clip-path',
-					`polygon(${tipUpperPos}, ${tipLowerPos}, 100% 0, 100% 100%)`
-				);
-			};
+			ref.style.setProperty(
+				'--db-navigation-item-clip-path',
+				`polygon(${tipUpperPos}, ${tipLowerPos}, 100% 0, 100% 100%)`
+			);
+		},
 
-			ref.addEventListener('mouseover', () => {
-				document.addEventListener('mousemove', onMouseMove);
-			});
+		updateSubNavigationState: () => {
+			if (props.areaPopup !== undefined) {
+				state.hasAreaPopup = props.areaPopup;
+				state.hasSubNavigation = state.hasAreaPopup;
+				return;
+			}
 
-			ref.addEventListener('mouseout', () => {
-				document.removeEventListener('mousemove', onMouseMove);
-			});
+			if (state.initialized && document && state.subNavigationId) {
+				const subNavigationSlot = document?.getElementById(
+					state.subNavigationId
+				) as HTMLMenuElement;
+
+				if (subNavigationSlot) {
+					if (subNavigationSlot.children?.length > 0) {
+						state.hasAreaPopup = true;
+						state.subNavigation = subNavigationSlot;
+					} else {
+						state.hasSubNavigation = false;
+					}
+				}
+			}
+		}
+	});
+
+	onMount(() => {
+		state.initialized = true;
+	});
+
+	onUnMount(() => {
+		if (document && state.onMouseMove) {
+			document.removeEventListener('mousemove', state.onMouseMove);
 		}
 	});
 
 	onUpdate(() => {
-		if (typeof state.refOnMouseMove === 'function') {
-			console.log('ON UPDATE');
-			// ref.addEventListener('mouseover', () => {
-			// 	document.addEventListener('mousemove', onMouseMove);
-			// });
-			//
-			// ref.addEventListener('mouseout', () => {
-			// 	document.removeEventListener('mousemove', onMouseMove);
-			// });
+		state.tryInitSubNavigationHandling();
+	}, [ref, state.hasSubNavigation, state.hasAreaPopup]);
+
+	onUpdate(() => {
+		console.log('<<<< state.triangleData', state.triangleData);
+
+		if (state.triangleData) {
+			state.addMouseListeners();
 		}
-	}, [state.refOnMouseMove]);
-
-	onMount(() => {
-		state.initialized = true;
-
-		// mouse follow for safe triangle should not be added to root nav items
-		if (ref.parentElement.classList.contains('db-sub-navigation')) {
-			setTimeout(state.startMouseFollow, 1000);
-		}
-	});
-
-	onUnMount(() => {
-		console.log('ON UNMOUNT', state.refOnMouseMove);
-
-		if (document && state.refOnMouseMove) {
-			// document.removeEventListener('mousemove', state.refOnMouseMove);
-		}
-	});
+	}, [ref, state.triangleData]);
 
 	onUpdate(() => {
 		if (props.subNavigationExpanded !== undefined) {
@@ -158,35 +223,7 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 	}, [props.subNavigationExpanded]);
 
 	onUpdate(() => {
-		if (props.areaPopup !== undefined) {
-			state.hasAreaPopup = props.areaPopup;
-			state.hasSubNavigation = state.hasAreaPopup;
-		} else if (state.initialized && document && state.subNavigationId) {
-			const subNavigationSlot = document?.getElementById(
-				state.subNavigationId
-			) as HTMLMenuElement;
-
-			if (subNavigationSlot) {
-				const children = subNavigationSlot.children;
-				if (children?.length > 0) {
-					state.hasAreaPopup = true;
-					if (!visibleInVX(subNavigationSlot)) {
-						subNavigationSlot.setAttribute(
-							'data-outside-vx',
-							'true'
-						);
-					}
-					if (!visibleInVY(subNavigationSlot)) {
-						subNavigationSlot.setAttribute(
-							'data-outside-vy',
-							'true'
-						);
-					}
-				} else {
-					state.hasSubNavigation = false;
-				}
-			}
-		}
+		state.updateSubNavigationState();
 	}, [state.initialized, props.areaPopup]);
 
 	// jscpd:ignore-end
