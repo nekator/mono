@@ -178,6 +178,30 @@ export const handleDataOutside = (el: Element) => {
 	}
 };
 
+export class TestClass {
+	private test: string;
+
+	constructor(test: string) {
+		this.test = test;
+	}
+
+	public start() {
+		document.addEventListener('mousemove', this.callback);
+	}
+
+	public stop() {
+		document.removeEventListener('mousemove', this.callback);
+	}
+
+	public callback() {
+		console.log('TEST');
+	}
+
+	public getCallback() {
+		return this.callback;
+	}
+}
+
 export default {
 	filterPassingProps,
 	cls,

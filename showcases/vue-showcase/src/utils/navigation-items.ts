@@ -111,7 +111,47 @@ export const navigationItems: NavItem[] = [
 			{
 				path: '/03/checkbox',
 				label: 'Checkbox',
-				component: Checkbox
+				subNavigation: getSortedNavigationItems([
+					{ path: '/03/input', label: 'Input', component: Input },
+					{
+						path: '/03/textarea',
+						label: 'Textarea',
+						component: Textarea
+					},
+					{ path: '/03/radio', label: 'Radio', component: Radio },
+					{
+						path: '/03/checkbox',
+						label: 'Checkbox',
+						subNavigation: getSortedNavigationItems([
+							{
+								path: '/03/input',
+								label: 'Input',
+								component: Input
+							},
+							{
+								path: '/03/textarea',
+								label: 'Textarea',
+								component: Textarea
+							},
+							{
+								path: '/03/radio',
+								label: 'Radio',
+								component: Radio
+							},
+							{
+								path: '/03/checkbox',
+								label: 'Checkbox',
+								component: Checkbox
+							},
+							{
+								path: '/03/select',
+								label: 'Select',
+								component: Select
+							}
+						])
+					},
+					{ path: '/03/select', label: 'Select', component: Select }
+				])
 			},
 			{ path: '/03/select', label: 'Select', component: Select }
 		])

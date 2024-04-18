@@ -9,6 +9,7 @@ import {
 	NavigationBackButtonProps,
 	WidthProps
 } from '../../shared/model';
+import { TestClass } from '../../utils';
 
 export interface DBNavigationItemDefaultProps {
 	/**
@@ -46,6 +47,15 @@ export type DBNavigationItemProps = DBNavigationItemDefaultProps &
 	WidthProps &
 	NavigationBackButtonProps;
 
+export interface DBNavigationItemTriangleData {
+	itemRect: DOMRect;
+	parentElementWidth: number;
+	subNavigationHeight: number;
+	padding: number;
+	outsideVX: null | string;
+	outsideVY: null | string;
+}
+
 export interface DBNavigationItemDefaultState {
 	handleBackClick: (event: ClickEvent<HTMLButtonElement>) => void;
 	hasAreaPopup: boolean;
@@ -63,12 +73,9 @@ export interface DBNavigationItemDefaultState {
 	tryUpdateSubNavigationOffset: () => void;
 	updateSubNavigationState: () => void;
 	// cacheSafeTriangleData: () => void;
-	triangleData?: {
-		itemRect: DOMRect;
-		parentElementWidth: number;
-		subNavigationHeight: number;
-		padding: number;
-	};
+	triangleData: DBNavigationItemTriangleData | null;
+	onMouseEnter: () => void;
+	onMouesLeave: () => void;
 	outsideVX: null | string;
 	outsideVY: null | string;
 }

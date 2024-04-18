@@ -118,6 +118,22 @@ const getComponents = () => [
 	},
 	{
 		name: 'navigation-item',
+		overwrites: {
+			angular: [
+				{
+					from: 'subNavigation = null;',
+					to: 'subNavigation: HTMLMenuElement | null = null;'
+				},
+				{
+					from: 'triangleData = null;',
+					to: 'triangleData: DBNavigationItemTriangleData | null = null;'
+				},
+				{
+					from: 'DBNavigationItemProps,',
+					to: 'DBNavigationItemProps, DBNavigationItemTriangleData,'
+				}
+			]
+		},
 		config: {
 			angular: {
 				directives: [{ name: 'NavigationContent' }]
