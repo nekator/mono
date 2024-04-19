@@ -68,7 +68,9 @@
 	&::after {
 		@extend %icon !optional;
 		content: icon-helpers.$default-icon-content-after;
-		content: icon-helpers.$default-icon-content-after / ""; // Hiding icon from screenreaders, https://www.w3.org/TR/css-content-3/#alt
+		@supports (content: ""/"") {
+			content: icon-helpers.$default-icon-content-after / ""; // Hiding icon from screenreaders, https://www.w3.org/TR/css-content-3/#alt
+		}
 		margin-inline-start: icon-helpers.$default-icon-margin-start;
 	}
 }
