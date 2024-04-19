@@ -60,6 +60,8 @@ $default-icon-font-size: var(--db-icon-font-size, #{$default-icon-size-rem});
 			}
 			@if $position == "after" {
 				--db-icon-after: "#{$icon}";
+				// Fallback for firefox: https://developer.mozilla.org/en-US/docs/Web/CSS/content#browser_compatibility
+				content: $default-icon-content-after;
 				content: $default-icon-content-after / "";
 				margin-inline-start: $default-icon-margin-start;
 			}
@@ -109,6 +111,8 @@ $default-icon-font-size: var(--db-icon-font-size, #{$default-icon-size-rem});
 	-webkit-alt: "";
 	alt: "";
 
+	// Fallback for firefox: https://developer.mozilla.org/en-US/docs/Web/CSS/content#browser_compatibility
+	content: $default-icon-content;
 	content: $default-icon-content / "";
 	color: var(--db-current-icon-color, inherit);
 
