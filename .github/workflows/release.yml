@@ -9,6 +9,10 @@ jobs:
   init:
     uses: ./.github/workflows/00-init.yml
 
+  get-playwright-version:
+    uses: ./.github/workflows/01-get-playwright-version.yml
+    needs: [init]
+
   get-publish-version:
     uses: ./.github/workflows/01-get-publish-version.yml
     needs: [init]
@@ -34,18 +38,35 @@ jobs:
 
   test-components:
     uses: ./.github/workflows/02-e2e.yml
-    needs: [build-packages]
+    needs: [build-packages, get-playwright-version]
+    with:
+      version: ${{ needs.get-playwright-version.outputs.version }}
+
+  test-foundations:
+    uses: ./.github/workflows/02-e2e-foundations.yml
+    needs: [build-packages, get-playwright-version]
+    with:
+      version: ${{ needs.get-playwright-version.outputs.version }}
 
   test-showcases:
     uses: ./.github/workflows/02-e2e-showcases.yml
-    needs: [build-showcases]
+    needs: [build-showcases, get-playwright-version]
+    with:
+      version: ${{ needs.get-playwright-version.outputs.version }}
 
   checks-done:
     runs-on: ubuntu-latest
     steps:
       - name: 🎉 Checks done
         run: echo "🎉 All builds were successful."
-    needs: [test-components, build-outputs, build-showcases, test-showcases]
+    needs:
+      [
+        test-components,
+        build-outputs,
+        build-showcases,
+        test-showcases,
+        test-foundations
+      ]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml

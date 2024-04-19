@@ -1,5 +1,6 @@
 import {
 	onMount,
+	onUpdate,
 	Show,
 	useMetadata,
 	useRef,
@@ -7,13 +8,18 @@ import {
 } from '@builder.io/mitosis';
 import { DBTextareaProps, DBTextareaState } from './model';
 import { DBInfotext } from '../infotext';
-import { cls, getMessageIcon, uuid } from '../../utils';
+import { cls, uuid } from '../../utils';
 import {
 	DEFAULT_ID,
+	DEFAULT_INVALID_MESSAGE,
+	DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
 	DEFAULT_LABEL,
-	DEFAULT_MESSAGE_ID_SUFFIX
+	DEFAULT_MESSAGE_ID_SUFFIX,
+	DEFAULT_VALID_MESSAGE,
+	DEFAULT_VALID_MESSAGE_ID_SUFFIX
 } from '../../shared/constants';
-import { ChangeEvent, InteractionEvent } from '../../shared/model';
+import { ChangeEvent, InputEvent, InteractionEvent } from '../../shared/model';
+import { handleFrameworkEvent } from '../../utils/form-components';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -25,10 +31,22 @@ export default function DBTextarea(props: DBTextareaProps) {
 	const state = useStore<DBTextareaState>({
 		_id: DEFAULT_ID,
 		_messageId: DEFAULT_ID + DEFAULT_MESSAGE_ID_SUFFIX,
+		_validMessageId: DEFAULT_ID + DEFAULT_VALID_MESSAGE_ID_SUFFIX,
+		_invalidMessageId: DEFAULT_ID + DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
+		_descByIds: '',
 		defaultValues: {
 			label: DEFAULT_LABEL,
 			placeholder: ' ',
 			rows: '4'
+		},
+		handleInput: (event: InputEvent<HTMLTextAreaElement>) => {
+			if (props.onInput) {
+				props.onInput(event);
+			}
+
+			if (props.input) {
+				props.input(event);
+			}
 		},
 		handleChange: (event: ChangeEvent<HTMLTextAreaElement>) => {
 			if (props.onChange) {
@@ -38,14 +56,8 @@ export default function DBTextarea(props: DBTextareaProps) {
 			if (props.change) {
 				props.change(event);
 			}
-			const target = event.target as HTMLTextAreaElement;
 
-			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
-			// VUE:this.$emit("update:value", target.value);
-
-			// Change event to work with reactive and template driven forms
-			// ANGULAR: this.propagateChange(target.value);
-			// ANGULAR: this.writeValue(target.value);
+			handleFrameworkEvent(this, event);
 		},
 		handleBlur: (event: InteractionEvent<HTMLTextAreaElement>) => {
 			if (props.onBlur) {
@@ -64,40 +76,55 @@ export default function DBTextarea(props: DBTextareaProps) {
 			if (props.focus) {
 				props.focus(event);
 			}
+		},
+		getValidMessage: () => {
+			return props.validMessage || DEFAULT_VALID_MESSAGE;
+		},
+		getInvalidMessage: () => {
+			return (
+				props.invalidMessage ||
+				ref?.validationMessage ||
+				DEFAULT_INVALID_MESSAGE
+			);
 		}
 	});
 
 	onMount(() => {
-		if (props.stylePath) {
-			state.stylePath = props.stylePath;
-		}
-
 		state._id = props.id || 'textarea-' + uuid();
-		state._messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
 	});
-	// jscpd:ignore-end
+
+	onUpdate(() => {
+		if (state._id) {
+			state._messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
+			state._validMessageId = state._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX;
+			state._invalidMessageId =
+				state._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX;
+
+			state._descByIds = [
+				state._messageId,
+				state._validMessageId,
+				state._invalidMessageId
+			].join(' ');
+		}
+	}, [state._id]);
 
 	return (
 		<div
 			class={cls('db-textarea', props.className)}
-			data-label-variant={props.labelVariant}
 			data-variant={props.variant}>
-			<Show when={state.stylePath}>
-				<link rel="stylesheet" href={state.stylePath} />
-			</Show>
-
 			<label htmlFor={state._id}>
 				{props.label ?? state.defaultValues.label}
 			</label>
 
 			<textarea
+				aria-invalid={props.customValidity === 'invalid'}
+				data-custom-validity={props.customValidity}
 				ref={ref}
 				id={state._id}
 				data-resize={props.resize}
 				disabled={props.disabled}
 				required={props.required}
 				readOnly={props.readOnly}
-				aria-invalid={props.invalid}
 				form={props.form}
 				maxLength={props.maxLength}
 				minLength={props.minLength}
@@ -105,6 +132,9 @@ export default function DBTextarea(props: DBTextareaProps) {
 				wrap={props.wrap}
 				spellcheck={props.spellCheck}
 				autocomplete={props.autocomplete}
+				onInput={(event: ChangeEvent<HTMLInputElement>) =>
+					state.handleInput(event)
+				}
 				onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
 					state.handleChange(event)
 				}
@@ -126,12 +156,26 @@ export default function DBTextarea(props: DBTextareaProps) {
 			<Show when={props.message}>
 				<DBInfotext
 					size="small"
-					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}
+					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}
 				</DBInfotext>
 			</Show>
+
+			<DBInfotext
+				id={state._validMessageId}
+				size="small"
+				semantic="successful">
+				{state.getValidMessage()}
+			</DBInfotext>
+
+			<DBInfotext
+				id={state._invalidMessageId}
+				size="small"
+				semantic="critical">
+				{state.getInvalidMessage()}
+			</DBInfotext>
 		</div>
 	);
+	// jscpd:ignore-end
 }

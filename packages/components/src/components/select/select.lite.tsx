@@ -8,15 +8,20 @@ import {
 	useStore
 } from '@builder.io/mitosis';
 import { DBSelectOptionType, DBSelectProps, DBSelectState } from './model';
-import { cls, getMessageIcon, uuid } from '../../utils';
+import { cls, uuid } from '../../utils';
 import {
 	DEFAULT_ID,
+	DEFAULT_INVALID_MESSAGE,
+	DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
 	DEFAULT_LABEL,
 	DEFAULT_MESSAGE_ID_SUFFIX,
-	DEFAULT_PLACEHOLDER_ID_SUFFIX
+	DEFAULT_PLACEHOLDER_ID_SUFFIX,
+	DEFAULT_VALID_MESSAGE,
+	DEFAULT_VALID_MESSAGE_ID_SUFFIX
 } from '../../shared/constants';
 import { DBInfotext } from '../infotext';
 import { ChangeEvent, ClickEvent, InteractionEvent } from '../../shared/model';
+import { handleFrameworkEvent } from '../../utils/form-components';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -28,6 +33,9 @@ export default function DBSelect(props: DBSelectProps) {
 	const state = useStore<DBSelectState>({
 		_id: DEFAULT_ID,
 		_messageId: DEFAULT_ID + DEFAULT_MESSAGE_ID_SUFFIX,
+		_validMessageId: DEFAULT_ID + DEFAULT_VALID_MESSAGE_ID_SUFFIX,
+		_invalidMessageId: DEFAULT_ID + DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
+		_descByIds: '',
 		_placeholderId: DEFAULT_ID + DEFAULT_PLACEHOLDER_ID_SUFFIX,
 		handleClick: (event: ClickEvent<HTMLSelectElement>) => {
 			if (props.onClick) {
@@ -42,14 +50,8 @@ export default function DBSelect(props: DBSelectProps) {
 			if (props.change) {
 				props.change(event);
 			}
-			const target = event.target as HTMLSelectElement;
 
-			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
-			// VUE:this.$emit("update:value", target.value);
-
-			// Change event to work with reactive and template driven forms
-			// ANGULAR: this.propagateChange(target.value);
-			// ANGULAR: this.writeValue(target.value);
+			handleFrameworkEvent(this, event);
 		},
 		handleBlur: (event: InteractionEvent<HTMLSelectElement>) => {
 			if (props.onBlur) {
@@ -71,34 +73,49 @@ export default function DBSelect(props: DBSelectProps) {
 		},
 		getOptionLabel: (option: DBSelectOptionType) => {
 			return option.label ?? option.value.toString();
+		},
+		getValidMessage: () => {
+			return props.validMessage || DEFAULT_VALID_MESSAGE;
+		},
+		getInvalidMessage: () => {
+			return (
+				props.invalidMessage ||
+				ref?.validationMessage ||
+				DEFAULT_INVALID_MESSAGE
+			);
 		}
 	});
 
 	onMount(() => {
-		const id = props.id || 'select-' + uuid();
-		state._id = id;
-		state._messageId = id + DEFAULT_MESSAGE_ID_SUFFIX;
-		state._placeholderId = id + DEFAULT_PLACEHOLDER_ID_SUFFIX;
-
-		if (props.stylePath) {
-			state.stylePath = props.stylePath;
-		}
+		state._id = props.id || 'select-' + uuid();
 	});
-	// jscpd:ignore-end
+
+	onUpdate(() => {
+		if (state._id) {
+			state._placeholderId = state._id + DEFAULT_PLACEHOLDER_ID_SUFFIX;
+			state._messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
+			state._validMessageId = state._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX;
+			state._invalidMessageId =
+				state._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX;
+
+			state._descByIds = [
+				state._messageId,
+				state._validMessageId,
+				state._invalidMessageId
+			].join(' ');
+		}
+	}, [state._id]);
 
 	return (
 		<div
 			class={cls('db-select', props.className)}
 			data-variant={props.variant}
-			data-label-variant={props.labelVariant}
 			data-icon={props.icon}>
-			<Show when={state.stylePath}>
-				<link rel="stylesheet" href={state.stylePath} />
-			</Show>
 			<label htmlFor={state._id}>{props.label ?? DEFAULT_LABEL}</label>
 			<select
+				aria-invalid={props.customValidity === 'invalid'}
+				data-custom-validity={props.customValidity}
 				ref={ref}
-				aria-invalid={props.invalid}
 				required={props.required}
 				disabled={props.disabled}
 				id={state._id}
@@ -128,17 +145,13 @@ export default function DBSelect(props: DBSelectProps) {
 							<>
 								<Show when={option.options}>
 									<optgroup
-										key={'optgroup-' + option.value}
 										label={state.getOptionLabel(option)}>
 										<For each={option.options}>
 											{(
 												optgroupOption: DBSelectOptionType
 											) => (
 												<option
-													key={
-														'option-' +
-														optgroupOption.value
-													}
+													key={optgroupOption.value.toString()}
 													value={optgroupOption.value}
 													disabled={
 														optgroupOption.disabled
@@ -153,7 +166,6 @@ export default function DBSelect(props: DBSelectProps) {
 								</Show>
 								<Show when={!option.options}>
 									<option
-										key={'option-' + option.value}
 										value={option.value}
 										disabled={option.disabled}>
 										{state.getOptionLabel(option)}
@@ -171,12 +183,26 @@ export default function DBSelect(props: DBSelectProps) {
 			<Show when={props.message}>
 				<DBInfotext
 					size="small"
-					variant={props.variant}
-					icon={getMessageIcon(props.variant, props.messageIcon)}
+					icon={props.messageIcon}
 					id={state._messageId}>
 					{props.message}
 				</DBInfotext>
 			</Show>
+
+			<DBInfotext
+				id={state._validMessageId}
+				size="small"
+				semantic="successful">
+				{state.getValidMessage()}
+			</DBInfotext>
+
+			<DBInfotext
+				id={state._invalidMessageId}
+				size="small"
+				semantic="critical">
+				{state.getInvalidMessage()}
+			</DBInfotext>
 		</div>
 	);
+	// jscpd:ignore-end
 }

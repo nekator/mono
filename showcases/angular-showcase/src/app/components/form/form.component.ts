@@ -1,9 +1,48 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import {
+	FormControl,
+	FormGroup,
+	FormsModule,
+	ReactiveFormsModule
+} from '@angular/forms';
+import {
+	DBButton,
+	DBCheckbox,
+	DBDivider,
+	DBInput,
+	DBRadio,
+	DBSelect,
+	DBTabItem,
+	DBTabList,
+	DBTabPanel,
+	DBTabs,
+	DBTag,
+	DBTextarea
+} from '../../../../../../output/angular/src';
+import { DefaultComponent } from '../default.component';
 
 @Component({
 	selector: 'app-form',
-	templateUrl: './form.component.html'
+	templateUrl: './form.component.html',
+	imports: [
+		FormsModule,
+		ReactiveFormsModule,
+		DefaultComponent,
+		DBInput,
+		DBTextarea,
+		DBSelect,
+		DBRadio,
+		DBTag,
+		DBCheckbox,
+		DBDivider,
+		DBButton,
+		DBTabs,
+		DBTabList,
+		DBTabItem,
+		DBTabPanel
+	],
+	standalone: true,
+	schemas: [NO_ERRORS_SCHEMA]
 })
 export class FormComponent {
 	array = ['X', 'Y', 'Z'];
