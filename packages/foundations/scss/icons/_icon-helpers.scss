@@ -39,6 +39,14 @@ $default-icon-font-size: var(--db-icon-font-size, #{$default-icon-size-rem});
 	@return 32;
 }
 
+@mixin icon-content($icon) {
+	content: $icon;
+	// Hiding icon from screenreaders, https://www.w3.org/TR/css-content-3/#alt
+	@supports (content: ""/"") {
+		content: $icon / "";
+	}
+}
+
 @mixin to-filled-icon($position: "before") {
 	@if $position == "before" {
 		--db-icon-font-family: "db-ux-filled";
@@ -105,12 +113,11 @@ $default-icon-font-size: var(--db-icon-font-size, #{$default-icon-size-rem});
 }
 
 %icon {
-
 	@include icon-content($default-icon-content); // TODO: ONLY FOR data-icon
 	// Hiding icon from screenreaders
 	-webkit-alt: "";
 	alt: "";
-	
+
 	color: var(--db-current-icon-color, inherit);
 
 	display: inline-block;
@@ -143,13 +150,5 @@ $default-icon-font-size: var(--db-icon-font-size, #{$default-icon-size-rem});
 	}
 	@media speech {
 		content: none;
-	}
-}
-
-@mixin icon-content($icon) {
-	content: $icon;
-	// Hiding icon from screenreaders, https://www.w3.org/TR/css-content-3/#alt
-	@supports (content: ""/"") {
-		content: $icon / "";
 	}
 }
