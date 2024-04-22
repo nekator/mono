@@ -256,11 +256,7 @@
 				inset-inline-start: 0;
 				block-size: 100%;
 				inline-size: var(--db-navigation-item-inline-size, 100%);
-				background: color-mix(
-					in hsl,
-					transparent 40%,
-					#{colors.$db-brand-0}
-				);
+				background: transparent;
 				transform: translateX(-100%);
 				clip-path: var(
 					--db-navigation-item-clip-path,

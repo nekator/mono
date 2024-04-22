@@ -195,6 +195,18 @@ module.exports = (tmp) => {
 			{
 				from: 'attr.disabled',
 				to: 'disabled'
+			},
+			{
+				from: 'mouseEnter',
+				to: 'mouseenter'
+			},
+			{
+				from: 'mouseLeave',
+				to: 'mouseleave'
+			},
+			{
+				from: 'mouseMove',
+				to: 'mousemove'
 			}
 		];
 

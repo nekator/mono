@@ -121,16 +121,8 @@ const getComponents = () => [
 		overwrites: {
 			angular: [
 				{
-					from: 'subNavigation = null;',
-					to: 'subNavigation: HTMLMenuElement | null = null;'
-				},
-				{
-					from: 'triangleData = null;',
-					to: 'triangleData: DBNavigationItemTriangleData | null = null;'
-				},
-				{
-					from: 'DBNavigationItemProps,',
-					to: 'DBNavigationItemProps, DBNavigationItemTriangleData,'
+					from: 'navigationItemSafeTriangle = undefined;',
+					to: 'navigationItemSafeTriangle: undefined | NavigationItemSafeTriangle = undefined;'
 				}
 			]
 		},
