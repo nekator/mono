@@ -124,6 +124,12 @@ const getComponents = () => [
 					from: 'navigationItemSafeTriangle = undefined;',
 					to: 'navigationItemSafeTriangle: undefined | NavigationItemSafeTriangle = undefined;'
 				}
+			],
+			vue: [
+				{
+					from: 'navigationItemSafeTriangle: undefined',
+					to: 'navigationItemSafeTriangle: undefined as undefined | NavigationItemSafeTriangle'
+				}
 			]
 		},
 		config: {
