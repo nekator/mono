@@ -48,7 +48,10 @@
 		"showcases/angular-showcase/.angular/cache",
 		"packages/foundations/assets/icons/functional/fonts/**",
 		"**/playwright-report/**",
-		"packages/foundations/src"
+		"packages/foundations/src",
+		"**/.output/**",
+		"**/.nuxt/**",
+		"showcases/nuxt-showcase/**"
 	],
 	"absolute": true
 }

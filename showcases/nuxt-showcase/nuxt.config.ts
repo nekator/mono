@@ -1,0 +1,24 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+
+// import { getRoutes } from './src/utils/navigation-items';
+// console.log('getRoutes', getRoutes());
+
+export default defineNuxtConfig({
+	devtools: { enabled: true },
+	generate: {
+		routes: ['/'] // GetRoutes().map((route) => route.path)
+	},
+	imports: {
+		autoImport: false
+	},
+	devServer: {
+		port: 4000
+	},
+	vite: {
+		base: `/nuxt-showcase/`,
+		build: {
+			outDir: '../../build-showcases/nuxt-showcase',
+			emptyOutDir: true
+		}
+	}
+});
