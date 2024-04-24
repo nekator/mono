@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { type RouteRecordRaw, useRoute } from "vue-router";
-import { getRoutes } from "~/src/utils/navigation-items";
+// import { getRoutes } from "~/src/utils/navigation-items";
+import { getRoutes } from "../../vue-showcase/src/utils/navigation-items";
 import { ref } from "vue";
 
 const currentRoute = useRoute();
-console.log("route", currentRoute.path, getRoutes());
-
 const currentRouteData = ref<null | RouteRecordRaw>(null);
 
 currentRouteData.value =
 	getRoutes().find((route) => route.path === currentRoute.path) ?? null;
-
-console.log("currentRouteData", currentRoute, currentRouteData.value);
 </script>
 
 <template>

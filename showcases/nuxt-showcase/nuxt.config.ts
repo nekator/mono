@@ -8,6 +8,9 @@ export default defineNuxtConfig({
 	generate: {
 		routes: ['/'] // GetRoutes().map((route) => route.path)
 	},
+	app: {
+		baseURL: '/nuxt-showcase/'
+	},
 	imports: {
 		autoImport: false
 	},
@@ -19,6 +22,12 @@ export default defineNuxtConfig({
 		build: {
 			outDir: '../../build-showcases/nuxt-showcase',
 			emptyOutDir: true
+		}
+	},
+	nitro: {
+		output: {
+			dir: '../../build-showcases/nuxt-showcase',
+			publicDir: '../../build-showcases/nuxt-showcase'
 		}
 	}
 });

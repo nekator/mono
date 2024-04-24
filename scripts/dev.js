@@ -21,6 +21,9 @@ inquirer
 				},
 				{
 					name: 'vue'
+				},
+				{
+					name: 'nuxt'
 				}
 			],
 			validate(answer) {
