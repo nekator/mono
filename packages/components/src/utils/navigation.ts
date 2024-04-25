@@ -44,7 +44,7 @@ export class NavigationItemSafeTriangle {
 		this.initialized = true;
 	}
 
-	public onMouseEnter() {
+	public enableFollow() {
 		if (!this.initialized) {
 			return;
 		}
@@ -66,55 +66,53 @@ export class NavigationItemSafeTriangle {
 		};
 	}
 
-	public onMouseLeave() {
+	public disableFollow() {
 		this.triangleData = undefined;
 	}
 
-	public onMouseMove(event: MouseEvent) {
+	private getTriangleTipXFromMouseX(mouseX: number): number {
+		if (!this.triangleData) return 0;
+
+		if (this.triangleData.outsideVX === 'right') {
+			// vertical flipped triangle needs an inverted x pos
+			return this.triangleData.itemRect.width - mouseX;
+		}
+
+		// triangle stops shrinking from 75% x pos
+		return Math.min(mouseX, this.triangleData.itemRect.width * 0.75);
+	}
+
+	private getTriangleTipYFromMouseY(mouseY: number): number {
+		if (!this.triangleData) return 0;
+
+		// padding must be added to the y pos of the tip so that the y pos matches the cursor
+		const mouseYLimited =
+			Math.max(Math.min(mouseY, this.triangleData.itemRect.height), 0) +
+			this.triangleData.padding;
+
+		if (this.triangleData.outsideVY === 'bottom') {
+			// add offset to tip y pos to match corrected sub-navigation y pos
+			return (
+				mouseYLimited +
+				(this.triangleData.subNavigationHeight -
+					this.triangleData.padding * 2 -
+					this.triangleData.itemRect.height)
+			);
+		}
+
+		return mouseYLimited;
+	}
+
+	public followByMouseEvent(event: MouseEvent) {
 		if (!this.initialized || !this.triangleData) {
 			return;
 		}
 
-		const getTriangleTipX = (mouseX: number): number => {
-			if (!this.triangleData) return 0;
-
-			if (this.triangleData.outsideVX === 'right') {
-				// vertical flipped triangle needs an inverted x pos
-				return this.triangleData.itemRect.width - mouseX;
-			}
-
-			// triangle stops shrinking from 75% x pos
-			return Math.min(mouseX, this.triangleData.itemRect.width * 0.75);
-		};
-
-		const getTriangleTipY = (mouseY: number): number => {
-			if (!this.triangleData) return 0;
-
-			// padding must be added to the y pos of the tip so that the y pos matches the cursor
-			const mouseYLimited =
-				Math.max(
-					Math.min(mouseY, this.triangleData.itemRect.height),
-					0
-				) + this.triangleData.padding;
-
-			if (this.triangleData.outsideVY === 'bottom') {
-				// add offset to tip y pos to match corrected sub-navigation y pos
-				return (
-					mouseYLimited +
-					(this.triangleData.subNavigationHeight -
-						this.triangleData.padding * 2 -
-						this.triangleData.itemRect.height)
-				);
-			}
-
-			return mouseYLimited;
-		};
-
 		const mouseX = event.clientX - this.triangleData.itemRect.left;
 		const mouseY = event.clientY - this.triangleData.itemRect.top;
 
-		const tipX = getTriangleTipX(mouseX);
-		const tipY = getTriangleTipY(mouseY);
+		const tipX = this.getTriangleTipXFromMouseX(mouseX);
+		const tipY = this.getTriangleTipYFromMouseY(mouseY);
 
 		const tipUpperPos = `${tipX}px ${tipY + this.triangleData.padding}px`;
 		const tipLowerPos = `${tipX}px ${tipY - this.triangleData.padding}px`;
