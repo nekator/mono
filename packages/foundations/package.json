@@ -34,13 +34,13 @@
     "generate:icon-fonts": "npx @db-ui/gif --src ./assets/icons/functional --variants filled inverted --fontName db-ux --withSizes true --debug true",
     "prepare": "npm run copy-normalize",
     "regenerate:screenshots": "npx playwright test -c ./test/playwright.config.mjs --update-snapshots",
-    "start": "nodemon --watch tokens/ --watch scss --watch scripts -e json,scss,js -x \"npm run build\"",
+    "start": "nodemon --config nodemon.json",
     "test:e2e": "npx playwright test --config=./test/playwright.config.mjs"
   },
   "devDependencies": {
     "@csstools/normalize.css": "12.1.1",
     "cpr": "3.0.1",
-    "cssnano": "^6.1.2",
+    "cssnano": "^7.0.0",
     "dotenv": "^16.4.5",
     "nodemon": "3.1.0",
     "sass": "^1.75.0"

@@ -32,7 +32,12 @@ const {
 	<div v-if="page || fullscreen" :class="classNames">
 		<router-view></router-view>
 	</div>
-	<DBPage v-if="!page && !fullscreen" type="fixedHeaderFooter" :fadeIn="true">
+	<DBPage
+		v-if="!page && !fullscreen"
+		variant="fixed"
+		documentOverflow="auto"
+		:fadeIn="true"
+	>
 		<template v-slot:header>
 			<DBHeader :drawerOpen="drawerOpen" :onToggle="toggleDrawer">
 				<template v-slot:brand>
@@ -43,7 +48,7 @@ const {
 						<NavItemComponent :navItem="item"></NavItemComponent>
 					</template>
 				</DBNavigation>
-				<template v-slot:calltoaction>
+				<template v-slot:call-to-action>
 					<DBButton
 						icon="magnifying_glass"
 						variant="ghost"
@@ -52,7 +57,7 @@ const {
 						Search
 					</DBButton>
 				</template>
-				<template v-slot:actionbar>
+				<template v-slot:action-bar>
 					<DBButton icon="user" variant="ghost" :no-text="true">
 						Profile
 					</DBButton>
@@ -67,7 +72,7 @@ const {
 						Help
 					</DBButton>
 				</template>
-				<template v-slot:metanavigation>
+				<template v-slot:meta-navigation>
 					<DBSelect
 						label="Density"
 						variant="floating"
