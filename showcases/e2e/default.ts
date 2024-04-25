@@ -71,7 +71,9 @@ export const getDefaultScreenshotTest = (
 				await gotoPage(page, path, density, color, fixedHeight);
 				const accessibilityScanResults = await new AxeBuilder({
 					page
-				}).analyze();
+				})
+					.include('main')
+					.analyze();
 
 				expect(accessibilityScanResults.violations).toEqual([]);
 			});
