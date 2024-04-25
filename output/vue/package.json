@@ -38,16 +38,16 @@
     "test:components": "playwright test -c playwright.config.ts"
   },
   "dependencies": {
-    "vue": "^3.4.22"
+    "vue": "^3.4.25"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.8.5",
-    "@playwright/experimental-ct-vue": "1.42.1",
+    "@playwright/experimental-ct-vue": "1.43.1",
     "@vitejs/plugin-vue": "^5.0.4",
     "sass": "^1.75.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.9",
-    "vue-tsc": "^2.0.13"
+    "vite": "^5.2.10",
+    "vue-tsc": "^2.0.14"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

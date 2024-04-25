@@ -17,6 +17,7 @@ import {
 	DEFAULT_VALID_MESSAGE_ID_SUFFIX
 } from '../../shared/constants';
 import { ChangeEvent, InteractionEvent } from '../../shared/model';
+import { handleFrameworkEvent } from '../../utils/form-components';
 import { DBInfotext } from '../infotext';
 
 useMetadata({
@@ -43,14 +44,7 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 				props.change(event);
 			}
 
-			const target = event.target as HTMLInputElement;
-
-			// TODO: Replace this with the solution out of https://github.com/BuilderIO/mitosis/issues/833 after this has been "solved"
-			// VUE:this.$emit("update:checked", target.checked);
-
-			// Change event to work with reactive and template driven forms
-			// ANGULAR: this.propagateChange(target.checked);
-			// ANGULAR: this.writeValue(target.checked);
+			handleFrameworkEvent(this, event, 'checked');
 		},
 		handleBlur: (event: InteractionEvent<HTMLInputElement>) => {
 			if (props.onBlur) {
@@ -93,14 +87,21 @@ export default function DBCheckbox(props: DBCheckboxProps) {
 			state._validMessageId = state._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX;
 			state._invalidMessageId =
 				state._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX;
-
-			state._descByIds = [
-				state._messageId,
-				state._validMessageId,
-				state._invalidMessageId
-			].join(' ');
 		}
 	}, [state._id, state.initialized]);
+
+	onUpdate(() => {
+		const descByIds = [state._validMessageId, state._invalidMessageId];
+		if (props.message) {
+			descByIds.push(state._messageId);
+		}
+		state._descByIds = descByIds.join(' ');
+	}, [
+		props.message,
+		state._messageId,
+		state._validMessageId,
+		state._invalidMessageId
+	]);
 	// jscpd:ignore-end
 
 	// TODO we have to check how to update on every change..

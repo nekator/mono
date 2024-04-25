@@ -95,13 +95,13 @@ const getExamplesAsMDX = async (componentName, variant) => {
 				<DBButton
 				className="copy-button"
 				noText
-				icon={copied === \`${exampleCode}\` ? 'done' : 'copy'}
+				icon={copied === \`${exampleCode}\` ? 'check' : 'copy'}
 				variant="ghost"
 				onClick={()=>{
 				setCopied(\`${exampleCode}\`);
 				navigator.clipboard.writeText(\`${exampleCode}\`);
 				}}>
-				Copy
+				Copy code
 				</DBButton>
 				</DBTabPanel>`;
 		}
