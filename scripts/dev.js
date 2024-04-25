@@ -37,14 +37,50 @@ inquirer
 	])
 
 	.then((answers) => {
+		if (!answers?.frameworks) {
+			return;
+		}
+
 		let startCommand = 'npm-run-all -p start:foundations dev:sass';
-		if (answers?.frameworks)
-			for (const answer of answers.frameworks) {
-				startCommand +=
-					answer === 'plain-html'
-						? ` dev:plain-html`
-						: ` dev:${answer}-components start-showcase:${answer}`;
+
+		const isPlainHtmlSelected = answers.frameworks.includes('plain-html');
+
+		const currentAnswers = isPlainHtmlSelected
+			? answers.frameworks.filter((a) => a !== 'plain-html')
+			: answers.frameworks;
+
+		if (isPlainHtmlSelected) {
+			startCommand += ' dev:plain-html';
+		}
+
+		const answersFrameworkPairs = [
+			{
+				answers: ['vue', 'nuxt'],
+				framework: 'vue'
+			},
+			{
+				answers: ['react', 'next'],
+				framework: 'react'
+			},
+			{
+				answers: ['angular', 'angular-ssr'],
+				framework: 'angular'
 			}
+		];
+
+		for (const { framework, answers } of answersFrameworkPairs) {
+			const isAnswerSelected = currentAnswers.some((currentAnswer) =>
+				answers.includes(currentAnswer)
+			);
+
+			if (isAnswerSelected) {
+				startCommand += ` dev:${framework}-components`;
+			}
+		}
+
+		for (const currentAnswer of currentAnswers) {
+			startCommand += ` start-showcase:${currentAnswer}`;
+		}
 
 		// TODO: Handle child process better
 		childProcess.execSync(startCommand, { stdio: 'inherit' });

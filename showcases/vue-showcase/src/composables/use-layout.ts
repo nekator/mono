@@ -11,7 +11,7 @@ import {
 	navigationItems
 } from '../utils/navigation-items';
 
-export function useLayout() {
+export const useLayout = () => {
 	const router = useRouter();
 	const route = useRoute();
 	const density = ref(DENSITY.REGULAR);
@@ -83,4 +83,4 @@ export function useLayout() {
 		toggleDrawer,
 		sortedNavigation
 	};
-}
+};

@@ -23,7 +23,6 @@
     "build:foundations": "npm run build --workspace=@db-ui/foundations",
     "dev": "node dev.js",
     "dev:angular-components": "npm run dev:angular --workspace=@db-ui/components",
-    "dev:nuxt-components": "npm run dev:vue --workspace=@db-ui/components",
     "dev:plain-html": "npm run dev:html --workspace=@db-ui/components",
     "dev:react-components": "npm run dev:react --workspace=@db-ui/components",
     "dev:sass": "npm run dev:scss --workspace=@db-ui/components",
