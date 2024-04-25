@@ -1,8 +1,26 @@
-import { expect, test } from '@playwright/test';
+import { expect, type Page, test } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 // @ts-expect-error - required for playwright
 import { COLORS, DENSITIES } from './fixtures/variants.ts';
 // @ts-expect-error - required for playwright
 import { setScrollViewport } from './fixtures/viewport.ts';
+
+const gotoPage = async (
+	page: Page,
+	path: string,
+	density: string,
+	color: string,
+	fixedHeight?: number
+) => {
+	await page.goto(`./#/${path}?density=${density}&color=${color}`, {
+		waitUntil: 'domcontentloaded'
+	});
+
+	const dbPage = page.locator('.db-page');
+	await expect(dbPage).toHaveAttribute('data-fonts-loaded', 'true');
+	await expect(page.locator('html')).toHaveCSS('overflow', 'hidden');
+	await setScrollViewport(page, fixedHeight)();
+};
 
 export const getDefaultScreenshotTest = (
 	path: string,
@@ -37,21 +55,7 @@ export const getDefaultScreenshotTest = (
 					config.maxDiffPixels = 1;
 				}
 
-				await page.goto(
-					`./#/${path}?density=${density}&color=${color}`,
-					{ waitUntil: 'domcontentloaded' }
-				);
-
-				const dbPage = page.locator('.db-page');
-				await expect(dbPage).toHaveAttribute(
-					'data-fonts-loaded',
-					'true'
-				);
-				await expect(page.locator('html')).toHaveCSS(
-					'overflow',
-					'hidden'
-				);
-				await setScrollViewport(page, fixedHeight)();
+				await gotoPage(page, path, density, color, fixedHeight);
 
 				const header = await page.locator('header');
 
@@ -61,6 +65,15 @@ export const getDefaultScreenshotTest = (
 					[density, `${color}.png`],
 					config
 				);
+			});
+
+			test('should not have any A11y issues', async ({ page }) => {
+				await gotoPage(page, path, density, color, fixedHeight);
+				const accessibilityScanResults = await new AxeBuilder({
+					page
+				}).analyze();
+
+				expect(accessibilityScanResults.violations).toEqual([]);
 			});
 		}
 	}
