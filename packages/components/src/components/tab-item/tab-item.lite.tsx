@@ -32,7 +32,8 @@ export default function DBTabItem(props: DBTabItemProps) {
 				props.change(event);
 			}
 
-			state._selected = event.target['checked'];
+			// We have different ts types in different frameworks, so we need to use any here
+			state._selected = (event.target as any)?.['checked'];
 
 			handleFrameworkEvent(this, event, 'checked');
 		}
