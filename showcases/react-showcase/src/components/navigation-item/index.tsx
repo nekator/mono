@@ -13,30 +13,32 @@ const getNavigationItem = ({
 	width,
 	areaPopup
 }: DBNavigationItemProps) => (
-	<DBNavigationItem
-		icon={icon}
-		disabled={disabled}
-		active={active}
-		width={width}
-		areaPopup={areaPopup}
-		onClick={() => {
-			// eslint-disable-next-line no-alert
-			alert(children.toString());
-		}}
-		subNavigation={
-			areaPopup && (
-				<>
-					<DBNavigationItem>
-						<a href="#">Test1</a>
-					</DBNavigationItem>
-					<DBNavigationItem>
-						<a href="#">Test2</a>
-					</DBNavigationItem>
-				</>
-			)
-		}>
-		{areaPopup ? children : <a href="#">{children}</a>}
-	</DBNavigationItem>
+	<ul>
+		<DBNavigationItem
+			icon={icon}
+			disabled={disabled}
+			active={active}
+			width={width}
+			areaPopup={areaPopup}
+			onClick={() => {
+				// eslint-disable-next-line no-alert
+				alert(children.toString());
+			}}
+			subNavigation={
+				areaPopup && (
+					<ul>
+						<DBNavigationItem>
+							<a href="#">Test1</a>
+						</DBNavigationItem>
+						<DBNavigationItem>
+							<a href="#">Test2</a>
+						</DBNavigationItem>
+					</ul>
+				)
+			}>
+			{areaPopup ? children : <a href="#">{children}</a>}
+		</DBNavigationItem>
+	</ul>
 );
 
 const NavigationItemComponent = (props: PatternhubComponentProps) => {

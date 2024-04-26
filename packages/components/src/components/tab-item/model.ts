@@ -1,5 +1,7 @@
 import {
 	ActiveProps,
+	ChangeEventProps,
+	ChangeEventState,
 	GlobalProps,
 	GlobalState,
 	IconAfterProps,
@@ -27,10 +29,14 @@ export type DBTabItemProps = GlobalProps &
 	DBTabItemDefaultProps &
 	IconProps &
 	IconAfterProps &
-	ActiveProps;
+	ActiveProps &
+	ChangeEventProps<HTMLInputElement>;
 
-export type DBTabItemDefaultState = {};
+export type DBTabItemDefaultState = {
+	_selected: boolean;
+};
 
 export type DBTabItemState = DBTabItemDefaultState &
 	GlobalState &
+	ChangeEventState<HTMLInputElement> &
 	InitializedState;

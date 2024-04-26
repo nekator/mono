@@ -9,6 +9,8 @@ import {
 import type { DBTabItemProps, DBTabItemState } from './model';
 import { cls } from '../../utils';
 import { DEFAULT_ID } from '../../shared/constants';
+import { ChangeEvent } from '../../shared/model';
+import { handleFrameworkEvent } from '../../utils/form-components';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -19,7 +21,21 @@ export default function DBTabItem(props: DBTabItemProps) {
 	// jscpd:ignore-start
 	const state = useStore<DBTabItemState>({
 		_id: DEFAULT_ID,
-		initialized: false
+		initialized: false,
+		_selected: false,
+		handleChange: (event: ChangeEvent<HTMLInputElement>) => {
+			if (props.onChange) {
+				props.onChange(event);
+			}
+
+			if (props.change) {
+				props.change(event);
+			}
+
+			state._selected = event.target['checked'];
+
+			handleFrameworkEvent(this, event, 'checked');
+		}
 	});
 
 	onMount(() => {
@@ -35,7 +51,10 @@ export default function DBTabItem(props: DBTabItemProps) {
 	}, [ref, state.initialized]);
 
 	return (
-		<li className={cls('db-tab-item', props.className)} role="tab">
+		<li
+			className={cls('db-tab-item', props.className)}
+			role="tab"
+			aria-selected={state._selected}>
 			<label
 				htmlFor={state._id}
 				data-icon={props.icon}
@@ -45,8 +64,10 @@ export default function DBTabItem(props: DBTabItemProps) {
 					disabled={props.disabled}
 					ref={ref}
 					type="radio"
-					role="tab"
 					id={state._id}
+					onChange={(event: ChangeEvent<HTMLInputElement>) =>
+						state.handleChange(event)
+					}
 				/>
 
 				<Show when={props.label}>{props.label}</Show>

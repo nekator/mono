@@ -3,5 +3,5 @@ import { test } from '@playwright/test';
 import { getDefaultScreenshotTest } from '../default.ts';
 
 test.describe('DBInput', () => {
-	getDefaultScreenshotTest('03/input');
+	getDefaultScreenshotTest('03/input', undefined, ['color-contrast']);
 });

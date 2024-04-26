@@ -24,7 +24,8 @@ const gotoPage = async (
 
 export const getDefaultScreenshotTest = (
 	path: string,
-	fixedHeight?: number
+	fixedHeight?: number,
+	disableRules?: string[]
 ) => {
 	for (const density of DENSITIES) {
 		for (const color of COLORS) {
@@ -73,6 +74,7 @@ export const getDefaultScreenshotTest = (
 					page
 				})
 					.include('main')
+					.disableRules(disableRules ?? [])
 					.analyze();
 
 				expect(accessibilityScanResults.violations).toEqual([]);

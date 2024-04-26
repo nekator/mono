@@ -63,29 +63,21 @@ export default function DBTabs(props: DBTabsProps) {
 		},
 		initTabList() {
 			if (ref) {
-				const childTabLists = ref.getElementsByClassName('db-tab-list');
-				if (childTabLists?.length > 0) {
-					const firstTabList = childTabLists.item(0);
-					if (firstTabList) {
-						if (
-							!firstTabList
-								.getAttributeNames()
-								.includes('aria-orientation')
-						) {
-							firstTabList.setAttribute(
-								'aria-orientation',
-								props.orientation || 'horizontal'
-							);
-						}
+				const tabList = ref.querySelector('.db-tab-list');
+				if (tabList) {
+					const container = tabList.querySelector('[role="tablist"]');
 
-						if (props.behaviour === 'arrows') {
-							const container = firstTabList.querySelector('ul');
-							state.scrollContainer = container;
+					container.setAttribute(
+						'aria-orientation',
+						props.orientation || 'horizontal'
+					);
+
+					if (props.behaviour === 'arrows') {
+						state.scrollContainer = container;
+						state.evaluateScrollButtons(container);
+						container.addEventListener('scroll', () => {
 							state.evaluateScrollButtons(container);
-							container.addEventListener('scroll', () => {
-								state.evaluateScrollButtons(container);
-							});
-						}
+						});
 					}
 				}
 			}
@@ -100,16 +92,14 @@ export default function DBTabs(props: DBTabsProps) {
 							const input = tabItem.querySelector('input');
 
 							if (input && label) {
-								if (input.id === DEFAULT_ID) {
-									const tabId = `${state._name}-tab-${index}`;
-									label.setAttribute('for', tabId);
-									label.setAttribute(
-										'aria-controls',
-										`${state._name}-tab-panel-${index}`
-									);
-									input.id = tabId;
-									input.setAttribute('name', state._name);
-								}
+								const tabId = `${state._name}-tab-${index}`;
+								label.setAttribute('for', tabId);
+								input.setAttribute(
+									'aria-controls',
+									`${state._name}-tab-panel-${index}`
+								);
+								input.id = tabId;
+								input.setAttribute('name', state._name);
 
 								if (init) {
 									// Auto select
@@ -162,8 +152,8 @@ export default function DBTabs(props: DBTabsProps) {
 			state.initTabList();
 			state.initTabs(true);
 
-			const childTabLists = ref.getElementsByClassName('db-tab-list');
-			if (childTabLists?.length > 0) {
+			const tabList = ref.querySelector('.db-tab-list');
+			if (tabList) {
 				const observer = new MutationObserver((mutations) => {
 					mutations.forEach((mutation) => {
 						if (
@@ -176,7 +166,7 @@ export default function DBTabs(props: DBTabsProps) {
 					});
 				});
 
-				observer.observe(childTabLists[0], {
+				observer.observe(tabList, {
 					childList: true,
 					subtree: true
 				});
