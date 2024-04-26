@@ -3,5 +3,6 @@ import { test } from '@playwright/test';
 import { getDefaultScreenshotTest } from '../default.ts';
 
 test.describe('DBTextarea', () => {
-	getDefaultScreenshotTest('03/textarea');
+	// TODO: Currently disable till we solved https://github.com/db-ui/mono/issues/2587
+	getDefaultScreenshotTest('03/textarea', undefined, ['color-contrast']);
 });

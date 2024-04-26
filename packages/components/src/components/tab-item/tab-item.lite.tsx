@@ -52,10 +52,7 @@ export default function DBTabItem(props: DBTabItemProps) {
 	}, [ref, state.initialized]);
 
 	return (
-		<li
-			className={cls('db-tab-item', props.className)}
-			role="tab"
-			aria-selected={state._selected}>
+		<li className={cls('db-tab-item', props.className)} role="none">
 			<label
 				htmlFor={state._id}
 				data-icon={props.icon}
@@ -63,8 +60,10 @@ export default function DBTabItem(props: DBTabItemProps) {
 				data-no-text={props.noText}>
 				<input
 					disabled={props.disabled}
+					aria-selected={state._selected}
 					ref={ref}
 					type="radio"
+					role="tab"
 					id={state._id}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						state.handleChange(event)

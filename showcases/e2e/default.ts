@@ -58,7 +58,7 @@ export const getDefaultScreenshotTest = (
 
 				await gotoPage(page, path, density, color, fixedHeight);
 
-				const header = await page.locator('header');
+				const header = await page.locator('header').first();
 
 				config.mask = [header];
 
