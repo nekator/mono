@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { getDefaultScreenshotTest } from '../default';
+import { getDefaultScreenshotTest, waitForDBPage } from '../default';
 
 test.describe('Home', () => {
 	test('has title', async ({ page }) => {
@@ -9,7 +9,11 @@ test.describe('Home', () => {
 	});
 
 	test('should not have any A11y issues', async ({ page }) => {
-		await page.goto('./');
+		await page.goto('./', {
+			waitUntil: 'domcontentloaded'
+		});
+
+		await waitForDBPage(page);
 		const accessibilityScanResults = await new AxeBuilder({
 			page
 		})

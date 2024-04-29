@@ -5,6 +5,17 @@ import { COLORS, DENSITIES } from './fixtures/variants.ts';
 // @ts-expect-error - required for playwright
 import { setScrollViewport } from './fixtures/viewport.ts';
 
+export const waitForDBPage = async (page: Page) => {
+	const dbPage = page.locator('.db-page');
+	// We wait till db-page fully loaded
+	await dbPage.evaluate((element) => {
+		element.style.transition = 'none';
+	});
+	await expect(dbPage).toHaveAttribute('data-fonts-loaded', 'true');
+	await expect(dbPage).toHaveCSS('opacity', '1');
+	await expect(page.locator('html')).toHaveCSS('overflow', 'hidden');
+};
+
 const gotoPage = async (
 	page: Page,
 	path: string,
@@ -16,15 +27,7 @@ const gotoPage = async (
 		waitUntil: 'domcontentloaded'
 	});
 
-	const dbPage = page.locator('.db-page');
-	// We wait till db-page fully loaded
-	await dbPage.evaluate((element) => {
-		element.style.transition = 'none';
-	});
-	await expect(dbPage).toHaveAttribute('data-fonts-loaded', 'true');
-	await expect(dbPage).toHaveCSS('opacity', '1');
-	await expect(page.locator('html')).toHaveCSS('overflow', 'hidden');
-
+	await waitForDBPage(page);
 	await setScrollViewport(page, fixedHeight)();
 };
 
