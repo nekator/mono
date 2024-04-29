@@ -18,12 +18,6 @@ export interface DBNavigationItemDefaultProps {
 	active?: boolean;
 
 	/**
-	 * If the attribute is set the item acts like a button with a sub-navigation
-	 */
-
-	areaPopup?: boolean;
-
-	/**
 	 * The disabled attribute can be set to [keep a user from clicking on the item](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#disabled).
 	 */
 	disabled?: boolean;

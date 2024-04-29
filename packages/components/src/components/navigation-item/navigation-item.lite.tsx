@@ -46,12 +46,6 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 		},
 
 		updateSubNavigationState: () => {
-			if (props.areaPopup !== undefined) {
-				state.hasAreaPopup = props.areaPopup;
-				state.hasSubNavigation = state.hasAreaPopup;
-				return;
-			}
-
 			if (state.initialized && document && state.subNavigationId) {
 				const subNavigationSlot = document?.getElementById(
 					state.subNavigationId
@@ -88,7 +82,7 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 
 	onUpdate(() => {
 		state.updateSubNavigationState();
-	}, [state.initialized, props.areaPopup]);
+	}, [state.initialized]);
 	// jscpd:ignore-end
 
 	return (
