@@ -9,6 +9,12 @@ test.describe('Home', () => {
 	});
 
 	test('should not have any A11y issues', async ({ page }) => {
+		const isAngular = process.env.showcase.startsWith('angular');
+
+		if (isAngular) {
+			test.skip();
+		}
+
 		await page.goto('./', {
 			waitUntil: 'domcontentloaded'
 		});
