@@ -198,6 +198,10 @@ module.exports = (tmp) => {
 				to: 'disabled'
 			},
 			{
+				from: 'mouseOver',
+				to: 'mouseover'
+			},
+			{
 				from: 'mouseEnter',
 				to: 'mouseenter'
 			},

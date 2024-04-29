@@ -107,7 +107,7 @@ export class NavigationItemSafeTriangle {
 		return mouseYLimited;
 	}
 
-	private hasMouseEnteredSubNavigation(): boolean | undefined {
+	private hasMouseEnteredSubNavigation(): boolean {
 		if (!this.triangleData) {
 			return false;
 		}
@@ -129,6 +129,8 @@ export class NavigationItemSafeTriangle {
 		) {
 			return true;
 		}
+
+		return false;
 	}
 
 	private getTriangleCoordinates(variant: 'safe-triangle' | 'fill-gap'):
