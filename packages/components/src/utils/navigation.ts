@@ -15,6 +15,8 @@ export class NavigationItemSafeTriangle {
 	private readonly parentSubNavigation: Element | null;
 	private triangleData?: DBNavigationItemTriangleData;
 	private initialized: boolean = false;
+	private mouseX: number = 0;
+	private mouseY: number = 0;
 	constructor(element: HTMLElement, subNavigation: Element) {
 		this.element = element;
 		this.subNavigation = subNavigation;
@@ -45,7 +47,7 @@ export class NavigationItemSafeTriangle {
 	}
 
 	public enableFollow() {
-		if (!this.initialized) {
+		if (!this.initialized || this.triangleData) {
 			return;
 		}
 
@@ -70,25 +72,27 @@ export class NavigationItemSafeTriangle {
 		this.triangleData = undefined;
 	}
 
-	private getTriangleTipXFromMouseX(mouseX: number): number {
+	private getTriangleTipX(): number {
 		if (!this.triangleData) return 0;
 
 		if (this.triangleData.outsideVX === 'right') {
 			// vertical flipped triangle needs an inverted x pos
-			return this.triangleData.itemRect.width - mouseX;
+			return this.triangleData.itemRect.width - this.mouseX;
 		}
 
 		// triangle stops shrinking from 75% x pos
-		return Math.min(mouseX, this.triangleData.itemRect.width * 0.75);
+		return Math.min(this.mouseX, this.triangleData.itemRect.width * 0.75);
 	}
 
-	private getTriangleTipYFromMouseY(mouseY: number): number {
+	private getTriangleTipY(): number {
 		if (!this.triangleData) return 0;
 
 		// padding must be added to the y pos of the tip so that the y pos matches the cursor
 		const mouseYLimited =
-			Math.max(Math.min(mouseY, this.triangleData.itemRect.height), 0) +
-			this.triangleData.padding;
+			Math.max(
+				Math.min(this.mouseY, this.triangleData.itemRect.height),
+				0
+			) + this.triangleData.padding;
 
 		if (this.triangleData.outsideVY === 'bottom') {
 			// add offset to tip y pos to match corrected sub-navigation y pos
@@ -103,24 +107,94 @@ export class NavigationItemSafeTriangle {
 		return mouseYLimited;
 	}
 
+	private hasMouseEnteredSubNavigation(): boolean | undefined {
+		if (!this.triangleData) {
+			return false;
+		}
+
+		const isSubNavigationOnLeftSide =
+			this.triangleData.outsideVX === 'right';
+
+		if (
+			isSubNavigationOnLeftSide &&
+			this.mouseX < -1 * this.triangleData.padding
+		) {
+			return true;
+		}
+
+		if (
+			!isSubNavigationOnLeftSide &&
+			this.mouseX >
+				this.triangleData.parentElementWidth - this.triangleData.padding
+		) {
+			return true;
+		}
+	}
+
+	private getTriangleCoordinates(variant: 'safe-triangle' | 'fill-gap'):
+		| undefined
+		| {
+				lb: string;
+				lt: string;
+				rt: string;
+				rb: string;
+		  } {
+		if (!this.triangleData) {
+			return;
+		}
+
+		if (variant === 'fill-gap') {
+			const itemHeight = `${this.triangleData.itemRect.height + 2 * this.triangleData.padding}px`;
+			const xStart = `${this.triangleData.parentElementWidth - this.triangleData.padding}px`;
+
+			return {
+				lb: `${xStart} ${itemHeight}`,
+				lt: `${xStart} 0`,
+				rt: '100% 0',
+				rb: `100% ${itemHeight}`
+			};
+		}
+
+		const tipX = this.getTriangleTipX();
+		const tipY = this.getTriangleTipY();
+
+		const lb = `${tipX}px ${tipY + this.triangleData.padding}px`;
+		const lt = `${tipX}px ${tipY - this.triangleData.padding}px`;
+
+		return {
+			lb,
+			lt,
+			rt: '100% 0',
+			rb: '100% 100%'
+		};
+	}
+
 	public followByMouseEvent(event: MouseEvent) {
 		if (!this.initialized || !this.triangleData) {
 			return;
 		}
 
-		const mouseX = event.clientX - this.triangleData.itemRect.left;
-		const mouseY = event.clientY - this.triangleData.itemRect.top;
+		this.mouseX = event.clientX - this.triangleData.itemRect.left;
+		this.mouseY = event.clientY - this.triangleData.itemRect.top;
 
-		const tipX = this.getTriangleTipXFromMouseX(mouseX);
-		const tipY = this.getTriangleTipYFromMouseY(mouseY);
+		const isOverSubNavigation = this.hasMouseEnteredSubNavigation();
 
-		const tipUpperPos = `${tipX}px ${tipY + this.triangleData.padding}px`;
-		const tipLowerPos = `${tipX}px ${tipY - this.triangleData.padding}px`;
+		const coordinates = this.getTriangleCoordinates(
+			isOverSubNavigation ? 'fill-gap' : 'safe-triangle'
+		);
+
+		if (!coordinates) {
+			return;
+		}
 
 		this.element.style.setProperty(
 			'--db-navigation-item-clip-path',
-			`polygon(${tipUpperPos}, ${tipLowerPos}, 100% 0, 100% 100%)`
+			`polygon(${coordinates.lb}, ${coordinates.lt}, ${coordinates.rt}, ${coordinates.rb})`
 		);
+
+		if (isOverSubNavigation) {
+			this.triangleData = undefined;
+		}
 	}
 }
 
