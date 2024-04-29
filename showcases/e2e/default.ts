@@ -34,7 +34,8 @@ const gotoPage = async (
 export const getDefaultScreenshotTest = (
 	path: string,
 	fixedHeight?: number,
-	disableRules?: string[]
+	disableRules?: string[],
+	skip?: boolean
 ) => {
 	for (const density of DENSITIES) {
 		for (const color of COLORS) {
@@ -78,6 +79,10 @@ export const getDefaultScreenshotTest = (
 			});
 
 			test('should not have any A11y issues', async ({ page }) => {
+				if (skip) {
+					test.skip();
+				}
+
 				await gotoPage(page, path, density, color, fixedHeight);
 				const accessibilityScanResults = await new AxeBuilder({
 					page
