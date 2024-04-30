@@ -1,6 +1,7 @@
 import {
 	DBNavigation,
-	DBNavigationItem
+	DBNavigationItem,
+	DBInfotext
 } from '../../../../../output/react/src';
 import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/navigation.json';
@@ -10,7 +11,9 @@ import { getVariants } from '../data';
 
 const getNavigation = ({ children }: DBNavigationProps) => (
 	<div>
-		<h6>{children}:</h6>
+		<DBInfotext size="small" semantic="informational" icon="none">
+			{children}
+		</DBInfotext>
 		<DBNavigation>
 			<DBNavigationItem
 				active

@@ -3,11 +3,11 @@ import { test } from '@playwright/test';
 import { getDefaultScreenshotTest } from '../default.ts';
 import { hoverPre } from '../fixtures/hover';
 
-const selector = '.db-popover';
+const selector = '.db-tooltip';
 
-test.describe('DBPopover', () => {
+test.describe('DBTooltip', () => {
 	getDefaultScreenshotTest({
-		path: '01/popover',
+		path: '04/tooltip',
 		preScreenShot: async (page) => hoverPre(page, selector),
 		preA11y: async (page) => hoverPre(page, selector)
 	});
