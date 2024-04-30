@@ -14,10 +14,15 @@ import {
 			#example="{ exampleIndex, variantIndex, exampleName, exampleProps }"
 		>
 			<div>
-				<DBInfotext size="small" semantic="informational" icon="none">
-					{{ exampleName }}</DBInfotext
+				<DBInfotext
+					:id="exampleName"
+					size="small"
+					semantic="informational"
+					icon="none"
 				>
-				<DBNavigation>
+					{{ exampleName }}
+				</DBInfotext>
+				<DBNavigation :labelledBy="exampleName">
 					<DBNavigationItem :active="true">
 						Navi-Item 1
 						<template v-slot:sub-navigation>

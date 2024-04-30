@@ -1,6 +1,8 @@
 import { GlobalProps, GlobalState } from '../../shared/model';
 
-export interface DBNavigationDefaultProps {}
+export interface DBNavigationDefaultProps {
+	labelledBy?: string;
+}
 
 export type DBNavigationProps = DBNavigationDefaultProps & GlobalProps;
 

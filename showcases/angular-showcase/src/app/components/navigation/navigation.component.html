@@ -11,10 +11,15 @@
 		let-variantIndex="variantIndex"
 	>
 		<div>
-			<db-infotext size="small" semantic="informational" icon="none">
-				{{ exampleName }}</db-infotext
+			<db-infotext
+				[id]="exampleName"
+				size="small"
+				semantic="informational"
+				icon="none"
 			>
-			<db-navigation>
+				{{ exampleName }}
+			</db-infotext>
+			<db-navigation [labelledBy]="exampleName">
 				<db-navigation-item [active]="true">
 					<ng-container *dbNavigationContent>
 						Navi-Item 1
