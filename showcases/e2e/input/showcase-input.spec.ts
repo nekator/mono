@@ -4,5 +4,8 @@ import { getDefaultScreenshotTest } from '../default.ts';
 
 test.describe('DBInput', () => {
 	// TODO: Currently disable till we solved https://github.com/db-ui/mono/issues/2587
-	getDefaultScreenshotTest('03/input', undefined, ['color-contrast']);
+	getDefaultScreenshotTest({
+		path: '03/input',
+		disableRules: ['color-contrast']
+	});
 });

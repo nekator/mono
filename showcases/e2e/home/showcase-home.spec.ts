@@ -1,6 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { getDefaultScreenshotTest, waitForDBPage } from '../default';
+import { waitForDBPage } from '../default';
 
 test.describe('Home', () => {
 	test('has title', async ({ page }) => {
