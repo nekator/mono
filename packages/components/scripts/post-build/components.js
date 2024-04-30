@@ -118,6 +118,20 @@ const getComponents = () => [
 	},
 	{
 		name: 'navigation-item',
+		overwrites: {
+			angular: [
+				{
+					from: 'navigationItemSafeTriangle = undefined;',
+					to: 'navigationItemSafeTriangle: undefined | NavigationItemSafeTriangle = undefined;'
+				}
+			],
+			vue: [
+				{
+					from: 'navigationItemSafeTriangle: undefined',
+					to: 'navigationItemSafeTriangle: undefined as undefined | NavigationItemSafeTriangle'
+				}
+			]
+		},
 		config: {
 			angular: {
 				directives: [{ name: 'NavigationContent' }]
