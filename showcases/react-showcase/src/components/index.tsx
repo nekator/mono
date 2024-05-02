@@ -5,8 +5,12 @@ import type {
 	DefaultComponentVariants
 } from '../../../shared/default-component-data';
 
-const VariantList = ({ examples }: DefaultComponentVariants) => (
-	<DBCard className="variants-card">
+const VariantList = ({ examples, color }: DefaultComponentVariants) => (
+	<DBCard
+		className="variants-card"
+		elevationLevel={
+			color?.includes('3') ? '3' : color?.includes('2') ? '2' : '1'
+		}>
 		<div className="variants-list">
 			{examples.map((example, exampleIndex) => (
 				<div
@@ -22,13 +26,14 @@ const VariantList = ({ examples }: DefaultComponentVariants) => (
 
 const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 	const pageName = useQuery()[4];
+	const color = useQuery()[2];
 
 	if (pageName) {
 		const foundVariant = variants.find(
 			(variant) => variant.name.toLowerCase() === pageName
 		);
 		if (foundVariant) {
-			return <VariantList {...foundVariant} />;
+			return <VariantList {...foundVariant} color={color} />;
 		}
 	}
 
@@ -47,7 +52,7 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 						}&page=${variant.name.toLowerCase()}`}>
 						{variant.name}
 					</DBLink>
-					<VariantList {...variant} />
+					<VariantList {...variant} color={color} />
 				</div>
 			))}
 		</div>
