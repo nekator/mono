@@ -1,5 +1,6 @@
 import {
 	ActiveProps,
+	AriaControlsProps,
 	ChangeEventProps,
 	ChangeEventState,
 	GlobalProps,
@@ -30,6 +31,7 @@ export type DBTabItemProps = GlobalProps &
 	IconProps &
 	IconAfterProps &
 	ActiveProps &
+	AriaControlsProps &
 	ChangeEventProps<HTMLInputElement>;
 
 export type DBTabItemDefaultState = {

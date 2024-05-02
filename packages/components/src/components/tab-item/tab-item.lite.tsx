@@ -8,7 +8,6 @@ import {
 } from '@builder.io/mitosis';
 import type { DBTabItemProps, DBTabItemState } from './model';
 import { cls } from '../../utils';
-import { DEFAULT_ID } from '../../shared/constants';
 import { ChangeEvent } from '../../shared/model';
 import { handleFrameworkEvent } from '../../utils/form-components';
 
@@ -20,7 +19,6 @@ export default function DBTabItem(props: DBTabItemProps) {
 	const ref = useRef<HTMLInputElement>(null);
 	// jscpd:ignore-start
 	const state = useStore<DBTabItemState>({
-		_id: DEFAULT_ID,
 		initialized: false,
 		_selected: false,
 		handleChange: (event: ChangeEvent<HTMLInputElement>) => {
@@ -54,17 +52,18 @@ export default function DBTabItem(props: DBTabItemProps) {
 	return (
 		<li className={cls('db-tab-item', props.className)} role="none">
 			<label
-				htmlFor={state._id}
+				htmlFor={props.id}
 				data-icon={props.icon}
 				data-icon-after={props.iconAfter}
 				data-no-text={props.noText}>
 				<input
 					disabled={props.disabled}
 					aria-selected={state._selected}
+					aria-controls={props.controls}
 					ref={ref}
 					type="radio"
 					role="tab"
-					id={state._id}
+					id={props.id}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						state.handleChange(event)
 					}

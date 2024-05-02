@@ -13,7 +13,6 @@ import { DBButton } from '../button';
 import { DBTabList } from '../tab-list';
 import { DBTabItem } from '../tab-item';
 import { DBTabPanel } from '../tab-panel';
-import { DEFAULT_ID } from '../../shared/constants';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -23,7 +22,7 @@ export default function DBTabs(props: DBTabsProps) {
 	const ref = useRef<HTMLDivElement>(null);
 	// jscpd:ignore-start
 	const state = useStore<DBTabsState>({
-		_id: DEFAULT_ID,
+		_id: 'tabs-' + uuid(),
 		_name: '',
 		initialized: false,
 		showScrollLeft: false,
@@ -92,14 +91,16 @@ export default function DBTabs(props: DBTabsProps) {
 							const input = tabItem.querySelector('input');
 
 							if (input && label) {
-								const tabId = `${state._name}-tab-${index}`;
-								label.setAttribute('for', tabId);
-								input.setAttribute(
-									'aria-controls',
-									`${state._name}-tab-panel-${index}`
-								);
-								input.id = tabId;
-								input.setAttribute('name', state._name);
+								if (!input.id) {
+									const tabId = `${state._name}-tab-${index}`;
+									label.setAttribute('for', tabId);
+									input.setAttribute(
+										'aria-controls',
+										`${state._name}-tab-panel-${index}`
+									);
+									input.id = tabId;
+									input.setAttribute('name', state._name);
+								}
 
 								if (init) {
 									// Auto select
@@ -124,7 +125,7 @@ export default function DBTabs(props: DBTabsProps) {
 				if (tabPanels?.length > 0) {
 					Array.from<Element>(tabPanels).forEach(
 						(panel: Element, index: number) => {
-							if (panel.id === DEFAULT_ID) {
+							if (!panel.id) {
 								panel.id = `${state._name}-tab-panel-${index}`;
 								panel.setAttribute(
 									'aria-labelledby',
@@ -139,7 +140,7 @@ export default function DBTabs(props: DBTabsProps) {
 	});
 
 	onMount(() => {
-		state._id = props.id || 'tabs-' + uuid();
+		state._id = props.id || state._id;
 
 		state._name = props.name || uuid();
 

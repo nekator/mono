@@ -1,10 +1,14 @@
-import { GlobalProps, GlobalState } from '../../shared/model';
+import {
+	AriaLabelledByProps,
+	GlobalProps,
+	GlobalState
+} from '../../shared/model';
 
-export interface DBNavigationDefaultProps {
-	labelledBy?: string;
-}
+export interface DBNavigationDefaultProps {}
 
-export type DBNavigationProps = DBNavigationDefaultProps & GlobalProps;
+export type DBNavigationProps = DBNavigationDefaultProps &
+	GlobalProps &
+	AriaLabelledByProps;
 
 export interface DBNavigationDefaultState {}
 
