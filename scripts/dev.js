@@ -20,6 +20,9 @@ inquirer
 					name: 'react'
 				},
 				{
+					name: 'next'
+				},
+				{
 					name: 'vue'
 				},
 				{
@@ -82,6 +85,6 @@ inquirer
 			startCommand += ` start-showcase:${currentAnswer}`;
 		}
 
-		// TODO: Handle child process better
+		// To-do: Handle child process better
 		childProcess.execSync(startCommand, { stdio: 'inherit' });
 	});

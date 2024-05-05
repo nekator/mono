@@ -1,4 +1,3 @@
-import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {
 	COLOR,
@@ -6,9 +5,12 @@ import {
 	DENSITY,
 	DENSITY_CONST
 } from '../../../../packages/components/src/shared/constants';
+import useUniversalSearchParameters from './use-universal-search-parameters';
 
 const useQuery = (): any => {
-	const [searchParameters, setSearchParameters] = useSearchParams();
+	const [searchParameters, setSearchParameters] =
+		useUniversalSearchParameters();
+
 	const [density, setDensity] = useState<string>(
 		searchParameters.get(DENSITY_CONST) ?? DENSITY.REGULAR
 	);

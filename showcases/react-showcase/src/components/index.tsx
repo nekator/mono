@@ -22,6 +22,8 @@ const VariantList = ({ examples }: DefaultComponentVariants) => (
 
 const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 	const pageName = useQuery()[4];
+	// Const pageName =
+	// 	process?.env?.NEXT_SHOWCASE_VARIANT === 'next' ? '' : useQuery()[4];
 
 	if (pageName) {
 		const foundVariant = variants.find(

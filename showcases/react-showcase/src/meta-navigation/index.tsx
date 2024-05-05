@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+// Import { useSearchParams } from 'react-router-dom';
 import {
 	COLOR,
 	COLORS,
@@ -9,6 +9,7 @@ import {
 	DENSITY_CONST
 } from '../../../../packages/components/src/shared/constants';
 import { DBSelect } from '../../../../output/react/src';
+import useUniversalSearchParameters from '../hooks/use-universal-search-parameters';
 
 export type MetaNavigationProps = {
 	onDensityChange: (density: string) => void;
@@ -19,7 +20,8 @@ const MetaNavigation = ({
 	onDensityChange,
 	onColorChange
 }: MetaNavigationProps) => {
-	const [searchParameters, setSearchParameters] = useSearchParams();
+	const [searchParameters, setSearchParameters] =
+		useUniversalSearchParameters();
 	const [density, setDensity] = useState<string>(
 		searchParameters.get(DENSITY_CONST) ?? DENSITY.REGULAR
 	);
