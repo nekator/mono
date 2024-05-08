@@ -3,6 +3,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/notification.json';
 import { type DBNotificationProps } from '../../../../../output/react/src/components/notification/model';
 import { getVariants } from '../data';
+import { getBasePath } from '../../utils/base-path';
 
 const getNotification = ({
 	semantic,
@@ -24,9 +25,7 @@ const getNotification = ({
 		image={
 			img ? (
 				<img
-					src={`${
-						import.meta.env.BASE_URL
-					}/assets/images/placeholder.jpg`}
+					src={`${getBasePath()}/assets/images/placeholder.jpg`}
 					alt="Placeholder"
 				/>
 			) : undefined

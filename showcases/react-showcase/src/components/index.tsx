@@ -4,6 +4,7 @@ import type {
 	DefaultComponentProps,
 	DefaultComponentVariants
 } from '../../../shared/default-component-data';
+import useUniversalSearchParameters from '../hooks/use-universal-search-parameters';
 
 const VariantList = ({ examples }: DefaultComponentVariants) => (
 	<DBCard className="variants-card">
@@ -34,6 +35,28 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 		}
 	}
 
+	const getHref = (variantName: string): string => {
+		if (typeof window !== 'undefined') {
+			return `${window.location.href}&page=${variantName.toLowerCase()}`;
+		}
+
+		return '';
+	};
+
+	const openVariantInNewWindow = (
+		event: React.MouseEvent<HTMLAnchorElement>,
+		variantName: string
+	) => {
+		event.preventDefault();
+
+		if (window) {
+			window.open(
+				`${window.location.href}&page=${variantName.toLowerCase()}`,
+				'_blank'
+			);
+		}
+	};
+
 	return (
 		<div className="default-container">
 			<h1>{title}</h1>
@@ -44,9 +67,10 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 						className="link-headline"
 						content="external"
 						target="_blank"
-						href={`${
-							window.location.href
-						}&page=${variant.name.toLowerCase()}`}>
+						onClick={(event) => {
+							openVariantInNewWindow(event, variant.name);
+						}}
+						href={getHref(variant.name)}>
 						{variant.name}
 					</DBLink>
 					<VariantList {...variant} />

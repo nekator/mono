@@ -5,13 +5,60 @@ import {
 	NavigationItem
 } from '../../react-showcase/src/utils/navigation-item';
 import React from 'react';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export interface DBPage {
 	path: string;
 	component: any;
 }
 
-export default function Home() {
+export interface DBPagePath {
+	params: {
+		slug: string[];
+	};
+}
+
+export const getStaticPaths = (async () => {
+	const sortedNavigationItems = getSortedNavigationItems(
+		NAVIGATION_ITEMS
+	) as NavigationItem[];
+
+	const paths = sortedNavigationItems.reduce(
+		(accumulator: DBPagePath[], { path, component, subNavigation }) => {
+			if (subNavigation) {
+				subNavigation.forEach((subNavItem) => {
+					if (!subNavItem.component) return;
+					accumulator.push({
+						params: { slug: [path, subNavItem.path] }
+					});
+				});
+			}
+
+			if (component) {
+				accumulator.push({ params: { slug: [path] } });
+			}
+
+			return accumulator;
+		},
+		[]
+	);
+
+	console.log('PATHS', JSON.stringify(paths));
+
+	return {
+		paths,
+		fallback: false
+	};
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async (context) => {
+	console.log('context', context);
+	return { props: { test: 'test' } };
+}) satisfies GetStaticProps<{ test: string }>;
+
+export default function Home({
+	test
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
 	const sortedNavigationItems = getSortedNavigationItems(
 		NAVIGATION_ITEMS

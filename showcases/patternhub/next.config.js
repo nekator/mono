@@ -18,7 +18,10 @@ const config = {
 	...withMDX({
 		pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 		eslint: { ignoreDuringBuilds: true }
-	})
+	}),
+	env: {
+		BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || ''
+	}
 };
 
 export default config;
