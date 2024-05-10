@@ -34,7 +34,7 @@ import {
 				<template
 					v-if="!exampleProps.example || exampleProps.withNavigation"
 				>
-					<DBNavigation>
+					<DBNavigation :aria-label="exampleName">
 						<DBNavigationItem icon="user">
 							<a href="#">{{ exampleName }}</a>
 						</DBNavigationItem>
