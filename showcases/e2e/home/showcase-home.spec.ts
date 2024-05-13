@@ -23,9 +23,8 @@ test.describe('Home', () => {
 		const accessibilityScanResults = await new AxeBuilder({
 			page
 		})
-			// TODO: Currently disable till we solved https://github.com/db-ui/mono/issues/2587
 			// TODO: There might be an issue in axe-core: https://github.com/dequelabs/axe-core/issues/4431
-			.disableRules(['color-contrast', 'aria-allowed-role'])
+			.disableRules(['aria-allowed-role'])
 			.analyze();
 
 		expect(accessibilityScanResults.violations).toEqual([]);
