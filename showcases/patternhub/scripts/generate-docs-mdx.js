@@ -54,11 +54,19 @@ const generateDocsMdx = async () => {
 				componentName
 			);
 			if (reactComponent) {
+				const sanitizedReactComponent = reactComponent.replaceAll(
+					'../../utils/',
+					'../../../utils/'
+				);
+
 				FS.writeFileSync(
 					`${componentPath}/overview.tsx`,
-					reactComponent
+					sanitizedReactComponent
 				);
-				FS.writeFileSync(`${componentPath}/index.tsx`, reactComponent);
+				FS.writeFileSync(
+					`${componentPath}/index.tsx`,
+					sanitizedReactComponent
+				);
 			}
 		}
 	}

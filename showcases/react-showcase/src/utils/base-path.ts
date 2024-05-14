@@ -4,7 +4,7 @@ export const getBasePath = () => {
 	}
 
 	if (typeof window !== 'undefined') {
-		return window.env.BASE_URL;
+		return window.env?.BASE_URL;
 	}
 
 	return '';
