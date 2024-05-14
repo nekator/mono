@@ -1,14 +1,14 @@
 {
-  "name": "angular-showcase",
+  "name": "angular-ssr-showcase",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "ng build",
+    "build": "ng build && cpr ./dist/angular-ssr-showcase/ ../../build-showcases/angular-ssr-showcase/ -d",
+    "build:debug": "ng build --optimization=false",
     "dev": "npm run start -- --open",
     "ng": "ng",
-    "preview": "npx http-server ../../build-showcases",
-    "start": "ng serve --serve-path angular-showcase",
-    "test:e2e": "cross-env showcase=angular-showcase npx playwright test --config=../playwright.config.ts",
+    "serve:ssr:angular-ssr-showcase": "node dist/angular-ssr-showcase/server/server.mjs",
+    "start": "ng serve --serve-path angular-ssr-showcase",
     "watch": "ng build --watch --configuration development"
   },
   "dependencies": {
@@ -19,7 +19,10 @@
     "@angular/forms": "17.3.5",
     "@angular/platform-browser": "17.3.5",
     "@angular/platform-browser-dynamic": "17.3.5",
+    "@angular/platform-server": "17.3.5",
     "@angular/router": "17.3.5",
+    "@angular/ssr": "^17.3.6",
+    "express": "^4.18.2",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
@@ -28,6 +31,9 @@
     "@angular-devkit/build-angular": "17.3.6",
     "@angular/cli": "17.3.6",
     "@angular/compiler-cli": "17.3.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^18.18.0",
+    "cpr": "3.0.1",
     "ng-packagr": "17.3.0",
     "typescript": "^5.4.5"
   }

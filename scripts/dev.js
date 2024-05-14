@@ -17,6 +17,9 @@ inquirer
 					name: 'angular'
 				},
 				{
+					name: 'angular-ssr'
+				},
+				{
 					name: 'react'
 				},
 				{

@@ -42,6 +42,7 @@
 		"showcases/next-showcase/pages/_app.tsx",
 		"showcases/vue-showcase/src/components/form/Form.vue",
 		"showcases/angular-showcase/.angular/cache/**",
+		"showcases/angular-ssr-showcase/.angular/cache/**",
 		"packages/components/src/components/**/*.spec.tsx",
 		"packages/components/src/components/tag/tag.spec.tsx",
 		"**/**config.ts",
