@@ -5,8 +5,8 @@ import {
 	type DefaultComponentVariants,
 	type PatternhubComponentProps
 } from '../../shared/default-component-data';
+import { DBCard, DBDivider, DBLink } from '../../../output/react/src';
 import DefaultPage from './default-page';
-import { DBCard, DBDivider, DBLink } from './src';
 
 const VariantList = ({ examples, slotCode }: DefaultComponentVariants) => {
 	const [open, setOpen] = useState<boolean>();

@@ -161,16 +161,8 @@ const writeCodeFiles = async (componentPath, componentName) => {
 		}
 
 		const readFile = FS.readFileSync(reactComponentPath, 'utf8')
-			.replace(
-				'../../../../../output/react/src',
-				'./../../../components/src'
-			)
 			.replace('../index', './../../../components')
 			.replace('../data', '../../../components/data')
-			.replace(
-				`../../../../../output/react/src/components/${componentName}/model`,
-				`./../../../components//src/components/${componentName}/model`
-			)
 			.replace(
 				')}></DefaultComponent>',
 				`,[${tags}])}></DefaultComponent>`

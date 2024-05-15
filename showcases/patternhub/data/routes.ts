@@ -5,7 +5,7 @@ export type NavigationItem = {
 	subNavigation?: NavigationItem[];
 };
 
-const componentChildren: NavigationItem[] = [
+export const componentChildren: NavigationItem[] = [
 	{
 		label: 'Action',
 		path: '/components/action',
