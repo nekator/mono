@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
 import { markRaw } from 'vue';
+import Switch from '../components/switch/Switch.vue';
 import Tabs from '../components/tabs/Tabs.vue';
 import TabItem from '../components/tab-item/TabItem.vue';
 import Tooltip from '../components/tooltip/Tooltip.vue';
@@ -26,6 +27,7 @@ import Section from '../components/section/Section.vue';
 import Textarea from '../components/textarea/Textarea.vue';
 import Brand from '../components/brand/Brand.vue';
 import Icon from '../components/icon/Icon.vue';
+import Header from '../components/header/Header.vue';
 
 export type NavItem = {
 	path: string;
@@ -130,6 +132,7 @@ export const navigationItems: NavItem[] = [
 				label: 'Checkbox',
 				component: markRaw(Checkbox)
 			},
+			{ path: '/03/switch', label: 'Switch', component: Switch },
 			{ path: '/03/select', label: 'Select', component: markRaw(Select) }
 		])
 	},
@@ -161,6 +164,11 @@ export const navigationItems: NavItem[] = [
 				path: '/01/section',
 				label: 'Section',
 				component: markRaw(Section)
+			},
+			{
+				path: '/01/header',
+				label: 'Header',
+				component: markRaw(Header)
 			}
 		])
 	},
