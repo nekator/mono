@@ -1,9 +1,7 @@
 <template>
-	<div>
-		<NuxtLayout>
-			<NuxtPage />
-		</NuxtLayout>
-	</div>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
 <script setup lang="ts">
@@ -17,8 +15,7 @@ provide("$showcaseVariant", "nuxt");
 
 <style>
 #__nuxt,
-#__nuxt > div,
-#__nuxt > div > div {
+#__nuxt > div {
 	block-size: 100%;
 }
 </style>
