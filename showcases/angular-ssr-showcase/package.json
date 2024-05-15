@@ -8,7 +8,7 @@
     "dev": "npm run start -- --open",
     "ng": "ng",
     "serve:ssr:angular-ssr-showcase": "node dist/angular-ssr-showcase/server/server.mjs",
-    "start": "ng serve --serve-path angular-ssr-showcase",
+    "start": "ng serve --serve-path angular-ssr-showcase --port 4401",
     "watch": "ng build --watch --configuration development"
   },
   "dependencies": {
