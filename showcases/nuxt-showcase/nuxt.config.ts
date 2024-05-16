@@ -1,12 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
-// import { getRoutes } from './src/utils/navigation-items';
-// console.log('getRoutes', getRoutes());
-
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	generate: {
-		routes: ['/'] // GetRoutes().map((route) => route.path)
+		routes: ['/']
 	},
 	app: {
 		baseURL: '/nuxt-showcase/'

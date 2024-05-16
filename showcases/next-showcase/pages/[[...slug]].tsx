@@ -1,37 +1,42 @@
 import { useRouter } from 'next/router';
+import type {
+	GetStaticPaths,
+	GetStaticProps,
+	InferGetStaticPropsType
+} from 'next';
+import React from 'react';
 import {
 	getSortedNavigationItems,
 	NAVIGATION_ITEMS,
-	NavigationItem
+	type NavigationItem
 } from '../../react-showcase/src/utils/navigation-item';
-import React from 'react';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
-export interface DBPage {
+export type DBPage = {
 	path: string;
 	component: any;
-}
+};
 
-export interface DBPagePath {
+export type DBPagePath = {
 	params: {
 		slug: string[];
 	};
-}
+};
 
 export const getStaticPaths = (async () => {
 	const sortedNavigationItems = getSortedNavigationItems(
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
 
+	// eslint-disable-next-line unicorn/no-array-reduce
 	const paths = sortedNavigationItems.reduce(
 		(accumulator: DBPagePath[], { path, component, subNavigation }) => {
 			if (subNavigation) {
-				subNavigation.forEach((subNavItem) => {
-					if (!subNavItem.component) return;
+				for (const subNavItem of subNavigation) {
+					if (!subNavItem.component) continue;
 					accumulator.push({
 						params: { slug: [path, subNavItem.path] }
 					});
-				});
+				}
 			}
 
 			if (component) {
@@ -43,8 +48,6 @@ export const getStaticPaths = (async () => {
 		[]
 	);
 
-	console.log('PATHS', JSON.stringify(paths));
-
 	return {
 		paths,
 		fallback: false
@@ -52,7 +55,6 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async (context) => {
-	console.log('context', context);
 	return { props: { test: 'test' } };
 }) satisfies GetStaticProps<{ test: string }>;
 
@@ -64,16 +66,17 @@ export default function Home({
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
 
+	// eslint-disable-next-line unicorn/no-array-reduce
 	const routes: DBPage[] = sortedNavigationItems.reduce(
 		(accumulator: DBPage[], { path, component, subNavigation }) => {
 			if (subNavigation) {
-				subNavigation.forEach((subNavItem) => {
-					if (!subNavItem.component) return;
+				for (const subNavItem of subNavigation) {
+					if (!subNavItem.component) continue;
 					accumulator.push({
 						path: `${path}/${subNavItem.path}`,
 						component: subNavItem.component
 					});
-				});
+				}
 			}
 
 			if (component) {
@@ -85,9 +88,9 @@ export default function Home({
 		[]
 	);
 
-	const slug = router.query.slug ?? '';
+	const slug = router?.query?.slug;
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
 	const currentPage = routes.find(({ path }) => path === currentPath);
 
-	return <div>{currentPage && currentPage.component}</div>;
+	return <div>{currentPage?.component}</div>;
 }
