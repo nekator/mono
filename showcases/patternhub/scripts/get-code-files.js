@@ -24,7 +24,7 @@ const getFileTypeByFramework = (framework) => {
 };
 
 const getExamplesAsMDX = async (componentName, variant) => {
-	const examples = variant.examples;
+	const { examples } = variant;
 
 	let result =
 		"import { useEffect, useState } from 'react';\n" +
