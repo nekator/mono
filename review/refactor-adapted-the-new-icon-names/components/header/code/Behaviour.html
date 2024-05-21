@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>DB UI Mono</title><meta name="next-head-count" content="3"/><link data-next-font="size-adjust" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/mono/review/refactor-adapted-the-new-icon-names/_next/static/css/db7e095fcb4e1138.css" as="style"/><link rel="stylesheet" href="/mono/review/refactor-adapted-the-new-icon-names/_next/static/css/db7e095fcb4e1138.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/webpack-47ebdb888f53e0dc.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/framework-80f7f1b9f13b191e.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/main-2607f7c06d6793f1.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/pages/_app-727518ac47bbe052.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/9572-f90fe36098197091.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/88576-2039215c6b07e472.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/pages/components/header/code/Behaviour-fe6097cfeae086e9.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/1MiqhxcCPxqQXvi3GGZb0/_buildManifest.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/1MiqhxcCPxqQXvi3GGZb0/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="db-card tab-container"><div id="tabs-47437702512028723" class="db-tabs" data-alignment="start" data-width="auto"><div id="OVERWRITE_DEFAULT_ID" class="db-tab-list"><ul role="tablist"><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Angular</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>HTML</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>React</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Vue</label></li></ul></div><section role="tabpanel" class="db-tab-panel"><pre><code class="hljs language-html">&lt;db-header&gt;
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>DB UI Mono</title><meta name="next-head-count" content="3"/><link data-next-font="size-adjust" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/mono/review/refactor-adapted-the-new-icon-names/_next/static/css/db7e095fcb4e1138.css" as="style"/><link rel="stylesheet" href="/mono/review/refactor-adapted-the-new-icon-names/_next/static/css/db7e095fcb4e1138.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/webpack-47ebdb888f53e0dc.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/framework-80f7f1b9f13b191e.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/main-2607f7c06d6793f1.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/pages/_app-727518ac47bbe052.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/9572-f90fe36098197091.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/88576-375bd1dae2c898d2.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/chunks/pages/components/header/code/Behaviour-fe6097cfeae086e9.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/1A2HrC7YV0I0HXoyXV2EH/_buildManifest.js" defer=""></script><script src="/mono/review/refactor-adapted-the-new-icon-names/_next/static/1A2HrC7YV0I0HXoyXV2EH/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="db-card tab-container"><div id="tabs-5929261814206734" class="db-tabs" data-alignment="start" data-width="auto"><div id="OVERWRITE_DEFAULT_ID" class="db-tab-list"><ul role="tablist"><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Angular</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>HTML</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>React</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Vue</label></li></ul></div><section role="tabpanel" class="db-tab-panel"><pre><code class="hljs language-html">&lt;db-header&gt;
 	&lt;db-brand brand&gt;DBHeader&lt;/db-brand&gt;
-	&lt;db-main-navigation *dbNavigation&gt;
+	&lt;db-navigation *dbNavigation&gt;
 		&lt;db-navigation-item icon=&quot;user&quot;&gt;&lt;a&gt;Desktop (full width)&lt;/a&gt;&lt;/db-navigation-item&gt;&lt;db-navigation-item disabled&gt;&lt;a&gt;Desktop (full width) disabled&lt;/a&gt;&lt;/db-navigation-item&gt;
-	&lt;/db-main-navigation&gt;
+	&lt;/db-navigation&gt;
 	&lt;ng-container *dbMetaNavigation&gt;
 		&lt;DBLink href=&quot;#&quot;&gt;Imprint&lt;/DBLink&gt;
 		&lt;DBLink href=&quot;#&quot;&gt;Help&lt;/DBLink&gt;
@@ -44,7 +44,7 @@
           &lt;div class=&quot;db-header-navigation&quot;&gt;
             &lt;nav
               id=&quot;main-navigation-8f8a0873-90c6-4674-9860-5685004b0705&quot;
-              class=&quot;db-main-navigation&quot;
+              class=&quot;db-navigation&quot;
             &gt;
               &lt;menu&gt;
                 &lt;li
@@ -153,7 +153,7 @@
       &lt;div class=&quot;db-header-navigation&quot;&gt;
         &lt;nav
           id=&quot;main-navigation-0405fe64-0c12-4362-91a2-2f9fae857bac&quot;
-          class=&quot;db-main-navigation&quot;
+          class=&quot;db-navigation&quot;
         &gt;
           &lt;menu&gt;
             &lt;li
@@ -298,11 +298,11 @@
 				&lt;a href=&quot;#&quot;&gt;Desktop (full width) disabled&lt;/a&gt;
 			&lt;/DBNavigationItem&gt;
 		&lt;/DBMainNavigation&gt;
-	&lt;/DBHeader&gt;</code></pre><button class="db-button copy-button" data-icon="copy" data-variant="ghost" data-no-text="true">Copy code</button></section></div></div><div class="db-card tab-container"><div id="tabs-8342060993404357" class="db-tabs" data-alignment="start" data-width="auto"><div id="OVERWRITE_DEFAULT_ID" class="db-tab-list"><ul role="tablist"><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Angular</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>HTML</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>React</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Vue</label></li></ul></div><section role="tabpanel" class="db-tab-panel"><pre><code class="hljs language-html">&lt;db-header [forceMobile]=&quot;true&quot;&gt;
+	&lt;/DBHeader&gt;</code></pre><button class="db-button copy-button" data-icon="copy" data-variant="ghost" data-no-text="true">Copy code</button></section></div></div><div class="db-card tab-container"><div id="tabs-10669657571365909" class="db-tabs" data-alignment="start" data-width="auto"><div id="OVERWRITE_DEFAULT_ID" class="db-tab-list"><ul role="tablist"><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Angular</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>HTML</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>React</label></li><li role="none" class="db-tab-item"><label><input type="radio" role="tab" aria-selected="false"/>Vue</label></li></ul></div><section role="tabpanel" class="db-tab-panel"><pre><code class="hljs language-html">&lt;db-header [forceMobile]=&quot;true&quot;&gt;
 	&lt;db-brand brand&gt;DBHeader&lt;/db-brand&gt;
-	&lt;db-main-navigation *dbNavigation&gt;
+	&lt;db-navigation *dbNavigation&gt;
 		&lt;db-navigation-item icon=&quot;user&quot;&gt;&lt;a&gt;Mobile&lt;/a&gt;&lt;/db-navigation-item&gt;&lt;db-navigation-item disabled&gt;&lt;a&gt;Mobile disabled&lt;/a&gt;&lt;/db-navigation-item&gt;
-	&lt;/db-main-navigation&gt;
+	&lt;/db-navigation&gt;
 	&lt;ng-container *dbMetaNavigation&gt;
 		&lt;DBLink href=&quot;#&quot;&gt;Imprint&lt;/DBLink&gt;
 		&lt;DBLink href=&quot;#&quot;&gt;Help&lt;/DBLink&gt;
@@ -344,7 +344,7 @@
           &lt;div class=&quot;db-header-navigation&quot;&gt;
             &lt;nav
               id=&quot;main-navigation-8f8a0873-90c6-4674-9860-5685004b0705&quot;
-              class=&quot;db-main-navigation&quot;
+              class=&quot;db-navigation&quot;
             &gt;
               &lt;menu&gt;
                 &lt;li
@@ -453,7 +453,7 @@
       &lt;div class=&quot;db-header-navigation&quot;&gt;
         &lt;nav
           id=&quot;main-navigation-0405fe64-0c12-4362-91a2-2f9fae857bac&quot;
-          class=&quot;db-main-navigation&quot;
+          class=&quot;db-navigation&quot;
         &gt;
           &lt;menu&gt;
             &lt;li
@@ -599,4 +599,4 @@
 				&lt;a href=&quot;#&quot;&gt;Mobile disabled&lt;/a&gt;
 			&lt;/DBNavigationItem&gt;
 		&lt;/DBMainNavigation&gt;
-	&lt;/DBHeader&gt;</code></pre><button class="db-button copy-button" data-icon="copy" data-variant="ghost" data-no-text="true">Copy code</button></section></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/components/header/code/Behaviour","query":{},"buildId":"1MiqhxcCPxqQXvi3GGZb0","assetPrefix":"/mono/review/refactor-adapted-the-new-icon-names","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+	&lt;/DBHeader&gt;</code></pre><button class="db-button copy-button" data-icon="copy" data-variant="ghost" data-no-text="true">Copy code</button></section></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/components/header/code/Behaviour","query":{},"buildId":"1A2HrC7YV0I0HXoyXV2EH","assetPrefix":"/mono/review/refactor-adapted-the-new-icon-names","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
