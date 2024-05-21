@@ -49,25 +49,26 @@ const generateDocsMdx = async () => {
 				getMigrationFile(componentName, componentValue.displayName)
 			);
 
-			const reactComponent = await writeCodeFiles(
-				componentPath,
+			await writeCodeFiles(
+				`./components/code-docs/${componentName}`, // ComponentPath,
 				componentName
 			);
-			if (reactComponent) {
-				const sanitizedReactComponent = reactComponent.replaceAll(
-					'../../utils/',
-					'../../../utils/'
-				);
 
-				FS.writeFileSync(
-					`${componentPath}/overview.tsx`,
-					sanitizedReactComponent
-				);
-				FS.writeFileSync(
-					`${componentPath}/index.tsx`,
-					sanitizedReactComponent
-				);
-			}
+			// If (reactComponent) {
+			// 	const sanitizedReactComponent = reactComponent.replaceAll(
+			// 		'../../utils/',
+			// 		'../../../utils/'
+			// 	);
+			//
+			// 	FS.writeFileSync(
+			// 		`${componentPath}/overview.tsx`,
+			// 		sanitizedReactComponent
+			// 	);
+			// 	FS.writeFileSync(
+			// 		`${componentPath}/index.tsx`,
+			// 		sanitizedReactComponent
+			// 	);
+			// }
 		}
 	}
 };

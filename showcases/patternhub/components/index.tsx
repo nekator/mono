@@ -8,7 +8,7 @@ import {
 import { DBCard, DBDivider, DBLink } from '../../../output/react/src';
 import DefaultPage from './default-page';
 
-const VariantList = ({ examples, slotCode }: DefaultComponentVariants) => {
+const VariantList = ({ examples, SlotCode }: DefaultComponentVariants) => {
 	const [open, setOpen] = useState<boolean>();
 	return (
 		<DBCard className="variants-card db-code-docs">
@@ -37,7 +37,7 @@ const VariantList = ({ examples, slotCode }: DefaultComponentVariants) => {
 				<div className="db-density-functional">
 					<div className="backdrop" />
 					<DBCard className="code" spacing="small">
-						{slotCode}
+						{SlotCode}
 					</DBCard>
 				</div>
 			</details>

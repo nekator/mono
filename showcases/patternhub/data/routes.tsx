@@ -1,7 +1,16 @@
+import { FC, FunctionComponent, type ReactElement, ReactNode } from 'react';
+import ButtonComponent from '../../react-showcase/src/components/button/index';
+import LinkComponent from '../../react-showcase/src/components/link/index';
+import AccordionComponent from '../../react-showcase/src/components/accordion/index';
+import * as buttonCode from '../components/code-docs/button';
+import * as linkCode from '../components/code-docs/link';
+import * as accordionCode from '../components/code-docs/accordion';
+
 export type NavigationItem = {
 	label: string;
 	name?: string;
 	path?: string;
+	component?: ReactElement;
 	subNavigation?: NavigationItem[];
 };
 
@@ -12,11 +21,13 @@ export const componentChildren: NavigationItem[] = [
 		subNavigation: [
 			{
 				label: 'DBButton',
-				name: 'button'
+				name: 'button',
+				component: <ButtonComponent slotCode={buttonCode} />
 			},
 			{
 				label: 'DBLink',
-				name: 'link'
+				name: 'link',
+				component: <LinkComponent slotCode={linkCode} />
 			}
 		]
 	},
@@ -27,7 +38,7 @@ export const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBBrand',
 				name: 'brand'
-			} /* TODO: Uncomment this if dev and design is aligned
+			} /* TO-DO: Uncomment this if dev and design is aligned
 			{
 				label: 'DBIcon',
 				name: 'icon'
@@ -47,6 +58,7 @@ export const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBAccordion',
 				name: 'accordion',
+				component: <AccordionComponent slotCode={accordionCode} />,
 				subNavigation: [
 					{
 						label: 'DBAccordionItem Properties',
@@ -129,7 +141,7 @@ export const componentChildren: NavigationItem[] = [
 			{
 				label: 'DBHeader',
 				name: 'header'
-			} /* TODO: Uncomment this if dev and design is aligned
+			} /* TO-DO: Uncomment this if dev and design is aligned
 			{
 				label: 'DBPage',
 				name: 'page'

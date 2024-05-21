@@ -7,6 +7,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/accordion.json';
 import type { DBAccordionProps } from '../../../../../output/react/src/components/accordion/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 // Patternhub:import AccordionItemComponent from '../accordion-item';
 
 const getAccordion = ({ behaviour, children, variant }: DBAccordionProps) => (
@@ -22,7 +23,7 @@ const getAccordion = ({ behaviour, children, variant }: DBAccordionProps) => (
 	</>
 );
 
-const AccordionComponent = () => {
+const AccordionComponent = (props: BaseComponentProps) => {
 	return (
 		<div>
 			<DefaultComponent
@@ -31,7 +32,8 @@ const AccordionComponent = () => {
 				// Patternhub:subComponent={<AccordionItemComponent	isSubComponent componentName="accordion-item"/>}
 				variants={getVariants(
 					defaultComponentVariants,
-					getAccordion
+					getAccordion,
+					props.slotCode
 				)}></DefaultComponent>
 		</div>
 	);

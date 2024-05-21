@@ -24,7 +24,8 @@ const config = {
 		eslint: { ignoreDuringBuilds: true }
 	}),
 	env: {
-		BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || ''
+		BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '',
+		NEXT_SHOWCASE_VARIANT: 'next'
 	}
 };
 

@@ -42,6 +42,10 @@ const DefaultPage = ({ children }: any) => {
 				setFullscreen(router.query.fullscreen === 'true');
 			}
 
+			if (router.query.page) {
+				setFullscreen(true);
+			}
+
 			if (router.query.noh1) {
 				setNoH1(router.query.noh1 === 'true');
 			}
