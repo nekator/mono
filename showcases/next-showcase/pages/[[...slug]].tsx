@@ -88,9 +88,11 @@ export default function Home({
 		[]
 	);
 
-	const slug = router?.query?.slug;
+	const slug = router?.query?.slug || '';
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
 	const currentPage = routes.find(({ path }) => path === currentPath);
+
+	console.log('!!', slug, currentPath, currentPage, sortedNavigationItems);
 
 	return <div>{currentPage?.component}</div>;
 }
