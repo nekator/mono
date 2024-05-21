@@ -34,7 +34,7 @@ For general installation and configuration take a look at the [components](https
 						<div class="db-header-navigation">
 							<nav
 								id="main-navigation-8f8a0873-90c6-4674-9860-5685004b0705"
-								class="db-main-navigation"
+								class="db-navigation"
 							>
 								<menu>
 									<li
@@ -138,7 +138,7 @@ For general installation and configuration take a look at the [components](https
 				<div class="db-header-navigation">
 					<nav
 						id="main-navigation-0405fe64-0c12-4362-91a2-2f9fae857bac"
-						class="db-main-navigation"
+						class="db-navigation"
 					>
 						<menu>
 							<li
