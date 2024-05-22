@@ -65,6 +65,8 @@ export default function Home() {
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
 
+	console.log('TEST');
+
 	// eslint-disable-next-line unicorn/no-array-reduce
 	const routes: DBPage[] = sortedNavigationItems.reduce(
 		(accumulator: DBPage[], { path, component, subNavigation }) => {
