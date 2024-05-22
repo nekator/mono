@@ -19,7 +19,6 @@
 		"**/.next/**",
 		"**/.github/**",
 		"**/docs/**",
-		"**/next-showcase/components/**",
 		"**/patternhub/**/components/**",
 		"**/*-example/index.html",
 		"**/*-showcase/index.html",
