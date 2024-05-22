@@ -54,18 +54,16 @@ export const getStaticPaths = (async () => {
 	};
 }) satisfies GetStaticPaths;
 
-// getStaticPaths (see above) requires getStaticProps so that next can be built, even if no props are passed at all, as is the case here
+// Hint: getStaticPaths (see above) requires getStaticProps so that next can be built, even if no props are passed at all, as is the case here
 export const getStaticProps = (async (context) => {
 	return { props: {} };
-}) satisfies GetStaticProps<{}>;
+}) satisfies GetStaticProps<any>;
 
 export default function Home() {
 	const router = useRouter();
 	const sortedNavigationItems = getSortedNavigationItems(
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
-
-	console.log('Test');
 
 	// eslint-disable-next-line unicorn/no-array-reduce
 	const routes: DBPage[] = sortedNavigationItems.reduce(
@@ -89,7 +87,7 @@ export default function Home() {
 		[]
 	);
 
-	const slug = router?.query?.slug || '';
+	const slug = router?.query?.slug ?? '';
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
 	const currentPage = routes.find(({ path }) => path === currentPath);
 
