@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[14186],{33417:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/badge/code/Density",function(){return e(15314)}])}},function(n){n.O(0,[39650,15314,92888,49774,40179],function(){return n(n.s=33417)}),_N_E=n.O()}]);

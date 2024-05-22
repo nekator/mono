@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[63238],{91605:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/textarea/code/VariantLabel",function(){return e(98269)}])}},function(n){n.O(0,[39650,98269,92888,49774,40179],function(){return n(n.s=91605)}),_N_E=n.O()}]);

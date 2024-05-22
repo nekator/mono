@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[27539],{61834:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/brand/code/Tonality",function(){return o(90883)}])}},function(n){n.O(0,[39650,90883,92888,49774,40179],function(){return n(n.s=61834)}),_N_E=n.O()}]);
