@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[53696],{22208:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/header/code/Examples",function(){return e(61795)}])}},function(n){n.O(0,[9572,61795,92888,49774,40179],function(){return n(n.s=22208)}),_N_E=n.O()}]);
