@@ -1,5 +1,5 @@
 import { DBRadio } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import { getVariants } from '../data';
 import defaultComponentVariants from '../../../../shared/radio.json';
 import { type DBRadioProps } from '../../../../../output/react/src/components/radio/model';

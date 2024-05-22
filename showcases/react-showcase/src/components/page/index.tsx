@@ -10,7 +10,7 @@ import {
 import { type DBPageProps } from '../../../../../output/react/src/components/page/model';
 import defaultComponentVariants from '../../../../shared/page.json';
 import { getVariants } from '../data';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import { type BaseComponentProps } from '../base-component-data';
 
 const getPage = ({

@@ -1,5 +1,5 @@
 import { DBSelect } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/select.json';
 import type { DBSelectProps } from '../../../../../output/react/src/components/select/model';
 import { getVariants } from '../data';

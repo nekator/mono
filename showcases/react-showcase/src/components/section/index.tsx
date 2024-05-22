@@ -1,5 +1,5 @@
 import { DBSection } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/section.json';
 import { type DBSectionProps } from '../../../../../output/react/src/components/section/model';
 import { getVariants } from '../data';

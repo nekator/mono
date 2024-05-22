@@ -1,5 +1,5 @@
 import { DBCard } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/card.json';
 import { getVariants } from '../data';
 import type { DBCardProps } from '../../../../../output/react/src/components/card/model';

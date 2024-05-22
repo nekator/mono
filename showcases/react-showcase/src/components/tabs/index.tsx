@@ -5,12 +5,11 @@ import {
 	DBTabPanel,
 	DBInfotext
 } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/tabs.json';
 import type { DBTabsProps } from '../../../../../output/react/src/components/tabs/model';
 import { getVariants } from '../data';
 import { type BaseComponentProps } from '../base-component-data';
-// Patternhub:import TabItemComponent from '../tab-item';
 
 const getTabs = ({
 	children,

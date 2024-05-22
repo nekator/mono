@@ -1,5 +1,5 @@
 import { DBSwitch, DBInfotext } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/switch.json';
 import type { DBSwitchProps } from '../../../../../output/react/src/components/switch/model';
 import { getVariants } from '../data';

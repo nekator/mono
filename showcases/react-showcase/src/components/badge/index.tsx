@@ -4,7 +4,7 @@ import {
 	DBIcon,
 	DBButton
 } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/badge.json';
 import type { DBBadgeProps } from '../../../../../output/react/src/components/badge/model';
 import { getVariants } from '../data';

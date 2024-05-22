@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { DBButton } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/button.json';
 import { type DBButtonProps } from '../../../../../output/react/src/components/button/model';
 import { getVariants } from '../data';

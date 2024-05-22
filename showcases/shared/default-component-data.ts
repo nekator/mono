@@ -25,21 +25,10 @@ export type DefaultComponentVariants = {
 	color?: string;
 };
 
-export type SubComponentProps = {
-	title: string;
-	variants: DefaultComponentVariants[];
-};
-
 export type DefaultComponentProps = {
 	title: string;
 	variants: DefaultComponentVariants[];
 	isSubComponent?: boolean;
 	subComponent?: ReactElement;
-	componentName?: string;
-};
-
-export type PatternhubComponentProps = {
-	subComponent?: unknown;
-	isSubComponent?: boolean;
 	componentName?: string;
 };

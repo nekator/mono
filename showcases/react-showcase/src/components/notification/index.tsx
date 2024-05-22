@@ -1,5 +1,5 @@
 import { DBNotification, DBLink } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/notification.json';
 import { type DBNotificationProps } from '../../../../../output/react/src/components/notification/model';
 import { getVariants } from '../data';

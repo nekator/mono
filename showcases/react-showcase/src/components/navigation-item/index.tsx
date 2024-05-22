@@ -1,5 +1,5 @@
 import { DBNavigationItem, DBButton } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/navigation-item.json';
 import type { DBNavigationItemProps } from '../../../../../output/react/src/components/navigation-item/model';
 import { getVariants } from '../data';

@@ -3,12 +3,11 @@ import {
 	DBNavigationItem,
 	DBInfotext
 } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/navigation.json';
 import type { DBNavigationProps } from '../../../../../output/react/src/components/navigation/model';
 import { getVariants } from '../data';
 import { type BaseComponentProps } from '../base-component-data';
-// Patternhub:import NavigationItemComponent from '../navigation-item';
 
 const getNavigation = ({ children }: DBNavigationProps) => {
 	const label = `${children}`;
