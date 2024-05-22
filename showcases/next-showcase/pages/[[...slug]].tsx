@@ -87,6 +87,8 @@ export default function Home() {
 		[]
 	);
 
+	console.log('Test');
+
 	const slug = router?.query?.slug || '';
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
 	const currentPage = routes.find(({ path }) => path === currentPath);
