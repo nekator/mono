@@ -5,7 +5,6 @@ import type {
 	DefaultComponentProps,
 	DefaultComponentVariants
 } from '../../../shared/default-component-data';
-import useUniversalSearchParameters from '../hooks/use-universal-search-parameters';
 
 const VariantList = ({
 	examples,
