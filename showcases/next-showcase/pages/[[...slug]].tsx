@@ -87,7 +87,7 @@ export default function Home() {
 		[]
 	);
 
-	console.log('Test..');
+	console.log('Test..c');
 
 	const slug = router?.query?.slug || '';
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
