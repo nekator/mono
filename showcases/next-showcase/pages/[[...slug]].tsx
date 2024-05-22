@@ -65,8 +65,6 @@ export default function Home() {
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
 
-	console.log('TEST 1');
-
 	// eslint-disable-next-line unicorn/no-array-reduce
 	const routes: DBPage[] = sortedNavigationItems.reduce(
 		(accumulator: DBPage[], { path, component, subNavigation }) => {
@@ -89,9 +87,7 @@ export default function Home() {
 		[]
 	);
 
-	console.log('Test..cd');
-
-	const slug = router?.query?.slug || '';
+	const slug = router?.query?.slug ?? '';
 	const currentPath = Array.isArray(slug) ? slug.join('/') : slug;
 	const currentPage = routes.find(({ path }) => path === currentPath);
 
