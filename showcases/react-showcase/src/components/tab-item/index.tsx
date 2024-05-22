@@ -3,7 +3,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/tab-item.json';
 import type { DBTabItemProps } from '../../../../../output/react/src/components/tab-item/model';
 import { getVariants } from '../data';
-import type { PatternhubComponentProps } from '../../../../shared/default-component-data';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getTab = ({
 	children,
@@ -25,15 +25,16 @@ const getTab = ({
 	</DBTabList>
 );
 
-const TabItemComponent = (props: PatternhubComponentProps) => {
+const TabItemComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBTabItem"
-			// Patternhub:isSubComponent={props.isSubComponent}
-			// Patternhub:componentName={props.componentName}
+			isSubComponent={props.isSubComponent}
+			componentName={props.componentName}
 			variants={getVariants(
 				defaultComponentVariants,
-				getTab
+				getTab,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

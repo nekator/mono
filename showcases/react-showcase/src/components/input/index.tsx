@@ -4,6 +4,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/input.json';
 import { type DBInputProps } from '../../../../../output/react/src/components/input/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getInput = ({
 	label,
@@ -37,13 +38,14 @@ const getInput = ({
 	);
 };
 
-const InputComponent = () => {
+const InputComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title={'DBInput'}
 			variants={getVariants(
 				defaultComponentVariants,
-				getInput
+				getInput,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { ReactElement } from 'react';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import { componentChildren, NavigationItem } from '../../data/routes';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { componentChildren } from '../../data/routes';
 import DefaultPage from '../../components/default-page';
 
 export interface DBPage {
@@ -21,7 +21,9 @@ export const getStaticPaths = (async () => {
 		(accumulator: DBPagePath[], { path, component, subNavigation }) => {
 			if (subNavigation) {
 				for (const subNavItem of subNavigation) {
-					if (!subNavItem.component || !subNavItem.name) continue;
+					if (!subNavItem.component || !subNavItem.name) {
+						continue;
+					}
 					accumulator = [
 						...accumulator,
 						{
@@ -45,6 +47,7 @@ export const getStaticPaths = (async () => {
 	};
 }) satisfies GetStaticPaths;
 
+// getStaticPaths (see above) requires getStaticProps so that next can be built, even if no props are passed at all, as is the case here
 export const getStaticProps = (async (context) => {
 	return { props: {} };
 }) satisfies GetStaticProps<{}>;
@@ -60,7 +63,9 @@ export default function Home() {
 
 	// eslint-disable-next-line unicorn/no-array-reduce
 	for (const componentChild of componentChildren) {
-		if (!componentChild.subNavigation) continue;
+		if (!componentChild.subNavigation) {
+			continue;
+		}
 
 		for (const subNavItem of componentChild.subNavigation) {
 			if (

@@ -3,6 +3,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/tooltip.json';
 import type { DBTooltipProps } from '../../../../../output/react/src/components/tooltip/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getTooltip = ({
 	children,
@@ -30,13 +31,14 @@ const getTooltip = ({
 	</DBButton>
 );
 
-const TooltipComponent = () => {
+const TooltipComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBTooltip"
 			variants={getVariants(
 				defaultComponentVariants,
-				getTooltip
+				getTooltip,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

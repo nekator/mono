@@ -30,6 +30,7 @@ const AccordionComponent = (props: BaseComponentProps) => {
 				title="DBAccordion"
 				// We use this only for patternhub to include an item inside the parent
 				// Patternhub:subComponent={<AccordionItemComponent	isSubComponent componentName="accordion-item"/>}
+				subComponent={props.subComponent}
 				variants={getVariants(
 					defaultComponentVariants,
 					getAccordion,

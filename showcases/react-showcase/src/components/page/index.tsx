@@ -11,6 +11,7 @@ import { type DBPageProps } from '../../../../../output/react/src/components/pag
 import defaultComponentVariants from '../../../../shared/page.json';
 import { getVariants } from '../data';
 import DefaultComponent from '../index';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getPage = ({
 	variant,
@@ -73,13 +74,14 @@ const getPage = ({
 	</DBPage>
 );
 
-const PageComponent = () => {
+const PageComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBPage"
 			variants={getVariants(
 				defaultComponentVariants,
-				getPage
+				getPage,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

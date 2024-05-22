@@ -58,7 +58,13 @@ const VariantList = ({
 	);
 };
 
-const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
+const DefaultComponent = ({
+	title,
+	variants,
+	subComponent,
+	isSubComponent,
+	componentName
+}: DefaultComponentProps) => {
 	const pageName = useQuery()[4];
 	const color = useQuery()[2];
 
@@ -74,14 +80,25 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 		event: React.MouseEvent<HTMLAnchorElement>,
 		variantName: string
 	) => {
-		event.preventDefault();
-
-		if (window) {
-			window.open(
-				`${window.location.href}&page=${variantName.toLowerCase()}`,
-				'_blank'
-			);
+		if (
+			typeof window === 'undefined' ||
+			!window.location.origin ||
+			!window.location.href
+		) {
+			return;
 		}
+
+		const currentUrl = window.location.href.split('?');
+		const searchParams = new URLSearchParams(currentUrl[1] ?? '');
+		searchParams.set('page', variantName.toLowerCase());
+
+		const rawComponentUrl = currentUrl[0].replace('/overview', '');
+
+		const openUrl = componentName
+			? `${rawComponentUrl.split('components')[0]}/components/${componentName}?${searchParams.toString()}`
+			: `${rawComponentUrl}?${searchParams.toString()}`;
+
+		window.open(openUrl, '_blank');
 	};
 
 	if (pageName) {
@@ -93,26 +110,31 @@ const DefaultComponent = ({ title, variants }: DefaultComponentProps) => {
 		}
 	}
 
+	const HeadlineTag = isSubComponent ? 'h2' : 'h1';
+
 	return (
-		<div className="default-container">
-			<h1>{title}</h1>
-			{variants?.map((variant, index) => (
-				<div key={`${variant.name}-${index}`}>
-					<DBDivider></DBDivider>
-					<DBLink
-						className="link-headline"
-						content="external"
-						target="_blank"
-						onClick={(event) => {
-							openVariantInNewWindow(event, variant.name);
-						}}
-						href={getHref(variant.name)}>
-						{variant.name}
-					</DBLink>
-					<VariantList {...variant} color={color} />
-				</div>
-			))}
-		</div>
+		<>
+			<div className="default-container">
+				<HeadlineTag>{title}</HeadlineTag>
+				{variants?.map((variant, index) => (
+					<div key={`${variant.name}-${index}`}>
+						<DBDivider></DBDivider>
+						<DBLink
+							className="link-headline"
+							content="external"
+							target="_blank"
+							onClick={(event) => {
+								openVariantInNewWindow(event, variant.name);
+							}}
+							href={getHref(variant.name)}>
+							{variant.name}
+						</DBLink>
+						<VariantList {...variant} color={color} />
+					</div>
+				))}
+			</div>
+			{subComponent}
+		</>
 	);
 };
 

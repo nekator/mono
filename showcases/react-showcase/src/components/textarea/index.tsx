@@ -4,6 +4,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/textarea.json';
 import type { DBTextareaProps } from '../../../../../output/react/src/components/textarea/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getTextarea = ({
 	cols,
@@ -38,14 +39,15 @@ const getTextarea = ({
 	);
 };
 
-const TextareaComponent = () => {
+const TextareaComponent = (props: BaseComponentProps) => {
 	return (
 		<>
 			<DefaultComponent
 				title="DBTextarea"
 				variants={getVariants(
 					defaultComponentVariants,
-					getTextarea
+					getTextarea,
+					props.slotCode
 				)}></DefaultComponent>
 		</>
 	);

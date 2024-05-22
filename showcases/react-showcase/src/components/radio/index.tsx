@@ -3,6 +3,7 @@ import DefaultComponent from '../index';
 import { getVariants } from '../data';
 import defaultComponentVariants from '../../../../shared/radio.json';
 import { type DBRadioProps } from '../../../../../output/react/src/components/radio/model';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getRadio = ({
 	label,
@@ -28,13 +29,14 @@ const getRadio = ({
 	</DBRadio>
 );
 
-const RadioComponent = () => {
+const RadioComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title={'DBRadio'}
 			variants={getVariants(
 				defaultComponentVariants,
-				getRadio
+				getRadio,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

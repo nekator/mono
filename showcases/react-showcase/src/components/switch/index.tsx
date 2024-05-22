@@ -3,6 +3,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/switch.json';
 import type { DBSwitchProps } from '../../../../../output/react/src/components/switch/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getSwitch = ({
 	children,
@@ -35,13 +36,14 @@ const getSwitch = ({
 	</>
 );
 
-const SwitchComponent = () => {
+const SwitchComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBSwitch"
 			variants={getVariants(
 				defaultComponentVariants,
-				getSwitch
+				getSwitch,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

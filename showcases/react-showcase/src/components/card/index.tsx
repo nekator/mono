@@ -3,6 +3,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/card.json';
 import { getVariants } from '../data';
 import type { DBCardProps } from '../../../../../output/react/src/components/card/model';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getCard = ({
 	behaviour,
@@ -18,13 +19,14 @@ const getCard = ({
 	</DBCard>
 );
 
-const CardComponent = () => {
+const CardComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title={'DBCard'}
 			variants={getVariants(
 				defaultComponentVariants,
-				getCard
+				getCard,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

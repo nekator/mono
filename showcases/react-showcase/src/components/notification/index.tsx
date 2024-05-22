@@ -4,6 +4,7 @@ import defaultComponentVariants from '../../../../shared/notification.json';
 import { type DBNotificationProps } from '../../../../../output/react/src/components/notification/model';
 import { getVariants } from '../data';
 import { getBasePath } from '../../utils/base-path';
+import { type BaseComponentProps } from '../base-component-data';
 
 const getNotification = ({
 	semantic,
@@ -42,13 +43,14 @@ const getNotification = ({
 	</DBNotification>
 );
 
-const NotificationComponent = () => {
+const NotificationComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBNotification"
 			variants={getVariants(
 				defaultComponentVariants,
-				getNotification
+				getNotification,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };

@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 							onDensityChange={setDensity}
 						/>
 					}
-					callToAction={
+					primaryAction={
 						<DBButton
 							icon="magnifying_glass"
 							variant="ghost"
@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 							Search
 						</DBButton>
 					}
-					actionBar={
+					secondaryAction={
 						<>
 							<DBButton icon="user" variant="ghost" noText>
 								Profile

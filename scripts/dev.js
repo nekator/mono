@@ -88,6 +88,6 @@ inquirer
 			startCommand += ` start-showcase:${currentAnswer}`;
 		}
 
-		// To-do: Handle child process better
+		// TODO: Handle child process better
 		childProcess.execSync(startCommand, { stdio: 'inherit' });
 	});

@@ -7,6 +7,7 @@ import DefaultComponent from '../index';
 import defaultComponentVariants from '../../../../shared/navigation.json';
 import type { DBNavigationProps } from '../../../../../output/react/src/components/navigation/model';
 import { getVariants } from '../data';
+import { type BaseComponentProps } from '../base-component-data';
 // Patternhub:import NavigationItemComponent from '../navigation-item';
 
 const getNavigation = ({ children }: DBNavigationProps) => {
@@ -57,15 +58,15 @@ const getNavigation = ({ children }: DBNavigationProps) => {
 	);
 };
 
-const NavigationComponent = () => {
+const NavigationComponent = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DBNavigation"
-			// We use this only for patternhub to include an item inside the parent
-			// Patternhub:subComponent={<NavigationItemComponent isSubComponent componentName="navigation-item"/>}
+			subComponent={props.subComponent}
 			variants={getVariants(
 				defaultComponentVariants,
-				getNavigation
+				getNavigation,
+				props.slotCode
 			)}></DefaultComponent>
 	);
 };
