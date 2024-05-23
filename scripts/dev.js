@@ -4,6 +4,10 @@ import inquirer from 'inquirer';
 
 const answersFrameworkPairs = [
 	{
+		answers: ['plain-html'],
+		framework: 'plain-html'
+	},
+	{
 		answers: ['vue', 'nuxt'],
 		framework: 'vue'
 	},
@@ -64,15 +68,7 @@ inquirer
 
 		let startCommand = 'npm-run-all -p start:foundations dev:sass';
 
-		const isPlainHtmlSelected = answers.frameworks.includes('plain-html');
-
-		const currentAnswers = isPlainHtmlSelected
-			? answers.frameworks.filter((a) => a !== 'plain-html')
-			: answers.frameworks;
-
-		if (isPlainHtmlSelected) {
-			startCommand += ' dev:plain-html';
-		}
+		const currentAnswers = answers?.frameworks;
 
 		for (const { framework, answers } of answersFrameworkPairs) {
 			const isAnswerSelected = currentAnswers.some((currentAnswer) =>
