@@ -25,7 +25,8 @@ const config = {
 	}),
 	env: {
 		BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '',
-		NEXT_SHOWCASE_VARIANT: 'next'
+		NEXT_SHOWCASE_VARIANT: 'next',
+		REDIRECT_URL_SEARCH_PARAMS: 'false'
 	}
 };
 

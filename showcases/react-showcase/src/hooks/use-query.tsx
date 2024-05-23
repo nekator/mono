@@ -7,7 +7,7 @@ import {
 } from '../../../../packages/components/src/shared/constants';
 import useUniversalSearchParameters from './use-universal-search-parameters';
 
-const useQuery = (): any => {
+const useQuery = (redirectURLSearchParams = true): any => {
 	const [searchParameters, setSearchParameters] =
 		useUniversalSearchParameters();
 
@@ -56,7 +56,9 @@ const useQuery = (): any => {
 				nextQuery.fullscreen = true;
 			}
 
-			setSearchParameters(nextQuery);
+			if (redirectURLSearchParams) {
+				setSearchParameters(nextQuery);
+			}
 		}
 	}, [color, density, page, fullscreen, searchRead]);
 

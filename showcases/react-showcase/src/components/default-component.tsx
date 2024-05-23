@@ -64,8 +64,11 @@ const DefaultComponent = ({
 	isSubComponent,
 	componentName
 }: DefaultComponentProps) => {
-	const pageName = useQuery()[4];
-	const color = useQuery()[2];
+	const redirectURLSearchParams = process?.env?.REDIRECT_URL_SEARCH_PARAMS
+		? process.env.REDIRECT_URL_SEARCH_PARAMS === 'true'
+		: true;
+	const pageName = useQuery(redirectURLSearchParams)[4];
+	const color = useQuery(redirectURLSearchParams)[2];
 
 	const getHref = (variantName: string): string => {
 		if (typeof window !== 'undefined') {
