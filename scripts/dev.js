@@ -2,6 +2,21 @@
 import childProcess from 'node:child_process';
 import inquirer from 'inquirer';
 
+const answersFrameworkPairs = [
+	{
+		answers: ['vue', 'nuxt'],
+		framework: 'vue'
+	},
+	{
+		answers: ['react', 'next'],
+		framework: 'react'
+	},
+	{
+		answers: ['angular', 'angular-ssr'],
+		framework: 'angular'
+	}
+];
+
 inquirer
 	.prompt([
 		{
@@ -58,21 +73,6 @@ inquirer
 		if (isPlainHtmlSelected) {
 			startCommand += ' dev:plain-html';
 		}
-
-		const answersFrameworkPairs = [
-			{
-				answers: ['vue', 'nuxt'],
-				framework: 'vue'
-			},
-			{
-				answers: ['react', 'next'],
-				framework: 'react'
-			},
-			{
-				answers: ['angular', 'angular-ssr'],
-				framework: 'angular'
-			}
-		];
 
 		for (const { framework, answers } of answersFrameworkPairs) {
 			const isAnswerSelected = currentAnswers.some((currentAnswer) =>
