@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[54646],{83308:function(n,_,c){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/card/code/Spacing",function(){return c(65504)}])}},function(n){n.O(0,[39650,65504,92888,49774,40179],function(){return n(n.s=83308)}),_N_E=n.O()}]);
