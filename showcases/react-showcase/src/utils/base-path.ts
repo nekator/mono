@@ -4,7 +4,8 @@ export const getBasePath = () => {
 	}
 
 	if (typeof window !== 'undefined') {
-		return window.env?.BASE_URL;
+		// eslint-disable-next-line @typescript-eslint/dot-notation
+		return window['env']?.BASE_URL;
 	}
 
 	return '';
