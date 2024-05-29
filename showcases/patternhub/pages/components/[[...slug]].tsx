@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import React, { ReactElement } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { componentChildren } from '../../data/routes';
+import {
+	componentChildren,
+	getAllComponentGroupNames
+} from '../../data/routes';
 import DefaultPage from '../../components/default-page';
-
-export interface DBPage {
-	path: string;
-	component: any;
-}
+import CardNavigation from '../../components/card-navigation/card-navigation';
+import OldRoutingFallback from '../../components/old-routing-fallback';
 
 export interface DBPagePath {
 	params: {
@@ -18,7 +18,7 @@ export interface DBPagePath {
 export const getStaticPaths = (async () => {
 	// eslint-disable-next-line unicorn/no-array-reduce
 	const paths = componentChildren.reduce(
-		(accumulator: DBPagePath[], { path, component, subNavigation }) => {
+		(accumulator: DBPagePath[], { subNavigation, name }) => {
 			if (subNavigation) {
 				for (const subNavItem of subNavigation) {
 					if (!subNavItem.component || !subNavItem.name) {
@@ -33,6 +33,23 @@ export const getStaticPaths = (async () => {
 							params: { slug: [subNavItem.name, 'overview'] }
 						}
 					];
+
+					if (name) {
+						accumulator = [
+							...accumulator,
+							{
+								params: { slug: [name] }
+							},
+							{
+								params: { slug: [name, subNavItem.name] }
+							},
+							{
+								params: {
+									slug: [name, subNavItem.name, 'overview']
+								}
+							}
+						];
+					}
 				}
 			}
 
@@ -40,6 +57,10 @@ export const getStaticPaths = (async () => {
 		},
 		[]
 	);
+
+	paths.push({
+		params: { slug: [] }
+	});
 
 	return {
 		paths,
@@ -52,26 +73,18 @@ export const getStaticProps = (async (context) => {
 	return { props: {} };
 }) satisfies GetStaticProps<{}>;
 
-export default function Home() {
-	const router = useRouter();
-	const currentSlug = router.query.slug;
-	const currentComponentName = Array.isArray(currentSlug)
-		? currentSlug[0]
-		: currentSlug;
+const getComponentByName = (
+	name: string | undefined
+): ReactElement | undefined => {
+	let component: undefined | ReactElement = undefined;
 
-	let component: ReactElement | undefined = undefined;
-
-	// eslint-disable-next-line unicorn/no-array-reduce
 	for (const componentChild of componentChildren) {
 		if (!componentChild.subNavigation) {
 			continue;
 		}
 
 		for (const subNavItem of componentChild.subNavigation) {
-			if (
-				subNavItem.name === currentComponentName &&
-				subNavItem.component
-			) {
+			if (subNavItem.name === name && subNavItem.component) {
 				component = subNavItem.component;
 				break;
 			}
@@ -80,5 +93,32 @@ export default function Home() {
 		if (component) break;
 	}
 
-	return <DefaultPage>{component}</DefaultPage>;
+	return component;
+};
+
+export default function Home() {
+	const router = useRouter();
+	const currentSlug = router.query.slug;
+	const sanitizedSlug = Array.isArray(currentSlug)
+		? currentSlug
+		: currentSlug
+			? [currentSlug]
+			: [];
+
+	const isComponentsRoot = sanitizedSlug.length < 1;
+	const lastSlugItem = sanitizedSlug.at(-1);
+	const isCurrentOldRouteFallback = !getAllComponentGroupNames().includes(
+		sanitizedSlug[0]
+	);
+
+	if (!isComponentsRoot && isCurrentOldRouteFallback) {
+		return <OldRoutingFallback />;
+	}
+
+	if (lastSlugItem === 'overview') {
+		const component = getComponentByName(sanitizedSlug.at(-2));
+		return <DefaultPage>{component}</DefaultPage>;
+	}
+
+	return <CardNavigation />;
 }

@@ -55,258 +55,101 @@ import * as sectionCode from '../components/code-docs/section';
 import * as navigationCode from '../components/code-docs/navigation';
 import * as navigationItemCode from '../components/code-docs/navigation-item';
 import * as popoverCode from '../components/code-docs/popover';
+import Components from './components.json';
 
 export type NavigationItem = {
 	label: string;
 	name?: string;
 	path?: string;
 	component?: ReactElement;
-	subNavigation?: NavigationItem[];
 	isHiddenInMenu?: boolean;
+	subNavigation?: NavigationItem[];
 };
 
-export const componentChildren: NavigationItem[] = [
-	{
-		label: 'Action',
-		path: '/components/action',
-		subNavigation: [
-			{
-				label: 'DBButton',
-				name: 'button',
-				component: <ButtonComponent slotCode={buttonCode} />
-			},
-			{
-				label: 'DBLink',
-				name: 'link',
-				component: <LinkComponent slotCode={linkCode} />
+const nameComponentMap = {
+	button: <ButtonComponent slotCode={buttonCode} />,
+	link: <LinkComponent slotCode={linkCode} />,
+	brand: <BrandComponent slotCode={brandCode} />,
+	// Icon: <IconComponent slotCode={iconCode} />,
+	tooltip: <TooltipComponent slotCode={tooltipCode} />,
+	infotext: <InfotextComponent slotCode={infotextCode} />,
+	tag: <TagComponent slotCode={tagCode} />,
+	accordion: (
+		<AccordionComponent
+			slotCode={accordionCode}
+			subComponent={
+				<AccordionItemComponent
+					isSubComponent={true}
+					componentName="accordion-item"
+					slotCode={accordionItemCode}
+				/>
 			}
-		]
-	},
-	{
-		label: 'Data-Display',
-		path: '/components/data-display',
-		subNavigation: [
-			{
-				label: 'DBBrand',
-				name: 'brand',
-				component: <BrandComponent slotCode={brandCode} />
-			} /* TODO: Uncomment this if dev and design is aligned
-			{
-				label: 'DBIcon',
-				name: 'icon',
-				component: <IconComponent slotCode={iconCode} />
-			}, */,
-			{
-				label: 'DBTooltip',
-				name: 'tooltip',
-				component: <TooltipComponent slotCode={tooltipCode} />
-			},
-			{
-				label: 'DBInfotext',
-				name: 'infotext',
-				component: <InfotextComponent slotCode={infotextCode} />
-			},
-			{
-				label: 'DBTag',
-				name: 'tag',
-				component: <TagComponent slotCode={tagCode} />
-			},
-			{
-				label: 'DBAccordion',
-				name: 'accordion',
-				component: (
-					<AccordionComponent
-						slotCode={accordionCode}
-						subComponent={
-							<AccordionItemComponent
-								isSubComponent={true}
-								componentName="accordion-item"
-								slotCode={accordionItemCode}
-							/>
-						}
-					/>
-				),
-				subNavigation: [
-					{
-						label: 'DBAccordionItem Properties',
-						path: `/components/accordion-item/properties`
-					}
-				]
-			},
-			{
-				label: 'DBAccordionItem',
-				name: 'accordion-item',
-				component: (
-					<AccordionItemComponent slotCode={accordionItemCode} />
-				),
-				isHiddenInMenu: true
-			},
-			{
-				label: 'DBTabs',
-				name: 'tabs',
-				component: (
-					<TabsComponent
-						slotCode={tabsCode}
-						subComponent={
-							<TabItemComponent
-								isSubComponent={true}
-								componentName="tab-item"
-								slotCode={tabItemCode}
-							/>
-						}
-					/>
-				),
-				subNavigation: [
-					{
-						label: 'DBTabItem Properties',
-						path: `/components/tab-item/properties`
-					}
-				]
-			},
-			{
-				label: 'DBTabItem',
-				name: 'tab-item',
-				component: <TabItemComponent slotCode={tabItemCode} />,
-				isHiddenInMenu: true
+		/>
+	),
+	'accordion-item': <AccordionItemComponent slotCode={accordionItemCode} />,
+	tabs: (
+		<TabsComponent
+			slotCode={tabsCode}
+			subComponent={
+				<TabItemComponent
+					isSubComponent={true}
+					componentName="tab-item"
+					slotCode={tabItemCode}
+				/>
 			}
-		]
-	},
-	{
-		label: 'Data-Input',
-		path: '/components/data-input',
-		subNavigation: [
-			{
-				label: 'DBCheckbox',
-				name: 'checkbox',
-				component: <CheckboxComponent slotCode={checkboxCode} />
-			},
-			{
-				label: 'DBInput',
-				name: 'input',
-				component: <InputComponent slotCode={inputCode} />
-			},
-			{
-				label: 'DBRadio',
-				name: 'radio',
-				component: <RadioComponent slotCode={radioCode} />
-			},
-			{
-				label: 'DBSelect',
-				name: 'select',
-				component: <SelectComponent slotCode={selectCode} />
-			},
-			{
-				label: 'DBSwitch',
-				name: 'switch',
-				component: <SwitchComponent slotCode={switchCode} />
-			},
-			{
-				label: 'DBTextarea',
-				name: 'textarea',
-				component: <TextareaComponent slotCode={textareaCode} />
+		/>
+	),
+	'tab-item': <TabItemComponent slotCode={tabItemCode} />,
+	checkbox: <CheckboxComponent slotCode={checkboxCode} />,
+	input: <InputComponent slotCode={inputCode} />,
+	radio: <RadioComponent slotCode={radioCode} />,
+	select: <SelectComponent slotCode={selectCode} />,
+	switch: <SwitchComponent slotCode={switchCode} />,
+	textarea: <TextareaComponent slotCode={textareaCode} />,
+	notification: <NotificationComponent slotCode={notificationCode} />,
+	badge: <BadgeComponent slotCode={badgeCode} />,
+	card: <CardComponent slotCode={cardCode} />,
+	divider: <DividerComponent slotCode={dividerCode} />,
+	drawer: <DrawerComponent slotCode={drawerCode} />,
+	header: <HeaderComponent slotCode={headerCode} />,
+	// Page: <PageComponent slotCode={pageCode} />,
+	section: <SectionComponent slotCode={sectionCode} />,
+	navigation: (
+		<NavigationComponent
+			slotCode={navigationCode}
+			subComponent={
+				<NavigationItemComponent
+					isSubComponent={true}
+					componentName="navigation-item"
+					slotCode={navigationItemCode}
+				/>
 			}
-		]
-	},
-	{
-		label: 'Feedback',
-		path: '/components/feedback',
-		subNavigation: [
-			{
-				label: 'DBNotification',
-				name: 'notification',
-				component: <NotificationComponent slotCode={notificationCode} />
-			},
-			{
-				label: 'DBBadge',
-				name: 'badge',
-				component: <BadgeComponent slotCode={badgeCode} />
-			}
-		]
-	},
-	{
-		label: 'Layout',
-		path: '/components/layout',
-		subNavigation: [
-			{
-				label: 'DBCard',
-				name: 'card',
-				component: <CardComponent slotCode={cardCode} />
-			},
-			{
-				label: 'DBDivider',
-				name: 'divider',
-				component: <DividerComponent slotCode={dividerCode} />
-			},
-			{
-				label: 'DBDrawer',
-				name: 'drawer',
-				component: <DrawerComponent slotCode={drawerCode} />
-			},
-			{
-				label: 'DBHeader',
-				name: 'header',
-				component: <HeaderComponent slotCode={headerCode} />
-			} /* TODO: Uncomment this if dev and design is aligned
-			{
-				label: 'DBPage',
-				name: 'page',
-				component: <PageComponent slotCode={pageCode} />
-			}, */,
-			{
-				label: 'DBSection',
-				name: 'section',
-				component: <SectionComponent slotCode={sectionCode} />
-			}
-		]
-	},
-	{
-		label: 'Navigation',
-		path: '/components/navigation',
-		subNavigation: [
-			{
-				label: 'DBNavigation',
-				name: 'navigation',
-				component: (
-					<NavigationComponent
-						slotCode={navigationCode}
-						subComponent={
-							<NavigationItemComponent
-								isSubComponent={true}
-								componentName="navigation-item"
-								slotCode={navigationItemCode}
-							/>
-						}
-					/>
-				),
-				subNavigation: [
-					{
-						label: 'DBNavigationItem Properties',
-						path: `/components/navigation-item/properties`
-					}
-				]
-			},
-			{
-				label: 'DBNavigationItem',
-				name: 'navigation-item',
-				isHiddenInMenu: true,
-				component: (
-					<NavigationItemComponent slotCode={navigationItemCode} />
-				)
-			}
-		]
-	},
-	{
-		label: 'Utilities',
-		path: '/components/utilities',
-		subNavigation: [
-			{
-				label: 'DBPopover',
-				name: 'popover',
-				component: <PopoverComponent slotCode={popoverCode} />
-			}
-		]
-	}
-];
+		/>
+	),
+	'navigation-item': (
+		<NavigationItemComponent slotCode={navigationItemCode} />
+	),
+	popover: <PopoverComponent slotCode={popoverCode} />
+};
+
+const addComponentsToNavigationItems = (
+	navigationItems: NavigationItem[]
+): NavigationItem[] => {
+	return navigationItems.map((navigationItem) => {
+		return {
+			...navigationItem,
+			subNavigation: navigationItem.subNavigation?.map((subNavItem) => {
+				return {
+					...subNavItem,
+					component: nameComponentMap[subNavItem.name]
+				};
+			})
+		};
+	});
+};
+
+export const componentChildren: NavigationItem[] =
+	addComponentsToNavigationItems(Components);
 export const ROUTES: NavigationItem[] = [
 	{
 		label: 'Home',
@@ -385,32 +228,91 @@ export const ROUTES: NavigationItem[] = [
 			{ label: 'Validation', path: '/components/validation' },
 			...componentChildren.map((category) => ({
 				...category,
-				subNavigation: category?.subNavigation
-					?.filter((subNavItem) => !subNavItem.isHiddenInMenu)
-					.map((component) => ({
+				subNavigation: category?.subNavigation?.map(
+					(component): NavigationItem => ({
 						label: component.label,
-						path: `/components/${component.name}`,
+						path: `/components/${category.name}/${component.name}`,
+						isHiddenInMenu: component.isHiddenInMenu,
 						subNavigation: [
 							{
 								label: 'Overview',
-								path: `/components/${component.name}/overview`
+								path: `/components/${category.name}/${component.name}/overview`
 							},
 							{
 								label: 'Properties',
-								path: `/components/${component.name}/properties`
+								path: `/components/${category.name}/${component.name}/properties`
 							},
 							{
 								label: 'How to use',
-								path: `/components/${component.name}/how-to-use`
+								path: `/components/${category.name}/${component.name}/how-to-use`
 							},
 							{
 								label: 'Migration',
-								path: `/components/${component.name}/migration`
+								path: `/components/${category.name}/${component.name}/migration`
 							},
 							...(component.subNavigation ?? [])
 						]
-					}))
+					})
+				)
 			}))
 		]
 	}
 ];
+
+const fillNavigationRecursive = (
+	navigationItems: NavigationItem[],
+	tree: NavigationItem[],
+	isBreadcrumb?: boolean,
+	prevLabel?: string
+) => {
+	for (const navItem of navigationItems) {
+		tree.push(
+			isBreadcrumb
+				? navItem
+				: {
+						...navItem,
+						label: prevLabel
+							? `${prevLabel}:${navItem.label}`
+							: navItem.label
+					}
+		);
+
+		if (navItem.subNavigation && navItem.subNavigation?.length > 0) {
+			fillNavigationRecursive(
+				navItem.subNavigation,
+				tree,
+				isBreadcrumb,
+				isBreadcrumb ? undefined : navItem.label
+			);
+		}
+	}
+};
+
+export const getAllNavigationItems = (isBreadcrumb?: boolean) => {
+	const tree: NavigationItem[] = [];
+	fillNavigationRecursive(ROUTES, tree, isBreadcrumb);
+	return tree;
+};
+
+export const getNavigationList = (path: string) => {
+	const tree: NavigationItem[] = getAllNavigationItems().filter(
+		(navItem) => !navItem.subNavigation
+	);
+
+	const index = tree.findIndex((navItem) => navItem.path === path);
+	return {
+		previous: index === 0 ? undefined : tree[index - 1],
+		next: index + 1 === tree.length ? undefined : tree[index + 1]
+	};
+};
+
+export const getBreadcrumb = (path: string) => {
+	const tree: NavigationItem[] = getAllNavigationItems(true);
+	return tree.filter((navItem) => path.includes(navItem.path ?? ''));
+};
+
+export const getAllComponentGroupNames = (): string[] => {
+	return componentChildren
+		.filter(({ name }) => Boolean(name))
+		.map(({ name }) => name!);
+};

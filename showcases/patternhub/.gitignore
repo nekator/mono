@@ -59,4 +59,3 @@ components/code-docs/
 !components/06-feedback.mdx
 !.env
 /generated.js
-/utils/

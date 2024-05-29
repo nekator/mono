@@ -62,7 +62,8 @@ const DefaultComponent = ({
 	variants,
 	subComponent,
 	isSubComponent,
-	componentName
+	componentName,
+	componentGroup
 }: DefaultComponentProps) => {
 	const redirectURLSearchParams = process?.env?.REDIRECT_URL_SEARCH_PARAMS
 		? process.env.REDIRECT_URL_SEARCH_PARAMS === 'true'
@@ -72,7 +73,11 @@ const DefaultComponent = ({
 
 	const getHref = (variantName: string): string => {
 		if (typeof window !== 'undefined') {
-			return `${window.location.href}&page=${variantName.toLowerCase()}`;
+			const searchParams = new URLSearchParams(
+				window.location.href.split('?')[1]
+			);
+			searchParams.set('page', variantName.toLowerCase());
+			return `${window.location.href.split('?')[0]}?${searchParams.toString()}`;
 		}
 
 		return '';
@@ -91,14 +96,15 @@ const DefaultComponent = ({
 		}
 
 		const currentUrl = window.location.href.split('?');
+		const rawComponentUrl = currentUrl[0];
 		const searchParams = new URLSearchParams(currentUrl[1] ?? '');
 		searchParams.set('page', variantName.toLowerCase());
 
-		const rawComponentUrl = currentUrl[0].replace('/overview', '');
+		const regexComponentOverviewFragment = /\/[a-z\d\-_]*\/overview/;
 
 		const openUrl = componentName
-			? `${rawComponentUrl.split('components')[0]}/components/${componentName}?${searchParams.toString()}`
-			: `${rawComponentUrl}?${searchParams.toString()}`;
+			? `${rawComponentUrl.replace(regexComponentOverviewFragment, `/${componentName}/overview`)}?${searchParams.toString()}`
+			: `${currentUrl[0]}?${searchParams.toString()}`;
 
 		window.open(openUrl, '_blank');
 	};
