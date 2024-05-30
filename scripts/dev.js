@@ -12,7 +12,7 @@ const answersFrameworkPairs = [
 		framework: 'vue'
 	},
 	{
-		answers: ['react', 'next'],
+		answers: ['react', 'next', 'patternhub'],
 		framework: 'react'
 	},
 	{
@@ -31,6 +31,9 @@ inquirer
 				{
 					name: 'plain-html',
 					checked: true
+				},
+				{
+					name: 'patternhub'
 				},
 				{
 					name: 'angular'
