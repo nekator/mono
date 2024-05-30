@@ -1,9 +1,5 @@
 import { useRouter } from 'next/router';
-import type {
-	GetStaticPaths,
-	GetStaticProps,
-	InferGetStaticPropsType
-} from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import {
 	getSortedNavigationItems,
@@ -22,30 +18,51 @@ export type DBPagePath = {
 	};
 };
 
-export const getStaticPaths = (async () => {
-	const sortedNavigationItems = getSortedNavigationItems(
-		NAVIGATION_ITEMS
-	) as NavigationItem[];
-
-	// eslint-disable-next-line unicorn/no-array-reduce
-	const paths = sortedNavigationItems.reduce(
-		(accumulator: DBPagePath[], { path, component, subNavigation }) => {
+const getCustomElementsFromNavigationItems = <T extends unknown>(
+	navigationItems: NavigationItem[],
+	accumulateFunction: (
+		accumulator: T[],
+		pathSegments: string[],
+		component: any
+	) => T[]
+): T[] => {
+	return navigationItems.reduce(
+		(accumulator: T[], { path, component, subNavigation }) => {
 			if (subNavigation) {
 				for (const subNavItem of subNavigation) {
 					if (!subNavItem.component) continue;
-					accumulator.push({
-						params: { slug: [path, subNavItem.path] }
-					});
+					accumulator = accumulateFunction(
+						accumulator,
+						[path, subNavItem.path],
+						subNavItem.component
+					);
 				}
 			}
 
 			if (component) {
-				accumulator.push({ params: { slug: [path] } });
+				accumulator = accumulateFunction(
+					accumulator,
+					[path],
+					component
+				);
 			}
 
 			return accumulator;
 		},
 		[]
+	);
+};
+
+export const getStaticPaths = (async () => {
+	const sortedNavigationItems = getSortedNavigationItems(
+		NAVIGATION_ITEMS
+	) as NavigationItem[];
+
+	const paths = getCustomElementsFromNavigationItems<DBPagePath>(
+		sortedNavigationItems,
+		(accumulator, pathSegments) => {
+			return [...accumulator, { params: { slug: pathSegments } }];
+		}
 	);
 
 	return {
@@ -65,26 +82,17 @@ export default function Home() {
 		NAVIGATION_ITEMS
 	) as NavigationItem[];
 
-	// eslint-disable-next-line unicorn/no-array-reduce
-	const routes: DBPage[] = sortedNavigationItems.reduce(
-		(accumulator: DBPage[], { path, component, subNavigation }) => {
-			if (subNavigation) {
-				for (const subNavItem of subNavigation) {
-					if (!subNavItem.component) continue;
-					accumulator.push({
-						path: `${path}/${subNavItem.path}`,
-						component: subNavItem.component
-					});
+	const routes = getCustomElementsFromNavigationItems<DBPage>(
+		sortedNavigationItems,
+		(accumulator, pathSegments, component) => {
+			return [
+				...accumulator,
+				{
+					path: pathSegments.join('/'),
+					component: component
 				}
-			}
-
-			if (component) {
-				accumulator.push({ path, component });
-			}
-
-			return accumulator;
-		},
-		[]
+			];
+		}
 	);
 
 	const slug = router?.query?.slug ?? '';
