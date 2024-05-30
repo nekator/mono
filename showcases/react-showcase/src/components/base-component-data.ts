@@ -5,5 +5,4 @@ export type BaseComponentProps = {
 	subComponent?: ReactElement;
 	isSubComponent?: boolean;
 	componentName?: string;
-	componentGroup?: string;
 };

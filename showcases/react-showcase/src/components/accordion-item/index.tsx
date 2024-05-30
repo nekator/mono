@@ -27,7 +27,6 @@ const AccordionItemComponent = (props: BaseComponentProps) => {
 			title="DBAccordionItem"
 			isSubComponent={props.isSubComponent}
 			componentName={props.componentName}
-			componentGroup={props.componentGroup}
 			variants={getVariants(
 				defaultComponentVariants,
 				getAccordionItem,

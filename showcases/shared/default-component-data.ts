@@ -31,5 +31,4 @@ export type DefaultComponentProps = {
 	isSubComponent?: boolean;
 	subComponent?: ReactElement;
 	componentName?: string;
-	componentGroup?: string;
 };

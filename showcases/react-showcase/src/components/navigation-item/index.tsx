@@ -46,7 +46,6 @@ const NavigationItemComponent = (props: BaseComponentProps) => {
 			title="DBNavigationItem"
 			isSubComponent={props.isSubComponent}
 			componentName={props.componentName}
-			componentGroup={props.componentGroup}
 			variants={getVariants(
 				defaultComponentVariants,
 				getNavigationItem,

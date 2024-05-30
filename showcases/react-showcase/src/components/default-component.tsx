@@ -62,8 +62,7 @@ const DefaultComponent = ({
 	variants,
 	subComponent,
 	isSubComponent,
-	componentName,
-	componentGroup
+	componentName
 }: DefaultComponentProps) => {
 	const redirectURLSearchParams = process?.env?.REDIRECT_URL_SEARCH_PARAMS
 		? process.env.REDIRECT_URL_SEARCH_PARAMS === 'true'
