@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// Import { useSearchParams } from 'react-router-dom';
 import {
 	COLOR,
 	COLORS,
