@@ -1,11 +1,11 @@
 import type { FunctionComponent, ReactElement } from 'react';
-import type { DefaultComponentVariants } from '../../../shared/default-component-data';
+import type { ReactDefaultComponentVariants } from '../../../shared/react-default-component-data';
 
 export const getVariants = (
-	defaultComponentVariants: DefaultComponentVariants[],
+	defaultComponentVariants: ReactDefaultComponentVariants[],
 	getExample: (properties: any) => ReactElement,
 	codeSlots?: Record<string, FunctionComponent>
-): DefaultComponentVariants[] =>
+): ReactDefaultComponentVariants[] =>
 	defaultComponentVariants.map((variant, variantIndex) => ({
 		...variant,
 		SlotCode: codeSlots?.[variant.name.replaceAll(' ', '')],

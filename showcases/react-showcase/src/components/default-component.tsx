@@ -2,15 +2,15 @@ import React, { useCallback, useState } from 'react';
 import { DBCard, DBDivider, DBLink } from '../../../../output/react/src';
 import useQuery from '../hooks/use-query';
 import type {
-	DefaultComponentProps,
-	DefaultComponentVariants
-} from '../../../shared/default-component-data';
+	ReactDefaultComponentProps,
+	ReactDefaultComponentVariants
+} from '../../../shared/react-default-component-data';
 
 const VariantList = ({
 	examples,
 	color,
 	SlotCode
-}: DefaultComponentVariants) => {
+}: ReactDefaultComponentVariants) => {
 	const getElevation = useCallback(
 		() => (color?.includes('3') ? '3' : color?.includes('2') ? '2' : '1'),
 		[color]
@@ -63,7 +63,7 @@ const DefaultComponent = ({
 	subComponent,
 	isSubComponent,
 	componentName
-}: DefaultComponentProps) => {
+}: ReactDefaultComponentProps) => {
 	const redirectURLSearchParams = process?.env?.REDIRECT_URL_SEARCH_PARAMS
 		? process.env.REDIRECT_URL_SEARCH_PARAMS === 'true'
 		: true;

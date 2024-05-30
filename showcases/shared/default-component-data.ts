@@ -1,5 +1,3 @@
-import { type FunctionComponent, type ReactElement } from 'react';
-
 export type DefaultComponentExample = {
 	name?: string;
 	example?: any;
@@ -21,14 +19,10 @@ export type DefaultComponentExample = {
 export type DefaultComponentVariants = {
 	name: string;
 	examples: DefaultComponentExample[];
-	SlotCode?: FunctionComponent;
 	color?: string;
 };
 
 export type DefaultComponentProps = {
 	title: string;
 	variants: DefaultComponentVariants[];
-	isSubComponent?: boolean;
-	subComponent?: ReactElement;
-	componentName?: string;
 };
