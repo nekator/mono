@@ -4,7 +4,7 @@ import LinkComponent from '../../react-showcase/src/components/link';
 import AccordionComponent from '../../react-showcase/src/components/accordion';
 import AccordionItemComponent from '../../react-showcase/src/components/accordion-item';
 import BrandComponent from '../../react-showcase/src/components/brand';
-import IconComponent from '../../react-showcase/src/components/icon';
+// Import IconComponent from '../../react-showcase/src/components/icon';
 import TooltipComponent from '../../react-showcase/src/components/tooltip';
 import InfotextComponent from '../../react-showcase/src/components/infotext';
 import TagComponent from '../../react-showcase/src/components/tag';
@@ -22,7 +22,7 @@ import CardComponent from '../../react-showcase/src/components/card';
 import DividerComponent from '../../react-showcase/src/components/divider';
 import DrawerComponent from '../../react-showcase/src/components/drawer';
 import HeaderComponent from '../../react-showcase/src/components/header';
-import PageComponent from '../../react-showcase/src/components/page';
+// Import PageComponent from '../../react-showcase/src/components/page';
 import SectionComponent from '../../react-showcase/src/components/section';
 import NavigationComponent from '../../react-showcase/src/components/navigation';
 import NavigationItemComponent from '../../react-showcase/src/components/navigation-item';
@@ -32,7 +32,7 @@ import * as linkCode from '../components/code-docs/link';
 import * as accordionCode from '../components/code-docs/accordion';
 import * as accordionItemCode from '../components/code-docs/accordion-item';
 import * as brandCode from '../components/code-docs/brand';
-import * as iconCode from '../components/code-docs/icon';
+// Import * as iconCode from '../components/code-docs/icon';
 import * as tooltipCode from '../components/code-docs/tooltip';
 import * as infotextCode from '../components/code-docs/infotext';
 import * as tagCode from '../components/code-docs/tag';
@@ -50,7 +50,7 @@ import * as cardCode from '../components/code-docs/card';
 import * as dividerCode from '../components/code-docs/divider';
 import * as drawerCode from '../components/code-docs/drawer';
 import * as headerCode from '../components/code-docs/header';
-import * as pageCode from '../components/code-docs/page';
+// Import * as pageCode from '../components/code-docs/page';
 import * as sectionCode from '../components/code-docs/section';
 import * as navigationCode from '../components/code-docs/navigation';
 import * as navigationItemCode from '../components/code-docs/navigation-item';
@@ -141,7 +141,9 @@ const addComponentsToNavigationItems = (
 			subNavigation: navigationItem.subNavigation?.map((subNavItem) => {
 				return {
 					...subNavItem,
-					component: nameComponentMap[subNavItem.name]
+					component: subNavItem.name
+						? nameComponentMap[subNavItem.name]
+						: undefined
 				};
 			})
 		};
