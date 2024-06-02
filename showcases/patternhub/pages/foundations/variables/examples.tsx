@@ -20,7 +20,7 @@ const Example = () => {
 					</li>
 					<li>
 						Don't use it like this in a real app. 💢For example
-						`width: var(--db-spacing-fixed-md)`💥
+						&nbsp;<code>width: var(--db-spacing-fixed-md)</code> 💥
 					</li>
 				</ul>
 			</blockquote>
