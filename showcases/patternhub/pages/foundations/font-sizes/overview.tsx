@@ -4,11 +4,12 @@ import { DBInfotext } from '../../../components/src';
 const ColorOverview = () => {
 	return (
 		<DefaultPage>
-			<h1>FontsSizes Overview</h1>
+			<h1>Fonts-Sizes Overview</h1>
 			<h2>Body</h2>
-			<DBInfotext semantic="warning">
+			<DBInfotext data-font-size="md" semantic="warning">
 				Some font-sizes are the same for a specific device type. For
-				example in mobile all `xl` sizes are the same.
+				example in mobile all&#20;<code>xl</code>&#20;sizes are the
+				same.
 			</DBInfotext>
 			<div>
 				{['3xl', '2xl', 'xl', 'lg', 'md', 'sm', 'xs', '2xs', '3xs'].map(
