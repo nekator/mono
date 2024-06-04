@@ -6,8 +6,8 @@
 
 ## How to include colors
 
-For **CSS** and **Tailwind** you need to use the import `@import "@db-ui/foundations/build/css/color/classes/all.css";` in your root `.css` file.
-Or if you only want a single variant e.g. **informational** you can import `@import "@db-ui/foundations/build/css/color/classes/informational.css";`.
+For **CSS** and **Tailwind** you need to use the import `@import "@db-ui/foundations/build/css/colors/classes/all.css";` in your root `.css` file.
+Or if you only want a single variant e.g. **informational** you can import `@import "@db-ui/foundations/build/css/colors/classes/informational.css";`.
 
 In case that you're either using a bundler (recommended) or importing the CSS within your JavaScript files, please adapt this `@import` syntax accordingly.
 
