@@ -177,11 +177,19 @@ div[class^="ch-"] {
 	padding: variables.$db-spacing-fixed-md;
 
 	> div {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border: 1px solid black;
 		padding: variables.$db-spacing-fixed-md;
+	}
+
+	button {
+		position: absolute;
+		inset-inline-end: var(--db-spacing-fixed-md);
+		inset-block-start: 50%;
+		transform: translateY(-50%);
 	}
 }
 
