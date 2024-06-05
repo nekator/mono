@@ -1,38 +1,51 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import DefaultPage from '../../../components/default-page';
 import { DBButton, DBTag, DBCard } from '../../../components/src';
 import { SEMANTICS } from '../../../components/src/shared/constants';
 
 const colors = ['neutral', ...SEMANTICS];
 
-const ColorOverview = () => {
+export const ColorSchemePreview = ({ children }: { children?: ReactNode }) => {
 	const [colorScheme, setColorScheme] = useState<string>('light');
-	const [colorScheme2, setColorScheme2] = useState<string>('light');
+
+	return (
+		<div
+			className="color-schemes-container"
+			data-color-scheme={colorScheme}>
+			<p>This container changes based on the state.</p>
+			<DBTag semantic="informational" emphasis="strong">
+				{colorScheme}
+			</DBTag>
+			<DBButton
+				icon={colorScheme === 'light' ? 'moon' : 'sun'}
+				onClick={() => {
+					setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
+				}}>
+				Click me for {colorScheme === 'light' ? 'dark' : 'light'}
+				-mode
+			</DBButton>
+			{children}
+		</div>
+	);
+};
+
+const ColorOverview = () => {
 	return (
 		<DefaultPage>
 			<h1>Color Schemes</h1>
 			<p>
-				You can use <code>data-color-scheme="light/dark"</code> to force
-				a container/component to keep the color-scheme:
+				The adaptive colour system ensures that all colours are
+				displayed in their corresponding negative variant in{' '}
+				<b>dark mode</b>. As in light mode, the colour levels are
+				automatically selected so that a sufficiently high contrast is
+				maintained for accessibility.
 			</p>
-			<div
-				className="color-schemes-container"
-				data-color-scheme={colorScheme}>
-				<p>This container changes based on the state.</p>
-				<DBTag semantic="informational" emphasis="strong">
-					{colorScheme}
-				</DBTag>
-				<DBButton
-					icon={colorScheme === 'light' ? 'moon' : 'sun'}
-					onClick={() => {
-						setColorScheme(
-							colorScheme === 'light' ? 'dark' : 'light'
-						);
-					}}>
-					Click me for {colorScheme === 'light' ? 'dark' : 'light'}
-					-mode
-				</DBButton>
-
+			<p>
+				You can use <code>data-color-scheme="light"</code> or{' '}
+				<code>data-color-scheme="dark"</code> to force a
+				container/component to keep the selected color-scheme:
+			</p>
+			<ColorSchemePreview>
 				<section data-color-scheme="light">
 					<h2>Permanent Light</h2>
 					<p>I'll be always light independent from parent</p>
@@ -41,38 +54,7 @@ const ColorOverview = () => {
 					<h2>Permanent Dark</h2>
 					<p>I'll be always dark independent from parent</p>
 				</section>
-			</div>
-
-			<h2>Cards & Levels</h2>
-			<div
-				className="color-schemes-container"
-				data-color-scheme={colorScheme2}>
-				<p>This container changes based on the state.</p>
-				<DBTag semantic="informational" emphasis="strong">
-					{colorScheme2}
-				</DBTag>
-				<DBButton
-					icon={colorScheme2 === 'light' ? 'moon' : 'sun'}
-					onClick={() => {
-						setColorScheme2(
-							colorScheme2 === 'light' ? 'dark' : 'light'
-						);
-					}}>
-					Click me for {colorScheme2 === 'light' ? 'dark' : 'light'}
-					-mode
-				</DBButton>
-				<section className="color-cards">
-					{colors.map((color) => (
-						<div key={color} className={`db-${color}-bg-lvl-1`}>
-							<DBCard spacing="medium" elevationLevel="3">
-								<DBCard spacing="medium" elevationLevel="2">
-									<DBCard spacing="medium">{color}</DBCard>
-								</DBCard>
-							</DBCard>
-						</div>
-					))}
-				</section>
-			</div>
+			</ColorSchemePreview>
 		</DefaultPage>
 	);
 };

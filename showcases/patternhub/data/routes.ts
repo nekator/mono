@@ -27,6 +27,10 @@ export const ROUTES: NavigationItem[] = [
 					{
 						label: 'Color Schemes',
 						path: '/foundations/colors/color-schemes'
+					},
+					{
+						label: 'Cards & Levels',
+						path: '/foundations/colors/cards-levels'
 					}
 				]
 			},
