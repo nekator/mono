@@ -51,24 +51,24 @@ const ColorOverview = () => {
 
 	return (
 		<DefaultPage>
-			<h1>Fonts-Sizes Overview</h1>
+			<h1>Font Sizes Overview</h1>
 			<ol>
 				<li>
-					<b>Body-Font-Sizes</b>
+					<b>Body Font Sizes</b>
 				</li>
 				<li>
 					<b>Default Headlines H1 - H6</b>
 				</li>
 				<li>
-					<b>Available Headline-Font-Sizes</b>
+					<b>Available Headline Font Sizes</b>
 				</li>
 			</ol>
 			<DBInfotext data-font-size="md" semantic="informational">
-				<b>Note: </b>Some font-sizes are the same for a specific device
+				<b>Note: </b>Some font sizes are the same for a specific device
 				type. For example in mobile all <code>xl</code> sizes are the
 				same.
 			</DBInfotext>
-			<h2>Body-Font-Sizes</h2>
+			<h2>Body Font Sizes</h2>
 			<p>
 				All <b>9 body font sizes</b> provided by foundations can be set
 				via <b>css class</b>, <b>data-attribute</b>,{' '}
@@ -124,7 +124,7 @@ const ColorOverview = () => {
 
 			<h2>Default Headlines H1 - H6</h2>
 			<p>
-				Certain <b>Headline-Font-Sizes</b> are mapped to the{' '}
+				Certain <b>Headline Font Sizes</b> are mapped to the{' '}
 				<b>headline tags (H1 - H6)</b> by default. Accordingly, it is
 				sufficient to use the native headline tags, as in this example.
 			</p>
@@ -173,7 +173,7 @@ const ColorOverview = () => {
 				))}
 			</DBSection>
 
-			<h2>Available Headline-Font-Sizes</h2>
+			<h2>Available Headline Font Sizes</h2>
 			<p>
 				This overview shows all <b>9 headline sizes</b> that are
 				available in foundations. These can be used, for example, to
