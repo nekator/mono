@@ -173,7 +173,18 @@ div[class^="ch-"] {
 // colors overview
 .color-overview-container {
 	@extend %grid-container;
+	position: relative;
 	padding: variables.$db-spacing-fixed-md;
+
+	> span {
+		position: absolute;
+		block-size: 100%;
+		inline-size: 100%;
+	}
+
+	&[data-color-scheme="dark"] > span {
+		filter: invert(1) brightness(1.2);
+	}
 
 	> div {
 		position: relative;
