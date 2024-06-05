@@ -52,7 +52,7 @@ const ColorOverview = () => {
 					{colorScheme2}
 				</DBTag>
 				<DBButton
-					icon={colorScheme === 'light' ? 'moon' : 'sun'}
+					icon={colorScheme2 === 'light' ? 'moon' : 'sun'}
 					onClick={() => {
 						setColorScheme2(
 							colorScheme2 === 'light' ? 'dark' : 'light'
