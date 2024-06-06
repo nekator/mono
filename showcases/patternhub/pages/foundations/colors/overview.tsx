@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import DefaultPage from '../../../components/default-page';
 import { COLORS } from '../../../components/src/shared/constants';
 import {
-	DBInput,
 	DBSwitch,
 	DBTabs,
 	DBTabList,
@@ -56,23 +55,29 @@ const ColorsGrid = ({
 };
 
 const ColorOverview = () => {
-	const [search, setSearch] = useState<string>('');
+	// Const [search, setSearch] = useState<string>('');
 	const [showCheckerboard, setShowCheckerboard] = useState<boolean>(false);
 	const [enableDarkMode, setEnableDarkMode] = useState<boolean>(false);
 
 	return (
 		<DefaultPage>
-			<h1>Color Overview</h1>
-			<search>
-				<DBInput
-					label="Search"
-					type="search"
-					onChange={(event) => {
-						setSearch(event.target.value);
-					}}
-				/>
-			</search>
-			<h2>Overview</h2>
+			<h1>Colors Overview</h1>
+			{/* <search> */}
+			{/*	<DBInput */}
+			{/*		label="Search" */}
+			{/*		type="search" */}
+			{/*		onChange={(event) => { */}
+			{/*			setSearch(event.target.value); */}
+			{/*		}} */}
+			{/*	/> */}
+			{/* </search> */}
+			<h2>Semantic Colors</h2>
+			<p>
+				The semantic colour set <b>neutral-bg-lvl-1</b> is applied to{' '}
+				<code>:root</code> by default. Therefore, all texts and DB-UI
+				components automatically and <b>adaptively</b> receive the
+				correct, accessible (sufficient contrast) colors.
+			</p>
 			<DBSwitch
 				checked={showCheckerboard}
 				onChange={(event) => {
