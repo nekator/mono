@@ -3,18 +3,22 @@
 	.db-#{$variant}-bg-lvl-1 {
 		@extend %db-#{$variant}-bg-lvl-1;
 	}
+
 	[data-color="#{$variant}-bg-lvl-2"],
 	.db-#{$variant}-bg-lvl-2 {
 		@extend %db-#{$variant}-bg-lvl-2;
 	}
+
 	[data-color="#{$variant}-bg-lvl-3"],
 	.db-#{$variant}-bg-lvl-3 {
 		@extend %db-#{$variant}-bg-lvl-3;
 	}
+
 	[data-color="#{$variant}-bg-transparent-full"],
 	.db-#{$variant}-bg-transparent-full {
 		@extend %db-#{$variant}-bg-transparent-full;
 	}
+
 	[data-color="#{$variant}-bg-transparent-semi"],
 	.db-#{$variant}-bg-transparent-semi {
 		@extend %db-#{$variant}-bg-transparent-semi;
