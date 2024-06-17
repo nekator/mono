@@ -124,7 +124,6 @@ For general installation and configuration take a look at the [components](https
 			<div class="db-header-navigation-container">
 				<div class="db-header-navigation">
 					<nav
-						id="main-navigation-0405fe64-0c12-4362-91a2-2f9fae857bac"
 						class="db-navigation"
 					>
 						<menu>
