@@ -102,12 +102,12 @@ table th {
 	max-width: 33vw;
 }
 
-table tr:nth-child(even) {
-	@extend %db-neutral-bg-transparent-semi;
+table tr:nth-child(even) td {
+	background-color: var(--db-current-color-bg-transparent-semi-enabled);
 }
 
-table th {
-	@extend %db-neutral-bg-transparent-semi;
+table th td {
+	background-color: var(--db-current-color-bg-transparent-semi-enabled);
 	padding-inline: variables.$db-spacing-fixed-md;
 }
 
@@ -176,6 +176,14 @@ div[class^="ch-"] {
 	position: relative;
 	padding: variables.$db-spacing-fixed-md;
 
+	@include screen-sizes.screen() {
+		--columns: 2;
+	}
+
+	@include screen-sizes.screen("md") {
+		--columns: 3;
+	}
+
 	> span {
 		position: absolute;
 		block-size: 100%;
@@ -193,11 +201,23 @@ div[class^="ch-"] {
 		align-items: center;
 		border: 1px solid black;
 		padding: variables.$db-spacing-fixed-md;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	button {
 		position: absolute;
 		inset-inline-end: var(--db-spacing-fixed-md);
+		inset-block-start: 50%;
+		transform: translateY(-50%);
+	}
+
+	.db-icon {
+		position: absolute;
+		inset-inline-start: var(--db-spacing-fixed-md);
 		inset-block-start: 50%;
 		transform: translateY(-50%);
 	}
