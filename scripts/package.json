@@ -56,7 +56,6 @@
     "start-showcase:next": "npm run dev --workspace=next-showcase",
     "start-showcase:nuxt": "npm run dev --workspace=nuxt-showcase",
     "start-showcase:patternhub": "npm run dev --workspace=patternhub",
-    "start-showcase:plain-html": "",
     "start-showcase:react": "npm run dev --workspace=react-showcase",
     "start-showcase:vanilla": "npm run dev --workspace=vanilla-showcase",
     "start-showcase:vue": "npm run dev --workspace=vue-showcase",
