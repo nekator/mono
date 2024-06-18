@@ -627,3 +627,22 @@ h6 {
 	width: var(--db-sizing-md);
 	height: 2px;
 }
+
+.color-label-wrapper {
+	position: relative;
+	margin-inline-end: auto;
+}
+
+.color-label-tag-1 {
+	position: absolute;
+	top: -0.55rem;
+	right: 0.6rem;
+	transform: translateX(100%);
+}
+
+.color-label-tag-2 {
+	position: absolute;
+	top: 0.8rem;
+	right: 0.6rem;
+	transform: translateX(100%);
+}
