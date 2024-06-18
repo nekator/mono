@@ -8,9 +8,7 @@ const CardNavigation = () => {
 	const router = useRouter();
 
 	const navigationItemParent = getAllNavigationItems().find(
-		(navItem) =>
-			// NavItem.path === router.pathname.replace('/[[...slug]]', '')
-			navItem.path === router.asPath
+		(navItem) => navItem.path === router.asPath
 	);
 
 	return (
