@@ -89,25 +89,12 @@ const generateDocsMdx = async () => {
 				);
 			}
 
-			// If (!FS.existsSync(`${componentOldPath}/index.tsx`)) {
-			// 	FS.writeFileSync(
-			// 		`${componentOldPath}/index.tsx`,
-			// 		getRedirectOldFiles('../../../')
-			// 	);
-			// }
-
 			if (!FS.existsSync(`${componentOldPath}/properties.tsx`)) {
 				FS.writeFileSync(
 					`${componentOldPath}/properties.tsx`,
 					getRedirectOldFiles('../../../')
 				);
 			}
-
-			// If (!FS.existsSync(`${componentOldPath}/overview.tsx`)) {
-			// 	FS.writeFileSync(
-			// 		`${componentOldPath}/overview.tsx`,
-			// 		getRedirectOldFiles('../../../')
-			// 	);
 		}
 	}
 };
