@@ -12,6 +12,7 @@ import {
 } from '../../../components/src';
 import CopyClipboardButton from '../../../components/copy-clipboard-button';
 import checkerboard from '../../../assets/images/checkerboard.png';
+import ColorUseExample from '../../../components/colour-use-example';
 
 type ColorsGridProps = {
 	showCheckerboard?: boolean;
@@ -229,7 +230,7 @@ const ColorOverview = () => {
 			{/*		}} */}
 			{/*	/> */}
 			{/* </search> */}
-			<h2>Semantic Colors</h2>
+			<h2>Adaptive Color Sets</h2>
 			<p>
 				The semantic colour set <b>neutral-bg-lvl-1</b> is applied to{' '}
 				<code>:root</code> by default. Therefore, all texts and DB-UI
@@ -278,6 +279,12 @@ const ColorOverview = () => {
 				</DBTabPanel>
 			</DBTabs>
 			<br />
+			<div>
+				<ColorUseExample
+					className={`db-${selectedSemanticBgColor}`}
+					enableDarkMode={enableDarkMode}
+				/>
+			</div>
 			<DBSection
 				id="current-colors"
 				data-color-scheme={enableDarkMode ? 'dark' : 'light'}

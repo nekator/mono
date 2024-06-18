@@ -579,3 +579,51 @@ h6 {
 		}
 	}
 }
+
+.color-use-example-wrapper {
+	display: flex;
+	gap: var(--db-spacing-fixed-md);
+
+	> div {
+		inline-size: 50%;
+	}
+
+	.db-card {
+		/* overwrite elevation / background-variant */
+		background-color: var(--db-current-color-bg-enabled);
+	}
+}
+
+.color-use-example {
+	// margin-inline:  var(--db-spacing-fixed-3xl);
+	// margin-block-end: var(--db-spacing-fixed-lg);
+	// box-shadow: var(--db-elevation-md);
+}
+
+.color-use-example-layout {
+	display: flex;
+	gap: var(--db-spacing-fixed-sm);
+
+	&.align-center {
+		align-items: center;
+	}
+}
+
+.color-label {
+	display: flex;
+	align-items: center;
+
+	.db-tag {
+		--db-current-color-bg-enabled: cyan !important;
+		--db-current-color-enabled: #003a3a !important;
+		--db-current-color-border: darkcyan !important;
+
+		cursor: pointer;
+	}
+}
+
+.color-label-dash {
+	background-color: darkcyan;
+	width: var(--db-sizing-md);
+	height: 2px;
+}
