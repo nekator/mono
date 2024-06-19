@@ -14,6 +14,35 @@ import CopyClipboardButton from '../../../components/copy-clipboard-button';
 import checkerboard from '../../../assets/images/checkerboard.png';
 import ColorUseExample from '../../../components/colour-use-example';
 
+/* ADDITIONAL COLORS
+const additionalColors = [
+	'yellow',
+	'orange',
+	'red',
+	'pink',
+	'violet',
+	'blue',
+	'cyan',
+	'turquoise',
+	'green'
+];
+const getAdditionalColors = () => {
+	const colors: string[] = [];
+
+	for (const color of additionalColors) {
+		colors.push(
+			`${color}-bg-lvl-1`,
+			`${color}-bg-lvl-2`,
+			`${color}-bg-lvl-3`,
+			`${color}-bg-transparent-semi`,
+			`${color}-bg-transparent-full`
+		);
+	}
+
+	return colors;
+};
+*/
+
 type ColorsGridProps = {
 	showCheckerboard?: boolean;
 	variant: 'class' | 'data-attribute';
@@ -184,26 +213,6 @@ const ColorOverview = () => {
 	const [currentColorVariables, setCurrentColorVariables] = useState<
 		CurrentColor[]
 	>(allCurrentColorVariables);
-
-	// UseEffect(() => {
-	// 	setTimeout(() => {
-	// 		const currentColorsElement =
-	// 			document.querySelector('#current-colors');
-	//
-	// 		if (currentColorsElement) {
-	// 			setCurrentColorVariables(
-	// 				currentColorVariables.map(({ current }) => {
-	// 					const value =
-	// 						getComputedStyle(
-	// 							currentColorsElement
-	// 						).getPropertyValue(current);
-	//
-	// 					return { current, value };
-	// 				})
-	// 			);
-	// 		}
-	// 	}, 100);
-	// }, [selectedSemanticBgColor]);
 
 	const onSemanticColorClick = (color: string) => {
 		const semanticColorName = color.split('-bg-')[0];
