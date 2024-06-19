@@ -289,13 +289,13 @@ const ColorOverview = () => {
 				id="current-colors"
 				data-color-scheme={enableDarkMode ? 'dark' : 'light'}
 				spacing="small">
-				<h2>Speaking Colors</h2>
-				<p>Farbe</p>
+				<h2>Color variables by usage</h2>
+				{/* <p>Colors by usage</p> */}
 				<table className={`db-${selectedSemanticBgColor}`}>
 					<tr>
 						<th>Preview</th>
-						<th>custom prop: Semantic Color</th>
-						<th>custom prop: Speaking Color</th>
+						<th>adaptive "current-color" variable</th>
+						<th>semantic color variable</th>
 					</tr>
 					<tr>
 						<td
