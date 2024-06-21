@@ -837,11 +837,14 @@
 	@include default-color-scheme.get-color-scheme-light;
 	@include default-color-scheme.get-additional-color-scheme;
 
-	color-scheme: light dark;
-
 	@media (prefers-color-scheme: dark) {
 		@include default-color-scheme.get-color-scheme-dark;
 	}
+}
+
+// We'll set the color scheme (https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) to light and dark if it's not already set as a meta tag in the head, which would be the recommended way.
+html:not(:has(> head > meta[name="color-scheme"])) {
+	color-scheme: light dark;
 }
 
 [data-color-scheme] {
