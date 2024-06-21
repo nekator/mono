@@ -833,14 +833,14 @@
 	/* COLORS */
 	@include default-palette.get-color-palette;
 	@include default-palette.get-additional-color-palette;
+	@include default-color-scheme.get-color-scheme;
 	@include default-color-scheme.get-color-scheme-light;
-	@include default-color-scheme.get-additional-color-scheme-light;
+	@include default-color-scheme.get-additional-color-scheme;
 
 	color-scheme: light dark;
 
 	@media (prefers-color-scheme: dark) {
 		@include default-color-scheme.get-color-scheme-dark;
-		@include default-color-scheme.get-additional-color-scheme-dark;
 	}
 }
 
