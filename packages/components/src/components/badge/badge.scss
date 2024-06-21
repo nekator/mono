@@ -36,13 +36,6 @@
 	}
 }
 
-@mixin empty-badge {
-	&:empty,
-	> span:empty {
-		@content;
-	}
-}
-
 .db-badge {
 	--badge-size: #{variables.$db-spacing-fixed-xs};
 	@extend %component-border;
