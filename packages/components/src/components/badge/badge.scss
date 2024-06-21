@@ -73,7 +73,8 @@
 	&[data-size="medium"] {
 		--badge-size: #{variables.$db-spacing-fixed-sm};
 		@extend %db-overwrite-font-size-sm;
-		padding-inline: variables.$db-spacing-fixed-xs;
+		&:not(:empty,
+		> span:empty) { padding-inline: variables.$db-spacing-fixed-xs; }
 
 		@include empty-badge {
 			padding: 0;
