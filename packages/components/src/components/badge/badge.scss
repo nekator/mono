@@ -55,7 +55,8 @@
 	block-size: fit-content;
 	inline-size: fit-content;
 
-	@include empty-badge {
+	&:empty,
+	> span:empty {
 		block-size: var(--badge-size);
 		inline-size: var(--badge-size);
 		padding: 0;
