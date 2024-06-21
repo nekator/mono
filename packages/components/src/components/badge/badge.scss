@@ -70,9 +70,6 @@
 		&:not(:empty,
 		> span:empty) { padding-inline: variables.$db-spacing-fixed-xs; }
 
-		@include empty-badge {
-			padding: 0;
-		}
 
 		&:has(.db-icon) {
 			padding: variables.$db-spacing-fixed-2xs;
