@@ -69,8 +69,7 @@ inquirer
 			return;
 		}
 
-		// Let startCommand = 'npm-run-all -p start:foundations dev:sass';
-		let startCommand = 'npm run start:foundations & npm run dev:sass';
+		let startCommand = 'npm-run-all -p start:foundations dev:sass';
 
 		const currentAnswers = answers?.frameworks;
 
@@ -80,12 +79,12 @@ inquirer
 			);
 
 			if (isAnswerSelected) {
-				startCommand += ` & npm run dev:${framework}-components`;
+				startCommand += ` dev:${framework}-components`;
 			}
 		}
 
 		for (const currentAnswer of currentAnswers) {
-			startCommand += ` & npm run start-showcase:${currentAnswer} --if-present`;
+			startCommand += ` start-showcase:${currentAnswer}`;
 		}
 
 		// TODO: Handle child process better
