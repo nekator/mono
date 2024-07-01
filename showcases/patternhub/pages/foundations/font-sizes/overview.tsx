@@ -64,15 +64,15 @@ const ColorOverview = () => {
 				</li>
 			</ol>
 			<DBInfotext data-font-size="md" semantic="informational">
-				<b>Note: </b>Some font sizes are the same for a specific device
+				<strong>Note: </strong>Some font sizes are the same for a specific device
 				type. For example in mobile all <code>xl</code> sizes are the
 				same.
 			</DBInfotext>
 			<h2>Body Font Sizes</h2>
 			<p>
-				All <b>9 body font sizes</b> provided by foundations can be set
-				via <b>css class</b>, <b>data-attribute</b>,{' '}
-				<b>scss placeholder</b> or <b>Tailwind class</b> (
+				All <strong>9 body font sizes</strong> provided by foundations can be set
+				via <strong>css class</strong>, <strong>data-attribute</strong>,{' '}
+				<strong>scss placeholder</strong> or <strong>Tailwind class</strong> (
 				<a href="./readme">How to use</a>). This ensures that all custom
 				properties are defined by the class to match the font size, so
 				that certain child components fit correctly. For example, this
@@ -124,8 +124,8 @@ const ColorOverview = () => {
 
 			<h2>Default Headlines H1 - H6</h2>
 			<p>
-				Certain <b>Headline Font Sizes</b> are mapped to the{' '}
-				<b>headline tags (H1 - H6)</b> by default. Accordingly, it is
+				Certain <strong>Headline Font Sizes</strong> are mapped to the{' '}
+				<strong>headline tags (H1 - H6)</strong> by default. Accordingly, it is
 				sufficient to use the native headline tags, as in this example.
 			</p>
 			<DBInfotext data-font-size="md" semantic="informational">
@@ -138,7 +138,7 @@ const ColorOverview = () => {
 					change={(event) => {
 						setShowCodeHeadlines(event.target.checked);
 					}}>
-					Show CSS applied by using <b>H1 - H6 tags</b>
+					Show CSS applied by using <strong>H1 - H6 tags</strong>
 				</DBSwitch>
 			</div>
 			<br />
@@ -175,7 +175,7 @@ const ColorOverview = () => {
 
 			<h2>Available Headline Font Sizes</h2>
 			<p>
-				This overview shows all <b>9 headline sizes</b> that are
+				This overview shows all <strong>9 headline sizes</strong> that are
 				available in foundations. These can be used, for example, to
 				(globally) overwrite the default mapping. Instructions on how
 				overwriting works are below.
@@ -225,7 +225,7 @@ const ColorOverview = () => {
 				selector (H1 - H6 or css class) is used to set{' '}
 				<code>font-size</code> and <code>line-height</code> (and{' '}
 				<code>margin-block</code> if necessary) to the desired size
-				using the supplied <b>custom properties</b>.
+				using the supplied <strong>custom properties</strong>.
 			</p>
 
 			<DBInfotext data-font-size="md" semantic="warning">
@@ -244,7 +244,7 @@ const ColorOverview = () => {
 				<br />
 				<code>--db-spacing-fixed-XX</code> (optional e.g. for margin)
 				<p>
-					<b>They are available in the following sizes:</b>
+					<strong>They are available in the following sizes:</strong>
 				</p>
 				<p>
 					<code>3xl</code> | <code>2xl</code> | <code>xl</code> |{' '}

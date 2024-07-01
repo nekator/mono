@@ -3,17 +3,17 @@
 The font sizes of foundations consist of [two different sets](./overview) (9 sizes each) for general texts (**Body Font Sizes**) and headlines (**Headline Font Sizes**).
 All sizes of both sets are automatically adjusted by the selected [density](./../densities/readme).
 
-**Body Font Sizes**
+## Body Font Sizes
 
 -   By default, the Body Font Size `md` is set to the body tag.
 -   These 9 Body Font Sizes can also be explicitly set as classes on elements in order to change their font size.
 
-**Headline Font Sizes**
+## Headline Font Sizes
 
 -   9 Headline Sizes are available and are usable by custom properties
--   6 Headline Sizes are mapped to native headline tags (H1 - H6) by default. Headlines can therefore be used directly.
+-   6 Headline Sizes are mapped to native headline tags (`h1` to `h6`) by default. Headlines can therefore be used directly.
 
-**Available variants / sizes**
+## Available variants / sizes
 
 `3xl` | `2xl` | `xl` | `lg` | `md` | `sm` | `xs` | `2xs` | `3xs`
 
@@ -27,7 +27,7 @@ All sizes of both sets are automatically adjusted by the selected [density](./..
 ### Notes
 
 > -   Some sizes may stay the same because of screen width or density.
-> -   Elements such as `<p>` and all headings (H1 - H6) as well as **DB-UI components** have font sizes assigned by default so that they can be used without further customisation.
+> -   Elements such as `<p>` and all headings (`h1` - `h6`) as well as **DB UI components** have font sizes assigned by default so that they can be used without further customisation.
 
 ### How to include
 
@@ -51,11 +51,11 @@ Then you can use e.g. `sm` font-size by extending our SCSS placeholders like thi
 The following options are recommended for applying **Body Font Sizes**:
 
 -   CSS classes
--   CSS data-attributes
+-   CSS `data-`attributes
 -   SCSS placeholders
 -   Tailwind classes
 
-All options (except the last one) set `font-size`, `line-height` and some **custom properties** for an element. These custom properties are internally required by some components to be displayed correctly.
+All options (except the last one) set `font-size`, `line-height` and some **CSS Custom Properties** for an element. These custom properties are internally required by some components to be displayed correctly.
 
 > All available variants / sizes, [see also the detailed overview](./overview):
 >
@@ -67,7 +67,7 @@ All options (except the last one) set `font-size`, `line-height` and some **cust
 | :-----------------------: | --------------------- | ------------------------------------ | ------------------------- |
 | `class="db-font-size-XX"` | `data-font-size="XX"` | `@extend %db-overwrite-font-size-XX` | `class="db-font-size-XX"` |
 
-#### Advanced use: CSS custom properties
+#### Advanced use: CSS Custom Properties
 
 > **_Note:_** The direct use of custom properties to set font sizes should be avoided if possible. If this is unavoidable, existing restrictions should be taken into account.
 
