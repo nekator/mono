@@ -122,15 +122,12 @@ export default function DBTabs(props: DBTabsProps) {
 					ref.querySelectorAll('.db-tab-panel')
 				);
 				for (const panel of tabPanels) {
-					(panel: Element, index: number) => {
-						if (!panel.id) {
-							panel.id = `${state._name}-tab-panel-${index}`;
-							panel.setAttribute(
-								'aria-labelledby',
-								`${state._name}-tab-${index}`
-							);
-						}
-					};
+					if (panel.id) continue;
+					panel.id = `${state._name}-tab-panel-${index}`;
+					panel.setAttribute(
+						'aria-labelledby',
+						`${state._name}-tab-${index}`
+					);
 				}
 			}
 		}
