@@ -83,7 +83,9 @@ export default function DBTabs(props: DBTabsProps) {
 		},
 		initTabs(init?: boolean) {
 			if (ref) {
-				const tabItems = Array.from<Element>(ref.getElementsByClassName('db-tab-item'));
+				const tabItems = Array.from<Element>(
+					ref.getElementsByClassName('db-tab-item')
+				);
 				for (const tabItem of tabItems) {
 					const index: number = tabItems.indexOf(tabItem);
 					const label = tabItem.querySelector('label');
