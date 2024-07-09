@@ -123,6 +123,7 @@ export default function DBTabs(props: DBTabsProps) {
 				);
 				for (const panel of tabPanels) {
 					if (panel.id) continue;
+					const index: number = tabPanels.indexOf(panel);
 					panel.id = `${state._name}-tab-panel-${index}`;
 					panel.setAttribute(
 						'aria-labelledby',
