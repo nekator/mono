@@ -107,8 +107,7 @@ export default function DBTabs(props: DBTabsProps) {
 									!props.initialSelectedMode ||
 									props.initialSelectedMode === 'auto';
 								const shouldAutoSelect =
-									(props.initialSelectedIndex ==
-										null &&
+									(props.initialSelectedIndex == null &&
 										index === 0) ||
 									props.initialSelectedIndex === index;
 								if (autoSelect && shouldAutoSelect) {
@@ -119,8 +118,10 @@ export default function DBTabs(props: DBTabsProps) {
 					}
 				);
 
-				const tabPanels = ref.getElementsByClassName('db-tab-panel');
-				Array.from<Element>(tabPanels).forEach(
+				const tabPanels = Array.from<Element>(
+					ref.querySelectorAll('.db-tab-panel')
+				);
+				for (const panel of tabPanels) {
 					(panel: Element, index: number) => {
 						if (!panel.id) {
 							panel.id = `${state._name}-tab-panel-${index}`;
@@ -129,8 +130,8 @@ export default function DBTabs(props: DBTabsProps) {
 								`${state._name}-tab-${index}`
 							);
 						}
-					}
-				);
+					};
+				}
 			}
 		}
 	});
