@@ -83,40 +83,39 @@ export default function DBTabs(props: DBTabsProps) {
 		},
 		initTabs(init?: boolean) {
 			if (ref) {
-				const tabItems = ref.getElementsByClassName('db-tab-item');
-				Array.from<Element>(tabItems).forEach(
-					(tabItem: Element, index: number) => {
-						const label = tabItem.querySelector('label');
-						const input = tabItem.querySelector('input');
+				const tabItems = Array.from<Element>(ref.getElementsByClassName('db-tab-item'));
+				for (const tabItem of tabItems) {
+					const index: number = tabItems.indexOf(tabItem);
+					const label = tabItem.querySelector('label');
+					const input = tabItem.querySelector('input');
 
-						if (input && label) {
-							if (!input.id) {
-								const tabId = `${state._name}-tab-${index}`;
-								label.setAttribute('for', tabId);
-								input.setAttribute(
-									'aria-controls',
-									`${state._name}-tab-panel-${index}`
-								);
-								input.id = tabId;
-								input.setAttribute('name', state._name);
-							}
+					if (input && label) {
+						if (!input.id) {
+							const tabId = `${state._name}-tab-${index}`;
+							label.setAttribute('for', tabId);
+							input.setAttribute(
+								'aria-controls',
+								`${state._name}-tab-panel-${index}`
+							);
+							input.id = tabId;
+							input.setAttribute('name', state._name);
+						}
 
-							if (init) {
-								// Auto select
-								const autoSelect =
-									!props.initialSelectedMode ||
-									props.initialSelectedMode === 'auto';
-								const shouldAutoSelect =
-									(props.initialSelectedIndex == null &&
-										index === 0) ||
-									props.initialSelectedIndex === index;
-								if (autoSelect && shouldAutoSelect) {
-									input.click();
-								}
+						if (init) {
+							// Auto select
+							const autoSelect =
+								!props.initialSelectedMode ||
+								props.initialSelectedMode === 'auto';
+							const shouldAutoSelect =
+								(props.initialSelectedIndex == null &&
+									index === 0) ||
+								props.initialSelectedIndex === index;
+							if (autoSelect && shouldAutoSelect) {
+								input.click();
 							}
 						}
 					}
-				);
+				}
 
 				const tabPanels = Array.from<Element>(
 					ref.querySelectorAll('.db-tab-panel')
