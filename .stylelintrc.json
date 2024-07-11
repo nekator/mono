@@ -1,6 +1,7 @@
 {
 	"extends": [
-		"stylelint-config-sass-guidelines",
+		"stylelint-config-standard",
+		"stylelint-config-sass-guidelines"
 	],
 	"plugins": ["stylelint-use-logical"],
 	"rules": {
@@ -19,6 +20,7 @@
 		"scss/percent-placeholder-pattern": null,
 		"scss/at-mixin-pattern": null,
 		"scss/at-import-partial-extension": null,
-		"selector-max-id": null
+		"selector-max-id": null,
+		"declaration-property-value-no-unknown": true
 	}
 }
