@@ -6,7 +6,6 @@
 	"plugins": ["stylelint-use-logical"],
 	"rules": {
 		"csstools/use-logical": ["always", { "except": ["float"] }],
-		"order/properties-alphabetical-order": null,
 		"scss/operator-no-newline-after": null,
 		"declaration-empty-line-before": null,
 		"selector-no-qualifying-type": null,
