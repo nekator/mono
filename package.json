@@ -72,7 +72,6 @@
     "replace-in-file": "^8.1.0",
     "rimraf": "6.0.1",
     "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "9.0.5",
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-use-logical": "^2.1.2",
     "tslib": "^2.6.3",
