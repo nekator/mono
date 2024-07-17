@@ -112,9 +112,11 @@ $input-types: "button", "checkbox", "color", "date", "datetime-local", "email",
 			}
 		}
 
-		&:has(#{$selector}:focus-within),
-		&:has(#{$selector}:is(input, textarea):not(:placeholder-shown)),
-		&:has(> select option:checked:not([hidden])) {
+		&:has(
+				#{$selector}:focus-within,
+				#{$selector}:is(input, textarea):not(:placeholder-shown),
+				> select option:checked:not([hidden])
+			) {
 			label {
 				@extend %db-overwrite-font-size-2xs;
 
