@@ -1,4 +1,4 @@
-npx validate-branch-name
+validate-branch-name
 node scripts/check-commit-mail.js
-npx --no -- lint-staged --config ./.lintstagedrc.js
+lint-staged --config ./.lintstagedrc.js
 npm run lint:jscpd
