@@ -72,16 +72,16 @@ jobs:
           npx playwright merge-reports --reporter github ./blob-report
 
       - name: 🆙 Upload test results
-        if: failure()
         uses: actions/upload-artifact@v4
+        if: failure()
         with:
           name: ${{ inputs.showcase }}-playwright-results-${{ matrix.shardIndex }}
           path: ./showcases/${{ inputs.showcase }}/test-results
           retention-days: 30
 
       - name: 🆙 Upload aChecker results
-        if: failure()
         uses: actions/upload-artifact@v4
+        if: failure()
         with:
           name: ${{ matrix.framework }}-showcase-achecker-results-${{ matrix.shardIndex }}
           path: ./showcases/${{ matrix.framework }}-showcase/results

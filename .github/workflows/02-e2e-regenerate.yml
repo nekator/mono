@@ -56,8 +56,8 @@ jobs:
           path: build-showcases/react-showcase
 
       - name: ⏬ Download patternhub
-        if: inputs.type == 'patternhub'
         uses: actions/download-artifact@v4
+        if: inputs.type == 'patternhub'
         with:
           name: db-ui-patternhub
           path: build-showcases/patternhub
@@ -79,32 +79,32 @@ jobs:
           fi
 
       - name: 🆙 Upload components
-        if: inputs.type == 'components'
         uses: actions/upload-artifact@v4
+        if: inputs.type == 'components'
         with:
           name: snapshots-${{ inputs.type }}
           path: ./__snapshots__/*/component
           retention-days: 30
 
       - name: 🆙 Upload foundations
-        if: inputs.type == 'foundations'
         uses: actions/upload-artifact@v4
+        if: inputs.type == 'foundations'
         with:
           name: snapshots-${{ inputs.type }}
           path: ./__snapshots__/foundations
           retention-days: 30
 
       - name: 🆙 Upload patternhub
-        if: inputs.type == 'patternhub'
         uses: actions/upload-artifact@v4
+        if: inputs.type == 'patternhub'
         with:
           name: snapshots-${{ inputs.type }}
           path: ./__snapshots__/*/patternhub
           retention-days: 30
 
       - name: 🆙 Upload showcase
-        if: inputs.type == 'showcases'
         uses: actions/upload-artifact@v4
+        if: inputs.type == 'showcases'
         with:
           name: snapshots-${{ inputs.type }}
           path: ./__snapshots__/*/showcase
