@@ -1,116 +1,95 @@
 ---
 name: Default Pipeline
-
 on:
   pull_request:
   push:
     branches:
       - "main"
-
 jobs:
   init:
     uses: ./.github/workflows/00-init.yml
-
   scan-secrets:
     if: github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'db-ui'
     uses: ./.github/workflows/00-scan-secrets.yml
-
   get-playwright-version:
     uses: ./.github/workflows/01-get-playwright-version.yml
     needs: [init]
-
   lint:
     uses: ./.github/workflows/01-lint.yml
     needs: [init]
-
   build-packages:
     uses: ./.github/workflows/01-build-packages.yml
     needs: [init]
-
   build-outputs:
     uses: ./.github/workflows/01-build-outputs.yml
     needs: [build-packages]
-
   test-components:
     uses: ./.github/workflows/02-e2e.yml
     needs: [build-packages, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
-
   test-foundations:
     uses: ./.github/workflows/02-e2e-foundations.yml
     needs: [build-packages, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
-
   build-showcase-angular:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: angular-showcase
-
   build-showcase-angular-ssr:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: angular-ssr-showcase
-
   build-showcase-react:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: react-showcase
-
   build-showcase-next:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: next-showcase
-
   build-showcase-vue:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: vue-showcase
-
   build-showcase-nuxt:
     uses: ./.github/workflows/01-build-showcases.yml
     needs: [build-packages]
     with:
       showcase: nuxt-showcase
-
   build-showcase-patternhub:
     uses: ./.github/workflows/01-build-patternhub.yml
     needs: [build-packages]
-
   test-showcase-angular:
     uses: ./.github/workflows/02-e2e-showcases.yml
     needs: [build-showcase-angular, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
       showcase: angular-showcase
-
   test-showcase-react:
     uses: ./.github/workflows/02-e2e-showcases.yml
     needs: [build-showcase-react, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
       showcase: react-showcase
-
   test-showcase-vue:
     uses: ./.github/workflows/02-e2e-showcases.yml
     needs: [build-showcase-vue, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
       showcase: vue-showcase
-
   test-showcase-patternhub:
     uses: ./.github/workflows/02-e2e-showcases.yml
     needs: [build-showcase-patternhub, get-playwright-version]
     with:
       version: ${{ needs.get-playwright-version.outputs.version }}
       showcase: patternhub
-
   regenerate-snapshots-components:
     if: always() && needs.test-components.result == 'failure'
     uses: ./.github/workflows/02-e2e-regenerate.yml
@@ -118,7 +97,6 @@ jobs:
       version: ${{ needs.get-playwright-version.outputs.version }}
       type: components
     needs: [test-components, get-playwright-version]
-
   regenerate-snapshots-foundations:
     if: always() && needs.test-foundations.result == 'failure'
     uses: ./.github/workflows/02-e2e-regenerate.yml
@@ -126,7 +104,6 @@ jobs:
       version: ${{ needs.get-playwright-version.outputs.version }}
       type: foundations
     needs: [test-foundations, get-playwright-version]
-
   regenerate-snapshots-patternhub:
     if: always() && needs.test-showcase-patternhub.result == 'failure'
     uses: ./.github/workflows/02-e2e-regenerate.yml
@@ -134,7 +111,6 @@ jobs:
       version: ${{ needs.get-playwright-version.outputs.version }}
       type: patternhub
     needs: [test-showcase-patternhub, get-playwright-version]
-
   regenerate-snapshots:
     if: always() && (needs.test-showcase-angular.result == 'failure' || needs.test-showcase-react.result == 'failure' || needs.test-showcase-vue.result == 'failure')
     uses: ./.github/workflows/02-e2e-regenerate.yml
@@ -148,7 +124,6 @@ jobs:
         test-showcase-vue,
         get-playwright-version
       ]
-
   checks-done:
     if: ${{ always() }}
     runs-on: ubuntu-latest
@@ -206,7 +181,6 @@ jobs:
         test-showcase-patternhub,
         test-foundations
       ]
-
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
     if: ${{ github.actor != 'dependabot[bot]' && (github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'db-ui') }}
