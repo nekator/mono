@@ -11,7 +11,6 @@ jobs:
       fail-fast: false
       matrix:
         language: ["javascript"]
-
     steps:
       - name: ⏬ Checkout repo
         uses: actions/checkout@v4
