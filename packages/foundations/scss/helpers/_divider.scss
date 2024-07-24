@@ -23,21 +23,18 @@
 			block-size: variables.$db-border-height-3xs;
 			inset-block-start: 0;
 			inset-inline: 0;
-		}
-
- @else if $position == "bottom" {
+			/* stylelint-disable-next-line at-rule-empty-line-before */
+		} @else if $position == "bottom" {
 			block-size: variables.$db-border-height-3xs;
 			inset-block-end: 0;
 			inset-inline: 0;
-		}
-
- @else if $position == "left" {
+			/* stylelint-disable-next-line at-rule-empty-line-before */
+		} @else if $position == "left" {
 			inline-size: variables.$db-border-height-3xs;
 			inset-inline-start: 0;
 			inset-block: 0;
-		}
-
- @else if $position == "right" {
+			/* stylelint-disable-next-line at-rule-empty-line-before */
+		} @else if $position == "right" {
 			inline-size: variables.$db-border-height-3xs;
 			inset-inline-end: 0;
 			inset-block: 0;
