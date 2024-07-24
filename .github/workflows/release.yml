@@ -25,6 +25,12 @@ jobs:
     uses: ./.github/workflows/01-build-packages.yml
     needs: [init]
 
+  init-playwright:
+    uses: ./.github/workflows/01-init-playwright.yml
+    needs: [get-playwright-version]
+    with:
+      version: ${{ needs.get-playwright-version.outputs.version }}
+
   build-outputs:
     uses: ./.github/workflows/01-build-outputs.yml
     needs: [build-packages]
@@ -112,6 +118,12 @@ jobs:
       version: ${{ needs.get-playwright-version.outputs.version }}
       showcase: patternhub
 
+  test-screen-reader:
+    uses: ./.github/workflows/02-e2e-screen-reader.yml
+    needs: [build-showcase-react, init-playwright, get-playwright-version]
+    with:
+      version: ${{ needs.get-playwright-version.outputs.version }}
+
   checks-done:
     if: ${{ always() }}
     runs-on: ubuntu-latest
@@ -132,7 +144,9 @@ jobs:
           resultTestShowcaseReact="${{ needs.test-showcase-react.result }}"
           resultTestShowcaseVue="${{ needs.test-showcase-vue.result }}"
           resultTestShowcasePatternhub="${{ needs.test-showcase-patternhub.result }}"
+          resultTestScreenReader="${{ needs.test-screen-reader.result }}"
           if [[ $resultTestFoundations == "success" ]] && \
+             [[ resultTestScreenReader == "success" ]] && \
              [[ $resultTestShowcaseAngular == "success" ]] && \
              [[ $resultTestShowcaseReact == "success" ]] && \
              [[ $resultTestShowcaseVue == "success" ]] && \
@@ -167,7 +181,8 @@ jobs:
         test-showcase-react,
         test-showcase-vue,
         test-showcase-patternhub,
-        test-foundations
+        test-foundations,
+        test-screen-reader
       ]
 
   deploy:
