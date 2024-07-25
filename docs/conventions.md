@@ -27,21 +27,13 @@ The general code conventions are guaranteed by the following tools.
 ### Through configuration files: `.editorconfig` for IDEs and `.gitattributes` for git checkins
 Both the [`.editorconfig`](https://editorconfig.org/) and [`.gitattributes`](https://dev.to/deadlybyte/please-add-gitattributes-to-your-git-repository-1jld) ensure a consistent code structure and conventions through their configurations.
 
-### xo
-The [xo](adr/linting-xo.adoc) tool provides a general code linting mechanism.
-
 ### prettier
 The [prettier](adr/code_style_formatter-prettier.adoc) tool provides a general code prettfying.
 
-## Linting via [Super-Linter](https://github.com/marketplace/actions/super-linter)
+## Linting
 
-To prevent the linting of generated files (like e.g. the reference screenshots by backstopjs), we'll be [excluding those via an environmental GitHub variable](https://github.com/github/super-linter#filter-linted-files) for this project with the env `FILTER_REGEX_EXCLUDE`.
-
-Further links regarding language specific settings are located in the super-lint repository: <https://github.com/github/super-linter/tree/master/TEMPLATES>
-
-### json files via jsonlint
-
-- [pipeline-components.dev/containers/jsonlint](https://pipeline-components.dev/containers/jsonlint/)
+### xo
+The [xo](adr/linting-xo.adoc) tool provides a general code linting mechanism.
 
 ### yaml files via yamllint
 
@@ -50,7 +42,3 @@ Further links regarding language specific settings are located in the super-lint
 ### markdown files via markdownlint
 
 - [github.com/markdownlint/markdownlint](https://github.com/markdownlint/markdownlint/)
-
-### shell scripts via ShellCheck
-
-- [github.com/koalaman/shellcheck](https://github.com/koalaman/shellcheck/)
