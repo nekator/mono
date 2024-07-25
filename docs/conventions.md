@@ -1,24 +1,30 @@
 ## Git commits conventions
 
-We're using [husky git hooks](https://www.npmjs.com/husky) in combination with [commitlint](https://www.npmjs.com/package/@commitlint/cli) according to <https://commitlint.js.org/#/concepts-commit-conventions>:
+We're using [husky git hooks](https://www.npmjs.com/husky) in combination with [commitlint](https://www.npmjs.com/package/@commitlint/cli) according to <https://commitlint.js.org/concepts/commit-conventions.html#concept-commit-conventions>:
 
-````
+```text
 type(scope?): subject
 body?
 footer?
-````
+```
 
-> quote, commitlint documentation
-
-Source: <https://commitlint.js.org/#/?id=test>
-____
-> Type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]
-____
+[Type must be one of the following](https://commitlint.js.org/reference/rules.html#type-enum):
+- build
+- chore
+- ci
+– docs
+- feat
+- fix
+- perf
+- refactor
+- revert
+- style
+- test
 
 If you'd like to test your commit message previous to using it, you could test it on the command line:
 ```shell
 echo 'foo: bar' | commitlint
-```
+````
 
 ## Code conventions
 
