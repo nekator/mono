@@ -65,7 +65,7 @@
   "devDependencies": {
     "@inquirer/prompts": "5.3.4",
     "glob": "^11.0.0",
-    "inquirer": "^10.1.4",
+    "inquirer": "^10.1.5",
     "replace-in-file": "^8.1.0"
   }
 }
