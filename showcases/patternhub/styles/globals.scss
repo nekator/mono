@@ -254,7 +254,9 @@ div[class^="ch-"] {
 	}
 
 	%spacing {
-		@extend %db-successful-contrast-high;
+		background-color: colors.$db-successful-bg-inverted-contrast-high-default;
+		color: colors.$db-successful-on-bg-inverted-default;
+		border-color: colors.$db-successful-bg-inverted-contrast-high-default;
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -274,7 +276,8 @@ div[class^="ch-"] {
 			border: 1px solid black;
 			> div {
 				display: flex;
-				border: 1px solid colors.$db-informational-4;
+				border: 1px solid
+					colors.$db-adaptive-on-bg-basic-emphasis-60-default;
 				position: relative;
 			}
 		}
@@ -331,7 +334,9 @@ div[class^="ch-"] {
 
 			.sizing {
 				@extend %spacing;
-				@extend %db-warning-contrast-high;
+				background-color: colors.$db-warning-bg-inverted-contrast-high-default;
+				color: colors.$db-warning-on-bg-inverted-default;
+				border-color: colors.$db-warning-bg-inverted-contrast-high-default;
 				position: unset;
 				block-size: variables.$db-sizing-md;
 				inline-size: variables.$db-sizing-md;
