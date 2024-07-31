@@ -28,7 +28,7 @@
 @mixin generate-inverted-placeholder($variant) {
 	@each $contrast in variables.$inverted-colors {
 		%db-#{$variant}-inverted-#{$contrast} {
-			--db-current-color-border: var(
+			--db-adaptive-on-bg-basic-60-default: var(
 				--db-#{$variant}-inverted-#{$contrast}-default
 			);
 
