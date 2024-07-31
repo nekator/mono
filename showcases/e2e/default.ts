@@ -91,10 +91,7 @@ export const getDefaultScreenshotTest = ({
 			await preScreenShot(page);
 		}
 
-		await expect(page).toHaveScreenshot(
-			[density, `neutral-bg-basic-level-1.png`],
-			config
-		);
+		await expect(page).toHaveScreenshot(config);
 	});
 
 	for (const color of COLORS) {
