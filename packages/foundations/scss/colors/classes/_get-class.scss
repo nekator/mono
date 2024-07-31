@@ -26,6 +26,7 @@
 @mixin init-on-background-colors($color) {
 	[data-on-bg-color="#{$color}"],
 	.db-on-bg-color-#{$color} {
+		/* stylelint-disable at-rule-empty-line-before */
 		@if $color == "emphasis-100" {
 			color: var(--db-adaptive-on-bg-basic-emphasis-100-default);
 		} @else if $color == "emphasis-90" {
@@ -41,6 +42,7 @@
 		} @else {
 			@error "Unknown color #{$color}.";
 		}
+		/* stylelint-enable at-rule-empty-line-before */
 	}
 }
 
