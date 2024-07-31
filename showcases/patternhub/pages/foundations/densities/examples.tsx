@@ -48,7 +48,9 @@ const Example = () => {
 				<div
 					className="density-example-page-functional"
 					data-density="functional">
-					<DBCard className="db-neutral-bg-lvl-2" spacing="small">
+					<DBCard
+						className="db-neutral-bg-basic-level-2"
+						spacing="small">
 						We are functional
 					</DBCard>
 					<DBCard
@@ -56,13 +58,19 @@ const Example = () => {
 						spacing="small">
 						even that we have
 					</DBCard>
-					<DBCard className="db-successful-bg-lvl-2" spacing="small">
+					<DBCard
+						className="db-successful-bg-basic-level-2"
+						spacing="small">
 						a color
 					</DBCard>
-					<DBCard className="db-warning-bg-lvl-2" spacing="small">
+					<DBCard
+						className="db-warning-bg-basic-level-2"
+						spacing="small">
 						the user shouldn't
 					</DBCard>
-					<DBCard className="db-critical-bg-lvl-2" spacing="small">
+					<DBCard
+						className="db-critical-bg-basic-level-2"
+						spacing="small">
 						focus us
 					</DBCard>
 				</div>
