@@ -4,14 +4,14 @@
 @use "../variables";
 
 pre:has(code) {
-	@extend %db-neutral-inverted-contrast-max;
-
+	background-color: colors.$db-adaptive-bg-inverted-contrast-max-default;
+	color: colors.$db-adaptive-on-bg-inverted-default;
 	padding: variables.$db-spacing-fixed-xs;
 }
 
 code {
-	@extend %db-neutral-inverted-contrast-max;
-
+	background-color: colors.$db-adaptive-bg-inverted-contrast-max-default;
+	color: colors.$db-adaptive-on-bg-inverted-default;
 	padding-block: variables.$db-spacing-fixed-3xs;
 	padding-inline: variables.$db-spacing-fixed-2xs;
 }

@@ -4,59 +4,28 @@
 @use "variables.additional" as additional-colors;
 
 @mixin set-current-colors($bg, $on, $hovered: false, $pressed: false) {
-	background-color: $bg;
-	color: $on;
+	background-color: #{$bg};
+	color: #{$on};
 
 	&::before,
 	&::after {
-		--db-icon-color: $on;
+		--db-icon-color: #{$on};
 	}
 
 	@if ($hovered) {
-		@include functions.hovered {
-			background-color: $hovered;
+		@include functions.hover {
+			background-color: #{$hovered};
 		}
 	}
 
 	@if ($pressed) {
 		@include functions.active {
-			background-color: $pressed;
-		}
-	}
-}
-
-@mixin generate-inverted-placeholder($variant) {
-	@each $contrast in variables.$inverted-colors {
-		%db-#{$variant}-inverted-#{$contrast} {
-			--db-adaptive-on-bg-basic-60-default: var(
-				--db-#{$variant}-inverted-#{$contrast}-default
-			);
-
-			@include set-current-colors(
-				var(--db-#{$variant}-inverted-#{$contrast}-default),
-				var(--db-#{$variant}-on-inverted-default)
-			);
-		}
-
-		%db-#{$variant}-inverted-#{$contrast}-interactive {
-			@extend %db-#{$variant}-inverted-#{$contrast};
-
-			/* stylelint-disable-next-line scss/percent-placeholder-pattern */
-			&:is(:hover, :focus) {
-				background: var(--db-#{$variant}-inverted-#{$contrast}-hovered);
-			}
-
-			/* stylelint-disable-next-line scss/percent-placeholder-pattern */
-			&:active {
-				background: var(--db-#{$variant}-inverted-#{$contrast}-pressed);
-			}
+			background-color: #{$pressed};
 		}
 	}
 }
 
 @mixin generate-color-placeholder($variant) {
-	@include generate-inverted-placeholder($variant);
-
 	%db-#{$variant}-variables {
 		// bg basic
 		--db-adaptive-bg-basic-level-1-default: var(
@@ -100,59 +69,59 @@
 		);
 
 		// on-bg basic
-		--db-adaptive-on-bg-basic-100-default: var(
-			--db-#{$variant}-on-bg-basic-100-default
+		--db-adaptive-on-bg-basic-emphasis-100-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-100-default
 		);
-		--db-adaptive-on-bg-basic-100-hovered: var(
-			--db-#{$variant}-on-bg-basic-100-hovered
+		--db-adaptive-on-bg-basic-emphasis-100-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-100-hovered
 		);
-		--db-adaptive-on-bg-basic-100-pressed: var(
-			--db-#{$variant}-on-bg-basic-100-pressed
+		--db-adaptive-on-bg-basic-emphasis-100-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-100-pressed
 		);
-		--db-adaptive-on-bg-basic-90-default: var(
-			--db-#{$variant}-on-bg-basic-90-default
+		--db-adaptive-on-bg-basic-emphasis-90-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-90-default
 		);
-		--db-adaptive-on-bg-basic-90-hovered: var(
-			--db-#{$variant}-on-bg-basic-90-hovered
+		--db-adaptive-on-bg-basic-emphasis-90-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-90-hovered
 		);
-		--db-adaptive-on-bg-basic-90-pressed: var(
-			--db-#{$variant}-on-bg-basic-90-pressed
+		--db-adaptive-on-bg-basic-emphasis-90-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-90-pressed
 		);
-		--db-adaptive-on-bg-basic-80-default: var(
-			--db-#{$variant}-on-bg-basic-80-default
+		--db-adaptive-on-bg-basic-emphasis-80-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-80-default
 		);
-		--db-adaptive-on-bg-basic-80-hovered: var(
-			--db-#{$variant}-on-bg-basic-80-hovered
+		--db-adaptive-on-bg-basic-emphasis-80-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-80-hovered
 		);
-		--db-adaptive-on-bg-basic-80-pressed: var(
-			--db-#{$variant}-on-bg-basic-80-pressed
+		--db-adaptive-on-bg-basic-emphasis-80-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-80-pressed
 		);
-		--db-adaptive-on-bg-basic-70-default: var(
-			--db-#{$variant}-on-bg-basic-70-default
+		--db-adaptive-on-bg-basic-emphasis-70-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-70-default
 		);
-		--db-adaptive-on-bg-basic-70-hovered: var(
-			--db-#{$variant}-on-bg-basic-70-hovered
+		--db-adaptive-on-bg-basic-emphasis-70-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-70-hovered
 		);
-		--db-adaptive-on-bg-basic-70-pressed: var(
-			--db-#{$variant}-on-bg-basic-70-pressed
+		--db-adaptive-on-bg-basic-emphasis-70-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-70-pressed
 		);
-		--db-adaptive-on-bg-basic-60-default: var(
-			--db-#{$variant}-on-bg-basic-60-default
+		--db-adaptive-on-bg-basic-emphasis-60-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-60-default
 		);
-		--db-adaptive-on-bg-basic-60-hovered: var(
-			--db-#{$variant}-on-bg-basic-60-hovered
+		--db-adaptive-on-bg-basic-emphasis-60-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-60-hovered
 		);
-		--db-adaptive-on-bg-basic-60-pressed: var(
-			--db-#{$variant}-on-bg-basic-60-pressed
+		--db-adaptive-on-bg-basic-emphasis-60-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-60-pressed
 		);
-		--db-adaptive-on-bg-basic-50-default: var(
-			--db-#{$variant}-on-bg-basic-50-default
+		--db-adaptive-on-bg-basic-emphasis-50-default: var(
+			--db-#{$variant}-on-bg-basic-emphasis-50-default
 		);
-		--db-adaptive-on-bg-basic-50-hovered: var(
-			--db-#{$variant}-on-bg-basic-50-hovered
+		--db-adaptive-on-bg-basic-emphasis-50-hovered: var(
+			--db-#{$variant}-on-bg-basic-emphasis-50-hovered
 		);
-		--db-adaptive-on-bg-basic-50-pressed: var(
-			--db-#{$variant}-on-bg-basic-50-pressed
+		--db-adaptive-on-bg-basic-emphasis-50-pressed: var(
+			--db-#{$variant}-on-bg-basic-emphasis-50-pressed
 		);
 
 		// inverted
@@ -219,7 +188,7 @@
 
 			@include set-current-colors(
 				var(--db-#{$variant}-bg-#{$bg}-default),
-				var(--db-#{$variant}-on-bg-basic-100-default)
+				var(--db-#{$variant}-on-bg-basic-emphasis-100-default)
 			);
 		}
 	}

@@ -52,7 +52,7 @@ const Example = () => {
 						We are functional
 					</DBCard>
 					<DBCard
-						className="db-informational-bg-lvl-2"
+						className="db-informational-bg-basic-level-2"
 						spacing="small">
 						even that we have
 					</DBCard>
