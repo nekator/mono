@@ -50,18 +50,6 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	}
 }
 
-%set-interactive-weak {
-	background-color: colors.$db-adaptive-bg-basic-level-1-default;
-
-	@include helpers.hover {
-		background-color: colors.$db-adaptive-bg-basic-level-1-hovered;
-	}
-
-	@include helpers.active {
-		background-color: colors.$db-adaptive-bg-basic-level-1-pressed;
-	}
-}
-
 %set-interactive-strong {
 	@extend %set-adaptive-strong-tag;
 
@@ -113,14 +101,30 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	}
 
 	label:has(input) {
-		@extend %set-interactive-weak;
+		background-color: colors.$db-adaptive-bg-basic-level-1-default;
+
+		@include helpers.hover {
+			background-color: colors.$db-adaptive-bg-basic-level-1-hovered;
+		}
+
+		@include helpers.active {
+			background-color: colors.$db-adaptive-bg-basic-level-1-pressed;
+		}
 	}
 
 	&:not([data-emphasis]),
 	&[data-emphasis="weak"] {
 		// buttons and links should have bg-basic-level-2
 		@include get-interactive-selectors() {
-			@extend %set-interactive-weak;
+			background-color: colors.$db-adaptive-bg-basic-level-3-default;
+
+			@include helpers.hover {
+				background-color: colors.$db-adaptive-bg-basic-level-3-hovered;
+			}
+
+			@include helpers.active {
+				background-color: colors.$db-adaptive-bg-basic-level-3-pressed;
+			}
 		}
 
 		// checkbox should have bg-basic-level-3 (checked)
