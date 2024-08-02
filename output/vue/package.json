@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@playwright/experimental-ct-vue": "1.45.3",
-    "@vitejs/plugin-vue": "^5.1.1",
+    "@vitejs/plugin-vue": "^5.1.2",
     "replace-in-file": "^8.1.0",
     "tsx": "^4.16.5",
     "typescript": "^5.4.5",
