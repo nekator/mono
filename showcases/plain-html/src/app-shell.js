@@ -95,7 +95,7 @@ const getAppShell = (content) =>
 	`
 	<db-page data-variant="fixed">
 		<db-header id="db-header" slot="header">
-			<db-brand slot="brand" anchorChildren="true" insideHeader="true">Vanilla Showcase</db-brand>
+			<db-brand slot="brand" anchorChildren="true" insideHeader="true">Plain HTML</db-brand>
 			${getNavigation(true)}
 			${getNavigation(false)}
 			<db-button slot="call-to-action" variant="ghost" icon="magnifying_glass">Search</db-button>
