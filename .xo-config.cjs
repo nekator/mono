@@ -19,7 +19,7 @@ module.exports = {
 		{
 			files: [
 				'./**/angular-**/**',
-				'./showcases/plain-html/**',
+				'./showcases/vanilla-showcase/**',
 				'./showcases/svelte-showcase/**'
 			],
 			rules: {

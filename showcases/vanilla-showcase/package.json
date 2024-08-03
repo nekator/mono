@@ -1,5 +1,5 @@
 {
-  "name": "plain-html",
+  "name": "vanilla-showcase",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -7,7 +7,7 @@
     "build": "npm-run-all build:*",
     "build:01_vite": "vite build",
     "build:02_generate": "node scripts/generate-routes.js",
-    "build:03_copy": "cpr dist ../../build-showcases/plain-html -o",
+    "build:03_copy": "cpr dist ../../build-showcases/vanilla-showcase -o",
     "copy:assets": "cpr ../../packages/foundations/assets ./public/assets  -o",
     "copy:colors": "cpr ../../packages/foundations/build/css/colors/classes/all.css ./public/styles/colors/classes/all.css  -o",
     "copy:components": "cpr ../../packages/components/build/components ./public/components  -o",
