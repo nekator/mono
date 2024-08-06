@@ -1,14 +1,23 @@
 # Screen Automated Reader (ScAR 🦁🔥💀)
 
+## Install
+
+```shell
+npx playwright install
+npx @guidepup/setup
+```
+
+## Start
+
 Start a test with these commands:
 
-## MacOS
+### MacOS
 
 ```shell
 npm run test:screen-reader:macos --workspace=react-showcase -- --ui
 ```
 
-## Windows
+### Windows
 
 ```shell
 npm run test:screen-reader:windows --workspace=react-showcase -- --ui
