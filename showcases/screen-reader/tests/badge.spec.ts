@@ -5,7 +5,7 @@ const test = getTest();
 test.describe('DBBadge', () => {
 	testDefault({
 		test,
-		title: 'should ...',
+		title: 'should have texts inline or as data-label attributes (next())',
 		url: './#/06/badge?page=placement',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
@@ -14,10 +14,11 @@ test.describe('DBBadge', () => {
 
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
-			// Todo: add test
-			// await screenReader?.previous();
-			// await screenReader?.next();
-			// await screenReader?.next();
+			await screenReader?.previous(); // Badge inline
+			await screenReader?.next(); // Badge red
+			await screenReader?.next(); // Button with badge with data-label 1
+			await screenReader?.next(); // Info-text
+			await screenReader?.next(); // Button with badge with data-label 2
 		}
 	});
 });
