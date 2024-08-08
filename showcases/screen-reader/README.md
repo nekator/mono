@@ -7,7 +7,7 @@ npx playwright install
 npx @guidepup/setup
 ```
 
-If errors occur after the automatic setup of guidepup (e.g. no connection to voicover), the setup must be executed manually. [See instructions](https://www.guidepup.dev/docs/guides/manual-voiceover-setup).
+If errors occur after the automatic setup of Guidepup (e.g. no connection to Voiceover), the setup must be executed manually. See [instructions](https://www.guidepup.dev/docs/guides/manual-voiceover-setup).
 
 ## Start
 
