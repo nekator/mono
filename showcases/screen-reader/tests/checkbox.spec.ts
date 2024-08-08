@@ -8,10 +8,6 @@ test.describe('DBCheckbox', () => {
 		title: 'should tick and untick checkbox, feedback messages must appear',
 		url: './#/03/checkbox?page=requirement',
 		async testFn(voiceOver, nvda) {
-			if (nvda) {
-				await nvda?.next();
-			}
-
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.next(); // Focus checkbox 1
 			await screenReader?.next(); // Focus checkbox 1 label
