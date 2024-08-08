@@ -1,6 +1,26 @@
-import { getTest, testDefault } from '../default';
+import type { NVDAPlaywright, VoiceOverPlaywright } from '@guidepup/playwright';
+import { generateSnapshot, getTest, testDefault } from '../default';
 
 const test = getTest();
+
+const postTestFn = async (
+	voiceOver?: VoiceOverPlaywright,
+	nvda?: NVDAPlaywright,
+	retry?: number
+) => {
+	if (nvda) {
+		/*
+		 * There is an issue with nvda duplicating expanded sometimes
+		 */
+		await generateSnapshot(nvda, retry, (phraseLog) =>
+			phraseLog.map((log) =>
+				log.replace('expanded. expanded', 'expanded')
+			)
+		);
+	} else if (voiceOver) {
+		await generateSnapshot(voiceOver, retry);
+	}
+};
 
 test.describe('DBAccordion', () => {
 	testDefault({
@@ -19,7 +39,8 @@ test.describe('DBAccordion', () => {
 			await screenReader?.previous(); // Focus: "item 2"
 			await screenReader?.previous(); // Focus: "content 1"
 			await screenReader?.previous(); // Focus: "item 1"
-		}
+		},
+		postTestFn
 	});
 	testDefault({
 		test,
@@ -40,6 +61,7 @@ test.describe('DBAccordion', () => {
 			await screenReader?.next(); // Focus: "content 2"
 			await screenReader?.previous(); // Focus: "item 2"
 			await screenReader?.previous(); // Focus: "item 1"
-		}
+		},
+		postTestFn
 	});
 });
