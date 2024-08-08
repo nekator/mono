@@ -25,7 +25,9 @@ const translations: Record<string, string[]> = {
 	'has auto complete': ['mit Auto Vervollständigung'],
 	unknown: ['Unbekannt'],
 	dialog: ['Dialogfeld'],
-	document: ['Dokument']
+	document: ['Dokument'],
+	collapsed: ['reduziert'],
+	expanded: ['erweitert']
 };
 
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>

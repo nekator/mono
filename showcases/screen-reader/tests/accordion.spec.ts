@@ -8,10 +8,6 @@ test.describe('DBAccordion', () => {
 		title: 'should open two items while both remain unfolded (next)',
 		url: './#/04/accordion?page=behaviour',
 		async testFn(voiceOver, nvda) {
-			if (nvda) {
-				await nvda?.next();
-			}
-
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.next(); // Focus: "item 1"
@@ -30,10 +26,6 @@ test.describe('DBAccordion', () => {
 		title: 'one item should open, then the next, whereby the first should then close automatically (next)',
 		url: './#/04/accordion?page=behaviour',
 		async testFn(voiceOver, nvda) {
-			if (nvda) {
-				await nvda?.next();
-			}
-
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.next();
 			await screenReader?.next();
