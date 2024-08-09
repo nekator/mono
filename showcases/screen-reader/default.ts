@@ -28,22 +28,24 @@ const translations: Record<string, string[]> = {
 	document: ['Dokument']
 };
 
+const standardPhrases = [
+	'You are currently',
+	'To enter',
+	'To exit',
+	'To click',
+	'To select',
+	'To interact',
+	'Press Control',
+  'To begin interacting'
+];
+
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
 	phraseLog.map((phrase) =>
 		phrase
 			.split('. ')
 			.filter(
 				(sPhrase) =>
-					!(
-						sPhrase.includes('You are currently') ||
-						sPhrase.includes('To enter') ||
-						sPhrase.includes('To exit') ||
-						sPhrase.includes('To click') ||
-						sPhrase.includes('To select') ||
-						sPhrase.includes('To interact') ||
-						sPhrase.includes('Press Control') ||
-						sPhrase.includes('To begin interacting')
-					)
+					!standardPhrases.some((string) => sPhrase.includes(string))
 			)
 			.join('. ')
 	);
