@@ -36,7 +36,7 @@ const standardPhrases = [
 	'To select',
 	'To interact',
 	'Press Control',
-  'To begin interacting'
+	'To begin interacting'
 ];
 
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
