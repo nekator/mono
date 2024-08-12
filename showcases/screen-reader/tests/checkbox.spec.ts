@@ -5,7 +5,9 @@ const test = getTest();
 test.describe('DBCheckbox', () => {
 	testDefault({
 		test,
-		title: 'should tick and untick checkbox, feedback messages must appear',
+		title: 'default',
+		description:
+			'should tick and untick checkbox, feedback messages must appear',
 		url: './#/03/checkbox?page=requirement',
 		async testFn(voiceOver, nvda) {
 			const screenReader = voiceOver ?? nvda;
