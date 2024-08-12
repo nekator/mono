@@ -30,22 +30,24 @@ const translations: Record<string, string[]> = {
 	expanded: ['erweitert']
 };
 
+const standardPhrases = [
+	'You are currently',
+	'To enter',
+	'To exit',
+	'To click',
+	'To select',
+	'To interact',
+	'Press Control',
+  'To expand'
+];
+
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
 	phraseLog.map((phrase) =>
 		phrase
 			.split('. ')
 			.filter(
 				(sPhrase) =>
-					!(
-						sPhrase.includes('You are currently') ||
-						sPhrase.includes('To enter') ||
-						sPhrase.includes('To exit') ||
-						sPhrase.includes('To click') ||
-						sPhrase.includes('To select') ||
-						sPhrase.includes('To interact') ||
-						sPhrase.includes('Press Control') ||
-						sPhrase.includes('To expand')
-					)
+					!standardPhrases.some((string) => sPhrase.includes(string))
 			)
 			.join('. ')
 	);

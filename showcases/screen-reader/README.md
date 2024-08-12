@@ -1,4 +1,4 @@
-# Screen Automated Reader (ScAR 🦁🔥💀)
+# Screen Automated Reader Enhanced Development (scare devs 🦁🔥💀)
 
 ## Install
 
@@ -11,7 +11,7 @@ If errors occur after the automatic setup of Guidepup (e.g. no connection to Voi
 
 ## Start
 
-Start a test with these commands:
+Start a test with these commands (ensure a build or start a watcher previous to running these commands to ensure that any expected changes within the code base will be reflected):
 
 ### MacOS
 
