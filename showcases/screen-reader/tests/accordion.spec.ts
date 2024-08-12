@@ -25,7 +25,8 @@ const postTestFn = async (
 test.describe('DBAccordion', () => {
 	testDefault({
 		test,
-		title: 'should open two items while both remain unfolded (next)',
+		title: 'multiple',
+		description: 'should open two items while both remain unfolded (next)',
 		url: './#/04/accordion?page=behaviour',
 		async testFn(voiceOver, nvda) {
 			const screenReader = voiceOver ?? nvda;
@@ -44,7 +45,9 @@ test.describe('DBAccordion', () => {
 	});
 	testDefault({
 		test,
-		title: 'one item should open, then the next, whereby the first should then close automatically (next)',
+		title: 'single',
+		description:
+			'one item should open, then the next, whereby the first should then close automatically (next)',
 		url: './#/04/accordion?page=behaviour',
 		async testFn(voiceOver, nvda) {
 			const screenReader = voiceOver ?? nvda;
