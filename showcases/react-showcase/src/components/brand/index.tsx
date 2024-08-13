@@ -16,7 +16,7 @@ const getBrand = ({
 				src={`${
 					process?.env?.NEXT_PUBLIC_BASE_PATH ?? '/react-showcase'
 				}/assets/images/placeholder.jpg`}
-				alt="Logoo1"
+				alt="this is a fancy placeholder logo"
 			/>
 		)}
 		{children}
