@@ -1,0 +1,227 @@
+[
+	{
+		"name": "Density",
+		"examples": [
+			{
+				"name": "Functional",
+				"className": "db-density-functional",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			},
+			{
+				"name": "(Default) Regular",
+				"className": "db-density-regular",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			},
+			{
+				"name": "Expressive",
+				"className": "db-density-expressive",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			}
+		]
+	},
+	{
+		"name": "Variant Label",
+		"examples": [
+			{
+				"name": "(Default) Label Above",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label"
+				}
+			},
+			{
+				"name": "Floating Label",
+				"props": {
+					"options": [
+						{
+							"value": "Floating Label"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label",
+					"variant": "floating",
+					"value": ["Floating Label"]
+				}
+			},
+			{
+				"name": "Hidden Label",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label",
+					"variant": "hidden"
+				}
+			}
+		]
+	},
+	{
+		"name": "Examples",
+		"examples": [
+			{
+				"name": "Single less than 6",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						},
+						{
+							"value": "Option 5"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			},
+			{
+				"name": "Option Groups",
+				"props": {
+					"options": [
+						{
+							"label": "Option group 1",
+							"options": [
+								{
+									"value": "G1:Option 1"
+								},
+								{
+									"value": "G1:Option 2"
+								}
+							]
+						},
+						{
+							"label": "Option group 2",
+							"options": [
+								{
+									"value": "G2:Option 1"
+								},
+								{
+									"value": "G2:Option 2"
+								}
+							]
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			},
+			{
+				"name": "Single more than 6",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						},
+						{
+							"value": "Option 5"
+						},
+						{
+							"value": "Option 6"
+						},
+						{
+							"value": "Option 7"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			},
+			{
+				"name": "Single more than 10",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						},
+						{
+							"value": "Option 5"
+						},
+						{
+							"value": "Option 6"
+						},
+						{
+							"value": "Option 7"
+						},
+						{
+							"value": "Option 8"
+						},
+						{
+							"value": "Option 9"
+						},
+						{
+							"value": "Option 10"
+						}
+					],
+					"placeholder": "Placeholder"
+				}
+			}
+		]
+	}
+]

@@ -1,7 +1,7 @@
 ---
 to: src/components/<%= name %>/<%= name %>.lite.tsx
 ---
-import { Show, useMetadata, useStore } from "@builder.io/mitosis";
+import { Show, useMetadata, useRef, useStore } from "@builder.io/mitosis";
 import { DB<%= h.changeCase.pascal(name) %>State, DB<%= h.changeCase.pascal(name) %>Props } from "./model";
 import { cls } from "../../utils";
 <% if(formValue!=="no"){   -%>
@@ -27,7 +27,7 @@ export default function DB<%= h.changeCase.pascal(name) %>(props: DB<%= h.change
 			if (props.change) {
 				props.change(event);
 			}
-			handleFrameworkEvent(this, event, <%= formValue %>);
+			handleFrameworkEvent(this, event, "<%= formValue %>");
 		},
 		handleBlur: (event: InteractionEvent<HTMLInputElement>) => {
 			if (props.onBlur) {

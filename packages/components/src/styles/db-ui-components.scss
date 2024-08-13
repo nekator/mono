@@ -32,7 +32,12 @@
 @forward "../components/tab-panel/tab-panel";
 @forward "../components/switch/switch";
 
+@forward "../components/multi-select/multi-select";
+
 // angular-workaround
+dbmulti-select,
+db-multi-select,
+
 dbswitch,
 db-switch,
 dbtab-panel,

@@ -1,3 +1,8 @@
+			{
+				label: 'TODO: Add to specific category; DBMultiSelect',
+				name: 'multi-select',
+			},
+
 [
 	{
 		"label": "Action",

@@ -1,3 +1,5 @@
+import MultiSelectComponent from '../components/multi-select';
+
 import SwitchComponent from '../components/switch';
 import TabsComponent from '../components/tabs';
 import TabItemComponent from '../components/tab-item';
@@ -118,6 +120,11 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		path: '03',
 		label: '03 Data-Input',
 		subNavigation: getSortedNavigationItems([
+			{
+				path: 'multi-select',
+				label: 'MultiSelect',
+				component: <MultiSelectComponent />
+			},
 			{ path: 'input', label: 'Input', component: <InputComponent /> },
 			{
 				path: 'textarea',

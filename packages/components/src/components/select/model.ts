@@ -18,9 +18,9 @@ import {
 
 export interface DBSelectDefaultProps {
 	/**
-	 * The description attribute will add a paragraph below the select.
+	 * Enable multiple select -> use DBMultiSelect/db-multi-select for a better look
 	 */
-	description?: string;
+	multiple?: boolean;
 
 	/**
 	 * If you don't/can't use children/slots you can pass in the options as an array.
@@ -60,15 +60,15 @@ export type DBSelectOptionType = {
 	value: string | string[] | number;
 };
 
-export type DBSelectProps = DBSelectDefaultProps &
-	GlobalProps &
+export type DBSelectProps = GlobalProps &
 	ClickEventProps<HTMLSelectElement> &
 	ChangeEventProps<HTMLSelectElement> &
 	FocusEventProps<HTMLSelectElement> &
 	InputEventProps<HTMLSelectElement> &
 	FormProps &
 	IconProps &
-	FormMessageProps;
+	FormMessageProps &
+	DBSelectDefaultProps;
 
 export interface DBSelectDefaultState {
 	_placeholderId: string;

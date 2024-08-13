@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import DBMultiSelect from '../src/components/multi-select/multi-select';
+
 import {
 	DBSwitch,
 	DBTabPanel,
@@ -327,6 +329,14 @@ const ComponentSwitch = ({
 			<DBSwitch className={className} {...props}>
 				{resolvedContent}
 			</DBSwitch>
+		);
+	}
+
+	if (type === 'multi-select') {
+		return (
+			<DBMultiSelect className={className} {...props}>
+				{resolvedContent}
+			</DBMultiSelect>
 		);
 	}
 

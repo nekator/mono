@@ -1,5 +1,6 @@
 export const DEFAULT_ID: string = 'OVERWRITE_DEFAULT_ID';
 export const DEFAULT_LABEL: string = 'LABEL SHOULD BE SET';
+export const DEFAULT_MESSAGE: string = 'MESSAGE SHOULD BE SET';
 
 export const DEFAULT_MESSAGE_ID_SUFFIX: string = '-message';
 export const DEFAULT_VALID_MESSAGE_ID_SUFFIX: string = '-valid-message';

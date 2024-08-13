@@ -2,7 +2,7 @@
 to: "<%= showcases ? `../../showcases/react-showcase/src/components/${name}/index.tsx` : null %>"
 ---
 import { DB<%= h.changeCase.pascal(name) %> } from '../../../../../output/react/src';
-import DefaultComponent from '../index';
+import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/<%= name %>.json';
 import type { DB<%= h.changeCase.pascal(name) %>Props } from '../../../../../output/react/src/components/<%= name %>/model';
 import { getVariants } from '../data';

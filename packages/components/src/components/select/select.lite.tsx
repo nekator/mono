@@ -105,7 +105,7 @@ export default function DBSelect(props: DBSelectProps) {
 			}
 		},
 		getOptionLabel: (option: DBSelectOptionType) => {
-			return option.label ?? option.value.toString();
+			return option.label ?? option.value?.toString();
 		}
 	});
 
@@ -156,6 +156,7 @@ export default function DBSelect(props: DBSelectProps) {
 				name={props.name}
 				value={props.value ?? state._value}
 				autocomplete={props.autocomplete}
+				multiple={props.multiple}
 				onInput={(event: ChangeEvent<HTMLInputElement>) =>
 					state.handleInput(event)
 				}

@@ -12,6 +12,9 @@ $dropdown-icon-transform: rotate(-180deg);
 
 $font-size-height: calc(var(--db-base-font-size) * var(--db-base-line-height));
 $icon-size-sm: var(--db-base-body-icon-font-size-sm);
+$label-size-height-md: calc(
+	var(--db-type-body-font-size-md) * var(--db-type-body-line-height-md)
+);
 $label-size-height-sm: calc(
 	var(--db-type-body-font-size-sm) * var(--db-type-body-line-height-sm)
 );
@@ -48,7 +51,7 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 	.db-infotext {
 		margin-block-start: variables.$db-spacing-fixed-2xs;
 
-		&:is([data-semantic], :empty) {
+		&:is([data-semantic="successful"], [data-semantic="critical"], :empty) {
 			display: none;
 		}
 	}
@@ -63,7 +66,7 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 
 @mixin set-floating-label-overwrites($selector) {
 	&[data-variant="floating"] {
-		label {
+		> label {
 			@extend %db-overwrite-font-size-md;
 
 			opacity: component.$default-disabled;
@@ -119,7 +122,7 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 				#{$selector}:is(input, textarea):not(:placeholder-shown),
 				> select option:checked:not([hidden])
 			) {
-			label {
+			> label {
 				@extend %db-overwrite-font-size-2xs;
 
 				inset-block-start: variables.$db-spacing-fixed-2xs;
@@ -261,7 +264,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 @mixin set-required-label($selector) {
 	&:has(#{$selector}:required) {
 		&:is(label),
-		label {
+		> label {
 			&::after {
 				content: "*";
 				padding-inline-start: variables.$db-spacing-fixed-2xs;
@@ -328,7 +331,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 	}
 
 	// label
-	label {
+	> label {
 		@extend %db-overwrite-font-size-xs;
 
 		padding-block-end: variables.$db-spacing-fixed-xs;
@@ -345,7 +348,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 	}
 
 	&[data-variant="hidden"] {
-		label {
+		> label {
 			@extend %a11y-visually-hidden;
 
 			padding: 0;
@@ -385,7 +388,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 		inset-inline-end: variables.$db-spacing-fixed-sm;
 	}
 
-	@if ($selector == input or $selector == select) {
+	@if ($selector == input or $selector == select or $selector == summary) {
 		#{$selector} {
 			block-size: variables.$db-sizing-md;
 			text-overflow: ellipsis;
@@ -435,7 +438,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 	}
 
 	&:is(label),
-	label {
+	> label {
 		color: var(--db-#{$variant}-bg-inverted-contrast-high-default);
 	}
 }
@@ -458,7 +461,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 	}
 
 	&:is(label),
-	label {
+	> label {
 		display: flex;
 		align-items: center;
 		position: relative;

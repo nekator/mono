@@ -1,3 +1,5 @@
+import { MultiSelectComponent } from '../components/multi-select/multi-select.component';
+
 import { Routes } from '@angular/router';
 import { SwitchComponent } from '../components/switch/switch.component';
 import { TabsComponent } from '../components/tabs/tabs.component';
@@ -41,6 +43,8 @@ export const getSortedNavigationItems = (navigationItems: NavItem[]): any[] =>
 	);
 
 export const NAVIGATION_ITEMS: NavItem[] = [
+{ path: 'multi-select', label: 'MultiSelect', component: MultiSelectComponent },
+
 	{
 		path: '06',
 		label: '06 Feedback',

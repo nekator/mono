@@ -1,3 +1,5 @@
+import MultiSelect from '../components/multi-select/MultiSelect.vue';
+
 import type { RouteRecordRaw } from 'vue-router';
 import { markRaw } from 'vue';
 import Switch from '../components/switch/Switch.vue';
@@ -37,6 +39,8 @@ export type NavItem = {
 };
 
 export const getSortedNavigationItems = (navigationItems: NavItem[]): any[] =>
+{ path: '/multi-select', label: 'MultiSelect', component: MultiSelect },
+
 	navigationItems.sort((a: NavItem, b: NavItem) =>
 		a.path.localeCompare(b.path)
 	);

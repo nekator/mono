@@ -30,6 +30,25 @@ export type Component = {
 
 export const getComponents = (): Component[] => [
 	{
+		name: 'multi-select',
+		config: {
+			vue: {
+				vModel: [{ modelValue: 'value', binding: ':value' }]
+			},
+			angular: {
+				controlValueAccessor: 'value'
+			},
+			react: {
+				containsFragmentMap: true
+			}
+		},
+		overwrites: {
+			react: [
+				{ from: 'key={uuid()}', to: 'key={getOptionLabel(option)}' }
+			]
+		}
+	},
+	{
 		name: 'switch',
 		config: {
 			vue: {
