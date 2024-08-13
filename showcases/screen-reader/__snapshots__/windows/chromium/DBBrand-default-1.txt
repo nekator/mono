@@ -1,1 +1,1 @@
-["(Default) With Logo No Logo","Unlabeled graphic, logo. To get missing image descriptions, open the context menu.","Custom Logo"]
+["(Default) With Logo No Logo","this is fancy placeholder logo.","Custom Logo"]
