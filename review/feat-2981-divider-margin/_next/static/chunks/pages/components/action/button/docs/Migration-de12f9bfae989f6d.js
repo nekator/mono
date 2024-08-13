@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6005],{3481:function(n,o,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/action/button/docs/Migration",function(){return _(99287)}])}},function(n){n.O(0,[9287,2888,9774,179],function(){return n(n.s=3481)}),_N_E=n.O()}]);
