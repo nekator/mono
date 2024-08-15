@@ -14,6 +14,7 @@ test.describe('DBCheckbox', () => {
 			await screenReader?.next(); // Focus checkbox 1
 			await screenReader?.next(); // Focus checkbox 1 label
 			await screenReader?.clearSpokenPhraseLog();
+
 			await screenReader?.next(); // Focus checkbox 2
 			await screenReader?.next(); // Focus checkbox 2 label
 			await screenReader?.next(); // Focus checkbox 3
