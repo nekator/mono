@@ -23,7 +23,9 @@ const standardPhrases = [
 	'To select',
 	'To interact',
 	'Press Control',
-	'To begin interacting'
+	'To begin interacting',
+	'To display a',
+	'To move between items'
 ];
 
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
@@ -35,6 +37,8 @@ const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
 					!standardPhrases.some((string) => sPhrase.includes(string))
 			)
 			.join('. ')
+			// We need to replace specific phrases, as they are being reported differently on localhost and within CI/CD
+			.replaceAll('pop-up', 'pop up')
 	);
 
 export const generateSnapshot = async (
