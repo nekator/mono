@@ -10,7 +10,8 @@ test.describe('DBCard', () => {
 		url: './#/01/card?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				/* We don't have a focusable element, so we are initially on the browser (i) button */
+				await nvda.press('Shift+Tab'); // Jump into the website
 			}
 
 			const screenReader = voiceOver ?? nvda;
