@@ -11,15 +11,19 @@ test.describe('DBNotification', () => {
 		url: './#/06/notification?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
+				// Skip functional notification
 				await nvda?.next();
+				await nvda?.next();
+				await nvda?.clearSpokenPhraseLog();
+				await nvda?.next(); // Headline "Headline"
+				await nvda?.next(); // Text "regular"
+				await nvda?.next(); // Button "Close"
+			} else if (voiceOver) {
+				await voiceOver?.next(); // Headline "Headline"
+				await voiceOver?.next(); // Text "functional"
+				await voiceOver?.next(); // Button "Close"
+				await voiceOver?.next(); // Article end
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.next(); // Headline "Headline"
-			await screenReader?.next(); // Text "functional"
-			await screenReader?.next(); // Button "Close"
-			await screenReader?.next(); // Article end
 		}
 	});
 });
