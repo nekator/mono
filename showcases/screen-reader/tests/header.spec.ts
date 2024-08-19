@@ -11,24 +11,30 @@ test.describe('DBHeader', () => {
 		url: './#/01/header?page=tonality',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				await nvda?.previous(); // Link "Imprint"
+				await nvda?.next(); // Link "Help"
+				await nvda?.next(); // DBHeader
+				await nvda?.next(); // Link "Functional"
+				await nvda?.next(); // Link "Functional disabled"
+				await nvda?.next(); // Button "Search"
+				await nvda?.next(); // Button "Profile"
+				await nvda?.next(); // Button "Notification"
+				await nvda?.next(); // Button "Help"
+			} else if (voiceOver) {
+				await voiceOver?.next(); // Link "Imprint"
+				await voiceOver?.next(); // Link "Help"
+				await voiceOver?.next(); // DBHeader
+				await voiceOver?.next(); // Navigation "Functional"
+				await voiceOver?.next(); // List
+				await voiceOver?.next(); // Link "Functional"
+				await voiceOver?.next(); // Link dimmed "Functional disabled"
+				await voiceOver?.next(); // List end
+				await voiceOver?.next(); // Navigation end
+				await voiceOver?.next(); // Button "Search"
+				await voiceOver?.next(); // Button "Profile"
+				await voiceOver?.next(); // Button "Notification"
+				await voiceOver?.next(); // Button "Help"
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.next(); // Link "Imprint"
-			await screenReader?.next(); // Link "Help"
-			await screenReader?.next(); // DBHeader
-			await screenReader?.next(); // Navigation "Functional"
-			await screenReader?.next(); // List
-			await screenReader?.next(); // Link "Functional"
-			await screenReader?.next(); // Link dimmed "Functional disabled"
-			await screenReader?.next(); // List end
-			await screenReader?.next(); // Navigation end
-			await screenReader?.next(); // Button "Search"
-			await screenReader?.next(); // Button "Profile"
-			await screenReader?.next(); // Button "Notification"
-			await screenReader?.next(); // Button "Help"
 		}
 	});
 });
