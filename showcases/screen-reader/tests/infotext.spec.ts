@@ -10,13 +10,14 @@ test.describe('DBInfotext', () => {
 		url: './#/04/infotext?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				/* We don't have a focusable element, so we are initially on the browser (i) button */
+				await nvda.press('Shift+Tab'); // Jump into the website -> infotext "Functional"
+				await nvda?.clearSpokenPhraseLog();
+				await nvda?.next(); // Reading all infotext together
+			} else if (voiceOver) {
+				await voiceOver?.previous(); // Infotext "Functional"
+				await voiceOver?.next(); // Infotext "(Default) Regular"
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.previous(); // Infotext "Functional"
-			await screenReader?.next(); // Infotext "(Default) Regular"
 		}
 	});
 });
