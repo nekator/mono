@@ -12,11 +12,8 @@ test.describe('DBNotification', () => {
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
 				// Skip functional notification
-				await nvda?.next();
-				await nvda?.next();
-				await nvda?.clearSpokenPhraseLog();
-				await nvda?.next(); // Headline "Headline"
-				await nvda?.next(); // Text "regular"
+				await nvda?.previous(); // Headline "Headline"
+				await nvda?.next(); // Text "functional"
 				await nvda?.next(); // Button "Close"
 			} else if (voiceOver) {
 				await voiceOver?.next(); // Headline "Headline"
