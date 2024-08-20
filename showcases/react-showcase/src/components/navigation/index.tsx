@@ -22,11 +22,9 @@ const getNavigation = ({ children }: DBNavigationProps) => {
 			</DBInfotext>
 			<DBNavigation labelledBy={labelID}>
 				<DBNavigationItem
-					active
 					subNavigation={
 						<>
 							<DBNavigationItem
-								active
 								subNavigation={
 									<>
 										<DBNavigationItem active>

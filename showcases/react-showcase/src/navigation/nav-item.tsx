@@ -18,11 +18,11 @@ const NavItem = ({ navItem }: { navItem: NavigationItem }) => {
 			return;
 		}
 
-		setIsActive(
-			navItem.path === ''
-				? pathname === '/'
-				: pathname.includes(navItem.path)
-		);
+		const standardizedItemPath = navItem.path.startsWith('/')
+			? navItem.path
+			: `/${navItem.path}`;
+
+		setIsActive(standardizedItemPath === pathname);
 	}, [pathname]);
 
 	return (
