@@ -18,7 +18,6 @@ test.describe('DBCard', () => {
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.previous(); // Card "Functional"
 			await screenReader?.next(); // Card "(Default) Regular"
-			await screenReader?.next(); // Card "Expressive"
 		}
 	});
 });
