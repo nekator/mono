@@ -11,15 +11,15 @@ import { DBNavigation, DBNavigationItem } from "@db-ui/react-components";
 const App = () => (
 	<DBNavigation>
 		<DBNavigationItem
-			active
 			slotSubNavigation={
 				<>
 					<DBNavigationItem
-						active
 						subNavigation={
 							<>
-								<DBNavigationItem active>
-									<a href="#">Sub-Sub-Navi-Item 1</a>
+								<DBNavigationItem>
+									<a href="#" aria-current="page">
+										Sub-Sub-Navi-Item 1
+									</a>
 								</DBNavigationItem>
 								<DBNavigationItem>
 									<a href="#">Sub-Sub-Navi-Item 2</a>
