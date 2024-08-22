@@ -13,11 +13,6 @@ import { NavigationItemSafeTriangle } from '../../utils/navigation';
 
 export interface DBNavigationItemDefaultProps {
 	/**
-	 * Indicator for active navigation item (bold font).
-	 */
-	active?: boolean;
-
-	/**
 	 * The disabled attribute can be set to [keep a user from clicking on the item](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#disabled).
 	 */
 	disabled?: boolean;

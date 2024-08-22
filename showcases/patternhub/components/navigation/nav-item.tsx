@@ -1,4 +1,4 @@
-import { type Router, useRouter } from 'next/router';
+import { type NextRouter, type Router, useRouter } from 'next/router';
 import Link from 'next/link';
 import { DBNavigationItem } from '../../../../output/react/src';
 import type { NavigationItem } from '../../data/routes';
@@ -6,7 +6,7 @@ import type { NavigationItem } from '../../data/routes';
 const isRouteActive = (
 	pathname: string,
 	navItem: NavigationItem,
-	router: Router
+	router: NextRouter
 ): boolean => {
 	// Route is defined by a file within subdirectory of "pages"
 	if (!router.query.slug) {
@@ -27,7 +27,6 @@ const NavItem = ({ navItem }: { navItem: NavigationItem }) => {
 
 	return (
 		<DBNavigationItem
-			active={isActive}
 			backButtonText={`Back to ${navItem.label}`}
 			subNavigation={
 				navItem.subNavigation && (
@@ -49,7 +48,8 @@ const NavItem = ({ navItem }: { navItem: NavigationItem }) => {
 			) : (
 				<Link
 					key={`router-path-${navItem.path}`}
-					href={navItem.path ?? ''}>
+					href={navItem.path ?? ''}
+					aria-current={isActive ? 'page' : undefined}>
 					{navItem.label}
 				</Link>
 			)}
