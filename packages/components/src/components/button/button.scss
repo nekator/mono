@@ -83,8 +83,8 @@
 	}
 
 	&[data-variant="outlined"],
-	&:not([data-variant="filled"]),
-	&:not([data-variant="brand"]),
+	&:not([data-variant]),
+	&[data-variant=""],
 	&[data-variant="ghost"] {
 		background-color: colors.$db-current-color-bg-transparent-full-enabled;
 	}
