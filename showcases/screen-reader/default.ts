@@ -13,22 +13,7 @@ import {
 	type RunTestType,
 	type ScreenReaderTestType
 } from './data';
-
-const translations: Record<string, string[]> = {
-	button: ['Schalter'],
-	edit: ['Eingabefeld'],
-	'radio button': ['Auswahlschalter'],
-	blank: ['Leer'],
-	checked: ['aktiviert'],
-	' of ': [' von '],
-	clickable: ['anklickbar'],
-	'has auto complete': ['mit Auto Vervollständigung'],
-	unknown: ['Unbekannt'],
-	dialog: ['Dialogfeld'],
-	document: ['Dokument'],
-	collapsed: ['reduziert'],
-	expanded: ['erweitert']
-};
+import { translations } from './translations';
 
 const standardPhrases = [
 	'You are currently',
@@ -38,6 +23,9 @@ const standardPhrases = [
 	'To select',
 	'To interact',
 	'Press Control',
+	'To begin interacting',
+	'To display a',
+	'To move between items',
 	'To expand'
 ];
 
@@ -50,6 +38,8 @@ const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
 					!standardPhrases.some((string) => sPhrase.includes(string))
 			)
 			.join('. ')
+			// We need to replace specific phrases, as they are being reported differently on localhost and within CI/CD
+			.replaceAll('pop-up', 'pop up')
 	);
 
 export const generateSnapshot = async (
