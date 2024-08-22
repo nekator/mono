@@ -13,20 +13,7 @@ import {
 	type RunTestType,
 	type ScreenReaderTestType
 } from './data';
-
-const translations: Record<string, string[]> = {
-	button: ['Schalter'],
-	edit: ['Eingabefeld'],
-	'radio button': ['Auswahlschalter'],
-	blank: ['Leer'],
-	checked: ['aktiviert'],
-	' of ': [' von '],
-	clickable: ['anklickbar'],
-	'has auto complete': ['mit Auto Vervollständigung'],
-	unknown: ['Unbekannt'],
-	dialog: ['Dialogfeld'],
-	document: ['Dokument']
-};
+import { translations } from './translations';
 
 const standardPhrases = [
 	'You are currently',
@@ -35,7 +22,10 @@ const standardPhrases = [
 	'To click',
 	'To select',
 	'To interact',
-	'Press Control'
+	'Press Control',
+	'To begin interacting',
+	'To display a',
+	'To move between items'
 ];
 
 const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
@@ -47,6 +37,8 @@ const cleanSpeakInstructions = (phraseLog: string[]): string[] =>
 					!standardPhrases.some((string) => sPhrase.includes(string))
 			)
 			.join('. ')
+			// We need to replace specific phrases, as they are being reported differently on localhost and within CI/CD
+			.replaceAll('pop-up', 'pop up')
 	);
 
 export const generateSnapshot = async (
@@ -134,6 +126,7 @@ export const testDefault = (defaultTestType: DefaultTestType) => {
 			'&color=neutral-bg-basic-level-1&density=regular'
 	};
 
+	const trimTitleForShortSnapshotName = title.slice(0, 10);
 	if (isWin()) {
 		test?.(title, async ({ page, nvda }, { retry }) => {
 			await runTest({
