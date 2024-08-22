@@ -32,10 +32,11 @@ test.describe('DBAccordion', () => {
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.next(); // Focus: "item 1"
+			await screenReader?.next(); // Focus: "item 2"
+			await screenReader?.previous(); // Focus: "item 1"
 			await screenReader?.act(); // Interact: "item 1"
 			await screenReader?.next(); // Focus: "content 1"
 			await screenReader?.next(); // Focus: "item 2"
-			await screenReader?.next(); // Focus: "item 3"
 		},
 		postTestFn
 	});
