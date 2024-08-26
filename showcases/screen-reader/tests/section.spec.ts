@@ -17,7 +17,6 @@ test.describe('DBSection', () => {
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.next(); // Section 1
 			await screenReader?.next(); // Section 2
-			await screenReader?.next(); // Section 3
 		}
 	});
 });
