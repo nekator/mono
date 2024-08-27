@@ -15,7 +15,7 @@ test.describe('DBSection', () => {
 
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.next(); // Section 1
+			await screenReader?.previous(); // Section 1
 			await screenReader?.next(); // Section 2
 		}
 	});
