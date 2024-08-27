@@ -16,11 +16,11 @@ test.describe('DBSelect', () => {
 
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
-			// Await screenReader?.previous(); // Badge inline
 			await screenReader?.next(); //
 			await screenReader?.act(); //
-			await screenReader?.next(); //
-			await screenReader?.next(); //
+			await screenReader?.press('ArrowDown'); //
+			await screenReader?.press('ArrowDown'); //
+			await screenReader?.act(); //
 			// await screenReader?.next(); //
 			// await screenReader?.next(); //
 		}
