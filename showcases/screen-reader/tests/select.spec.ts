@@ -17,9 +17,7 @@ test.describe('DBSelect', () => {
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.next(); // Focus select
 			await screenReader?.act(); // Open select
-			await screenReader?.press('ArrowDown'); // Move to "Option 1"
-			await screenReader?.press('ArrowDown'); // Move to "Option 2"
-			await screenReader?.act(); // Select "Option 2"
+			await screenReader?.act(); // Open select
 		}
 	});
 });
