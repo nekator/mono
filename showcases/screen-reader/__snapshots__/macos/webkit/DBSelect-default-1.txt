@@ -1,0 +1,1 @@
+["Label Functional pop up button","menu 3 items ✓. To choose this menu item, press Control-Option-Space","Option 1. To choose this menu item, press Control-Option-Space","Option 2. To choose this menu item, press Control-Option-Space","To choose this menu item, press Control-Option-Space. Closing menu Option 2 Label Functional pop up button"]
