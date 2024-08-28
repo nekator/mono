@@ -1,5 +1,0 @@
-["Label Functional pop up button",
-"menu 3 items ✓. To choose this menu item, press Control-Option-Space. To close this menu, press Escape.",
-"Option 1. To choose this menu item, press Control-Option-Space. To close this menu, press Escape.",
-"Option 2. To choose this menu item, press Control-Option-Space. To close this menu, press Escape.",
-"To choose this menu item, press Control-Option-Space. To close this menu, press Escape.. Closing menu Option 2 Label Functional pop up button"]
