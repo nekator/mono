@@ -6,7 +6,8 @@ test.describe('DBSwitch', () => {
 	testDefault({
 		test,
 		title: 'default',
-		description: 'should toggle, should not toggle disabled',
+		description:
+			'should toggle switches, should not toggle disabled switch',
 		url: './#/03/switch?page=states',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
