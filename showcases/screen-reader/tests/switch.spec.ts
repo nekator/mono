@@ -11,20 +11,22 @@ test.describe('DBSwitch', () => {
 		url: './#/03/switch?page=states',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				await nvda?.previous(); // Focus "switch 1"
+				await nvda?.act(); // Interact "switch 1"
+				await nvda?.next(); // Focus "switch 2"
+				await nvda?.act(); // Interact "switch 2"
+				await nvda?.next(); // Focus "switch 3"
+			} else if (voiceOver) {
+				await voiceOver?.previous(); // Focus "switch 1"
+				await voiceOver?.act(); // Interact "switch 1"
+				await voiceOver?.next(); // Focus "switch 1 inline text"
+				await voiceOver?.next(); // Focus "switch 2"
+				await voiceOver?.act(); // Interact "switch 1"
+				await voiceOver?.next(); // Focus "switch 2 inline text"
+				await voiceOver?.next(); // Focus "switch 3"
+				await voiceOver?.act(); // Interact "switch 1"
+				await voiceOver?.next(); // Focus "switch 3 inline text"
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.previous(); // Focus "switch 1"
-			await screenReader?.act(); // Interact "switch 1"
-			await screenReader?.next(); // Focus "switch 1 inline text"
-			await screenReader?.next(); // Focus "switch 2"
-			await screenReader?.act(); // Interact "switch 1"
-			await screenReader?.next(); // Focus "switch 2 inline text"
-			await screenReader?.next(); // Focus "switch 3"
-			await screenReader?.act(); // Interact "switch 1"
-			await screenReader?.next(); // Focus "switch 3 inline text"
 		}
 	});
 	testDefault({
@@ -34,16 +36,16 @@ test.describe('DBSwitch', () => {
 		url: './#/03/switch?page=visual+aid',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				await nvda?.previous(); // Focus "switch 1"
+				await nvda?.next(); // Focus "switch 2"
+				await nvda?.act(); // Interact "switch 2"
+			} else if (voiceOver) {
+				await voiceOver?.previous(); // Focus "switch 1"
+				await voiceOver?.next(); // Focus "switch 1 inline text"
+				await voiceOver?.next(); // Focus "switch 2"
+				await voiceOver?.act(); // Interact "switch 2"
+				await voiceOver?.next(); // Focus "switch 2"
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.previous(); // Focus "switch 1"
-			await screenReader?.next(); // Focus "switch 1 inline text"
-			await screenReader?.next(); // Focus "switch 2"
-			await screenReader?.act(); // Interact "switch 2"
-			await screenReader?.next(); // Focus "switch 2"
 		}
 	});
 });
