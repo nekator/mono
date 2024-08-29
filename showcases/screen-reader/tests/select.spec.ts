@@ -10,16 +10,24 @@ test.describe('DBSelect', () => {
 		url: './#/03/select?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				await nvda?.press('Tab'); // Focus select
+				await nvda?.act(); // Open select
+				await nvda?.next(); // Option 1
+				await nvda?.next(); // Option 2
+			} else if (voiceOver) {
+				await voiceOver?.clearSpokenPhraseLog();
+				await voiceOver?.next(); // Focus select
+				await voiceOver?.act(); // Open select
+				await voiceOver?.press('ArrowDown'); // Move to "Option 1"
+				await voiceOver?.press('ArrowDown'); // Move to "Option 2"
+				await voiceOver?.act(); // Select "Option 2"
 			}
 
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.next(); // Focus select
 			await screenReader?.act(); // Open select
-			await screenReader?.press('ArrowDown'); // Move to "Option 1"
-			await screenReader?.press('ArrowDown'); // Move to "Option 2"
-			await screenReader?.act(); // Select "Option 2"
+			await screenReader?.act(); // Open select
 		}
 	});
 });
