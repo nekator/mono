@@ -10,14 +10,15 @@ test.describe('DBSelect', () => {
 		url: './#/03/select?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
-				await nvda?.next();
+				await nvda?.press('Tab'); // Focus select
+				await nvda?.act(); // Open select
+				await nvda?.next(); // Option 1
+				await nvda?.next(); // Option 2
+			} else if (voiceOver) {
+				await voiceOver?.next(); // Focus select
+				await voiceOver?.act(); // Open select
+				await voiceOver?.act(); // Open select
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.next(); // Focus select
-			await screenReader?.act(); // Open select
-			await screenReader?.act(); // Open select
 		}
 	});
 });
