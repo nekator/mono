@@ -3,34 +3,46 @@ import {
 	CloseEventState,
 	FormMessageProps,
 	FormProps,
+	FormState,
 	GlobalProps,
 	GlobalState,
 	InitializedState,
 	InnerCloseButtonProps
 } from '../../shared/model';
 import { DBSelectOptionType } from '../select/model';
+import { DBMultiSelectHeaderLabelProps } from '../multi-select-header/model';
+import { DBMultiSelectFormFieldDefaultProps } from '../multi-select-form-field/model';
 
-export type MultiSelectOptionType = Omit<
-	DBSelectOptionType,
-	'selected' | 'value' | 'options'
-> & {
-	value: string;
+export type MultiSelectOptionType = {
+	/**
+	 * Identifier for option
+	 */
+	id?: string;
 
 	/**
-	 * If you want to use optgroup you can nest options here.
+	 * Disables this option
 	 */
-	options?: MultiSelectOptionType[];
+	disabled?: boolean;
+
+	/**
+	 * Selects this option
+	 */
+	selected?: boolean;
+
+	/**
+	 * If the value is different from the label you want to show to the user.
+	 */
+	label?: string;
+
+	value?: string;
+
+	isGroup?: boolean;
 };
 
 export const MultiSelectDisplayList = ['amount', 'text', 'tag'] as const;
 export type MultiSelectDisplayType = (typeof MultiSelectDisplayList)[number];
 
 export interface DBMultiSelectDefaultProps {
-	/**
-	 * Popover header - deselect all checkbox label
-	 */
-	deSelectAllLabel?: string;
-
 	/**
 	 * Change the display type for values shown in multi select
 	 */
@@ -53,28 +65,22 @@ export interface DBMultiSelectDefaultProps {
 	 */
 	noOptionsText?: string;
 	/**
-	 * Popover header - search custom event handling (use this for performance reasons)
+	 * Popover - hint if data has to be loaded
 	 */
-	onSearch?: (event: ChangeEvent<HTMLInputElement>) => void;
+	loadingText?: string;
+	/**
+	 * Popover - enable loading notification and spinner
+	 */
+	isLoading?: boolean;
+	/**
+	 * Popover - enable no options notification
+	 */
+	hasNoOptions?: boolean;
+
 	/**
 	 * You should pass in the options as an array.
 	 */
 	options?: MultiSelectOptionType[];
-
-	/**
-	 * Popover header - search label
-	 */
-	searchLabel?: string;
-
-	/**
-	 * Popover header - search placeholder
-	 */
-	searchPlaceholder?: string;
-
-	/**
-	 * Popover header - select all checkbox label
-	 */
-	selectAllLabel?: string;
 
 	value?: string[];
 
@@ -82,17 +88,21 @@ export interface DBMultiSelectDefaultProps {
 }
 
 export type DBMultiSelectProps = GlobalProps &
+	InnerCloseButtonProps &
+	DBMultiSelectHeaderLabelProps &
 	Omit<FormProps, 'value'> &
 	FormMessageProps &
-	InnerCloseButtonProps &
-	DBMultiSelectDefaultProps;
+	DBMultiSelectDefaultProps &
+	DBMultiSelectFormFieldDefaultProps;
 
 export interface DBMultiSelectDefaultState {
 	_values?: string[];
 	_options: MultiSelectOptionType[];
+	_hasNoOptions: boolean;
+	_labelId: string;
+	_placeholderId: string;
 	getOptionLabel: (option: MultiSelectOptionType) => string;
-	getOptionChecked: (option: MultiSelectOptionType) => boolean;
-	getSelectAllLabel: () => string;
+	getOptionChecked: (value: string) => boolean;
 	headerEnabled: boolean;
 	searchEnabled: boolean;
 	amountOptions: number;
@@ -100,9 +110,12 @@ export interface DBMultiSelectDefaultState {
 	handleSelectAll: () => void;
 	handleToggleOpen: () => void;
 	handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+	selectAllChecked: boolean;
+	selectAllIndeterminate: boolean;
 }
 
 export type DBMultiSelectState = DBMultiSelectDefaultState &
 	GlobalState &
+	FormState &
 	InitializedState &
 	CloseEventState;

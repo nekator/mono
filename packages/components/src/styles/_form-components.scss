@@ -59,9 +59,9 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 	}
 }
 
-@mixin placeholder-content() {
-	&::placeholder,
-	+ [id$="-placeholder"] {
+@mixin placeholder-content($selector) {
+	#{$selector}::placeholder,
+	[id$="-placeholder"] {
 		@content;
 	}
 }
@@ -99,13 +99,13 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 			);
 		}
 
+		@include placeholder-content($selector) {
+			transition: none;
+			opacity: 0;
+		}
+
 		#{$selector} {
 			@extend %db-overwrite-font-size-sm;
-
-			@include placeholder-content() {
-				transition: none;
-				opacity: 0;
-			}
 
 			@if ($selector == textarea) {
 				padding-block-start: $floating-label-size;
@@ -131,14 +131,12 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 				opacity: 1;
 			}
 
-			#{$selector} {
-				@include placeholder-content() {
-					@media screen and (prefers-reduced-motion: no-preference) {
-						transition: opacity #{variables.$db-transition-straight-emotional};
-					}
-
-					opacity: component.$default-disabled;
+			@include placeholder-content($selector) {
+				@media screen and (prefers-reduced-motion: no-preference) {
+					transition: opacity #{variables.$db-transition-straight-emotional};
 				}
+
+				opacity: component.$default-disabled;
 			}
 		}
 	}
@@ -264,7 +262,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 }
 
 @mixin set-required-label($selector) {
-	&:has(#{$selector}:required) {
+	&:has(#{$selector}:required, #{$selector}[data-required="true"]) {
 		&:is(label),
 		> label {
 			&::after {
@@ -299,6 +297,10 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 		@include get-validity-color($selector, "invalid");
 	}
 
+	@include placeholder-content($selector) {
+		opacity: component.$default-disabled;
+	}
+
 	#{$selector} {
 		@extend %db-overwrite-font-size-md;
 		@extend %default-interactive-component;
@@ -317,10 +319,6 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 				--db-form-component-padding-inline-end,
 				#{variables.$db-spacing-fixed-sm}
 			);
-
-		@include placeholder-content() {
-			opacity: component.$default-disabled;
-		}
 
 		@include helpers.hover {
 			background-color: colors.$db-adaptive-bg-basic-transparent-hovered;
@@ -360,7 +358,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 	}
 
 	// disabled
-	&:has(#{$selector}:disabled) {
+	&:has(#{$selector}:disabled, #{$selector}[data-disabled="true"]) {
 		// Decided against cursor: not-allowed, compare to e.g. https://phabricator.wikimedia.org/T121960
 		opacity: component.$default-disabled;
 		pointer-events: none;

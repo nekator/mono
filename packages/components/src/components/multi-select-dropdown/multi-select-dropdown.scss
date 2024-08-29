@@ -1,0 +1,22 @@
+@use "@db-ui/foundations/build/scss/variables";
+@use "../../styles/multi-select-components";
+
+.db-multi-select-dropdown {
+	position: absolute;
+	z-index: 2;
+	box-shadow: variables.$db-elevation-md;
+	inline-size: fit-content;
+	min-inline-size: multi-select-components.$min-size;
+	margin-block-end: variables.$db-spacing-fixed-md;
+	max-block-size: multi-select-components.$min-size;
+
+	.db-notification {
+		inline-size: 100%;
+	}
+
+	section {
+		padding-block: multi-select-components.$list-padding-block;
+		padding-inline: multi-select-components.$list-padding-inline;
+		overflow-y: auto;
+	}
+}

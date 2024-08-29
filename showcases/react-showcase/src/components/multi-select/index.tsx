@@ -27,9 +27,9 @@ const getMultiSelect = ({
 				selectAllLabel="Select all"
 				deSelectAllLabel="Deselect all"
 				searchLabel="Search"
-				noOptionsText="No matching filter"
+				noOptionsText="No matching filter"/*
 				value={mValue}
-				onChange={(val) => setValue(val)}
+				onChange={(val) => setValue(val)}*/
 			/>
 		</form>
 	);

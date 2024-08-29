@@ -1,0 +1,40 @@
+@use "@db-ui/foundations/build/scss/variables";
+@use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/helpers";
+@use "../../styles/form-components";
+@use "../../styles/multi-select-components";
+
+
+.db-multi-select-header {
+	@include helpers.divider("bottom");
+
+	display: flex;
+	background-color: colors.$db-adaptive-bg-basic-level-2-default;
+	padding-block: multi-select-components.$list-padding-block;
+	padding-inline: calc(
+		#{multi-select-components.$list-padding-inline} + #{multi-select-components.$list-item-padding-inline}
+	);
+	border-start-start-radius: variables.$db-border-radius-xs;
+	border-start-end-radius: variables.$db-border-radius-xs;
+	justify-content: space-between;
+	gap: variables.$db-spacing-fixed-md;
+	align-items: center;
+	text-wrap: nowrap;
+
+	.db-input {
+		display: none;
+	}
+
+	&[data-variant="search"] {
+		.db-checkbox {
+			label {
+				font-size: 0;
+			}
+		}
+
+		.db-input {
+			display: flex;
+			inline-size: max-content;
+		}
+	}
+}

@@ -14,17 +14,25 @@ import {
 	MultiSelectOptionType
 } from './model';
 import { cls, uuid } from '../../utils';
-import { DBSelect } from '../select';
-import { DBButton } from '../button';
 import {
-	DEFAULT_CLOSE_BUTTON,
+	DEFAULT_INVALID_MESSAGE,
+	DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
 	DEFAULT_LABEL,
-	DEFAULT_MESSAGE
+	DEFAULT_LABEL_ID_SUFFIX,
+	DEFAULT_MESSAGE,
+	DEFAULT_MESSAGE_ID_SUFFIX,
+	DEFAULT_PLACEHOLDER_ID_SUFFIX,
+	DEFAULT_VALID_MESSAGE,
+	DEFAULT_VALID_MESSAGE_ID_SUFFIX
 } from '../../shared/constants';
-import { DBInput } from '../input';
 import { ChangeEvent } from '../../shared/model';
+import { DBMultiSelectList } from '../multi-select-list';
+import { DBMultiSelectListItem } from '../multi-select-list-item';
+import { DBMultiSelectDropdown } from '../multi-select-dropdown';
+import { DBMultiSelectHeader } from '../multi-select-header';
+import { DBNotification } from '../notification';
 import { DBInfotext } from '../infotext';
-import { DBTooltip } from '../tooltip';
+import { DBMultiSelectFormField } from '../multi-select-form-field';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -33,24 +41,32 @@ useMetadata({
 export default function DBMultiSelect(props: DBMultiSelectProps) {
 	// This is used as forwardRef
 	const ref = useRef<HTMLDivElement>(null);
-	const selectRef = useRef<HTMLSelectElement>(null);
 	const detailsRef = useRef<HTMLDetailsElement>(null);
-	const selectAllRef = useRef<HTMLInputElement>(null);
 	// jscpd:ignore-start
 	const state = useStore<DBMultiSelectState>({
 		_id: 'multi-select-' + uuid(),
+		_labelId: this._id + DEFAULT_LABEL_ID_SUFFIX,
+		_messageId: this._id + DEFAULT_MESSAGE_ID_SUFFIX,
+		_validMessageId: this._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX,
+		_invalidMessageId: this._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
+		_placeholderId: this._id + DEFAULT_PLACEHOLDER_ID_SUFFIX,
+		// Workaround for Vue output: TS for Vue would think that it could be a function, and by this we clarify that it's a string
+		_descByIds: '',
+		_value: '',
 		initialized: false,
+		_voiceOverFallback: '',
 		headerEnabled: false,
 		searchEnabled: false,
 		amountOptions: 0,
 		_values: [],
 		_options: [],
+		_hasNoOptions: false,
 		getOptionLabel: (option: MultiSelectOptionType) => {
 			return option.label ?? option.value?.toString();
 		},
-		getOptionChecked: (option: MultiSelectOptionType) => {
+		getOptionChecked: (value: string) => {
 			if (state._values && state._values.includes) {
-				return state._values?.includes(option.value);
+				return state._values?.includes(value);
 			}
 
 			return false;
@@ -79,7 +95,9 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		},
 		handleSelect: (value: string) => {
 			if (state._values?.includes(value)) {
-				state._values = state._values?.filter((v) => v !== value);
+				state._values = state._values?.filter(
+					(v: string) => v !== value
+				);
 			} else {
 				state._values = [...state._values, value];
 			}
@@ -89,16 +107,9 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 				state._values = [];
 			} else {
 				state._values = props.options
-					? props.options.reduce((previousValue, currentValue) => {
-							const values =
-								currentValue.options &&
-								currentValue.options.length !== 0
-									? currentValue.options.map(
-											(opt) => opt.value
-										)
-									: [currentValue.value];
-							return [...previousValue, ...values];
-						}, [])
+					? props.options
+							.filter((option) => !option.isGroup)
+							.map((option) => option.value)
 					: [];
 			}
 		},
@@ -120,42 +131,21 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 			}
 		},
 		handleSearch: (event: ChangeEvent<HTMLInputElement>) => {
-			if (props.onSearch) {
-				props.onSearch(event);
-			} else {
-				const filterText = (event.target as HTMLInputElement).value;
-				state._options =
-					!props.options || !filterText || filterText.length === 0
-						? props.options
-						: props.options.filter(
-								(option) =>
-									state
-										.getOptionLabel(option)
-										.toLowerCase()
-										.includes(filterText.toLowerCase()) ||
-									(option.options &&
-										option.options.some((innerOption) =>
-											state
-												.getOptionLabel(innerOption)
-												.toLowerCase()
-												.includes(
-													filterText.toLowerCase()
-												)
-										))
-							);
-			}
+			const filterText = (event.target as HTMLInputElement).value;
+			state._options =
+				!props.options || !filterText || filterText.length === 0
+					? props.options
+					: props.options.filter(
+							(option) =>
+								!option.isGroup &&
+								state
+									.getOptionLabel(option)
+									.toLowerCase()
+									.includes(filterText.toLowerCase())
+						);
 		},
-		getSelectAllLabel: () => {
-			if (state.amountOptions === state._values?.length) {
-				return (
-					props.deSelectAllLabel ??
-					props.selectAllLabel ??
-					DEFAULT_LABEL
-				);
-			} else {
-				return props.selectAllLabel ?? DEFAULT_LABEL;
-			}
-		}
+		selectAllChecked: false,
+		selectAllIndeterminate: false
 	});
 	// jscpd:ignore-end
 
@@ -165,13 +155,51 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	});
 
 	onUpdate(() => {
-		if (state.initialized && selectRef) {
-			// We hide the select for screen readers it is only for sending the form
-			selectRef.setAttribute('aria-hidden', 'true');
+		if (state._id && state.initialized) {
+			const labelId = state._id + DEFAULT_LABEL_ID_SUFFIX;
+			const messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
+			const validMessageId = state._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX;
+			const invalidMessageId =
+				state._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX;
+			const placeholderId = state._id + DEFAULT_PLACEHOLDER_ID_SUFFIX;
+			state._labelId = labelId;
+			state._messageId = messageId;
+			state._validMessageId = validMessageId;
+			state._invalidMessageId = invalidMessageId;
+			state._placeholderId = placeholderId;
+
+			if (props.message) {
+				state._descByIds = `${labelId} ${messageId}`;
+			} else {
+				state._descByIds = `${labelId} ${placeholderId}`;
+			}
+
+			state.initialized = false;
 		}
-	}, [state.initialized, selectRef]);
+	}, [state._id, state.initialized]);
 
 	onUpdate(() => {
+		if (detailsRef) {
+			const summaries = detailsRef.getElementsByTagName('summary');
+			if (summaries && summaries.length > 0) {
+				summaries[0].setAttribute('aria-describedby', state._descByIds);
+			}
+		}
+	}, [detailsRef, state._descByIds]);
+
+	onUpdate(() => {
+		if (props.hasNoOptions !== undefined) {
+			state._hasNoOptions = props.hasNoOptions;
+		} else if (state._options) {
+			state._hasNoOptions = state._options.length === 0;
+		}
+	}, [props.hasNoOptions, state._options]);
+
+	onUpdate(() => {
+		// Enable header if
+		// 1. User set it
+		// 2. User disables click outside
+		// 3. more than 5 options
 		state.headerEnabled =
 			props.enableHeader ||
 			(props.enableClickOutside !== undefined &&
@@ -183,243 +211,173 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		state.searchEnabled = props.enableSearch || state.amountOptions > 9;
 	}, [props.enableSearch, state.amountOptions]);
 
-	onUpdate(() => {
+	/*	onUpdate(() => {
 		if (
 			props.onChange &&
 			props.value !== undefined &&
 			props.value !== state._values
 		) {
-			//props.onChange(state._values);
-			console.log(state._values);
+			props.onChange(state._values);
 		}
-	}, [state._values, props.value, props.onChange]);
+	}, [state._values, props.value, props.onChange]);*/
 
-	onUpdate(() => {
+	/*onUpdate(() => {
 		if (props.value !== undefined && props.value !== state._values) {
 			state._values = props.value ?? [];
 			console.log(props.value, state._values);
 		}
-	}, [props.value, state._values]);
+	}, [props.value, state._values]);*/
 
 	onUpdate(() => {
-		if (selectAllRef) {
-			if (state._values?.length === 0) {
-				selectAllRef.indeterminate = false;
-				selectAllRef.checked = false;
-			} else if (state._values?.length === state.amountOptions) {
-				selectAllRef.indeterminate = false;
-				selectAllRef.checked = true;
-			} else {
-				selectAllRef.indeterminate = true;
-			}
+		if (state._values?.length === 0) {
+			state.selectAllChecked = false;
+			state.selectAllIndeterminate = false;
+		} else if (state._values?.length === state.amountOptions) {
+			state.selectAllIndeterminate = false;
+			state.selectAllChecked = true;
+		} else if (state._values) {
+			state.selectAllIndeterminate = true;
 		}
 	}, [state._values, state.amountOptions]);
 
 	onUpdate(() => {
 		state._options = props.options;
-		state.amountOptions = props.options
-			? props.options.reduce(
-					(
-						previousValue: number,
-						currentValue: MultiSelectOptionType
-					) => {
-						const amount =
-							currentValue.options &&
-							currentValue.options?.length > 0
-								? currentValue.options.length
-								: 1;
-						return previousValue + amount;
-					},
-					0
-				)
-			: 0;
+		state.amountOptions = props.options.filter(
+			(option) => !option.isGroup
+		).length;
 	}, [props.options]);
 
 	return (
 		<div
-			ref={ref}
 			id={state._id}
-			class={cls('db-multi-select', props.className)}>
-			<DBSelect
-				ref={selectRef}
-				id={state._id + 'hidden-select'}
-				label={props.label}
-				variant={props.variant}
-				options={props.options}
-				customValidity={props.customValidity}
-				required={props.required}
-				disabled={props.disabled}
-				name={props.name}
-				multiple
-				value={state._values}
-				autocomplete={props.autocomplete}
-				message={props.message}
-				validMessage={props.validMessage}
-				invalidMessage={props.invalidMessage}
-			/>
+			ref={ref}
+			class={cls('db-multi-select', props.className)}
+			data-header-enabled={state.headerEnabled}
+			data-notification-enabled={state._hasNoOptions ?? props.isLoading}>
+			<label id={state._labelId}>{props.label ?? DEFAULT_LABEL}</label>
 			<details ref={detailsRef}>
-				<summary
-					onClick={() => state.handleToggleOpen()}
-					id={state._id + '-placeholder'}>
-					<span>{props.placeholder ?? props.label}</span>
-				</summary>
-				<article className="db-card" data-spacing="none">
-					<header
-						data-enable-header={state.headerEnabled}
-						data-enable-search={state.searchEnabled}>
-						<div className="db-checkbox">
-							<label htmlFor={state._id + '-select-all'}>
-								{/*We set a form name based on id for not sending checkboxes to a wrapping form */}
-								<input
-									ref={selectAllRef}
-									id={state._id + '-select-all'}
-									form={state._id}
-									type="checkbox"
-									name={props.name}
-									value="select-all"
-									onChange={() => {
-										state.handleSelectAll();
-									}}
-								/>
-								{state.getSelectAllLabel()}
-								<Show when={state.searchEnabled}>
-									<DBTooltip placement="top-start">
-										{state.getSelectAllLabel()}
-									</DBTooltip>
-								</Show>
-							</label>
-						</div>
-						<DBInput
-							type="search"
-							variant="floating"
-							label={props.searchLabel ?? DEFAULT_LABEL}
-							placeholder={props.searchPlaceholder}
-							onChange={(
-								event: ChangeEvent<HTMLInputElement>
-							) => {
-								state.handleSearch(event);
-							}}
-						/>
-						<DBButton
-							id={props.closeButtonId}
-							icon="cross"
-							variant="ghost"
-							type="button"
-							noText
-							onClick={() => state.handleClose('close')}>
-							{props.closeButtonText ?? DEFAULT_CLOSE_BUTTON}
-							<DBTooltip placement="top-start">
-								{props.closeButtonText ?? DEFAULT_CLOSE_BUTTON}
-							</DBTooltip>
-						</DBButton>
-					</header>
-
-					<section>
-						<Show when={state._options.length === 0}>
-							<DBInfotext semantic="warning">
-								{props.noOptionsText ?? DEFAULT_MESSAGE}
-							</DBInfotext>
-						</Show>
-						<ul>
-							<For each={state._options}>
-								{(option: MultiSelectOptionType) => (
-									<Fragment key={option.value.toString()}>
-										<Show when={option.options}>
-											<li>
-												<span>
-													{state.getOptionLabel(
-														option
-													)}
-												</span>
-											</li>
-
-											<For each={option.options}>
-												{(
-													optgroupOption: MultiSelectOptionType
-												) => (
-													<li
-														key={optgroupOption.value.toString()}
-														className="db-checkbox">
-														<label
-															htmlFor={
-																state._id +
-																optgroupOption.value
-															}>
-															{/*We set a form name based on id for not sending checkboxes to a wrapping form */}
-															<input
-																id={
-																	state._id +
-																	optgroupOption.value
-																}
-																form={state._id}
-																type="checkbox"
-																name={
-																	props.name
-																}
-																checked={state.getOptionChecked(
-																	optgroupOption.value
-																)}
-																disabled={
-																	optgroupOption.disabled
-																}
-																value={
-																	optgroupOption.value
-																}
-																onChange={() => {
-																	state.handleSelect(
-																		optgroupOption.value
-																	);
-																}}
-															/>
-															{state.getOptionLabel(
-																optgroupOption
-															)}
-														</label>
-													</li>
+				{props.children}
+				<Show when={props.options}>
+					<DBMultiSelectFormField
+						onClick={() => state.handleToggleOpen()}>
+						<For
+							each={state._options.filter(
+								(option: MultiSelectOptionType) =>
+									!option.isGroup &&
+									state._values.includes(option.value)
+							)}>
+							{(option: MultiSelectOptionType) => (
+								<span>{state.getOptionLabel(option)}</span>
+							)}
+						</For>
+					</DBMultiSelectFormField>
+					<DBMultiSelectDropdown
+						header={
+							<DBMultiSelectHeader
+								variant={
+									state.searchEnabled ? 'search' : 'default'
+								}
+								closeButtonId={props.closeButtonId}
+								closeButtonText={props.closeButtonText}
+								deSelectAllLabel={props.deSelectAllLabel}
+								searchLabel={props.searchLabel}
+								searchPlaceholder={props.searchPlaceholder}
+								selectAllLabel={props.selectAllLabel}
+								checked={state.selectAllChecked}
+								indeterminate={state.selectAllIndeterminate}
+								onSelectAll={() => {
+									state.handleSelectAll();
+								}}
+								onSearch={(
+									event: ChangeEvent<HTMLInputElement>
+								) => {
+									state.handleSearch(event);
+								}}
+								onClose={() => {
+									state.handleClose('close');
+								}}
+							/>
+						}
+						notification={
+							<DBNotification
+								behaviour="permanent"
+								semantic={
+									state._hasNoOptions
+										? 'warning'
+										: 'informational'
+								}>
+								{(state._hasNoOptions
+									? props.noOptionsText
+									: props.loadingText) ?? DEFAULT_MESSAGE}
+							</DBNotification>
+						}>
+						<Show when={!state.notificationEnabled}>
+							<DBMultiSelectList>
+								<For each={state._options}>
+									{(option: MultiSelectOptionType) => (
+										<Fragment key={option.value.toString()}>
+											<DBMultiSelectListItem
+												groupLabel={
+													option.isGroup
+														? state.getOptionLabel(
+																option
+															)
+														: undefined
+												}
+												name={props.name}
+												checked={state.getOptionChecked(
+													option.value
 												)}
-											</For>
-										</Show>
-										<Show when={!option.options}>
-											<li className="db-checkbox">
-												<label
-													htmlFor={
-														state._id + option.value
-													}>
-													{/*We set a form name based on id for not sending checkboxes to a wrapping form */}
-													<input
-														id={
-															state._id +
-															option.value
-														}
-														form={state._id}
-														type="checkbox"
-														name={props.name}
-														checked={state.getOptionChecked(
-															option.value
-														)}
-														disabled={
-															option.disabled
-														}
-														value={option.value}
-														onChange={() => {
-															state.handleSelect(
-																option.value
-															);
-														}}
-													/>
-													{state.getOptionLabel(
-														option
-													)}
-												</label>
-											</li>
-										</Show>
-									</Fragment>
-								)}
-							</For>
-						</ul>
-					</section>
-				</article>
+												disabled={option.disabled}
+												value={option.value}
+												onChange={() => {
+													state.handleSelect(
+														option.value
+													);
+												}}>
+												{state.getOptionLabel(option)}
+											</DBMultiSelectListItem>
+										</Fragment>
+									)}
+								</For>
+							</DBMultiSelectList>
+						</Show>
+					</DBMultiSelectDropdown>
+				</Show>
 			</details>
+
+			<span id={state._placeholderId}>
+				{props.placeholder ?? props.label}
+			</span>
+			<Show when={props.message}>
+				<DBInfotext
+					size="small"
+					icon={props.messageIcon}
+					id={state._messageId}>
+					{props.message}
+				</DBInfotext>
+			</Show>
+
+			<DBInfotext
+				id={state._validMessageId}
+				size="small"
+				semantic="successful">
+				{props.validMessage ?? DEFAULT_VALID_MESSAGE}
+			</DBInfotext>
+
+			<DBInfotext
+				id={state._invalidMessageId}
+				size="small"
+				semantic="critical">
+				{props.invalidMessage ?? DEFAULT_INVALID_MESSAGE}
+			</DBInfotext>
+
+			{/* * https://www.davidmacd.com/blog/test-aria-describedby-errormessage-aria-live.html
+			 * Currently VoiceOver isn't supporting changes from aria-describedby.
+			 * This is an internal Fallback */}
+			<span data-visually-hidden="true" role="status">
+				{state._voiceOverFallback}
+			</span>
 		</div>
 	);
 }

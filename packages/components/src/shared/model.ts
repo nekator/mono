@@ -198,6 +198,14 @@ export const CustomValidityList = [
 	'no-validation'
 ] as const;
 export type CustomValidityType = (typeof CustomValidityList)[number];
+
+export type RequiredProps = {
+	/**
+	 * When the required attribute specified, the user will be required to fill the form element before submitting the form.
+	 */
+	required?: boolean;
+};
+
 export type FormProps = {
 	/**
 	 * Marks an input element as invalid (red) | valid(green) | no-validation(grey). Overwrites the :user-valid selector.
@@ -223,14 +231,10 @@ export type FormProps = {
 	name?: string;
 
 	/**
-	 * When the required attribute specified, the user will be required to fill the form element before submitting the form.
-	 */
-	required?: boolean;
-	/**
 	 * The value property is to receive results from the native form element.
 	 */
 	value?: any;
-};
+} & RequiredProps;
 
 export type FormTextProps = {
 	/**

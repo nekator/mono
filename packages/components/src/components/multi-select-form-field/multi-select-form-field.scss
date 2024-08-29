@@ -1,0 +1,10 @@
+.db-multi-select-form-field {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+
+	span:not(:first-child)::before {
+		content: ", ";
+	}
+}

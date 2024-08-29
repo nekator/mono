@@ -1,0 +1,84 @@
+@use "@db-ui/foundations/build/scss/variables";
+@use "@db-ui/foundations/build/scss/colors";
+@use "@db-ui/foundations/build/scss/helpers";
+@use "@db-ui/foundations/build/scss/fonts";
+@use "../../styles/multi-select-components";
+
+.db-multi-select-list-item {
+	display: flex;
+	inline-size: 100%;
+	block-size: 100%;
+	position: relative;
+	padding: multi-select-components.$list-item-padding-block
+		multi-select-components.$list-item-padding-inline;
+	background-color: colors.$db-adaptive-bg-basic-transparent-full-default;
+	border-radius: variables.$db-border-radius-xs;
+
+	&:has(> label) {
+		@include helpers.hover {
+			background-color: colors.$db-adaptive-bg-basic-transparent-hovered;
+		}
+
+		@include helpers.active {
+			background-color: colors.$db-adaptive-bg-basic-transparent-pressed;
+		}
+	}
+
+	&:has(> label > input:focus-within) {
+		@extend %focus-placeholder;
+	}
+
+	&:has(
+			span:is(
+					[data-group-label-poistion="bottom"],
+					:not([data-group-label-poistion])
+				)
+		) {
+		padding-block-end: 0;
+	}
+
+	span {
+		@extend %db-overwrite-font-size-sm;
+
+		color: colors.$db-adaptive-on-bg-basic-emphasis-90-default;
+	}
+
+	> label {
+		inline-size: 100%;
+
+		&:has(input:checked) {
+			font-weight: 700;
+		}
+
+		> input {
+			&::after {
+				position: absolute;
+				content: "";
+				inset-block: calc(
+					-1 * #{multi-select-components.$list-item-padding-block}
+				);
+				inset-inline: calc(
+					-1 * #{multi-select-components.$list-item-padding-inline}
+				);
+			}
+
+			// We revert interaction states for checkbox
+			@include helpers.hover {
+				background-color: colors.$db-adaptive-bg-basic-transparent-full-default;
+			}
+
+			@include helpers.active {
+				background-color: colors.$db-adaptive-bg-basic-transparent-full-default;
+			}
+
+			/* stylelint-disable a11y/no-outline-none */
+
+			/* We set focus on complete list element */
+
+			&:focus-visible {
+				outline: 0;
+			}
+			/* stylelint-enable a11y/no-outline-none */
+		}
+	}
+}

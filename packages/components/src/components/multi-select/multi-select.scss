@@ -3,197 +3,53 @@
 @use "@db-ui/foundations/build/scss/helpers";
 @use "../../styles/form-components";
 @use "../../styles/component";
-
-$list-padding-block: variables.$db-spacing-fixed-md;
-$list-padding-inline: variables.$db-spacing-fixed-sm;
-$list-item-padding-block: variables.$db-spacing-fixed-xs;
-$list-item-padding-inline: variables.$db-spacing-fixed-xs;
-$min-size: variables.$db-sizing-3xl;
-
-%tooltip-workaround {
-	.db-tooltip {
-		// set position for tooltip based on checkbox/button size
-		inset-inline-start: calc(
-			-1 * #{form-components.$label-size-height-md} - #{variables.$db-spacing-fixed-xs}
-		);
-	}
-}
+@use "../../styles/multi-select-components";
+@use "../../styles/select-components";
 
 .db-multi-select {
+	@extend %select-icon;
+	@extend %select-placeholder;
+
 	position: relative;
-	min-inline-size: $min-size;
+	min-inline-size: multi-select-components.$min-size;
 
-	.db-select {
-		select {
-			display: none;
-		}
+	@include form-components.set-default-form-component(summary);
 
+	[id$="-placeholder"] {
+		display: none;
+	}
+
+	&:has(summary:empty) {
 		[id$="-placeholder"] {
-			display: none;
-		}
-
-		label {
-			margin-block-end: calc(
-				#{variables.$db-spacing-fixed-2xs} + #{variables.$db-sizing-md}
-			);
+			display: block;
 		}
 	}
 
-	&[data-variant="hidden"] {
-		--db-label-visible-height: 0;
-		--db-label-visible-spacing: 1;
+	.db-multi-select-header {
+		display: none;
 	}
 
-	details {
-		@include form-components.set-default-form-component(summary);
+	.db-notification {
+		display: none;
+	}
 
-		position: absolute;
-		inset-inline: 0;
-		inset-block-start: calc(
-			0% +
-				(
-					#{form-components.$label-size-height-xs} + #{variables.$db-spacing-fixed-xs}
-				) * var(--db-label-visible-height, 1)
-		);
+	&:has(.db-multi-select-header) {
+		&:is([data-header-enabled="true"], :not([data-header-enabled])) {
+			.db-multi-select-dropdown {
+				block-size: multi-select-components.$min-size;
+			}
+		}
+	}
 
-		summary {
-			list-style: none;
+	&[data-header-enabled="true"] {
+		.db-multi-select-header {
 			display: flex;
-			align-items: center;
-			overflow-x: auto;
-
-			> span {
-				opacity: component.$default-disabled; // only if there is nothing selected
-			}
 		}
+	}
 
-		.db-card {
-			z-index: 2;
-			box-shadow: variables.$db-elevation-md;
-			inline-size: fit-content;
-			min-inline-size: $min-size;
-			margin-block-end: variables.$db-spacing-fixed-md;
-
-			header {
-				@include helpers.divider("bottom");
-
-				display: none;
-				background-color: colors.$db-adaptive-bg-basic-level-2-default;
-				padding-block: $list-padding-block;
-				padding-inline: calc(
-					#{$list-padding-inline} + #{$list-item-padding-inline}
-				);
-				border-start-start-radius: variables.$db-border-radius-xs;
-				border-start-end-radius: variables.$db-border-radius-xs;
-				justify-content: space-between;
-				gap: variables.$db-spacing-fixed-md;
-				align-items: center;
-				text-wrap: nowrap;
-
-				&[data-enable-header="true"] {
-					display: flex;
-				}
-
-				.db-input {
-					display: none;
-				}
-
-				&[data-enable-search="true"] {
-					.db-checkbox {
-						label {
-							@extend %tooltip-workaround;
-
-							font-size: 0;
-						}
-					}
-
-					.db-input {
-						display: flex;
-						inline-size: max-content;
-					}
-				}
-
-				.db-button {
-					@extend %tooltip-workaround;
-				}
-			}
-
-			section {
-				padding-block: $list-padding-block;
-				padding-inline: $list-padding-inline;
-				min-block-size: variables.$db-sizing-md;
-				max-block-size: variables.$db-sizing-3xl;
-				overflow-y: auto;
-
-				ul {
-					padding: 0;
-					margin: 0;
-					list-style: none;
-					display: flex;
-					flex-direction: column;
-					gap: variables.$db-spacing-fixed-sm;
-
-					li {
-						display: flex;
-						inline-size: 100%;
-						block-size: 100%;
-						position: relative;
-						padding: $list-item-padding-block
-							$list-item-padding-inline;
-						background-color: colors.$db-adaptive-bg-basic-transparent-full-default;
-						border-radius: variables.$db-border-radius-xs;
-
-						&:has(> label) {
-							@include helpers.hover {
-								background-color: colors.$db-adaptive-bg-basic-transparent-hovered;
-							}
-
-							@include helpers.active {
-								background-color: colors.$db-adaptive-bg-basic-transparent-pressed;
-							}
-						}
-
-						&:has(> label > input:focus-within) {
-							@extend %focus-placeholder;
-						}
-
-						span {
-							@extend %db-overwrite-font-size-sm;
-
-							color: colors.$db-adaptive-on-bg-basic-emphasis-90-default;
-						}
-
-						> label {
-							inline-size: 100%;
-
-							&:has(input:checked) {
-								font-weight: 700;
-							}
-
-							> input {
-								&::after {
-									position: absolute;
-									content: "";
-									inset-block: calc(
-										-1 * #{$list-item-padding-block}
-									);
-									inset-inline: calc(
-										-1 * #{$list-item-padding-inline}
-									);
-								}
-								/* stylelint-disable a11y/no-outline-none */
-
-								/* We set focus on complete list element */
-
-								&:focus-visible {
-									outline: 0;
-								}
-								/* stylelint-enable a11y/no-outline-none */
-							}
-						}
-					}
-				}
-			}
+	&[data-notification-enabled="true"] {
+		.db-notification {
+			display: grid;
 		}
 	}
 }

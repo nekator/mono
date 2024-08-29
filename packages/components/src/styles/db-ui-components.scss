@@ -34,7 +34,32 @@
 
 @forward "../components/multi-select/multi-select";
 
+@forward "../components/multi-select-form-field/multi-select-form-field";
+
+@forward "../components/multi-select-dropdown/multi-select-dropdown";
+
+@forward "../components/multi-select-header/multi-select-header";
+
+@forward "../components/multi-select-list/multi-select-list";
+
+@forward "../components/multi-select-list-item/multi-select-list-item";
+
 // angular-workaround
+dbmulti-select-list-item,
+db-multi-select-list-item,
+
+dbmulti-select-list,
+db-multi-select-list,
+
+dbmulti-select-header,
+db-multi-select-header,
+
+dbmulti-select-dropdown,
+db-multi-select-dropdown,
+
+dbmulti-select-form-field,
+db-multi-select-form-field,
+
 dbmulti-select,
 db-multi-select,
 

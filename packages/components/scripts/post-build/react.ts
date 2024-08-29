@@ -1,6 +1,7 @@
 import components from './components';
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { replaceInFileSync } from 'replace-in-file';
 
 import { runReplacements, transformToUpperComponentName } from '../utils';
 
@@ -27,6 +28,36 @@ const overwriteEvents = (tmp: boolean) => {
 		'export type InteractionEvent<T> = React.FocusEvent<T>;'
 	);
 	writeFileSync(modelFilePath, modelFileContent);
+};
+
+/**
+ * We want to make sure that the items inside a map containing a key
+ * @param input the file as string
+ */
+const overwriteFragmentMap = (input: string) => {
+	const splitInput = input.split('\n');
+	const fragmentsBelowMap: boolean[] = [];
+
+	return splitInput
+		.map((line: string, index: number) => {
+			if (line.includes('<>')) {
+				if (index !== 0 && splitInput[index - 1].includes('.map(')) {
+					fragmentsBelowMap.push(true);
+					return line.replace('<>', '<React.Fragment key={uuid()}>');
+				} else {
+					fragmentsBelowMap.push(false);
+				}
+			}
+			if (line.includes('</>')) {
+				const isFragment = fragmentsBelowMap.pop();
+				if (isFragment) {
+					return line.replace('</>', '</React.Fragment>');
+				}
+			}
+
+			return line;
+		})
+		.join('\n');
 };
 
 export default (tmp?: boolean) => {
@@ -119,16 +150,10 @@ export default (tmp?: boolean) => {
 					});
 				}
 
-				replacements.push(
-					{
-						from: /<>/g,
-						to: '<React.Fragment key={uuid()}>'
-					},
-					{
-						from: /<\/>/g,
-						to: '</React.Fragment>'
-					}
-				);
+				replaceInFileSync({
+					files: tsxFile,
+					processor: (input: string) => overwriteFragmentMap(input)
+				});
 			}
 
 			runReplacements(replacements, component, 'react', tsxFile);
