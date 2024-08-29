@@ -15,7 +15,6 @@ test.describe('DBTabs', () => {
 				await nvda.perform(
 					nvda.keyboardCommands.toggleBetweenBrowseAndFocusMode
 				);
-				await nvda?.perform(nvda.keyboardCommands.exitFocusMode);
 				await nvda?.clearSpokenPhraseLog();
 				await nvda?.next(); // Focus "tab 2"
 				await nvda?.act(); // Select "tab 2"
