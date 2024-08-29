@@ -22,12 +22,6 @@ test.describe('DBSelect', () => {
 				await voiceOver?.press('ArrowDown'); // Move to "Option 2"
 				await voiceOver?.act(); // Select "Option 2"
 			}
-
-			const screenReader = voiceOver ?? nvda;
-			await screenReader?.clearSpokenPhraseLog();
-			await screenReader?.next(); // Focus select
-			await screenReader?.act(); // Open select
-			await screenReader?.act(); // Open select
 		}
 	});
 });
