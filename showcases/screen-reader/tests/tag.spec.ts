@@ -9,6 +9,11 @@ test.describe('DBTag', () => {
 		description: 'should announce inline-texts',
 		url: './#/04/tag?&page=density',
 		async testFn(voiceOver, nvda) {
+			if (nvda) {
+				/* We don't have a focusable element, so we are initially on the browser (i) button */
+				await nvda.press('Shift+Tab'); // Jump into the website
+			}
+
 			const screenReader = voiceOver ?? nvda;
 			await screenReader?.clearSpokenPhraseLog();
 			await screenReader?.previous(); // Focus "tag 1"
