@@ -5,17 +5,12 @@
 	position: absolute;
 	z-index: 2;
 	box-shadow: variables.$db-elevation-md;
-	inline-size: fit-content;
+	inline-size: 100%;
 	min-inline-size: multi-select-components.$min-size;
 	margin-block-end: variables.$db-spacing-fixed-md;
-	max-block-size: multi-select-components.$min-size;
-
-	.db-notification {
-		inline-size: 100%;
-	}
 
 	section {
-		padding-block: multi-select-components.$list-padding-block;
+		padding-block: variables.$db-spacing-fixed-sm;
 		padding-inline: multi-select-components.$list-padding-inline;
 		overflow-y: auto;
 	}

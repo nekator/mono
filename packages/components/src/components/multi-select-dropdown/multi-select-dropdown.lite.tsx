@@ -28,9 +28,7 @@ export default function DBMultiSelectDropdown(
 			data-spacing="none">
 			<Slot name="header" />
 			<Slot name="notification"></Slot>
-			<section>
-				{props.children}
-			</section>
+			<section>{props.children}</section>
 		</article>
 	);
 }

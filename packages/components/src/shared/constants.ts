@@ -12,7 +12,9 @@ export const DEFAULT_DATALIST_ID_SUFFIX: string = '-datalist';
 export const DEFAULT_VALID_MESSAGE: string = 'TODO: Add a validMessage';
 export const DEFAULT_INVALID_MESSAGE: string = 'TODO: Add an invalidMessage';
 
+export const DEFAULT_REMOVE: string = 'Remove';
 export const DEFAULT_BACK: string = 'Back';
+export const DEFAULT_SELECTED: string = 'Selected';
 
 export const DEFAULT_CLOSE_BUTTON: string = 'Close Button';
 export const DENSITY_CONST: string = 'density';

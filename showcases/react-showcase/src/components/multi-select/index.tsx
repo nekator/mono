@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { DBMultiSelect } from '../../../../../output/react/src';
 import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/multi-select.json';
 import type { DBMultiSelectProps } from '../../../../../output/react/src/components/multi-select/model';
 import { getVariants } from '../data';
-import { useState } from 'react';
 
 const getMultiSelect = ({
 	children,
@@ -12,26 +12,30 @@ const getMultiSelect = ({
 	value,
 	required,
 	options,
-	placeholder
+	placeholder,
+	selectedType,
+	tagWrapping,
+	width
 }: DBMultiSelectProps) => {
 	const [mValue, setValue] = useState<string[] | undefined>(value);
 	return (
-		<form>
-			<DBMultiSelect
-				label={children}
-				options={options}
-				variant={variant}
-				message={message}
-				required={required}
-				placeholder={placeholder}
-				selectAllLabel="Select all"
-				deSelectAllLabel="Deselect all"
-				searchLabel="Search"
-				noOptionsText="No matching filter"/*
-				value={mValue}
-				onChange={(val) => setValue(val)}*/
-			/>
-		</form>
+		<DBMultiSelect
+			label={children}
+			options={options}
+			variant={variant}
+			message={message}
+			required={required}
+			placeholder={placeholder}
+			selectAllLabel="Select all"
+			deSelectAllLabel="Deselect all"
+			searchLabel="Search"
+			selectedType={selectedType}
+			tagWrapping={tagWrapping}
+			width={width}
+			noOptionsText="No matching filter" /*
+				Value={mValue}
+				onChange={(val) => setValue(val)} */
+		/>
 	);
 };
 

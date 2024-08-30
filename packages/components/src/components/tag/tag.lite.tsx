@@ -8,6 +8,7 @@ import {
 } from '@builder.io/mitosis';
 import { DBTagProps, DBTagState } from './model';
 import { cls } from '../../utils';
+import { DEFAULT_REMOVE } from '../../shared/constants';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -28,7 +29,7 @@ export default function DBTag(props: DBTagProps) {
 			}
 
 			// TODO: We should think this through again, if we would really like to have default and especially english, instead of german labels in here
-			return 'Remove tag';
+			return DEFAULT_REMOVE;
 		}
 	});
 

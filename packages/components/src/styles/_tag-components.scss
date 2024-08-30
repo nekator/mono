@@ -15,11 +15,29 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	);
 }
 
+%set-interactive-strong {
+	@extend %set-adaptive-strong-tag;
+
+	@include helpers.hover {
+		background-color: colors.$db-adaptive-bg-inverted-contrast-high-hovered;
+		border-color: colors.$db-adaptive-bg-inverted-contrast-high-hovered;
+	}
+
+	@include helpers.active {
+		background-color: colors.$db-adaptive-bg-inverted-contrast-high-pressed;
+		border-color: colors.$db-adaptive-bg-inverted-contrast-high-pressed;
+	}
+}
+
 @mixin get-tag-colors() {
 	background-color: colors.$db-adaptive-bg-basic-level-3-default;
 
 	&[data-emphasis="strong"] {
 		@extend %set-adaptive-strong-tag;
+
+		.db-tab-remove-button {
+			@extend %set-interactive-strong;
+		}
 	}
 
 	@each $name in colors.$variant-colors {
@@ -47,20 +65,6 @@ $interactive-selectors: "label, button:not(.db-tab-remove-button), a";
 	db-button > button,
 	a {
 		@content;
-	}
-}
-
-%set-interactive-strong {
-	@extend %set-adaptive-strong-tag;
-
-	@include helpers.hover {
-		background-color: colors.$db-adaptive-bg-inverted-contrast-high-hovered;
-		border-color: colors.$db-adaptive-bg-inverted-contrast-high-hovered;
-	}
-
-	@include helpers.active {
-		background-color: colors.$db-adaptive-bg-inverted-contrast-high-pressed;
-		border-color: colors.$db-adaptive-bg-inverted-contrast-high-pressed;
 	}
 }
 

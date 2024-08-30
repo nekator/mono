@@ -134,6 +134,107 @@
 		]
 	},
 	{
+		"name": "Requirement",
+		"examples": [
+			{
+				"name": "(Default) Optional",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label"
+				}
+			},
+			{
+				"name": "Required",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						}
+					],
+					"label": "Label",
+					"required": true
+				}
+			}
+		]
+	},
+	{
+		"name": "Selected type",
+		"examples": [
+			{
+				"name": "(Default) Text",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label"
+				}
+			},
+			{
+				"name": "Amount",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "amount"
+				}
+			},
+			{
+				"name": "Tag",
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "tag"
+				}
+			}
+		]
+	},
+	{
 		"name": "Examples",
 		"examples": [
 			{
@@ -252,6 +353,105 @@
 						}
 					],
 					"placeholder": "Placeholder"
+				}
+			}
+		]
+	},
+	{
+		"name": "Example tags",
+		"examples": [
+			{
+				"name": "Tag grow",
+				"style": { "width": "400px" },
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "tag",
+					"tagWrapping": "grow"
+				}
+			},
+			{
+				"name": "Tag overflow",
+				"style": { "width": "400px" },
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "tag",
+					"tagWrapping": "overflow"
+				}
+			},
+			{
+				"name": "Tag grow + fixed",
+				"style": { "width": "400px" },
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "tag",
+					"tagWrapping": "grow",
+					"width": "fixed"
+				}
+			},
+			{
+				"name": "Tag overflow + fixed",
+				"style": { "width": "400px" },
+				"props": {
+					"options": [
+						{
+							"value": "Option 1"
+						},
+						{
+							"value": "Option 2"
+						},
+						{
+							"value": "Option 3"
+						},
+						{
+							"value": "Option 4"
+						}
+					],
+					"label": "Label",
+					"selectedType": "tag",
+					"tagWrapping": "overflow",
+					"width": "fixed"
 				}
 			}
 		]

@@ -15,8 +15,7 @@ export interface DBMultiSelectDropdownDefaultProps {
 export type DBMultiSelectDropdownProps = DBMultiSelectDropdownDefaultProps &
 	GlobalProps;
 
-export interface DBMultiSelectDropdownDefaultState {
-	_placeholderId: string;}
+export interface DBMultiSelectDropdownDefaultState {}
 
 export type DBMultiSelectDropdownState = DBMultiSelectDropdownDefaultState &
 	GlobalState;

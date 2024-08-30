@@ -22,6 +22,8 @@ import {
 	DEFAULT_MESSAGE,
 	DEFAULT_MESSAGE_ID_SUFFIX,
 	DEFAULT_PLACEHOLDER_ID_SUFFIX,
+	DEFAULT_REMOVE,
+	DEFAULT_SELECTED,
 	DEFAULT_VALID_MESSAGE,
 	DEFAULT_VALID_MESSAGE_ID_SUFFIX
 } from '../../shared/constants';
@@ -33,6 +35,7 @@ import { DBMultiSelectHeader } from '../multi-select-header';
 import { DBNotification } from '../notification';
 import { DBInfotext } from '../infotext';
 import { DBMultiSelectFormField } from '../multi-select-form-field';
+import { DBTag } from '../tag';
 
 useMetadata({
 	isAttachedToShadowDom: true
@@ -53,8 +56,10 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		// Workaround for Vue output: TS for Vue would think that it could be a function, and by this we clarify that it's a string
 		_descByIds: '',
 		_value: '',
+		_selectedLabels: '',
 		initialized: false,
 		_voiceOverFallback: '',
+		_selectedOptions: [],
 		headerEnabled: false,
 		searchEnabled: false,
 		amountOptions: 0,
@@ -188,12 +193,12 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	}, [detailsRef, state._descByIds]);
 
 	onUpdate(() => {
-		if (props.hasNoOptions !== undefined) {
-			state._hasNoOptions = props.hasNoOptions;
+		if (props.hasNoResults !== undefined) {
+			state._hasNoOptions = props.hasNoResults;
 		} else if (state._options) {
 			state._hasNoOptions = state._options.length === 0;
 		}
-	}, [props.hasNoOptions, state._options]);
+	}, [props.hasNoResults, state._options]);
 
 	onUpdate(() => {
 		// Enable header if
@@ -247,11 +252,45 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		).length;
 	}, [props.options]);
 
+	onUpdate(() => {
+		if (state._options?.length > 0) {
+			state._selectedOptions = state._options.filter(
+				(option: MultiSelectOptionType) =>
+					!option.isGroup && state._values.includes(option.value)
+			);
+		}
+	}, [state._options, state._values]);
+
+	onUpdate(() => {
+		if (state._selectedOptions?.length > 0) {
+			if (props.selectedType !== 'tag') {
+				if (props.selectedType === 'amount') {
+					state._selectedLabels = props.getAmountText
+						? props.getAmountText(state._selectedOptions.length)
+						: `${state._selectedOptions.length} ${DEFAULT_SELECTED}`;
+				} else {
+					state._selectedLabels = state._selectedOptions
+						.map((option: MultiSelectOptionType) =>
+							state.getOptionLabel(option)
+						)
+						.join(', ');
+				}
+			} else {
+				state._selectedLabels = '';
+			}
+		} else {
+			state._selectedLabels = '';
+		}
+	}, [state._selectedOptions, props.selectedType, props.getAmountText]);
+
 	return (
 		<div
 			id={state._id}
 			ref={ref}
 			class={cls('db-multi-select', props.className)}
+			data-width={props.width}
+			data-selected-type={props.selectedType}
+			data-wrapping={props.tagWrapping}
 			data-header-enabled={state.headerEnabled}
 			data-notification-enabled={state._hasNoOptions ?? props.isLoading}>
 			<label id={state._labelId}>{props.label ?? DEFAULT_LABEL}</label>
@@ -259,17 +298,41 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 				{props.children}
 				<Show when={props.options}>
 					<DBMultiSelectFormField
+						tagWrapping={props.tagWrapping}
+						required={props.required}
+						width={props.width}
+						selectedType={props.selectedType}
 						onClick={() => state.handleToggleOpen()}>
-						<For
-							each={state._options.filter(
-								(option: MultiSelectOptionType) =>
-									!option.isGroup &&
-									state._values.includes(option.value)
-							)}>
-							{(option: MultiSelectOptionType) => (
-								<span>{state.getOptionLabel(option)}</span>
-							)}
-						</For>
+						<Show
+							when={
+								props.selectedType !== 'tag' &&
+								state._selectedLabels?.length > 0
+							}>
+							<span>{state._selectedLabels}</span>
+						</Show>
+						<Show when={props.selectedType == 'tag'}>
+							<div>
+								<For each={state._selectedOptions}>
+									{(option: MultiSelectOptionType) => (
+										<DBTag
+											removeButton={
+												props.removeTagsText
+													? props.removeTagsText(
+															option
+														)
+													: `${DEFAULT_REMOVE} ${state.getOptionLabel(option)}`
+											}
+											onRemove={() =>
+												state.handleSelect(option.value)
+											}
+											emphasis="strong"
+											behaviour="removable">
+											{state.getOptionLabel(option)}
+										</DBTag>
+									)}
+								</For>
+							</div>
+						</Show>
 					</DBMultiSelectFormField>
 					<DBMultiSelectDropdown
 						header={
@@ -307,7 +370,7 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 										: 'informational'
 								}>
 								{(state._hasNoOptions
-									? props.noOptionsText
+									? props.noResultsText
 									: props.loadingText) ?? DEFAULT_MESSAGE}
 							</DBNotification>
 						}>

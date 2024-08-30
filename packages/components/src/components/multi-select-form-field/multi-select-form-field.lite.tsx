@@ -29,8 +29,7 @@ export default function DBMultiSelectFormField(
 			}}
 			ref={ref}
 			id={props.id}
-			class={cls('db-multi-select-form-field', props.className)}
-			data-required={props.required}>
+			class={cls('db-multi-select-form-field', props.className)}>
 			{props.children}
 		</summary>
 	);

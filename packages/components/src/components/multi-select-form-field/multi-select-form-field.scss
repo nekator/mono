@@ -1,10 +1,26 @@
-.db-multi-select-form-field {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	overflow-x: auto;
+@use "@db-ui/foundations/build/scss/variables";
+@use "../../styles/form-components";
+@use "../../styles/multi-select-components";
 
-	span:not(:first-child)::before {
-		content: ", ";
+.db-multi-select-form-field {
+	--db-form-component-padding-inline-end: calc(
+		#{form-components.$font-size-height} + #{variables.$db-spacing-fixed-md}
+	);
+
+	&:is(summary) {
+		list-style: none;
+		display: flex;
+		align-items: center;
+
+		span {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-wrap: nowrap;
+		}
+
+		> div {
+			display: flex;
+			gap: variables.$db-spacing-fixed-sm;
+		}
 	}
 }

@@ -4,16 +4,16 @@
 @use "../../styles/form-components";
 @use "../../styles/multi-select-components";
 
-
 .db-multi-select-header {
 	@include helpers.divider("bottom");
 
 	display: flex;
 	background-color: colors.$db-adaptive-bg-basic-level-2-default;
-	padding-block: multi-select-components.$list-padding-block;
+	padding-block: variables.$db-spacing-fixed-xs;
 	padding-inline: calc(
-		#{multi-select-components.$list-padding-inline} + #{multi-select-components.$list-item-padding-inline}
-	);
+			#{multi-select-components.$list-padding-inline} + #{multi-select-components.$list-item-padding-inline}
+		)
+		variables.$db-spacing-fixed-2xs;
 	border-start-start-radius: variables.$db-border-radius-xs;
 	border-start-end-radius: variables.$db-border-radius-xs;
 	justify-content: space-between;
@@ -25,7 +25,13 @@
 		display: none;
 	}
 
+	.db-button {
+		flex-shrink: 0;
+	}
+
 	&[data-variant="search"] {
+		padding-block: variables.$db-spacing-fixed-md;
+
 		.db-checkbox {
 			label {
 				font-size: 0;

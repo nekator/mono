@@ -7,9 +7,9 @@ import {
 	GlobalProps,
 	GlobalState,
 	InitializedState,
-	InnerCloseButtonProps
+	InnerCloseButtonProps,
+	WidthProps
 } from '../../shared/model';
-import { DBSelectOptionType } from '../select/model';
 import { DBMultiSelectHeaderLabelProps } from '../multi-select-header/model';
 import { DBMultiSelectFormFieldDefaultProps } from '../multi-select-form-field/model';
 
@@ -39,14 +39,21 @@ export type MultiSelectOptionType = {
 	isGroup?: boolean;
 };
 
-export const MultiSelectDisplayList = ['amount', 'text', 'tag'] as const;
-export type MultiSelectDisplayType = (typeof MultiSelectDisplayList)[number];
+export const SelectedTypeList = ['amount', 'text', 'tag'] as const;
+export type SelectedTypeType = (typeof SelectedTypeList)[number];
+
+export const MultiSelectTagWrappingList = ['overflow', 'grow'] as const;
+export type MultiSelectTagWrappingType =
+	(typeof MultiSelectTagWrappingList)[number];
+
+export const MultiSelectWidthList = ['fixed', 'auto'] as const;
+export type MultiSelectWidthType = (typeof MultiSelectWidthList)[number];
 
 export interface DBMultiSelectDefaultProps {
 	/**
-	 * Change the display type for values shown in multi select
+	 * Width of the component. Auto width based on parent elements width.
 	 */
-	display?: MultiSelectDisplayType;
+	width?: MultiSelectWidthType;
 	/**
 	 * Disable default click outside handling. Will force header with close button.
 	 */
@@ -60,31 +67,45 @@ export interface DBMultiSelectDefaultProps {
 	 * Forces search in header.
 	 */
 	enableSearch?: boolean;
+	getAmountText?: (amount: number) => string;
 	/**
-	 * Popover - hint if there are no options
+	 * Dropdown - enable no options notification
 	 */
-	noOptionsText?: string;
+	hasNoResults?: boolean;
 	/**
-	 * Popover - hint if data has to be loaded
-	 */
-	loadingText?: string;
-	/**
-	 * Popover - enable loading notification and spinner
+	 * Dropdown - enable loading notification and spinner
 	 */
 	isLoading?: boolean;
 	/**
-	 * Popover - enable no options notification
+	 * Dropdown - hint if data has to be loaded
 	 */
-	hasNoOptions?: boolean;
+	loadingText?: string;
+
+	/**
+	 * Dropdown - hint if there are no options
+	 */
+	noResultsText?: string;
+
+	onChange?: (value: string[]) => void;
 
 	/**
 	 * You should pass in the options as an array.
 	 */
 	options?: MultiSelectOptionType[];
 
-	value?: string[];
+	/**
+	 * Optional: if you use selectedType=tag and options, you need to set the removeTagsText for screen reader users
+	 */
+	removeTagsText?: (option: MultiSelectOptionType) => string;
 
-	onChange?: (value: string[]) => void;
+	/**
+	 * Change the selected type for values shown in multi select
+	 */
+	selectedType?: SelectedTypeType;
+	tagWrapping?: MultiSelectTagWrappingType /**
+	 * Optional: if you use selectedType=tag, you can change the behaviour of tags
+	 */;
+	value?: string[];
 }
 
 export type DBMultiSelectProps = GlobalProps &
@@ -93,14 +114,17 @@ export type DBMultiSelectProps = GlobalProps &
 	Omit<FormProps, 'value'> &
 	FormMessageProps &
 	DBMultiSelectDefaultProps &
-	DBMultiSelectFormFieldDefaultProps;
+	DBMultiSelectFormFieldDefaultProps &
+	WidthProps;
 
 export interface DBMultiSelectDefaultState {
 	_values?: string[];
 	_options: MultiSelectOptionType[];
+	_selectedOptions: MultiSelectOptionType[];
 	_hasNoOptions: boolean;
 	_labelId: string;
 	_placeholderId: string;
+	_selectedLabels?: string;
 	getOptionLabel: (option: MultiSelectOptionType) => string;
 	getOptionChecked: (value: string) => boolean;
 	headerEnabled: boolean;
