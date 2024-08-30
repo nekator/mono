@@ -8,7 +8,7 @@ test.describe('DBTabs', () => {
 		title: 'default',
 		description:
 			'should select tab and announce corresponding tab panel content',
-		url: './#/04/tabs?page=tonality',
+		url: './#/04/tabs?page=density',
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
 				// We want to lose focus for radio buttons otherwise we can't jump to tab panel
