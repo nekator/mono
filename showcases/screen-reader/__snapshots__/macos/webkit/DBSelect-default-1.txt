@@ -1,1 +1,1 @@
-["Label Functional pop up button","menu 3 items ✓","Option 1","Option 2","Closing menu Option 2 Label Functional pop up button"]
+["Label Functional pop up button","","Option 1","Option 2","Closing menu Option 2 Label Functional pop up button"]
