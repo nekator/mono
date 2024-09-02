@@ -50,13 +50,15 @@ const NavItem = ({ navItem }: { navItem: NavigationItem }) => {
 					{process.env.NEXT_SHOWCASE_VARIANT === 'next' ? (
 						<NextLink
 							key={`router-path-${navItem.path}`}
-							href={navItem.path}>
+							href={navItem.path}
+							aria-current={isActive ? 'page' : undefined}>
 							{navItem.label}
 						</NextLink>
 					) : (
 						<Link
 							key={`router-path-${navItem.path}`}
-							to={navItem.path}>
+							to={navItem.path}
+							aria-current={isActive ? 'page' : undefined}>
 							{navItem.label}
 						</Link>
 					)}
