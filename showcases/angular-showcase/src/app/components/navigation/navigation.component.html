@@ -20,17 +20,17 @@
 				{{ exampleName }}
 			</db-infotext>
 			<db-navigation [labelledBy]="getId(exampleName)">
-				<db-navigation-item [active]="true">
+				<db-navigation-item>
 					<ng-container *dbNavigationContent>
 						Navi-Item 1
 					</ng-container>
 					<ng-container sub-navigation>
-						<db-navigation-item [active]="true">
+						<db-navigation-item>
 							<ng-container *dbNavigationContent>
 								Sub-Navi-Item 1
 							</ng-container>
 							<ng-container sub-navigation>
-								<db-navigation-item [active]="true">
+								<db-navigation-item>
 									<ng-container *dbNavigationContent>
 										<a href="#">Sub-Sub-Navi-Item 1</a>
 									</ng-container>
