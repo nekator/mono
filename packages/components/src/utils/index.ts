@@ -73,8 +73,8 @@ const reactHtmlAttributes = [
 	'security',
 	'results',
 	'vocab',
-			'typeof',
-			'rev',
+	'typeof',
+	'rev',
 	'resource',
 	'rel',
 	'property',
@@ -229,6 +229,5 @@ export default {
 	isArrayOfStrings,
 	hasVoiceOver,
 	delay,
-	uuid,
 	getGlobalStyleSheets
 };

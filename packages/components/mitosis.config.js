@@ -12,6 +12,9 @@ module.exports = {
 			typescript: true,
 			useShadowDom: true
 		},
+		react: {
+			typescript: true
+		},
 		vue: {
 			typescript: true
 		},

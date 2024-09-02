@@ -1,7 +1,7 @@
-const { components } = require('./components');
-const { runReplacements } = require('../utils');
+import components from './components';
+import { runReplacements } from '../utils';
 
-module.exports = (tmp) => {
+export default (tmp?: boolean) => {
 	const outputFolder = `${tmp ? 'output/tmp' : 'output'}`;
 	for (const component of components) {
 		const componentName = component.name;
@@ -36,16 +36,16 @@ module.exports = (tmp) => {
 				to: '<slot></slot>'
 			},
 			{
-				from: /@property\(\)/g,
-				to: '@property({ noAccessor: true})'
-			},
-			{
 				from: 'LitElement {',
 				to: 'LitElement {\nstatic styles = getGlobalStyleSheets();'
 			},
 			{
 				from: '} from "../../utils"',
 				to: ', getGlobalStyleSheets } from "../../utils"'
+			},
+			{
+				from: 'lit/decorators',
+				to: 'lit/decorators.js'
 			}
 		];
 
