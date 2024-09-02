@@ -12,6 +12,8 @@ test.describe('DBNavigation', () => {
 		async testFn(voiceOver, nvda) {
 			if (nvda) {
 				await nvda?.next(); // Navigation Item 1
+				await nvda?.next(); // Navigation Item 2
+				await nvda?.previous(); // Navigation Item 1
 				await nvda?.act(); // Open menu
 				await nvda?.next(); // Sub-Navigation Item 1
 				await nvda?.act(); // Open menu
