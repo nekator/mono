@@ -26,6 +26,9 @@ const standardPhrases = [
 	'To begin interacting',
 	'To display a',
 	'To move between items',
+	'To close',
+	'To choose',
+	'To toggle',
 	'To expand'
 ];
 
