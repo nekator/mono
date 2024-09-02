@@ -78,9 +78,13 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 				(#{variables.$db-sizing-md} - #{$font-size-height}) / 2
 			);
 			inset-inline: var(
-				--db-form-component-padding-inline-start,
-				#{variables.$db-spacing-fixed-sm}
-			);
+					--db-form-component-padding-inline-start,
+					#{variables.$db-spacing-fixed-sm}
+				)
+				var(
+					--db-form-component-padding-inline-end,
+					#{variables.$db-spacing-fixed-sm}
+				);
 		}
 
 		// icons
@@ -122,7 +126,8 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 		&:has(
 				#{$selector}:focus-within,
 				#{$selector}:is(input, textarea):not(:placeholder-shown),
-				> select option:checked:not([hidden])
+				> select option:checked:not([hidden]),
+				input[type="checkbox"]:checked
 			) {
 			> label {
 				@extend %db-overwrite-font-size-2xs;
@@ -194,11 +199,11 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 		--db-adaptive-bg-basic-transparent-pressed: var(
 			--db-#{$variant}-bg-basic-transparent-pressed
 		);
-		--db-adaptive-default: var(
+		--db-adaptive-on-bg-basic-emphasis-100-default: var(
 			--db-#{$variant}-on-bg-basic-emphasis-100-default
 		);
 		--db-adaptive-on-bg-basic-emphasis-60-default: var(
-			--db-#{$variant}-border
+			--db-#{$variant}-on-bg-basic-emphasis-60-default
 		);
 	}
 }
@@ -250,19 +255,25 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 		}
 		/* stylelint-disable-next-line at-rule-empty-line-before */
 	} @else {
+		@if ($selector == summary) {
+			$selector: select;
+		}
+
 		#{get-validations($selector,$key)} {
 			@content;
 		}
 	}
 
 	// If data-custom-validity is set we overwrite the selectors above
-	&:has(#{$selector}[data-custom-validity="#{$key}"]) {
+	&:has(#{$selector}[data-custom-validity="#{$key}"]),
+	&[data-custom-validity="#{$key}"] {
 		@content;
 	}
 }
 
 @mixin set-required-label($selector) {
-	&:has(#{$selector}:required, #{$selector}[data-required="true"]) {
+	&:has(#{$selector}:required),
+	&[data-required="true"] {
 		&:is(label),
 		> label {
 			&::after {

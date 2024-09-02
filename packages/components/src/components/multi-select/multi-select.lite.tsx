@@ -13,7 +13,7 @@ import {
 	DBMultiSelectState,
 	MultiSelectOptionType
 } from './model';
-import { cls, uuid } from '../../utils';
+import { cls, delay, hasVoiceOver, uuid } from '../../utils';
 import {
 	DEFAULT_INVALID_MESSAGE,
 	DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
@@ -45,6 +45,7 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	// This is used as forwardRef
 	const ref = useRef<HTMLDivElement>(null);
 	const detailsRef = useRef<HTMLDetailsElement>(null);
+	const selectRef = useRef<HTMLSelectElement>(null);
 	// jscpd:ignore-start
 	const state = useStore<DBMultiSelectState>({
 		_id: 'multi-select-' + uuid(),
@@ -55,7 +56,6 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		_placeholderId: this._id + DEFAULT_PLACEHOLDER_ID_SUFFIX,
 		// Workaround for Vue output: TS for Vue would think that it could be a function, and by this we clarify that it's a string
 		_descByIds: '',
-		_value: '',
 		_selectedLabels: '',
 		initialized: false,
 		_voiceOverFallback: '',
@@ -234,6 +234,42 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	}, [props.value, state._values]);*/
 
 	onUpdate(() => {
+		/* For a11y reasons we need to map the correct message with the select */
+		if (!selectRef?.validity.valid || props.customValidity === 'invalid') {
+			state._validity = 'invalid';
+			state._descByIds = state._invalidMessageId;
+			if (hasVoiceOver()) {
+				state._voiceOverFallback =
+					props.invalidMessage ??
+					selectRef?.validationMessage ??
+					DEFAULT_INVALID_MESSAGE;
+				delay(() => (state._voiceOverFallback = ''), 1000);
+			}
+		} else if (
+			props.customValidity === 'valid' ||
+			(selectRef?.validity.valid && props.required)
+		) {
+			state._validity = 'valid';
+			state._descByIds = state._validMessageId;
+			if (hasVoiceOver()) {
+				state._voiceOverFallback =
+					props.validMessage ?? DEFAULT_VALID_MESSAGE;
+				delay(() => (state._voiceOverFallback = ''), 1000);
+			}
+		} else if (props.message) {
+			state._validity = 'no-validation';
+			state._descByIds = state._messageId;
+		} else {
+			state._validity = 'no-validation';
+			state._descByIds = state._placeholderId;
+		}
+	}, [state._values]);
+
+	onUpdate(() => {
+		state._validity = props.customValidity;
+	}, [props.customValidity]);
+
+	onUpdate(() => {
 		if (state._values?.length === 0) {
 			state.selectAllChecked = false;
 			state.selectAllIndeterminate = false;
@@ -288,20 +324,38 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 			id={state._id}
 			ref={ref}
 			class={cls('db-multi-select', props.className)}
+			aria-invalid={state._validity === 'invalid'}
+			data-custom-validity={state._validity}
 			data-width={props.width}
+			data-variant={props.variant}
+			data-required={props.required}
 			data-selected-type={props.selectedType}
 			data-wrapping={props.tagWrapping}
 			data-header-enabled={state.headerEnabled}
 			data-notification-enabled={state._hasNoOptions ?? props.isLoading}>
+			<select
+				ref={selectRef}
+				multiple
+				value={state._values}
+				required={props.required}
+				hidden>
+				<For each={state._options}>
+					{(option: MultiSelectOptionType) => (
+						<Fragment key={option.value.toString()}>
+							<option
+								disabled={option.disabled}
+								value={option.value}>
+								{state.getOptionLabel(option)}
+							</option>
+						</Fragment>
+					)}
+				</For>
+			</select>
 			<label id={state._labelId}>{props.label ?? DEFAULT_LABEL}</label>
 			<details ref={detailsRef}>
 				{props.children}
 				<Show when={props.options}>
 					<DBMultiSelectFormField
-						tagWrapping={props.tagWrapping}
-						required={props.required}
-						width={props.width}
-						selectedType={props.selectedType}
 						onClick={() => state.handleToggleOpen()}>
 						<Show
 							when={
@@ -432,7 +486,9 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 				id={state._invalidMessageId}
 				size="small"
 				semantic="critical">
-				{props.invalidMessage ?? DEFAULT_INVALID_MESSAGE}
+				{props.invalidMessage ??
+					selectRef?.validationMessage ??
+					DEFAULT_INVALID_MESSAGE}
 			</DBInfotext>
 
 			{/* * https://www.davidmacd.com/blog/test-aria-describedby-errormessage-aria-live.html

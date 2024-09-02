@@ -7,11 +7,8 @@
 @use "../../styles/component";
 @use "../../styles/select-components";
 
-
 .db-select {
-	--db-form-component-padding-inline-end: calc(
-		#{form-components.$font-size-height} + #{variables.$db-spacing-fixed-sm}
-	);
+	--db-form-component-padding-inline-end: #{select-components.$select-icon-padding};
 	// shared from form-components
 	@extend %select-icon;
 	@extend %select-placeholder;
@@ -36,8 +33,6 @@
 		--db-label-visible-height: 0;
 		--db-label-visible-spacing: 1;
 	}
-
-
 
 	&:has(> select option:checked:not([hidden])) {
 		[id$="-placeholder"] {

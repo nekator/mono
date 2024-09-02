@@ -1,6 +1,7 @@
 import {
 	ChangeEvent,
 	CloseEventState,
+	CustomValidityType,
 	FormMessageProps,
 	FormProps,
 	FormState,
@@ -25,17 +26,18 @@ export type MultiSelectOptionType = {
 	disabled?: boolean;
 
 	/**
-	 * Selects this option
-	 */
-	selected?: boolean;
-
-	/**
 	 * If the value is different from the label you want to show to the user.
 	 */
 	label?: string;
 
+	/**
+	 * The value for the option
+	 */
 	value?: string;
 
+	/**
+	 * If the item is a group (only text)
+	 */
 	isGroup?: boolean;
 };
 
@@ -118,6 +120,7 @@ export type DBMultiSelectProps = GlobalProps &
 	WidthProps;
 
 export interface DBMultiSelectDefaultState {
+	_validity?: CustomValidityType;
 	_values?: string[];
 	_options: MultiSelectOptionType[];
 	_selectedOptions: MultiSelectOptionType[];

@@ -1,7 +1,10 @@
 @use "@db-ui/foundations/build/scss/variables";
+@use "@db-ui/foundations/build/scss/colors";
 @use "../../styles/multi-select-components";
 
 .db-multi-select-dropdown {
+	@extend %db-neutral-variables;
+
 	position: absolute;
 	z-index: 2;
 	box-shadow: variables.$db-elevation-md;

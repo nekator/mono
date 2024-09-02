@@ -8,6 +8,8 @@
 @use "../../styles/scrollbar";
 
 .db-multi-select {
+	--db-form-component-padding-inline-end: #{select-components.$select-icon-padding};
+
 	@extend %select-icon;
 	@extend %select-placeholder;
 
@@ -98,5 +100,10 @@
 				}
 			}
 		}
+	}
+
+	&[data-variant="hidden"] {
+		--db-label-visible-height: 0;
+		--db-label-visible-spacing: 1;
 	}
 }
