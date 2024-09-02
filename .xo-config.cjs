@@ -1,5 +1,9 @@
 module.exports = {
 	prettier: true,
+	ignores: [
+		'./showcases/nuxt-showcase/**',
+		'./packages/foundations/scripts/**'
+	],
 	overrides: [
 		{
 			files: ['./showcases/angular-showcase/**'],
@@ -42,6 +46,19 @@ module.exports = {
 				'@typescript-eslint/no-unsafe-return': 0, // valid for app
 				'import/no-extraneous-dependencies': 0 // foundation and component.css are inside this repo
 			}
+		},
+		{
+			files: ['./showcases/e2e/**'],
+			rules: {
+				'@typescript-eslint/no-loop-func': 0 // this is fine for playwright testing
+			}
+		},
+		{
+			files: ['./**/*.spec.ts'],
+			rules: {
+				// Playwright tests are async we shall use loops there
+				'no-await-in-loop': 0
+			}
 		}
 	],
 	rules: {
@@ -56,6 +73,7 @@ module.exports = {
 					pascalCase: true
 				}
 			}
-		]
+		],
+		'unicorn/prevent-abbreviations': 0
 	}
 };

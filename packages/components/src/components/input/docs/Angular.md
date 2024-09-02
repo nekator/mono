@@ -3,7 +3,7 @@
 Load SCSS globally within `styles.scss` in your app:
 
 ```scss
-@forward "@db-ui/components/build/styles/db-ui-42-webpack";
+@forward "@db-ui/components/build/styles/db-ui-42-rollup";
 ```
 
 Load component within `app.component.ts`:
@@ -113,7 +113,7 @@ import { FormsModule } from '@angular/forms';
 		placeholder="Placeholder"
 		description="Description"
 	></DBInput>
-	<DBButton type="button" variant="primary" (click)="showValues()"
+	<DBButton type="button" variant="brand" (click)="showValues()"
 		>Get input value</DBButton
 	>
 </form>

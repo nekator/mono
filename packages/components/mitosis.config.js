@@ -1,20 +1,18 @@
 module.exports = {
 	files: 'src/**',
-	targets: ['angular', 'vue3', 'lit', 'webcomponent', 'react'],
+	targets: ['angular', 'vue', 'lit', 'webcomponent', 'react'],
 	dest: '../../output',
 	options: {
 		angular: {
 			typescript: true,
-			standalone: true
+			standalone: true,
+			visuallyIgnoreHostElement: false
 		},
 		lit: {
 			typescript: true,
 			useShadowDom: true
 		},
-		react: {
-			typescript: true
-		},
-		vue3: {
+		vue: {
 			typescript: true
 		},
 		webcomponent: {

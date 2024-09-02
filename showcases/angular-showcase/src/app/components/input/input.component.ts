@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import defaultComponentVariants from '../../../../../shared/input.json';
 import { DefaultComponent } from '../default.component';
-import { DBInput } from '../../../../../../output/angular/src/components/input/input';
+import {
+	DBInput,
+	LabelVariantType,
+	ValueLabelType
+} from '../../../../../../output/angular/src';
 
 @Component({
 	selector: 'app-input',
@@ -12,10 +16,14 @@ import { DBInput } from '../../../../../../output/angular/src/components/input/i
 export class InputComponent {
 	variants = defaultComponentVariants;
 
-	variantColors: any[] = [
-		'informational',
-		'warning',
-		'critical',
-		'successful'
-	];
+	getDataList = (variant?: LabelVariantType): string[] | ValueLabelType[] => {
+		if (variant === 'floating') {
+			return ['Test 1', 'Test 2'];
+		}
+
+		return [
+			{ value: 'test1', label: 'Test 1' },
+			{ value: 'test2', label: 'Test 2' }
+		];
+	};
 }
