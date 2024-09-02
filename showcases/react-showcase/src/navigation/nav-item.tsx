@@ -27,7 +27,6 @@ const NavItem = ({ navItem }: { navItem: NavigationItem }) => {
 
 	return (
 		<DBNavigationItem
-			active={isActive}
 			backButtonText={`Back to ${navItem.label}`}
 			subNavigation={
 				navItem.subNavigation && (
