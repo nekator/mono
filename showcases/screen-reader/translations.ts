@@ -18,6 +18,8 @@ export const translations: Record<string, string[]> = {
 	unknown: ['Unbekannt'],
 	dialog: ['Dialogfeld'],
 	document: ['Dokument'],
+	unavailable: ['nicht verfügbar'],
 	'check box': ['Kontrollfeld'],
-	unavailable: ['nicht verfügbar']
+  collapsed: ['reduziert'],
+	expanded: ['erweitert']
 };
