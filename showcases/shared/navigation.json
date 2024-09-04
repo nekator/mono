@@ -14,14 +14,16 @@
 							{
 								"name": "navigation-item",
 								"slot": "sub-navigation",
+								"props": {
+									"active": true
+								},
 								"children": [
 									{
 										"name": "a",
 										"native": true,
 										"content": "Sub-Sub-Navi-Item 1",
 										"props": {
-											"href": "#",
-											"aria-current": "page"
+											"href": "#"
 										}
 									}
 								]

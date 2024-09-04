@@ -25,6 +25,7 @@
 		}
 
 		.db-navigation-item {
+			// > db-navigation-item > .db-navigation-item {
 			@extend %db-puls-auto;
 
 			.db-navigation-item-expand-button:is(button),
@@ -82,7 +83,9 @@
 			}
 
 			&:has([aria-current="page"]),
-			&[aria-current="page"] {
+			&:has([data-active="true"]),
+			&[aria-current="page"],
+			&[data-active="true"] {
 				@extend %show-db-puls-auto;
 
 				menu {
@@ -93,6 +96,13 @@
 							display: none;
 						}
 					}
+				}
+			}
+
+			// angular workaround: as no direct-child selector can be used, the puls is hidden from the second level onwards
+			.db-navigation-item {
+				&::after {
+					display: none;
 				}
 			}
 		}

@@ -51,6 +51,8 @@ We recommend using the automatic [integration with the Vue Router](https://route
 You can use Vue Routers `RouterLink` component to define your targets.
 The active style is automatically set once an item receives the `aria-current="page"` attribute.
 
+For other purposes, `NavigationItems` themselves can also be set to active with their prop `:active="true"`. However, this does not guarantee correct a11y.
+
 ```vue App.vue
 <!-- App.vue -->
 <script>

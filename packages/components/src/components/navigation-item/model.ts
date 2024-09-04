@@ -13,6 +13,11 @@ import { NavigationItemSafeTriangle } from '../../utils/navigation';
 
 export interface DBNavigationItemDefaultProps {
 	/**
+	 * Alternative indicator for active navigation item (bold font). In contrast to the use of aria-current="page" on the contained anchor, this does not guarantee correct a11y.
+	 */
+	active?: boolean;
+
+	/**
 	 * The disabled attribute can be set to [keep a user from clicking on the item](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#disabled).
 	 */
 	disabled?: boolean;

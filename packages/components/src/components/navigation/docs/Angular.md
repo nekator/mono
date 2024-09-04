@@ -70,6 +70,8 @@ We recommend using the automatic [integration with the Angular Router](https://a
 
 The component first needs to import the `RouterLink` and `RouterLinkActive` directives.
 
+For other purposes, `NavigationItems` themselves can also be set to active with their prop `[active]="true"`. However, this does not guarantee correct a11y.
+
 ```ts app.component.ts
 // app.component.ts
 import { RouterLink, RouterLinkActive } from '@angular/router';
