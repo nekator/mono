@@ -20,6 +20,6 @@ export const translations: Record<string, string[]> = {
 	document: ['Dokument'],
 	unavailable: ['nicht verfügbar'],
 	'check box': ['Kontrollfeld'],
-  collapsed: ['reduziert'],
+	collapsed: ['reduziert'],
 	expanded: ['erweitert']
 };
