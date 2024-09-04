@@ -1,6 +1,3 @@
-import { SemanticType } from '../shared/model';
-import { AriaRole, CSSProperties } from 'react';
-
 export const uuid = () => {
 	if (typeof window !== 'undefined') {
 		if (window.crypto?.randomUUID) {
@@ -206,16 +203,14 @@ export const delay = (fn: () => void, ms: number) =>
  * Laod styles for web components
  */
 export const getGlobalStyleSheets = () =>
-	Array.from(document.styleSheets)
-		.filter((styleSheet) => styleSheet.href?.includes('db'))
-		.map((styleSheet) => {
-			const sheet = new CSSStyleSheet();
-			const css = Array.from(styleSheet.cssRules)
-				.map((rule) => rule.cssText)
-				.join(' ');
-			sheet.replaceSync(css);
-			return sheet;
-		});
+	Array.from(document.styleSheets).map((styleSheet) => {
+		const sheet = new CSSStyleSheet();
+		const css = Array.from(styleSheet.cssRules)
+			.map((rule) => rule.cssText)
+			.join(' ');
+		sheet.replaceSync(css);
+		return sheet;
+	});
 
 export default {
 	filterPassingProps,

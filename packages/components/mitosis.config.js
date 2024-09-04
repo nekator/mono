@@ -10,7 +10,7 @@ module.exports = {
 		},
 		lit: {
 			typescript: true,
-			useShadowDom: true
+			useShadowDom: false
 		},
 		react: {
 			typescript: true

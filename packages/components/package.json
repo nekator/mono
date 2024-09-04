@@ -24,7 +24,7 @@
     "build-style:02_postcss": "postcss build/**/*.css --replace",
     "build:mitosis": "mitosis build",
     "compile:angular": "mitosis build -c mitosis-angular.config.js && tsx scripts/exec/angular.ts && cpr ../../output/tmp/angular/src ../../output/angular/src -o",
-    "compile:lit": "mitosis build -c mitosis-lit.config.js && node -e \"require('./scripts/post-build/lit.js')(true)\" && cpr ../../output/tmp/lit/src ../../output/lit/src -o",
+    "compile:lit": "mitosis build -c mitosis-lit.config.js && tsx scripts/exec/lit.ts && cpr ../../output/tmp/lit/src ../../output/lit/src -o",
     "compile:react": "mitosis build -c mitosis-react.config.js && tsx scripts/exec/react.ts && cpr ../../output/tmp/react/src ../../output/react/src -o",
     "compile:vue": "mitosis build -c mitosis-vue.config.js && tsx scripts/exec/vue.ts && cpr ../../output/tmp/vue/src ../../output/vue/src -o",
     "copy-assets": "cpr ../foundations/assets build/assets -o",

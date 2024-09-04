@@ -1,0 +1,28 @@
+{
+  "name": "@db-ui/stencil-components",
+  "version": "0.0.0",
+  "description": "Stencil components for @db-ui/components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/db-ui/mono.git"
+  },
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve"
+  },
+  "devDependencies": {
+    "@stencil/core": "4.21.0",
+    "workbox-build": "4.3.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}

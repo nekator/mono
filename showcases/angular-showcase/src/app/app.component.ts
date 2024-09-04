@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import {
@@ -25,10 +25,12 @@ import {
 	NAVIGATION_ITEMS,
 	NavItem
 } from './utils/navigation-item';
+import { environment } from '../environments/environment';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	imports: [
 		FormsModule,
 		RouterOutlet,

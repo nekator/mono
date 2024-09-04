@@ -32,6 +32,9 @@ export type Component = {
 export const getComponents = (): Component[] => [
 	{
 		name: 'switch',
+		overwrites: {
+			lit: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -119,7 +122,8 @@ export const getComponents = (): Component[] => [
 					from: '</textarea>',
 					to: '{{value}}</textarea>'
 				}
-			]
+			],
+			lit: [{ from: 'HTMLElement', to: 'HTMLTextAreaElement' }]
 		}
 	},
 	{
@@ -159,7 +163,8 @@ export const getComponents = (): Component[] => [
 				// React not allowing selected for options
 				{ from: 'selected={option.selected}', to: '' },
 				{ from: 'selected={optgroupOption.selected}', to: '' }
-			]
+			],
+			lit: [{ from: 'HTMLElement', to: 'HTMLSelectElement' }]
 		},
 		config: {
 			vue: {
@@ -212,6 +217,9 @@ export const getComponents = (): Component[] => [
 	},
 	{
 		name: 'checkbox',
+		overwrites: {
+			lit: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -224,6 +232,9 @@ export const getComponents = (): Component[] => [
 
 	{
 		name: 'radio',
+		overwrites: {
+			lit: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -317,7 +328,8 @@ export const getComponents = (): Component[] => [
 		name: 'input',
 		overwrites: {
 			global: [{ from: ', KeyValueType', to: '' }],
-			vue: [{ from: ', index', to: '' }]
+			vue: [{ from: ', index', to: '' }],
+			lit: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
 		},
 		config: {
 			vue: {

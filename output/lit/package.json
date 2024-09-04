@@ -9,24 +9,36 @@
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components/*": "./dist/components/*",
+    "./custom-elements.json": "./dist/custom-elements.json"
+  },
   "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "npm-run-all tsc",
+    "build": "npm-run-all build:*",
+    "build:cem": "cem analyze",
+    "build:tsc": "tsc -p . --sourceMap false",
     "mv:dist": "cpr dist ../../build-outputs/lit-components/dist -o",
     "mv:package.json": "cpr package.json ../../build-outputs/lit-components/package.json -o",
     "mv:readme": "cpr README.md ../../build-outputs/lit-components/README.md -o",
-    "postbuild": "npm-run-all -p mv:*",
-    "tsc": "tsc -p . --sourceMap false"
+    "postbuild": "npm-run-all -p mv:*"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.3",
+    "custom-element-jet-brains-integration": "^1.6.2",
+    "custom-element-vs-code-integration": "^1.4.1",
     "lit": "3.2.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "sideEffects": false
+  "web-types": "dist/web-types.json"
 }

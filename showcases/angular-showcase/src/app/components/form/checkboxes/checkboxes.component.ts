@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WrapperComponent } from '../wrapper/wrapper.component';
 import { DBCheckbox } from '../../../../../../../output/angular/src';
@@ -7,7 +7,10 @@ import { DBCheckbox } from '../../../../../../../output/angular/src';
 	selector: 'app-checkboxes',
 	standalone: true,
 	imports: [WrapperComponent, DBCheckbox, FormsModule, ReactiveFormsModule],
-	templateUrl: './checkboxes.component.html'
+	templateUrl: './checkboxes.component.html',
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
+	],
 })
 export class CheckboxesComponent {
 	plain = true;

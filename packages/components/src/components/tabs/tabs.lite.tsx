@@ -49,7 +49,7 @@ export default function DBTabs(props: DBTabsProps) {
 				needsScroll &&
 				tList.scrollLeft < tList.scrollWidth - tList.clientWidth;
 		},
-		scroll(left?: boolean) {
+		_scroll(left?: boolean) {
 			let step = props.arrowScrollDistance || 100;
 			if (left) {
 				step *= -1;
@@ -188,7 +188,7 @@ export default function DBTabs(props: DBTabsProps) {
 					variant="ghost"
 					icon="chevron_left"
 					noText
-					onClick={() => state.scroll(true)}>
+					onClick={() => state._scroll(true)}>
 					Scroll left
 				</DBButton>
 			</Show>
@@ -223,7 +223,7 @@ export default function DBTabs(props: DBTabsProps) {
 					variant="ghost"
 					icon="chevron_right"
 					noText
-					onClick={() => state.scroll()}>
+					onClick={() => state._scroll()}>
 					Scroll right
 				</DBButton>
 			</Show>

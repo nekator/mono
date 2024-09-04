@@ -37,7 +37,7 @@ export default function DBTag(props: DBTagProps) {
 	});
 
 	onUpdate(() => {
-		if (state.initialized && ref && props.disabled !== undefined) {
+		if (ref && state.initialized && props.disabled !== undefined) {
 			const button: HTMLButtonElement = ref?.querySelector(
 				'button:not(.db-tab-remove-button)'
 			);

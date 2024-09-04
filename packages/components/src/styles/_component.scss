@@ -57,6 +57,7 @@ $default-spacings: (
 @mixin get-data-spacing($type: padding, $spacings: $default-spacings) {
 	@each $name, $spacing in $spacings {
 		@if ($name == "default") {
+			&[data-spacing],
 			&:not([data-spacing]) {
 				#{$type}: $spacing;
 			}

@@ -20,7 +20,7 @@ export type ButtonVariantType = (typeof ButtonVariantList)[number];
 export const ButtonTypeList = ['button', 'reset', 'submit'] as const;
 export type ButtonTypeType = (typeof ButtonTypeList)[number];
 
-export const ButtonStateList = ['loading'] as const;
+export const ButtonStateList = ['static', 'loading'] as const;
 export type ButtonStateType = (typeof ButtonStateList)[number];
 
 export type DBButtonDefaultProps = {

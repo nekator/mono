@@ -7,6 +7,10 @@ const answersFrameworkPairs = [
 		framework: 'plain-html'
 	},
 	{
+		answers: ['lit'],
+		framework: 'lit'
+	},
+	{
 		answers: ['vue', 'nuxt'],
 		framework: 'vue'
 	},
@@ -34,6 +38,9 @@ const currentAnswers = await checkbox({
 		},
 		{
 			value: 'angular-ssr'
+		},
+		{
+			value: 'lit'
 		},
 		{
 			value: 'react'

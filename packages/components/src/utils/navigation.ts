@@ -142,7 +142,7 @@ export class NavigationItemSafeTriangle {
 				rb: string;
 		  } {
 		if (!this.triangleData) {
-			return;
+			return undefined;
 		}
 
 		if (variant === 'fill-gap') {

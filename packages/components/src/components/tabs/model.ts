@@ -58,7 +58,7 @@ export type DBTabsProps = DBTabsDefaultProps &
 export interface DBTabsDefaultState {
 	_name: string;
 	scrollContainer?: Element;
-	scroll: (left?: boolean) => void;
+	_scroll: (left?: boolean) => void;
 	showScrollLeft?: boolean;
 	showScrollRight?: boolean;
 	evaluateScrollButtons: (tabList: Element) => void;
