@@ -24,6 +24,7 @@
     "build-style:02_postcss": "postcss build/**/*.css --replace",
     "build:mitosis": "mitosis build",
     "compile:angular": "mitosis build -c mitosis-angular.config.js && tsx scripts/exec/angular.ts && cpr ../../output/tmp/angular/src ../../output/angular/src -o",
+    "compile:stencil": "mitosis build -c mitosis-stencil.config.js && tsx scripts/exec/stencil.ts && cpr ../../output/tmp/stencil/src ../../output/stencil/src -o",
     "compile:react": "mitosis build -c mitosis-react.config.js && tsx scripts/exec/react.ts && cpr ../../output/tmp/react/src ../../output/react/src -o",
     "compile:vue": "mitosis build -c mitosis-vue.config.js && tsx scripts/exec/vue.ts && cpr ../../output/tmp/vue/src ../../output/vue/src -o",
     "copy-assets": "cpr ../foundations/assets build/assets -o",
@@ -33,6 +34,7 @@
     "copy:readme": "cpr README.md ../../build-outputs/components/README.md -o",
     "dev:angular": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:angular\"",
     "dev:html": "npm run copy-assets && npm run build-assets && npm run build-style:01_sass && vite --open",
+    "dev:stencil": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:stencil\"",
     "dev:react": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:react\"",
     "dev:scss": "npm run build-style:01_sass -- --watch",
     "dev:vue": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:vue\"",
@@ -54,7 +56,6 @@
     "cssnano": "^7.0.5",
     "eslint": "^9.0.0",
     "hygen": "^6.2.11",
-    "lit": "^3.2.0",
     "nodemon": "3.1.4",
     "sass": "1.77.4",
     "tsx": "^4.19.0"

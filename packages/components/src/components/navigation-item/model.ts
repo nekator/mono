@@ -41,14 +41,6 @@ export type DBNavigationItemProps = DBNavigationItemDefaultProps &
 	WidthProps &
 	NavigationBackButtonProps;
 
-export interface DBNavigationItemTriangleData {
-	itemRect: DOMRect;
-	parentElementWidth: number;
-	subNavigationHeight: number;
-	padding: number;
-	outsideVX: 'left' | 'right' | undefined;
-	outsideVY: 'top' | 'bottom' | undefined;
-}
 
 export interface DBNavigationItemDefaultState {
 	handleBackClick: (event: ClickEvent<HTMLButtonElement>) => void;

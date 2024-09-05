@@ -7,16 +7,17 @@
 	<db-page variant="fixed" documentOverflow="auto" [fadeIn]="true">
 		<db-header
 			header
+			slot="header"
 			[drawerOpen]="drawerOpen"
 			(onToggle)="toggleDrawer($event)"
 		>
-			<db-brand brand>Showcase</db-brand>
+			<db-brand brand slot="brand">Showcase</db-brand>
 			<db-navigation *dbNavigation aria-label="main-navigation">
 				@for (item of navigationItems; track item.label) {
 					<app-nav-item [navItem]="item"> </app-nav-item>
 				}
 			</db-navigation>
-			<ng-container *dbMetaNavigation>
+			<ng-container *dbMetaNavigation slot="metaNavigation">
 				<db-select
 					variant="floating"
 					label="Density"
@@ -42,7 +43,7 @@
 					}
 				</db-select>
 			</ng-container>
-			<ng-container primary-action>
+			<ng-container primary-action slot="primaryAction">
 				<DBButton
 					icon="magnifying_glass"
 					variant="ghost"
@@ -50,7 +51,7 @@
 					>Search</DBButton
 				>
 			</ng-container>
-			<ng-container *dbSecondaryAction>
+			<ng-container *dbSecondaryAction slot="secondaryAction">
 				<DBButton icon="user" variant="ghost" [noText]="true">
 					Profile
 				</DBButton>
