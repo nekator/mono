@@ -98,7 +98,7 @@
 				}
 			}
 
-			// angular workaround: as no direct-child selector can be used, the puls is hidden from the second level onwards
+			// angular workaround: as no direct-child selector can be used, the pulse is hidden from the second level onwards
 			.db-navigation-item {
 				&::after {
 					display: none;
