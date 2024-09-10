@@ -13,7 +13,9 @@ test.describe('DBCheckbox', () => {
 			if (nvda) {
 				await nvda?.next(); // Focus checkbox 2
 				await nvda?.act(); // Tick checkbox 2
+				await nvda?.next(); // Focus checkbox 2 label
 				await nvda?.next(); // Focus checkbox 2 message
+				await nvda?.previous(); // Focus checkbox 2 label
 				await nvda?.previous(); // Focus checkbox 2
 				await nvda?.act(); // Tick checkbox 2
 				await nvda?.next(); // Focus checkbox 2 label
