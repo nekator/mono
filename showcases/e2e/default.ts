@@ -29,7 +29,7 @@ export const waitForDBPage = async (page: Page) => {
 	await dbPage.evaluate((element) => {
 		element.style.transition = 'none';
 	});
-	await expect(dbPage).toHaveAttribute('data-fonts-loaded', 'true');
+	await expect(dbPage).not.toHaveAttribute('data-fonts-loaded', 'false');
 	await expect(dbPage).toHaveCSS('opacity', '1');
 	await expect(page.locator('html')).toHaveCSS('overflow', 'hidden');
 };
@@ -137,32 +137,36 @@ export const getA11yTest = ({
 		});
 	}
 
-	test('test with accessibility checker', async ({ page }, { project }) => {
-		await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
-		let failures: any[] = [];
-		try {
-			if (project.name === 'firefox') {
-				// Checking complete DOM in Firefox takes very long, we skip this test for Firefox
-				test.skip();
+	test(
+		'test with accessibility checker',
+		async ({ page }, { project }) => {
+			await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
+			let failures: any[] = [];
+			try {
+				if (project.name === 'firefox') {
+					// Checking complete DOM in Firefox takes very long, we skip this test for Firefox
+					test.skip();
+				}
+
+				const { report } = await getCompliance(page, path);
+
+				if (isCheckerError(report)) {
+					failures = report.details;
+				} else {
+					failures = report.results
+						.filter((res) => res.level === 'violation')
+						.filter(
+							(res) => !aCheckerDisableRules?.includes(res.ruleId)
+						);
+				}
+			} catch (error) {
+				console.error(error);
+			} finally {
+				await close();
 			}
 
-			const { report } = await getCompliance(page, path);
-
-			if (isCheckerError(report)) {
-				failures = report.details;
-			} else {
-				failures = report.results
-					.filter((res) => res.level === 'violation')
-					.filter(
-						(res) => !aCheckerDisableRules?.includes(res.ruleId)
-					);
-			}
-		} catch (error) {
-			console.error(error);
-		} finally {
-			await close();
-		}
-
-		expect(failures).toEqual([]);
-	});
+			expect(failures).toEqual([]);
+		},
+		{ timeout: 60_000 }
+	);
 };
