@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prebuild": "npm run build --workspace @db-ui/web-components",
     "build": "ng build",
     "dev": "npm-run-all -p dev:*",
     "dev:angular": "npm run start -- --open",
-    "dev:stencil": "npm run start --workspace @db-ui/stencil-components",
+    "dev:stencil": "npm run start --workspace @db-ui/web-components",
     "ng": "ng",
     "preview": "npx http-server ../../build-showcases",
     "start": "ng serve --port 4202 --serve-path stencil-showcase",
