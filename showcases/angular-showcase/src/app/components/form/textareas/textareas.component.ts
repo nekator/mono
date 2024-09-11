@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WrapperComponent } from '../wrapper/wrapper.component';
 import { DBTextarea } from '../../../../../../../output/angular/src';
@@ -8,9 +8,7 @@ import { DBTextarea } from '../../../../../../../output/angular/src';
 	standalone: true,
 	imports: [WrapperComponent, DBTextarea, FormsModule, ReactiveFormsModule],
 	templateUrl: './textareas.component.html',
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TextareasComponent {
 	plain = 'test1';

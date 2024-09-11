@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import defaultComponentVariants from '../../../../../shared/navigation.json';
 import { DefaultComponent } from '../default.component';
 import {
@@ -7,23 +7,21 @@ import {
 	DBNavigationItem,
 	NavigationContentDirective
 } from '../../../../../../output/angular/src';
-import { environment } from "../../../environments/environment";
+import { environment } from '../../../environments/environment';
 
 @Component({
 	selector: 'app-navigation',
 	templateUrl: './navigation.component.html',
-	imports:  environment.webComponents
+	imports: environment.webComponents
 		? [DefaultComponent]
 		: [
-		DefaultComponent,
-		DBNavigation,
-		DBNavigationItem,
-		NavigationContentDirective,
-		DBInfotext
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
+				DefaultComponent,
+				DBNavigation,
+				DBNavigationItem,
+				NavigationContentDirective,
+				DBInfotext
+			],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	standalone: true
 })
 export class NavigationComponent {

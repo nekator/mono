@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {
 	DBAccordion,
 	DBAccordionItem,
@@ -15,9 +15,7 @@ import { environment } from '../../../environments/environment';
 		? [DefaultComponent]
 		: [DefaultComponent, DBInfotext, DBAccordion, DBAccordionItem],
 	standalone: true,
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AccordionComponent {
 	variants = defaultComponentVariants;
