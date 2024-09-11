@@ -9,36 +9,53 @@ A web-component library containing all components of [DB UX Design System (techn
 
 ## Install
 
-`npm i @db-ui/web-components`
-
-## Dependencies
-
-```json
-# package.json
-"copy:assets": "cpr node_modules/@db-ui/foundations/assets ./public/assets  -o",
-"copy:styles": "cpr node_modules/@db-ui/components/build/styles/db-ui-42.css ./public/styles/db-ui-42.css  -o",
-"copy:components": "cpr node_modules/@db-ui/components/build/components ./public/components  -o",
+```shell
+npm i @db-ui/web-components
 ```
 
-```html
-# index.html
+> **Note:** This will install [`@db-ui/foundations`](https://www.npmjs.com/package/@db-ui/foundations) and [`@db-ui/components`](https://www.npmjs.com/package/@db-ui/components) as well which contains the `css`/`scss` files
 
-<head>
-	...
-	<link rel="stylesheet" href="styles/db-ui-42.css" />
-	...
-</head>
+## Styling Dependencies
+
+Import the styles in scss or css. Based on your technology the file names could be different.
+
+-   Default (db-ui-42): points to `../assets`
+-   Webpack (db-ui-42-webpack): points to `~@db-ui/foundations/assets`
+-   Rollup (db-ui-42-rollup): points to `@db-ui/foundations/assets`
+
+<details>
+  <summary><strong>SCSS</strong></summary>
+
+```scss
+// index.scss
+@forward "@db-ui/components/build/styles/db-ui-42-rollup";
 ```
+
+</details>
+<details>
+  <summary><strong>CSS</strong></summary>
+
+```js
+// main.js
+import "@db-ui/components/build/styles/db-ui-42-rollup.css";
+```
+
+</details>
+
+> **Note:** The `db-ui-42` file contains optional and all components styles. If you consider performance issues see [@db-ui/components](https://www.npmjs.com/package/@db-ui/components) for more information.
 
 ## Usage
 
-```javascript
-import "node_modules/@db-ui/web-components/components/button/button.js";
+```js
+// main.js
+import { defineCustomElements } from "@db-ui/web-components/loader/index.js";
+defineCustomElements();
+```
 
+```html
 ...
-<db-button variant="brand" icon="user">Test</db-button>
+<db-button icon="user">Test</db-button>
 ...
-
 ```
 
 ## Deutsche Bahn brand

@@ -9,8 +9,6 @@ module.exports = {
 		'**/textarea/**',
 		'**/navigation-item/**',
 		'**/popover/**',
-		// TODO
-
 		'**/header/**'
 	],
 	targets: ['stencil'],

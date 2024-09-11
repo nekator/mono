@@ -1,5 +1,5 @@
 {
-  "name": "@db-ui/stencil-components",
+  "name": "@db-ui/web-components",
   "version": "0.0.0",
   "description": "Stencil components for @db-ui/components",
   "repository": {
@@ -9,12 +9,23 @@
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./loader/*": "./dist/loader/*"
+  },
   "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "build": "stencil build",
+    "mv:dist": "cpr dist ../../build-outputs/web-components/dist -o",
+    "mv:package.json": "cpr package.json ../../build-outputs/web-components/package.json -o",
+    "mv:readme": "cpr README.md ../../build-outputs/web-components/README.md -o",
+    "postbuild": "npm-run-all -p mv:*",
     "start": "stencil build --watch"
   },
   "devDependencies": {
