@@ -10,7 +10,7 @@
     "build-outputs:foundations": "npm run copy-build --workspace=@db-ui/foundations",
     "build-outputs:ngx-components": "npm run build --workspace=@db-ui/ngx-components",
     "build-outputs:react-components": "npm run build --workspace=@db-ui/react-components",
-    "build-outputs:stencil-components": "npm run build --workspace=@db-ui/stencil-components",
+    "build-outputs:stencil-components": "npm run build --workspace=@db-ui/web-components",
     "build-outputs:v-components": "npm run build --workspace=@db-ui/v-components",
     "build-outputs:web-components": "npm run build --workspace=@db-ui/web-components",
     "build-showcases": "npm-run-all -p build-showcases:*",
