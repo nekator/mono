@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[18264],{18774:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/textarea/code/Semantic",function(){return e(95452)}])}},function(n){n.O(0,[14863,95452,92888,49774,40179],function(){return n(n.s=18774)}),_N_E=n.O()}]);
