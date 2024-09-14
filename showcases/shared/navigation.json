@@ -5,17 +5,11 @@
 			{
 				"name": "navigation-item",
 				"content": "Navi-Item 1",
-				"props": {
-					"active": true
-				},
 				"children": [
 					{
 						"name": "navigation-item",
 						"content": "Sub-Navi-Item 1",
 						"slot": "sub-navigation",
-						"props": {
-							"active": true
-						},
 						"children": [
 							{
 								"name": "navigation-item",
@@ -55,15 +49,18 @@
 		"examples": [
 			{
 				"name": "Functional",
-				"className": "db-density-functional"
+				"density": "functional",
+				"props": {}
 			},
 			{
 				"name": "(Default) Regular",
-				"className": "db-density-regular"
+				"density": "regular",
+				"props": {}
 			},
 			{
 				"name": "Expressive",
-				"className": "db-density-expressive"
+				"density": "expressive",
+				"props": {}
 			}
 		]
 	}
