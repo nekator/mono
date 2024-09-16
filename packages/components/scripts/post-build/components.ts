@@ -157,6 +157,16 @@ export const getComponents = (): Component[] => [
 	{
 		name: 'select',
 		overwrites: {
+			angular: [
+				{
+					from: 'this._value = this.value;',
+					to:
+						'this._value = this.value;\n' +
+						'if (this.ref?.nativeElement) {\n' +
+						"\t\t\t\tthis.renderer.setProperty(this.ref?.nativeElement, 'value', this._value);\n" +
+						'\t\t\t}'
+				}
+			],
 			react: [
 				// React not allowing selected for options
 				{ from: 'selected={option.selected}', to: '' },

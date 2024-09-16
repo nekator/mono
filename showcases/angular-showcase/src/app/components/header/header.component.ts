@@ -21,13 +21,14 @@ import { environment } from '../../../environments/environment';
 	imports: environment.webComponents
 		? [
 				DefaultComponent,
+				DBHeader,
 				DBNavigation,
 				DBNavigationItem,
 				SecondaryActionDirective,
 				NavigationDirective,
 				MetaNavigationDirective,
 				NavigationContentDirective
-			] // TODO: Remove DBNavigation,DBNavigationItem,SecondaryActionDirective,NavigationDirective,MetaNavigationDirective,NavigationContentDirective after stencil component works
+			] // TODO: Remove DBHeader,DBNavigation,DBNavigationItem,SecondaryActionDirective,NavigationDirective,MetaNavigationDirective,NavigationContentDirective after stencil component works
 		: [
 				DefaultComponent,
 				DBBrand,
