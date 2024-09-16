@@ -61,6 +61,6 @@ for REGISTRY in 'GITHUB' 'NPM'; do
 	for PACKAGE in 'foundations' 'components' 'ngx-components' 'react-components' 'v-components' 'web-components'; do
 		echo "⤴ Publish $PACKAGE with tag $TAG to $REGISTRY"
   		# https://docs.npmjs.com/generating-provenance-statements#example-github-actions-workflow
-		npm publish --tag "$TAG" db-ui-"$PACKAGE"-"$VALID_SEMVER_VERSION".tgz --provenance --access public
+		npm publish --tag "$TAG" db-ui-"$PACKAGE"-"$VALID_SEMVER_VERSION".tgz --provenance
 	done
 done
