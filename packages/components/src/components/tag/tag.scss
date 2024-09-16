@@ -178,12 +178,14 @@
 	}
 
 	&:has(:disabled),
-	&[data-disabled="true"] {
+	&[data-disabled="true"],
+	&[data-disabled] {
 		opacity: component.$default-disabled;
 		pointer-events: none;
 	}
 
-	&[data-overflow="true"] {
+	&[data-overflow="true"],
+	&[data-overflow] {
 		max-inline-size: variables.$db-sizing-2xl;
 
 		> * {

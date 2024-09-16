@@ -23,6 +23,12 @@ export type DefaultA11yTestType = {
 	preA11y?: (page: Page) => Promise<void>;
 } & DefaultTestType;
 
+export const hasWebComponentSyntax = (): boolean => {
+	const isAngular = process.env.showcase.startsWith('angular');
+	const isStencil = process.env.showcase.startsWith('stencil');
+	return isAngular || isStencil;
+};
+
 export const waitForDBPage = async (page: Page) => {
 	const dbPage = page.locator('.db-page');
 	// We wait till db-page fully loaded
