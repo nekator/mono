@@ -53,6 +53,7 @@ const runTempReplacement = (rootFile: string) => {
 		'textarea',
 		'navigation-item',
 		'accordion',
+		'accordion-item',
 		'popover',
 		'header'
 	].map((component) => ({

@@ -17,7 +17,14 @@ import { DefaultComponent } from '../default.component';
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	imports: environment.webComponents
-		? [DefaultComponent]
+		? [
+				DefaultComponent,
+				InputsComponent,
+				FormComponent,
+				TextareasComponent,
+				SelectsComponent,
+				CheckboxesComponent
+			]
 		: [
 				DBTabs,
 				DBTabItem,

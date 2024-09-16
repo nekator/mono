@@ -2,6 +2,7 @@ module.exports = {
 	files: 'src/**',
 	exclude: [
 		'**/accordion/**',
+		'**/accordion-item/**',
 		'**/checkbox/**',
 		'**/input/**',
 		'**/select/**',

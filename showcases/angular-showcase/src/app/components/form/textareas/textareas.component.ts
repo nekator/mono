@@ -1,12 +1,22 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WrapperComponent } from '../wrapper/wrapper.component';
-import { DBTextarea } from '../../../../../../../output/angular/src';
+import {
+	DBCheckbox,
+	DBInput,
+	DBRadio,
+	DBSelect,
+	DBTextarea
+} from '../../../../../../../output/angular/src';
+import { environment } from '../../../../environments/environment';
+import { DefaultComponent } from '../../default.component';
 
 @Component({
 	selector: 'app-textareas',
 	standalone: true,
-	imports: [WrapperComponent, DBTextarea, FormsModule, ReactiveFormsModule],
+	imports: environment.webComponents
+		? [WrapperComponent, DBTextarea, FormsModule, ReactiveFormsModule] // TODO: Remove DBTextarea after stencil component works
+		: [WrapperComponent, DBTextarea, FormsModule, ReactiveFormsModule],
 	templateUrl: './textareas.component.html',
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

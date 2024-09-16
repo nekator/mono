@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 	selector: 'app-switch',
 	templateUrl: './switch.component.html',
 	imports: environment.webComponents
-		? [DefaultComponent]
+		? [DefaultComponent, DBSwitch] // TODO: Remove DBSwitch after stencil component works
 		: [DefaultComponent, DBSwitch, DBInfotext],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	standalone: true

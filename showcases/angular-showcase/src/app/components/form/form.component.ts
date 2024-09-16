@@ -24,27 +24,39 @@ import {
 	DBTextarea
 } from '../../../../../../output/angular/src';
 import { DefaultComponent } from '../default.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
 	selector: 'app-form',
 	templateUrl: './form.component.html',
-	imports: [
-		FormsModule,
-		ReactiveFormsModule,
-		DefaultComponent,
-		DBInput,
-		DBTextarea,
-		DBSelect,
-		DBRadio,
-		DBTag,
-		DBCheckbox,
-		DBDivider,
-		DBButton,
-		DBTabs,
-		DBTabList,
-		DBTabItem,
-		DBTabPanel
-	],
+	imports: environment.webComponents
+		? [
+				FormsModule,
+				ReactiveFormsModule,
+				DefaultComponent,
+				DBInput,
+				DBTextarea,
+				DBSelect,
+				DBRadio,
+				DBCheckbox
+			] // TODO: Remove DBInput, DBTextarea, DBSelect, DBRadio, DBCheckbox after stencil component works
+		: [
+				FormsModule,
+				ReactiveFormsModule,
+				DefaultComponent,
+				DBInput,
+				DBTextarea,
+				DBSelect,
+				DBRadio,
+				DBTag,
+				DBCheckbox,
+				DBDivider,
+				DBButton,
+				DBTabs,
+				DBTabList,
+				DBTabItem,
+				DBTabPanel
+			],
 	standalone: true,
 	schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
