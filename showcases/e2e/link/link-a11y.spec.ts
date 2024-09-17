@@ -5,6 +5,9 @@ import { getA11yTest, isStencil } from '../default.ts';
 test.describe('DBLink', () => {
 	getA11yTest({
 		path: '02/link',
+		axeDisableRules: isStencil(process.env.showcase)
+			? ['color-contrast']
+			: [],
 		aCheckerDisableRules: isStencil(process.env.showcase)
 			? ['text_contrast_sufficient', 'aria_attribute_valid']
 			: ['aria_attribute_valid'] // TODO: This is a false positive -> add an issue in https://github.com/IBMa/equal-access

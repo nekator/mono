@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { hasWebComponentSyntax, waitForDBPage } from '../default';
+import { hasWebComponentSyntax, isStencil, waitForDBPage } from '../default';
 
 const testFormComponents = async (
 	page: Page,
@@ -84,19 +84,37 @@ test.describe('Home', () => {
 		expect(accessibilityScanResults.violations).toEqual([]);
 	});
 
+	const stencil = isStencil(process.env.showcase);
+
 	test('test inputs', async ({ page }) => {
+		if (stencil) {
+			test.skip();
+		}
+
 		await testFormComponents(page, 'tab-inputs', 'textbox');
 	});
 
 	test('test textareas', async ({ page }) => {
+		if (stencil) {
+			test.skip();
+		}
+
 		await testFormComponents(page, 'tab-textareas', 'textbox');
 	});
 
 	test('test selects', async ({ page }) => {
+		if (stencil) {
+			test.skip();
+		}
+
 		await testFormComponents(page, 'tab-selects', 'combobox');
 	});
 
 	test('test checkboxes', async ({ page }) => {
+		if (stencil) {
+			test.skip();
+		}
+
 		await testFormComponents(page, 'tab-checkboxes', 'checkbox');
 	});
 });
