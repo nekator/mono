@@ -21,14 +21,17 @@ export type DefaultA11yTestType = {
 	axeDisableRules?: string[];
 	aCheckerDisableRules?: string[];
 	skipAxe?: boolean;
+	skipChecker?: boolean;
 	preAxe?: (page: Page) => Promise<void>;
 	preChecker?: (page: Page) => Promise<void>;
 } & DefaultTestType;
 
+export const isStencil = (showcase: string): boolean =>
+	showcase.startsWith('stencil');
+
 export const hasWebComponentSyntax = (showcase: string): boolean => {
 	const isAngular = showcase.startsWith('angular');
-	const isStencil = showcase.startsWith('stencil');
-	return isAngular || isStencil;
+	return isAngular || isStencil(showcase);
 };
 
 export const waitForDBPage = async (page: Page) => {
@@ -112,7 +115,8 @@ export const getA11yTest = ({
 	skipAxe,
 	preAxe,
 	aCheckerDisableRules,
-	preChecker
+	preChecker,
+	skipChecker
 }: DefaultA11yTestType) => {
 	for (const color of COLORS) {
 		test(`should not have any A11y issues for color ${color}`, async ({
@@ -154,7 +158,7 @@ export const getA11yTest = ({
 	}
 
 	test('test with accessibility checker', async ({ page }, { project }) => {
-		if (shouldSkipA11yTest(project)) {
+		if (skipChecker ?? shouldSkipA11yTest(project)) {
 			// Checking complete DOM in Firefox and Webkit takes very long, we skip this test
 			// we don't need to check for mobile device - it just changes the viewport
 			test.skip();

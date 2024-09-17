@@ -86,7 +86,8 @@
 				"props": {
 					"options": [
 						{
-							"value": "Floating Label"
+							"value": "Floating Label",
+							"selected": true
 						},
 						{
 							"value": "Option 2"
