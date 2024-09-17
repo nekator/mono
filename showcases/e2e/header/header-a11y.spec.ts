@@ -3,5 +3,8 @@ import { test } from '@playwright/test';
 import { getA11yTest, hasWebComponentSyntax } from '../default.ts';
 
 test.describe('DBHeader', () => {
-	getA11yTest({ path: '01/header', skipA11y: hasWebComponentSyntax() });
+	getA11yTest({
+		path: '01/header',
+		skipAxe: hasWebComponentSyntax(process.env.showcase)
+	});
 });

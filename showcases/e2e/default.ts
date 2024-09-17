@@ -2,6 +2,7 @@ import { expect, type Page, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { close, getCompliance } from 'accessibility-checker';
 import { type ICheckerError } from 'accessibility-checker/lib/api/IChecker';
+import { type FullProject } from 'playwright/types/test';
 import { COLORS } from './fixtures/variants';
 import { setScrollViewport } from './fixtures/viewport';
 
@@ -19,13 +20,14 @@ export type DefaultSnapshotTestType = {
 export type DefaultA11yTestType = {
 	axeDisableRules?: string[];
 	aCheckerDisableRules?: string[];
-	skipA11y?: boolean;
-	preA11y?: (page: Page) => Promise<void>;
+	skipAxe?: boolean;
+	preAxe?: (page: Page) => Promise<void>;
+	preChecker?: (page: Page) => Promise<void>;
 } & DefaultTestType;
 
-export const hasWebComponentSyntax = (): boolean => {
-	const isAngular = process.env.showcase.startsWith('angular');
-	const isStencil = process.env.showcase.startsWith('stencil');
+export const hasWebComponentSyntax = (showcase: string): boolean => {
+	const isAngular = showcase.startsWith('angular');
+	const isStencil = showcase.startsWith('stencil');
 	return isAngular || isStencil;
 };
 
@@ -98,19 +100,27 @@ export const getDefaultScreenshotTest = ({
 	});
 };
 
+const shouldSkipA11yTest = (project: FullProject): boolean =>
+	project.name === 'firefox' ||
+	project.name === 'webkit' ||
+	project.name.startsWith('mobile');
+
 export const getA11yTest = ({
 	path,
 	fixedHeight,
 	axeDisableRules,
-	skipA11y,
-	preA11y,
-	aCheckerDisableRules
+	skipAxe,
+	preAxe,
+	aCheckerDisableRules,
+	preChecker
 }: DefaultA11yTestType) => {
 	for (const color of COLORS) {
 		test(`should not have any A11y issues for color ${color}`, async ({
 			page
 		}, { project }) => {
-			if (skipA11y) {
+			const isLevelOne = color.endsWith('-1');
+			// We don't need to check color contrast for every project (just for chrome)
+			if (skipAxe ?? (!isLevelOne && shouldSkipA11yTest(project))) {
 				test.skip();
 			}
 
@@ -128,8 +138,8 @@ export const getA11yTest = ({
 				}
 			}, project);
 
-			if (preA11y) {
-				await preA11y(page);
+			if (preAxe) {
+				await preAxe(page);
 			}
 
 			const accessibilityScanResults = await new AxeBuilder({
@@ -143,36 +153,40 @@ export const getA11yTest = ({
 		});
 	}
 
-	test(
-		'test with accessibility checker',
-		async ({ page }, { project }) => {
-			await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
-			let failures: any[] = [];
-			try {
-				if (project.name === 'firefox') {
-					// Checking complete DOM in Firefox takes very long, we skip this test for Firefox
-					test.skip();
-				}
+	test('test with accessibility checker', async ({ page }, { project }) => {
+		if (shouldSkipA11yTest(project)) {
+			// Checking complete DOM in Firefox and Webkit takes very long, we skip this test
+			// we don't need to check for mobile device - it just changes the viewport
+			test.skip();
+		}
 
-				const { report } = await getCompliance(page, path);
+		await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
 
-				if (isCheckerError(report)) {
-					failures = report.details;
-				} else {
-					failures = report.results
-						.filter((res) => res.level === 'violation')
-						.filter(
-							(res) => !aCheckerDisableRules?.includes(res.ruleId)
-						);
-				}
-			} catch (error) {
-				console.error(error);
-			} finally {
-				await close();
+		if (preChecker) {
+			await preChecker(page);
+		}
+
+		let failures: any[] = [];
+		try {
+			// Makes a call against https://cdn.jsdelivr.net/npm/accessibility-checker-engine
+			const { report } = await getCompliance(page, path);
+
+			if (isCheckerError(report)) {
+				failures = report.details;
+			} else {
+				failures = report.results
+					.filter((res) => res.level === 'violation')
+					.filter(
+						(res) => !aCheckerDisableRules?.includes(res.ruleId)
+					);
 			}
+		} catch (error) {
+			console.error(error);
+			failures.push(error);
+		} finally {
+			await close();
+		}
 
-			expect(failures).toEqual([]);
-		},
-		{ timeout: 60_000 }
-	);
+		expect(failures).toEqual([]);
+	});
 };

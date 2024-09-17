@@ -3,8 +3,31 @@ import { runReplacements, transformToUpperComponentName } from '../utils';
 import { replaceInFileSync } from 'replace-in-file';
 import { writeFileSync, existsSync } from 'node:fs';
 
-const changeFile = (upperComponentName: string, input: string) => {
-	return input
+const enableCustomElementsAttributePassing = (componentName: string) =>
+	'componentDidLoad() {\n' +
+	`\tenableCustomElementAttributePassing(ref, "db-${componentName}")`;
+
+const changeFile = (
+	componentName: string,
+	upperComponentName: string,
+	input: string
+) => {
+	let resolvedInput = input;
+	if (resolvedInput.includes('componentDidLoad')) {
+		resolvedInput = resolvedInput.replace(
+			'componentDidLoad() {',
+			enableCustomElementsAttributePassing(componentName)
+		);
+	} else {
+		resolvedInput = resolvedInput.replace(
+			'render() {',
+			enableCustomElementsAttributePassing(componentName) +
+				'}\n' +
+				'render() {'
+		);
+	}
+
+	return resolvedInput
 		.split('\n')
 		.map((line) => {
 			if (line.includes('@Prop()')) {
@@ -116,7 +139,8 @@ export default (tmp?: boolean) => {
 
 		replaceInFileSync({
 			files: file,
-			processor: (input: string) => changeFile(upperComponentName, input)
+			processor: (input: string) =>
+				changeFile(componentName, upperComponentName, input)
 		});
 
 		let replacements: Overwrite[] = [
@@ -169,6 +193,10 @@ export default (tmp?: boolean) => {
 				to: 'this.ref,'
 			},
 			{
+				from: /this.this/g,
+				to: 'this'
+			},
+			{
 				from: /for=/g,
 				to: 'htmlFor='
 			},
@@ -179,6 +207,10 @@ export default (tmp?: boolean) => {
 			{
 				from: /<\/>/g,
 				to: '</Fragment>'
+			},
+			{
+				from: '} from "../../utils"',
+				to: ', enableCustomElementAttributePassing } from "../../utils"'
 			}
 		];
 

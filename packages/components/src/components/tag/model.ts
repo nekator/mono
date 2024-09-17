@@ -20,7 +20,7 @@ export interface DBTagDefaultProps {
 	behaviour?: TagBehaviourType;
 
 	/**
-	 * Disable tag. (Deprecated)
+	 * @deprecated Disable tag
 	 */
 	disabled?: boolean;
 	/**

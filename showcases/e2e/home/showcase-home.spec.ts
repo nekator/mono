@@ -63,7 +63,7 @@ test.describe('Home', () => {
 
 	test('should not have any A11y issues', async ({ page }) => {
 		// Angular wraps custom components in own tags this will cause a lot of issues with axe-core
-		if (hasWebComponentSyntax()) {
+		if (hasWebComponentSyntax(process.env.showcase)) {
 			test.skip();
 		}
 

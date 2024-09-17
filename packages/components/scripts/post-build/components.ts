@@ -159,11 +159,11 @@ export const getComponents = (): Component[] => [
 		overwrites: {
 			angular: [
 				{
-					from: 'this._value = this.value;',
+					from: 'this.initialized = false;',
 					to:
-						'this._value = this.value;\n' +
+						'this.initialized = false;\n' +
 						'if (this.ref?.nativeElement) {\n' +
-						"\t\t\t\tthis.renderer.setProperty(this.ref?.nativeElement, 'value', this._value);\n" +
+						"\t\t\t\tthis.renderer.setProperty(this.ref?.nativeElement, 'value', this.value);\n" +
 						'\t\t\t}'
 				}
 			],

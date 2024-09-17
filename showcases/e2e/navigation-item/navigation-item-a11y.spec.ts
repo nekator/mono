@@ -7,6 +7,6 @@ test.describe('DBNavigationItem', () => {
 	getA11yTest({
 		path: '05/navigation-item',
 		fixedHeight: 1800,
-		skipA11y: hasWebComponentSyntax()
+		skipAxe: hasWebComponentSyntax(process.env.showcase)
 	});
 });
