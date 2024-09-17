@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
 		'{snapshotDir}/{testFileDir}/showcase/{projectName}/{arg}/{testName}{ext}',
 	snapshotDir: './../__snapshots__',
 	expect: {
-		timeout: 60_000
+		timeout: 10_000
 	},
 	/* Run tests in files in parallel */
 	fullyParallel: true,

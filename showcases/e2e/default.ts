@@ -157,40 +157,44 @@ export const getA11yTest = ({
 		});
 	}
 
-	test('test with accessibility checker', async ({ page }, { project }) => {
-		if (skipChecker ?? shouldSkipA11yTest(project)) {
-			// Checking complete DOM in Firefox and Webkit takes very long, we skip this test
-			// we don't need to check for mobile device - it just changes the viewport
-			test.skip();
-		}
-
-		await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
-
-		if (preChecker) {
-			await preChecker(page);
-		}
-
-		let failures: any[] = [];
-		try {
-			// Makes a call against https://cdn.jsdelivr.net/npm/accessibility-checker-engine
-			const { report } = await getCompliance(page, path);
-
-			if (isCheckerError(report)) {
-				failures = report.details;
-			} else {
-				failures = report.results
-					.filter((res) => res.level === 'violation')
-					.filter(
-						(res) => !aCheckerDisableRules?.includes(res.ruleId)
-					);
+	test(
+		'test with accessibility checker',
+		async ({ page }, { project }) => {
+			if (skipChecker ?? shouldSkipA11yTest(project)) {
+				// Checking complete DOM in Firefox and Webkit takes very long, we skip this test
+				// we don't need to check for mobile device - it just changes the viewport
+				test.skip();
 			}
-		} catch (error) {
-			console.error(error);
-			failures.push(error);
-		} finally {
-			await close();
-		}
 
-		expect(failures).toEqual([]);
-	});
+			await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
+
+			if (preChecker) {
+				await preChecker(page);
+			}
+
+			let failures: any[] = [];
+			try {
+				// Makes a call against https://cdn.jsdelivr.net/npm/accessibility-checker-engine
+				const { report } = await getCompliance(page, path);
+
+				if (isCheckerError(report)) {
+					failures = report.details;
+				} else {
+					failures = report.results
+						.filter((res) => res.level === 'violation')
+						.filter(
+							(res) => !aCheckerDisableRules?.includes(res.ruleId)
+						);
+				}
+			} catch (error) {
+				console.error(error);
+				failures.push(error);
+			} finally {
+				await close();
+			}
+
+			expect(failures).toEqual([]);
+		},
+		{ timeout: 60_000 }
+	);
 };
