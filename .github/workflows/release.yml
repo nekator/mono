@@ -196,8 +196,6 @@ jobs:
     uses: ./.github/workflows/03-publish-packages.yml
     needs: [get-publish-version, checks-done, build-outputs]
     secrets: inherit
-    permissions:
-      id-token: write
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
       preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
