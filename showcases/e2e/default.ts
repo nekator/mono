@@ -157,17 +157,14 @@ export const getA11yTest = ({
 		});
 	}
 
-	test('test with accessibility checker', async ({ page }, {
-		project,
-		setTimeout
-	}) => {
+	test('test with accessibility checker', async ({ page }, { project }) => {
 		if (skipChecker ?? shouldSkipA11yTest(project)) {
 			// Checking complete DOM in Firefox and Webkit takes very long, we skip this test
 			// we don't need to check for mobile device - it just changes the viewport
 			test.skip();
 		}
 
-		setTimeout(60_000);
+		test.slow(); // Easy way to triple the default timeout
 
 		await gotoPage(page, path, 'neutral-bg-basic-level-1', fixedHeight);
 
