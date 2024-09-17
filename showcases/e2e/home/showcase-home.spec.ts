@@ -9,6 +9,7 @@ const testFormComponents = async (
 ) => {
 	await page.goto('./');
 	const tab = page.getByTestId(testId);
+	await expect(tab).toBeVisible();
 	await tab.click({ force: true });
 	const definition = await page
 		.getByTestId('data-list')
