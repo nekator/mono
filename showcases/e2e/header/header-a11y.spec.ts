@@ -7,6 +7,6 @@ test.describe('DBHeader', () => {
 		path: '01/header',
 		skipAxe: hasWebComponentSyntax(process.env.showcase),
 		// TODO: We skip this for now until mitosis output is correct
-		skipChecker: isStencil(process.env.showcase)
+		skipChecker: hasWebComponentSyntax(process.env.showcase)
 	});
 });

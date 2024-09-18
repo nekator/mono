@@ -266,7 +266,8 @@
 				"props": {
 					"options": [
 						{
-							"value": "Disabled"
+							"value": "Disabled",
+							"selected": true
 						},
 						{
 							"value": "Option 2"
