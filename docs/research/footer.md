@@ -25,3 +25,40 @@
 Most design systems do not offer a footer component. The few footers are rather simple, styled (background colour, centring) wrappers that offer one or more slots for any lists and components. For example, to display several links.
 
 The assumption here is that footers are often very individually structured, so that overly strict specifications on the part of the design system would be too **restrictive**.
+
+## Thoughts on implementation
+
+### Mobile Accordion
+
+🧠 _Link lists are summarised in an accordion on mobile so that the footer appears shorter and tidier._
+
+❓Links within collapsed accordion items are not read out by screen readers, only when the item is expanded. The page search does not find these links either. **Presumably this is not a11y compliant.**
+
+### data props versus component driven
+
+🧠 _Should the contents of the footer be transferred exclusively as data per property? Or are the contents mainly assembled "manually" via various (sub)components?_
+
+#### data props only
+**Pro**
+- easier to use for devs
+- the integrity of the footer is guaranteed. a standardised look is maintained.
+
+**Contra**
+- not consistent with the approach of existing components
+- not very flexible
+- links cannot be customised, which may be necessary depending on the framework
+
+#### (sub)components only
+**Pro**
+- flexible in use
+- standardised use within the DST
+- structure of the footer is represented in the template
+
+**Contra**
+- devs must strictly follow the docs to build a footer
+- there are no active guides, such as code completion or type checking, when using the footer component
+- potentially more errors are possible
+- devs need to write more code in the template
+
+
+
