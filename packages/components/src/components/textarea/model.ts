@@ -24,7 +24,7 @@ export type TextareaResizeType = (typeof TextareaResizeList)[number];
 export const TextareaWrapList = ['hard', 'soft', 'off'] as const;
 export type TextareaWrapType = (typeof TextareaWrapList)[number];
 
-export interface DBTextareaDefaultProps {
+export type DBTextareaDefaultProps  ={
 	/**
 	 * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer
 	 */
@@ -57,7 +57,7 @@ export type DBTextareaProps = DBTextareaDefaultProps &
 	FormTextProps &
 	FormMessageProps;
 
-export interface DBTextareaDefaultState {}
+export type DBTextareaDefaultState  ={}
 
 export type DBTextareaState = DBTextareaDefaultState &
 	ChangeEventState<HTMLTextAreaElement> &

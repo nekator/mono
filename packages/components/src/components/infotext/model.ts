@@ -6,7 +6,7 @@ import {
 	SizeProps
 } from '../../shared/model';
 
-export interface DBInfotextDefaultProps {}
+export type DBInfotextDefaultProps = {};
 
 export type DBInfotextProps = DBInfotextDefaultProps &
 	GlobalProps &
@@ -14,6 +14,6 @@ export type DBInfotextProps = DBInfotextDefaultProps &
 	IconProps &
 	SizeProps;
 
-export interface DBInfotextDefaultState {}
+export type DBInfotextDefaultState = {};
 
 export type DBInfotextState = DBInfotextDefaultState & GlobalState;

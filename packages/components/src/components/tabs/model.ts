@@ -17,7 +17,7 @@ export type TabsInitialSelectedModeType =
 	(typeof TabsInitialSelectedModeList)[number];
 
 export type DBSimpleTabProps = DBTabItemProps & DBTabPanelProps;
-export interface DBTabsDefaultProps {
+export type DBTabsDefaultProps = {
 	/**
 	 * Change amount of distance if you click on an arrow, only available with behaviour="arrows"
 	 */
@@ -55,7 +55,7 @@ export type DBTabsProps = DBTabsDefaultProps &
 	WidthProps &
 	AlignmentProps;
 
-export interface DBTabsDefaultState {
+export type DBTabsDefaultState= {
 	_name: string;
 	scrollContainer?: Element;
 	scroll: (left?: boolean) => void;

@@ -18,7 +18,7 @@ export const BadgePlacementList = [
 ] as const;
 export type BadgePlacementType = (typeof BadgePlacementList)[number];
 
-export interface DBBadgeDefaultProps {
+export type DBBadgeDefaultProps = {
 	/**
 	 * The `placement` attributes `corner-*` values change the position to absolute and adds a transform based on the placement.
 	 */
@@ -36,6 +36,6 @@ export type DBBadgeProps = DBBadgeDefaultProps &
 	SizeProps &
 	EmphasisProps;
 
-export interface DBBadgeDefaultState {}
+export type DBBadgeDefaultState = {}
 
 export type DBBadgeState = DBBadgeDefaultState & GlobalState & InitializedState;

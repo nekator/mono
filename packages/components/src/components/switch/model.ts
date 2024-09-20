@@ -15,9 +15,9 @@ import {
 	IconAfterProps
 } from '../../shared/model';
 
-export interface DBSwitchDefaultProps {
+export type DBSwitchDefaultProps = {
 	visualAid?: boolean;
-}
+};
 
 export type DBSwitchProps = DBSwitchDefaultProps &
 	GlobalProps &
@@ -30,9 +30,9 @@ export type DBSwitchProps = DBSwitchDefaultProps &
 	IconProps &
 	IconAfterProps;
 
-export interface DBSwitchDefaultState {
+export type DBSwitchDefaultState = {
 	_checked: boolean;
-}
+};
 
 export type DBSwitchState = DBSwitchDefaultState &
 	GlobalState &

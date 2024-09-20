@@ -48,7 +48,7 @@ import "@db-ui/components/build/styles/db-ui-42-rollup.css";
 
 ```js
 // main.js
-import { defineCustomElements } from "@db-ui/web-components/loader/index.js";
+import { defineCustomElements } from "@db-ui/web-components";
 defineCustomElements();
 ```
 
@@ -57,6 +57,19 @@ defineCustomElements();
 <db-button icon="user">Test</db-button>
 ...
 ```
+
+## VSCode autocomplete
+
+If you don't have it already, add a VS Code settings folder and file at the root of your project - `.vscode/settings.json`. Then add or append the following code:
+
+```json
+{
+	"html.customData": [
+		"./node_modules/@db-ui/web-components/dist/vscode.html-custom-data.json"
+	]
+}
+```
+
 
 ## Deutsche Bahn brand
 
