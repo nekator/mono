@@ -46,11 +46,11 @@ const getFilteredContextData = (data) => {
 /**
  * Resolves props by data
  * @param resolvedData {object}
- * @param name {string}
- * @param type {string}
+ * @param value {object}
  * @return {{resolvedType, name, type}}
  */
-const resolveProp = (resolvedData, name, type) => {
+const resolveProp = (resolvedData, value) => {
+	const { type } = value;
 	if (type !== type?.toLowerCase()) {
 		// This isn't a primitive like string, boolean, etc.
 		const foundData = resolvedData[type];
@@ -61,9 +61,9 @@ const resolveProp = (resolvedData, name, type) => {
 			warn('resolveProp', `Cannot find ${type}`);
 		}
 
-		return { name, type, resolvedType };
+		return { ...value, resolvedType };
 	} else {
-		return { name, type, resolvedType: type };
+		return { ...value, resolvedType: type };
 	}
 };
 
@@ -76,12 +76,12 @@ const resolveAllProps = (resolvedData, resolvedProps) => {
 	for (const [key, obj] of Object.entries(resolvedProps)) {
 		resolvedProps[key] = {
 			...obj,
-			values: obj.values.map(({ name, type }) => {
+			values: obj.values.map((value) => {
+				const { name, type } = value;
 				if (type instanceof Object) {
 					// In this case we have a literal or union
 					return {
-						name,
-						type,
+						...value,
 						resolvedType: type.values
 							.map((val) => {
 								return resolveProp(resolvedData, '', val)
@@ -90,7 +90,7 @@ const resolveAllProps = (resolvedData, resolvedProps) => {
 							.join(unionSeperator)
 					};
 				} else {
-					return resolveProp(resolvedData, name, type);
+					return resolveProp(resolvedData, value);
 				}
 			})
 		};
@@ -162,6 +162,7 @@ const resolveManifestTypes = (resolvedUnions, manifestValues) =>
 		}
 
 		let text = manifestValue.type.text;
+		let resolvedValue;
 		if (text.includes('[')) {
 			const splitText = text.includes("'")
 				? text.split("'")
@@ -176,6 +177,7 @@ const resolveManifestTypes = (resolvedUnions, manifestValues) =>
 					);
 					if (foundResolvedValue) {
 						text = foundResolvedValue.resolvedType;
+						resolvedValue = foundResolvedValue;
 					} else {
 						warn(
 							'resolveManifestTypes',
@@ -187,7 +189,12 @@ const resolveManifestTypes = (resolvedUnions, manifestValues) =>
 				}
 			}
 		}
-		return { ...manifestValue, type: { text } };
+		return {
+			...manifestValue,
+			type: { text },
+			description: resolvedValue?.comment,
+			resolvedValue
+		};
 	});
 
 export const packageLinkPhase = (
@@ -218,8 +225,9 @@ export const packageLinkPhase = (
 
 				return { ...declaration, members, attributes };
 			});
+			const path = module.path.split('/').at(-1);
 
-			return { ...module, declarations };
+			return { ...module, path, declarations };
 		});
 
 	if (postFn) {

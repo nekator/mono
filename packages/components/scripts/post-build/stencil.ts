@@ -7,6 +7,15 @@ const enableCustomElementsAttributePassing = (componentName: string) =>
 	'componentDidLoad() {\n' +
 	`\tenableCustomElementAttributePassing(ref, "db-${componentName}")`;
 
+const getSlotDocs = (foundSlots: string[]): string => {
+	return `
+/**
+ * @slot children - This is a default/unnamed slot
+${foundSlots.map((slot) => ` * @slot ${slot} - TODO: Add description for slot${transformToUpperComponentName(slot)}`).join('\n')}
+ */
+ `;
+};
+
 const changeFile = (
 	componentName: string,
 	upperComponentName: string,
@@ -26,6 +35,8 @@ const changeFile = (
 				'render() {'
 		);
 	}
+
+	const foundSlots = [];
 
 	return resolvedInput
 		.split('\n')
@@ -48,9 +59,19 @@ const changeFile = (
 					);
 			}
 
+			if (line.includes('<Slot name=')) {
+				foundSlots.push(
+					line
+						.replace('<Slot name="', '')
+						.replace('"></Slot>', '')
+						.trim()
+				);
+			}
+
 			return line;
 		})
-		.join('\n');
+		.join('\n')
+		.replace('@Component', getSlotDocs(foundSlots) + '@Component');
 };
 
 const replaceIndexFile = (

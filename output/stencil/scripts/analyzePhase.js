@@ -66,36 +66,37 @@ const getTypeOfList = (type) => {
  * @param ts {object} Typescript ast
  * @param members {object[]}
  */
-const getMembers = (ts, members) => {
-	return {
-		values: members.map((member) => {
-			const memberType = member.type;
-			let type;
+const getMembers = (ts, members) => ({
+	values: members.map((member) => {
+		const memberType = member.type;
+		const comment = member.jsDoc?.map((doc) => doc.comment).join('\n');
+		let type;
 
-			if (memberType.typeName) {
-				type = memberType?.typeName?.escapedText;
-			} else if (memberType.types) {
-				type = getUnions(ts, memberType.types);
-			} else {
-				type = getPrimitive(ts, memberType.kind);
-			}
+		if (memberType.typeName) {
+			type = memberType?.typeName?.escapedText;
+		} else if (memberType.types) {
+			type = getUnions(ts, memberType.types);
+		} else {
+			type = getPrimitive(ts, memberType.kind);
+		}
 
-			return {
-				name: member.name.escapedText,
-				type
-			};
-		}),
-		type: 'props'
-	};
-};
+		return {
+			name: member.name.escapedText,
+			type,
+			comment
+		};
+	}),
+	type: 'props'
+});
 
-export const analyzePhase = ({ ts, node, moduleDoc, context }) => {
+export const analyzePhase = ({ ts, node,  context }) => {
 	if (!context.data) {
 		context.data = {};
 	}
 
-	// ts.SyntaxKind.Bundle
-	if (node.kind === 312) {
+	const sourceFile = ts.SyntaxKind['SourceFile'];
+
+	if (node.kind === sourceFile) {
 		if (node.symbol.exports) {
 			node.symbol.exports.forEach((localExport) => {
 				const name = localExport.escapedName;
