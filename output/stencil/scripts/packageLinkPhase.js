@@ -194,7 +194,6 @@ export const packageLinkPhase = (
 	{ customElementsManifest, context },
 	postFn
 ) => {
-	console.log('packageLinkPhase custom');
 	const { resolvedProps, resolvedUnions, resolvedData } =
 		getFilteredContextData(context.data);
 
