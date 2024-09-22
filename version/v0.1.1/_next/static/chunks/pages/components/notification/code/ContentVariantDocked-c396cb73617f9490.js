@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[65574],{54480:function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/notification/code/ContentVariantDocked",function(){return t(10272)}])}},function(n){n.O(0,[9572,10272,92888,49774,40179],function(){return n(n.s=54480)}),_N_E=n.O()}]);

@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5035],{60077:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/infotext/code/Semantic",function(){return e(79466)}])}},function(n){n.O(0,[9572,79466,92888,49774,40179],function(){return n(n.s=60077)}),_N_E=n.O()}]);

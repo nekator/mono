@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[60178],{8587:function(n,_,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/header/code/Width",function(){return e(32262)}])}},function(n){n.O(0,[9572,32262,92888,49774,40179],function(){return n(n.s=8587)}),_N_E=n.O()}]);

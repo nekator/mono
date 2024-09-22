@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[93779],{32660:function(n,_,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/tab-item/code/Content",function(){return t(13653)}])}},function(n){n.O(0,[9572,13653,92888,49774,40179],function(){return n(n.s=32660)}),_N_E=n.O()}]);

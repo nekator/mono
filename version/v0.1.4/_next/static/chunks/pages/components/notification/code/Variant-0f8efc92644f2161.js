@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[58019],{68570:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/notification/code/Variant",function(){return o(3537)}])}},function(n){n.O(0,[9572,3537,92888,49774,40179],function(){return n(n.s=68570)}),_N_E=n.O()}]);
