@@ -32,8 +32,8 @@
 
 ## Possible aspects of Motion in DST
 
-- Docs: Explanation of the basic advantages motion offers
-- Docs: What are our animation basics?
+- Docs: Why it's worth using motion!
+- Docs: What are our animation basics and guidelines?
 - Pattern: How to animate related elements with a rhythm
 - Code: global variables for timings and easing functions
 - Code: global motion characteristics analogue to densities, e.g. none, reduced, default, expressive
