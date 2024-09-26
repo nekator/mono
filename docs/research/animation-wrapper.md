@@ -28,6 +28,19 @@
 
 **Compared to the existing design systems, it should be "easy" to set new standards here.**
 
+
+
+## Possible aspects of Motion in DST
+
+- Docs: Explanation of the basic advantages motion offers
+- Docs: What are our animation basics?
+- Pattern: How to animate related elements with a rhythm
+- Code: global variables for timings and easing functions
+- Code: global motion characteristics analogue to densities, e.g. none, reduced, default, expressive
+- Code: Components that show and hide elements
+- Code: Components that intercept certain events (e.g. scrolling) and then start animations
+
+
 ## Animation Tools / Plugins
 
 | Tool                                    | Fees? | Description | Possible benefits |
