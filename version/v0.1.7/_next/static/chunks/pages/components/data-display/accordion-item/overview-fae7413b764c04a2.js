@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[82911],{67962:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/data-display/accordion-item/overview",function(){return o(80336)}])}},function(n){n.O(0,[49710,97335,4101,75148,80336,92888,49774,40179],function(){return n(n.s=67962)}),_N_E=n.O()}]);
