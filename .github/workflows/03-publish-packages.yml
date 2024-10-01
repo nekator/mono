@@ -20,6 +20,9 @@ jobs:
   publish:
     name: Publish latest package versions to GitHub Packages
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - name: ⏬ Checkout repo
         uses: actions/checkout@v4
@@ -47,8 +50,6 @@ jobs:
             return await release({github, context, workspace, iconReleaseId})
 
       - name: 📰 Publish to NPM Registries
-        permissions:
-          id-token: write
         run: |
           chmod +rx ./.github/scripts/publish-npm.sh
           ./.github/scripts/publish-npm.sh
