@@ -1,10 +1,10 @@
 import {
-	SemanticProps,
 	EmphasisProps,
 	GlobalProps,
 	GlobalState,
-	SizeProps,
-	InitializedState
+	InitializedState,
+	SemanticProps,
+	SizeProps
 } from '../../shared/model';
 
 export const BadgePlacementList = [
