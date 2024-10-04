@@ -1,4 +1,4 @@
-import { Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { cls } from '../../utils';
 import { DBBrandProps, DBBrandState } from './model';
 import { DEFAULT_ICON } from '../../shared/constants';
@@ -16,7 +16,7 @@ export default function DBBrand(props: DBBrandProps) {
 	return (
 		<div
 			ref={ref}
-			data-icon={props.hideLogo ? 'none' : (props.icon ?? DEFAULT_ICON)}
+			data-icon={props.hideLogo ? 'none' : props.icon ?? DEFAULT_ICON}
 			id={props.id}
 			class={cls('db-brand', props.className)}>
 			{props.children}
