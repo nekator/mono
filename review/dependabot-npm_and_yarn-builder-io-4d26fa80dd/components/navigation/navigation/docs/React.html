@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">DB UI Mono</title><link data-next-font="size-adjust" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/css/2644369c6a1f9af6.css" as="style"/><link rel="stylesheet" href="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/css/2644369c6a1f9af6.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/webpack-18675c2720ed5a5c.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/framework-705df315c4da6787.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/main-89d443c443e01bc9.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/pages/_app-1aff854f53f21bc7.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/chunks/pages/components/navigation/navigation/docs/React-5008cc2162042154.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/EKEtsQS64c7fBoX7Dz27V/_buildManifest.js" defer=""></script><script src="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/_next/static/EKEtsQS64c7fBoX7Dz27V/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h2 id="react">React<a class="header-link" href="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/components/navigation/navigation/docs/React?current=react"><span aria-hidden="true" class="db-icon" data-icon="paper_clip"></span>react<!-- --> anchor link</a></h2>
+<p>For general installation and configuration look at the <a target="_blank" referrerPolicy="no-referrer" href="https://www.npmjs.com/package/@db-ui/react-components">react-components</a> package.</p>
+<h3 id="use-component">Use component<a class="header-link" href="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/components/navigation/navigation/docs/React?current=use-component"><span aria-hidden="true" class="db-icon" data-icon="paper_clip"></span>use-component<!-- --> anchor link</a></h3>
+<pre><code class="language-tsx">// App.tsx
+import { DBNavigation, DBNavigationItem } from &quot;@db-ui/react-components&quot;;
+
+const App = () =&gt; (
+	&lt;DBNavigation&gt;
+		&lt;DBNavigationItem
+			slotSubNavigation={
+				&lt;&gt;
+					&lt;DBNavigationItem
+						subNavigation={
+							&lt;&gt;
+								&lt;DBNavigationItem&gt;
+									&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;
+										Sub-Sub-Navi-Item 1
+									&lt;/a&gt;
+								&lt;/DBNavigationItem&gt;
+								&lt;DBNavigationItem&gt;
+									&lt;a href=&quot;#&quot;&gt;Sub-Sub-Navi-Item 2&lt;/a&gt;
+								&lt;/DBNavigationItem&gt;
+							&lt;/&gt;
+						}
+					&gt;
+						Sub-Navi-Item 1
+					&lt;/DBNavigationItem&gt;
+					&lt;DBNavigationItem&gt;
+						&lt;a href=&quot;#&quot;&gt;Sub-Navi-Item 2&lt;/a&gt;
+					&lt;/DBNavigationItem&gt;
+				&lt;/&gt;
+			}
+		&gt;
+			Navi-Item 1
+		&lt;/DBNavigationItem&gt;
+		&lt;DBNavigationItem icon=&quot;person&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Navi-Item 2&lt;/a&gt;
+		&lt;/DBNavigationItem&gt;
+		&lt;DBNavigationItem disabled&gt;
+			&lt;a href=&quot;#&quot;&gt;Navi-Item 3&lt;/a&gt;
+		&lt;/DBNavigationItem&gt;
+	&lt;/DBNavigation&gt;
+);
+
+export default App;
+</code></pre>
+<h3 id="active-handling">Active handling<a class="header-link" href="/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd/components/navigation/navigation/docs/React?current=active-handling"><span aria-hidden="true" class="db-icon" data-icon="paper_clip"></span>active-handling<!-- --> anchor link</a></h3>
+<p>Usually, a <code>NavigationItem</code> is implicitly set to active by setting the attribute <code>aria-current=&quot;page&quot;</code> to the anchor it contains.</p>
+<p>For other purposes, <code>NavigationItems</code> themselves can also be set to active with their prop <code>active</code>. However, this does not guarantee correct a11y.</p></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/components/navigation/navigation/docs/React","query":{},"buildId":"EKEtsQS64c7fBoX7Dz27V","assetPrefix":"/mono/review/dependabot-npm_and_yarn-builder-io-4d26fa80dd","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
