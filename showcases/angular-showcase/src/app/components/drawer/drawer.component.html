@@ -21,6 +21,7 @@
 			[direction]="exampleProps?.direction"
 			[open]="openDrawer === exampleName"
 			(onClose)="toggleDrawer(undefined)"
+			(close)="toggleDrawer(undefined)"
 		>
 			{{ exampleName }}
 		</db-drawer>
