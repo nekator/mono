@@ -82,10 +82,6 @@ export default (tmp?: boolean) => {
 
 			let replacements = [
 				{
-					from: /= useState/g,
-					to: '= useState<any>'
-				},
-				{
 					from: `handleFrameworkEvent(this`,
 					to: `// handleFrameworkEvent(this`
 				},

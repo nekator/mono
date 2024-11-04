@@ -6,6 +6,7 @@ import DefaultComponent from '../default-component';
 import defaultComponentVariants from '../../../../shared/<%= name %>.json';
 import type { DB<%= h.changeCase.pascal(name) %>Props } from '../../../../../output/react/src/components/<%= name %>/model';
 import { getVariants } from '../data';
+import type { BaseComponentProps } from "../base-component-data";
 
 const get<%= h.changeCase.pascal(name) %> = ({ children }: DB<%= h.changeCase.pascal(name) %>Props) => (
 	<DB<%= h.changeCase.pascal(name) %>>
@@ -13,7 +14,7 @@ const get<%= h.changeCase.pascal(name) %> = ({ children }: DB<%= h.changeCase.pa
 	</DB<%= h.changeCase.pascal(name) %>>
 );
 
-const <%= h.changeCase.pascal(name) %>Component = () => {
+const <%= h.changeCase.pascal(name) %>Component = (props: BaseComponentProps) => {
 	return (
 		<DefaultComponent
 			title="DB<%= h.changeCase.pascal(name) %>"

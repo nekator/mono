@@ -8,9 +8,9 @@ export type Component = {
 	overwrites?: {
 		global?: Overwrite[];
 		angular?: Overwrite[];
+		stencil?: Overwrite[];
 		react?: Overwrite[];
 		vue?: Overwrite[];
-		webComponents?: Overwrite[];
 	};
 	config?: {
 		vue?: {
@@ -50,6 +50,9 @@ export const getComponents = (): Component[] => [
 	},
 	{
 		name: 'switch',
+		overwrites: {
+			stencil: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -82,10 +85,6 @@ export const getComponents = (): Component[] => [
 				{
 					from: 'scrollContainer = null;',
 					to: 'scrollContainer: Element | null = null;'
-				},
-				{
-					from: '& > .db-tab-panel',
-					to: '& > dbtabpanel > .db-tab-panel, & > db-tab-panel > .db-tab-panel'
 				}
 			]
 		}
@@ -108,17 +107,14 @@ export const getComponents = (): Component[] => [
 		name: 'accordion-item',
 		overwrites: {
 			// this is an issue from mitosis always adding `attr`
-			angular: [{ from: 'attr.open', to: 'open' }]
+			angular: [{ from: 'attr.open', to: 'open' }],
+			// TS issue
+			stencil: [{ from: 'name={this.name}', to: '' }]
 		}
 	},
 
 	{
-		name: 'accordion',
-		overwrites: {
-			angular: [
-				{ from: 'openItems = []', to: 'openItems: string[] = []' }
-			]
-		}
+		name: 'accordion'
 	},
 
 	{
@@ -137,7 +133,8 @@ export const getComponents = (): Component[] => [
 					from: '</textarea>',
 					to: '{{value}}</textarea>'
 				}
-			]
+			],
+			stencil: [{ from: 'HTMLElement', to: 'HTMLTextAreaElement' }]
 		}
 	},
 	{
@@ -161,6 +158,12 @@ export const getComponents = (): Component[] => [
 					from: 'navigationItemSafeTriangle: undefined',
 					to: 'navigationItemSafeTriangle: undefined as undefined | NavigationItemSafeTriangle'
 				}
+			],
+			react: [
+				{
+					from: 'onMouseMove={(event)',
+					to: 'onMouseMove={(event: MouseEvent)'
+				}
 			]
 		},
 		config: {
@@ -177,6 +180,10 @@ export const getComponents = (): Component[] => [
 				// React not allowing selected for options
 				{ from: 'selected={option.selected}', to: '' },
 				{ from: 'selected={optgroupOption.selected}', to: '' }
+			],
+			stencil: [
+				{ from: 'HTMLElement', to: 'HTMLSelectElement' },
+				{ from: 'value={', to: '/* @ts-ignore */\nvalue={' }
 			]
 		},
 		config: {
@@ -194,7 +201,7 @@ export const getComponents = (): Component[] => [
 	{
 		name: 'drawer',
 		overwrites: {
-			webComponents: [{ from: '__prev.find', to: '!!__prev.find' }]
+			stencil: [{ from: /onClose/g, to: 'close' }]
 		},
 		config: {
 			react: {
@@ -216,6 +223,9 @@ export const getComponents = (): Component[] => [
 	},
 	{
 		name: 'checkbox',
+		overwrites: {
+			stencil: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -228,6 +238,9 @@ export const getComponents = (): Component[] => [
 
 	{
 		name: 'radio',
+		overwrites: {
+			stencil: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
+		},
 		config: {
 			vue: {
 				vModel: [{ modelValue: 'checked', binding: ':checked' }]
@@ -287,31 +300,7 @@ export const getComponents = (): Component[] => [
 					to: '() => toggle()'
 				}
 			],
-			angular: [{ from: '(close)', to: '(onClose)' }],
-			webComponents: [
-				{
-					from: '<slot></slot>',
-					to: '<slot name="navigation-mobile"></slot>'
-				},
-				{
-					from: 'name="meta-navigation"',
-					to: 'name="meta-navigation-mobile"'
-				},
-				{
-					from: 'name="action-bar"',
-					to: 'name="action-bar-mobile"'
-				},
-				{
-					from:
-						'        el.removeEventListener("close", this.onDbDrawerDbHeaderClose);\n' +
-						'        el.addEventListener("close", this.onDbDrawerDbHeaderClose);',
-					to: 'el.props.onClose = this.onDbDrawerDbHeaderClose;'
-				},
-				{
-					from: 'if(this.props.drawerOpen)         el.setAttribute("open", this.props.drawerOpen);',
-					to: '        el.setAttribute("open", Boolean(this.props.drawerOpen));'
-				}
-			]
+			angular: [{ from: '(close)', to: '(onClose)' }]
 		}
 	},
 	{
@@ -321,7 +310,8 @@ export const getComponents = (): Component[] => [
 		name: 'input',
 		overwrites: {
 			global: [{ from: ', KeyValueType', to: '' }],
-			vue: [{ from: ', index', to: '' }]
+			vue: [{ from: ', index', to: '' }],
+			stencil: [{ from: 'HTMLElement', to: 'HTMLInputElement' }]
 		},
 		config: {
 			vue: {

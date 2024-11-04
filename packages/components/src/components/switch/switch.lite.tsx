@@ -1,18 +1,10 @@
-import {
-	onMount,
-	onUpdate,
-	useMetadata,
-	useRef,
-	useStore
-} from '@builder.io/mitosis';
+import { onMount, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { DBSwitchProps, DBSwitchState } from './model';
 import { cls, uuid } from '../../utils';
 import { ChangeEvent, InteractionEvent } from '../../shared/model';
 import { handleFrameworkEvent } from '../../utils/form-components';
 
-useMetadata({
-	isAttachedToShadowDom: true
-});
+useMetadata({});
 
 export default function DBSwitch(props: DBSwitchProps) {
 	// This is used as forwardRef

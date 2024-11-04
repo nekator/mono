@@ -1,5 +1,6 @@
 export const DEFAULT_ID: string = 'OVERWRITE_DEFAULT_ID';
 export const DEFAULT_LABEL: string = 'LABEL SHOULD BE SET';
+export const DEFAULT_PLACEHOLDER: string = ' ';
 export const DEFAULT_MESSAGE: string = 'MESSAGE SHOULD BE SET';
 
 export const DEFAULT_LABEL_ID_SUFFIX: string = '-label';
@@ -15,6 +16,10 @@ export const DEFAULT_INVALID_MESSAGE: string = 'TODO: Add an invalidMessage';
 export const DEFAULT_REMOVE: string = 'Remove';
 export const DEFAULT_BACK: string = 'Back';
 export const DEFAULT_SELECTED: string = 'Selected';
+
+export const DEFAULT_BURGER_MENU: string = 'BurgerMenu';
+export const DEFAULT_ICON: string = 'db';
+export const DEFAULT_ROWS: number = 4;
 
 export const DEFAULT_CLOSE_BUTTON: string = 'Close Button';
 export const DENSITY_CONST: string = 'density';

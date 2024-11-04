@@ -16,7 +16,7 @@ import {
 	InputEventState
 } from '../../shared/model';
 
-export interface DBSelectDefaultProps {
+export type DBSelectDefaultProps = {
 	/**
 	 * Enable multiple select -> use DBMultiSelect/db-multi-select for a better look
 	 */
@@ -26,7 +26,7 @@ export interface DBSelectDefaultProps {
 	 * If you don't/can't use children/slots you can pass in the options as an array.
 	 */
 	options?: DBSelectOptionType[];
-}
+};
 
 export type DBSelectOptionType = {
 	/**
@@ -70,10 +70,10 @@ export type DBSelectProps = GlobalProps &
 	FormMessageProps &
 	DBSelectDefaultProps;
 
-export interface DBSelectDefaultState {
+export type DBSelectDefaultState = {
 	_placeholderId: string;
 	getOptionLabel: (option: DBSelectOptionType) => string;
-}
+};
 
 export type DBSelectState = DBSelectDefaultState &
 	GlobalState &

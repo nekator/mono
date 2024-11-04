@@ -1,11 +1,9 @@
 import { useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import type { DBButtonProps, DBButtonState } from './model';
-import { cls } from '../../utils';
+import { cls, getBooleanAsString } from '../../utils';
 import { ClickEvent } from '../../shared/model';
 
-useMetadata({
-	isAttachedToShadowDom: true
-});
+useMetadata({});
 
 export default function DBButton(props: DBButtonProps) {
 	const ref = useRef<HTMLButtonElement>(null);
@@ -25,7 +23,7 @@ export default function DBButton(props: DBButtonProps) {
 			ref={ref}
 			id={props.id}
 			class={cls('db-button', props.className)}
-			type={props.type}
+			type={props.type || 'button'}
 			disabled={props.disabled}
 			aria-label={props.label}
 			data-icon={props.icon}
@@ -33,7 +31,7 @@ export default function DBButton(props: DBButtonProps) {
 			data-state={props.state}
 			data-width={props.width}
 			data-variant={props.variant}
-			data-no-text={props.noText}
+			data-no-text={getBooleanAsString(props.noText)}
 			name={props.name}
 			value={props.value}
 			aria-describedby={props.describedbyid}

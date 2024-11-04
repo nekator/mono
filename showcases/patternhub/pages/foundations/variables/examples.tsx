@@ -35,7 +35,8 @@ const Example = () => {
 							{['functional', 'regular', 'expressive'].map(
 								(density) => (
 									<DBCard
-										className={`example-item db-density-${density}`}
+										data-density={density}
+										className="example-item"
 										spacing="small">
 										<DBInfotext
 											icon="none"
@@ -49,7 +50,7 @@ const Example = () => {
 												.replaceAll(' ', '-')}`}>
 											{example === 'Spacing fixed' && (
 												<div>
-													<DBIcon icon="user">
+													<DBIcon icon="person">
 														User
 													</DBIcon>
 													<span>

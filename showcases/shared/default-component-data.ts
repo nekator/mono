@@ -15,6 +15,8 @@ export type DefaultComponentExample = {
 		vue?: string;
 	};
 	children?: DefaultComponentExample[];
+	density?: string;
+	class?: string;
 };
 
 export type DefaultComponentVariants = {
