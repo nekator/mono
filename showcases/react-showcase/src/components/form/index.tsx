@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
 	DBDivider,
+	DBMultiSelect,
 	DBTabList,
 	DBTabPanel,
 	DBTabs
@@ -36,6 +37,10 @@ const FormComponent = () => {
 
 	const [accordionItems, setAccordionItems] = useState<ValueLabelType[]>();
 	const [tabsTest, setTabsTest] = useState<boolean>(false);
+
+	const [multiSelectValue, setMultiSelectValue] = useState<
+		string[] | undefined
+	>(['o2']);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -447,6 +452,33 @@ const FormComponent = () => {
 						Beschreibungstext
 					</DBTooltip>
 				</DBButton>
+
+				<form>
+					<DBMultiSelect
+						name="input-multi"
+						label="Test"
+						options={[
+							{ label: 'O1', value: 'o1' },
+							{ label: 'O2', value: 'o2' }
+						]}
+						placeholder="Test"
+						selectAllLabel="Select all"
+						deSelectAllLabel="Deselect all"
+						searchLabel="Search"
+						noResultsText="No matching filter"
+						values={multiSelectValue}
+						onSelect={(val) => {
+							setMultiSelectValue(val);
+						}}
+					/>
+					<DBButton
+						onClick={() => {
+							setMultiSelectValue([]);
+						}}>
+						Reset Multiselect
+					</DBButton>
+					<DBButton type="submit">Submit</DBButton>
+				</form>
 			</div>
 		</div>
 	);

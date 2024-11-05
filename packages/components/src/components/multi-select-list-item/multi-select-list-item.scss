@@ -71,14 +71,10 @@
 				background-color: colors.$db-adaptive-bg-basic-transparent-full-default;
 			}
 
-			/* stylelint-disable a11y/no-outline-none */
-
-			/* We set focus on complete list element */
-
+			/* We set focus on complete list element, we remove it from checkbox with this trick */
 			&:focus-visible {
-				outline: 0;
+				--db-border-height-2xs: 0;
 			}
-			/* stylelint-enable a11y/no-outline-none */
 		}
 	}
 }

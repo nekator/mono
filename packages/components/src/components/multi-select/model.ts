@@ -69,6 +69,10 @@ export interface DBMultiSelectDefaultProps {
 	 * Forces search in header.
 	 */
 	enableSearch?: boolean;
+	/**
+	 * Optional: if select-type="amount" change the shown text
+	 * @param amount The amount of selected checkboxes
+	 */
 	getAmountText?: (amount: number) => string;
 	/**
 	 * Dropdown - enable no options notification
@@ -88,7 +92,11 @@ export interface DBMultiSelectDefaultProps {
 	 */
 	noResultsText?: string;
 
-	onChange?: (value: string[]) => void;
+	/**
+	 * Triggers after some checkbox was clicked in dropdown
+	 * @param values the changed values
+	 */
+	onSelect?: (values: string[]) => void;
 
 	/**
 	 * You should pass in the options as an array.
@@ -104,10 +112,16 @@ export interface DBMultiSelectDefaultProps {
 	 * Change the selected type for values shown in multi select
 	 */
 	selectedType?: SelectedTypeType;
-	tagWrapping?: MultiSelectTagWrappingType /**
+
+	/**
 	 * Optional: if you use selectedType=tag, you can change the behaviour of tags
-	 */;
-	value?: string[];
+	 */
+	tagWrapping?: MultiSelectTagWrappingType;
+
+	/**
+	 * Initial value for multi select
+	 */
+	values?: string[];
 }
 
 export type DBMultiSelectProps = GlobalProps &
@@ -125,9 +139,12 @@ export interface DBMultiSelectDefaultState {
 	_options: MultiSelectOptionType[];
 	_selectedOptions: MultiSelectOptionType[];
 	_hasNoOptions: boolean;
+	_selectId: string;
 	_labelId: string;
 	_placeholderId: string;
 	_selectedLabels?: string;
+	_externalChangeTimestamp?: number;
+	_internalChangeTimestamp?: number;
 	getOptionLabel: (option: MultiSelectOptionType) => string;
 	getOptionChecked: (value: string) => boolean;
 	headerEnabled: boolean;

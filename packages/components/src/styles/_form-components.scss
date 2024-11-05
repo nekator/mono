@@ -53,7 +53,7 @@ $check-border-size: min(#{variables.$db-border-height-2xs}, 2px);
 	.db-infotext {
 		margin-block-start: variables.$db-spacing-fixed-2xs;
 
-		&[data-semantic="successful"], [data-semantic="critical"] {
+		&:is([data-semantic="successful"], [data-semantic="critical"]) {
 			display: none;
 		}
 	}

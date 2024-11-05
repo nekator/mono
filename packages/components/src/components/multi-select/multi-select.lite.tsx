@@ -23,6 +23,7 @@ import {
 	DEFAULT_MESSAGE_ID_SUFFIX,
 	DEFAULT_PLACEHOLDER_ID_SUFFIX,
 	DEFAULT_REMOVE,
+	DEFAULT_SELECT_ID_SUFFIX,
 	DEFAULT_SELECTED,
 	DEFAULT_VALID_MESSAGE,
 	DEFAULT_VALID_MESSAGE_ID_SUFFIX
@@ -49,6 +50,7 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	// jscpd:ignore-start
 	const state = useStore<DBMultiSelectState>({
 		_id: 'multi-select-' + uuid(),
+		_selectId: this._id + DEFAULT_SELECT_ID_SUFFIX,
 		_labelId: this._id + DEFAULT_LABEL_ID_SUFFIX,
 		_messageId: this._id + DEFAULT_MESSAGE_ID_SUFFIX,
 		_validMessageId: this._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX,
@@ -106,6 +108,7 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 			} else {
 				state._values = [...state._values, value];
 			}
+			state._internalChangeTimestamp = new Date().getTime();
 		},
 		handleSelectAll: () => {
 			if (state._values?.length === state.amountOptions) {
@@ -117,6 +120,7 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 							.map((option) => option.value)
 					: [];
 			}
+			state._internalChangeTimestamp = new Date().getTime();
 		},
 		handleToggleOpen: () => {
 			if (
@@ -162,12 +166,14 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 	onUpdate(() => {
 		if (state._id && state.initialized) {
 			const labelId = state._id + DEFAULT_LABEL_ID_SUFFIX;
+			const selectId = state._id + DEFAULT_SELECT_ID_SUFFIX;
 			const messageId = state._id + DEFAULT_MESSAGE_ID_SUFFIX;
 			const validMessageId = state._id + DEFAULT_VALID_MESSAGE_ID_SUFFIX;
 			const invalidMessageId =
 				state._id + DEFAULT_INVALID_MESSAGE_ID_SUFFIX;
 			const placeholderId = state._id + DEFAULT_PLACEHOLDER_ID_SUFFIX;
 			state._labelId = labelId;
+			state._selectId = selectId;
 			state._messageId = messageId;
 			state._validMessageId = validMessageId;
 			state._invalidMessageId = invalidMessageId;
@@ -216,22 +222,29 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 		state.searchEnabled = props.enableSearch || state.amountOptions > 9;
 	}, [props.enableSearch, state.amountOptions]);
 
-	/*	onUpdate(() => {
+	onUpdate(() => {
 		if (
-			props.onChange &&
-			props.value !== undefined &&
-			props.value !== state._values
+			props.onSelect &&
+			(state._externalChangeTimestamp || state._internalChangeTimestamp)
 		) {
-			props.onChange(state._values);
+			if (
+				(state._internalChangeTimestamp &&
+					!state._externalChangeTimestamp) ||
+				state._internalChangeTimestamp > state._externalChangeTimestamp
+			) {
+				props.onSelect(state._values);
+			}
 		}
-	}, [state._values, props.value, props.onChange]);*/
+	}, [
+		state._externalChangeTimestamp,
+		state._internalChangeTimestamp,
+		props.onSelect
+	]);
 
-	/*onUpdate(() => {
-		if (props.value !== undefined && props.value !== state._values) {
-			state._values = props.value ?? [];
-			console.log(props.value, state._values);
-		}
-	}, [props.value, state._values]);*/
+	onUpdate(() => {
+		state._values = props.values ?? [];
+		state._externalChangeTimestamp = new Date().getTime();
+	}, [props.values]);
 
 	onUpdate(() => {
 		/* For a11y reasons we need to map the correct message with the select */
@@ -334,9 +347,11 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 			data-header-enabled={state.headerEnabled}
 			data-notification-enabled={state._hasNoOptions ?? props.isLoading}>
 			<select
+				id={state._selectId}
 				ref={selectRef}
 				multiple
 				value={state._values}
+				readOnly
 				required={props.required}
 				hidden>
 				<For each={state._options}>
@@ -351,7 +366,9 @@ export default function DBMultiSelect(props: DBMultiSelectProps) {
 					)}
 				</For>
 			</select>
-			<label id={state._labelId}>{props.label ?? DEFAULT_LABEL}</label>
+			<label htmlFor={state._selectId} id={state._labelId}>
+				{props.label ?? DEFAULT_LABEL}
+			</label>
 			<details ref={detailsRef}>
 				{props.children}
 				<Show when={props.options}>

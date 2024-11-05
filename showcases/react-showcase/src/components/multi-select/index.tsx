@@ -9,7 +9,7 @@ const getMultiSelect = ({
 	children,
 	message,
 	variant,
-	value,
+	values,
 	required,
 	options,
 	placeholder,
@@ -17,7 +17,8 @@ const getMultiSelect = ({
 	tagWrapping,
 	width
 }: DBMultiSelectProps) => {
-	const [mValue, setValue] = useState<string[] | undefined>(value);
+	const [mValue, setValue] = useState<string[] | undefined>(values);
+
 	return (
 		<DBMultiSelect
 			label={children}
@@ -32,9 +33,11 @@ const getMultiSelect = ({
 			selectedType={selectedType}
 			tagWrapping={tagWrapping}
 			width={width}
-			noOptionsText="No matching filter" /*
-				Value={mValue}
-				onChange={(val) => setValue(val)} */
+			noResultsText="No matching filter"
+			values={mValue}
+			onSelect={(val) => {
+				setValue(val);
+			}}
 		/>
 	);
 };
