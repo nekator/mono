@@ -1,0 +1,46 @@
+# IDE Support
+
+We try to support those IDEs:
+
+-   [JetBrain](https://www.jetbrains.com/) IDEs (like. IntelliJ IDEA, WebStorm, etc.)
+-   [VSCode](https://code.visualstudio.com/)
+
+Most use cases of the Design System might work in other IDEs as well.
+
+
+## Autocomplete for CSS classes and properties
+
+
+You can enable auto-complete of CSS classes(`db-container-color-cyan`)  for `HTML` or `JSX` and custom properties (`var(--db-bg-basic-level-1-default)`) in `.css` or `.scss` files by including `@db-ui/foundations/build/ide`.
+
+> **Note:** The contents of the directory shouldn't be included inside your app. It's only for autocompletion inside your IDE. All values for classes and properties don't reflect the real values. The correct values my differ based on multiple circumstances like light-/dark-mode or screen-size etc. Therefore, there isn't a 1:1 mapping.
+
+### JetBrain IDEs (like. IntelliJ IDEA, WebStorm, etc.)
+
+1. Goto ``File/Settings/Languages & Frameworks/Javascript/Libraries``
+2. Press the ``Add`` button and write `db-ui` into the "name" input. This name will be shown in the auto-complete popup during coding. You can change the name if you want to. Keep the rest of the settings as default: `Framework type: <Custom>` and `Visibility: Project`.
+3. Next press the ➕ button below ``Visibility`` and select `Attach Directories...`
+4. This will open a file manager. Navigate to your current projects ``node_modules/@db-ui/foundations/build/ide`` and select the `ide` folder. Press `OK`.
+5. The folder should be included in the list below the ➕ button. Press ``Apply`` on the bottom.
+6. Everything should work now. Close the settings and move to a ``html`` or `jsx/tsx` file and write `class="db-` as attribute to an element. You should see all `db-*` classes for auto-completion. Furthermore, you can go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for css properties. By pressing enter this will automatically add `var(--db-xxx)`.
+
+### VS Code
+
+1. Install [this](https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables) extension.
+2. Create a new folder ``.vscode`` in your project
+3. Create a new file ``settings.json`` in your project
+4. Add this to ``settings.json``:
+````json settings.json
+{
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+	  "node_modules/@db-ui/foundations/ide/db.ide.css"
+  ]
+}
+````
+5. Go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for css properties. By pressing enter this will automatically add `var(--db-xxx)`.
+
+> **Note:** We couldn't find a good extension to work properly with the classes you could check [this](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion). But we encountered some issues here.
