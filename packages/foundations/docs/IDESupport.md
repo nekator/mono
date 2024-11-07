@@ -19,7 +19,7 @@ You can enable auto-complete of CSS classes (like e.g. `db-container-color-cyan`
 
 1. Goto `File/Settings/Languages & Frameworks/Javascript/Libraries`
 2. Press the `Add` button and write `db-ui` into the "name" input. This name will be shown in the auto-complete popup during coding. You can change the name if you want to. Keep the rest of the settings as default: `Framework type: <Custom>` and `Visibility: Project`.
-3. Next press the ➕ button below ``Visibility`` and select `Attach Directories...`
+3. Next press the ➕ button below `Visibility` and select `Attach Directories...`
 4. This will open a file manager. Navigate to your current projects `node_modules/@db-ui/foundations/build/ide` and select the `ide` folder. Press `OK`.
 5. The folder should be included in the list below the ➕ button. Press `Apply` on the bottom.
 6. Everything should work now. Close the settings and move to a `html` or `jsx/tsx` file and write `class="db-` as attribute to an element. You should see all `db-*` classes for auto-completion. Furthermore, you can go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for css properties. By pressing enter this will automatically add `var(--db-xxx)`.
