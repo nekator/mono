@@ -26,7 +26,7 @@ You can enable auto-complete of CSS classes (like e.g. `db-container-color-cyan`
 
 ### VS Code
 
-1. Install [this](https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables) extension.
+1. Install [the CSS Variable Autocomplete extesion](https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables).
 2. Create a new folder `.vscode` in your project
 3. Create a new file `settings.json` in your project
 4. Add this to `settings.json`:
