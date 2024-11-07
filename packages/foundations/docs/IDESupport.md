@@ -11,9 +11,9 @@ Most use cases of the Design System might work in other IDEs as well.
 ## Autocomplete for CSS classes and properties
 
 
-You can enable auto-complete of CSS classes(`db-container-color-cyan`)  for `HTML` or `JSX` and custom properties (`var(--db-bg-basic-level-1-default)`) in `.css` or `.scss` files by including `@db-ui/foundations/build/ide`.
+You can enable auto-complete of CSS classes(like e.g. `db-container-color-cyan`)  for `HTML` or `JSX` and CSS Custom Properties (like e.g. `var(--db-bg-basic-level-1-default)`) in `.css` or `.scss` files by including `@db-ui/foundations/build/ide`.
 
-> **Note:** The contents of the directory shouldn't be included inside your app. It's only for autocompletion inside your IDE. All values for classes and properties don't reflect the real values. The correct values my differ based on multiple circumstances like light-/dark-mode or screen-size etc. Therefore, there isn't a 1:1 mapping.
+> **Note:** The contents of this directory shouldn't be included/referenced inside your app. It's only serving as a file containing declarations for autocompletion inside your IDE. All values for classes and properties don't reflect the real values, and neither does the CSS selector. The correct values my differ based on multiple circumstances like light-/dark-mode or screen-size etc. Therefore, there isn't a 1:1 mapping.
 
 ### JetBrain IDEs (like. IntelliJ IDEA, WebStorm, etc.)
 
