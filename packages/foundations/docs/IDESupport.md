@@ -40,6 +40,6 @@ You can enable auto-complete of CSS classes (like e.g. `db-container-color-cyan`
   ]
 }
 ````
-4. Go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for css properties. By pressing enter this will automatically add `var(--db-xxx)`.
+4. Go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for CSS Custom Properties. By pressing `ENTER` this will automatically add `var(--db-xxx)`.
 
-> **Note:** We couldn't find a good extension to work properly with the classes you could check [this](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion). But we encountered some issues here.
+> **Note:** We couldn't find a good extension to work properly with the classes you could try out [the SCSS Everywhere extension](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion). But we encountered some issues with this one.
