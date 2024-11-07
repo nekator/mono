@@ -8,7 +8,7 @@ We try to support those IDEs:
 Most use cases of the Design System might work in other IDEs as well.
 
 
-## Autocomplete for CSS classes and properties
+## Autocomplete for CSS classes and CSS Custom Properties (Variables)
 
 
 You can enable auto-complete of CSS classes (like e.g. `db-container-color-cyan`)  for `HTML` or `JSX` and CSS Custom Properties (like e.g. `var(--db-bg-basic-level-1-default)`) in `.css` or `.scss` files by including `@db-ui/foundations/build/ide`.
@@ -22,7 +22,7 @@ You can enable auto-complete of CSS classes (like e.g. `db-container-color-cyan`
 3. Next press the ➕ button below `Visibility` and select `Attach Directories...`
 4. This will open a file manager. Navigate to your current projects `node_modules/@db-ui/foundations/build/ide` and select the `ide` folder. Press `OK`.
 5. The folder should be included in the list below the ➕ button. Press `Apply` on the bottom.
-6. Everything should work now. Close the settings and move to a `html` or `jsx/tsx` file and write `class="db-` as attribute to an element. You should see all `db-*` classes for auto-completion. Furthermore, you can go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for css properties. By pressing enter this will automatically add `var(--db-xxx)`.
+6. Everything should work now. Close the settings and move to a `html` or `jsx/tsx` file and write `class="db-` as attribute to an element. You should see all `db-*` classes for auto-completion. Furthermore, you can go to a `.css` file and write inside a selector `color: db-`. You should see the autocomplete for CSS Custom Properties. By pressing enter this will automatically add `var(--db-xxx)`.
 
 ### VS Code
 
