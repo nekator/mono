@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "CommonJS",
+		"strictNullChecks": true,
+		"lib": ["ESNext"],
+		"outDir": "plugins/out",
+		"jsx": "preserve",
+		"jsxImportSource": "@builder.io/mitosis",
+		"esModuleInterop": true,
+		"moduleResolution": "node"
+	},
+	"include": ["plugins/**/*.ts"],
+	"exclude": ["**/node_modules/**"]
+}

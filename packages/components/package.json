@@ -40,9 +40,16 @@
     "dev:vue": "nodemon --watch src --watch overrides -e tsx,ts -x \"npm run compile:vue\"",
     "generate:component": "hygen mitosis new",
     "generate:docs": "hygen update-docs new",
+    "generate:figma-plugins": "node plugins/esbuild-generate.mjs",
     "generate:icon-types": "tsx ./scripts/generate-icon-types.ts",
+    "prebuild:mitosis": "npm run generate:figma-plugins",
+    "precompile:angular": "npm run generate:figma-plugins",
+    "precompile:react": "npm run generate:figma-plugins",
+    "precompile:stencil": "npm run generate:figma-plugins",
+    "precompile:vue": "npm run generate:figma-plugins",
     "prepack": "npm run copy-assets",
-    "start": "nodemon --watch src --watch scripts --watch overrides -e js,tsx,ts,scss,json -x \"npm run build\""
+    "start": "nodemon --watch src --watch scripts --watch overrides -e js,tsx,ts,scss,json -x \"npm run build\"",
+    "test:figma": "mitosis build -c configs/figma/mitosis.config.js"
   },
   "dependencies": {
     "@db-ui/foundations": "*"

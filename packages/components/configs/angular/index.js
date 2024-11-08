@@ -1,3 +1,5 @@
+const { default: figmaAngular } = require('../../plugins/out/figma/angular');
+
 module.exports = {
 	typescript: true,
 	standalone: true,
@@ -11,5 +13,6 @@ module.exports = {
 		}
 
 		return undefined;
-	}
+	},
+	plugins: [figmaAngular]
 };

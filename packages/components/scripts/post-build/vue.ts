@@ -2,10 +2,22 @@ import { replaceInFileSync } from 'replace-in-file';
 
 import components, { Overwrite } from './components.js';
 
-import { runReplacements, transformToUpperComponentName } from '../utils';
+import { runReplacements } from '../utils';
+import { globSync } from 'glob';
+
+const fixFigmaFileEndings = (outputFolder: string) => {
+	const globPaths: string[] = globSync(
+		`../../${outputFolder}/vue/**/*.figma.vue`,
+		{
+			nodir: true
+		}
+	).map((path) => path.replaceAll('\\', '/'));
+	console.log(globPaths);
+};
 
 export default (tmp?: boolean) => {
 	const outputFolder = `${tmp ? 'output/tmp' : 'output'}`;
+	fixFigmaFileEndings(outputFolder);
 	// Rewire imports in Playwright config
 	replaceInFileSync({
 		files: `../../${outputFolder}/vue/playwright.config.ts`,

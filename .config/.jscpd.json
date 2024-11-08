@@ -40,6 +40,7 @@
 		"packages/components/src/components/notification/notification.lite.tsx",
 		"packages/components/src/components/radio/radio.lite.tsx",
 		"packages/components/src/components/tag/tag.spec.tsx",
+		"packages/components/plugins/out/**",
 		"packages/foundations/assets/icons/functional/fonts/**",
 		"packages/foundations/src",
 		"showcases/**/results/**",

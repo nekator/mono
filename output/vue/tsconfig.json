@@ -25,7 +25,12 @@
 		"skipLibCheck": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.vue"],
-	"exclude": ["node_modules", "src/**/*.scss", "src/**/*.spec.tsx"],
+	"exclude": [
+		"node_modules",
+		"src/**/*.scss",
+		"src/**/*.spec.tsx",
+		"src/**/figma/*"
+	],
 	"compileOnSave": false,
 	"buildOnSave": false
 }

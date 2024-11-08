@@ -21,7 +21,7 @@
 		"target": "es2015"
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"],
-	"exclude": ["node_modules", "src/**/*.spec.tsx"],
+	"exclude": ["node_modules", "src/**/*.spec.tsx", "src/**/figma/*"],
 	"compileOnSave": false,
 	"buildOnSave": false
 }

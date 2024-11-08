@@ -1,3 +1,5 @@
+const { default: figmaVue } = require('../../plugins/out/figma/vue');
 module.exports = {
-	typescript: true
+	typescript: true,
+	plugins: [figmaVue]
 };
