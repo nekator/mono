@@ -184,6 +184,7 @@ export default function DBInput(props: DBInputProps) {
 				form={props.form}
 				pattern={props.pattern}
 				autocomplete={props.autocomplete}
+				autofocus={props.autofocus}
 				onInput={(event: ChangeEvent<HTMLInputElement>) =>
 					state.handleInput(event)
 				}
