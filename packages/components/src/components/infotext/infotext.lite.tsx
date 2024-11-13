@@ -1,6 +1,6 @@
 import { Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import { DBInfotextProps, DBInfotextState } from './model';
-import { cls, getBooleanAsString } from '../../utils';
+import { cls, getHideIcon } from '../../utils';
 
 useMetadata({});
 
@@ -19,7 +19,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 			data-icon={props.icon}
 			data-semantic={props.semantic}
 			data-size={props.size}
-			data-hide-icon-after={getBooleanAsString(!props.showIcon)}>
+			data-hide-icon-after={getHideIcon(props.showIcon ?? true)}>
 			<Show when={props.text} else={props.children}>
 				{props.text}
 			</Show>

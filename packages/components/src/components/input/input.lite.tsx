@@ -11,7 +11,7 @@ import {
 import {
 	cls,
 	delay,
-	getBooleanAsString,
+	getHideIcon,
 	hasVoiceOver,
 	isArrayOfStrings,
 	uuid
@@ -171,9 +171,10 @@ export default function DBInput(props: DBInputProps) {
 		<div
 			class={cls('db-input', props.className)}
 			data-variant={props.variant}
-			data-hide-icon={getBooleanAsString(!props.showIcon)}
+			data-hide-icon={getHideIcon(props.showIcon)}
 			data-icon={props.icon}
-			data-icon-after={props.iconAfter}>
+			data-icon-after={props.iconAfter}
+			data-hide-icon-after={getHideIcon(props.showIcon)}>
 			<label htmlFor={state._id}>{props.label ?? DEFAULT_LABEL}</label>
 			<input
 				aria-invalid={props.customValidity === 'invalid'}

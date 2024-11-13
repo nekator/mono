@@ -233,12 +233,24 @@ export const enableCustomElementAttributePassing = (
  * if it is used in a framework like angular e.g.: [disabled]="myDisabledProp"
  * @param originBool Some boolean to convert to string
  */
-export const getBooleanAsString = (originBool?: boolean): any => {
+export const getBooleanAsString = (
+	originBool?: boolean
+): string | boolean | undefined => {
 	if (originBool) {
 		return String(originBool);
 	}
 
 	return originBool;
+};
+
+export const getHideIcon = (
+	showIcon?: boolean
+): string | boolean | undefined => {
+	if (showIcon === undefined) {
+		return undefined;
+	}
+
+	return getBooleanAsString(!showIcon);
 };
 
 export default {
@@ -254,5 +266,6 @@ export default {
 	hasVoiceOver,
 	delay,
 	enableCustomElementAttributePassing,
-	getBooleanAsString
+	getBooleanAsString,
+	getHideIcon
 };

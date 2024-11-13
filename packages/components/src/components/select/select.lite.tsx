@@ -9,13 +9,7 @@ import {
 	useTarget
 } from '@builder.io/mitosis';
 import { DBSelectOptionType, DBSelectProps, DBSelectState } from './model';
-import {
-	cls,
-	delay,
-	getBooleanAsString,
-	hasVoiceOver,
-	uuid
-} from '../../utils';
+import { cls, delay, getHideIcon, hasVoiceOver, uuid } from '../../utils';
 import {
 	DEFAULT_INVALID_MESSAGE,
 	DEFAULT_INVALID_MESSAGE_ID_SUFFIX,
@@ -173,7 +167,7 @@ export default function DBSelect(props: DBSelectProps) {
 			class={cls('db-select', props.className)}
 			data-variant={props.variant}
 			data-icon={props.icon}
-			data-hide-icon={getBooleanAsString(!props.showIcon)}>
+			data-hide-icon={getHideIcon(props.showIcon)}>
 			<label htmlFor={state._id}>{props.label ?? DEFAULT_LABEL}</label>
 			<select
 				aria-invalid={props.customValidity === 'invalid'}
