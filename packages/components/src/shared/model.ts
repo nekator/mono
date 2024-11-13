@@ -62,6 +62,13 @@ export type IconProps = {
 	icon?: IconTypes;
 };
 
+export type ShowIconProps = {
+	/**
+	 * Enables or disables the visibility of the icon. The default value depends on the component.
+	 */
+	showIcon?: boolean;
+};
+
 export type IconAfterProps = {
 	/**
 	 * Define an icon by its identifier (like e.g. _user_, compare to [Icons](https://db-ui.github.io/mono/review/main/foundations/icons/overview)) to get displayed in front of the elements content.
@@ -363,6 +370,11 @@ export type FormMessageProps = {
 	 * See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 	 */
 	autocomplete?: string | AutoCompleteType;
+
+	/**
+	 * Enables or disables the visibility of the message.
+	 */
+	showMessage?: boolean;
 };
 
 export type FormState = {
@@ -448,6 +460,9 @@ export type LinkProps = {
 	 * Sets aria role based on [`aria-selected`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-selected).
 	 */
 	selected?: boolean;
+};
+
+export type TextProps = {
 	/**
 	 * Alternative for default slot/children.
 	 */

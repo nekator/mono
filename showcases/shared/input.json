@@ -287,6 +287,7 @@
 			},
 			{
 				"name": "Datalist",
+				"experimental": true,
 				"props": {
 					"label": "Label",
 					"dataList": true
@@ -294,6 +295,7 @@
 			},
 			{
 				"name": "File",
+				"experimental": true,
 				"props": {
 					"label": "Label",
 					"type": "file"
@@ -401,6 +403,7 @@
 			},
 			{
 				"name": "Datalist",
+				"experimental": true,
 				"props": {
 					"label": "Label",
 					"variant": "floating",
@@ -409,6 +412,7 @@
 			},
 			{
 				"name": "File",
+				"experimental": true,
 				"props": {
 					"label": "Label",
 					"type": "file",

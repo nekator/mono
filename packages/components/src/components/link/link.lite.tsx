@@ -38,15 +38,15 @@ export default function DBLink(props: DBLinkProps) {
 			aria-label={props.label}
 			aria-current={props.current}
 			data-size={props.size}
+			data-show-icon={getBooleanAsString(props.showIcon)}
 			data-variant={props.variant}
 			data-content={props.content || 'internal'}
 			onClick={(event: ClickEvent<HTMLAnchorElement>) =>
 				state.handleClick(event)
 			}>
-			<Show when={props.text}>
-				<span>{props.text}</span>
+			<Show when={props.text} else={props.children}>
+				{props.text}
 			</Show>
-			{props.children}
 		</a>
 	);
 }

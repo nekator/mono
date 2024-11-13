@@ -57,6 +57,7 @@ export default function DBTag(props: DBTagProps) {
 			data-semantic={props.semantic}
 			data-emphasis={props.emphasis}
 			data-icon={props.icon}
+			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
 			data-no-text={getBooleanAsString(props.noText)}
 			data-overflow={getBooleanAsString(props.overflow)}>
 			{props.children}

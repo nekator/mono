@@ -67,6 +67,7 @@
 	}
 }
 
+[data-show-icon="false"],
 [data-icon="none"],
 [data-icon-before="none"] {
 	&::before {
@@ -86,6 +87,7 @@
 	}
 }
 
+[data-show-icon="false"],
 [data-icon-after="none"] {
 	&::after {
 		content: none;

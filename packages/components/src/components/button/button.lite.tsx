@@ -1,4 +1,4 @@
-import { useMetadata, useRef, useStore } from '@builder.io/mitosis';
+import { Show, useMetadata, useRef, useStore } from '@builder.io/mitosis';
 import type { DBButtonProps, DBButtonState } from './model';
 import { cls, getBooleanAsString } from '../../utils';
 import { ClickEvent } from '../../shared/model';
@@ -27,6 +27,7 @@ export default function DBButton(props: DBButtonProps) {
 			disabled={props.disabled}
 			aria-label={props.label}
 			data-icon={props.icon}
+			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
 			data-size={props.size}
 			data-state={props.state}
 			data-width={props.width}
@@ -40,7 +41,9 @@ export default function DBButton(props: DBButtonProps) {
 			onClick={(event: ClickEvent<HTMLButtonElement>) =>
 				state.handleClick(event)
 			}>
-			{props.children}
+			<Show when={props.text} else={props.children}>
+				{props.text}
+			</Show>
 		</button>
 	);
 }

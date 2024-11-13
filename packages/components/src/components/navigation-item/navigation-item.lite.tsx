@@ -97,9 +97,14 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 			class={cls('db-navigation-item', props.className)}
 			data-width={props.width}
 			data-icon={props.icon}
+			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
 			data-active={props.active}
 			aria-disabled={getBooleanAsString(props.disabled)}>
-			<Show when={!state.hasSubNavigation}>{props.children}</Show>
+			<Show when={!state.hasSubNavigation}>
+				<Show when={props.text} else={props.children}>
+					{props.text}
+				</Show>
+			</Show>
 
 			<Show when={state.hasSubNavigation}>
 				<button
@@ -110,7 +115,9 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 					onClick={(event: ClickEvent<HTMLButtonElement>) =>
 						state.handleClick(event)
 					}>
-					{props.children}
+					<Show when={props.text} else={props.children}>
+						{props.text}
+					</Show>
 				</button>
 
 				{/* TODO: Consider using popover here */}
