@@ -19,7 +19,7 @@ export default function DBInfotext(props: DBInfotextProps) {
 			data-icon={props.icon}
 			data-semantic={props.semantic}
 			data-size={props.size}
-			data-show-icon={getBooleanAsString(props.showIcon)}>
+			data-hide-icon-after={getBooleanAsString(!props.showIcon)}>
 			<Show when={props.text} else={props.children}>
 				{props.text}
 			</Show>

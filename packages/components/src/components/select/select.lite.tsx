@@ -173,7 +173,7 @@ export default function DBSelect(props: DBSelectProps) {
 			class={cls('db-select', props.className)}
 			data-variant={props.variant}
 			data-icon={props.icon}
-			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}>
+			data-hide-icon={getBooleanAsString(!props.showIcon)}>
 			<label htmlFor={state._id}>{props.label ?? DEFAULT_LABEL}</label>
 			<select
 				aria-invalid={props.customValidity === 'invalid'}

@@ -57,9 +57,7 @@ export default function DBTabItem(props: DBTabItemProps) {
 				htmlFor={props.id}
 				data-icon={props.icon}
 				data-icon-after={props.iconAfter}
-				data-show-icon={getBooleanAsString(
-					props.showIcon ?? !!props.icon
-				)}
+				data-hide-icon={getBooleanAsString(!props.showIcon)}
 				data-no-text={props.noText}>
 				<input
 					disabled={props.disabled}

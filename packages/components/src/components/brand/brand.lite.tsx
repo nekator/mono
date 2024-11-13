@@ -15,7 +15,7 @@ export default function DBBrand(props: DBBrandProps) {
 		<div
 			ref={ref}
 			data-icon={props.hideLogo ? 'none' : (props.icon ?? DEFAULT_ICON)}
-			data-show-icon={getBooleanAsString(props.showIcon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			id={props.id}
 			class={cls('db-brand', props.className)}>
 			<Show when={props.text} else={props.children}>

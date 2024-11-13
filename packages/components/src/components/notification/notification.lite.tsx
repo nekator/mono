@@ -28,7 +28,7 @@ export default function DBNotification(props: DBNotificationProps) {
 			data-semantic={props.semantic}
 			data-variant={props.variant}
 			data-icon={props.icon}
-			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			data-link-variant={props.linkVariant}>
 			<Slot name="image" />
 			<Show when={props.headline}>

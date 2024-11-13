@@ -27,7 +27,7 @@ export default function DBButton(props: DBButtonProps) {
 			disabled={props.disabled}
 			aria-label={props.label}
 			data-icon={props.icon}
-			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			data-size={props.size}
 			data-state={props.state}
 			data-width={props.width}

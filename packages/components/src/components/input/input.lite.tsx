@@ -171,7 +171,7 @@ export default function DBInput(props: DBInputProps) {
 		<div
 			class={cls('db-input', props.className)}
 			data-variant={props.variant}
-			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			data-icon={props.icon}
 			data-icon-after={props.iconAfter}>
 			<label htmlFor={state._id}>{props.label ?? DEFAULT_LABEL}</label>

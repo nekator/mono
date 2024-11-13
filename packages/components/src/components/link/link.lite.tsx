@@ -38,7 +38,7 @@ export default function DBLink(props: DBLinkProps) {
 			aria-label={props.label}
 			aria-current={props.current}
 			data-size={props.size}
-			data-show-icon={getBooleanAsString(props.showIcon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			data-variant={props.variant}
 			data-content={props.content || 'internal'}
 			onClick={(event: ClickEvent<HTMLAnchorElement>) =>

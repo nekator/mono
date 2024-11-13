@@ -65,6 +65,7 @@ export type IconProps = {
 export type ShowIconProps = {
 	/**
 	 * Enables or disables the visibility of the icon. The default value depends on the component.
+	 * For many components this property is optional to reflect figma properties.
 	 */
 	showIcon?: boolean;
 };

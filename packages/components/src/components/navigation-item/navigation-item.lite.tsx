@@ -97,7 +97,7 @@ export default function DBNavigationItem(props: DBNavigationItemProps) {
 			class={cls('db-navigation-item', props.className)}
 			data-width={props.width}
 			data-icon={props.icon}
-			data-show-icon={getBooleanAsString(props.showIcon ?? !!props.icon)}
+			data-hide-icon={getBooleanAsString(!props.showIcon)}
 			data-active={props.active}
 			aria-disabled={getBooleanAsString(props.disabled)}>
 			<Show when={!state.hasSubNavigation}>
