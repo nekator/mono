@@ -447,6 +447,21 @@ const FormComponent = () => {
 						Beschreibungstext
 					</DBTooltip>
 				</DBButton>
+
+				<div>
+					<DBTag>
+						<DBButton>Test</DBButton>
+					</DBTag>
+					<DBTag>
+						<DBLink>Test</DBLink>
+					</DBTag>
+					<DBTag>
+						<DBRadio>Test</DBRadio>
+					</DBTag>
+					<DBTag>
+						<DBCheckbox>Test</DBCheckbox>
+					</DBTag>
+				</div>
 			</div>
 		</div>
 	);
