@@ -74,7 +74,12 @@
 		display: none;
 	}
 
-	> :is([class="db-checkbox"], [class="db-radio"], [class="db-link"], [class="db-button"]) {
+	> :is(
+			[class="db-checkbox"],
+			[class="db-radio"],
+			[class="db-link"],
+			[class="db-button"]
+		) {
 		block-size: 100%;
 	}
 }
@@ -126,7 +131,7 @@
 				}
 
 				&::before {
-					--db-icon: "";
+					content: none;
 				}
 			}
 		}
