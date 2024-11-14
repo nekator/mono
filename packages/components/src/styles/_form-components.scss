@@ -346,7 +346,7 @@ $input-valid-types: "color", "date", "datetime-local", "email", "file", "hidden"
 		}
 	}
 
-	&[data-variant="hidden"] {
+	&[data-hide-label="true"] {
 		label {
 			@extend %a11y-visually-hidden;
 

@@ -1,4 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DBCheckbox } from '@db-ui/ngx-components/src';
 import { DefaultComponent } from '../default.component';
 import defaultComponentVariants from '../../../../../shared/switch.json';
 import { DBSwitch } from '../../../../../../output/angular/src/components/switch';
@@ -8,9 +9,12 @@ import { environment } from '../../../environments/environment';
 @Component({
 	selector: 'app-switch',
 	templateUrl: './switch.component.html',
-	imports: environment.webComponents
-		? [DefaultComponent]
-		: [DefaultComponent, DBSwitch, DBInfotext],
+	imports: [
+		environment.webComponents
+			? [DefaultComponent]
+			: [DefaultComponent, DBSwitch, DBInfotext],
+		DBCheckbox
+	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	standalone: true
 })

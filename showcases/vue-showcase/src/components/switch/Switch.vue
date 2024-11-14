@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import DefaultComponent from "../DefaultComponent.vue";
 import defaultComponentVariants from "../../../../shared/switch.json";
-import { DBSwitch, DBInfotext } from "../../../../../output/vue/src";
+import {
+	DBSwitch,
+	DBInfotext,
+	DBCheckbox
+} from "../../../../../output/vue/src";
 </script>
 
 <template>
@@ -13,7 +17,7 @@ import { DBSwitch, DBInfotext } from "../../../../../output/vue/src";
 				:visualAid="exampleProps?.visualAid"
 				:checked="exampleProps?.checked"
 				:disabled="exampleProps?.disabled"
-				:variant="exampleProps?.variant"
+				:show-label="exampleProps?.showLabel"
 				:size="exampleProps?.size"
 				:emphasis="exampleProps?.emphasis"
 				:icon="exampleProps?.icon"
