@@ -1,0 +1,8 @@
+- main:
+  - heading "DBSection" [level=1]
+  - link "Density arrow_up_right\" / \""
+  - text: Functional (Default) Regular Expressive
+  - link "Width arrow_up_right\" / \""
+  - text: (Default) Full Medium Large
+  - link "Spacing arrow_up_right\" / \""
+  - text: (Default) Medium Large Small None
