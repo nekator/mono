@@ -210,3 +210,20 @@ export const runA11yCheckerTest = ({
 		expect(failures).toEqual([]);
 	});
 };
+
+export const runAriaSnapshotTest = ({
+	path,
+	fixedHeight,
+	preScreenShot
+}: DefaultSnapshotTestType) => {
+	test(`should have same aria-snapshot`, async ({ page }, { title }) => {
+		await gotoPage(page, path, lvl1, fixedHeight, density);
+
+		if (preScreenShot) {
+			await preScreenShot(page);
+		}
+
+		const snapshot = await page.locator('main').ariaSnapshot();
+		expect(snapshot).toMatchSnapshot(`${title}.yaml`);
+	});
+};
