@@ -47,7 +47,7 @@ const testButton = () => {
 
 const testA11y = () => {
 	test('should have same aria-snapshot', async ({ mount }, testInfo) => {
-		const component = await mount(comp);
+		const component = await mount(defaultIconButton);
 		const snapshot = await component.ariaSnapshot();
 		expect(snapshot).toMatchSnapshot(`${testInfo.testId}.yaml`);
 	});
